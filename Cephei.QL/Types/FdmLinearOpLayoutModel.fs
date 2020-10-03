@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type FdmLinearOpLayoutModel
     let _size                                      = triv (fun () -> _FdmLinearOpLayout.Value.size())
     let _spacing                                   = triv (fun () -> _FdmLinearOpLayout.Value.spacing())
     do this.Bind(_FdmLinearOpLayout)
+(* 
+    casting 
+*)
+    internal new () = FdmLinearOpLayoutModel(null)
+    member internal this.Inject v = _FdmLinearOpLayout.Value <- v
+    static member Cast (p : ICell<FdmLinearOpLayout>) = 
+        if p :? FdmLinearOpLayoutModel then 
+            p :?> FdmLinearOpLayoutModel
+        else
+            let o = new FdmLinearOpLayoutModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type ZeroYieldModel
     let _zeroYieldImpl                             (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _ZeroYield.Value.zeroYieldImpl(i.Value, t.Value))
     do this.Bind(_ZeroYield)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ZeroYield.Value <- v
+    static member Cast (p : ICell<ZeroYield>) = 
+        if p :? ZeroYieldModel then 
+            p :?> ZeroYieldModel
+        else
+            let o = new ZeroYieldModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

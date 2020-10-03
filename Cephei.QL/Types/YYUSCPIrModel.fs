@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -84,6 +84,19 @@ type YYUSCPIrModel
                                                    = triv (fun () -> _YYUSCPIr.Value.unregisterWith(handler.Value)
                                                                      _YYUSCPIr.Value)
     do this.Bind(_YYUSCPIr)
+(* 
+    casting 
+*)
+    internal new () = YYUSCPIrModel(null)
+    member internal this.Inject v = _YYUSCPIr.Value <- v
+    static member Cast (p : ICell<YYUSCPIr>) = 
+        if p :? YYUSCPIrModel then 
+            p :?> YYUSCPIrModel
+        else
+            let o = new YYUSCPIrModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -179,6 +192,19 @@ type YYUSCPIrModel1
                                                    = triv (fun () -> _YYUSCPIr.Value.unregisterWith(handler.Value)
                                                                      _YYUSCPIr.Value)
     do this.Bind(_YYUSCPIr)
+(* 
+    casting 
+*)
+    internal new () = YYUSCPIrModel1(null,null)
+    member internal this.Inject v = _YYUSCPIr.Value <- v
+    static member Cast (p : ICell<YYUSCPIr>) = 
+        if p :? YYUSCPIrModel1 then 
+            p :?> YYUSCPIrModel1
+        else
+            let o = new YYUSCPIrModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type ProjectionModel
     let _project                                   (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _Projection.Value.project(parameters.Value))
     do this.Bind(_Projection)
+(* 
+    casting 
+*)
+    internal new () = ProjectionModel(null,null)
+    member internal this.Inject v = _Projection.Value <- v
+    static member Cast (p : ICell<Projection>) = 
+        if p :? ProjectionModel then 
+            p :?> ProjectionModel
+        else
+            let o = new ProjectionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

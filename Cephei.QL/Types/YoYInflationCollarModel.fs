@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type YoYInflationCollarModel
                                                                      _YoYInflationCollar.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCollar).valuationDate())
     do this.Bind(_YoYInflationCollar)
+(* 
+    casting 
+*)
+    internal new () = YoYInflationCollarModel(null,null,null,null,null)
+    member internal this.Inject v = _YoYInflationCollar.Value <- v
+    static member Cast (p : ICell<YoYInflationCollar>) = 
+        if p :? YoYInflationCollarModel then 
+            p :?> YoYInflationCollarModel
+        else
+            let o = new YoYInflationCollarModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

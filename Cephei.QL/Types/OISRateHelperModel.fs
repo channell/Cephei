@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -74,6 +74,19 @@ type OISRateHelperModel
                                                    = triv (fun () -> _OISRateHelper.Value.unregisterWith(handler.Value)
                                                                      _OISRateHelper.Value)
     do this.Bind(_OISRateHelper)
+(* 
+    casting 
+*)
+    internal new () = OISRateHelperModel(null,null,null,null)
+    member internal this.Inject v = _OISRateHelper.Value <- v
+    static member Cast (p : ICell<OISRateHelper>) = 
+        if p :? OISRateHelperModel then 
+            p :?> OISRateHelperModel
+        else
+            let o = new OISRateHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

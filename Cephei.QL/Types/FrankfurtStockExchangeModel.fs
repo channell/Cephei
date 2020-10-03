@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,31 @@ type FrankfurtStockExchangeModel
                                                    = cell (fun () -> _FrankfurtStockExchange.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _FrankfurtStockExchange.Value.name())
     do this.Bind(_FrankfurtStockExchange)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FrankfurtStockExchange.Value <- v
+    static member Cast (p : ICell<FrankfurtStockExchange>) = 
+        if p :? FrankfurtStockExchangeModel then 
+            p :?> FrankfurtStockExchangeModel
+        else
+            let o = new FrankfurtStockExchangeModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<FrankfurtStockExchange>) = 
+        if p :? FrankfurtStockExchangeModel then 
+            p :?> FrankfurtStockExchangeModel
+        else
+            let o = new FrankfurtStockExchangeModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

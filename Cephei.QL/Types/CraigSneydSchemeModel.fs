@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type CraigSneydSchemeModel
                                                    = triv (fun () -> _CraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _CraigSneydScheme.Value)
     do this.Bind(_CraigSneydScheme)
+(* 
+    casting 
+*)
+    internal new () = CraigSneydSchemeModel(null,null,null,null)
+    member internal this.Inject v = _CraigSneydScheme.Value <- v
+    static member Cast (p : ICell<CraigSneydScheme>) = 
+        if p :? CraigSneydSchemeModel then 
+            p :?> CraigSneydSchemeModel
+        else
+            let o = new CraigSneydSchemeModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -98,6 +111,19 @@ type CraigSneydSchemeModel1
                                                    = triv (fun () -> _CraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _CraigSneydScheme.Value)
     do this.Bind(_CraigSneydScheme)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _CraigSneydScheme.Value <- v
+    static member Cast (p : ICell<CraigSneydScheme>) = 
+        if p :? CraigSneydSchemeModel1 then 
+            p :?> CraigSneydSchemeModel1
+        else
+            let o = new CraigSneydSchemeModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -45,6 +45,19 @@ type BicubicModel
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>) (ySize : ICell<int>) (zData : ICell<Matrix>)   
                                                    = triv (fun () -> _Bicubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value, ySize.Value, zData.Value))
     do this.Bind(_Bicubic)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Bicubic.Value <- v
+    static member Cast (p : ICell<Bicubic>) = 
+        if p :? BicubicModel then 
+            p :?> BicubicModel
+        else
+            let o = new BicubicModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

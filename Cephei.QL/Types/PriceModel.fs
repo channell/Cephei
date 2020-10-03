@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,31 @@ type PriceModel
     let _amount                                    = cell (fun () -> _Price.Value.amount())
     let _type                                      = cell (fun () -> _Price.Value.TYPE())
     do this.Bind(_Price)
+(* 
+    casting 
+*)
+    internal new () = PriceModel(null,null)
+    member internal this.Inject v = _Price.Value <- v
+    static member Cast (p : ICell<Price>) = 
+        if p :? PriceModel then 
+            p :?> PriceModel
+        else
+            let o = new PriceModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = PriceModel(null,null)
+    static member Cast (p : ICell<Price>) = 
+        if p :? PriceModel then 
+            p :?> PriceModel
+        else
+            let o = new PriceModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -76,6 +101,31 @@ type PriceModel1
     let _amount                                    = cell (fun () -> _Price.Value.amount())
     let _type                                      = cell (fun () -> _Price.Value.TYPE())
     do this.Bind(_Price)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Price.Value <- v
+    static member Cast (p : ICell<Price>) = 
+        if p :? PriceModel1 then 
+            p :?> PriceModel1
+        else
+            let o = new PriceModel1 ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<Price>) = 
+        if p :? PriceModel1 then 
+            p :?> PriceModel1
+        else
+            let o = new PriceModel1 ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type IborLegModel
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
                                                    = triv (fun () -> _IborLeg.Value.withPaymentAdjustment(convention.Value))
     do this.Bind(_IborLeg)
+(* 
+    casting 
+*)
+    internal new () = IborLegModel(null,null)
+    member internal this.Inject v = _IborLeg.Value <- v
+    static member Cast (p : ICell<IborLeg>) = 
+        if p :? IborLegModel then 
+            p :?> IborLegModel
+        else
+            let o = new IborLegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

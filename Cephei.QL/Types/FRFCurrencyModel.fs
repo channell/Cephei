@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type FRFCurrencyModel
     let _ToString                                  = triv (fun () -> _FRFCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _FRFCurrency.Value.triangulationCurrency)
     do this.Bind(_FRFCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FRFCurrency.Value <- v
+    static member Cast (p : ICell<FRFCurrency>) = 
+        if p :? FRFCurrencyModel then 
+            p :?> FRFCurrencyModel
+        else
+            let o = new FRFCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

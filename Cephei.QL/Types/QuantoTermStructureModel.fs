@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,6 +65,19 @@ type QuantoTermStructureModel
     let _referenceDate                             = triv (fun () -> _QuantoTermStructure.Value.referenceDate())
     let _settlementDays                            = triv (fun () -> _QuantoTermStructure.Value.settlementDays())
     do this.Bind(_QuantoTermStructure)
+(* 
+    casting 
+*)
+    internal new () = QuantoTermStructureModel(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _QuantoTermStructure.Value <- v
+    static member Cast (p : ICell<QuantoTermStructure>) = 
+        if p :? QuantoTermStructureModel then 
+            p :?> QuantoTermStructureModel
+        else
+            let o = new QuantoTermStructureModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type PayoffModel
     let _value                                     (price : ICell<double>)   
                                                    = triv (fun () -> _Payoff.Value.value(price.Value))
     do this.Bind(_Payoff)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Payoff.Value <- v
+    static member Cast (p : ICell<Payoff>) = 
+        if p :? PayoffModel then 
+            p :?> PayoffModel
+        else
+            let o = new PayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

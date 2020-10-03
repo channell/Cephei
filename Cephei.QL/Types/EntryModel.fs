@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,31 @@ type EntryModel
     let _rate                                      = cell (fun () -> _Entry.Value.rate)
     let _startDate                                 = cell (fun () -> _Entry.Value.startDate)
     do this.Bind(_Entry)
+(* 
+    casting 
+*)
+    internal new () = EntryModel(null,null,null)
+    member internal this.Inject v = _Entry.Value <- v
+    static member Cast (p : ICell<Entry>) = 
+        if p :? EntryModel then 
+            p :?> EntryModel
+        else
+            let o = new EntryModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = EntryModel(null,null,null)
+    static member Cast (p : ICell<Entry>) = 
+        if p :? EntryModel then 
+            p :?> EntryModel
+        else
+            let o = new EntryModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

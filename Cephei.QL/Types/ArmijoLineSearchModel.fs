@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type ArmijoLineSearchModel
     let _update                                    (data : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
                                                    = triv (fun () -> _ArmijoLineSearch.Value.update(ref data.Value, direction.Value, beta.Value, Constraint.Value))
     do this.Bind(_ArmijoLineSearch)
+(* 
+    casting 
+*)
+    internal new () = ArmijoLineSearchModel(null)
+    member internal this.Inject v = _ArmijoLineSearch.Value <- v
+    static member Cast (p : ICell<ArmijoLineSearch>) = 
+        if p :? ArmijoLineSearchModel then 
+            p :?> ArmijoLineSearchModel
+        else
+            let o = new ArmijoLineSearchModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -102,6 +115,19 @@ type ArmijoLineSearchModel1
     let _update                                    (data : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
                                                    = triv (fun () -> _ArmijoLineSearch.Value.update(ref data.Value, direction.Value, beta.Value, Constraint.Value))
     do this.Bind(_ArmijoLineSearch)
+(* 
+    casting 
+*)
+    internal new () = ArmijoLineSearchModel1(null,null)
+    member internal this.Inject v = _ArmijoLineSearch.Value <- v
+    static member Cast (p : ICell<ArmijoLineSearch>) = 
+        if p :? ArmijoLineSearchModel1 then 
+            p :?> ArmijoLineSearchModel1
+        else
+            let o = new ArmijoLineSearchModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -151,6 +177,19 @@ type ArmijoLineSearchModel2
     let _update                                    (data : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
                                                    = triv (fun () -> _ArmijoLineSearch.Value.update(ref data.Value, direction.Value, beta.Value, Constraint.Value))
     do this.Bind(_ArmijoLineSearch)
+(* 
+    casting 
+*)
+    internal new () = ArmijoLineSearchModel2(null,null,null)
+    member internal this.Inject v = _ArmijoLineSearch.Value <- v
+    static member Cast (p : ICell<ArmijoLineSearch>) = 
+        if p :? ArmijoLineSearchModel2 then 
+            p :?> ArmijoLineSearchModel2
+        else
+            let o = new ArmijoLineSearchModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -194,6 +233,19 @@ type ArmijoLineSearchModel3
     let _update                                    (data : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
                                                    = triv (fun () -> _ArmijoLineSearch.Value.update(ref data.Value, direction.Value, beta.Value, Constraint.Value))
     do this.Bind(_ArmijoLineSearch)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ArmijoLineSearch.Value <- v
+    static member Cast (p : ICell<ArmijoLineSearch>) = 
+        if p :? ArmijoLineSearchModel3 then 
+            p :?> ArmijoLineSearchModel3
+        else
+            let o = new ArmijoLineSearchModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

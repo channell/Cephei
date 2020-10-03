@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type ZeroInflationTraitsModel
     let _zeroYieldImpl                             (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _ZeroInflationTraits.Value.zeroYieldImpl(i.Value, t.Value))
     do this.Bind(_ZeroInflationTraits)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ZeroInflationTraits.Value <- v
+    static member Cast (p : ICell<ZeroInflationTraits>) = 
+        if p :? ZeroInflationTraitsModel then 
+            p :?> ZeroInflationTraitsModel
+        else
+            let o = new ZeroInflationTraitsModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

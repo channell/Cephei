@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type LinearRegressionModel
     let _residuals                                 = triv (fun () -> _LinearRegression.Value.residuals())
     let _standardErrors                            = triv (fun () -> _LinearRegression.Value.standardErrors())
     do this.Bind(_LinearRegression)
+(* 
+    casting 
+*)
+    internal new () = LinearRegressionModel(null,null)
+    member internal this.Inject v = _LinearRegression.Value <- v
+    static member Cast (p : ICell<LinearRegression>) = 
+        if p :? LinearRegressionModel then 
+            p :?> LinearRegressionModel
+        else
+            let o = new LinearRegressionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -84,6 +97,19 @@ type LinearRegressionModel1
     let _residuals                                 = triv (fun () -> _LinearRegression.Value.residuals())
     let _standardErrors                            = triv (fun () -> _LinearRegression.Value.standardErrors())
     do this.Bind(_LinearRegression)
+(* 
+    casting 
+*)
+    internal new () = LinearRegressionModel1(null,null)
+    member internal this.Inject v = _LinearRegression.Value <- v
+    static member Cast (p : ICell<LinearRegression>) = 
+        if p :? LinearRegressionModel1 then 
+            p :?> LinearRegressionModel1
+        else
+            let o = new LinearRegressionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

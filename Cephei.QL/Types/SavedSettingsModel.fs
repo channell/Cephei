@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -45,6 +45,19 @@ type SavedSettingsModel
     let _Dispose                                   = triv (fun () -> _SavedSettings.Value.Dispose()
                                                                      _SavedSettings.Value)
     do this.Bind(_SavedSettings)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _SavedSettings.Value <- v
+    static member Cast (p : ICell<SavedSettings>) = 
+        if p :? SavedSettingsModel then 
+            p :?> SavedSettingsModel
+        else
+            let o = new SavedSettingsModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

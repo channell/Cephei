@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -143,6 +143,19 @@ type SwaptionVolatilityMatrixModel
                                                                      _SwaptionVolatilityMatrix.Value)
     let _extrapolate                               = triv (fun () -> _SwaptionVolatilityMatrix.Value.extrapolate)
     do this.Bind(_SwaptionVolatilityMatrix)
+(* 
+    casting 
+*)
+    internal new () = SwaptionVolatilityMatrixModel(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
+    static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
+        if p :? SwaptionVolatilityMatrixModel then 
+            p :?> SwaptionVolatilityMatrixModel
+        else
+            let o = new SwaptionVolatilityMatrixModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -355,6 +368,19 @@ type SwaptionVolatilityMatrixModel1
                                                                      _SwaptionVolatilityMatrix.Value)
     let _extrapolate                               = triv (fun () -> _SwaptionVolatilityMatrix.Value.extrapolate)
     do this.Bind(_SwaptionVolatilityMatrix)
+(* 
+    casting 
+*)
+    internal new () = SwaptionVolatilityMatrixModel1(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
+    static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
+        if p :? SwaptionVolatilityMatrixModel1 then 
+            p :?> SwaptionVolatilityMatrixModel1
+        else
+            let o = new SwaptionVolatilityMatrixModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -567,6 +593,19 @@ type SwaptionVolatilityMatrixModel2
                                                                      _SwaptionVolatilityMatrix.Value)
     let _extrapolate                               = triv (fun () -> _SwaptionVolatilityMatrix.Value.extrapolate)
     do this.Bind(_SwaptionVolatilityMatrix)
+(* 
+    casting 
+*)
+    internal new () = SwaptionVolatilityMatrixModel2(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
+    static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
+        if p :? SwaptionVolatilityMatrixModel2 then 
+            p :?> SwaptionVolatilityMatrixModel2
+        else
+            let o = new SwaptionVolatilityMatrixModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -780,6 +819,19 @@ type SwaptionVolatilityMatrixModel3
                                                                      _SwaptionVolatilityMatrix.Value)
     let _extrapolate                               = triv (fun () -> _SwaptionVolatilityMatrix.Value.extrapolate)
     do this.Bind(_SwaptionVolatilityMatrix)
+(* 
+    casting 
+*)
+    internal new () = SwaptionVolatilityMatrixModel3(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
+    static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
+        if p :? SwaptionVolatilityMatrixModel3 then 
+            p :?> SwaptionVolatilityMatrixModel3
+        else
+            let o = new SwaptionVolatilityMatrixModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -992,6 +1044,19 @@ type SwaptionVolatilityMatrixModel4
                                                                      _SwaptionVolatilityMatrix.Value)
     let _extrapolate                               = triv (fun () -> _SwaptionVolatilityMatrix.Value.extrapolate)
     do this.Bind(_SwaptionVolatilityMatrix)
+(* 
+    casting 
+*)
+    internal new () = SwaptionVolatilityMatrixModel4(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwaptionVolatilityMatrix.Value <- v
+    static member Cast (p : ICell<SwaptionVolatilityMatrix>) = 
+        if p :? SwaptionVolatilityMatrixModel4 then 
+            p :?> SwaptionVolatilityMatrixModel4
+        else
+            let o = new SwaptionVolatilityMatrixModel4 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

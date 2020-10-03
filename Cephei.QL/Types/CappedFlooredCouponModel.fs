@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -103,6 +103,19 @@ type CappedFlooredCouponModel
                                                    = triv (fun () -> _CappedFlooredCoupon.Value.unregisterWith(handler.Value)
                                                                      _CappedFlooredCoupon.Value)
     do this.Bind(_CappedFlooredCoupon)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _CappedFlooredCoupon.Value <- v
+    static member Cast (p : ICell<CappedFlooredCoupon>) = 
+        if p :? CappedFlooredCouponModel then 
+            p :?> CappedFlooredCouponModel
+        else
+            let o = new CappedFlooredCouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -245,6 +258,19 @@ type CappedFlooredCouponModel1
                                                    = triv (fun () -> _CappedFlooredCoupon.Value.unregisterWith(handler.Value)
                                                                      _CappedFlooredCoupon.Value)
     do this.Bind(_CappedFlooredCoupon)
+(* 
+    casting 
+*)
+    internal new () = CappedFlooredCouponModel1(null,null,null)
+    member internal this.Inject v = _CappedFlooredCoupon.Value <- v
+    static member Cast (p : ICell<CappedFlooredCoupon>) = 
+        if p :? CappedFlooredCouponModel1 then 
+            p :?> CappedFlooredCouponModel1
+        else
+            let o = new CappedFlooredCouponModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

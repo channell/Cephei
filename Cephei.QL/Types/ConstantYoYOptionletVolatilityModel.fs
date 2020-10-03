@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -120,6 +120,19 @@ type ConstantYoYOptionletVolatilityModel
                                                                      _ConstantYoYOptionletVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantYoYOptionletVolatility.Value.extrapolate)
     do this.Bind(_ConstantYoYOptionletVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantYoYOptionletVolatilityModel(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _ConstantYoYOptionletVolatility.Value <- v
+    static member Cast (p : ICell<ConstantYoYOptionletVolatility>) = 
+        if p :? ConstantYoYOptionletVolatilityModel then 
+            p :?> ConstantYoYOptionletVolatilityModel
+        else
+            let o = new ConstantYoYOptionletVolatilityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

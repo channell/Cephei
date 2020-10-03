@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type PeriodModel
     let _ToString                                  = triv (fun () -> _Period.Value.ToString())
     let _units                                     = triv (fun () -> _Period.Value.units())
     do this.Bind(_Period)
+(* 
+    casting 
+*)
+    internal new () = PeriodModel(null,null)
+    member internal this.Inject v = _Period.Value <- v
+    static member Cast (p : ICell<Period>) = 
+        if p :? PeriodModel then 
+            p :?> PeriodModel
+        else
+            let o = new PeriodModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -102,6 +115,19 @@ type PeriodModel1
     let _ToString                                  = triv (fun () -> _Period.Value.ToString())
     let _units                                     = triv (fun () -> _Period.Value.units())
     do this.Bind(_Period)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Period.Value <- v
+    static member Cast (p : ICell<Period>) = 
+        if p :? PeriodModel1 then 
+            p :?> PeriodModel1
+        else
+            let o = new PeriodModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -146,6 +172,19 @@ type PeriodModel2
     let _ToString                                  = triv (fun () -> _Period.Value.ToString())
     let _units                                     = triv (fun () -> _Period.Value.units())
     do this.Bind(_Period)
+(* 
+    casting 
+*)
+    internal new () = PeriodModel2(null)
+    member internal this.Inject v = _Period.Value <- v
+    static member Cast (p : ICell<Period>) = 
+        if p :? PeriodModel2 then 
+            p :?> PeriodModel2
+        else
+            let o = new PeriodModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -191,6 +230,19 @@ type PeriodModel3
     let _ToString                                  = triv (fun () -> _Period.Value.ToString())
     let _units                                     = triv (fun () -> _Period.Value.units())
     do this.Bind(_Period)
+(* 
+    casting 
+*)
+    internal new () = PeriodModel3(null)
+    member internal this.Inject v = _Period.Value <- v
+    static member Cast (p : ICell<Period>) = 
+        if p :? PeriodModel3 then 
+            p :?> PeriodModel3
+        else
+            let o = new PeriodModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

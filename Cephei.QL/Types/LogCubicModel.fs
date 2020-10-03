@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type LogCubicModel
                                                    = triv (fun () -> _LogCubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     let _requiredPoints                            = triv (fun () -> _LogCubic.Value.requiredPoints)
     do this.Bind(_LogCubic)
+(* 
+    casting 
+*)
+    internal new () = LogCubicModel(null,null,null,null,null,null)
+    member internal this.Inject v = _LogCubic.Value <- v
+    static member Cast (p : ICell<LogCubic>) = 
+        if p :? LogCubicModel then 
+            p :?> LogCubicModel
+        else
+            let o = new LogCubicModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -94,6 +107,19 @@ type LogCubicModel1
                                                    = triv (fun () -> _LogCubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     let _requiredPoints                            = triv (fun () -> _LogCubic.Value.requiredPoints)
     do this.Bind(_LogCubic)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _LogCubic.Value <- v
+    static member Cast (p : ICell<LogCubic>) = 
+        if p :? LogCubicModel1 then 
+            p :?> LogCubicModel1
+        else
+            let o = new LogCubicModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

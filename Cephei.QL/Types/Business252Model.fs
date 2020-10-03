@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type Business252Model
                                                    = triv (fun () -> _Business252.Value.Equals(o.Value))
     let _ToString                                  = triv (fun () -> _Business252.Value.ToString())
     do this.Bind(_Business252)
+(* 
+    casting 
+*)
+    internal new () = Business252Model(null)
+    member internal this.Inject v = _Business252.Value <- v
+    static member Cast (p : ICell<Business252>) = 
+        if p :? Business252Model then 
+            p :?> Business252Model
+        else
+            let o = new Business252Model ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

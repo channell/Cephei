@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -73,6 +73,19 @@ type AtmSmileSectionModel
     let _volatility1                               (strike : ICell<double>)   
                                                    = triv (fun () -> _AtmSmileSection.Value.volatility(strike.Value))
     do this.Bind(_AtmSmileSection)
+(* 
+    casting 
+*)
+    internal new () = AtmSmileSectionModel(null,null)
+    member internal this.Inject v = _AtmSmileSection.Value <- v
+    static member Cast (p : ICell<AtmSmileSection>) = 
+        if p :? AtmSmileSectionModel then 
+            p :?> AtmSmileSectionModel
+        else
+            let o = new AtmSmileSectionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

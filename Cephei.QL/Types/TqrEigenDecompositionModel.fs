@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type TqrEigenDecompositionModel
     let _eigenvectors                              = triv (fun () -> _TqrEigenDecomposition.Value.eigenvectors())
     let _iterations                                = triv (fun () -> _TqrEigenDecomposition.Value.iterations())
     do this.Bind(_TqrEigenDecomposition)
+(* 
+    casting 
+*)
+    internal new () = TqrEigenDecompositionModel(null,null,null,null)
+    member internal this.Inject v = _TqrEigenDecomposition.Value <- v
+    static member Cast (p : ICell<TqrEigenDecomposition>) = 
+        if p :? TqrEigenDecompositionModel then 
+            p :?> TqrEigenDecompositionModel
+        else
+            let o = new TqrEigenDecompositionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

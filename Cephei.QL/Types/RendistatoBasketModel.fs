@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type RendistatoBasketModel
                                                                      _RendistatoBasket.Value)
     let _weights                                   = triv (fun () -> _RendistatoBasket.Value.weights())
     do this.Bind(_RendistatoBasket)
+(* 
+    casting 
+*)
+    internal new () = RendistatoBasketModel(null,null,null)
+    member internal this.Inject v = _RendistatoBasket.Value <- v
+    static member Cast (p : ICell<RendistatoBasket>) = 
+        if p :? RendistatoBasketModel then 
+            p :?> RendistatoBasketModel
+        else
+            let o = new RendistatoBasketModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

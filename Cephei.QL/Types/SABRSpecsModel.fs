@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -61,6 +61,19 @@ type SABRSpecsModel
     let _weight                                    (strike : ICell<double>) (forward : ICell<double>) (stdDev : ICell<double>) (addParams : ICell<List<Nullable<double>>>)   
                                                    = triv (fun () -> _SABRSpecs.Value.weight(strike.Value, forward.Value, stdDev.Value, addParams.Value))
     do this.Bind(_SABRSpecs)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _SABRSpecs.Value <- v
+    static member Cast (p : ICell<SABRSpecs>) = 
+        if p :? SABRSpecsModel then 
+            p :?> SABRSpecsModel
+        else
+            let o = new SABRSpecsModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

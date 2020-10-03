@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -101,6 +101,19 @@ type DigitalCmsLegModel
     let _withSpreads1                              (spreads : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _DigitalCmsLeg.Value.withSpreads(spreads.Value))
     do this.Bind(_DigitalCmsLeg)
+(* 
+    casting 
+*)
+    internal new () = DigitalCmsLegModel(null,null)
+    member internal this.Inject v = _DigitalCmsLeg.Value <- v
+    static member Cast (p : ICell<DigitalCmsLeg>) = 
+        if p :? DigitalCmsLegModel then 
+            p :?> DigitalCmsLegModel
+        else
+            let o = new DigitalCmsLegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

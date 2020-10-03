@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type OptionModel
                                                                      _Option.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Option).valuationDate())
     do this.Bind(_Option)
+(* 
+    casting 
+*)
+    internal new () = OptionModel(null,null,null,null)
+    member internal this.Inject v = _Option.Value <- v
+    static member Cast (p : ICell<Option>) = 
+        if p :? OptionModel then 
+            p :?> OptionModel
+        else
+            let o = new OptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

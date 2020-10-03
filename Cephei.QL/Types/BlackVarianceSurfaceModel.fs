@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -72,6 +72,19 @@ type BlackVarianceSurfaceModel
     let _variances                                 = triv (fun () -> _BlackVarianceSurface.Value.variances())
     let _volatilities                              = triv (fun () -> _BlackVarianceSurface.Value.volatilities())
     do this.Bind(_BlackVarianceSurface)
+(* 
+    casting 
+*)
+    internal new () = BlackVarianceSurfaceModel(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _BlackVarianceSurface.Value <- v
+    static member Cast (p : ICell<BlackVarianceSurface>) = 
+        if p :? BlackVarianceSurfaceModel then 
+            p :?> BlackVarianceSurfaceModel
+        else
+            let o = new BlackVarianceSurfaceModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -123,6 +136,19 @@ type BlackVarianceSurfaceModel1
     let _variances                                 = triv (fun () -> _BlackVarianceSurface.Value.variances())
     let _volatilities                              = triv (fun () -> _BlackVarianceSurface.Value.volatilities())
     do this.Bind(_BlackVarianceSurface)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _BlackVarianceSurface.Value <- v
+    static member Cast (p : ICell<BlackVarianceSurface>) = 
+        if p :? BlackVarianceSurfaceModel1 then 
+            p :?> BlackVarianceSurfaceModel1
+        else
+            let o = new BlackVarianceSurfaceModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

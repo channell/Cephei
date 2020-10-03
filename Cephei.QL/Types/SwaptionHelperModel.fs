@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -91,6 +91,19 @@ type SwaptionHelperModel
     let _volatility                                = triv (fun () -> (withEvaluationDate _evaluationDate _SwaptionHelper).volatility())
     let _volatilityType                            = triv (fun () -> (withEvaluationDate _evaluationDate _SwaptionHelper).volatilityType())
     do this.Bind(_SwaptionHelper)
+(* 
+    casting 
+*)
+    internal new () = SwaptionHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwaptionHelper.Value <- v
+    static member Cast (p : ICell<SwaptionHelper>) = 
+        if p :? SwaptionHelperModel then 
+            p :?> SwaptionHelperModel
+        else
+            let o = new SwaptionHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -189,6 +202,19 @@ type SwaptionHelperModel1
     let _volatility                                = triv (fun () -> (withEvaluationDate _evaluationDate _SwaptionHelper).volatility())
     let _volatilityType                            = triv (fun () -> (withEvaluationDate _evaluationDate _SwaptionHelper).volatilityType())
     do this.Bind(_SwaptionHelper)
+(* 
+    casting 
+*)
+    internal new () = SwaptionHelperModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwaptionHelper.Value <- v
+    static member Cast (p : ICell<SwaptionHelper>) = 
+        if p :? SwaptionHelperModel1 then 
+            p :?> SwaptionHelperModel1
+        else
+            let o = new SwaptionHelperModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -287,6 +313,19 @@ type SwaptionHelperModel2
     let _volatility                                = triv (fun () -> (withEvaluationDate _evaluationDate _SwaptionHelper).volatility())
     let _volatilityType                            = triv (fun () -> (withEvaluationDate _evaluationDate _SwaptionHelper).volatilityType())
     do this.Bind(_SwaptionHelper)
+(* 
+    casting 
+*)
+    internal new () = SwaptionHelperModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwaptionHelper.Value <- v
+    static member Cast (p : ICell<SwaptionHelper>) = 
+        if p :? SwaptionHelperModel2 then 
+            p :?> SwaptionHelperModel2
+        else
+            let o = new SwaptionHelperModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -74,6 +74,19 @@ type FixedLoanModel
                                                                      _FixedLoan.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FixedLoan).valuationDate())
     do this.Bind(_FixedLoan)
+(* 
+    casting 
+*)
+    internal new () = FixedLoanModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FixedLoan.Value <- v
+    static member Cast (p : ICell<FixedLoan>) = 
+        if p :? FixedLoanModel then 
+            p :?> FixedLoanModel
+        else
+            let o = new FixedLoanModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

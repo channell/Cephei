@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -124,6 +124,19 @@ type CmsRateBondModel
                                                                      _CmsRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CmsRateBond).valuationDate())
     do this.Bind(_CmsRateBond)
+(* 
+    casting 
+*)
+    internal new () = CmsRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CmsRateBond.Value <- v
+    static member Cast (p : ICell<CmsRateBond>) = 
+        if p :? CmsRateBondModel then 
+            p :?> CmsRateBondModel
+        else
+            let o = new CmsRateBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

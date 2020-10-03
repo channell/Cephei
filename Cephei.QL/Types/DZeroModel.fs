@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type DZeroModel
                                                    = triv (fun () -> _DZero.Value.subtract(A.Value, B.Value))
     let _upperDiagonal                             = triv (fun () -> _DZero.Value.upperDiagonal())
     do this.Bind(_DZero)
+(* 
+    casting 
+*)
+    internal new () = DZeroModel(null,null)
+    member internal this.Inject v = _DZero.Value <- v
+    static member Cast (p : ICell<DZero>) = 
+        if p :? DZeroModel then 
+            p :?> DZeroModel
+        else
+            let o = new DZeroModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

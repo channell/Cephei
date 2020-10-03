@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type BulletPricipalLegModel
     let _withSign                                  (sign : ICell<int>)   
                                                    = triv (fun () -> _BulletPricipalLeg.Value.withSign(sign.Value))
     do this.Bind(_BulletPricipalLeg)
+(* 
+    casting 
+*)
+    internal new () = BulletPricipalLegModel(null)
+    member internal this.Inject v = _BulletPricipalLeg.Value <- v
+    static member Cast (p : ICell<BulletPricipalLeg>) = 
+        if p :? BulletPricipalLegModel then 
+            p :?> BulletPricipalLegModel
+        else
+            let o = new BulletPricipalLegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

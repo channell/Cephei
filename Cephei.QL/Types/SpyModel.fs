@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,31 @@ type SpyModel
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _Spy.Value.value(x.Value))
     do this.Bind(_Spy)
+(* 
+    casting 
+*)
+    internal new () = SpyModel(null)
+    member internal this.Inject v = _Spy.Value <- v
+    static member Cast (p : ICell<Spy>) = 
+        if p :? SpyModel then 
+            p :?> SpyModel
+        else
+            let o = new SpyModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = SpyModel(null)
+    static member Cast (p : ICell<Spy>) = 
+        if p :? SpyModel then 
+            p :?> SpyModel
+        else
+            let o = new SpyModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

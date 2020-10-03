@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,31 @@ type rStarFinderModel
     let _derivative                                (x : ICell<double>)   
                                                    = cell (fun () -> _rStarFinder.Value.derivative(x.Value))
     do this.Bind(_rStarFinder)
+(* 
+    casting 
+*)
+    internal new () = rStarFinderModel(null,null,null,null,null)
+    member internal this.Inject v = _rStarFinder.Value <- v
+    static member Cast (p : ICell<rStarFinder>) = 
+        if p :? rStarFinderModel then 
+            p :?> rStarFinderModel
+        else
+            let o = new rStarFinderModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = rStarFinderModel(null,null,null,null,null)
+    static member Cast (p : ICell<rStarFinder>) = 
+        if p :? rStarFinderModel then 
+            p :?> rStarFinderModel
+        else
+            let o = new rStarFinderModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

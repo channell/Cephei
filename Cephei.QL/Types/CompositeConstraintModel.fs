@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type CompositeConstraintModel
     let _upperBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _CompositeConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_CompositeConstraint)
+(* 
+    casting 
+*)
+    internal new () = CompositeConstraintModel(null,null)
+    member internal this.Inject v = _CompositeConstraint.Value <- v
+    static member Cast (p : ICell<CompositeConstraint>) = 
+        if p :? CompositeConstraintModel then 
+            p :?> CompositeConstraintModel
+        else
+            let o = new CompositeConstraintModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type TrinomialTreeModel
                                                    = triv (fun () -> _TrinomialTree.Value.underlying(i.Value, index.Value))
     let _columns                                   = triv (fun () -> _TrinomialTree.Value.columns())
     do this.Bind(_TrinomialTree)
+(* 
+    casting 
+*)
+    internal new () = TrinomialTreeModel(null,null)
+    member internal this.Inject v = _TrinomialTree.Value <- v
+    static member Cast (p : ICell<TrinomialTree>) = 
+        if p :? TrinomialTreeModel then 
+            p :?> TrinomialTreeModel
+        else
+            let o = new TrinomialTreeModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -113,6 +126,19 @@ type TrinomialTreeModel1
                                                    = triv (fun () -> _TrinomialTree.Value.underlying(i.Value, index.Value))
     let _columns                                   = triv (fun () -> _TrinomialTree.Value.columns())
     do this.Bind(_TrinomialTree)
+(* 
+    casting 
+*)
+    internal new () = TrinomialTreeModel1(null,null,null)
+    member internal this.Inject v = _TrinomialTree.Value <- v
+    static member Cast (p : ICell<TrinomialTree>) = 
+        if p :? TrinomialTreeModel1 then 
+            p :?> TrinomialTreeModel1
+        else
+            let o = new TrinomialTreeModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

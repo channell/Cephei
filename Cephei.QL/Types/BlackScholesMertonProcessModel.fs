@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -89,6 +89,19 @@ type BlackScholesMertonProcessModel
                                                    = triv (fun () -> _BlackScholesMertonProcess.Value.unregisterWith(handler.Value)
                                                                      _BlackScholesMertonProcess.Value)
     do this.Bind(_BlackScholesMertonProcess)
+(* 
+    casting 
+*)
+    internal new () = BlackScholesMertonProcessModel(null,null,null,null,null)
+    member internal this.Inject v = _BlackScholesMertonProcess.Value <- v
+    static member Cast (p : ICell<BlackScholesMertonProcess>) = 
+        if p :? BlackScholesMertonProcessModel then 
+            p :?> BlackScholesMertonProcessModel
+        else
+            let o = new BlackScholesMertonProcessModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -190,6 +203,19 @@ type BlackScholesMertonProcessModel1
                                                    = triv (fun () -> _BlackScholesMertonProcess.Value.unregisterWith(handler.Value)
                                                                      _BlackScholesMertonProcess.Value)
     do this.Bind(_BlackScholesMertonProcess)
+(* 
+    casting 
+*)
+    internal new () = BlackScholesMertonProcessModel1(null,null,null,null)
+    member internal this.Inject v = _BlackScholesMertonProcess.Value <- v
+    static member Cast (p : ICell<BlackScholesMertonProcess>) = 
+        if p :? BlackScholesMertonProcessModel1 then 
+            p :?> BlackScholesMertonProcessModel1
+        else
+            let o = new BlackScholesMertonProcessModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

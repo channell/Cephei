@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -88,6 +88,19 @@ type FixedLocalVolSurfaceModel
                                                                      _FixedLocalVolSurface.Value)
     let _extrapolate                               = triv (fun () -> _FixedLocalVolSurface.Value.extrapolate)
     do this.Bind(_FixedLocalVolSurface)
+(* 
+    casting 
+*)
+    internal new () = FixedLocalVolSurfaceModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _FixedLocalVolSurface.Value <- v
+    static member Cast (p : ICell<FixedLocalVolSurface>) = 
+        if p :? FixedLocalVolSurfaceModel then 
+            p :?> FixedLocalVolSurfaceModel
+        else
+            let o = new FixedLocalVolSurfaceModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -186,6 +199,19 @@ type FixedLocalVolSurfaceModel1
                                                                      _FixedLocalVolSurface.Value)
     let _extrapolate                               = triv (fun () -> _FixedLocalVolSurface.Value.extrapolate)
     do this.Bind(_FixedLocalVolSurface)
+(* 
+    casting 
+*)
+    internal new () = FixedLocalVolSurfaceModel1(null,null,null,null,null,null,null)
+    member internal this.Inject v = _FixedLocalVolSurface.Value <- v
+    static member Cast (p : ICell<FixedLocalVolSurface>) = 
+        if p :? FixedLocalVolSurfaceModel1 then 
+            p :?> FixedLocalVolSurfaceModel1
+        else
+            let o = new FixedLocalVolSurfaceModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -284,6 +310,19 @@ type FixedLocalVolSurfaceModel2
                                                                      _FixedLocalVolSurface.Value)
     let _extrapolate                               = triv (fun () -> _FixedLocalVolSurface.Value.extrapolate)
     do this.Bind(_FixedLocalVolSurface)
+(* 
+    casting 
+*)
+    internal new () = FixedLocalVolSurfaceModel2(null,null,null,null,null,null,null)
+    member internal this.Inject v = _FixedLocalVolSurface.Value <- v
+    static member Cast (p : ICell<FixedLocalVolSurface>) = 
+        if p :? FixedLocalVolSurfaceModel2 then 
+            p :?> FixedLocalVolSurfaceModel2
+        else
+            let o = new FixedLocalVolSurfaceModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

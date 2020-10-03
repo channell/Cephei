@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -97,6 +97,19 @@ type DKKLiborModel
                                                    = triv (fun () -> _DKKLibor.Value.unregisterWith(handler.Value)
                                                                      _DKKLibor.Value)
     do this.Bind(_DKKLibor)
+(* 
+    casting 
+*)
+    internal new () = DKKLiborModel(null,null)
+    member internal this.Inject v = _DKKLibor.Value <- v
+    static member Cast (p : ICell<DKKLibor>) = 
+        if p :? DKKLiborModel then 
+            p :?> DKKLiborModel
+        else
+            let o = new DKKLiborModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -213,6 +226,19 @@ type DKKLiborModel1
                                                    = triv (fun () -> _DKKLibor.Value.unregisterWith(handler.Value)
                                                                      _DKKLibor.Value)
     do this.Bind(_DKKLibor)
+(* 
+    casting 
+*)
+    internal new () = DKKLiborModel1(null)
+    member internal this.Inject v = _DKKLibor.Value <- v
+    static member Cast (p : ICell<DKKLibor>) = 
+        if p :? DKKLiborModel1 then 
+            p :?> DKKLiborModel1
+        else
+            let o = new DKKLiborModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

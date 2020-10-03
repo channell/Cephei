@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type CeilingTruncationModel
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _CeilingTruncation.Value.Round(value.Value))
     do this.Bind(_CeilingTruncation)
+(* 
+    casting 
+*)
+    internal new () = CeilingTruncationModel(null,null)
+    member internal this.Inject v = _CeilingTruncation.Value <- v
+    static member Cast (p : ICell<CeilingTruncation>) = 
+        if p :? CeilingTruncationModel then 
+            p :?> CeilingTruncationModel
+        else
+            let o = new CeilingTruncationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -92,6 +105,19 @@ type CeilingTruncationModel1
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _CeilingTruncation.Value.Round(value.Value))
     do this.Bind(_CeilingTruncation)
+(* 
+    casting 
+*)
+    internal new () = CeilingTruncationModel1(null)
+    member internal this.Inject v = _CeilingTruncation.Value <- v
+    static member Cast (p : ICell<CeilingTruncation>) = 
+        if p :? CeilingTruncationModel1 then 
+            p :?> CeilingTruncationModel1
+        else
+            let o = new CeilingTruncationModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

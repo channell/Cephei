@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -82,6 +82,19 @@ type HestonModelHelperModel
     let _volatility                                = triv (fun () -> (withEvaluationDate _evaluationDate _HestonModelHelper).volatility())
     let _volatilityType                            = triv (fun () -> (withEvaluationDate _evaluationDate _HestonModelHelper).volatilityType())
     do this.Bind(_HestonModelHelper)
+(* 
+    casting 
+*)
+    internal new () = HestonModelHelperModel(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _HestonModelHelper.Value <- v
+    static member Cast (p : ICell<HestonModelHelper>) = 
+        if p :? HestonModelHelperModel then 
+            p :?> HestonModelHelperModel
+        else
+            let o = new HestonModelHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -167,6 +180,19 @@ type HestonModelHelperModel1
     let _volatility                                = triv (fun () -> (withEvaluationDate _evaluationDate _HestonModelHelper).volatility())
     let _volatilityType                            = triv (fun () -> (withEvaluationDate _evaluationDate _HestonModelHelper).volatilityType())
     do this.Bind(_HestonModelHelper)
+(* 
+    casting 
+*)
+    internal new () = HestonModelHelperModel1(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _HestonModelHelper.Value <- v
+    static member Cast (p : ICell<HestonModelHelper>) = 
+        if p :? HestonModelHelperModel1 then 
+            p :?> HestonModelHelperModel1
+        else
+            let o = new HestonModelHelperModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type DiscreteSimpsonIntegratorModel
     let _value                                     (f : ICell<Func<double,double>>) (a : ICell<double>) (b : ICell<double>)   
                                                    = triv (fun () -> _DiscreteSimpsonIntegrator.Value.value(f.Value, a.Value, b.Value))
     do this.Bind(_DiscreteSimpsonIntegrator)
+(* 
+    casting 
+*)
+    internal new () = DiscreteSimpsonIntegratorModel(null)
+    member internal this.Inject v = _DiscreteSimpsonIntegrator.Value <- v
+    static member Cast (p : ICell<DiscreteSimpsonIntegrator>) = 
+        if p :? DiscreteSimpsonIntegratorModel then 
+            p :?> DiscreteSimpsonIntegratorModel
+        else
+            let o = new DiscreteSimpsonIntegratorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

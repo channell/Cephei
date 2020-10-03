@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type AnalyticDiscreteGeometricAveragePriceAsianEngineModel
 *)
     let _AnalyticDiscreteGeometricAveragePriceAsianEngine = cell (fun () -> new AnalyticDiscreteGeometricAveragePriceAsianEngine (Process.Value))
     do this.Bind(_AnalyticDiscreteGeometricAveragePriceAsianEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticDiscreteGeometricAveragePriceAsianEngineModel(null)
+    member internal this.Inject v = _AnalyticDiscreteGeometricAveragePriceAsianEngine.Value <- v
+    static member Cast (p : ICell<AnalyticDiscreteGeometricAveragePriceAsianEngine>) = 
+        if p :? AnalyticDiscreteGeometricAveragePriceAsianEngineModel then 
+            p :?> AnalyticDiscreteGeometricAveragePriceAsianEngineModel
+        else
+            let o = new AnalyticDiscreteGeometricAveragePriceAsianEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

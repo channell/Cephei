@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type BlackKarasinskiModel
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _BlackKarasinski.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_BlackKarasinski)
+(* 
+    casting 
+*)
+    internal new () = BlackKarasinskiModel(null,null,null)
+    member internal this.Inject v = _BlackKarasinski.Value <- v
+    static member Cast (p : ICell<BlackKarasinski>) = 
+        if p :? BlackKarasinskiModel then 
+            p :?> BlackKarasinskiModel
+        else
+            let o = new BlackKarasinskiModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -148,6 +161,19 @@ type BlackKarasinskiModel1
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _BlackKarasinski.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_BlackKarasinski)
+(* 
+    casting 
+*)
+    internal new () = BlackKarasinskiModel1(null)
+    member internal this.Inject v = _BlackKarasinski.Value <- v
+    static member Cast (p : ICell<BlackKarasinski>) = 
+        if p :? BlackKarasinskiModel1 then 
+            p :?> BlackKarasinskiModel1
+        else
+            let o = new BlackKarasinskiModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

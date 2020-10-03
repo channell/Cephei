@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type SobolBrownianBridgeRsgModel
     let _lastSequence                              = triv (fun () -> _SobolBrownianBridgeRsg.Value.lastSequence())
     let _nextSequence                              = triv (fun () -> _SobolBrownianBridgeRsg.Value.nextSequence())
     do this.Bind(_SobolBrownianBridgeRsg)
+(* 
+    casting 
+*)
+    internal new () = SobolBrownianBridgeRsgModel(null,null,null,null,null)
+    member internal this.Inject v = _SobolBrownianBridgeRsg.Value <- v
+    static member Cast (p : ICell<SobolBrownianBridgeRsg>) = 
+        if p :? SobolBrownianBridgeRsgModel then 
+            p :?> SobolBrownianBridgeRsgModel
+        else
+            let o = new SobolBrownianBridgeRsgModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

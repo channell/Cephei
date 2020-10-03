@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -89,6 +89,19 @@ type BSMOperatorModel
                                                    = triv (fun () -> _BSMOperator.Value.subtract(A.Value, B.Value))
     let _upperDiagonal                             = triv (fun () -> _BSMOperator.Value.upperDiagonal())
     do this.Bind(_BSMOperator)
+(* 
+    casting 
+*)
+    internal new () = BSMOperatorModel(null,null,null,null,null)
+    member internal this.Inject v = _BSMOperator.Value <- v
+    static member Cast (p : ICell<BSMOperator>) = 
+        if p :? BSMOperatorModel then 
+            p :?> BSMOperatorModel
+        else
+            let o = new BSMOperatorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -186,6 +199,19 @@ type BSMOperatorModel1
                                                    = triv (fun () -> _BSMOperator.Value.subtract(A.Value, B.Value))
     let _upperDiagonal                             = triv (fun () -> _BSMOperator.Value.upperDiagonal())
     do this.Bind(_BSMOperator)
+(* 
+    casting 
+*)
+    internal new () = BSMOperatorModel1(null,null,null)
+    member internal this.Inject v = _BSMOperator.Value <- v
+    static member Cast (p : ICell<BSMOperator>) = 
+        if p :? BSMOperatorModel1 then 
+            p :?> BSMOperatorModel1
+        else
+            let o = new BSMOperatorModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -274,6 +300,19 @@ type BSMOperatorModel2
                                                    = triv (fun () -> _BSMOperator.Value.subtract(A.Value, B.Value))
     let _upperDiagonal                             = triv (fun () -> _BSMOperator.Value.upperDiagonal())
     do this.Bind(_BSMOperator)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _BSMOperator.Value <- v
+    static member Cast (p : ICell<BSMOperator>) = 
+        if p :? BSMOperatorModel2 then 
+            p :?> BSMOperatorModel2
+        else
+            let o = new BSMOperatorModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

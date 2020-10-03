@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type ArithmeticASOPathPricerModel
     let _value                                     (path : ICell<Path>)   
                                                    = triv (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticASOPathPricer)
+(* 
+    casting 
+*)
+    internal new () = ArithmeticASOPathPricerModel(null,null,null)
+    member internal this.Inject v = _ArithmeticASOPathPricer.Value <- v
+    static member Cast (p : ICell<ArithmeticASOPathPricer>) = 
+        if p :? ArithmeticASOPathPricerModel then 
+            p :?> ArithmeticASOPathPricerModel
+        else
+            let o = new ArithmeticASOPathPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -88,6 +101,19 @@ type ArithmeticASOPathPricerModel1
     let _value                                     (path : ICell<Path>)   
                                                    = triv (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticASOPathPricer)
+(* 
+    casting 
+*)
+    internal new () = ArithmeticASOPathPricerModel1(null,null,null,null)
+    member internal this.Inject v = _ArithmeticASOPathPricer.Value <- v
+    static member Cast (p : ICell<ArithmeticASOPathPricer>) = 
+        if p :? ArithmeticASOPathPricerModel1 then 
+            p :?> ArithmeticASOPathPricerModel1
+        else
+            let o = new ArithmeticASOPathPricerModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -121,6 +147,19 @@ type ArithmeticASOPathPricerModel2
     let _value                                     (path : ICell<Path>)   
                                                    = triv (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticASOPathPricer)
+(* 
+    casting 
+*)
+    internal new () = ArithmeticASOPathPricerModel2(null,null)
+    member internal this.Inject v = _ArithmeticASOPathPricer.Value <- v
+    static member Cast (p : ICell<ArithmeticASOPathPricer>) = 
+        if p :? ArithmeticASOPathPricerModel2 then 
+            p :?> ArithmeticASOPathPricerModel2
+        else
+            let o = new ArithmeticASOPathPricerModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

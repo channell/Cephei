@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -130,6 +130,19 @@ type CPICouponModel
                                                    = triv (fun () -> _CPICoupon.Value.unregisterWith(handler.Value)
                                                                      _CPICoupon.Value)
     do this.Bind(_CPICoupon)
+(* 
+    casting 
+*)
+    internal new () = CPICouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CPICoupon.Value <- v
+    static member Cast (p : ICell<CPICoupon>) = 
+        if p :? CPICouponModel then 
+            p :?> CPICouponModel
+        else
+            let o = new CPICouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

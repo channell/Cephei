@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -91,6 +91,19 @@ type GarmanKohlagenProcessModel
                                                    = triv (fun () -> _GarmanKohlagenProcess.Value.unregisterWith(handler.Value)
                                                                      _GarmanKohlagenProcess.Value)
     do this.Bind(_GarmanKohlagenProcess)
+(* 
+    casting 
+*)
+    internal new () = GarmanKohlagenProcessModel(null,null,null,null,null,null)
+    member internal this.Inject v = _GarmanKohlagenProcess.Value <- v
+    static member Cast (p : ICell<GarmanKohlagenProcess>) = 
+        if p :? GarmanKohlagenProcessModel then 
+            p :?> GarmanKohlagenProcessModel
+        else
+            let o = new GarmanKohlagenProcessModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -195,6 +208,19 @@ type GarmanKohlagenProcessModel1
                                                    = triv (fun () -> _GarmanKohlagenProcess.Value.unregisterWith(handler.Value)
                                                                      _GarmanKohlagenProcess.Value)
     do this.Bind(_GarmanKohlagenProcess)
+(* 
+    casting 
+*)
+    internal new () = GarmanKohlagenProcessModel1(null,null,null,null,null)
+    member internal this.Inject v = _GarmanKohlagenProcess.Value <- v
+    static member Cast (p : ICell<GarmanKohlagenProcess>) = 
+        if p :? GarmanKohlagenProcessModel1 then 
+            p :?> GarmanKohlagenProcessModel1
+        else
+            let o = new GarmanKohlagenProcessModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -296,6 +322,19 @@ type GarmanKohlagenProcessModel2
                                                    = triv (fun () -> _GarmanKohlagenProcess.Value.unregisterWith(handler.Value)
                                                                      _GarmanKohlagenProcess.Value)
     do this.Bind(_GarmanKohlagenProcess)
+(* 
+    casting 
+*)
+    internal new () = GarmanKohlagenProcessModel2(null,null,null,null)
+    member internal this.Inject v = _GarmanKohlagenProcess.Value <- v
+    static member Cast (p : ICell<GarmanKohlagenProcess>) = 
+        if p :? GarmanKohlagenProcessModel2 then 
+            p :?> GarmanKohlagenProcessModel2
+        else
+            let o = new GarmanKohlagenProcessModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

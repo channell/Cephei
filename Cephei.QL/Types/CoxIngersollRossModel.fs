@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -84,6 +84,19 @@ type CoxIngersollRossModel
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _CoxIngersollRoss.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_CoxIngersollRoss)
+(* 
+    casting 
+*)
+    internal new () = CoxIngersollRossModel(null,null,null,null)
+    member internal this.Inject v = _CoxIngersollRoss.Value <- v
+    static member Cast (p : ICell<CoxIngersollRoss>) = 
+        if p :? CoxIngersollRossModel then 
+            p :?> CoxIngersollRossModel
+        else
+            let o = new CoxIngersollRossModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

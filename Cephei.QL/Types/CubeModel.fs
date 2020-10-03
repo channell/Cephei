@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -73,6 +73,31 @@ type CubeModel
     let _value                                     (optionTime : ICell<double>) (swapLength : ICell<double>)   
                                                    = cell (fun () -> _Cube.Value.value(optionTime.Value, swapLength.Value))
     do this.Bind(_Cube)
+(* 
+    casting 
+*)
+    internal new () = CubeModel(null)
+    member internal this.Inject v = _Cube.Value <- v
+    static member Cast (p : ICell<Cube>) = 
+        if p :? CubeModel then 
+            p :?> CubeModel
+        else
+            let o = new CubeModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = CubeModel(null)
+    static member Cast (p : ICell<Cube>) = 
+        if p :? CubeModel then 
+            p :?> CubeModel
+        else
+            let o = new CubeModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -157,6 +182,31 @@ type CubeModel1
     let _value                                     (optionTime : ICell<double>) (swapLength : ICell<double>)   
                                                    = cell (fun () -> _Cube.Value.value(optionTime.Value, swapLength.Value))
     do this.Bind(_Cube)
+(* 
+    casting 
+*)
+    internal new () = CubeModel1(null,null,null,null,null,null,null)
+    member internal this.Inject v = _Cube.Value <- v
+    static member Cast (p : ICell<Cube>) = 
+        if p :? CubeModel1 then 
+            p :?> CubeModel1
+        else
+            let o = new CubeModel1 ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = CubeModel1(null,null,null,null,null,null,null)
+    static member Cast (p : ICell<Cube>) = 
+        if p :? CubeModel1 then 
+            p :?> CubeModel1
+        else
+            let o = new CubeModel1 ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -232,6 +282,31 @@ type CubeModel2
     let _value                                     (optionTime : ICell<double>) (swapLength : ICell<double>)   
                                                    = cell (fun () -> _Cube.Value.value(optionTime.Value, swapLength.Value))
     do this.Bind(_Cube)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Cube.Value <- v
+    static member Cast (p : ICell<Cube>) = 
+        if p :? CubeModel2 then 
+            p :?> CubeModel2
+        else
+            let o = new CubeModel2 ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<Cube>) = 
+        if p :? CubeModel2 then 
+            p :?> CubeModel2
+        else
+            let o = new CubeModel2 ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -61,6 +61,19 @@ type BoundaryConditionSchemeHelperModel
                                                    = triv (fun () -> _BoundaryConditionSchemeHelper.Value.setTime(t.Value)
                                                                      _BoundaryConditionSchemeHelper.Value)
     do this.Bind(_BoundaryConditionSchemeHelper)
+(* 
+    casting 
+*)
+    internal new () = BoundaryConditionSchemeHelperModel(null)
+    member internal this.Inject v = _BoundaryConditionSchemeHelper.Value <- v
+    static member Cast (p : ICell<BoundaryConditionSchemeHelper>) = 
+        if p :? BoundaryConditionSchemeHelperModel then 
+            p :?> BoundaryConditionSchemeHelperModel
+        else
+            let o = new BoundaryConditionSchemeHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

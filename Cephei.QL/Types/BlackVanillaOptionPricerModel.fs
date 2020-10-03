@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type BlackVanillaOptionPricerModel
     let _value                                     (strike : ICell<double>) (optionType : ICell<Option.Type>) (deflator : ICell<double>)   
                                                    = triv (fun () -> _BlackVanillaOptionPricer.Value.value(strike.Value, optionType.Value, deflator.Value))
     do this.Bind(_BlackVanillaOptionPricer)
+(* 
+    casting 
+*)
+    internal new () = BlackVanillaOptionPricerModel(null,null,null,null)
+    member internal this.Inject v = _BlackVanillaOptionPricer.Value <- v
+    static member Cast (p : ICell<BlackVanillaOptionPricer>) = 
+        if p :? BlackVanillaOptionPricerModel then 
+            p :?> BlackVanillaOptionPricerModel
+        else
+            let o = new BlackVanillaOptionPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type HestonHullWhitePathPricerModel
     let _value                                     (path : ICell<IPath>)   
                                                    = triv (fun () -> _HestonHullWhitePathPricer.Value.value(path.Value))
     do this.Bind(_HestonHullWhitePathPricer)
+(* 
+    casting 
+*)
+    internal new () = HestonHullWhitePathPricerModel(null,null,null)
+    member internal this.Inject v = _HestonHullWhitePathPricer.Value <- v
+    static member Cast (p : ICell<HestonHullWhitePathPricer>) = 
+        if p :? HestonHullWhitePathPricerModel then 
+            p :?> HestonHullWhitePathPricerModel
+        else
+            let o = new HestonHullWhitePathPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

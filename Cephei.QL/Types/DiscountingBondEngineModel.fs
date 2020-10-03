@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,6 +49,19 @@ type DiscountingBondEngineModel
     let _DiscountingBondEngine                     = cell (fun () -> new DiscountingBondEngine (discountCurve.Value, includeSettlementDateFlows.Value))
     let _discountCurve                             = triv (fun () -> _DiscountingBondEngine.Value.discountCurve())
     do this.Bind(_DiscountingBondEngine)
+(* 
+    casting 
+*)
+    internal new () = DiscountingBondEngineModel(null,null)
+    member internal this.Inject v = _DiscountingBondEngine.Value <- v
+    static member Cast (p : ICell<DiscountingBondEngine>) = 
+        if p :? DiscountingBondEngineModel then 
+            p :?> DiscountingBondEngineModel
+        else
+            let o = new DiscountingBondEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

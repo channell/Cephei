@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -70,6 +70,19 @@ type StatsHolderModel
     let _variance                                  = triv (fun () -> _StatsHolder.Value.variance())
     let _weightSum                                 = triv (fun () -> _StatsHolder.Value.weightSum())
     do this.Bind(_StatsHolder)
+(* 
+    casting 
+*)
+    internal new () = StatsHolderModel(null,null)
+    member internal this.Inject v = _StatsHolder.Value <- v
+    static member Cast (p : ICell<StatsHolder>) = 
+        if p :? StatsHolderModel then 
+            p :?> StatsHolderModel
+        else
+            let o = new StatsHolderModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -133,6 +146,19 @@ type StatsHolderModel1
     let _variance                                  = triv (fun () -> _StatsHolder.Value.variance())
     let _weightSum                                 = triv (fun () -> _StatsHolder.Value.weightSum())
     do this.Bind(_StatsHolder)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _StatsHolder.Value <- v
+    static member Cast (p : ICell<StatsHolder>) = 
+        if p :? StatsHolderModel1 then 
+            p :?> StatsHolderModel1
+        else
+            let o = new StatsHolderModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type CapModel
                                                                      _Cap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Cap).valuationDate())
     do this.Bind(_Cap)
+(* 
+    casting 
+*)
+    internal new () = CapModel(null,null,null,null)
+    member internal this.Inject v = _Cap.Value <- v
+    static member Cast (p : ICell<Cap>) = 
+        if p :? CapModel then 
+            p :?> CapModel
+        else
+            let o = new CapModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

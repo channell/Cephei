@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type JPYLiborModel
                                                    = triv (fun () -> _JPYLibor.Value.unregisterWith(handler.Value)
                                                                      _JPYLibor.Value)
     do this.Bind(_JPYLibor)
+(* 
+    casting 
+*)
+    internal new () = JPYLiborModel(null)
+    member internal this.Inject v = _JPYLibor.Value <- v
+    static member Cast (p : ICell<JPYLibor>) = 
+        if p :? JPYLiborModel then 
+            p :?> JPYLiborModel
+        else
+            let o = new JPYLiborModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -212,6 +225,19 @@ type JPYLiborModel1
                                                    = triv (fun () -> _JPYLibor.Value.unregisterWith(handler.Value)
                                                                      _JPYLibor.Value)
     do this.Bind(_JPYLibor)
+(* 
+    casting 
+*)
+    internal new () = JPYLiborModel1(null,null)
+    member internal this.Inject v = _JPYLibor.Value <- v
+    static member Cast (p : ICell<JPYLibor>) = 
+        if p :? JPYLiborModel1 then 
+            p :?> JPYLiborModel1
+        else
+            let o = new JPYLiborModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

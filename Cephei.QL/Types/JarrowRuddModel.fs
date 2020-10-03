@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type JarrowRuddModel
                                                    = triv (fun () -> _JarrowRudd.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _JarrowRudd.Value.columns())
     do this.Bind(_JarrowRudd)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _JarrowRudd.Value <- v
+    static member Cast (p : ICell<JarrowRudd>) = 
+        if p :? JarrowRuddModel then 
+            p :?> JarrowRuddModel
+        else
+            let o = new JarrowRuddModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -105,6 +118,19 @@ type JarrowRuddModel1
                                                    = triv (fun () -> _JarrowRudd.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _JarrowRudd.Value.columns())
     do this.Bind(_JarrowRudd)
+(* 
+    casting 
+*)
+    internal new () = JarrowRuddModel1(null,null,null,null)
+    member internal this.Inject v = _JarrowRudd.Value <- v
+    static member Cast (p : ICell<JarrowRudd>) = 
+        if p :? JarrowRuddModel1 then 
+            p :?> JarrowRuddModel1
+        else
+            let o = new JarrowRuddModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

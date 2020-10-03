@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -61,6 +61,19 @@ type BlackVarianceCurveModel
                                                    = triv (fun () -> _BlackVarianceCurve.Value.setInterpolation(i.Value)
                                                                      _BlackVarianceCurve.Value)
     do this.Bind(_BlackVarianceCurve)
+(* 
+    casting 
+*)
+    internal new () = BlackVarianceCurveModel(null,null,null,null,null)
+    member internal this.Inject v = _BlackVarianceCurve.Value <- v
+    static member Cast (p : ICell<BlackVarianceCurve>) = 
+        if p :? BlackVarianceCurveModel then 
+            p :?> BlackVarianceCurveModel
+        else
+            let o = new BlackVarianceCurveModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

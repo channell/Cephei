@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -73,6 +73,19 @@ type BondHelperModel
     let _update                                    = triv (fun () -> _BondHelper.Value.update()
                                                                      _BondHelper.Value)
     do this.Bind(_BondHelper)
+(* 
+    casting 
+*)
+    internal new () = BondHelperModel(null,null,null)
+    member internal this.Inject v = _BondHelper.Value <- v
+    static member Cast (p : ICell<BondHelper>) = 
+        if p :? BondHelperModel then 
+            p :?> BondHelperModel
+        else
+            let o = new BondHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

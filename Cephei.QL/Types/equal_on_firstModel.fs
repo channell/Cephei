@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -45,6 +45,19 @@ type equal_on_firstModel
     let _Equals                                    (p1 : ICell<Pair<Nullable<double>,Nullable<double>>>) (p2 : ICell<Pair<Nullable<double>,Nullable<double>>>)   
                                                    = triv (fun () -> _equal_on_first.Value.Equals(p1.Value, p2.Value))
     do this.Bind(_equal_on_first)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _equal_on_first.Value <- v
+    static member Cast (p : ICell<equal_on_first>) = 
+        if p :? equal_on_firstModel then 
+            p :?> equal_on_firstModel
+        else
+            let o = new equal_on_firstModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

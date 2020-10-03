@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,31 @@ type CalculatorModel
                                                    = cell (fun () -> _Calculator.Value.visit(payoff.Value)
                                                                      _Calculator.Value)
     do this.Bind(_Calculator)
+(* 
+    casting 
+*)
+    internal new () = CalculatorModel(null)
+    member internal this.Inject v = _Calculator.Value <- v
+    static member Cast (p : ICell<Calculator>) = 
+        if p :? CalculatorModel then 
+            p :?> CalculatorModel
+        else
+            let o = new CalculatorModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = CalculatorModel(null)
+    static member Cast (p : ICell<Calculator>) = 
+        if p :? CalculatorModel then 
+            p :?> CalculatorModel
+        else
+            let o = new CalculatorModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

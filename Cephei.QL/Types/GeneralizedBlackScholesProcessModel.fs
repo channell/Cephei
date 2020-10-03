@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -91,6 +91,19 @@ type GeneralizedBlackScholesProcessModel
                                                    = triv (fun () -> _GeneralizedBlackScholesProcess.Value.unregisterWith(handler.Value)
                                                                      _GeneralizedBlackScholesProcess.Value)
     do this.Bind(_GeneralizedBlackScholesProcess)
+(* 
+    casting 
+*)
+    internal new () = GeneralizedBlackScholesProcessModel(null,null,null,null,null,null)
+    member internal this.Inject v = _GeneralizedBlackScholesProcess.Value <- v
+    static member Cast (p : ICell<GeneralizedBlackScholesProcess>) = 
+        if p :? GeneralizedBlackScholesProcessModel then 
+            p :?> GeneralizedBlackScholesProcessModel
+        else
+            let o = new GeneralizedBlackScholesProcessModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -195,6 +208,19 @@ type GeneralizedBlackScholesProcessModel1
                                                    = triv (fun () -> _GeneralizedBlackScholesProcess.Value.unregisterWith(handler.Value)
                                                                      _GeneralizedBlackScholesProcess.Value)
     do this.Bind(_GeneralizedBlackScholesProcess)
+(* 
+    casting 
+*)
+    internal new () = GeneralizedBlackScholesProcessModel1(null,null,null,null,null)
+    member internal this.Inject v = _GeneralizedBlackScholesProcess.Value <- v
+    static member Cast (p : ICell<GeneralizedBlackScholesProcess>) = 
+        if p :? GeneralizedBlackScholesProcessModel1 then 
+            p :?> GeneralizedBlackScholesProcessModel1
+        else
+            let o = new GeneralizedBlackScholesProcessModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,6 +65,19 @@ type SoftCallabilityModel
                                                    = triv (fun () -> _SoftCallability.Value.unregisterWith(handler.Value)
                                                                      _SoftCallability.Value)
     do this.Bind(_SoftCallability)
+(* 
+    casting 
+*)
+    internal new () = SoftCallabilityModel(null,null,null)
+    member internal this.Inject v = _SoftCallability.Value <- v
+    static member Cast (p : ICell<SoftCallability>) = 
+        if p :? SoftCallabilityModel then 
+            p :?> SoftCallabilityModel
+        else
+            let o = new SoftCallabilityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

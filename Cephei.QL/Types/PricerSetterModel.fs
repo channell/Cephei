@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -82,6 +82,19 @@ type PricerSetterModel
                                                    = triv (fun () -> _PricerSetter.Value.visit(c.Value)
                                                                      _PricerSetter.Value)
     do this.Bind(_PricerSetter)
+(* 
+    casting 
+*)
+    internal new () = PricerSetterModel(null)
+    member internal this.Inject v = _PricerSetter.Value <- v
+    static member Cast (p : ICell<PricerSetter>) = 
+        if p :? PricerSetterModel then 
+            p :?> PricerSetterModel
+        else
+            let o = new PricerSetterModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

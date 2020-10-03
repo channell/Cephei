@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -72,6 +72,19 @@ type DiscretizedDiscountBondModel
     let _time                                      = triv (fun () -> _DiscretizedDiscountBond.Value.time())
     let _values                                    = triv (fun () -> _DiscretizedDiscountBond.Value.values())
     do this.Bind(_DiscretizedDiscountBond)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _DiscretizedDiscountBond.Value <- v
+    static member Cast (p : ICell<DiscretizedDiscountBond>) = 
+        if p :? DiscretizedDiscountBondModel then 
+            p :?> DiscretizedDiscountBondModel
+        else
+            let o = new DiscretizedDiscountBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

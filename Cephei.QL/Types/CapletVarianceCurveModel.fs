@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type CapletVarianceCurveModel
                                                                      _CapletVarianceCurve.Value)
     let _extrapolate                               = triv (fun () -> _CapletVarianceCurve.Value.extrapolate)
     do this.Bind(_CapletVarianceCurve)
+(* 
+    casting 
+*)
+    internal new () = CapletVarianceCurveModel(null,null,null,null)
+    member internal this.Inject v = _CapletVarianceCurve.Value <- v
+    static member Cast (p : ICell<CapletVarianceCurve>) = 
+        if p :? CapletVarianceCurveModel then 
+            p :?> CapletVarianceCurveModel
+        else
+            let o = new CapletVarianceCurveModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

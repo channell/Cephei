@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,31 @@ type DividendAdderModel
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _DividendAdder.Value.value(x.Value))
     do this.Bind(_DividendAdder)
+(* 
+    casting 
+*)
+    internal new () = DividendAdderModel(null)
+    member internal this.Inject v = _DividendAdder.Value <- v
+    static member Cast (p : ICell<DividendAdder>) = 
+        if p :? DividendAdderModel then 
+            p :?> DividendAdderModel
+        else
+            let o = new DividendAdderModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = DividendAdderModel(null)
+    static member Cast (p : ICell<DividendAdder>) = 
+        if p :? DividendAdderModel then 
+            p :?> DividendAdderModel
+        else
+            let o = new DividendAdderModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

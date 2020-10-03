@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -125,6 +125,19 @@ type CallableFixedRateBondModel
                                                                      _CallableFixedRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CallableFixedRateBond).valuationDate())
     do this.Bind(_CallableFixedRateBond)
+(* 
+    casting 
+*)
+    internal new () = CallableFixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CallableFixedRateBond.Value <- v
+    static member Cast (p : ICell<CallableFixedRateBond>) = 
+        if p :? CallableFixedRateBondModel then 
+            p :?> CallableFixedRateBondModel
+        else
+            let o = new CallableFixedRateBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -45,6 +45,19 @@ type BackwardflatLinearModel
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xEnd : ICell<int>) (yBegin : ICell<Generic.List<double>>) (yEnd : ICell<int>) (z : ICell<Matrix>)   
                                                    = triv (fun () -> _BackwardflatLinear.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value, yEnd.Value, z.Value))
     do this.Bind(_BackwardflatLinear)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _BackwardflatLinear.Value <- v
+    static member Cast (p : ICell<BackwardflatLinear>) = 
+        if p :? BackwardflatLinearModel then 
+            p :?> BackwardflatLinearModel
+        else
+            let o = new BackwardflatLinearModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

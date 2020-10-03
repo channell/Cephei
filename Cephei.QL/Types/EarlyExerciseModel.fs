@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type EarlyExerciseModel
     let _lastDate                                  = triv (fun () -> _EarlyExercise.Value.lastDate())
     let _type                                      = triv (fun () -> _EarlyExercise.Value.TYPE())
     do this.Bind(_EarlyExercise)
+(* 
+    casting 
+*)
+    internal new () = EarlyExerciseModel(null,null)
+    member internal this.Inject v = _EarlyExercise.Value <- v
+    static member Cast (p : ICell<EarlyExercise>) = 
+        if p :? EarlyExerciseModel then 
+            p :?> EarlyExerciseModel
+        else
+            let o = new EarlyExerciseModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

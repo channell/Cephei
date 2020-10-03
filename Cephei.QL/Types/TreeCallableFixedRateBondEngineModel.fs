@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type TreeCallableFixedRateBondEngineModel
                                                    = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.unregisterWith(handler.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
     do this.Bind(_TreeCallableFixedRateBondEngine)
+(* 
+    casting 
+*)
+    internal new () = TreeCallableFixedRateBondEngineModel(null,null,null)
+    member internal this.Inject v = _TreeCallableFixedRateBondEngine.Value <- v
+    static member Cast (p : ICell<TreeCallableFixedRateBondEngine>) = 
+        if p :? TreeCallableFixedRateBondEngineModel then 
+            p :?> TreeCallableFixedRateBondEngineModel
+        else
+            let o = new TreeCallableFixedRateBondEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -114,6 +127,19 @@ type TreeCallableFixedRateBondEngineModel1
                                                    = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.unregisterWith(handler.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
     do this.Bind(_TreeCallableFixedRateBondEngine)
+(* 
+    casting 
+*)
+    internal new () = TreeCallableFixedRateBondEngineModel1(null,null,null)
+    member internal this.Inject v = _TreeCallableFixedRateBondEngine.Value <- v
+    static member Cast (p : ICell<TreeCallableFixedRateBondEngine>) = 
+        if p :? TreeCallableFixedRateBondEngineModel1 then 
+            p :?> TreeCallableFixedRateBondEngineModel1
+        else
+            let o = new TreeCallableFixedRateBondEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type AnalyticBinaryBarrierEngine_helperModel
     let _payoffAtExpiry                            (spot : ICell<double>) (variance : ICell<double>) (discount : ICell<double>)   
                                                    = triv (fun () -> _AnalyticBinaryBarrierEngine_helper.Value.payoffAtExpiry(spot.Value, variance.Value, discount.Value))
     do this.Bind(_AnalyticBinaryBarrierEngine_helper)
+(* 
+    casting 
+*)
+    internal new () = AnalyticBinaryBarrierEngine_helperModel(null,null,null,null)
+    member internal this.Inject v = _AnalyticBinaryBarrierEngine_helper.Value <- v
+    static member Cast (p : ICell<AnalyticBinaryBarrierEngine_helper>) = 
+        if p :? AnalyticBinaryBarrierEngine_helperModel then 
+            p :?> AnalyticBinaryBarrierEngine_helperModel
+        else
+            let o = new AnalyticBinaryBarrierEngine_helperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

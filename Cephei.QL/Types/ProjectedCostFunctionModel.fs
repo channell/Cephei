@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -69,6 +69,19 @@ type ProjectedCostFunctionModel
     let _valuesAndJacobian                         (jac : ICell<Matrix>) (x : ICell<Vector>)   
                                                    = triv (fun () -> _ProjectedCostFunction.Value.valuesAndJacobian(jac.Value, x.Value))
     do this.Bind(_ProjectedCostFunction)
+(* 
+    casting 
+*)
+    internal new () = ProjectedCostFunctionModel(null,null,null)
+    member internal this.Inject v = _ProjectedCostFunction.Value <- v
+    static member Cast (p : ICell<ProjectedCostFunction>) = 
+        if p :? ProjectedCostFunctionModel then 
+            p :?> ProjectedCostFunctionModel
+        else
+            let o = new ProjectedCostFunctionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

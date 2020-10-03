@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type ContinuousFixedLookbackOptionModel
                                                                      _ContinuousFixedLookbackOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousFixedLookbackOption).valuationDate())
     do this.Bind(_ContinuousFixedLookbackOption)
+(* 
+    casting 
+*)
+    internal new () = ContinuousFixedLookbackOptionModel(null,null,null,null,null)
+    member internal this.Inject v = _ContinuousFixedLookbackOption.Value <- v
+    static member Cast (p : ICell<ContinuousFixedLookbackOption>) = 
+        if p :? ContinuousFixedLookbackOptionModel then 
+            p :?> ContinuousFixedLookbackOptionModel
+        else
+            let o = new ContinuousFixedLookbackOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

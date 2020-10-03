@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type LeisenReimerModel
                                                    = triv (fun () -> _LeisenReimer.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _LeisenReimer.Value.columns())
     do this.Bind(_LeisenReimer)
+(* 
+    casting 
+*)
+    internal new () = LeisenReimerModel(null,null,null,null)
+    member internal this.Inject v = _LeisenReimer.Value <- v
+    static member Cast (p : ICell<LeisenReimer>) = 
+        if p :? LeisenReimerModel then 
+            p :?> LeisenReimerModel
+        else
+            let o = new LeisenReimerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -109,6 +122,19 @@ type LeisenReimerModel1
                                                    = triv (fun () -> _LeisenReimer.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _LeisenReimer.Value.columns())
     do this.Bind(_LeisenReimer)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _LeisenReimer.Value <- v
+    static member Cast (p : ICell<LeisenReimer>) = 
+        if p :? LeisenReimerModel1 then 
+            p :?> LeisenReimerModel1
+        else
+            let o = new LeisenReimerModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

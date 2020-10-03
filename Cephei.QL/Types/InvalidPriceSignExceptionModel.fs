@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -43,6 +43,19 @@ type InvalidPriceSignExceptionModel
 *)
     let _InvalidPriceSignException                 = cell (fun () -> new InvalidPriceSignException ())
     do this.Bind(_InvalidPriceSignException)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _InvalidPriceSignException.Value <- v
+    static member Cast (p : ICell<InvalidPriceSignException>) = 
+        if p :? InvalidPriceSignExceptionModel then 
+            p :?> InvalidPriceSignExceptionModel
+        else
+            let o = new InvalidPriceSignExceptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -66,6 +79,19 @@ type InvalidPriceSignExceptionModel1
 *)
     let _InvalidPriceSignException                 = cell (fun () -> new InvalidPriceSignException (message.Value))
     do this.Bind(_InvalidPriceSignException)
+(* 
+    casting 
+*)
+    internal new () = InvalidPriceSignExceptionModel1(null)
+    member internal this.Inject v = _InvalidPriceSignException.Value <- v
+    static member Cast (p : ICell<InvalidPriceSignException>) = 
+        if p :? InvalidPriceSignExceptionModel1 then 
+            p :?> InvalidPriceSignExceptionModel1
+        else
+            let o = new InvalidPriceSignExceptionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -92,6 +118,19 @@ type InvalidPriceSignExceptionModel2
 *)
     let _InvalidPriceSignException                 = cell (fun () -> new InvalidPriceSignException (message.Value, inner.Value))
     do this.Bind(_InvalidPriceSignException)
+(* 
+    casting 
+*)
+    internal new () = InvalidPriceSignExceptionModel2(null,null)
+    member internal this.Inject v = _InvalidPriceSignException.Value <- v
+    static member Cast (p : ICell<InvalidPriceSignException>) = 
+        if p :? InvalidPriceSignExceptionModel2 then 
+            p :?> InvalidPriceSignExceptionModel2
+        else
+            let o = new InvalidPriceSignExceptionModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

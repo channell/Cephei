@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -82,6 +82,19 @@ type ImpliedTermStructureModel
                                                                      _ImpliedTermStructure.Value)
     let _extrapolate                               = triv (fun () -> _ImpliedTermStructure.Value.extrapolate)
     do this.Bind(_ImpliedTermStructure)
+(* 
+    casting 
+*)
+    internal new () = ImpliedTermStructureModel(null,null)
+    member internal this.Inject v = _ImpliedTermStructure.Value <- v
+    static member Cast (p : ICell<ImpliedTermStructure>) = 
+        if p :? ImpliedTermStructureModel then 
+            p :?> ImpliedTermStructureModel
+        else
+            let o = new ImpliedTermStructureModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

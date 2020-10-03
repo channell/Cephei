@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -87,6 +87,19 @@ type DividendBarrierOptionModel
                                                                      _DividendBarrierOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _DividendBarrierOption).valuationDate())
     do this.Bind(_DividendBarrierOption)
+(* 
+    casting 
+*)
+    internal new () = DividendBarrierOptionModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _DividendBarrierOption.Value <- v
+    static member Cast (p : ICell<DividendBarrierOption>) = 
+        if p :? DividendBarrierOptionModel then 
+            p :?> DividendBarrierOptionModel
+        else
+            let o = new DividendBarrierOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

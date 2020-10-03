@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -132,6 +132,19 @@ type CappedFlooredCmsSpreadCouponModel
                                                    = triv (fun () -> _CappedFlooredCmsSpreadCoupon.Value.unregisterWith(handler.Value)
                                                                      _CappedFlooredCmsSpreadCoupon.Value)
     do this.Bind(_CappedFlooredCmsSpreadCoupon)
+(* 
+    casting 
+*)
+    internal new () = CappedFlooredCmsSpreadCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CappedFlooredCmsSpreadCoupon.Value <- v
+    static member Cast (p : ICell<CappedFlooredCmsSpreadCoupon>) = 
+        if p :? CappedFlooredCmsSpreadCouponModel then 
+            p :?> CappedFlooredCmsSpreadCouponModel
+        else
+            let o = new CappedFlooredCmsSpreadCouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -281,6 +294,19 @@ type CappedFlooredCmsSpreadCouponModel1
                                                    = triv (fun () -> _CappedFlooredCmsSpreadCoupon.Value.unregisterWith(handler.Value)
                                                                      _CappedFlooredCmsSpreadCoupon.Value)
     do this.Bind(_CappedFlooredCmsSpreadCoupon)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _CappedFlooredCmsSpreadCoupon.Value <- v
+    static member Cast (p : ICell<CappedFlooredCmsSpreadCoupon>) = 
+        if p :? CappedFlooredCmsSpreadCouponModel1 then 
+            p :?> CappedFlooredCmsSpreadCouponModel1
+        else
+            let o = new CappedFlooredCmsSpreadCouponModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

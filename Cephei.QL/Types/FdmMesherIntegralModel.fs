@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type FdmMesherIntegralModel
     let _integrate                                 (f : ICell<Vector>)   
                                                    = triv (fun () -> _FdmMesherIntegral.Value.integrate(f.Value))
     do this.Bind(_FdmMesherIntegral)
+(* 
+    casting 
+*)
+    internal new () = FdmMesherIntegralModel(null,null)
+    member internal this.Inject v = _FdmMesherIntegral.Value <- v
+    static member Cast (p : ICell<FdmMesherIntegral>) = 
+        if p :? FdmMesherIntegralModel then 
+            p :?> FdmMesherIntegralModel
+        else
+            let o = new FdmMesherIntegralModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

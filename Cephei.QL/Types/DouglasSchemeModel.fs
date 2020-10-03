@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type DouglasSchemeModel
                                                    = triv (fun () -> _DouglasScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _DouglasScheme.Value)
     do this.Bind(_DouglasScheme)
+(* 
+    casting 
+*)
+    internal new () = DouglasSchemeModel(null,null,null)
+    member internal this.Inject v = _DouglasScheme.Value <- v
+    static member Cast (p : ICell<DouglasScheme>) = 
+        if p :? DouglasSchemeModel then 
+            p :?> DouglasSchemeModel
+        else
+            let o = new DouglasSchemeModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -95,6 +108,19 @@ type DouglasSchemeModel1
                                                    = triv (fun () -> _DouglasScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _DouglasScheme.Value)
     do this.Bind(_DouglasScheme)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _DouglasScheme.Value <- v
+    static member Cast (p : ICell<DouglasScheme>) = 
+        if p :? DouglasSchemeModel1 then 
+            p :?> DouglasSchemeModel1
+        else
+            let o = new DouglasSchemeModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

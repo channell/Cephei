@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -107,6 +107,19 @@ type CatBondModel
                                                                      _CatBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CatBond).valuationDate())
     do this.Bind(_CatBond)
+(* 
+    casting 
+*)
+    internal new () = CatBondModel(null,null,null,null,null,null)
+    member internal this.Inject v = _CatBond.Value <- v
+    static member Cast (p : ICell<CatBond>) = 
+        if p :? CatBondModel then 
+            p :?> CatBondModel
+        else
+            let o = new CatBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

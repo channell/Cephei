@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -96,6 +96,19 @@ type PiecewiseTimeDependentHestonModelModel
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _PiecewiseTimeDependentHestonModel.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_PiecewiseTimeDependentHestonModel)
+(* 
+    casting 
+*)
+    internal new () = PiecewiseTimeDependentHestonModelModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _PiecewiseTimeDependentHestonModel.Value <- v
+    static member Cast (p : ICell<PiecewiseTimeDependentHestonModel>) = 
+        if p :? PiecewiseTimeDependentHestonModelModel then 
+            p :?> PiecewiseTimeDependentHestonModelModel
+        else
+            let o = new PiecewiseTimeDependentHestonModelModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

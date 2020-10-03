@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type Uniform1dMesherModel
     let _locations                                 = triv (fun () -> _Uniform1dMesher.Value.locations())
     let _size                                      = triv (fun () -> _Uniform1dMesher.Value.size())
     do this.Bind(_Uniform1dMesher)
+(* 
+    casting 
+*)
+    internal new () = Uniform1dMesherModel(null,null,null)
+    member internal this.Inject v = _Uniform1dMesher.Value <- v
+    static member Cast (p : ICell<Uniform1dMesher>) = 
+        if p :? Uniform1dMesherModel then 
+            p :?> Uniform1dMesherModel
+        else
+            let o = new Uniform1dMesherModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type PdeShortRateModel
                                                    = triv (fun () -> _PdeShortRate.Value.generateOperator(t.Value, tg.Value, L.Value)
                                                                      _PdeShortRate.Value)
     do this.Bind(_PdeShortRate)
+(* 
+    casting 
+*)
+    internal new () = PdeShortRateModel(null)
+    member internal this.Inject v = _PdeShortRate.Value <- v
+    static member Cast (p : ICell<PdeShortRate>) = 
+        if p :? PdeShortRateModel then 
+            p :?> PdeShortRateModel
+        else
+            let o = new PdeShortRateModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -99,6 +112,19 @@ type PdeShortRateModel1
                                                    = triv (fun () -> _PdeShortRate.Value.generateOperator(t.Value, tg.Value, L.Value)
                                                                      _PdeShortRate.Value)
     do this.Bind(_PdeShortRate)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _PdeShortRate.Value <- v
+    static member Cast (p : ICell<PdeShortRate>) = 
+        if p :? PdeShortRateModel1 then 
+            p :?> PdeShortRateModel1
+        else
+            let o = new PdeShortRateModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

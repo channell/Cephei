@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type Black76SpecModel
     let _vega                                      (strike : ICell<double>) (atmForward : ICell<double>) (stdDev : ICell<double>) (exerciseTime : ICell<double>) (annuity : ICell<double>) (displacement : ICell<double>)   
                                                    = triv (fun () -> _Black76Spec.Value.vega(strike.Value, atmForward.Value, stdDev.Value, exerciseTime.Value, annuity.Value, displacement.Value))
     do this.Bind(_Black76Spec)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Black76Spec.Value <- v
+    static member Cast (p : ICell<Black76Spec>) = 
+        if p :? Black76SpecModel then 
+            p :?> Black76SpecModel
+        else
+            let o = new Black76SpecModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

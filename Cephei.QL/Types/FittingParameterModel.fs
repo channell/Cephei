@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -67,6 +67,31 @@ type FittingParameterModel
     let _value                                     (t : ICell<double>)   
                                                    = cell (fun () -> _FittingParameter.Value.value(t.Value))
     do this.Bind(_FittingParameter)
+(* 
+    casting 
+*)
+    internal new () = FittingParameterModel(null,null,null,null,null,null)
+    member internal this.Inject v = _FittingParameter.Value <- v
+    static member Cast (p : ICell<FittingParameter>) = 
+        if p :? FittingParameterModel then 
+            p :?> FittingParameterModel
+        else
+            let o = new FittingParameterModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = FittingParameterModel(null,null,null,null,null,null)
+    static member Cast (p : ICell<FittingParameter>) = 
+        if p :? FittingParameterModel then 
+            p :?> FittingParameterModel
+        else
+            let o = new FittingParameterModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

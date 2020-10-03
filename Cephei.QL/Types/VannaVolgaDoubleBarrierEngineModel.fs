@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -78,6 +78,19 @@ type VannaVolgaDoubleBarrierEngineModel
     let _update                                    = triv (fun () -> _VannaVolgaDoubleBarrierEngine.Value.update()
                                                                      _VannaVolgaDoubleBarrierEngine.Value)
     do this.Bind(_VannaVolgaDoubleBarrierEngine)
+(* 
+    casting 
+*)
+    internal new () = VannaVolgaDoubleBarrierEngineModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _VannaVolgaDoubleBarrierEngine.Value <- v
+    static member Cast (p : ICell<VannaVolgaDoubleBarrierEngine>) = 
+        if p :? VannaVolgaDoubleBarrierEngineModel then 
+            p :?> VannaVolgaDoubleBarrierEngineModel
+        else
+            let o = new VannaVolgaDoubleBarrierEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

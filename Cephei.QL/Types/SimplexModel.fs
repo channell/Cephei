@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type SimplexModel
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _Simplex.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_Simplex)
+(* 
+    casting 
+*)
+    internal new () = SimplexModel(null)
+    member internal this.Inject v = _Simplex.Value <- v
+    static member Cast (p : ICell<Simplex>) = 
+        if p :? SimplexModel then 
+            p :?> SimplexModel
+        else
+            let o = new SimplexModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

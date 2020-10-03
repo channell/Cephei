@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -97,6 +97,19 @@ type HestonProcessModel
     let _update                                    = triv (fun () -> _HestonProcess.Value.update()
                                                                      _HestonProcess.Value)
     do this.Bind(_HestonProcess)
+(* 
+    casting 
+*)
+    internal new () = HestonProcessModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _HestonProcess.Value <- v
+    static member Cast (p : ICell<HestonProcess>) = 
+        if p :? HestonProcessModel then 
+            p :?> HestonProcessModel
+        else
+            let o = new HestonProcessModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

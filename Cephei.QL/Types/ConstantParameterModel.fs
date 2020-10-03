@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type ConstantParameterModel
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _ConstantParameter.Value.value(t.Value))
     do this.Bind(_ConstantParameter)
+(* 
+    casting 
+*)
+    internal new () = ConstantParameterModel(null)
+    member internal this.Inject v = _ConstantParameter.Value <- v
+    static member Cast (p : ICell<ConstantParameter>) = 
+        if p :? ConstantParameterModel then 
+            p :?> ConstantParameterModel
+        else
+            let o = new ConstantParameterModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -104,6 +117,19 @@ type ConstantParameterModel1
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _ConstantParameter.Value.value(t.Value))
     do this.Bind(_ConstantParameter)
+(* 
+    casting 
+*)
+    internal new () = ConstantParameterModel1(null,null)
+    member internal this.Inject v = _ConstantParameter.Value <- v
+    static member Cast (p : ICell<ConstantParameter>) = 
+        if p :? ConstantParameterModel1 then 
+            p :?> ConstantParameterModel1
+        else
+            let o = new ConstantParameterModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

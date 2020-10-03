@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type EverywhereConstantHelperModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _EverywhereConstantHelper.Value.value(x.Value))
     do this.Bind(_EverywhereConstantHelper)
+(* 
+    casting 
+*)
+    internal new () = EverywhereConstantHelperModel(null,null,null)
+    member internal this.Inject v = _EverywhereConstantHelper.Value <- v
+    static member Cast (p : ICell<EverywhereConstantHelper>) = 
+        if p :? EverywhereConstantHelperModel then 
+            p :?> EverywhereConstantHelperModel
+        else
+            let o = new EverywhereConstantHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

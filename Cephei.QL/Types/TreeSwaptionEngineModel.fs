@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type TreeSwaptionEngineModel
                                                    = triv (fun () -> _TreeSwaptionEngine.Value.unregisterWith(handler.Value)
                                                                      _TreeSwaptionEngine.Value)
     do this.Bind(_TreeSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = TreeSwaptionEngineModel(null,null,null)
+    member internal this.Inject v = _TreeSwaptionEngine.Value <- v
+    static member Cast (p : ICell<TreeSwaptionEngine>) = 
+        if p :? TreeSwaptionEngineModel then 
+            p :?> TreeSwaptionEngineModel
+        else
+            let o = new TreeSwaptionEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -112,6 +125,19 @@ type TreeSwaptionEngineModel1
                                                    = triv (fun () -> _TreeSwaptionEngine.Value.unregisterWith(handler.Value)
                                                                      _TreeSwaptionEngine.Value)
     do this.Bind(_TreeSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = TreeSwaptionEngineModel1(null,null)
+    member internal this.Inject v = _TreeSwaptionEngine.Value <- v
+    static member Cast (p : ICell<TreeSwaptionEngine>) = 
+        if p :? TreeSwaptionEngineModel1 then 
+            p :?> TreeSwaptionEngineModel1
+        else
+            let o = new TreeSwaptionEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -162,6 +188,19 @@ type TreeSwaptionEngineModel2
                                                    = triv (fun () -> _TreeSwaptionEngine.Value.unregisterWith(handler.Value)
                                                                      _TreeSwaptionEngine.Value)
     do this.Bind(_TreeSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = TreeSwaptionEngineModel2(null,null,null)
+    member internal this.Inject v = _TreeSwaptionEngine.Value <- v
+    static member Cast (p : ICell<TreeSwaptionEngine>) = 
+        if p :? TreeSwaptionEngineModel2 then 
+            p :?> TreeSwaptionEngineModel2
+        else
+            let o = new TreeSwaptionEngineModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -211,6 +250,19 @@ type TreeSwaptionEngineModel3
                                                    = triv (fun () -> _TreeSwaptionEngine.Value.unregisterWith(handler.Value)
                                                                      _TreeSwaptionEngine.Value)
     do this.Bind(_TreeSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = TreeSwaptionEngineModel3(null,null)
+    member internal this.Inject v = _TreeSwaptionEngine.Value <- v
+    static member Cast (p : ICell<TreeSwaptionEngine>) = 
+        if p :? TreeSwaptionEngineModel3 then 
+            p :?> TreeSwaptionEngineModel3
+        else
+            let o = new TreeSwaptionEngineModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type ProblemModel
     let _values                                    (x : ICell<Vector>)   
                                                    = triv (fun () -> _Problem.Value.values(x.Value))
     do this.Bind(_Problem)
+(* 
+    casting 
+*)
+    internal new () = ProblemModel(null,null,null)
+    member internal this.Inject v = _Problem.Value <- v
+    static member Cast (p : ICell<Problem>) = 
+        if p :? ProblemModel then 
+            p :?> ProblemModel
+        else
+            let o = new ProblemModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

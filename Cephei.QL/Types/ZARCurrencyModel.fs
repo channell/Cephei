@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type ZARCurrencyModel
     let _ToString                                  = triv (fun () -> _ZARCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _ZARCurrency.Value.triangulationCurrency)
     do this.Bind(_ZARCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ZARCurrency.Value <- v
+    static member Cast (p : ICell<ZARCurrency>) = 
+        if p :? ZARCurrencyModel then 
+            p :?> ZARCurrencyModel
+        else
+            let o = new ZARCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

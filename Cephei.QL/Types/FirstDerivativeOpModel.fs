@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type FirstDerivativeOpModel
                                                                      _FirstDerivativeOp.Value)
     let _toMatrix                                  = triv (fun () -> _FirstDerivativeOp.Value.toMatrix())
     do this.Bind(_FirstDerivativeOp)
+(* 
+    casting 
+*)
+    internal new () = FirstDerivativeOpModel(null)
+    member internal this.Inject v = _FirstDerivativeOp.Value <- v
+    static member Cast (p : ICell<FirstDerivativeOp>) = 
+        if p :? FirstDerivativeOpModel then 
+            p :?> FirstDerivativeOpModel
+        else
+            let o = new FirstDerivativeOpModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -180,6 +193,19 @@ type FirstDerivativeOpModel1
                                                                      _FirstDerivativeOp.Value)
     let _toMatrix                                  = triv (fun () -> _FirstDerivativeOp.Value.toMatrix())
     do this.Bind(_FirstDerivativeOp)
+(* 
+    casting 
+*)
+    internal new () = FirstDerivativeOpModel1(null,null)
+    member internal this.Inject v = _FirstDerivativeOp.Value <- v
+    static member Cast (p : ICell<FirstDerivativeOp>) = 
+        if p :? FirstDerivativeOpModel1 then 
+            p :?> FirstDerivativeOpModel1
+        else
+            let o = new FirstDerivativeOpModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

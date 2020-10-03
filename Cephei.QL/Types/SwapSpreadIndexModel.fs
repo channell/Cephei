@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -100,6 +100,19 @@ type SwapSpreadIndexModel
                                                    = triv (fun () -> _SwapSpreadIndex.Value.unregisterWith(handler.Value)
                                                                      _SwapSpreadIndex.Value)
     do this.Bind(_SwapSpreadIndex)
+(* 
+    casting 
+*)
+    internal new () = SwapSpreadIndexModel(null,null,null,null,null)
+    member internal this.Inject v = _SwapSpreadIndex.Value <- v
+    static member Cast (p : ICell<SwapSpreadIndex>) = 
+        if p :? SwapSpreadIndexModel then 
+            p :?> SwapSpreadIndexModel
+        else
+            let o = new SwapSpreadIndexModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -210,6 +223,19 @@ type SwapSpreadIndexModel1
                                                    = triv (fun () -> _SwapSpreadIndex.Value.unregisterWith(handler.Value)
                                                                      _SwapSpreadIndex.Value)
     do this.Bind(_SwapSpreadIndex)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _SwapSpreadIndex.Value <- v
+    static member Cast (p : ICell<SwapSpreadIndex>) = 
+        if p :? SwapSpreadIndexModel1 then 
+            p :?> SwapSpreadIndexModel1
+        else
+            let o = new SwapSpreadIndexModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

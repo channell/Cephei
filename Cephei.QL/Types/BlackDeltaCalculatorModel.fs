@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type BlackDeltaCalculatorModel
     let _strikeFromDelta                           (delta : ICell<double>)   
                                                    = triv (fun () -> _BlackDeltaCalculator.Value.strikeFromDelta(delta.Value))
     do this.Bind(_BlackDeltaCalculator)
+(* 
+    casting 
+*)
+    internal new () = BlackDeltaCalculatorModel(null,null,null,null,null,null)
+    member internal this.Inject v = _BlackDeltaCalculator.Value <- v
+    static member Cast (p : ICell<BlackDeltaCalculator>) = 
+        if p :? BlackDeltaCalculatorModel then 
+            p :?> BlackDeltaCalculatorModel
+        else
+            let o = new BlackDeltaCalculatorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

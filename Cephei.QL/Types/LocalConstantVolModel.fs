@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type LocalConstantVolModel
                                                                      _LocalConstantVol.Value)
     let _extrapolate                               = triv (fun () -> _LocalConstantVol.Value.extrapolate)
     do this.Bind(_LocalConstantVol)
+(* 
+    casting 
+*)
+    internal new () = LocalConstantVolModel(null,null,null,null)
+    member internal this.Inject v = _LocalConstantVol.Value <- v
+    static member Cast (p : ICell<LocalConstantVol>) = 
+        if p :? LocalConstantVolModel then 
+            p :?> LocalConstantVolModel
+        else
+            let o = new LocalConstantVolModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -161,6 +174,19 @@ type LocalConstantVolModel1
                                                                      _LocalConstantVol.Value)
     let _extrapolate                               = triv (fun () -> _LocalConstantVol.Value.extrapolate)
     do this.Bind(_LocalConstantVol)
+(* 
+    casting 
+*)
+    internal new () = LocalConstantVolModel1(null,null,null)
+    member internal this.Inject v = _LocalConstantVol.Value <- v
+    static member Cast (p : ICell<LocalConstantVol>) = 
+        if p :? LocalConstantVolModel1 then 
+            p :?> LocalConstantVolModel1
+        else
+            let o = new LocalConstantVolModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -242,6 +268,19 @@ type LocalConstantVolModel2
                                                                      _LocalConstantVol.Value)
     let _extrapolate                               = triv (fun () -> _LocalConstantVol.Value.extrapolate)
     do this.Bind(_LocalConstantVol)
+(* 
+    casting 
+*)
+    internal new () = LocalConstantVolModel2(null,null,null)
+    member internal this.Inject v = _LocalConstantVol.Value <- v
+    static member Cast (p : ICell<LocalConstantVol>) = 
+        if p :? LocalConstantVolModel2 then 
+            p :?> LocalConstantVolModel2
+        else
+            let o = new LocalConstantVolModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -325,6 +364,19 @@ type LocalConstantVolModel3
                                                                      _LocalConstantVol.Value)
     let _extrapolate                               = triv (fun () -> _LocalConstantVol.Value.extrapolate)
     do this.Bind(_LocalConstantVol)
+(* 
+    casting 
+*)
+    internal new () = LocalConstantVolModel3(null,null,null,null)
+    member internal this.Inject v = _LocalConstantVol.Value <- v
+    static member Cast (p : ICell<LocalConstantVol>) = 
+        if p :? LocalConstantVolModel3 then 
+            p :?> LocalConstantVolModel3
+        else
+            let o = new LocalConstantVolModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

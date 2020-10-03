@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type BarrierOptionModel
                                                                      _BarrierOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _BarrierOption).valuationDate())
     do this.Bind(_BarrierOption)
+(* 
+    casting 
+*)
+    internal new () = BarrierOptionModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _BarrierOption.Value <- v
+    static member Cast (p : ICell<BarrierOption>) = 
+        if p :? BarrierOptionModel then 
+            p :?> BarrierOptionModel
+        else
+            let o = new BarrierOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -47,6 +47,19 @@ type USRegionModel
                                                    = triv (fun () -> _USRegion.Value.Equals(o.Value))
     let _name                                      = triv (fun () -> _USRegion.Value.name())
     do this.Bind(_USRegion)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _USRegion.Value <- v
+    static member Cast (p : ICell<USRegion>) = 
+        if p :? USRegionModel then 
+            p :?> USRegionModel
+        else
+            let o = new USRegionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

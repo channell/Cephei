@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -66,6 +66,19 @@ type AnalyticHestonHullWhiteEngineModel
                                                    = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticHestonHullWhiteEngine.Value)
     do this.Bind(_AnalyticHestonHullWhiteEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticHestonHullWhiteEngineModel(null,null,null,null)
+    member internal this.Inject v = _AnalyticHestonHullWhiteEngine.Value <- v
+    static member Cast (p : ICell<AnalyticHestonHullWhiteEngine>) = 
+        if p :? AnalyticHestonHullWhiteEngineModel then 
+            p :?> AnalyticHestonHullWhiteEngineModel
+        else
+            let o = new AnalyticHestonHullWhiteEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -120,6 +133,19 @@ type AnalyticHestonHullWhiteEngineModel1
                                                    = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticHestonHullWhiteEngine.Value)
     do this.Bind(_AnalyticHestonHullWhiteEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticHestonHullWhiteEngineModel1(null,null,null)
+    member internal this.Inject v = _AnalyticHestonHullWhiteEngine.Value <- v
+    static member Cast (p : ICell<AnalyticHestonHullWhiteEngine>) = 
+        if p :? AnalyticHestonHullWhiteEngineModel1 then 
+            p :?> AnalyticHestonHullWhiteEngineModel1
+        else
+            let o = new AnalyticHestonHullWhiteEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -91,6 +91,19 @@ type BicubicSplineModel
                                                                      _BicubicSpline.Value)
     let _extrapolate                               = triv (fun () -> _BicubicSpline.Value.extrapolate)
     do this.Bind(_BicubicSpline)
+(* 
+    casting 
+*)
+    internal new () = BicubicSplineModel(null,null,null,null,null)
+    member internal this.Inject v = _BicubicSpline.Value <- v
+    static member Cast (p : ICell<BicubicSpline>) = 
+        if p :? BicubicSplineModel then 
+            p :?> BicubicSplineModel
+        else
+            let o = new BicubicSplineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

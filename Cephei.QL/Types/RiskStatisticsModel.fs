@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -96,6 +96,19 @@ type RiskStatisticsModel
     let _variance                                  = triv (fun () -> _RiskStatistics.Value.variance())
     let _weightSum                                 = triv (fun () -> _RiskStatistics.Value.weightSum())
     do this.Bind(_RiskStatistics)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _RiskStatistics.Value <- v
+    static member Cast (p : ICell<RiskStatistics>) = 
+        if p :? RiskStatisticsModel then 
+            p :?> RiskStatisticsModel
+        else
+            let o = new RiskStatisticsModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

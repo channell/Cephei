@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -122,6 +122,19 @@ type FloatingRateCouponModel
                                                    = triv (fun () -> _FloatingRateCoupon.Value.unregisterWith(handler.Value)
                                                                      _FloatingRateCoupon.Value)
     do this.Bind(_FloatingRateCoupon)
+(* 
+    casting 
+*)
+    internal new () = FloatingRateCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FloatingRateCoupon.Value <- v
+    static member Cast (p : ICell<FloatingRateCoupon>) = 
+        if p :? FloatingRateCouponModel then 
+            p :?> FloatingRateCouponModel
+        else
+            let o = new FloatingRateCouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -257,6 +270,19 @@ type FloatingRateCouponModel1
                                                    = triv (fun () -> _FloatingRateCoupon.Value.unregisterWith(handler.Value)
                                                                      _FloatingRateCoupon.Value)
     do this.Bind(_FloatingRateCoupon)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FloatingRateCoupon.Value <- v
+    static member Cast (p : ICell<FloatingRateCoupon>) = 
+        if p :? FloatingRateCouponModel1 then 
+            p :?> FloatingRateCouponModel1
+        else
+            let o = new FloatingRateCouponModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

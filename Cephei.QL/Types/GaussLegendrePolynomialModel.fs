@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type GaussLegendrePolynomialModel
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
                                                    = triv (fun () -> _GaussLegendrePolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussLegendrePolynomial)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _GaussLegendrePolynomial.Value <- v
+    static member Cast (p : ICell<GaussLegendrePolynomial>) = 
+        if p :? GaussLegendrePolynomialModel then 
+            p :?> GaussLegendrePolynomialModel
+        else
+            let o = new GaussLegendrePolynomialModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

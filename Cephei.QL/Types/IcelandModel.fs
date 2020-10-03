@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -90,6 +90,19 @@ type IcelandModel
                                                    = triv (fun () -> _Iceland.Value.removeHoliday(d.Value)
                                                                      _Iceland.Value)
     do this.Bind(_Iceland)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Iceland.Value <- v
+    static member Cast (p : ICell<Iceland>) = 
+        if p :? IcelandModel then 
+            p :?> IcelandModel
+        else
+            let o = new IcelandModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

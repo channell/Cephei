@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type UpRoundingModel
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _UpRounding.Value.Round(value.Value))
     do this.Bind(_UpRounding)
+(* 
+    casting 
+*)
+    internal new () = UpRoundingModel(null)
+    member internal this.Inject v = _UpRounding.Value <- v
+    static member Cast (p : ICell<UpRounding>) = 
+        if p :? UpRoundingModel then 
+            p :?> UpRoundingModel
+        else
+            let o = new UpRoundingModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -87,6 +100,19 @@ type UpRoundingModel1
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _UpRounding.Value.Round(value.Value))
     do this.Bind(_UpRounding)
+(* 
+    casting 
+*)
+    internal new () = UpRoundingModel1(null,null)
+    member internal this.Inject v = _UpRounding.Value <- v
+    static member Cast (p : ICell<UpRounding>) = 
+        if p :? UpRoundingModel1 then 
+            p :?> UpRoundingModel1
+        else
+            let o = new UpRoundingModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

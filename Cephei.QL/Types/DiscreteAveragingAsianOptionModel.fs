@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type DiscreteAveragingAsianOptionModel
                                                                      _DiscreteAveragingAsianOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _DiscreteAveragingAsianOption).valuationDate())
     do this.Bind(_DiscreteAveragingAsianOption)
+(* 
+    casting 
+*)
+    internal new () = DiscreteAveragingAsianOptionModel(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _DiscreteAveragingAsianOption.Value <- v
+    static member Cast (p : ICell<DiscreteAveragingAsianOption>) = 
+        if p :? DiscreteAveragingAsianOptionModel then 
+            p :?> DiscreteAveragingAsianOptionModel
+        else
+            let o = new DiscreteAveragingAsianOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

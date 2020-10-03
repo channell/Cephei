@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -106,6 +106,19 @@ type EurLiborSwapIsdaFixAModel
                                                    = triv (fun () -> _EurLiborSwapIsdaFixA.Value.unregisterWith(handler.Value)
                                                                      _EurLiborSwapIsdaFixA.Value)
     do this.Bind(_EurLiborSwapIsdaFixA)
+(* 
+    casting 
+*)
+    internal new () = EurLiborSwapIsdaFixAModel(null,null,null)
+    member internal this.Inject v = _EurLiborSwapIsdaFixA.Value <- v
+    static member Cast (p : ICell<EurLiborSwapIsdaFixA>) = 
+        if p :? EurLiborSwapIsdaFixAModel then 
+            p :?> EurLiborSwapIsdaFixAModel
+        else
+            let o = new EurLiborSwapIsdaFixAModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -239,6 +252,19 @@ type EurLiborSwapIsdaFixAModel1
                                                    = triv (fun () -> _EurLiborSwapIsdaFixA.Value.unregisterWith(handler.Value)
                                                                      _EurLiborSwapIsdaFixA.Value)
     do this.Bind(_EurLiborSwapIsdaFixA)
+(* 
+    casting 
+*)
+    internal new () = EurLiborSwapIsdaFixAModel1(null,null)
+    member internal this.Inject v = _EurLiborSwapIsdaFixA.Value <- v
+    static member Cast (p : ICell<EurLiborSwapIsdaFixA>) = 
+        if p :? EurLiborSwapIsdaFixAModel1 then 
+            p :?> EurLiborSwapIsdaFixAModel1
+        else
+            let o = new EurLiborSwapIsdaFixAModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -369,6 +395,19 @@ type EurLiborSwapIsdaFixAModel2
                                                    = triv (fun () -> _EurLiborSwapIsdaFixA.Value.unregisterWith(handler.Value)
                                                                      _EurLiborSwapIsdaFixA.Value)
     do this.Bind(_EurLiborSwapIsdaFixA)
+(* 
+    casting 
+*)
+    internal new () = EurLiborSwapIsdaFixAModel2(null)
+    member internal this.Inject v = _EurLiborSwapIsdaFixA.Value <- v
+    static member Cast (p : ICell<EurLiborSwapIsdaFixA>) = 
+        if p :? EurLiborSwapIsdaFixAModel2 then 
+            p :?> EurLiborSwapIsdaFixAModel2
+        else
+            let o = new EurLiborSwapIsdaFixAModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

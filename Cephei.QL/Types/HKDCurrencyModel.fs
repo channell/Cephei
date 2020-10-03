@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type HKDCurrencyModel
     let _ToString                                  = triv (fun () -> _HKDCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _HKDCurrency.Value.triangulationCurrency)
     do this.Bind(_HKDCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _HKDCurrency.Value <- v
+    static member Cast (p : ICell<HKDCurrency>) = 
+        if p :? HKDCurrencyModel then 
+            p :?> HKDCurrencyModel
+        else
+            let o = new HKDCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

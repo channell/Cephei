@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type TreeVanillaSwapEngineModel
                                                    = triv (fun () -> _TreeVanillaSwapEngine.Value.unregisterWith(handler.Value)
                                                                      _TreeVanillaSwapEngine.Value)
     do this.Bind(_TreeVanillaSwapEngine)
+(* 
+    casting 
+*)
+    internal new () = TreeVanillaSwapEngineModel(null,null,null)
+    member internal this.Inject v = _TreeVanillaSwapEngine.Value <- v
+    static member Cast (p : ICell<TreeVanillaSwapEngine>) = 
+        if p :? TreeVanillaSwapEngineModel then 
+            p :?> TreeVanillaSwapEngineModel
+        else
+            let o = new TreeVanillaSwapEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -114,6 +127,19 @@ type TreeVanillaSwapEngineModel1
                                                    = triv (fun () -> _TreeVanillaSwapEngine.Value.unregisterWith(handler.Value)
                                                                      _TreeVanillaSwapEngine.Value)
     do this.Bind(_TreeVanillaSwapEngine)
+(* 
+    casting 
+*)
+    internal new () = TreeVanillaSwapEngineModel1(null,null,null)
+    member internal this.Inject v = _TreeVanillaSwapEngine.Value <- v
+    static member Cast (p : ICell<TreeVanillaSwapEngine>) = 
+        if p :? TreeVanillaSwapEngineModel1 then 
+            p :?> TreeVanillaSwapEngineModel1
+        else
+            let o = new TreeVanillaSwapEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

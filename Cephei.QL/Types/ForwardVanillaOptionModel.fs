@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type ForwardVanillaOptionModel
                                                                      _ForwardVanillaOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardVanillaOption).valuationDate())
     do this.Bind(_ForwardVanillaOption)
+(* 
+    casting 
+*)
+    internal new () = ForwardVanillaOptionModel(null,null,null,null,null,null)
+    member internal this.Inject v = _ForwardVanillaOption.Value <- v
+    static member Cast (p : ICell<ForwardVanillaOption>) = 
+        if p :? ForwardVanillaOptionModel then 
+            p :?> ForwardVanillaOptionModel
+        else
+            let o = new ForwardVanillaOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

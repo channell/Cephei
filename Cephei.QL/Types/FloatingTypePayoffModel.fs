@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type FloatingTypePayoffModel
                                                    = triv (fun () -> _FloatingTypePayoff.Value.accept(v.Value)
                                                                      _FloatingTypePayoff.Value)
     do this.Bind(_FloatingTypePayoff)
+(* 
+    casting 
+*)
+    internal new () = FloatingTypePayoffModel(null)
+    member internal this.Inject v = _FloatingTypePayoff.Value <- v
+    static member Cast (p : ICell<FloatingTypePayoff>) = 
+        if p :? FloatingTypePayoffModel then 
+            p :?> FloatingTypePayoffModel
+        else
+            let o = new FloatingTypePayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

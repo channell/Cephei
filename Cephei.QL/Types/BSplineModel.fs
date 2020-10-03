@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type BSplineModel
     let _value                                     (i : ICell<int>) (x : ICell<double>)   
                                                    = triv (fun () -> _BSpline.Value.value(i.Value, x.Value))
     do this.Bind(_BSpline)
+(* 
+    casting 
+*)
+    internal new () = BSplineModel(null,null,null)
+    member internal this.Inject v = _BSpline.Value <- v
+    static member Cast (p : ICell<BSpline>) = 
+        if p :? BSplineModel then 
+            p :?> BSplineModel
+        else
+            let o = new BSplineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

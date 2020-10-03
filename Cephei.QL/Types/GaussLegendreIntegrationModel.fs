@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type GaussLegendreIntegrationModel
     let _weights                                   = triv (fun () -> _GaussLegendreIntegration.Value.weights())
     let _x                                         = triv (fun () -> _GaussLegendreIntegration.Value.x())
     do this.Bind(_GaussLegendreIntegration)
+(* 
+    casting 
+*)
+    internal new () = GaussLegendreIntegrationModel(null)
+    member internal this.Inject v = _GaussLegendreIntegration.Value <- v
+    static member Cast (p : ICell<GaussLegendreIntegration>) = 
+        if p :? GaussLegendreIntegrationModel then 
+            p :?> GaussLegendreIntegrationModel
+        else
+            let o = new GaussLegendreIntegrationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

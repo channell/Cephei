@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type MaxBasketPayoffModel
                                                    = triv (fun () -> _MaxBasketPayoff.Value.accept(v.Value)
                                                                      _MaxBasketPayoff.Value)
     do this.Bind(_MaxBasketPayoff)
+(* 
+    casting 
+*)
+    internal new () = MaxBasketPayoffModel(null)
+    member internal this.Inject v = _MaxBasketPayoff.Value <- v
+    static member Cast (p : ICell<MaxBasketPayoff>) = 
+        if p :? MaxBasketPayoffModel then 
+            p :?> MaxBasketPayoffModel
+        else
+            let o = new MaxBasketPayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -106,6 +106,19 @@ type FloatingRateBondModel
                                                                      _FloatingRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).valuationDate())
     do this.Bind(_FloatingRateBond)
+(* 
+    casting 
+*)
+    internal new () = FloatingRateBondModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _FloatingRateBond.Value <- v
+    static member Cast (p : ICell<FloatingRateBond>) = 
+        if p :? FloatingRateBondModel then 
+            p :?> FloatingRateBondModel
+        else
+            let o = new FloatingRateBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -251,6 +264,19 @@ type FloatingRateBondModel1
                                                                      _FloatingRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).valuationDate())
     do this.Bind(_FloatingRateBond)
+(* 
+    casting 
+*)
+    internal new () = FloatingRateBondModel1(null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FloatingRateBond.Value <- v
+    static member Cast (p : ICell<FloatingRateBond>) = 
+        if p :? FloatingRateBondModel1 then 
+            p :?> FloatingRateBondModel1
+        else
+            let o = new FloatingRateBondModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -410,6 +436,19 @@ type FloatingRateBondModel2
                                                                      _FloatingRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).valuationDate())
     do this.Bind(_FloatingRateBond)
+(* 
+    casting 
+*)
+    internal new () = FloatingRateBondModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FloatingRateBond.Value <- v
+    static member Cast (p : ICell<FloatingRateBond>) = 
+        if p :? FloatingRateBondModel2 then 
+            p :?> FloatingRateBondModel2
+        else
+            let o = new FloatingRateBondModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -588,6 +627,19 @@ type FloatingRateBondModel3
                                                                      _FloatingRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).valuationDate())
     do this.Bind(_FloatingRateBond)
+(* 
+    casting 
+*)
+    internal new () = FloatingRateBondModel3(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FloatingRateBond.Value <- v
+    static member Cast (p : ICell<FloatingRateBond>) = 
+        if p :? FloatingRateBondModel3 then 
+            p :?> FloatingRateBondModel3
+        else
+            let o = new FloatingRateBondModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

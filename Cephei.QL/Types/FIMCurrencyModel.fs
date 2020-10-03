@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type FIMCurrencyModel
     let _ToString                                  = triv (fun () -> _FIMCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _FIMCurrency.Value.triangulationCurrency)
     do this.Bind(_FIMCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FIMCurrency.Value <- v
+    static member Cast (p : ICell<FIMCurrency>) = 
+        if p :? FIMCurrencyModel then 
+            p :?> FIMCurrencyModel
+        else
+            let o = new FIMCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

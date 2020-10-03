@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type SoniaModel
                                                    = triv (fun () -> _Sonia.Value.unregisterWith(handler.Value)
                                                                      _Sonia.Value)
     do this.Bind(_Sonia)
+(* 
+    casting 
+*)
+    internal new () = SoniaModel(null)
+    member internal this.Inject v = _Sonia.Value <- v
+    static member Cast (p : ICell<Sonia>) = 
+        if p :? SoniaModel then 
+            p :?> SoniaModel
+        else
+            let o = new SoniaModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

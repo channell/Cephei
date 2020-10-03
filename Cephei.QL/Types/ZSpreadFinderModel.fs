@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -66,6 +66,31 @@ type ZSpreadFinderModel
     let _derivative                                (x : ICell<double>)   
                                                    = cell (fun () -> _ZSpreadFinder.Value.derivative(x.Value))
     do this.Bind(_ZSpreadFinder)
+(* 
+    casting 
+*)
+    internal new () = ZSpreadFinderModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _ZSpreadFinder.Value <- v
+    static member Cast (p : ICell<ZSpreadFinder>) = 
+        if p :? ZSpreadFinderModel then 
+            p :?> ZSpreadFinderModel
+        else
+            let o = new ZSpreadFinderModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = ZSpreadFinderModel(null,null,null,null,null,null,null,null,null)
+    static member Cast (p : ICell<ZSpreadFinder>) = 
+        if p :? ZSpreadFinderModel then 
+            p :?> ZSpreadFinderModel
+        else
+            let o = new ZSpreadFinderModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

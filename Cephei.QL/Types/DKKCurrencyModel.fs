@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type DKKCurrencyModel
     let _ToString                                  = triv (fun () -> _DKKCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _DKKCurrency.Value.triangulationCurrency)
     do this.Bind(_DKKCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _DKKCurrency.Value <- v
+    static member Cast (p : ICell<DKKCurrency>) = 
+        if p :? DKKCurrencyModel then 
+            p :?> DKKCurrencyModel
+        else
+            let o = new DKKCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

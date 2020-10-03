@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type HundsdorferSchemeModel
                                                    = triv (fun () -> _HundsdorferScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _HundsdorferScheme.Value)
     do this.Bind(_HundsdorferScheme)
+(* 
+    casting 
+*)
+    internal new () = HundsdorferSchemeModel(null,null,null,null)
+    member internal this.Inject v = _HundsdorferScheme.Value <- v
+    static member Cast (p : ICell<HundsdorferScheme>) = 
+        if p :? HundsdorferSchemeModel then 
+            p :?> HundsdorferSchemeModel
+        else
+            let o = new HundsdorferSchemeModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -98,6 +111,19 @@ type HundsdorferSchemeModel1
                                                    = triv (fun () -> _HundsdorferScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _HundsdorferScheme.Value)
     do this.Bind(_HundsdorferScheme)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _HundsdorferScheme.Value <- v
+    static member Cast (p : ICell<HundsdorferScheme>) = 
+        if p :? HundsdorferSchemeModel1 then 
+            p :?> HundsdorferSchemeModel1
+        else
+            let o = new HundsdorferSchemeModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

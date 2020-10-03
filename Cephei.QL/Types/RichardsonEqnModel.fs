@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type RichardsonEqnModel
     let _derivative                                (x : ICell<double>)   
                                                    = triv (fun () -> _RichardsonEqn.Value.derivative(x.Value))
     do this.Bind(_RichardsonEqn)
+(* 
+    casting 
+*)
+    internal new () = RichardsonEqnModel(null,null,null,null,null)
+    member internal this.Inject v = _RichardsonEqn.Value <- v
+    static member Cast (p : ICell<RichardsonEqn>) = 
+        if p :? RichardsonEqnModel then 
+            p :?> RichardsonEqnModel
+        else
+            let o = new RichardsonEqnModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

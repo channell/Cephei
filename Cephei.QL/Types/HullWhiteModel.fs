@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -88,6 +88,19 @@ type HullWhiteModel
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _HullWhite.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_HullWhite)
+(* 
+    casting 
+*)
+    internal new () = HullWhiteModel(null,null,null)
+    member internal this.Inject v = _HullWhite.Value <- v
+    static member Cast (p : ICell<HullWhite>) = 
+        if p :? HullWhiteModel then 
+            p :?> HullWhiteModel
+        else
+            let o = new HullWhiteModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -184,6 +197,19 @@ type HullWhiteModel1
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _HullWhite.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_HullWhite)
+(* 
+    casting 
+*)
+    internal new () = HullWhiteModel1(null)
+    member internal this.Inject v = _HullWhite.Value <- v
+    static member Cast (p : ICell<HullWhite>) = 
+        if p :? HullWhiteModel1 then 
+            p :?> HullWhiteModel1
+        else
+            let o = new HullWhiteModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -280,6 +306,19 @@ type HullWhiteModel2
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _HullWhite.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_HullWhite)
+(* 
+    casting 
+*)
+    internal new () = HullWhiteModel2(null,null)
+    member internal this.Inject v = _HullWhite.Value <- v
+    static member Cast (p : ICell<HullWhite>) = 
+        if p :? HullWhiteModel2 then 
+            p :?> HullWhiteModel2
+        else
+            let o = new HullWhiteModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type DefaultDensityModel
     let _zeroYieldImpl                             (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _DefaultDensity.Value.zeroYieldImpl(i.Value, t.Value))
     do this.Bind(_DefaultDensity)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _DefaultDensity.Value <- v
+    static member Cast (p : ICell<DefaultDensity>) = 
+        if p :? DefaultDensityModel then 
+            p :?> DefaultDensityModel
+        else
+            let o = new DefaultDensityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

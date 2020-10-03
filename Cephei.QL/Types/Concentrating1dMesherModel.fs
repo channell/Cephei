@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type Concentrating1dMesherModel
     let _locations                                 = triv (fun () -> _Concentrating1dMesher.Value.locations())
     let _size                                      = triv (fun () -> _Concentrating1dMesher.Value.size())
     do this.Bind(_Concentrating1dMesher)
+(* 
+    casting 
+*)
+    internal new () = Concentrating1dMesherModel(null,null,null,null,null)
+    member internal this.Inject v = _Concentrating1dMesher.Value <- v
+    static member Cast (p : ICell<Concentrating1dMesher>) = 
+        if p :? Concentrating1dMesherModel then 
+            p :?> Concentrating1dMesherModel
+        else
+            let o = new Concentrating1dMesherModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -114,6 +127,19 @@ type Concentrating1dMesherModel1
     let _locations                                 = triv (fun () -> _Concentrating1dMesher.Value.locations())
     let _size                                      = triv (fun () -> _Concentrating1dMesher.Value.size())
     do this.Bind(_Concentrating1dMesher)
+(* 
+    casting 
+*)
+    internal new () = Concentrating1dMesherModel1(null,null,null,null,null)
+    member internal this.Inject v = _Concentrating1dMesher.Value <- v
+    static member Cast (p : ICell<Concentrating1dMesher>) = 
+        if p :? Concentrating1dMesherModel1 then 
+            p :?> Concentrating1dMesherModel1
+        else
+            let o = new Concentrating1dMesherModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

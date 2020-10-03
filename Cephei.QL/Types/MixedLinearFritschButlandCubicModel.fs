@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type MixedLinearFritschButlandCubicModel
                                                                      _MixedLinearFritschButlandCubic.Value)
     let _extrapolate                               = triv (fun () -> _MixedLinearFritschButlandCubic.Value.extrapolate)
     do this.Bind(_MixedLinearFritschButlandCubic)
+(* 
+    casting 
+*)
+    internal new () = MixedLinearFritschButlandCubicModel(null,null,null,null,null)
+    member internal this.Inject v = _MixedLinearFritschButlandCubic.Value <- v
+    static member Cast (p : ICell<MixedLinearFritschButlandCubic>) = 
+        if p :? MixedLinearFritschButlandCubicModel then 
+            p :?> MixedLinearFritschButlandCubicModel
+        else
+            let o = new MixedLinearFritschButlandCubicModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -118,6 +118,19 @@ type AmortizingFixedRateBondModel
                                                                      _AmortizingFixedRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFixedRateBond).valuationDate())
     do this.Bind(_AmortizingFixedRateBond)
+(* 
+    casting 
+*)
+    internal new () = AmortizingFixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _AmortizingFixedRateBond.Value <- v
+    static member Cast (p : ICell<AmortizingFixedRateBond>) = 
+        if p :? AmortizingFixedRateBondModel then 
+            p :?> AmortizingFixedRateBondModel
+        else
+            let o = new AmortizingFixedRateBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -268,6 +281,19 @@ type AmortizingFixedRateBondModel1
                                                                      _AmortizingFixedRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFixedRateBond).valuationDate())
     do this.Bind(_AmortizingFixedRateBond)
+(* 
+    casting 
+*)
+    internal new () = AmortizingFixedRateBondModel1(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _AmortizingFixedRateBond.Value <- v
+    static member Cast (p : ICell<AmortizingFixedRateBond>) = 
+        if p :? AmortizingFixedRateBondModel1 then 
+            p :?> AmortizingFixedRateBondModel1
+        else
+            let o = new AmortizingFixedRateBondModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -415,6 +441,19 @@ type AmortizingFixedRateBondModel2
                                                                      _AmortizingFixedRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingFixedRateBond).valuationDate())
     do this.Bind(_AmortizingFixedRateBond)
+(* 
+    casting 
+*)
+    internal new () = AmortizingFixedRateBondModel2(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _AmortizingFixedRateBond.Value <- v
+    static member Cast (p : ICell<AmortizingFixedRateBond>) = 
+        if p :? AmortizingFixedRateBondModel2 then 
+            p :?> AmortizingFixedRateBondModel2
+        else
+            let o = new AmortizingFixedRateBondModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

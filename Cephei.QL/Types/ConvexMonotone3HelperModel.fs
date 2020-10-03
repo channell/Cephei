@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type ConvexMonotone3HelperModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _ConvexMonotone3Helper.Value.value(x.Value))
     do this.Bind(_ConvexMonotone3Helper)
+(* 
+    casting 
+*)
+    internal new () = ConvexMonotone3HelperModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _ConvexMonotone3Helper.Value <- v
+    static member Cast (p : ICell<ConvexMonotone3Helper>) = 
+        if p :? ConvexMonotone3HelperModel then 
+            p :?> ConvexMonotone3HelperModel
+        else
+            let o = new ConvexMonotone3HelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

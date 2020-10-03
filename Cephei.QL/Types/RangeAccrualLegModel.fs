@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -81,6 +81,19 @@ type RangeAccrualLegModel
     let _withUpperTriggers1                        (triggers : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _RangeAccrualLeg.Value.withUpperTriggers(triggers.Value))
     do this.Bind(_RangeAccrualLeg)
+(* 
+    casting 
+*)
+    internal new () = RangeAccrualLegModel(null,null)
+    member internal this.Inject v = _RangeAccrualLeg.Value <- v
+    static member Cast (p : ICell<RangeAccrualLeg>) = 
+        if p :? RangeAccrualLegModel then 
+            p :?> RangeAccrualLegModel
+        else
+            let o = new RangeAccrualLegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

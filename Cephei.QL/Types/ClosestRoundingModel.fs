@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type ClosestRoundingModel
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _ClosestRounding.Value.Round(value.Value))
     do this.Bind(_ClosestRounding)
+(* 
+    casting 
+*)
+    internal new () = ClosestRoundingModel(null)
+    member internal this.Inject v = _ClosestRounding.Value <- v
+    static member Cast (p : ICell<ClosestRounding>) = 
+        if p :? ClosestRoundingModel then 
+            p :?> ClosestRoundingModel
+        else
+            let o = new ClosestRoundingModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -87,6 +100,19 @@ type ClosestRoundingModel1
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _ClosestRounding.Value.Round(value.Value))
     do this.Bind(_ClosestRounding)
+(* 
+    casting 
+*)
+    internal new () = ClosestRoundingModel1(null,null)
+    member internal this.Inject v = _ClosestRounding.Value <- v
+    static member Cast (p : ICell<ClosestRounding>) = 
+        if p :? ClosestRoundingModel1 then 
+            p :?> ClosestRoundingModel1
+        else
+            let o = new ClosestRoundingModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type PdeBSMModel
                                                    = triv (fun () -> _PdeBSM.Value.generateOperator(t.Value, tg.Value, L.Value)
                                                                      _PdeBSM.Value)
     do this.Bind(_PdeBSM)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _PdeBSM.Value <- v
+    static member Cast (p : ICell<PdeBSM>) = 
+        if p :? PdeBSMModel then 
+            p :?> PdeBSMModel
+        else
+            let o = new PdeBSMModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -98,6 +111,19 @@ type PdeBSMModel1
                                                    = triv (fun () -> _PdeBSM.Value.generateOperator(t.Value, tg.Value, L.Value)
                                                                      _PdeBSM.Value)
     do this.Bind(_PdeBSM)
+(* 
+    casting 
+*)
+    internal new () = PdeBSMModel1(null)
+    member internal this.Inject v = _PdeBSM.Value <- v
+    static member Cast (p : ICell<PdeBSM>) = 
+        if p :? PdeBSMModel1 then 
+            p :?> PdeBSMModel1
+        else
+            let o = new PdeBSMModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

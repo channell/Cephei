@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type DPlusDMinusModel
                                                    = triv (fun () -> _DPlusDMinus.Value.subtract(A.Value, B.Value))
     let _upperDiagonal                             = triv (fun () -> _DPlusDMinus.Value.upperDiagonal())
     do this.Bind(_DPlusDMinus)
+(* 
+    casting 
+*)
+    internal new () = DPlusDMinusModel(null,null)
+    member internal this.Inject v = _DPlusDMinus.Value <- v
+    static member Cast (p : ICell<DPlusDMinus>) = 
+        if p :? DPlusDMinusModel then 
+            p :?> DPlusDMinusModel
+        else
+            let o = new DPlusDMinusModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -97,6 +97,19 @@ type ConstantOptionletVolatilityModel
                                                                      _ConstantOptionletVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantOptionletVolatility.Value.extrapolate)
     do this.Bind(_ConstantOptionletVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantOptionletVolatilityModel(null,null,null,null,null)
+    member internal this.Inject v = _ConstantOptionletVolatility.Value <- v
+    static member Cast (p : ICell<ConstantOptionletVolatility>) = 
+        if p :? ConstantOptionletVolatilityModel then 
+            p :?> ConstantOptionletVolatilityModel
+        else
+            let o = new ConstantOptionletVolatilityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -216,6 +229,19 @@ type ConstantOptionletVolatilityModel1
                                                                      _ConstantOptionletVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantOptionletVolatility.Value.extrapolate)
     do this.Bind(_ConstantOptionletVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantOptionletVolatilityModel1(null,null,null,null,null)
+    member internal this.Inject v = _ConstantOptionletVolatility.Value <- v
+    static member Cast (p : ICell<ConstantOptionletVolatility>) = 
+        if p :? ConstantOptionletVolatilityModel1 then 
+            p :?> ConstantOptionletVolatilityModel1
+        else
+            let o = new ConstantOptionletVolatilityModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -335,6 +361,19 @@ type ConstantOptionletVolatilityModel2
                                                                      _ConstantOptionletVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantOptionletVolatility.Value.extrapolate)
     do this.Bind(_ConstantOptionletVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantOptionletVolatilityModel2(null,null,null,null,null)
+    member internal this.Inject v = _ConstantOptionletVolatility.Value <- v
+    static member Cast (p : ICell<ConstantOptionletVolatility>) = 
+        if p :? ConstantOptionletVolatilityModel2 then 
+            p :?> ConstantOptionletVolatilityModel2
+        else
+            let o = new ConstantOptionletVolatilityModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -454,6 +493,19 @@ type ConstantOptionletVolatilityModel3
                                                                      _ConstantOptionletVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantOptionletVolatility.Value.extrapolate)
     do this.Bind(_ConstantOptionletVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantOptionletVolatilityModel3(null,null,null,null,null)
+    member internal this.Inject v = _ConstantOptionletVolatility.Value <- v
+    static member Cast (p : ICell<ConstantOptionletVolatility>) = 
+        if p :? ConstantOptionletVolatilityModel3 then 
+            p :?> ConstantOptionletVolatilityModel3
+        else
+            let o = new ConstantOptionletVolatilityModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

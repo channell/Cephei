@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,31 @@ type DynamicsModel
                                                    = cell (fun () -> _Dynamics.Value.variable(t.Value, r.Value))
     let _process                                   = cell (fun () -> _Dynamics.Value.PROCESS())
     do this.Bind(_Dynamics)
+(* 
+    casting 
+*)
+    internal new () = DynamicsModel(null,null,null)
+    member internal this.Inject v = _Dynamics.Value <- v
+    static member Cast (p : ICell<Dynamics>) = 
+        if p :? DynamicsModel then 
+            p :?> DynamicsModel
+        else
+            let o = new DynamicsModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = DynamicsModel(null,null,null)
+    static member Cast (p : ICell<Dynamics>) = 
+        if p :? DynamicsModel then 
+            p :?> DynamicsModel
+        else
+            let o = new DynamicsModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

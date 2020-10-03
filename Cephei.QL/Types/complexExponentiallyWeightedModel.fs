@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,6 +49,31 @@ type complexExponentiallyWeightedModel
     let _weightSmallX                              (x : ICell<Complex>)   
                                                    = cell (fun () -> _complexExponentiallyWeighted.Value.weightSmallX(x.Value))
     do this.Bind(_complexExponentiallyWeighted)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _complexExponentiallyWeighted.Value <- v
+    static member Cast (p : ICell<complexExponentiallyWeighted>) = 
+        if p :? complexExponentiallyWeightedModel then 
+            p :?> complexExponentiallyWeightedModel
+        else
+            let o = new complexExponentiallyWeightedModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<complexExponentiallyWeighted>) = 
+        if p :? complexExponentiallyWeightedModel then 
+            p :?> complexExponentiallyWeightedModel
+        else
+            let o = new complexExponentiallyWeightedModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

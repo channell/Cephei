@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type KerkhofSeasonalityModel
                                                    = triv (fun () -> _KerkhofSeasonality.Value.set(seasonalityBaseDate.Value, frequency.Value, seasonalityFactors.Value)
                                                                      _KerkhofSeasonality.Value)
     do this.Bind(_KerkhofSeasonality)
+(* 
+    casting 
+*)
+    internal new () = KerkhofSeasonalityModel(null,null)
+    member internal this.Inject v = _KerkhofSeasonality.Value <- v
+    static member Cast (p : ICell<KerkhofSeasonality>) = 
+        if p :? KerkhofSeasonalityModel then 
+            p :?> KerkhofSeasonalityModel
+        else
+            let o = new KerkhofSeasonalityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

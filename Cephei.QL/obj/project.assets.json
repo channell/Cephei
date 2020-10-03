@@ -512,11 +512,11 @@
   "project": {
     "version": "3.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
+      "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
       "projectName": "Cephei.QL",
-      "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
+      "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
       "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\obj\\",
+      "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -537,14 +537,14 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
-              "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+            "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
             },
-            "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
-              "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
             },
-            "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
-              "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
             }
           }
         }

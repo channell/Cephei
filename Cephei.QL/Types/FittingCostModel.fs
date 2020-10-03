@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -61,6 +61,31 @@ type FittingCostModel
     let _valuesAndJacobian                         (jac : ICell<Matrix>) (x : ICell<Vector>)   
                                                    = cell (fun () -> _FittingCost.Value.valuesAndJacobian(jac.Value, x.Value))
     do this.Bind(_FittingCost)
+(* 
+    casting 
+*)
+    internal new () = FittingCostModel(null)
+    member internal this.Inject v = _FittingCost.Value <- v
+    static member Cast (p : ICell<FittingCost>) = 
+        if p :? FittingCostModel then 
+            p :?> FittingCostModel
+        else
+            let o = new FittingCostModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = FittingCostModel(null)
+    static member Cast (p : ICell<FittingCost>) = 
+        if p :? FittingCostModel then 
+            p :?> FittingCostModel
+        else
+            let o = new FittingCostModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

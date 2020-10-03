@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type CubicBSplinesFittingModel
     let _solution                                  = triv (fun () -> _CubicBSplinesFitting.Value.solution())
     let _weights                                   = triv (fun () -> _CubicBSplinesFitting.Value.weights())
     do this.Bind(_CubicBSplinesFitting)
+(* 
+    casting 
+*)
+    internal new () = CubicBSplinesFittingModel(null,null,null,null)
+    member internal this.Inject v = _CubicBSplinesFitting.Value <- v
+    static member Cast (p : ICell<CubicBSplinesFitting>) = 
+        if p :? CubicBSplinesFittingModel then 
+            p :?> CubicBSplinesFittingModel
+        else
+            let o = new CubicBSplinesFittingModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

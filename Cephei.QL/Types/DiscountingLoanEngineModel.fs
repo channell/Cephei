@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,6 +49,19 @@ type DiscountingLoanEngineModel
     let _DiscountingLoanEngine                     = cell (fun () -> new DiscountingLoanEngine (discountCurve.Value, includeSettlementDateFlows.Value))
     let _discountCurve                             = triv (fun () -> _DiscountingLoanEngine.Value.discountCurve())
     do this.Bind(_DiscountingLoanEngine)
+(* 
+    casting 
+*)
+    internal new () = DiscountingLoanEngineModel(null,null)
+    member internal this.Inject v = _DiscountingLoanEngine.Value <- v
+    static member Cast (p : ICell<DiscountingLoanEngine>) = 
+        if p :? DiscountingLoanEngineModel then 
+            p :?> DiscountingLoanEngineModel
+        else
+            let o = new DiscountingLoanEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

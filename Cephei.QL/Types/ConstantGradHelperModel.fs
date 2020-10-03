@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type ConstantGradHelperModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _ConstantGradHelper.Value.value(x.Value))
     do this.Bind(_ConstantGradHelper)
+(* 
+    casting 
+*)
+    internal new () = ConstantGradHelperModel(null,null,null,null,null)
+    member internal this.Inject v = _ConstantGradHelper.Value <- v
+    static member Cast (p : ICell<ConstantGradHelper>) = 
+        if p :? ConstantGradHelperModel then 
+            p :?> ConstantGradHelperModel
+        else
+            let o = new ConstantGradHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

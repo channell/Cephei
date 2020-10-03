@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type SegmentIntegralModel
     let _value                                     (f : ICell<Func<double,double>>) (a : ICell<double>) (b : ICell<double>)   
                                                    = triv (fun () -> _SegmentIntegral.Value.value(f.Value, a.Value, b.Value))
     do this.Bind(_SegmentIntegral)
+(* 
+    casting 
+*)
+    internal new () = SegmentIntegralModel(null)
+    member internal this.Inject v = _SegmentIntegral.Value <- v
+    static member Cast (p : ICell<SegmentIntegral>) = 
+        if p :? SegmentIntegralModel then 
+            p :?> SegmentIntegralModel
+        else
+            let o = new SegmentIntegralModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

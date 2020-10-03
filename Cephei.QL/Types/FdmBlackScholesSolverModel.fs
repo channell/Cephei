@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -66,6 +66,19 @@ type FdmBlackScholesSolverModel
     let _valueAt                                   (s : ICell<double>)   
                                                    = triv (fun () -> _FdmBlackScholesSolver.Value.valueAt(s.Value))
     do this.Bind(_FdmBlackScholesSolver)
+(* 
+    casting 
+*)
+    internal new () = FdmBlackScholesSolverModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _FdmBlackScholesSolver.Value <- v
+    static member Cast (p : ICell<FdmBlackScholesSolver>) = 
+        if p :? FdmBlackScholesSolverModel then 
+            p :?> FdmBlackScholesSolverModel
+        else
+            let o = new FdmBlackScholesSolverModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

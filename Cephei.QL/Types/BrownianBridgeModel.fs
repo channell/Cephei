@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type BrownianBridgeModel
                                                    = triv (fun () -> _BrownianBridge.Value.transform(Begin.Value, output.Value)
                                                                      _BrownianBridge.Value)
     do this.Bind(_BrownianBridge)
+(* 
+    casting 
+*)
+    internal new () = BrownianBridgeModel(null)
+    member internal this.Inject v = _BrownianBridge.Value <- v
+    static member Cast (p : ICell<BrownianBridge>) = 
+        if p :? BrownianBridgeModel then 
+            p :?> BrownianBridgeModel
+        else
+            let o = new BrownianBridgeModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -84,6 +97,19 @@ type BrownianBridgeModel1
                                                    = triv (fun () -> _BrownianBridge.Value.transform(Begin.Value, output.Value)
                                                                      _BrownianBridge.Value)
     do this.Bind(_BrownianBridge)
+(* 
+    casting 
+*)
+    internal new () = BrownianBridgeModel1(null)
+    member internal this.Inject v = _BrownianBridge.Value <- v
+    static member Cast (p : ICell<BrownianBridge>) = 
+        if p :? BrownianBridgeModel1 then 
+            p :?> BrownianBridgeModel1
+        else
+            let o = new BrownianBridgeModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -117,6 +143,19 @@ type BrownianBridgeModel2
                                                    = triv (fun () -> _BrownianBridge.Value.transform(Begin.Value, output.Value)
                                                                      _BrownianBridge.Value)
     do this.Bind(_BrownianBridge)
+(* 
+    casting 
+*)
+    internal new () = BrownianBridgeModel2(null)
+    member internal this.Inject v = _BrownianBridge.Value <- v
+    static member Cast (p : ICell<BrownianBridge>) = 
+        if p :? BrownianBridgeModel2 then 
+            p :?> BrownianBridgeModel2
+        else
+            let o = new BrownianBridgeModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type WeakEventSourceModel
                                                    = triv (fun () -> _WeakEventSource.Value.Unsubscribe(handler.Value)
                                                                      _WeakEventSource.Value)
     do this.Bind(_WeakEventSource)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _WeakEventSource.Value <- v
+    static member Cast (p : ICell<WeakEventSource>) = 
+        if p :? WeakEventSourceModel then 
+            p :?> WeakEventSourceModel
+        else
+            let o = new WeakEventSourceModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

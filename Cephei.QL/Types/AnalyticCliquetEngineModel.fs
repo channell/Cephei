@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type AnalyticCliquetEngineModel
 *)
     let _AnalyticCliquetEngine                     = cell (fun () -> new AnalyticCliquetEngine (Process.Value))
     do this.Bind(_AnalyticCliquetEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticCliquetEngineModel(null)
+    member internal this.Inject v = _AnalyticCliquetEngine.Value <- v
+    static member Cast (p : ICell<AnalyticCliquetEngine>) = 
+        if p :? AnalyticCliquetEngineModel then 
+            p :?> AnalyticCliquetEngineModel
+        else
+            let o = new AnalyticCliquetEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

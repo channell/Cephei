@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -98,6 +98,19 @@ type FixedRateCouponModel
                                                    = triv (fun () -> _FixedRateCoupon.Value.unregisterWith(handler.Value)
                                                                      _FixedRateCoupon.Value)
     do this.Bind(_FixedRateCoupon)
+(* 
+    casting 
+*)
+    internal new () = FixedRateCouponModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FixedRateCoupon.Value <- v
+    static member Cast (p : ICell<FixedRateCoupon>) = 
+        if p :? FixedRateCouponModel then 
+            p :?> FixedRateCouponModel
+        else
+            let o = new FixedRateCouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -215,6 +228,19 @@ type FixedRateCouponModel1
                                                    = triv (fun () -> _FixedRateCoupon.Value.unregisterWith(handler.Value)
                                                                      _FixedRateCoupon.Value)
     do this.Bind(_FixedRateCoupon)
+(* 
+    casting 
+*)
+    internal new () = FixedRateCouponModel1(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FixedRateCoupon.Value <- v
+    static member Cast (p : ICell<FixedRateCoupon>) = 
+        if p :? FixedRateCouponModel1 then 
+            p :?> FixedRateCouponModel1
+        else
+            let o = new FixedRateCouponModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

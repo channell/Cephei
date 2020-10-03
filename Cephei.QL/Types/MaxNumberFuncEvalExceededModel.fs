@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type MaxNumberFuncEvalExceededModel
 *)
     let _MaxNumberFuncEvalExceeded                 = cell (fun () -> new MaxNumberFuncEvalExceeded (message.Value, inner.Value))
     do this.Bind(_MaxNumberFuncEvalExceeded)
+(* 
+    casting 
+*)
+    internal new () = MaxNumberFuncEvalExceededModel(null,null)
+    member internal this.Inject v = _MaxNumberFuncEvalExceeded.Value <- v
+    static member Cast (p : ICell<MaxNumberFuncEvalExceeded>) = 
+        if p :? MaxNumberFuncEvalExceededModel then 
+            p :?> MaxNumberFuncEvalExceededModel
+        else
+            let o = new MaxNumberFuncEvalExceededModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -73,6 +86,19 @@ type MaxNumberFuncEvalExceededModel1
 *)
     let _MaxNumberFuncEvalExceeded                 = cell (fun () -> new MaxNumberFuncEvalExceeded (message.Value))
     do this.Bind(_MaxNumberFuncEvalExceeded)
+(* 
+    casting 
+*)
+    internal new () = MaxNumberFuncEvalExceededModel1(null)
+    member internal this.Inject v = _MaxNumberFuncEvalExceeded.Value <- v
+    static member Cast (p : ICell<MaxNumberFuncEvalExceeded>) = 
+        if p :? MaxNumberFuncEvalExceededModel1 then 
+            p :?> MaxNumberFuncEvalExceededModel1
+        else
+            let o = new MaxNumberFuncEvalExceededModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -94,6 +120,19 @@ type MaxNumberFuncEvalExceededModel2
 *)
     let _MaxNumberFuncEvalExceeded                 = cell (fun () -> new MaxNumberFuncEvalExceeded ())
     do this.Bind(_MaxNumberFuncEvalExceeded)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _MaxNumberFuncEvalExceeded.Value <- v
+    static member Cast (p : ICell<MaxNumberFuncEvalExceeded>) = 
+        if p :? MaxNumberFuncEvalExceededModel2 then 
+            p :?> MaxNumberFuncEvalExceededModel2
+        else
+            let o = new MaxNumberFuncEvalExceededModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type BiasedBarrierPathPricerModel
     let _value                                     (path : ICell<IPath>)   
                                                    = triv (fun () -> _BiasedBarrierPathPricer.Value.value(path.Value))
     do this.Bind(_BiasedBarrierPathPricer)
+(* 
+    casting 
+*)
+    internal new () = BiasedBarrierPathPricerModel(null,null,null,null,null,null)
+    member internal this.Inject v = _BiasedBarrierPathPricer.Value <- v
+    static member Cast (p : ICell<BiasedBarrierPathPricer>) = 
+        if p :? BiasedBarrierPathPricerModel then 
+            p :?> BiasedBarrierPathPricerModel
+        else
+            let o = new BiasedBarrierPathPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

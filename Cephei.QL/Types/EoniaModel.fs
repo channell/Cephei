@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type EoniaModel
                                                    = triv (fun () -> _Eonia.Value.unregisterWith(handler.Value)
                                                                      _Eonia.Value)
     do this.Bind(_Eonia)
+(* 
+    casting 
+*)
+    internal new () = EoniaModel(null)
+    member internal this.Inject v = _Eonia.Value <- v
+    static member Cast (p : ICell<Eonia>) = 
+        if p :? EoniaModel then 
+            p :?> EoniaModel
+        else
+            let o = new EoniaModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -207,6 +220,19 @@ type EoniaModel1
                                                    = triv (fun () -> _Eonia.Value.unregisterWith(handler.Value)
                                                                      _Eonia.Value)
     do this.Bind(_Eonia)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Eonia.Value <- v
+    static member Cast (p : ICell<Eonia>) = 
+        if p :? EoniaModel1 then 
+            p :?> EoniaModel1
+        else
+            let o = new EoniaModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type AnalyticDividendEuropeanEngineModel
 *)
     let _AnalyticDividendEuropeanEngine            = cell (fun () -> new AnalyticDividendEuropeanEngine (Process.Value))
     do this.Bind(_AnalyticDividendEuropeanEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticDividendEuropeanEngineModel(null)
+    member internal this.Inject v = _AnalyticDividendEuropeanEngine.Value <- v
+    static member Cast (p : ICell<AnalyticDividendEuropeanEngine>) = 
+        if p :? AnalyticDividendEuropeanEngineModel then 
+            p :?> AnalyticDividendEuropeanEngineModel
+        else
+            let o = new AnalyticDividendEuropeanEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

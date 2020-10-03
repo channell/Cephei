@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type CumulativeGammaDistributionModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _CumulativeGammaDistribution.Value.value(x.Value))
     do this.Bind(_CumulativeGammaDistribution)
+(* 
+    casting 
+*)
+    internal new () = CumulativeGammaDistributionModel(null)
+    member internal this.Inject v = _CumulativeGammaDistribution.Value <- v
+    static member Cast (p : ICell<CumulativeGammaDistribution>) = 
+        if p :? CumulativeGammaDistributionModel then 
+            p :?> CumulativeGammaDistributionModel
+        else
+            let o = new CumulativeGammaDistributionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

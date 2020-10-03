@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -73,6 +73,19 @@ type LocalVolCurveModel
                                                                      _LocalVolCurve.Value)
     let _extrapolate                               = triv (fun () -> _LocalVolCurve.Value.extrapolate)
     do this.Bind(_LocalVolCurve)
+(* 
+    casting 
+*)
+    internal new () = LocalVolCurveModel(null)
+    member internal this.Inject v = _LocalVolCurve.Value <- v
+    static member Cast (p : ICell<LocalVolCurve>) = 
+        if p :? LocalVolCurveModel then 
+            p :?> LocalVolCurveModel
+        else
+            let o = new LocalVolCurveModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

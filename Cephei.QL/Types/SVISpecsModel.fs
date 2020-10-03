@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type SVISpecsModel
     let _weight                                    (strike : ICell<double>) (forward : ICell<double>) (stdDev : ICell<double>) (addParams : ICell<List<Nullable<double>>>)   
                                                    = triv (fun () -> _SVISpecs.Value.weight(strike.Value, forward.Value, stdDev.Value, addParams.Value))
     do this.Bind(_SVISpecs)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _SVISpecs.Value <- v
+    static member Cast (p : ICell<SVISpecs>) = 
+        if p :? SVISpecsModel then 
+            p :?> SVISpecsModel
+        else
+            let o = new SVISpecsModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

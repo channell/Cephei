@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type FaceValueClaimModel
     let _update                                    = triv (fun () -> _FaceValueClaim.Value.update()
                                                                      _FaceValueClaim.Value)
     do this.Bind(_FaceValueClaim)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FaceValueClaim.Value <- v
+    static member Cast (p : ICell<FaceValueClaim>) = 
+        if p :? FaceValueClaimModel then 
+            p :?> FaceValueClaimModel
+        else
+            let o = new FaceValueClaimModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -61,6 +61,19 @@ type LfmSwaptionEngineModel
     let _update                                    = triv (fun () -> _LfmSwaptionEngine.Value.update()
                                                                      _LfmSwaptionEngine.Value)
     do this.Bind(_LfmSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = LfmSwaptionEngineModel(null,null)
+    member internal this.Inject v = _LfmSwaptionEngine.Value <- v
+    static member Cast (p : ICell<LfmSwaptionEngine>) = 
+        if p :? LfmSwaptionEngineModel then 
+            p :?> LfmSwaptionEngineModel
+        else
+            let o = new LfmSwaptionEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

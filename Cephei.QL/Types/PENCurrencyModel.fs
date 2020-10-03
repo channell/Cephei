@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type PENCurrencyModel
     let _ToString                                  = triv (fun () -> _PENCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _PENCurrency.Value.triangulationCurrency)
     do this.Bind(_PENCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _PENCurrency.Value <- v
+    static member Cast (p : ICell<PENCurrency>) = 
+        if p :? PENCurrencyModel then 
+            p :?> PENCurrencyModel
+        else
+            let o = new PENCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -143,6 +143,19 @@ type FloatingCatBondModel
                                                                      _FloatingCatBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).valuationDate())
     do this.Bind(_FloatingCatBond)
+(* 
+    casting 
+*)
+    internal new () = FloatingCatBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FloatingCatBond.Value <- v
+    static member Cast (p : ICell<FloatingCatBond>) = 
+        if p :? FloatingCatBondModel then 
+            p :?> FloatingCatBondModel
+        else
+            let o = new FloatingCatBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -323,6 +336,19 @@ type FloatingCatBondModel1
                                                                      _FloatingCatBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).valuationDate())
     do this.Bind(_FloatingCatBond)
+(* 
+    casting 
+*)
+    internal new () = FloatingCatBondModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FloatingCatBond.Value <- v
+    static member Cast (p : ICell<FloatingCatBond>) = 
+        if p :? FloatingCatBondModel1 then 
+            p :?> FloatingCatBondModel1
+        else
+            let o = new FloatingCatBondModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

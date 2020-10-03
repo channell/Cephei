@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type RendistatoEquivalentSwapLengthQuoteModel
                                                    = triv (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.unregisterWith(handler.Value)
                                                                      _RendistatoEquivalentSwapLengthQuote.Value)
     do this.Bind(_RendistatoEquivalentSwapLengthQuote)
+(* 
+    casting 
+*)
+    internal new () = RendistatoEquivalentSwapLengthQuoteModel(null)
+    member internal this.Inject v = _RendistatoEquivalentSwapLengthQuote.Value <- v
+    static member Cast (p : ICell<RendistatoEquivalentSwapLengthQuote>) = 
+        if p :? RendistatoEquivalentSwapLengthQuoteModel then 
+            p :?> RendistatoEquivalentSwapLengthQuoteModel
+        else
+            let o = new RendistatoEquivalentSwapLengthQuoteModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

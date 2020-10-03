@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -66,6 +66,19 @@ type AnalyticH1HWEngineModel
                                                    = triv (fun () -> _AnalyticH1HWEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticH1HWEngine.Value)
     do this.Bind(_AnalyticH1HWEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticH1HWEngineModel(null,null,null,null)
+    member internal this.Inject v = _AnalyticH1HWEngine.Value <- v
+    static member Cast (p : ICell<AnalyticH1HWEngine>) = 
+        if p :? AnalyticH1HWEngineModel then 
+            p :?> AnalyticH1HWEngineModel
+        else
+            let o = new AnalyticH1HWEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -124,6 +137,19 @@ type AnalyticH1HWEngineModel1
                                                    = triv (fun () -> _AnalyticH1HWEngine.Value.unregisterWith(handler.Value)
                                                                      _AnalyticH1HWEngine.Value)
     do this.Bind(_AnalyticH1HWEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticH1HWEngineModel1(null,null,null,null,null)
+    member internal this.Inject v = _AnalyticH1HWEngine.Value <- v
+    static member Cast (p : ICell<AnalyticH1HWEngine>) = 
+        if p :? AnalyticH1HWEngineModel1 then 
+            p :?> AnalyticH1HWEngineModel1
+        else
+            let o = new AnalyticH1HWEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

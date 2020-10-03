@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type ConstantCapFloorTermVolatilityModel
                                                                      _ConstantCapFloorTermVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantCapFloorTermVolatility.Value.extrapolate)
     do this.Bind(_ConstantCapFloorTermVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantCapFloorTermVolatilityModel(null,null,null,null,null)
+    member internal this.Inject v = _ConstantCapFloorTermVolatility.Value <- v
+    static member Cast (p : ICell<ConstantCapFloorTermVolatility>) = 
+        if p :? ConstantCapFloorTermVolatilityModel then 
+            p :?> ConstantCapFloorTermVolatilityModel
+        else
+            let o = new ConstantCapFloorTermVolatilityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -174,6 +187,19 @@ type ConstantCapFloorTermVolatilityModel1
                                                                      _ConstantCapFloorTermVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantCapFloorTermVolatility.Value.extrapolate)
     do this.Bind(_ConstantCapFloorTermVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantCapFloorTermVolatilityModel1(null,null,null,null,null)
+    member internal this.Inject v = _ConstantCapFloorTermVolatility.Value <- v
+    static member Cast (p : ICell<ConstantCapFloorTermVolatility>) = 
+        if p :? ConstantCapFloorTermVolatilityModel1 then 
+            p :?> ConstantCapFloorTermVolatilityModel1
+        else
+            let o = new ConstantCapFloorTermVolatilityModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -265,6 +291,19 @@ type ConstantCapFloorTermVolatilityModel2
                                                                      _ConstantCapFloorTermVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantCapFloorTermVolatility.Value.extrapolate)
     do this.Bind(_ConstantCapFloorTermVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantCapFloorTermVolatilityModel2(null,null,null,null,null)
+    member internal this.Inject v = _ConstantCapFloorTermVolatility.Value <- v
+    static member Cast (p : ICell<ConstantCapFloorTermVolatility>) = 
+        if p :? ConstantCapFloorTermVolatilityModel2 then 
+            p :?> ConstantCapFloorTermVolatilityModel2
+        else
+            let o = new ConstantCapFloorTermVolatilityModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -356,6 +395,19 @@ type ConstantCapFloorTermVolatilityModel3
                                                                      _ConstantCapFloorTermVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantCapFloorTermVolatility.Value.extrapolate)
     do this.Bind(_ConstantCapFloorTermVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantCapFloorTermVolatilityModel3(null,null,null,null,null)
+    member internal this.Inject v = _ConstantCapFloorTermVolatility.Value <- v
+    static member Cast (p : ICell<ConstantCapFloorTermVolatility>) = 
+        if p :? ConstantCapFloorTermVolatilityModel3 then 
+            p :?> ConstantCapFloorTermVolatilityModel3
+        else
+            let o = new ConstantCapFloorTermVolatilityModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

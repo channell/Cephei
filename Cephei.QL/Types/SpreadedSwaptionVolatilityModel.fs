@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -120,6 +120,19 @@ type SpreadedSwaptionVolatilityModel
                                                                      _SpreadedSwaptionVolatility.Value)
     let _extrapolate                               = triv (fun () -> _SpreadedSwaptionVolatility.Value.extrapolate)
     do this.Bind(_SpreadedSwaptionVolatility)
+(* 
+    casting 
+*)
+    internal new () = SpreadedSwaptionVolatilityModel(null,null)
+    member internal this.Inject v = _SpreadedSwaptionVolatility.Value <- v
+    static member Cast (p : ICell<SpreadedSwaptionVolatility>) = 
+        if p :? SpreadedSwaptionVolatilityModel then 
+            p :?> SpreadedSwaptionVolatilityModel
+        else
+            let o = new SpreadedSwaptionVolatilityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

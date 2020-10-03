@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type Fdm1dMesherModel
     let _locations                                 = triv (fun () -> _Fdm1dMesher.Value.locations())
     let _size                                      = triv (fun () -> _Fdm1dMesher.Value.size())
     do this.Bind(_Fdm1dMesher)
+(* 
+    casting 
+*)
+    internal new () = Fdm1dMesherModel(null)
+    member internal this.Inject v = _Fdm1dMesher.Value <- v
+    static member Cast (p : ICell<Fdm1dMesher>) = 
+        if p :? Fdm1dMesherModel then 
+            p :?> Fdm1dMesherModel
+        else
+            let o = new Fdm1dMesherModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

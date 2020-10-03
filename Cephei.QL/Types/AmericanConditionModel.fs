@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type AmericanConditionModel
                                                    = triv (fun () -> _AmericanCondition.Value.applyTo(o.Value, t.Value)
                                                                      _AmericanCondition.Value)
     do this.Bind(_AmericanCondition)
+(* 
+    casting 
+*)
+    internal new () = AmericanConditionModel(null,null)
+    member internal this.Inject v = _AmericanCondition.Value <- v
+    static member Cast (p : ICell<AmericanCondition>) = 
+        if p :? AmericanConditionModel then 
+            p :?> AmericanConditionModel
+        else
+            let o = new AmericanConditionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -81,6 +94,19 @@ type AmericanConditionModel1
                                                    = triv (fun () -> _AmericanCondition.Value.applyTo(o.Value, t.Value)
                                                                      _AmericanCondition.Value)
     do this.Bind(_AmericanCondition)
+(* 
+    casting 
+*)
+    internal new () = AmericanConditionModel1(null)
+    member internal this.Inject v = _AmericanCondition.Value <- v
+    static member Cast (p : ICell<AmericanCondition>) = 
+        if p :? AmericanConditionModel1 then 
+            p :?> AmericanConditionModel1
+        else
+            let o = new AmericanConditionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

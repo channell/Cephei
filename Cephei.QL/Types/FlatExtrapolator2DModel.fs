@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -73,6 +73,19 @@ type FlatExtrapolator2DModel
                                                                      _FlatExtrapolator2D.Value)
     let _extrapolate                               = triv (fun () -> _FlatExtrapolator2D.Value.extrapolate)
     do this.Bind(_FlatExtrapolator2D)
+(* 
+    casting 
+*)
+    internal new () = FlatExtrapolator2DModel(null)
+    member internal this.Inject v = _FlatExtrapolator2D.Value <- v
+    static member Cast (p : ICell<FlatExtrapolator2D>) = 
+        if p :? FlatExtrapolator2DModel then 
+            p :?> FlatExtrapolator2DModel
+        else
+            let o = new FlatExtrapolator2DModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type CallabilityModel
                                                    = triv (fun () -> _Callability.Value.unregisterWith(handler.Value)
                                                                      _Callability.Value)
     do this.Bind(_Callability)
+(* 
+    casting 
+*)
+    internal new () = CallabilityModel(null,null,null)
+    member internal this.Inject v = _Callability.Value <- v
+    static member Cast (p : ICell<Callability>) = 
+        if p :? CallabilityModel then 
+            p :?> CallabilityModel
+        else
+            let o = new CallabilityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

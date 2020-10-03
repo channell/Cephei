@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -73,6 +73,19 @@ type ForwardFlatInterpolationModel
                                                                      _ForwardFlatInterpolation.Value)
     let _extrapolate                               = triv (fun () -> _ForwardFlatInterpolation.Value.extrapolate)
     do this.Bind(_ForwardFlatInterpolation)
+(* 
+    casting 
+*)
+    internal new () = ForwardFlatInterpolationModel(null,null,null)
+    member internal this.Inject v = _ForwardFlatInterpolation.Value <- v
+    static member Cast (p : ICell<ForwardFlatInterpolation>) = 
+        if p :? ForwardFlatInterpolationModel then 
+            p :?> ForwardFlatInterpolationModel
+        else
+            let o = new ForwardFlatInterpolationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

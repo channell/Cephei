@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -88,6 +88,19 @@ type CapFloorTermVolCurveModel
                                                                      _CapFloorTermVolCurve.Value)
     let _extrapolate                               = triv (fun () -> _CapFloorTermVolCurve.Value.extrapolate)
     do this.Bind(_CapFloorTermVolCurve)
+(* 
+    casting 
+*)
+    internal new () = CapFloorTermVolCurveModel(null,null,null,null,null,null)
+    member internal this.Inject v = _CapFloorTermVolCurve.Value <- v
+    static member Cast (p : ICell<CapFloorTermVolCurve>) = 
+        if p :? CapFloorTermVolCurveModel then 
+            p :?> CapFloorTermVolCurveModel
+        else
+            let o = new CapFloorTermVolCurveModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -188,6 +201,19 @@ type CapFloorTermVolCurveModel1
                                                                      _CapFloorTermVolCurve.Value)
     let _extrapolate                               = triv (fun () -> _CapFloorTermVolCurve.Value.extrapolate)
     do this.Bind(_CapFloorTermVolCurve)
+(* 
+    casting 
+*)
+    internal new () = CapFloorTermVolCurveModel1(null,null,null,null,null,null)
+    member internal this.Inject v = _CapFloorTermVolCurve.Value <- v
+    static member Cast (p : ICell<CapFloorTermVolCurve>) = 
+        if p :? CapFloorTermVolCurveModel1 then 
+            p :?> CapFloorTermVolCurveModel1
+        else
+            let o = new CapFloorTermVolCurveModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -288,6 +314,19 @@ type CapFloorTermVolCurveModel2
                                                                      _CapFloorTermVolCurve.Value)
     let _extrapolate                               = triv (fun () -> _CapFloorTermVolCurve.Value.extrapolate)
     do this.Bind(_CapFloorTermVolCurve)
+(* 
+    casting 
+*)
+    internal new () = CapFloorTermVolCurveModel2(null,null,null,null,null,null)
+    member internal this.Inject v = _CapFloorTermVolCurve.Value <- v
+    static member Cast (p : ICell<CapFloorTermVolCurve>) = 
+        if p :? CapFloorTermVolCurveModel2 then 
+            p :?> CapFloorTermVolCurveModel2
+        else
+            let o = new CapFloorTermVolCurveModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -388,6 +427,19 @@ type CapFloorTermVolCurveModel3
                                                                      _CapFloorTermVolCurve.Value)
     let _extrapolate                               = triv (fun () -> _CapFloorTermVolCurve.Value.extrapolate)
     do this.Bind(_CapFloorTermVolCurve)
+(* 
+    casting 
+*)
+    internal new () = CapFloorTermVolCurveModel3(null,null,null,null,null,null)
+    member internal this.Inject v = _CapFloorTermVolCurve.Value <- v
+    static member Cast (p : ICell<CapFloorTermVolCurve>) = 
+        if p :? CapFloorTermVolCurveModel3 then 
+            p :?> CapFloorTermVolCurveModel3
+        else
+            let o = new CapFloorTermVolCurveModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

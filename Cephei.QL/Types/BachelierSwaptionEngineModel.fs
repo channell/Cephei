@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type BachelierSwaptionEngineModel
     let _termStructure                             = triv (fun () -> _BachelierSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BachelierSwaptionEngine.Value.volatility())
     do this.Bind(_BachelierSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = BachelierSwaptionEngineModel(null,null,null,null)
+    member internal this.Inject v = _BachelierSwaptionEngine.Value <- v
+    static member Cast (p : ICell<BachelierSwaptionEngine>) = 
+        if p :? BachelierSwaptionEngineModel then 
+            p :?> BachelierSwaptionEngineModel
+        else
+            let o = new BachelierSwaptionEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -89,6 +102,19 @@ type BachelierSwaptionEngineModel1
     let _termStructure                             = triv (fun () -> _BachelierSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BachelierSwaptionEngine.Value.volatility())
     do this.Bind(_BachelierSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = BachelierSwaptionEngineModel1(null,null,null)
+    member internal this.Inject v = _BachelierSwaptionEngine.Value <- v
+    static member Cast (p : ICell<BachelierSwaptionEngine>) = 
+        if p :? BachelierSwaptionEngineModel1 then 
+            p :?> BachelierSwaptionEngineModel1
+        else
+            let o = new BachelierSwaptionEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -125,6 +151,19 @@ type BachelierSwaptionEngineModel2
     let _termStructure                             = triv (fun () -> _BachelierSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BachelierSwaptionEngine.Value.volatility())
     do this.Bind(_BachelierSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = BachelierSwaptionEngineModel2(null,null,null,null)
+    member internal this.Inject v = _BachelierSwaptionEngine.Value <- v
+    static member Cast (p : ICell<BachelierSwaptionEngine>) = 
+        if p :? BachelierSwaptionEngineModel2 then 
+            p :?> BachelierSwaptionEngineModel2
+        else
+            let o = new BachelierSwaptionEngineModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -61,6 +61,19 @@ type SimpsonIntegralModel
     let _value                                     (f : ICell<Func<double,double>>) (a : ICell<double>) (b : ICell<double>)   
                                                    = triv (fun () -> _SimpsonIntegral.Value.value(f.Value, a.Value, b.Value))
     do this.Bind(_SimpsonIntegral)
+(* 
+    casting 
+*)
+    internal new () = SimpsonIntegralModel(null,null)
+    member internal this.Inject v = _SimpsonIntegral.Value <- v
+    static member Cast (p : ICell<SimpsonIntegral>) = 
+        if p :? SimpsonIntegralModel then 
+            p :?> SimpsonIntegralModel
+        else
+            let o = new SimpsonIntegralModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

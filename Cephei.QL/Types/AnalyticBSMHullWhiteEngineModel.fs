@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type AnalyticBSMHullWhiteEngineModel
     let _update                                    = triv (fun () -> _AnalyticBSMHullWhiteEngine.Value.update()
                                                                      _AnalyticBSMHullWhiteEngine.Value)
     do this.Bind(_AnalyticBSMHullWhiteEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticBSMHullWhiteEngineModel(null,null,null)
+    member internal this.Inject v = _AnalyticBSMHullWhiteEngine.Value <- v
+    static member Cast (p : ICell<AnalyticBSMHullWhiteEngine>) = 
+        if p :? AnalyticBSMHullWhiteEngineModel then 
+            p :?> AnalyticBSMHullWhiteEngineModel
+        else
+            let o = new AnalyticBSMHullWhiteEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type ParabolicModel
                                                                      _Parabolic.Value)
     let _extrapolate                               = triv (fun () -> _Parabolic.Value.extrapolate)
     do this.Bind(_Parabolic)
+(* 
+    casting 
+*)
+    internal new () = ParabolicModel(null,null,null)
+    member internal this.Inject v = _Parabolic.Value <- v
+    static member Cast (p : ICell<Parabolic>) = 
+        if p :? ParabolicModel then 
+            p :?> ParabolicModel
+        else
+            let o = new ParabolicModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type SviSmileSectionModel
                                                    = triv (fun () -> _SviSmileSection.Value.volatility(strike.Value))
     let _volatilityType                            = triv (fun () -> _SviSmileSection.Value.volatilityType())
     do this.Bind(_SviSmileSection)
+(* 
+    casting 
+*)
+    internal new () = SviSmileSectionModel(null,null,null)
+    member internal this.Inject v = _SviSmileSection.Value <- v
+    static member Cast (p : ICell<SviSmileSection>) = 
+        if p :? SviSmileSectionModel then 
+            p :?> SviSmileSectionModel
+        else
+            let o = new SviSmileSectionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -161,6 +174,19 @@ type SviSmileSectionModel1
                                                    = triv (fun () -> _SviSmileSection.Value.volatility(strike.Value))
     let _volatilityType                            = triv (fun () -> _SviSmileSection.Value.volatilityType())
     do this.Bind(_SviSmileSection)
+(* 
+    casting 
+*)
+    internal new () = SviSmileSectionModel1(null,null,null,null)
+    member internal this.Inject v = _SviSmileSection.Value <- v
+    static member Cast (p : ICell<SviSmileSection>) = 
+        if p :? SviSmileSectionModel1 then 
+            p :?> SviSmileSectionModel1
+        else
+            let o = new SviSmileSectionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

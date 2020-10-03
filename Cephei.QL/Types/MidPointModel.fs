@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type MidPointModel
                                                    = triv (fun () -> _MidPoint.Value.integrate(f.Value, a.Value, b.Value, I.Value, N.Value))
     let _nbEvalutions                              = triv (fun () -> _MidPoint.Value.nbEvalutions())
     do this.Bind(_MidPoint)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _MidPoint.Value <- v
+    static member Cast (p : ICell<MidPoint>) = 
+        if p :? MidPointModel then 
+            p :?> MidPointModel
+        else
+            let o = new MidPointModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type MultiPathModel
     let _this                                      (j : ICell<int>)   
                                                    = triv (fun () -> _MultiPath.Value.[j.Value])
     do this.Bind(_MultiPath)
+(* 
+    casting 
+*)
+    internal new () = MultiPathModel(null,null)
+    member internal this.Inject v = _MultiPath.Value <- v
+    static member Cast (p : ICell<MultiPath>) = 
+        if p :? MultiPathModel then 
+            p :?> MultiPathModel
+        else
+            let o = new MultiPathModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -88,6 +101,19 @@ type MultiPathModel1
     let _this                                      (j : ICell<int>)   
                                                    = triv (fun () -> _MultiPath.Value.[j.Value])
     do this.Bind(_MultiPath)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _MultiPath.Value <- v
+    static member Cast (p : ICell<MultiPath>) = 
+        if p :? MultiPathModel1 then 
+            p :?> MultiPathModel1
+        else
+            let o = new MultiPathModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -123,6 +149,19 @@ type MultiPathModel2
     let _this                                      (j : ICell<int>)   
                                                    = triv (fun () -> _MultiPath.Value.[j.Value])
     do this.Bind(_MultiPath)
+(* 
+    casting 
+*)
+    internal new () = MultiPathModel2(null)
+    member internal this.Inject v = _MultiPath.Value <- v
+    static member Cast (p : ICell<MultiPath>) = 
+        if p :? MultiPathModel2 then 
+            p :?> MultiPathModel2
+        else
+            let o = new MultiPathModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type LoanModel
                                                                      _Loan.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).valuationDate())
     do this.Bind(_Loan)
+(* 
+    casting 
+*)
+    internal new () = LoanModel(null,null,null)
+    member internal this.Inject v = _Loan.Value <- v
+    static member Cast (p : ICell<Loan>) = 
+        if p :? LoanModel then 
+            p :?> LoanModel
+        else
+            let o = new LoanModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

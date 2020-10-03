@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,31 @@ type EuwaxModel
                                                    = cell (fun () -> _Euwax.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _Euwax.Value.name())
     do this.Bind(_Euwax)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Euwax.Value <- v
+    static member Cast (p : ICell<Euwax>) = 
+        if p :? EuwaxModel then 
+            p :?> EuwaxModel
+        else
+            let o = new EuwaxModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<Euwax>) = 
+        if p :? EuwaxModel then 
+            p :?> EuwaxModel
+        else
+            let o = new EuwaxModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

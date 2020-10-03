@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -70,6 +70,19 @@ type SpreadOptionModel
                                                                      _SpreadOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _SpreadOption).valuationDate())
     do this.Bind(_SpreadOption)
+(* 
+    casting 
+*)
+    internal new () = SpreadOptionModel(null,null,null,null)
+    member internal this.Inject v = _SpreadOption.Value <- v
+    static member Cast (p : ICell<SpreadOption>) = 
+        if p :? SpreadOptionModel then 
+            p :?> SpreadOptionModel
+        else
+            let o = new SpreadOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

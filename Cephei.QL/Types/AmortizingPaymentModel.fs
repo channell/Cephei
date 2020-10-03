@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -68,6 +68,19 @@ type AmortizingPaymentModel
                                                    = triv (fun () -> _AmortizingPayment.Value.unregisterWith(handler.Value)
                                                                      _AmortizingPayment.Value)
     do this.Bind(_AmortizingPayment)
+(* 
+    casting 
+*)
+    internal new () = AmortizingPaymentModel(null,null)
+    member internal this.Inject v = _AmortizingPayment.Value <- v
+    static member Cast (p : ICell<AmortizingPayment>) = 
+        if p :? AmortizingPaymentModel then 
+            p :?> AmortizingPaymentModel
+        else
+            let o = new AmortizingPaymentModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

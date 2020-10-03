@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type Actual360Model
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _Actual360.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_Actual360)
+(* 
+    casting 
+*)
+    internal new () = Actual360Model(null)
+    member internal this.Inject v = _Actual360.Value <- v
+    static member Cast (p : ICell<Actual360>) = 
+        if p :? Actual360Model then 
+            p :?> Actual360Model
+        else
+            let o = new Actual360Model ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type BlackCapFloorEngineModel
     let _termStructure                             = triv (fun () -> _BlackCapFloorEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackCapFloorEngine.Value.volatility())
     do this.Bind(_BlackCapFloorEngine)
+(* 
+    casting 
+*)
+    internal new () = BlackCapFloorEngineModel(null,null,null,null)
+    member internal this.Inject v = _BlackCapFloorEngine.Value <- v
+    static member Cast (p : ICell<BlackCapFloorEngine>) = 
+        if p :? BlackCapFloorEngineModel then 
+            p :?> BlackCapFloorEngineModel
+        else
+            let o = new BlackCapFloorEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -92,6 +105,19 @@ type BlackCapFloorEngineModel1
     let _termStructure                             = triv (fun () -> _BlackCapFloorEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackCapFloorEngine.Value.volatility())
     do this.Bind(_BlackCapFloorEngine)
+(* 
+    casting 
+*)
+    internal new () = BlackCapFloorEngineModel1(null,null,null)
+    member internal this.Inject v = _BlackCapFloorEngine.Value <- v
+    static member Cast (p : ICell<BlackCapFloorEngine>) = 
+        if p :? BlackCapFloorEngineModel1 then 
+            p :?> BlackCapFloorEngineModel1
+        else
+            let o = new BlackCapFloorEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -130,6 +156,19 @@ type BlackCapFloorEngineModel2
     let _termStructure                             = triv (fun () -> _BlackCapFloorEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackCapFloorEngine.Value.volatility())
     do this.Bind(_BlackCapFloorEngine)
+(* 
+    casting 
+*)
+    internal new () = BlackCapFloorEngineModel2(null,null,null,null)
+    member internal this.Inject v = _BlackCapFloorEngine.Value <- v
+    static member Cast (p : ICell<BlackCapFloorEngine>) = 
+        if p :? BlackCapFloorEngineModel2 then 
+            p :?> BlackCapFloorEngineModel2
+        else
+            let o = new BlackCapFloorEngineModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

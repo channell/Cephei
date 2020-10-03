@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type BMASwapRateHelperModel
                                                    = triv (fun () -> _BMASwapRateHelper.Value.unregisterWith(handler.Value)
                                                                      _BMASwapRateHelper.Value)
     do this.Bind(_BMASwapRateHelper)
+(* 
+    casting 
+*)
+    internal new () = BMASwapRateHelperModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _BMASwapRateHelper.Value <- v
+    static member Cast (p : ICell<BMASwapRateHelper>) = 
+        if p :? BMASwapRateHelperModel then 
+            p :?> BMASwapRateHelperModel
+        else
+            let o = new BMASwapRateHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

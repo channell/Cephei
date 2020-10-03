@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type FlatHazardRateModel
     let _FlatHazardRate                            = cell (fun () -> new FlatHazardRate (settlementDays.Value, calendar.Value, hazardRate.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _FlatHazardRate.Value.maxDate())
     do this.Bind(_FlatHazardRate)
+(* 
+    casting 
+*)
+    internal new () = FlatHazardRateModel(null,null,null,null)
+    member internal this.Inject v = _FlatHazardRate.Value <- v
+    static member Cast (p : ICell<FlatHazardRate>) = 
+        if p :? FlatHazardRateModel then 
+            p :?> FlatHazardRateModel
+        else
+            let o = new FlatHazardRateModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -86,6 +99,19 @@ type FlatHazardRateModel1
     let _FlatHazardRate                            = cell (fun () -> new FlatHazardRate (referenceDate.Value, hazardRate.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _FlatHazardRate.Value.maxDate())
     do this.Bind(_FlatHazardRate)
+(* 
+    casting 
+*)
+    internal new () = FlatHazardRateModel1(null,null,null)
+    member internal this.Inject v = _FlatHazardRate.Value <- v
+    static member Cast (p : ICell<FlatHazardRate>) = 
+        if p :? FlatHazardRateModel1 then 
+            p :?> FlatHazardRateModel1
+        else
+            let o = new FlatHazardRateModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -118,6 +144,19 @@ type FlatHazardRateModel2
     let _FlatHazardRate                            = cell (fun () -> new FlatHazardRate (referenceDate.Value, hazardRate.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _FlatHazardRate.Value.maxDate())
     do this.Bind(_FlatHazardRate)
+(* 
+    casting 
+*)
+    internal new () = FlatHazardRateModel2(null,null,null)
+    member internal this.Inject v = _FlatHazardRate.Value <- v
+    static member Cast (p : ICell<FlatHazardRate>) = 
+        if p :? FlatHazardRateModel2 then 
+            p :?> FlatHazardRateModel2
+        else
+            let o = new FlatHazardRateModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -152,6 +191,19 @@ type FlatHazardRateModel3
     let _FlatHazardRate                            = cell (fun () -> new FlatHazardRate (settlementDays.Value, calendar.Value, hazardRate.Value, dc.Value))
     let _maxDate                                   = triv (fun () -> _FlatHazardRate.Value.maxDate())
     do this.Bind(_FlatHazardRate)
+(* 
+    casting 
+*)
+    internal new () = FlatHazardRateModel3(null,null,null,null)
+    member internal this.Inject v = _FlatHazardRate.Value <- v
+    static member Cast (p : ICell<FlatHazardRate>) = 
+        if p :? FlatHazardRateModel3 then 
+            p :?> FlatHazardRateModel3
+        else
+            let o = new FlatHazardRateModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

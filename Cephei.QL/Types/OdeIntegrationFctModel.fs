@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,31 @@ type OdeIntegrationFctModel
     let _solve                                     (a : ICell<double>) (y0 : ICell<double>) (x0 : ICell<double>) (x1 : ICell<double>)   
                                                    = cell (fun () -> _OdeIntegrationFct.Value.solve(a.Value, y0.Value, x0.Value, x1.Value))
     do this.Bind(_OdeIntegrationFct)
+(* 
+    casting 
+*)
+    internal new () = OdeIntegrationFctModel(null,null,null)
+    member internal this.Inject v = _OdeIntegrationFct.Value <- v
+    static member Cast (p : ICell<OdeIntegrationFct>) = 
+        if p :? OdeIntegrationFctModel then 
+            p :?> OdeIntegrationFctModel
+        else
+            let o = new OdeIntegrationFctModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = OdeIntegrationFctModel(null,null,null)
+    static member Cast (p : ICell<OdeIntegrationFct>) = 
+        if p :? OdeIntegrationFctModel then 
+            p :?> OdeIntegrationFctModel
+        else
+            let o = new OdeIntegrationFctModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

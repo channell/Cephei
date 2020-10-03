@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type YoYInflationCapFloorModel
                                                                      _YoYInflationCapFloor.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCapFloor).valuationDate())
     do this.Bind(_YoYInflationCapFloor)
+(* 
+    casting 
+*)
+    internal new () = YoYInflationCapFloorModel(null,null,null,null,null)
+    member internal this.Inject v = _YoYInflationCapFloor.Value <- v
+    static member Cast (p : ICell<YoYInflationCapFloor>) = 
+        if p :? YoYInflationCapFloorModel then 
+            p :?> YoYInflationCapFloorModel
+        else
+            let o = new YoYInflationCapFloorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -160,6 +173,19 @@ type YoYInflationCapFloorModel1
                                                                      _YoYInflationCapFloor.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCapFloor).valuationDate())
     do this.Bind(_YoYInflationCapFloor)
+(* 
+    casting 
+*)
+    internal new () = YoYInflationCapFloorModel1(null,null,null,null,null,null)
+    member internal this.Inject v = _YoYInflationCapFloor.Value <- v
+    static member Cast (p : ICell<YoYInflationCapFloor>) = 
+        if p :? YoYInflationCapFloorModel1 then 
+            p :?> YoYInflationCapFloorModel1
+        else
+            let o = new YoYInflationCapFloorModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type WulinYongDoubleBarrierEngineModel
 *)
     let _WulinYongDoubleBarrierEngine              = cell (fun () -> new WulinYongDoubleBarrierEngine (Process.Value, series.Value))
     do this.Bind(_WulinYongDoubleBarrierEngine)
+(* 
+    casting 
+*)
+    internal new () = WulinYongDoubleBarrierEngineModel(null,null)
+    member internal this.Inject v = _WulinYongDoubleBarrierEngine.Value <- v
+    static member Cast (p : ICell<WulinYongDoubleBarrierEngine>) = 
+        if p :? WulinYongDoubleBarrierEngineModel then 
+            p :?> WulinYongDoubleBarrierEngineModel
+        else
+            let o = new WulinYongDoubleBarrierEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

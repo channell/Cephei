@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type MTLCurrencyModel
     let _ToString                                  = triv (fun () -> _MTLCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _MTLCurrency.Value.triangulationCurrency)
     do this.Bind(_MTLCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _MTLCurrency.Value <- v
+    static member Cast (p : ICell<MTLCurrency>) = 
+        if p :? MTLCurrencyModel then 
+            p :?> MTLCurrencyModel
+        else
+            let o = new MTLCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

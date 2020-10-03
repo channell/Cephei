@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -85,6 +85,19 @@ type UKRPIModel
                                                    = triv (fun () -> _UKRPI.Value.unregisterWith(handler.Value)
                                                                      _UKRPI.Value)
     do this.Bind(_UKRPI)
+(* 
+    casting 
+*)
+    internal new () = UKRPIModel(null,null)
+    member internal this.Inject v = _UKRPI.Value <- v
+    static member Cast (p : ICell<UKRPI>) = 
+        if p :? UKRPIModel then 
+            p :?> UKRPIModel
+        else
+            let o = new UKRPIModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -177,6 +190,19 @@ type UKRPIModel1
                                                    = triv (fun () -> _UKRPI.Value.unregisterWith(handler.Value)
                                                                      _UKRPI.Value)
     do this.Bind(_UKRPI)
+(* 
+    casting 
+*)
+    internal new () = UKRPIModel1(null)
+    member internal this.Inject v = _UKRPI.Value <- v
+    static member Cast (p : ICell<UKRPI>) = 
+        if p :? UKRPIModel1 then 
+            p :?> UKRPIModel1
+        else
+            let o = new UKRPIModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

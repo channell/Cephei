@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type LVLCurrencyModel
     let _ToString                                  = triv (fun () -> _LVLCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _LVLCurrency.Value.triangulationCurrency)
     do this.Bind(_LVLCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _LVLCurrency.Value <- v
+    static member Cast (p : ICell<LVLCurrency>) = 
+        if p :? LVLCurrencyModel then 
+            p :?> LVLCurrencyModel
+        else
+            let o = new LVLCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

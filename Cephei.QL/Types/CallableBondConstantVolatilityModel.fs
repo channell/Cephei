@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -93,6 +93,19 @@ type CallableBondConstantVolatilityModel
                                                                      _CallableBondConstantVolatility.Value)
     let _extrapolate                               = triv (fun () -> _CallableBondConstantVolatility.Value.extrapolate)
     do this.Bind(_CallableBondConstantVolatility)
+(* 
+    casting 
+*)
+    internal new () = CallableBondConstantVolatilityModel(null,null,null)
+    member internal this.Inject v = _CallableBondConstantVolatility.Value <- v
+    static member Cast (p : ICell<CallableBondConstantVolatility>) = 
+        if p :? CallableBondConstantVolatilityModel then 
+            p :?> CallableBondConstantVolatilityModel
+        else
+            let o = new CallableBondConstantVolatilityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -208,6 +221,19 @@ type CallableBondConstantVolatilityModel1
                                                                      _CallableBondConstantVolatility.Value)
     let _extrapolate                               = triv (fun () -> _CallableBondConstantVolatility.Value.extrapolate)
     do this.Bind(_CallableBondConstantVolatility)
+(* 
+    casting 
+*)
+    internal new () = CallableBondConstantVolatilityModel1(null,null,null,null)
+    member internal this.Inject v = _CallableBondConstantVolatility.Value <- v
+    static member Cast (p : ICell<CallableBondConstantVolatility>) = 
+        if p :? CallableBondConstantVolatilityModel1 then 
+            p :?> CallableBondConstantVolatilityModel1
+        else
+            let o = new CallableBondConstantVolatilityModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -324,6 +350,19 @@ type CallableBondConstantVolatilityModel2
                                                                      _CallableBondConstantVolatility.Value)
     let _extrapolate                               = triv (fun () -> _CallableBondConstantVolatility.Value.extrapolate)
     do this.Bind(_CallableBondConstantVolatility)
+(* 
+    casting 
+*)
+    internal new () = CallableBondConstantVolatilityModel2(null,null,null,null)
+    member internal this.Inject v = _CallableBondConstantVolatility.Value <- v
+    static member Cast (p : ICell<CallableBondConstantVolatility>) = 
+        if p :? CallableBondConstantVolatilityModel2 then 
+            p :?> CallableBondConstantVolatilityModel2
+        else
+            let o = new CallableBondConstantVolatilityModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -438,6 +477,19 @@ type CallableBondConstantVolatilityModel3
                                                                      _CallableBondConstantVolatility.Value)
     let _extrapolate                               = triv (fun () -> _CallableBondConstantVolatility.Value.extrapolate)
     do this.Bind(_CallableBondConstantVolatility)
+(* 
+    casting 
+*)
+    internal new () = CallableBondConstantVolatilityModel3(null,null,null)
+    member internal this.Inject v = _CallableBondConstantVolatility.Value <- v
+    static member Cast (p : ICell<CallableBondConstantVolatility>) = 
+        if p :? CallableBondConstantVolatilityModel3 then 
+            p :?> CallableBondConstantVolatilityModel3
+        else
+            let o = new CallableBondConstantVolatilityModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

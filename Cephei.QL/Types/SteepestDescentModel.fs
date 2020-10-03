@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type SteepestDescentModel
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _SteepestDescent.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_SteepestDescent)
+(* 
+    casting 
+*)
+    internal new () = SteepestDescentModel(null)
+    member internal this.Inject v = _SteepestDescent.Value <- v
+    static member Cast (p : ICell<SteepestDescent>) = 
+        if p :? SteepestDescentModel then 
+            p :?> SteepestDescentModel
+        else
+            let o = new SteepestDescentModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

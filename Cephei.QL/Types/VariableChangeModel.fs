@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,31 @@ type VariableChangeModel
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _VariableChange.Value.value(x.Value))
     do this.Bind(_VariableChange)
+(* 
+    casting 
+*)
+    internal new () = VariableChangeModel(null,null,null,null)
+    member internal this.Inject v = _VariableChange.Value <- v
+    static member Cast (p : ICell<VariableChange>) = 
+        if p :? VariableChangeModel then 
+            p :?> VariableChangeModel
+        else
+            let o = new VariableChangeModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = VariableChangeModel(null,null,null,null)
+    static member Cast (p : ICell<VariableChange>) = 
+        if p :? VariableChangeModel then 
+            p :?> VariableChangeModel
+        else
+            let o = new VariableChangeModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type VEBCurrencyModel
     let _ToString                                  = triv (fun () -> _VEBCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _VEBCurrency.Value.triangulationCurrency)
     do this.Bind(_VEBCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _VEBCurrency.Value <- v
+    static member Cast (p : ICell<VEBCurrency>) = 
+        if p :? VEBCurrencyModel then 
+            p :?> VEBCurrencyModel
+        else
+            let o = new VEBCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

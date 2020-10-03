@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -106,6 +106,19 @@ type BTPModel
                                                                      _BTP.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _BTP).valuationDate())
     do this.Bind(_BTP)
+(* 
+    casting 
+*)
+    internal new () = BTPModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _BTP.Value <- v
+    static member Cast (p : ICell<BTP>) = 
+        if p :? BTPModel then 
+            p :?> BTPModel
+        else
+            let o = new BTPModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -241,6 +254,19 @@ type BTPModel1
                                                                      _BTP.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _BTP).valuationDate())
     do this.Bind(_BTP)
+(* 
+    casting 
+*)
+    internal new () = BTPModel1(null,null,null,null,null,null)
+    member internal this.Inject v = _BTP.Value <- v
+    static member Cast (p : ICell<BTP>) = 
+        if p :? BTPModel1 then 
+            p :?> BTPModel1
+        else
+            let o = new BTPModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

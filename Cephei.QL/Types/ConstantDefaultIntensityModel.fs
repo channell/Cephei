@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type ConstantDefaultIntensityModel
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
                                                    = triv (fun () -> _ConstantDefaultIntensity.Value.hazardRate(t.Value, s.Value))
     do this.Bind(_ConstantDefaultIntensity)
+(* 
+    casting 
+*)
+    internal new () = ConstantDefaultIntensityModel(null,null)
+    member internal this.Inject v = _ConstantDefaultIntensity.Value <- v
+    static member Cast (p : ICell<ConstantDefaultIntensity>) = 
+        if p :? ConstantDefaultIntensityModel then 
+            p :?> ConstantDefaultIntensityModel
+        else
+            let o = new ConstantDefaultIntensityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -85,6 +98,19 @@ type ConstantDefaultIntensityModel1
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
                                                    = triv (fun () -> _ConstantDefaultIntensity.Value.hazardRate(t.Value, s.Value))
     do this.Bind(_ConstantDefaultIntensity)
+(* 
+    casting 
+*)
+    internal new () = ConstantDefaultIntensityModel1(null)
+    member internal this.Inject v = _ConstantDefaultIntensity.Value <- v
+    static member Cast (p : ICell<ConstantDefaultIntensity>) = 
+        if p :? ConstantDefaultIntensityModel1 then 
+            p :?> ConstantDefaultIntensityModel1
+        else
+            let o = new ConstantDefaultIntensityModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

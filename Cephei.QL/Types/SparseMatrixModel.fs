@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -69,6 +69,19 @@ type SparseMatrixModel
                                                    = triv (fun () -> _SparseMatrix.Value.[row.Value, col.Value])
     let _values                                    = triv (fun () -> _SparseMatrix.Value.values())
     do this.Bind(_SparseMatrix)
+(* 
+    casting 
+*)
+    internal new () = SparseMatrixModel(null)
+    member internal this.Inject v = _SparseMatrix.Value <- v
+    static member Cast (p : ICell<SparseMatrix>) = 
+        if p :? SparseMatrixModel then 
+            p :?> SparseMatrixModel
+        else
+            let o = new SparseMatrixModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -138,6 +151,19 @@ type SparseMatrixModel1
                                                    = triv (fun () -> _SparseMatrix.Value.[row.Value, col.Value])
     let _values                                    = triv (fun () -> _SparseMatrix.Value.values())
     do this.Bind(_SparseMatrix)
+(* 
+    casting 
+*)
+    internal new () = SparseMatrixModel1(null,null)
+    member internal this.Inject v = _SparseMatrix.Value <- v
+    static member Cast (p : ICell<SparseMatrix>) = 
+        if p :? SparseMatrixModel1 then 
+            p :?> SparseMatrixModel1
+        else
+            let o = new SparseMatrixModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -203,6 +229,19 @@ type SparseMatrixModel2
                                                    = triv (fun () -> _SparseMatrix.Value.[row.Value, col.Value])
     let _values                                    = triv (fun () -> _SparseMatrix.Value.values())
     do this.Bind(_SparseMatrix)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _SparseMatrix.Value <- v
+    static member Cast (p : ICell<SparseMatrix>) = 
+        if p :? SparseMatrixModel2 then 
+            p :?> SparseMatrixModel2
+        else
+            let o = new SparseMatrixModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

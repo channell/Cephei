@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -78,6 +78,19 @@ type StochasticProcessArrayModel
     let _update                                    = triv (fun () -> _StochasticProcessArray.Value.update()
                                                                      _StochasticProcessArray.Value)
     do this.Bind(_StochasticProcessArray)
+(* 
+    casting 
+*)
+    internal new () = StochasticProcessArrayModel(null,null)
+    member internal this.Inject v = _StochasticProcessArray.Value <- v
+    static member Cast (p : ICell<StochasticProcessArray>) = 
+        if p :? StochasticProcessArrayModel then 
+            p :?> StochasticProcessArrayModel
+        else
+            let o = new StochasticProcessArrayModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

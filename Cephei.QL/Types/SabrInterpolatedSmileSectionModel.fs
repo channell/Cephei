@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -115,6 +115,19 @@ type SabrInterpolatedSmileSectionModel
                                                    = triv (fun () -> _SabrInterpolatedSmileSection.Value.volatility(strike.Value))
     let _volatilityType                            = triv (fun () -> _SabrInterpolatedSmileSection.Value.volatilityType())
     do this.Bind(_SabrInterpolatedSmileSection)
+(* 
+    casting 
+*)
+    internal new () = SabrInterpolatedSmileSectionModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SabrInterpolatedSmileSection.Value <- v
+    static member Cast (p : ICell<SabrInterpolatedSmileSection>) = 
+        if p :? SabrInterpolatedSmileSectionModel then 
+            p :?> SabrInterpolatedSmileSectionModel
+        else
+            let o = new SabrInterpolatedSmileSectionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -256,6 +269,19 @@ type SabrInterpolatedSmileSectionModel1
                                                    = triv (fun () -> _SabrInterpolatedSmileSection.Value.volatility(strike.Value))
     let _volatilityType                            = triv (fun () -> _SabrInterpolatedSmileSection.Value.volatilityType())
     do this.Bind(_SabrInterpolatedSmileSection)
+(* 
+    casting 
+*)
+    internal new () = SabrInterpolatedSmileSectionModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SabrInterpolatedSmileSection.Value <- v
+    static member Cast (p : ICell<SabrInterpolatedSmileSection>) = 
+        if p :? SabrInterpolatedSmileSectionModel1 then 
+            p :?> SabrInterpolatedSmileSectionModel1
+        else
+            let o = new SabrInterpolatedSmileSectionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

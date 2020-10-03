@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -74,6 +74,19 @@ type MatrixModel
                                                    = triv (fun () -> _Matrix.Value.[i.Value, j.Value])
     let _ToString                                  = triv (fun () -> _Matrix.Value.ToString())
     do this.Bind(_Matrix)
+(* 
+    casting 
+*)
+    internal new () = MatrixModel(null,null,null)
+    member internal this.Inject v = _Matrix.Value <- v
+    static member Cast (p : ICell<Matrix>) = 
+        if p :? MatrixModel then 
+            p :?> MatrixModel
+        else
+            let o = new MatrixModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -147,6 +160,19 @@ type MatrixModel1
                                                    = triv (fun () -> _Matrix.Value.[i.Value, j.Value])
     let _ToString                                  = triv (fun () -> _Matrix.Value.ToString())
     do this.Bind(_Matrix)
+(* 
+    casting 
+*)
+    internal new () = MatrixModel1(null,null)
+    member internal this.Inject v = _Matrix.Value <- v
+    static member Cast (p : ICell<Matrix>) = 
+        if p :? MatrixModel1 then 
+            p :?> MatrixModel1
+        else
+            let o = new MatrixModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -217,6 +243,19 @@ type MatrixModel2
                                                    = triv (fun () -> _Matrix.Value.[i.Value, j.Value])
     let _ToString                                  = triv (fun () -> _Matrix.Value.ToString())
     do this.Bind(_Matrix)
+(* 
+    casting 
+*)
+    internal new () = MatrixModel2(null)
+    member internal this.Inject v = _Matrix.Value <- v
+    static member Cast (p : ICell<Matrix>) = 
+        if p :? MatrixModel2 then 
+            p :?> MatrixModel2
+        else
+            let o = new MatrixModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -283,6 +322,19 @@ type MatrixModel3
                                                    = triv (fun () -> _Matrix.Value.[i.Value, j.Value])
     let _ToString                                  = triv (fun () -> _Matrix.Value.ToString())
     do this.Bind(_Matrix)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Matrix.Value <- v
+    static member Cast (p : ICell<Matrix>) = 
+        if p :? MatrixModel3 then 
+            p :?> MatrixModel3
+        else
+            let o = new MatrixModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

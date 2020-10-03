@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type LUFCurrencyModel
     let _ToString                                  = triv (fun () -> _LUFCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _LUFCurrency.Value.triangulationCurrency)
     do this.Bind(_LUFCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _LUFCurrency.Value <- v
+    static member Cast (p : ICell<LUFCurrency>) = 
+        if p :? LUFCurrencyModel then 
+            p :?> LUFCurrencyModel
+        else
+            let o = new LUFCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -66,6 +66,19 @@ type DeltaVolQuoteModel
                                                    = triv (fun () -> _DeltaVolQuote.Value.unregisterWith(handler.Value)
                                                                      _DeltaVolQuote.Value)
     do this.Bind(_DeltaVolQuote)
+(* 
+    casting 
+*)
+    internal new () = DeltaVolQuoteModel(null,null,null,null)
+    member internal this.Inject v = _DeltaVolQuote.Value <- v
+    static member Cast (p : ICell<DeltaVolQuote>) = 
+        if p :? DeltaVolQuoteModel then 
+            p :?> DeltaVolQuoteModel
+        else
+            let o = new DeltaVolQuoteModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -124,6 +137,19 @@ type DeltaVolQuoteModel1
                                                    = triv (fun () -> _DeltaVolQuote.Value.unregisterWith(handler.Value)
                                                                      _DeltaVolQuote.Value)
     do this.Bind(_DeltaVolQuote)
+(* 
+    casting 
+*)
+    internal new () = DeltaVolQuoteModel1(null,null,null,null)
+    member internal this.Inject v = _DeltaVolQuote.Value <- v
+    static member Cast (p : ICell<DeltaVolQuote>) = 
+        if p :? DeltaVolQuoteModel1 then 
+            p :?> DeltaVolQuoteModel1
+        else
+            let o = new DeltaVolQuoteModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -104,6 +104,19 @@ type GbpLiborSwapIsdaFixModel
                                                    = triv (fun () -> _GbpLiborSwapIsdaFix.Value.unregisterWith(handler.Value)
                                                                      _GbpLiborSwapIsdaFix.Value)
     do this.Bind(_GbpLiborSwapIsdaFix)
+(* 
+    casting 
+*)
+    internal new () = GbpLiborSwapIsdaFixModel(null,null)
+    member internal this.Inject v = _GbpLiborSwapIsdaFix.Value <- v
+    static member Cast (p : ICell<GbpLiborSwapIsdaFix>) = 
+        if p :? GbpLiborSwapIsdaFixModel then 
+            p :?> GbpLiborSwapIsdaFixModel
+        else
+            let o = new GbpLiborSwapIsdaFixModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -234,6 +247,19 @@ type GbpLiborSwapIsdaFixModel1
                                                    = triv (fun () -> _GbpLiborSwapIsdaFix.Value.unregisterWith(handler.Value)
                                                                      _GbpLiborSwapIsdaFix.Value)
     do this.Bind(_GbpLiborSwapIsdaFix)
+(* 
+    casting 
+*)
+    internal new () = GbpLiborSwapIsdaFixModel1(null)
+    member internal this.Inject v = _GbpLiborSwapIsdaFix.Value <- v
+    static member Cast (p : ICell<GbpLiborSwapIsdaFix>) = 
+        if p :? GbpLiborSwapIsdaFixModel1 then 
+            p :?> GbpLiborSwapIsdaFixModel1
+        else
+            let o = new GbpLiborSwapIsdaFixModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -74,6 +74,19 @@ type FractionalDividendModel
                                                    = triv (fun () -> _FractionalDividend.Value.unregisterWith(handler.Value)
                                                                      _FractionalDividend.Value)
     do this.Bind(_FractionalDividend)
+(* 
+    casting 
+*)
+    internal new () = FractionalDividendModel(null,null,null)
+    member internal this.Inject v = _FractionalDividend.Value <- v
+    static member Cast (p : ICell<FractionalDividend>) = 
+        if p :? FractionalDividendModel then 
+            p :?> FractionalDividendModel
+        else
+            let o = new FractionalDividendModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -147,6 +160,19 @@ type FractionalDividendModel1
                                                    = triv (fun () -> _FractionalDividend.Value.unregisterWith(handler.Value)
                                                                      _FractionalDividend.Value)
     do this.Bind(_FractionalDividend)
+(* 
+    casting 
+*)
+    internal new () = FractionalDividendModel1(null,null)
+    member internal this.Inject v = _FractionalDividend.Value <- v
+    static member Cast (p : ICell<FractionalDividend>) = 
+        if p :? FractionalDividendModel1 then 
+            p :?> FractionalDividendModel1
+        else
+            let o = new FractionalDividendModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

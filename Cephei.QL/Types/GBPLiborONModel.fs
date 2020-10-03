@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type GBPLiborONModel
                                                    = triv (fun () -> _GBPLiborON.Value.unregisterWith(handler.Value)
                                                                      _GBPLiborON.Value)
     do this.Bind(_GBPLiborON)
+(* 
+    casting 
+*)
+    internal new () = GBPLiborONModel(null)
+    member internal this.Inject v = _GBPLiborON.Value <- v
+    static member Cast (p : ICell<GBPLiborON>) = 
+        if p :? GBPLiborONModel then 
+            p :?> GBPLiborONModel
+        else
+            let o = new GBPLiborONModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type CoxRossRubinsteinModel
                                                    = triv (fun () -> _CoxRossRubinstein.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _CoxRossRubinstein.Value.columns())
     do this.Bind(_CoxRossRubinstein)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _CoxRossRubinstein.Value <- v
+    static member Cast (p : ICell<CoxRossRubinstein>) = 
+        if p :? CoxRossRubinsteinModel then 
+            p :?> CoxRossRubinsteinModel
+        else
+            let o = new CoxRossRubinsteinModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -105,6 +118,19 @@ type CoxRossRubinsteinModel1
                                                    = triv (fun () -> _CoxRossRubinstein.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _CoxRossRubinstein.Value.columns())
     do this.Bind(_CoxRossRubinstein)
+(* 
+    casting 
+*)
+    internal new () = CoxRossRubinsteinModel1(null,null,null,null)
+    member internal this.Inject v = _CoxRossRubinstein.Value <- v
+    static member Cast (p : ICell<CoxRossRubinstein>) = 
+        if p :? CoxRossRubinsteinModel1 then 
+            p :?> CoxRossRubinsteinModel1
+        else
+            let o = new CoxRossRubinsteinModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

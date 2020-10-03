@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type NelsonSiegelFittingModel
     let _solution                                  = triv (fun () -> _NelsonSiegelFitting.Value.solution())
     let _weights                                   = triv (fun () -> _NelsonSiegelFitting.Value.weights())
     do this.Bind(_NelsonSiegelFitting)
+(* 
+    casting 
+*)
+    internal new () = NelsonSiegelFittingModel(null,null)
+    member internal this.Inject v = _NelsonSiegelFitting.Value <- v
+    static member Cast (p : ICell<NelsonSiegelFitting>) = 
+        if p :? NelsonSiegelFittingModel then 
+            p :?> NelsonSiegelFittingModel
+        else
+            let o = new NelsonSiegelFittingModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

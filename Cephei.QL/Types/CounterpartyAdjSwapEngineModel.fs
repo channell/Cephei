@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type CounterpartyAdjSwapEngineModel
 *)
     let _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
     do this.Bind(_CounterpartyAdjSwapEngine)
+(* 
+    casting 
+*)
+    internal new () = CounterpartyAdjSwapEngineModel(null,null,null,null,null,null)
+    member internal this.Inject v = _CounterpartyAdjSwapEngine.Value <- v
+    static member Cast (p : ICell<CounterpartyAdjSwapEngine>) = 
+        if p :? CounterpartyAdjSwapEngineModel then 
+            p :?> CounterpartyAdjSwapEngineModel
+        else
+            let o = new CounterpartyAdjSwapEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -107,6 +120,19 @@ type CounterpartyAdjSwapEngineModel1
 *)
     let _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
     do this.Bind(_CounterpartyAdjSwapEngine)
+(* 
+    casting 
+*)
+    internal new () = CounterpartyAdjSwapEngineModel1(null,null,null,null,null,null)
+    member internal this.Inject v = _CounterpartyAdjSwapEngine.Value <- v
+    static member Cast (p : ICell<CounterpartyAdjSwapEngine>) = 
+        if p :? CounterpartyAdjSwapEngineModel1 then 
+            p :?> CounterpartyAdjSwapEngineModel1
+        else
+            let o = new CounterpartyAdjSwapEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -152,6 +178,19 @@ type CounterpartyAdjSwapEngineModel2
 *)
     let _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, swaptionEngine.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
     do this.Bind(_CounterpartyAdjSwapEngine)
+(* 
+    casting 
+*)
+    internal new () = CounterpartyAdjSwapEngineModel2(null,null,null,null,null,null)
+    member internal this.Inject v = _CounterpartyAdjSwapEngine.Value <- v
+    static member Cast (p : ICell<CounterpartyAdjSwapEngine>) = 
+        if p :? CounterpartyAdjSwapEngineModel2 then 
+            p :?> CounterpartyAdjSwapEngineModel2
+        else
+            let o = new CounterpartyAdjSwapEngineModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

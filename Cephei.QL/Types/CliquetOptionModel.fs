@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type CliquetOptionModel
                                                                      _CliquetOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CliquetOption).valuationDate())
     do this.Bind(_CliquetOption)
+(* 
+    casting 
+*)
+    internal new () = CliquetOptionModel(null,null,null,null,null)
+    member internal this.Inject v = _CliquetOption.Value <- v
+    static member Cast (p : ICell<CliquetOption>) = 
+        if p :? CliquetOptionModel then 
+            p :?> CliquetOptionModel
+        else
+            let o = new CliquetOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,6 +65,19 @@ type LmLinearExponentialVolatilityModelModel
                                                                      _LmLinearExponentialVolatilityModel.Value)
     let _size                                      = triv (fun () -> _LmLinearExponentialVolatilityModel.Value.size())
     do this.Bind(_LmLinearExponentialVolatilityModel)
+(* 
+    casting 
+*)
+    internal new () = LmLinearExponentialVolatilityModelModel(null,null,null,null,null)
+    member internal this.Inject v = _LmLinearExponentialVolatilityModel.Value <- v
+    static member Cast (p : ICell<LmLinearExponentialVolatilityModel>) = 
+        if p :? LmLinearExponentialVolatilityModelModel then 
+            p :?> LmLinearExponentialVolatilityModelModel
+        else
+            let o = new LmLinearExponentialVolatilityModelModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

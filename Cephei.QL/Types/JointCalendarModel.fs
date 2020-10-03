@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -81,6 +81,19 @@ type JointCalendarModel
                                                    = triv (fun () -> _JointCalendar.Value.removeHoliday(d.Value)
                                                                      _JointCalendar.Value)
     do this.Bind(_JointCalendar)
+(* 
+    casting 
+*)
+    internal new () = JointCalendarModel(null,null,null)
+    member internal this.Inject v = _JointCalendar.Value <- v
+    static member Cast (p : ICell<JointCalendar>) = 
+        if p :? JointCalendarModel then 
+            p :?> JointCalendarModel
+        else
+            let o = new JointCalendarModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -171,6 +184,19 @@ type JointCalendarModel1
                                                    = triv (fun () -> _JointCalendar.Value.removeHoliday(d.Value)
                                                                      _JointCalendar.Value)
     do this.Bind(_JointCalendar)
+(* 
+    casting 
+*)
+    internal new () = JointCalendarModel1(null,null,null)
+    member internal this.Inject v = _JointCalendar.Value <- v
+    static member Cast (p : ICell<JointCalendar>) = 
+        if p :? JointCalendarModel1 then 
+            p :?> JointCalendarModel1
+        else
+            let o = new JointCalendarModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -263,6 +289,19 @@ type JointCalendarModel2
                                                    = triv (fun () -> _JointCalendar.Value.removeHoliday(d.Value)
                                                                      _JointCalendar.Value)
     do this.Bind(_JointCalendar)
+(* 
+    casting 
+*)
+    internal new () = JointCalendarModel2(null,null,null,null)
+    member internal this.Inject v = _JointCalendar.Value <- v
+    static member Cast (p : ICell<JointCalendar>) = 
+        if p :? JointCalendarModel2 then 
+            p :?> JointCalendarModel2
+        else
+            let o = new JointCalendarModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -358,6 +397,19 @@ type JointCalendarModel3
                                                    = triv (fun () -> _JointCalendar.Value.removeHoliday(d.Value)
                                                                      _JointCalendar.Value)
     do this.Bind(_JointCalendar)
+(* 
+    casting 
+*)
+    internal new () = JointCalendarModel3(null,null,null,null,null)
+    member internal this.Inject v = _JointCalendar.Value <- v
+    static member Cast (p : ICell<JointCalendar>) = 
+        if p :? JointCalendarModel3 then 
+            p :?> JointCalendarModel3
+        else
+            let o = new JointCalendarModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -452,6 +504,19 @@ type JointCalendarModel4
                                                    = triv (fun () -> _JointCalendar.Value.removeHoliday(d.Value)
                                                                      _JointCalendar.Value)
     do this.Bind(_JointCalendar)
+(* 
+    casting 
+*)
+    internal new () = JointCalendarModel4(null,null,null,null)
+    member internal this.Inject v = _JointCalendar.Value <- v
+    static member Cast (p : ICell<JointCalendar>) = 
+        if p :? JointCalendarModel4 then 
+            p :?> JointCalendarModel4
+        else
+            let o = new JointCalendarModel4 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -541,6 +606,19 @@ type JointCalendarModel5
                                                    = triv (fun () -> _JointCalendar.Value.removeHoliday(d.Value)
                                                                      _JointCalendar.Value)
     do this.Bind(_JointCalendar)
+(* 
+    casting 
+*)
+    internal new () = JointCalendarModel5(null,null)
+    member internal this.Inject v = _JointCalendar.Value <- v
+    static member Cast (p : ICell<JointCalendar>) = 
+        if p :? JointCalendarModel5 then 
+            p :?> JointCalendarModel5
+        else
+            let o = new JointCalendarModel5 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

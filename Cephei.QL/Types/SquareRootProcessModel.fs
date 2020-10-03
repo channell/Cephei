@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -94,6 +94,19 @@ type SquareRootProcessModel
     let _update                                    = triv (fun () -> _SquareRootProcess.Value.update()
                                                                      _SquareRootProcess.Value)
     do this.Bind(_SquareRootProcess)
+(* 
+    casting 
+*)
+    internal new () = SquareRootProcessModel(null,null,null,null,null)
+    member internal this.Inject v = _SquareRootProcess.Value <- v
+    static member Cast (p : ICell<SquareRootProcess>) = 
+        if p :? SquareRootProcessModel then 
+            p :?> SquareRootProcessModel
+        else
+            let o = new SquareRootProcessModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -203,6 +216,19 @@ type SquareRootProcessModel1
     let _update                                    = triv (fun () -> _SquareRootProcess.Value.update()
                                                                      _SquareRootProcess.Value)
     do this.Bind(_SquareRootProcess)
+(* 
+    casting 
+*)
+    internal new () = SquareRootProcessModel1(null,null,null)
+    member internal this.Inject v = _SquareRootProcess.Value <- v
+    static member Cast (p : ICell<SquareRootProcess>) = 
+        if p :? SquareRootProcessModel1 then 
+            p :?> SquareRootProcessModel1
+        else
+            let o = new SquareRootProcessModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -312,6 +338,19 @@ type SquareRootProcessModel2
     let _update                                    = triv (fun () -> _SquareRootProcess.Value.update()
                                                                      _SquareRootProcess.Value)
     do this.Bind(_SquareRootProcess)
+(* 
+    casting 
+*)
+    internal new () = SquareRootProcessModel2(null,null,null,null)
+    member internal this.Inject v = _SquareRootProcess.Value <- v
+    static member Cast (p : ICell<SquareRootProcess>) = 
+        if p :? SquareRootProcessModel2 then 
+            p :?> SquareRootProcessModel2
+        else
+            let o = new SquareRootProcessModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

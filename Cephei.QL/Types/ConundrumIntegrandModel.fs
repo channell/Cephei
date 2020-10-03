@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -68,6 +68,31 @@ type ConundrumIntegrandModel
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _ConundrumIntegrand.Value.value(x.Value))
     do this.Bind(_ConundrumIntegrand)
+(* 
+    casting 
+*)
+    internal new () = ConundrumIntegrandModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _ConundrumIntegrand.Value <- v
+    static member Cast (p : ICell<ConundrumIntegrand>) = 
+        if p :? ConundrumIntegrandModel then 
+            p :?> ConundrumIntegrandModel
+        else
+            let o = new ConundrumIntegrandModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = ConundrumIntegrandModel(null,null,null,null,null,null,null,null,null)
+    static member Cast (p : ICell<ConundrumIntegrand>) = 
+        if p :? ConundrumIntegrandModel then 
+            p :?> ConundrumIntegrandModel
+        else
+            let o = new ConundrumIntegrandModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

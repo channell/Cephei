@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,6 +65,19 @@ type AverageBMALegModel
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
                                                    = triv (fun () -> _AverageBMALeg.Value.withPaymentAdjustment(convention.Value))
     do this.Bind(_AverageBMALeg)
+(* 
+    casting 
+*)
+    internal new () = AverageBMALegModel(null,null)
+    member internal this.Inject v = _AverageBMALeg.Value <- v
+    static member Cast (p : ICell<AverageBMALeg>) = 
+        if p :? AverageBMALegModel then 
+            p :?> AverageBMALegModel
+        else
+            let o = new AverageBMALegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

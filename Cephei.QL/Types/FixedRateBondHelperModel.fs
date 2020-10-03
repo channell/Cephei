@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -98,6 +98,19 @@ type FixedRateBondHelperModel
     let _update                                    = triv (fun () -> _FixedRateBondHelper.Value.update()
                                                                      _FixedRateBondHelper.Value)
     do this.Bind(_FixedRateBondHelper)
+(* 
+    casting 
+*)
+    internal new () = FixedRateBondHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FixedRateBondHelper.Value <- v
+    static member Cast (p : ICell<FixedRateBondHelper>) = 
+        if p :? FixedRateBondHelperModel then 
+            p :?> FixedRateBondHelperModel
+        else
+            let o = new FixedRateBondHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

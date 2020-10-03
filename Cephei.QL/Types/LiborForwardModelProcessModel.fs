@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -101,6 +101,19 @@ type LiborForwardModelProcessModel
     let _update                                    = triv (fun () -> _LiborForwardModelProcess.Value.update()
                                                                      _LiborForwardModelProcess.Value)
     do this.Bind(_LiborForwardModelProcess)
+(* 
+    casting 
+*)
+    internal new () = LiborForwardModelProcessModel(null,null,null)
+    member internal this.Inject v = _LiborForwardModelProcess.Value <- v
+    static member Cast (p : ICell<LiborForwardModelProcess>) = 
+        if p :? LiborForwardModelProcessModel then 
+            p :?> LiborForwardModelProcessModel
+        else
+            let o = new LiborForwardModelProcessModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -227,6 +240,19 @@ type LiborForwardModelProcessModel1
     let _update                                    = triv (fun () -> _LiborForwardModelProcess.Value.update()
                                                                      _LiborForwardModelProcess.Value)
     do this.Bind(_LiborForwardModelProcess)
+(* 
+    casting 
+*)
+    internal new () = LiborForwardModelProcessModel1(null,null)
+    member internal this.Inject v = _LiborForwardModelProcess.Value <- v
+    static member Cast (p : ICell<LiborForwardModelProcess>) = 
+        if p :? LiborForwardModelProcessModel1 then 
+            p :?> LiborForwardModelProcessModel1
+        else
+            let o = new LiborForwardModelProcessModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

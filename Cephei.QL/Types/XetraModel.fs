@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,31 @@ type XetraModel
                                                    = cell (fun () -> _Xetra.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _Xetra.Value.name())
     do this.Bind(_Xetra)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Xetra.Value <- v
+    static member Cast (p : ICell<Xetra>) = 
+        if p :? XetraModel then 
+            p :?> XetraModel
+        else
+            let o = new XetraModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<Xetra>) = 
+        if p :? XetraModel then 
+            p :?> XetraModel
+        else
+            let o = new XetraModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

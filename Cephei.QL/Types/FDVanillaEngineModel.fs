@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type FDVanillaEngineModel
     let _grid                                      = triv (fun () -> _FDVanillaEngine.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDVanillaEngine.Value.intrinsicValues_)
     do this.Bind(_FDVanillaEngine)
+(* 
+    casting 
+*)
+    internal new () = FDVanillaEngineModel(null,null,null,null)
+    member internal this.Inject v = _FDVanillaEngine.Value <- v
+    static member Cast (p : ICell<FDVanillaEngine>) = 
+        if p :? FDVanillaEngineModel then 
+            p :?> FDVanillaEngineModel
+        else
+            let o = new FDVanillaEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -104,6 +117,19 @@ type FDVanillaEngineModel1
     let _grid                                      = triv (fun () -> _FDVanillaEngine.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDVanillaEngine.Value.intrinsicValues_)
     do this.Bind(_FDVanillaEngine)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FDVanillaEngine.Value <- v
+    static member Cast (p : ICell<FDVanillaEngine>) = 
+        if p :? FDVanillaEngineModel1 then 
+            p :?> FDVanillaEngineModel1
+        else
+            let o = new FDVanillaEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

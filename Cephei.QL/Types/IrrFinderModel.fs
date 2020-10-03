@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,31 @@ type IrrFinderModel
     let _value                                     (y : ICell<double>)   
                                                    = cell (fun () -> _IrrFinder.Value.value(y.Value))
     do this.Bind(_IrrFinder)
+(* 
+    casting 
+*)
+    internal new () = IrrFinderModel(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _IrrFinder.Value <- v
+    static member Cast (p : ICell<IrrFinder>) = 
+        if p :? IrrFinderModel then 
+            p :?> IrrFinderModel
+        else
+            let o = new IrrFinderModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = IrrFinderModel(null,null,null,null,null,null,null,null)
+    static member Cast (p : ICell<IrrFinder>) = 
+        if p :? IrrFinderModel then 
+            p :?> IrrFinderModel
+        else
+            let o = new IrrFinderModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

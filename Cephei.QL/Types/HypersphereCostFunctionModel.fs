@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,6 +65,31 @@ type HypersphereCostFunctionModel
     let _valuesAndJacobian                         (jac : ICell<Matrix>) (x : ICell<Vector>)   
                                                    = cell (fun () -> _HypersphereCostFunction.Value.valuesAndJacobian(jac.Value, x.Value))
     do this.Bind(_HypersphereCostFunction)
+(* 
+    casting 
+*)
+    internal new () = HypersphereCostFunctionModel(null,null,null)
+    member internal this.Inject v = _HypersphereCostFunction.Value <- v
+    static member Cast (p : ICell<HypersphereCostFunction>) = 
+        if p :? HypersphereCostFunctionModel then 
+            p :?> HypersphereCostFunctionModel
+        else
+            let o = new HypersphereCostFunctionModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = HypersphereCostFunctionModel(null,null,null)
+    static member Cast (p : ICell<HypersphereCostFunction>) = 
+        if p :? HypersphereCostFunctionModel then 
+            p :?> HypersphereCostFunctionModel
+        else
+            let o = new HypersphereCostFunctionModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

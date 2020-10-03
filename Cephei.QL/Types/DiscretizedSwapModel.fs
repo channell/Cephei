@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type DiscretizedSwapModel
     let _time                                      = triv (fun () -> _DiscretizedSwap.Value.time())
     let _values                                    = triv (fun () -> _DiscretizedSwap.Value.values())
     do this.Bind(_DiscretizedSwap)
+(* 
+    casting 
+*)
+    internal new () = DiscretizedSwapModel(null,null,null)
+    member internal this.Inject v = _DiscretizedSwap.Value <- v
+    static member Cast (p : ICell<DiscretizedSwap>) = 
+        if p :? DiscretizedSwapModel then 
+            p :?> DiscretizedSwapModel
+        else
+            let o = new DiscretizedSwapModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

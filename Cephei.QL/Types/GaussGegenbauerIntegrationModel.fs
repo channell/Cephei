@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type GaussGegenbauerIntegrationModel
     let _weights                                   = triv (fun () -> _GaussGegenbauerIntegration.Value.weights())
     let _x                                         = triv (fun () -> _GaussGegenbauerIntegration.Value.x())
     do this.Bind(_GaussGegenbauerIntegration)
+(* 
+    casting 
+*)
+    internal new () = GaussGegenbauerIntegrationModel(null,null)
+    member internal this.Inject v = _GaussGegenbauerIntegration.Value <- v
+    static member Cast (p : ICell<GaussGegenbauerIntegration>) = 
+        if p :? GaussGegenbauerIntegrationModel then 
+            p :?> GaussGegenbauerIntegrationModel
+        else
+            let o = new GaussGegenbauerIntegrationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

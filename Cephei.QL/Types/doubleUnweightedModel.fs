@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,6 +49,31 @@ type doubleUnweightedModel
     let _weightSmallX                              (x : ICell<double>)   
                                                    = cell (fun () -> _doubleUnweighted.Value.weightSmallX(x.Value))
     do this.Bind(_doubleUnweighted)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _doubleUnweighted.Value <- v
+    static member Cast (p : ICell<doubleUnweighted>) = 
+        if p :? doubleUnweightedModel then 
+            p :?> doubleUnweightedModel
+        else
+            let o = new doubleUnweightedModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<doubleUnweighted>) = 
+        if p :? doubleUnweightedModel then 
+            p :?> doubleUnweightedModel
+        else
+            let o = new doubleUnweightedModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

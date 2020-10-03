@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -105,6 +105,19 @@ type AbcdInterpolationModel
                                                                      _AbcdInterpolation.Value)
     let _extrapolate                               = triv (fun () -> _AbcdInterpolation.Value.extrapolate)
     do this.Bind(_AbcdInterpolation)
+(* 
+    casting 
+*)
+    internal new () = AbcdInterpolationModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _AbcdInterpolation.Value <- v
+    static member Cast (p : ICell<AbcdInterpolation>) = 
+        if p :? AbcdInterpolationModel then 
+            p :?> AbcdInterpolationModel
+        else
+            let o = new AbcdInterpolationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

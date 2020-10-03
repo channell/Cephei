@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type GoldsteinLineSearchModel
     let _update                                    (data : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>) (Constraint : ICell<Constraint>)   
                                                    = triv (fun () -> _GoldsteinLineSearch.Value.update(ref data.Value, direction.Value, beta.Value, Constraint.Value))
     do this.Bind(_GoldsteinLineSearch)
+(* 
+    casting 
+*)
+    internal new () = GoldsteinLineSearchModel(null,null,null,null)
+    member internal this.Inject v = _GoldsteinLineSearch.Value <- v
+    static member Cast (p : ICell<GoldsteinLineSearch>) = 
+        if p :? GoldsteinLineSearchModel then 
+            p :?> GoldsteinLineSearchModel
+        else
+            let o = new GoldsteinLineSearchModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

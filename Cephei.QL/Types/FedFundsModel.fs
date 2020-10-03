@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type FedFundsModel
                                                    = triv (fun () -> _FedFunds.Value.unregisterWith(handler.Value)
                                                                      _FedFunds.Value)
     do this.Bind(_FedFunds)
+(* 
+    casting 
+*)
+    internal new () = FedFundsModel(null)
+    member internal this.Inject v = _FedFunds.Value <- v
+    static member Cast (p : ICell<FedFunds>) = 
+        if p :? FedFundsModel then 
+            p :?> FedFundsModel
+        else
+            let o = new FedFundsModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

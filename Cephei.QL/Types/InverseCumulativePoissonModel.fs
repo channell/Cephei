@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -45,6 +45,19 @@ type InverseCumulativePoissonModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseCumulativePoisson.Value.value(x.Value))
     do this.Bind(_InverseCumulativePoisson)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _InverseCumulativePoisson.Value <- v
+    static member Cast (p : ICell<InverseCumulativePoisson>) = 
+        if p :? InverseCumulativePoissonModel then 
+            p :?> InverseCumulativePoissonModel
+        else
+            let o = new InverseCumulativePoissonModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -72,6 +85,19 @@ type InverseCumulativePoissonModel1
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseCumulativePoisson.Value.value(x.Value))
     do this.Bind(_InverseCumulativePoisson)
+(* 
+    casting 
+*)
+    internal new () = InverseCumulativePoissonModel1(null)
+    member internal this.Inject v = _InverseCumulativePoisson.Value <- v
+    static member Cast (p : ICell<InverseCumulativePoisson>) = 
+        if p :? InverseCumulativePoissonModel1 then 
+            p :?> InverseCumulativePoissonModel1
+        else
+            let o = new InverseCumulativePoissonModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

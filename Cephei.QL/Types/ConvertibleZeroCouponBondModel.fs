@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -120,6 +120,19 @@ type ConvertibleZeroCouponBondModel
                                                                      _ConvertibleZeroCouponBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleZeroCouponBond).valuationDate())
     do this.Bind(_ConvertibleZeroCouponBond)
+(* 
+    casting 
+*)
+    internal new () = ConvertibleZeroCouponBondModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _ConvertibleZeroCouponBond.Value <- v
+    static member Cast (p : ICell<ConvertibleZeroCouponBond>) = 
+        if p :? ConvertibleZeroCouponBondModel then 
+            p :?> ConvertibleZeroCouponBondModel
+        else
+            let o = new ConvertibleZeroCouponBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

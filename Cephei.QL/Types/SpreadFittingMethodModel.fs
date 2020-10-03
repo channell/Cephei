@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type SpreadFittingMethodModel
     let _solution                                  = triv (fun () -> _SpreadFittingMethod.Value.solution())
     let _weights                                   = triv (fun () -> _SpreadFittingMethod.Value.weights())
     do this.Bind(_SpreadFittingMethod)
+(* 
+    casting 
+*)
+    internal new () = SpreadFittingMethodModel(null,null)
+    member internal this.Inject v = _SpreadFittingMethod.Value <- v
+    static member Cast (p : ICell<SpreadFittingMethod>) = 
+        if p :? SpreadFittingMethodModel then 
+            p :?> SpreadFittingMethodModel
+        else
+            let o = new SpreadFittingMethodModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type NonCentralChiSquareDistributionModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _NonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_NonCentralChiSquareDistribution)
+(* 
+    casting 
+*)
+    internal new () = NonCentralChiSquareDistributionModel(null,null)
+    member internal this.Inject v = _NonCentralChiSquareDistribution.Value <- v
+    static member Cast (p : ICell<NonCentralChiSquareDistribution>) = 
+        if p :? NonCentralChiSquareDistributionModel then 
+            p :?> NonCentralChiSquareDistributionModel
+        else
+            let o = new NonCentralChiSquareDistributionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

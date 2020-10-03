@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type AnalyticHestonEngineModel
     let _update                                    = triv (fun () -> _AnalyticHestonEngine.Value.update()
                                                                      _AnalyticHestonEngine.Value)
     do this.Bind(_AnalyticHestonEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticHestonEngineModel(null,null,null)
+    member internal this.Inject v = _AnalyticHestonEngine.Value <- v
+    static member Cast (p : ICell<AnalyticHestonEngine>) = 
+        if p :? AnalyticHestonEngineModel then 
+            p :?> AnalyticHestonEngineModel
+        else
+            let o = new AnalyticHestonEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -115,6 +128,19 @@ type AnalyticHestonEngineModel1
     let _update                                    = triv (fun () -> _AnalyticHestonEngine.Value.update()
                                                                      _AnalyticHestonEngine.Value)
     do this.Bind(_AnalyticHestonEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticHestonEngineModel1(null,null)
+    member internal this.Inject v = _AnalyticHestonEngine.Value <- v
+    static member Cast (p : ICell<AnalyticHestonEngine>) = 
+        if p :? AnalyticHestonEngineModel1 then 
+            p :?> AnalyticHestonEngineModel1
+        else
+            let o = new AnalyticHestonEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -167,6 +193,19 @@ type AnalyticHestonEngineModel2
     let _update                                    = triv (fun () -> _AnalyticHestonEngine.Value.update()
                                                                      _AnalyticHestonEngine.Value)
     do this.Bind(_AnalyticHestonEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticHestonEngineModel2(null,null,null)
+    member internal this.Inject v = _AnalyticHestonEngine.Value <- v
+    static member Cast (p : ICell<AnalyticHestonEngine>) = 
+        if p :? AnalyticHestonEngineModel2 then 
+            p :?> AnalyticHestonEngineModel2
+        else
+            let o = new AnalyticHestonEngineModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

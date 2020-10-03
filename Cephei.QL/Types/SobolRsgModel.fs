@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type SobolRsgModel
                                                    = triv (fun () -> _SobolRsg.Value.skipTo(skip.Value)
                                                                      _SobolRsg.Value)
     do this.Bind(_SobolRsg)
+(* 
+    casting 
+*)
+    internal new () = SobolRsgModel(null)
+    member internal this.Inject v = _SobolRsg.Value <- v
+    static member Cast (p : ICell<SobolRsg>) = 
+        if p :? SobolRsgModel then 
+            p :?> SobolRsgModel
+        else
+            let o = new SobolRsgModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -93,6 +106,19 @@ type SobolRsgModel1
                                                    = triv (fun () -> _SobolRsg.Value.skipTo(skip.Value)
                                                                      _SobolRsg.Value)
     do this.Bind(_SobolRsg)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _SobolRsg.Value <- v
+    static member Cast (p : ICell<SobolRsg>) = 
+        if p :? SobolRsgModel1 then 
+            p :?> SobolRsgModel1
+        else
+            let o = new SobolRsgModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -137,6 +163,19 @@ type SobolRsgModel2
                                                    = triv (fun () -> _SobolRsg.Value.skipTo(skip.Value)
                                                                      _SobolRsg.Value)
     do this.Bind(_SobolRsg)
+(* 
+    casting 
+*)
+    internal new () = SobolRsgModel2(null,null,null)
+    member internal this.Inject v = _SobolRsg.Value <- v
+    static member Cast (p : ICell<SobolRsg>) = 
+        if p :? SobolRsgModel2 then 
+            p :?> SobolRsgModel2
+        else
+            let o = new SobolRsgModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -182,6 +221,19 @@ type SobolRsgModel3
                                                    = triv (fun () -> _SobolRsg.Value.skipTo(skip.Value)
                                                                      _SobolRsg.Value)
     do this.Bind(_SobolRsg)
+(* 
+    casting 
+*)
+    internal new () = SobolRsgModel3(null,null)
+    member internal this.Inject v = _SobolRsg.Value <- v
+    static member Cast (p : ICell<SobolRsg>) = 
+        if p :? SobolRsgModel3 then 
+            p :?> SobolRsgModel3
+        else
+            let o = new SobolRsgModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

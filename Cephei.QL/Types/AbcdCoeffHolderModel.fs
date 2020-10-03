@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -72,6 +72,19 @@ type AbcdCoeffHolderModel
     let _k_                                        = triv (fun () -> _AbcdCoeffHolder.Value.k_)
     let _maxError_                                 = triv (fun () -> _AbcdCoeffHolder.Value.maxError_)
     do this.Bind(_AbcdCoeffHolder)
+(* 
+    casting 
+*)
+    internal new () = AbcdCoeffHolderModel(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _AbcdCoeffHolder.Value <- v
+    static member Cast (p : ICell<AbcdCoeffHolder>) = 
+        if p :? AbcdCoeffHolderModel then 
+            p :?> AbcdCoeffHolderModel
+        else
+            let o = new AbcdCoeffHolderModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

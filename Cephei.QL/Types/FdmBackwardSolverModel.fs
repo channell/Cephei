@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type FdmBackwardSolverModel
                                                    = triv (fun () -> _FdmBackwardSolver.Value.rollback(ref a.Value, from.Value, To.Value, steps.Value, dampingSteps.Value)
                                                                      _FdmBackwardSolver.Value)
     do this.Bind(_FdmBackwardSolver)
+(* 
+    casting 
+*)
+    internal new () = FdmBackwardSolverModel(null,null,null,null)
+    member internal this.Inject v = _FdmBackwardSolver.Value <- v
+    static member Cast (p : ICell<FdmBackwardSolver>) = 
+        if p :? FdmBackwardSolverModel then 
+            p :?> FdmBackwardSolverModel
+        else
+            let o = new FdmBackwardSolverModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

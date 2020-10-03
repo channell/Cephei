@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type CrankNicolsonSchemeModel
                                                    = triv (fun () -> _CrankNicolsonScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _CrankNicolsonScheme.Value)
     do this.Bind(_CrankNicolsonScheme)
+(* 
+    casting 
+*)
+    internal new () = CrankNicolsonSchemeModel(null,null,null,null,null)
+    member internal this.Inject v = _CrankNicolsonScheme.Value <- v
+    static member Cast (p : ICell<CrankNicolsonScheme>) = 
+        if p :? CrankNicolsonSchemeModel then 
+            p :?> CrankNicolsonSchemeModel
+        else
+            let o = new CrankNicolsonSchemeModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -104,6 +117,19 @@ type CrankNicolsonSchemeModel1
                                                    = triv (fun () -> _CrankNicolsonScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _CrankNicolsonScheme.Value)
     do this.Bind(_CrankNicolsonScheme)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _CrankNicolsonScheme.Value <- v
+    static member Cast (p : ICell<CrankNicolsonScheme>) = 
+        if p :? CrankNicolsonSchemeModel1 then 
+            p :?> CrankNicolsonSchemeModel1
+        else
+            let o = new CrankNicolsonSchemeModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

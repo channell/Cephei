@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -93,6 +93,19 @@ type FdmAffineModelTermStructureModel
                                                                      _FdmAffineModelTermStructure.Value)
     let _extrapolate                               = triv (fun () -> _FdmAffineModelTermStructure.Value.extrapolate)
     do this.Bind(_FdmAffineModelTermStructure)
+(* 
+    casting 
+*)
+    internal new () = FdmAffineModelTermStructureModel(null,null,null,null,null,null)
+    member internal this.Inject v = _FdmAffineModelTermStructure.Value <- v
+    static member Cast (p : ICell<FdmAffineModelTermStructure>) = 
+        if p :? FdmAffineModelTermStructureModel then 
+            p :?> FdmAffineModelTermStructureModel
+        else
+            let o = new FdmAffineModelTermStructureModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

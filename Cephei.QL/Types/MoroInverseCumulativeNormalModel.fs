@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type MoroInverseCumulativeNormalModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _MoroInverseCumulativeNormal.Value.value(x.Value))
     do this.Bind(_MoroInverseCumulativeNormal)
+(* 
+    casting 
+*)
+    internal new () = MoroInverseCumulativeNormalModel(null,null)
+    member internal this.Inject v = _MoroInverseCumulativeNormal.Value <- v
+    static member Cast (p : ICell<MoroInverseCumulativeNormal>) = 
+        if p :? MoroInverseCumulativeNormalModel then 
+            p :?> MoroInverseCumulativeNormalModel
+        else
+            let o = new MoroInverseCumulativeNormalModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

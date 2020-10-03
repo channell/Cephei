@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -90,6 +90,19 @@ type FixedRateBondForwardModel
                                                                      _FixedRateBondForward.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBondForward).valuationDate())
     do this.Bind(_FixedRateBondForward)
+(* 
+    casting 
+*)
+    internal new () = FixedRateBondForwardModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FixedRateBondForward.Value <- v
+    static member Cast (p : ICell<FixedRateBondForward>) = 
+        if p :? FixedRateBondForwardModel then 
+            p :?> FixedRateBondForwardModel
+        else
+            let o = new FixedRateBondForwardModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

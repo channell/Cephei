@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type VectorModel
                                                    = triv (fun () -> _Vector.Value.swap(i1.Value, i2.Value)
                                                                      _Vector.Value)
     do this.Bind(_Vector)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Vector.Value <- v
+    static member Cast (p : ICell<Vector>) = 
+        if p :? VectorModel then 
+            p :?> VectorModel
+        else
+            let o = new VectorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -95,6 +108,19 @@ type VectorModel1
                                                    = triv (fun () -> _Vector.Value.swap(i1.Value, i2.Value)
                                                                      _Vector.Value)
     do this.Bind(_Vector)
+(* 
+    casting 
+*)
+    internal new () = VectorModel1(null)
+    member internal this.Inject v = _Vector.Value <- v
+    static member Cast (p : ICell<Vector>) = 
+        if p :? VectorModel1 then 
+            p :?> VectorModel1
+        else
+            let o = new VectorModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -138,6 +164,19 @@ type VectorModel2
                                                    = triv (fun () -> _Vector.Value.swap(i1.Value, i2.Value)
                                                                      _Vector.Value)
     do this.Bind(_Vector)
+(* 
+    casting 
+*)
+    internal new () = VectorModel2(null)
+    member internal this.Inject v = _Vector.Value <- v
+    static member Cast (p : ICell<Vector>) = 
+        if p :? VectorModel2 then 
+            p :?> VectorModel2
+        else
+            let o = new VectorModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -185,6 +224,19 @@ type VectorModel3
                                                    = triv (fun () -> _Vector.Value.swap(i1.Value, i2.Value)
                                                                      _Vector.Value)
     do this.Bind(_Vector)
+(* 
+    casting 
+*)
+    internal new () = VectorModel3(null,null,null)
+    member internal this.Inject v = _Vector.Value <- v
+    static member Cast (p : ICell<Vector>) = 
+        if p :? VectorModel3 then 
+            p :?> VectorModel3
+        else
+            let o = new VectorModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -230,6 +282,19 @@ type VectorModel4
                                                    = triv (fun () -> _Vector.Value.swap(i1.Value, i2.Value)
                                                                      _Vector.Value)
     do this.Bind(_Vector)
+(* 
+    casting 
+*)
+    internal new () = VectorModel4(null)
+    member internal this.Inject v = _Vector.Value <- v
+    static member Cast (p : ICell<Vector>) = 
+        if p :? VectorModel4 then 
+            p :?> VectorModel4
+        else
+            let o = new VectorModel4 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -275,6 +340,19 @@ type VectorModel5
                                                    = triv (fun () -> _Vector.Value.swap(i1.Value, i2.Value)
                                                                      _Vector.Value)
     do this.Bind(_Vector)
+(* 
+    casting 
+*)
+    internal new () = VectorModel5(null,null)
+    member internal this.Inject v = _Vector.Value <- v
+    static member Cast (p : ICell<Vector>) = 
+        if p :? VectorModel5 then 
+            p :?> VectorModel5
+        else
+            let o = new VectorModel5 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

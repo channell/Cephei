@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -61,6 +61,19 @@ type PiecewiseZeroSpreadedTermStructureModel
     let _referenceDate                             = triv (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.referenceDate())
     let _settlementDays                            = triv (fun () -> _PiecewiseZeroSpreadedTermStructure.Value.settlementDays())
     do this.Bind(_PiecewiseZeroSpreadedTermStructure)
+(* 
+    casting 
+*)
+    internal new () = PiecewiseZeroSpreadedTermStructureModel(null,null,null,null,null,null)
+    member internal this.Inject v = _PiecewiseZeroSpreadedTermStructure.Value <- v
+    static member Cast (p : ICell<PiecewiseZeroSpreadedTermStructure>) = 
+        if p :? PiecewiseZeroSpreadedTermStructureModel then 
+            p :?> PiecewiseZeroSpreadedTermStructureModel
+        else
+            let o = new PiecewiseZeroSpreadedTermStructureModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

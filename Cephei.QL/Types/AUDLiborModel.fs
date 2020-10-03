@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type AUDLiborModel
                                                    = triv (fun () -> _AUDLibor.Value.unregisterWith(handler.Value)
                                                                      _AUDLibor.Value)
     do this.Bind(_AUDLibor)
+(* 
+    casting 
+*)
+    internal new () = AUDLiborModel(null)
+    member internal this.Inject v = _AUDLibor.Value <- v
+    static member Cast (p : ICell<AUDLibor>) = 
+        if p :? AUDLiborModel then 
+            p :?> AUDLiborModel
+        else
+            let o = new AUDLiborModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -212,6 +225,19 @@ type AUDLiborModel1
                                                    = triv (fun () -> _AUDLibor.Value.unregisterWith(handler.Value)
                                                                      _AUDLibor.Value)
     do this.Bind(_AUDLibor)
+(* 
+    casting 
+*)
+    internal new () = AUDLiborModel1(null,null)
+    member internal this.Inject v = _AUDLibor.Value <- v
+    static member Cast (p : ICell<AUDLibor>) = 
+        if p :? AUDLiborModel1 then 
+            p :?> AUDLiborModel1
+        else
+            let o = new AUDLiborModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

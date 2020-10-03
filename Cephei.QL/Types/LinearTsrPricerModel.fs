@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type LinearTsrPricerModel
     let _update                                    = triv (fun () -> _LinearTsrPricer.Value.update()
                                                                      _LinearTsrPricer.Value)
     do this.Bind(_LinearTsrPricer)
+(* 
+    casting 
+*)
+    internal new () = LinearTsrPricerModel(null,null,null,null,null)
+    member internal this.Inject v = _LinearTsrPricer.Value <- v
+    static member Cast (p : ICell<LinearTsrPricer>) = 
+        if p :? LinearTsrPricerModel then 
+            p :?> LinearTsrPricerModel
+        else
+            let o = new LinearTsrPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

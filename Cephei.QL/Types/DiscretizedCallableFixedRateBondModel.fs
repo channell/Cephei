@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type DiscretizedCallableFixedRateBondModel
     let _time                                      = triv (fun () -> _DiscretizedCallableFixedRateBond.Value.time())
     let _values                                    = triv (fun () -> _DiscretizedCallableFixedRateBond.Value.values())
     do this.Bind(_DiscretizedCallableFixedRateBond)
+(* 
+    casting 
+*)
+    internal new () = DiscretizedCallableFixedRateBondModel(null,null,null)
+    member internal this.Inject v = _DiscretizedCallableFixedRateBond.Value <- v
+    static member Cast (p : ICell<DiscretizedCallableFixedRateBond>) = 
+        if p :? DiscretizedCallableFixedRateBondModel then 
+            p :?> DiscretizedCallableFixedRateBondModel
+        else
+            let o = new DiscretizedCallableFixedRateBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

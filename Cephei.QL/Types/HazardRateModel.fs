@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type HazardRateModel
     let _zeroYieldImpl                             (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _HazardRate.Value.zeroYieldImpl(i.Value, t.Value))
     do this.Bind(_HazardRate)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _HazardRate.Value <- v
+    static member Cast (p : ICell<HazardRate>) = 
+        if p :? HazardRateModel then 
+            p :?> HazardRateModel
+        else
+            let o = new HazardRateModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

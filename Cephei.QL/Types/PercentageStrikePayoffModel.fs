@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type PercentageStrikePayoffModel
                                                    = triv (fun () -> _PercentageStrikePayoff.Value.accept(v.Value)
                                                                      _PercentageStrikePayoff.Value)
     do this.Bind(_PercentageStrikePayoff)
+(* 
+    casting 
+*)
+    internal new () = PercentageStrikePayoffModel(null,null)
+    member internal this.Inject v = _PercentageStrikePayoff.Value <- v
+    static member Cast (p : ICell<PercentageStrikePayoff>) = 
+        if p :? PercentageStrikePayoffModel then 
+            p :?> PercentageStrikePayoffModel
+        else
+            let o = new PercentageStrikePayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

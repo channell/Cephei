@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type SABRWrapperModel
     let _volatility                                (x : ICell<double>)   
                                                    = triv (fun () -> _SABRWrapper.Value.volatility(x.Value))
     do this.Bind(_SABRWrapper)
+(* 
+    casting 
+*)
+    internal new () = SABRWrapperModel(null,null,null,null)
+    member internal this.Inject v = _SABRWrapper.Value <- v
+    static member Cast (p : ICell<SABRWrapper>) = 
+        if p :? SABRWrapperModel then 
+            p :?> SABRWrapperModel
+        else
+            let o = new SABRWrapperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

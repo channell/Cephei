@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -47,6 +47,19 @@ type InterpolatingCPICapFloorEngineModel
     let _InterpolatingCPICapFloorEngine            = cell (fun () -> new InterpolatingCPICapFloorEngine (priceSurf.Value))
     let _name                                      = triv (fun () -> _InterpolatingCPICapFloorEngine.Value.name())
     do this.Bind(_InterpolatingCPICapFloorEngine)
+(* 
+    casting 
+*)
+    internal new () = InterpolatingCPICapFloorEngineModel(null)
+    member internal this.Inject v = _InterpolatingCPICapFloorEngine.Value <- v
+    static member Cast (p : ICell<InterpolatingCPICapFloorEngine>) = 
+        if p :? InterpolatingCPICapFloorEngineModel then 
+            p :?> InterpolatingCPICapFloorEngineModel
+        else
+            let o = new InterpolatingCPICapFloorEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

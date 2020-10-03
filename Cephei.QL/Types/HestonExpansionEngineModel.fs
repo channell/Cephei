@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -61,6 +61,19 @@ type HestonExpansionEngineModel
     let _update                                    = triv (fun () -> _HestonExpansionEngine.Value.update()
                                                                      _HestonExpansionEngine.Value)
     do this.Bind(_HestonExpansionEngine)
+(* 
+    casting 
+*)
+    internal new () = HestonExpansionEngineModel(null,null)
+    member internal this.Inject v = _HestonExpansionEngine.Value <- v
+    static member Cast (p : ICell<HestonExpansionEngine>) = 
+        if p :? HestonExpansionEngineModel then 
+            p :?> HestonExpansionEngineModel
+        else
+            let o = new HestonExpansionEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

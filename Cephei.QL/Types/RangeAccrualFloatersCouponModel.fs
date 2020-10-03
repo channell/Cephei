@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -136,6 +136,19 @@ type RangeAccrualFloatersCouponModel
                                                    = triv (fun () -> _RangeAccrualFloatersCoupon.Value.unregisterWith(handler.Value)
                                                                      _RangeAccrualFloatersCoupon.Value)
     do this.Bind(_RangeAccrualFloatersCoupon)
+(* 
+    casting 
+*)
+    internal new () = RangeAccrualFloatersCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _RangeAccrualFloatersCoupon.Value <- v
+    static member Cast (p : ICell<RangeAccrualFloatersCoupon>) = 
+        if p :? RangeAccrualFloatersCouponModel then 
+            p :?> RangeAccrualFloatersCouponModel
+        else
+            let o = new RangeAccrualFloatersCouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

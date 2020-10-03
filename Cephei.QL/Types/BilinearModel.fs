@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -45,6 +45,19 @@ type BilinearModel
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xSize : ICell<int>) (yBegin : ICell<Generic.List<double>>) (ySize : ICell<int>) (zData : ICell<Matrix>)   
                                                    = triv (fun () -> _Bilinear.Value.interpolate(xBegin.Value, xSize.Value, yBegin.Value, ySize.Value, zData.Value))
     do this.Bind(_Bilinear)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Bilinear.Value <- v
+    static member Cast (p : ICell<Bilinear>) = 
+        if p :? BilinearModel then 
+            p :?> BilinearModel
+        else
+            let o = new BilinearModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

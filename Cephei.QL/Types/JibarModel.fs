@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -97,6 +97,19 @@ type JibarModel
                                                    = triv (fun () -> _Jibar.Value.unregisterWith(handler.Value)
                                                                      _Jibar.Value)
     do this.Bind(_Jibar)
+(* 
+    casting 
+*)
+    internal new () = JibarModel(null,null)
+    member internal this.Inject v = _Jibar.Value <- v
+    static member Cast (p : ICell<Jibar>) = 
+        if p :? JibarModel then 
+            p :?> JibarModel
+        else
+            let o = new JibarModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -213,6 +226,19 @@ type JibarModel1
                                                    = triv (fun () -> _Jibar.Value.unregisterWith(handler.Value)
                                                                      _Jibar.Value)
     do this.Bind(_Jibar)
+(* 
+    casting 
+*)
+    internal new () = JibarModel1(null)
+    member internal this.Inject v = _Jibar.Value <- v
+    static member Cast (p : ICell<Jibar>) = 
+        if p :? JibarModel1 then 
+            p :?> JibarModel1
+        else
+            let o = new JibarModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

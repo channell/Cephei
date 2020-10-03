@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -71,6 +71,19 @@ type DateModel
     let _year                                      = triv (fun () -> _Date.Value.year())
     let _Year                                      = triv (fun () -> _Date.Value.Year)
     do this.Bind(_Date)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Date.Value <- v
+    static member Cast (p : ICell<Date>) = 
+        if p :? DateModel then 
+            p :?> DateModel
+        else
+            let o = new DateModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -150,17 +163,17 @@ type DateModel1
     let _year                                      = triv (fun () -> _Date.Value.year())
     let _Year                                      = triv (fun () -> _Date.Value.Year)
     do this.Bind(_Date)
-
 (* 
     casting 
 *)
     internal new () = DateModel1(null)
+    member internal this.Inject v = _Date.Value <- v
     static member Cast (p : ICell<Date>) = 
         if p :? DateModel1 then 
             p :?> DateModel1
         else
             let o = new DateModel1 ()
-            o.Value <- p.Value
+            o.Inject p.Value
             o
 
 (* 
@@ -254,6 +267,19 @@ type DateModel2
     let _year                                      = triv (fun () -> _Date.Value.year())
     let _Year                                      = triv (fun () -> _Date.Value.Year)
     do this.Bind(_Date)
+(* 
+    casting 
+*)
+    internal new () = DateModel2(null,null,null,null,null,null,null)
+    member internal this.Inject v = _Date.Value <- v
+    static member Cast (p : ICell<Date>) = 
+        if p :? DateModel2 then 
+            p :?> DateModel2
+        else
+            let o = new DateModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -344,6 +370,19 @@ type DateModel3
     let _year                                      = triv (fun () -> _Date.Value.year())
     let _Year                                      = triv (fun () -> _Date.Value.Year)
     do this.Bind(_Date)
+(* 
+    casting 
+*)
+    internal new () = DateModel3(null,null,null)
+    member internal this.Inject v = _Date.Value <- v
+    static member Cast (p : ICell<Date>) = 
+        if p :? DateModel3 then 
+            p :?> DateModel3
+        else
+            let o = new DateModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -426,6 +465,19 @@ type DateModel4
     let _year                                      = triv (fun () -> _Date.Value.year())
     let _Year                                      = triv (fun () -> _Date.Value.Year)
     do this.Bind(_Date)
+(* 
+    casting 
+*)
+    internal new () = DateModel4(null)
+    member internal this.Inject v = _Date.Value <- v
+    static member Cast (p : ICell<Date>) = 
+        if p :? DateModel4 then 
+            p :?> DateModel4
+        else
+            let o = new DateModel4 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -518,6 +570,19 @@ type DateModel5
     let _year                                      = triv (fun () -> _Date.Value.year())
     let _Year                                      = triv (fun () -> _Date.Value.Year)
     do this.Bind(_Date)
+(* 
+    casting 
+*)
+    internal new () = DateModel5(null,null,null,null,null,null,null)
+    member internal this.Inject v = _Date.Value <- v
+    static member Cast (p : ICell<Date>) = 
+        if p :? DateModel5 then 
+            p :?> DateModel5
+        else
+            let o = new DateModel5 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

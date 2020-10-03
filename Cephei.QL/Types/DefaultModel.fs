@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type DefaultModel
                                                    = triv (fun () -> _Default.Value.integrate(f.Value, a.Value, b.Value, I.Value, N.Value))
     let _nbEvalutions                              = triv (fun () -> _Default.Value.nbEvalutions())
     do this.Bind(_Default)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Default.Value <- v
+    static member Cast (p : ICell<Default>) = 
+        if p :? DefaultModel then 
+            p :?> DefaultModel
+        else
+            let o = new DefaultModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

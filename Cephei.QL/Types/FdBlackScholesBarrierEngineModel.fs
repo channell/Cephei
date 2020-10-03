@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type FdBlackScholesBarrierEngineModel
 *)
     let _FdBlackScholesBarrierEngine               = cell (fun () -> new FdBlackScholesBarrierEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))
     do this.Bind(_FdBlackScholesBarrierEngine)
+(* 
+    casting 
+*)
+    internal new () = FdBlackScholesBarrierEngineModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _FdBlackScholesBarrierEngine.Value <- v
+    static member Cast (p : ICell<FdBlackScholesBarrierEngine>) = 
+        if p :? FdBlackScholesBarrierEngineModel then 
+            p :?> FdBlackScholesBarrierEngineModel
+        else
+            let o = new FdBlackScholesBarrierEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

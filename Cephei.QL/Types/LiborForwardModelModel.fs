@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -82,6 +82,19 @@ type LiborForwardModelModel
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _LiborForwardModel.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_LiborForwardModel)
+(* 
+    casting 
+*)
+    internal new () = LiborForwardModelModel(null,null,null)
+    member internal this.Inject v = _LiborForwardModel.Value <- v
+    static member Cast (p : ICell<LiborForwardModel>) = 
+        if p :? LiborForwardModelModel then 
+            p :?> LiborForwardModelModel
+        else
+            let o = new LiborForwardModelModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -134,6 +134,19 @@ type CPISwapModel
                                                                      _CPISwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CPISwap).valuationDate())
     do this.Bind(_CPISwap)
+(* 
+    casting 
+*)
+    internal new () = CPISwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CPISwap.Value <- v
+    static member Cast (p : ICell<CPISwap>) = 
+        if p :? CPISwapModel then 
+            p :?> CPISwapModel
+        else
+            let o = new CPISwapModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

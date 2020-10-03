@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type AnalyticDoubleBarrierEngineModel
 *)
     let _AnalyticDoubleBarrierEngine               = cell (fun () -> new AnalyticDoubleBarrierEngine (Process.Value, series.Value))
     do this.Bind(_AnalyticDoubleBarrierEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticDoubleBarrierEngineModel(null,null)
+    member internal this.Inject v = _AnalyticDoubleBarrierEngine.Value <- v
+    static member Cast (p : ICell<AnalyticDoubleBarrierEngine>) = 
+        if p :? AnalyticDoubleBarrierEngineModel then 
+            p :?> AnalyticDoubleBarrierEngineModel
+        else
+            let o = new AnalyticDoubleBarrierEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

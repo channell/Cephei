@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -111,6 +111,19 @@ type VanillaSwapModel
                                                                      _VanillaSwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _VanillaSwap).valuationDate())
     do this.Bind(_VanillaSwap)
+(* 
+    casting 
+*)
+    internal new () = VanillaSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _VanillaSwap.Value <- v
+    static member Cast (p : ICell<VanillaSwap>) = 
+        if p :? VanillaSwapModel then 
+            p :?> VanillaSwapModel
+        else
+            let o = new VanillaSwapModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

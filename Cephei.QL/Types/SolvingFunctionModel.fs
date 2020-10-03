@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,31 @@ type SolvingFunctionModel
     let _derivative                                (x : ICell<double>)   
                                                    = cell (fun () -> _SolvingFunction.Value.derivative(x.Value))
     do this.Bind(_SolvingFunction)
+(* 
+    casting 
+*)
+    internal new () = SolvingFunctionModel(null,null)
+    member internal this.Inject v = _SolvingFunction.Value <- v
+    static member Cast (p : ICell<SolvingFunction>) = 
+        if p :? SolvingFunctionModel then 
+            p :?> SolvingFunctionModel
+        else
+            let o = new SolvingFunctionModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = SolvingFunctionModel(null,null)
+    static member Cast (p : ICell<SolvingFunction>) = 
+        if p :? SolvingFunctionModel then 
+            p :?> SolvingFunctionModel
+        else
+            let o = new SolvingFunctionModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type CmsSpreadLegModel
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
                                                    = triv (fun () -> _CmsSpreadLeg.Value.withPaymentAdjustment(convention.Value))
     do this.Bind(_CmsSpreadLeg)
+(* 
+    casting 
+*)
+    internal new () = CmsSpreadLegModel(null,null)
+    member internal this.Inject v = _CmsSpreadLeg.Value <- v
+    static member Cast (p : ICell<CmsSpreadLeg>) = 
+        if p :? CmsSpreadLegModel then 
+            p :?> CmsSpreadLegModel
+        else
+            let o = new CmsSpreadLegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

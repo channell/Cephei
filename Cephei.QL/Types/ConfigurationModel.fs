@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -67,6 +67,31 @@ type ConfigurationModel
     let _withStrategy                              (s : ICell<Strategy>)   
                                                    = cell (fun () -> _Configuration.Value.withStrategy(s.Value))
     do this.Bind(_Configuration)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Configuration.Value <- v
+    static member Cast (p : ICell<Configuration>) = 
+        if p :? ConfigurationModel then 
+            p :?> ConfigurationModel
+        else
+            let o = new ConfigurationModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<Configuration>) = 
+        if p :? ConfigurationModel then 
+            p :?> ConfigurationModel
+        else
+            let o = new ConfigurationModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

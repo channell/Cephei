@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -92,6 +92,19 @@ type IborIndexModel
                                                    = triv (fun () -> _IborIndex.Value.unregisterWith(handler.Value)
                                                                      _IborIndex.Value)
     do this.Bind(_IborIndex)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _IborIndex.Value <- v
+    static member Cast (p : ICell<IborIndex>) = 
+        if p :? IborIndexModel then 
+            p :?> IborIndexModel
+        else
+            let o = new IborIndexModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -222,6 +235,19 @@ type IborIndexModel1
                                                    = triv (fun () -> _IborIndex.Value.unregisterWith(handler.Value)
                                                                      _IborIndex.Value)
     do this.Bind(_IborIndex)
+(* 
+    casting 
+*)
+    internal new () = IborIndexModel1(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _IborIndex.Value <- v
+    static member Cast (p : ICell<IborIndex>) = 
+        if p :? IborIndexModel1 then 
+            p :?> IborIndexModel1
+        else
+            let o = new IborIndexModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

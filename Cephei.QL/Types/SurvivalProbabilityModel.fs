@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type SurvivalProbabilityModel
     let _zeroYieldImpl                             (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _SurvivalProbability.Value.zeroYieldImpl(i.Value, t.Value))
     do this.Bind(_SurvivalProbability)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _SurvivalProbability.Value <- v
+    static member Cast (p : ICell<SurvivalProbability>) = 
+        if p :? SurvivalProbabilityModel then 
+            p :?> SurvivalProbabilityModel
+        else
+            let o = new SurvivalProbabilityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

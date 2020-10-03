@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -97,6 +97,19 @@ type ZiborModel
                                                    = triv (fun () -> _Zibor.Value.unregisterWith(handler.Value)
                                                                      _Zibor.Value)
     do this.Bind(_Zibor)
+(* 
+    casting 
+*)
+    internal new () = ZiborModel(null,null)
+    member internal this.Inject v = _Zibor.Value <- v
+    static member Cast (p : ICell<Zibor>) = 
+        if p :? ZiborModel then 
+            p :?> ZiborModel
+        else
+            let o = new ZiborModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -213,6 +226,19 @@ type ZiborModel1
                                                    = triv (fun () -> _Zibor.Value.unregisterWith(handler.Value)
                                                                      _Zibor.Value)
     do this.Bind(_Zibor)
+(* 
+    casting 
+*)
+    internal new () = ZiborModel1(null)
+    member internal this.Inject v = _Zibor.Value <- v
+    static member Cast (p : ICell<Zibor>) = 
+        if p :? ZiborModel1 then 
+            p :?> ZiborModel1
+        else
+            let o = new ZiborModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

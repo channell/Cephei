@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type KirkEngineModel
 *)
     let _KirkEngine                                = cell (fun () -> new KirkEngine (process1.Value, process2.Value, correlation.Value))
     do this.Bind(_KirkEngine)
+(* 
+    casting 
+*)
+    internal new () = KirkEngineModel(null,null,null)
+    member internal this.Inject v = _KirkEngine.Value <- v
+    static member Cast (p : ICell<KirkEngine>) = 
+        if p :? KirkEngineModel then 
+            p :?> KirkEngineModel
+        else
+            let o = new KirkEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

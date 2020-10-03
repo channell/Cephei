@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -97,6 +97,19 @@ type ShiborModel
                                                    = triv (fun () -> _Shibor.Value.unregisterWith(handler.Value)
                                                                      _Shibor.Value)
     do this.Bind(_Shibor)
+(* 
+    casting 
+*)
+    internal new () = ShiborModel(null,null)
+    member internal this.Inject v = _Shibor.Value <- v
+    static member Cast (p : ICell<Shibor>) = 
+        if p :? ShiborModel then 
+            p :?> ShiborModel
+        else
+            let o = new ShiborModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -213,6 +226,19 @@ type ShiborModel1
                                                    = triv (fun () -> _Shibor.Value.unregisterWith(handler.Value)
                                                                      _Shibor.Value)
     do this.Bind(_Shibor)
+(* 
+    casting 
+*)
+    internal new () = ShiborModel1(null)
+    member internal this.Inject v = _Shibor.Value <- v
+    static member Cast (p : ICell<Shibor>) = 
+        if p :? ShiborModel1 then 
+            p :?> ShiborModel1
+        else
+            let o = new ShiborModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

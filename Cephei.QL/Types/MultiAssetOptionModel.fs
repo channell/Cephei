@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -70,6 +70,19 @@ type MultiAssetOptionModel
                                                                      _MultiAssetOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _MultiAssetOption).valuationDate())
     do this.Bind(_MultiAssetOption)
+(* 
+    casting 
+*)
+    internal new () = MultiAssetOptionModel(null,null,null,null)
+    member internal this.Inject v = _MultiAssetOption.Value <- v
+    static member Cast (p : ICell<MultiAssetOption>) = 
+        if p :? MultiAssetOptionModel then 
+            p :?> MultiAssetOptionModel
+        else
+            let o = new MultiAssetOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -104,6 +104,19 @@ type CreditDefaultSwapModel
                                                                      _CreditDefaultSwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CreditDefaultSwap).valuationDate())
     do this.Bind(_CreditDefaultSwap)
+(* 
+    casting 
+*)
+    internal new () = CreditDefaultSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CreditDefaultSwap.Value <- v
+    static member Cast (p : ICell<CreditDefaultSwap>) = 
+        if p :? CreditDefaultSwapModel then 
+            p :?> CreditDefaultSwapModel
+        else
+            let o = new CreditDefaultSwapModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -234,6 +247,19 @@ type CreditDefaultSwapModel1
                                                                      _CreditDefaultSwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CreditDefaultSwap).valuationDate())
     do this.Bind(_CreditDefaultSwap)
+(* 
+    casting 
+*)
+    internal new () = CreditDefaultSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CreditDefaultSwap.Value <- v
+    static member Cast (p : ICell<CreditDefaultSwap>) = 
+        if p :? CreditDefaultSwapModel1 then 
+            p :?> CreditDefaultSwapModel1
+        else
+            let o = new CreditDefaultSwapModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

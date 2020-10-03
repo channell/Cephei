@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -122,6 +122,19 @@ type PiecewiseYieldCurveModel
                                                                      _PiecewiseYieldCurve.Value)
     let _extrapolate                               = triv (fun () -> _PiecewiseYieldCurve.Value.extrapolate)
     do this.Bind(_PiecewiseYieldCurve)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _PiecewiseYieldCurve.Value <- v
+    static member Cast (p : ICell<PiecewiseYieldCurve>) = 
+        if p :? PiecewiseYieldCurveModel then 
+            p :?> PiecewiseYieldCurveModel
+        else
+            let o = new PiecewiseYieldCurveModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -304,6 +317,19 @@ type PiecewiseYieldCurveModel1
                                                                      _PiecewiseYieldCurve.Value)
     let _extrapolate                               = triv (fun () -> _PiecewiseYieldCurve.Value.extrapolate)
     do this.Bind(_PiecewiseYieldCurve)
+(* 
+    casting 
+*)
+    internal new () = PiecewiseYieldCurveModel1(null,null,null,null,null)
+    member internal this.Inject v = _PiecewiseYieldCurve.Value <- v
+    static member Cast (p : ICell<PiecewiseYieldCurve>) = 
+        if p :? PiecewiseYieldCurveModel1 then 
+            p :?> PiecewiseYieldCurveModel1
+        else
+            let o = new PiecewiseYieldCurveModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -491,6 +517,19 @@ type PiecewiseYieldCurveModel2
                                                                      _PiecewiseYieldCurve.Value)
     let _extrapolate                               = triv (fun () -> _PiecewiseYieldCurve.Value.extrapolate)
     do this.Bind(_PiecewiseYieldCurve)
+(* 
+    casting 
+*)
+    internal new () = PiecewiseYieldCurveModel2(null,null,null,null,null)
+    member internal this.Inject v = _PiecewiseYieldCurve.Value <- v
+    static member Cast (p : ICell<PiecewiseYieldCurve>) = 
+        if p :? PiecewiseYieldCurveModel2 then 
+            p :?> PiecewiseYieldCurveModel2
+        else
+            let o = new PiecewiseYieldCurveModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

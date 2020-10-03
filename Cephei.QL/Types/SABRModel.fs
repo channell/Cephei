@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -84,6 +84,19 @@ type SABRModel
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xEnd : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _SABR.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value))
     do this.Bind(_SABR)
+(* 
+    casting 
+*)
+    internal new () = SABRModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SABR.Value <- v
+    static member Cast (p : ICell<SABR>) = 
+        if p :? SABRModel then 
+            p :?> SABRModel
+        else
+            let o = new SABRModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type LinearLeastSquaresRegressionModel
 *)
     let _LinearLeastSquaresRegression              = cell (fun () -> new LinearLeastSquaresRegression (x.Value, y.Value, v.Value))
     do this.Bind(_LinearLeastSquaresRegression)
+(* 
+    casting 
+*)
+    internal new () = LinearLeastSquaresRegressionModel(null,null,null)
+    member internal this.Inject v = _LinearLeastSquaresRegression.Value <- v
+    static member Cast (p : ICell<LinearLeastSquaresRegression>) = 
+        if p :? LinearLeastSquaresRegressionModel then 
+            p :?> LinearLeastSquaresRegressionModel
+        else
+            let o = new LinearLeastSquaresRegressionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

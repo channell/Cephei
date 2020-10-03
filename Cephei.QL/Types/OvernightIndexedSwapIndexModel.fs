@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -111,6 +111,19 @@ type OvernightIndexedSwapIndexModel
                                                    = triv (fun () -> _OvernightIndexedSwapIndex.Value.unregisterWith(handler.Value)
                                                                      _OvernightIndexedSwapIndex.Value)
     do this.Bind(_OvernightIndexedSwapIndex)
+(* 
+    casting 
+*)
+    internal new () = OvernightIndexedSwapIndexModel(null,null,null,null,null)
+    member internal this.Inject v = _OvernightIndexedSwapIndex.Value <- v
+    static member Cast (p : ICell<OvernightIndexedSwapIndex>) = 
+        if p :? OvernightIndexedSwapIndexModel then 
+            p :?> OvernightIndexedSwapIndexModel
+        else
+            let o = new OvernightIndexedSwapIndexModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

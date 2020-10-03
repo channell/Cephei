@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -61,6 +61,19 @@ type QuadraticHelperModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _QuadraticHelper.Value.value(x.Value))
     do this.Bind(_QuadraticHelper)
+(* 
+    casting 
+*)
+    internal new () = QuadraticHelperModel(null,null,null,null,null,null)
+    member internal this.Inject v = _QuadraticHelper.Value <- v
+    static member Cast (p : ICell<QuadraticHelper>) = 
+        if p :? QuadraticHelperModel then 
+            p :?> QuadraticHelperModel
+        else
+            let o = new QuadraticHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

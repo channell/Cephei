@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type CubicNaturalSplineModel
                                                                      _CubicNaturalSpline.Value)
     let _extrapolate                               = triv (fun () -> _CubicNaturalSpline.Value.extrapolate)
     do this.Bind(_CubicNaturalSpline)
+(* 
+    casting 
+*)
+    internal new () = CubicNaturalSplineModel(null,null,null)
+    member internal this.Inject v = _CubicNaturalSpline.Value <- v
+    static member Cast (p : ICell<CubicNaturalSpline>) = 
+        if p :? CubicNaturalSplineModel then 
+            p :?> CubicNaturalSplineModel
+        else
+            let o = new CubicNaturalSplineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

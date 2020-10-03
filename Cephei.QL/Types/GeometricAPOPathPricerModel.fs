@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type GeometricAPOPathPricerModel
     let _value                                     (path : ICell<Path>)   
                                                    = triv (fun () -> _GeometricAPOPathPricer.Value.value(path.Value))
     do this.Bind(_GeometricAPOPathPricer)
+(* 
+    casting 
+*)
+    internal new () = GeometricAPOPathPricerModel(null,null,null)
+    member internal this.Inject v = _GeometricAPOPathPricer.Value <- v
+    static member Cast (p : ICell<GeometricAPOPathPricer>) = 
+        if p :? GeometricAPOPathPricerModel then 
+            p :?> GeometricAPOPathPricerModel
+        else
+            let o = new GeometricAPOPathPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -88,6 +101,19 @@ type GeometricAPOPathPricerModel1
     let _value                                     (path : ICell<Path>)   
                                                    = triv (fun () -> _GeometricAPOPathPricer.Value.value(path.Value))
     do this.Bind(_GeometricAPOPathPricer)
+(* 
+    casting 
+*)
+    internal new () = GeometricAPOPathPricerModel1(null,null,null,null)
+    member internal this.Inject v = _GeometricAPOPathPricer.Value <- v
+    static member Cast (p : ICell<GeometricAPOPathPricer>) = 
+        if p :? GeometricAPOPathPricerModel1 then 
+            p :?> GeometricAPOPathPricerModel1
+        else
+            let o = new GeometricAPOPathPricerModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -127,6 +153,19 @@ type GeometricAPOPathPricerModel2
     let _value                                     (path : ICell<Path>)   
                                                    = triv (fun () -> _GeometricAPOPathPricer.Value.value(path.Value))
     do this.Bind(_GeometricAPOPathPricer)
+(* 
+    casting 
+*)
+    internal new () = GeometricAPOPathPricerModel2(null,null,null,null,null)
+    member internal this.Inject v = _GeometricAPOPathPricer.Value <- v
+    static member Cast (p : ICell<GeometricAPOPathPricer>) = 
+        if p :? GeometricAPOPathPricerModel2 then 
+            p :?> GeometricAPOPathPricerModel2
+        else
+            let o = new GeometricAPOPathPricerModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

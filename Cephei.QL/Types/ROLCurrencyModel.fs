@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type ROLCurrencyModel
     let _ToString                                  = triv (fun () -> _ROLCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _ROLCurrency.Value.triangulationCurrency)
     do this.Bind(_ROLCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ROLCurrency.Value <- v
+    static member Cast (p : ICell<ROLCurrency>) = 
+        if p :? ROLCurrencyModel then 
+            p :?> ROLCurrencyModel
+        else
+            let o = new ROLCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

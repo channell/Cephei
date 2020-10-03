@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type DepositRateHelperModel
                                                    = triv (fun () -> _DepositRateHelper.Value.unregisterWith(handler.Value)
                                                                      _DepositRateHelper.Value)
     do this.Bind(_DepositRateHelper)
+(* 
+    casting 
+*)
+    internal new () = DepositRateHelperModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _DepositRateHelper.Value <- v
+    static member Cast (p : ICell<DepositRateHelper>) = 
+        if p :? DepositRateHelperModel then 
+            p :?> DepositRateHelperModel
+        else
+            let o = new DepositRateHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -149,6 +162,19 @@ type DepositRateHelperModel1
                                                    = triv (fun () -> _DepositRateHelper.Value.unregisterWith(handler.Value)
                                                                      _DepositRateHelper.Value)
     do this.Bind(_DepositRateHelper)
+(* 
+    casting 
+*)
+    internal new () = DepositRateHelperModel1(null,null)
+    member internal this.Inject v = _DepositRateHelper.Value <- v
+    static member Cast (p : ICell<DepositRateHelper>) = 
+        if p :? DepositRateHelperModel1 then 
+            p :?> DepositRateHelperModel1
+        else
+            let o = new DepositRateHelperModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -214,6 +240,19 @@ type DepositRateHelperModel2
                                                    = triv (fun () -> _DepositRateHelper.Value.unregisterWith(handler.Value)
                                                                      _DepositRateHelper.Value)
     do this.Bind(_DepositRateHelper)
+(* 
+    casting 
+*)
+    internal new () = DepositRateHelperModel2(null,null)
+    member internal this.Inject v = _DepositRateHelper.Value <- v
+    static member Cast (p : ICell<DepositRateHelper>) = 
+        if p :? DepositRateHelperModel2 then 
+            p :?> DepositRateHelperModel2
+        else
+            let o = new DepositRateHelperModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -289,6 +328,19 @@ type DepositRateHelperModel3
                                                    = triv (fun () -> _DepositRateHelper.Value.unregisterWith(handler.Value)
                                                                      _DepositRateHelper.Value)
     do this.Bind(_DepositRateHelper)
+(* 
+    casting 
+*)
+    internal new () = DepositRateHelperModel3(null,null,null,null,null,null,null)
+    member internal this.Inject v = _DepositRateHelper.Value <- v
+    static member Cast (p : ICell<DepositRateHelper>) = 
+        if p :? DepositRateHelperModel3 then 
+            p :?> DepositRateHelperModel3
+        else
+            let o = new DepositRateHelperModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

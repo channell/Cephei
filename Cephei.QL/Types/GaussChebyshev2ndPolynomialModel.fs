@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type GaussChebyshev2ndPolynomialModel
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
                                                    = triv (fun () -> _GaussChebyshev2ndPolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussChebyshev2ndPolynomial)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _GaussChebyshev2ndPolynomial.Value <- v
+    static member Cast (p : ICell<GaussChebyshev2ndPolynomial>) = 
+        if p :? GaussChebyshev2ndPolynomialModel then 
+            p :?> GaussChebyshev2ndPolynomialModel
+        else
+            let o = new GaussChebyshev2ndPolynomialModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

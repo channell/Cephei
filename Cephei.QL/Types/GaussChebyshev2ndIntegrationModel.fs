@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type GaussChebyshev2ndIntegrationModel
     let _weights                                   = triv (fun () -> _GaussChebyshev2ndIntegration.Value.weights())
     let _x                                         = triv (fun () -> _GaussChebyshev2ndIntegration.Value.x())
     do this.Bind(_GaussChebyshev2ndIntegration)
+(* 
+    casting 
+*)
+    internal new () = GaussChebyshev2ndIntegrationModel(null)
+    member internal this.Inject v = _GaussChebyshev2ndIntegration.Value <- v
+    static member Cast (p : ICell<GaussChebyshev2ndIntegration>) = 
+        if p :? GaussChebyshev2ndIntegrationModel then 
+            p :?> GaussChebyshev2ndIntegrationModel
+        else
+            let o = new GaussChebyshev2ndIntegrationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

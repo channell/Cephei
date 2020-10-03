@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type IsdaCdsEngineModel
     let _isdaCreditCurve                           = triv (fun () -> _IsdaCdsEngine.Value.isdaCreditCurve())
     let _isdaRateCurve                             = triv (fun () -> _IsdaCdsEngine.Value.isdaRateCurve())
     do this.Bind(_IsdaCdsEngine)
+(* 
+    casting 
+*)
+    internal new () = IsdaCdsEngineModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _IsdaCdsEngine.Value <- v
+    static member Cast (p : ICell<IsdaCdsEngine>) = 
+        if p :? IsdaCdsEngineModel then 
+            p :?> IsdaCdsEngineModel
+        else
+            let o = new IsdaCdsEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

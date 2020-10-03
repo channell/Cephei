@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type DerivedQuoteModel
                                                    = triv (fun () -> _DerivedQuote.Value.unregisterWith(handler.Value)
                                                                      _DerivedQuote.Value)
     do this.Bind(_DerivedQuote)
+(* 
+    casting 
+*)
+    internal new () = DerivedQuoteModel(null,null)
+    member internal this.Inject v = _DerivedQuote.Value <- v
+    static member Cast (p : ICell<DerivedQuote>) = 
+        if p :? DerivedQuoteModel then 
+            p :?> DerivedQuoteModel
+        else
+            let o = new DerivedQuoteModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

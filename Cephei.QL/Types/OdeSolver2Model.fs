@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,31 @@ type OdeSolver2Model
     let _derivative                                (x : ICell<double>)   
                                                    = cell (fun () -> _OdeSolver2.Value.derivative(x.Value))
     do this.Bind(_OdeSolver2)
+(* 
+    casting 
+*)
+    internal new () = OdeSolver2Model(null,null)
+    member internal this.Inject v = _OdeSolver2.Value <- v
+    static member Cast (p : ICell<OdeSolver2>) = 
+        if p :? OdeSolver2Model then 
+            p :?> OdeSolver2Model
+        else
+            let o = new OdeSolver2Model ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = OdeSolver2Model(null,null)
+    static member Cast (p : ICell<OdeSolver2>) = 
+        if p :? OdeSolver2Model then 
+            p :?> OdeSolver2Model
+        else
+            let o = new OdeSolver2Model ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

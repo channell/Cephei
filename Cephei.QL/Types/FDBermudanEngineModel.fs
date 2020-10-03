@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -72,6 +72,19 @@ type FDBermudanEngineModel
     let _grid                                      = triv (fun () -> _FDBermudanEngine.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDBermudanEngine.Value.intrinsicValues_)
     do this.Bind(_FDBermudanEngine)
+(* 
+    casting 
+*)
+    internal new () = FDBermudanEngineModel(null,null,null,null)
+    member internal this.Inject v = _FDBermudanEngine.Value <- v
+    static member Cast (p : ICell<FDBermudanEngine>) = 
+        if p :? FDBermudanEngineModel then 
+            p :?> FDBermudanEngineModel
+        else
+            let o = new FDBermudanEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

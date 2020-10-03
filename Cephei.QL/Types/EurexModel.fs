@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,31 @@ type EurexModel
                                                    = cell (fun () -> _Eurex.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _Eurex.Value.name())
     do this.Bind(_Eurex)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Eurex.Value <- v
+    static member Cast (p : ICell<Eurex>) = 
+        if p :? EurexModel then 
+            p :?> EurexModel
+        else
+            let o = new EurexModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<Eurex>) = 
+        if p :? EurexModel then 
+            p :?> EurexModel
+        else
+            let o = new EurexModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

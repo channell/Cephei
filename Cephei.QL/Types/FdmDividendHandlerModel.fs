@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type FdmDividendHandlerModel
     let _dividends                                 = triv (fun () -> _FdmDividendHandler.Value.dividends())
     let _dividendTimes                             = triv (fun () -> _FdmDividendHandler.Value.dividendTimes())
     do this.Bind(_FdmDividendHandler)
+(* 
+    casting 
+*)
+    internal new () = FdmDividendHandlerModel(null,null,null,null,null)
+    member internal this.Inject v = _FdmDividendHandler.Value <- v
+    static member Cast (p : ICell<FdmDividendHandler>) = 
+        if p :? FdmDividendHandlerModel then 
+            p :?> FdmDividendHandlerModel
+        else
+            let o = new FdmDividendHandlerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

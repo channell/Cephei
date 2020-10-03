@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type GaussHermiteIntegrationModel
     let _weights                                   = triv (fun () -> _GaussHermiteIntegration.Value.weights())
     let _x                                         = triv (fun () -> _GaussHermiteIntegration.Value.x())
     do this.Bind(_GaussHermiteIntegration)
+(* 
+    casting 
+*)
+    internal new () = GaussHermiteIntegrationModel(null,null)
+    member internal this.Inject v = _GaussHermiteIntegration.Value <- v
+    static member Cast (p : ICell<GaussHermiteIntegration>) = 
+        if p :? GaussHermiteIntegrationModel then 
+            p :?> GaussHermiteIntegrationModel
+        else
+            let o = new GaussHermiteIntegrationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

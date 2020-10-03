@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -87,6 +87,19 @@ type BlackProcessModel
                                                    = triv (fun () -> _BlackProcess.Value.unregisterWith(handler.Value)
                                                                      _BlackProcess.Value)
     do this.Bind(_BlackProcess)
+(* 
+    casting 
+*)
+    internal new () = BlackProcessModel(null,null,null,null)
+    member internal this.Inject v = _BlackProcess.Value <- v
+    static member Cast (p : ICell<BlackProcess>) = 
+        if p :? BlackProcessModel then 
+            p :?> BlackProcessModel
+        else
+            let o = new BlackProcessModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -185,6 +198,19 @@ type BlackProcessModel1
                                                    = triv (fun () -> _BlackProcess.Value.unregisterWith(handler.Value)
                                                                      _BlackProcess.Value)
     do this.Bind(_BlackProcess)
+(* 
+    casting 
+*)
+    internal new () = BlackProcessModel1(null,null,null)
+    member internal this.Inject v = _BlackProcess.Value <- v
+    static member Cast (p : ICell<BlackProcess>) = 
+        if p :? BlackProcessModel1 then 
+            p :?> BlackProcessModel1
+        else
+            let o = new BlackProcessModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

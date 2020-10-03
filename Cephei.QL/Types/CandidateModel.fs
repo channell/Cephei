@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,6 +49,31 @@ type CandidateModel
     let _cost                                      = cell (fun () -> _Candidate.Value.cost)
     let _values                                    = cell (fun () -> _Candidate.Value.values)
     do this.Bind(_Candidate)
+(* 
+    casting 
+*)
+    internal new () = CandidateModel(null)
+    member internal this.Inject v = _Candidate.Value <- v
+    static member Cast (p : ICell<Candidate>) = 
+        if p :? CandidateModel then 
+            p :?> CandidateModel
+        else
+            let o = new CandidateModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = CandidateModel(null)
+    static member Cast (p : ICell<Candidate>) = 
+        if p :? CandidateModel then 
+            p :?> CandidateModel
+        else
+            let o = new CandidateModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -76,6 +101,31 @@ type CandidateModel1
     let _cost                                      = cell (fun () -> _Candidate.Value.cost)
     let _values                                    = cell (fun () -> _Candidate.Value.values)
     do this.Bind(_Candidate)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Candidate.Value <- v
+    static member Cast (p : ICell<Candidate>) = 
+        if p :? CandidateModel1 then 
+            p :?> CandidateModel1
+        else
+            let o = new CandidateModel1 ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<Candidate>) = 
+        if p :? CandidateModel1 then 
+            p :?> CandidateModel1
+        else
+            let o = new CandidateModel1 ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

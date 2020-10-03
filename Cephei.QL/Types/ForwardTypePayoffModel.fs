@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type ForwardTypePayoffModel
                                                    = triv (fun () -> _ForwardTypePayoff.Value.accept(v.Value)
                                                                      _ForwardTypePayoff.Value)
     do this.Bind(_ForwardTypePayoff)
+(* 
+    casting 
+*)
+    internal new () = ForwardTypePayoffModel(null,null)
+    member internal this.Inject v = _ForwardTypePayoff.Value <- v
+    static member Cast (p : ICell<ForwardTypePayoff>) = 
+        if p :? ForwardTypePayoffModel then 
+            p :?> ForwardTypePayoffModel
+        else
+            let o = new ForwardTypePayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type SGDCurrencyModel
     let _ToString                                  = triv (fun () -> _SGDCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _SGDCurrency.Value.triangulationCurrency)
     do this.Bind(_SGDCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _SGDCurrency.Value <- v
+    static member Cast (p : ICell<SGDCurrency>) = 
+        if p :? SGDCurrencyModel then 
+            p :?> SGDCurrencyModel
+        else
+            let o = new SGDCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

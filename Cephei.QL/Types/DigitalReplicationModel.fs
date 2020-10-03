@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type DigitalReplicationModel
     let _gap                                       = triv (fun () -> _DigitalReplication.Value.gap())
     let _replicationType                           = triv (fun () -> _DigitalReplication.Value.replicationType())
     do this.Bind(_DigitalReplication)
+(* 
+    casting 
+*)
+    internal new () = DigitalReplicationModel(null,null)
+    member internal this.Inject v = _DigitalReplication.Value <- v
+    static member Cast (p : ICell<DigitalReplication>) = 
+        if p :? DigitalReplicationModel then 
+            p :?> DigitalReplicationModel
+        else
+            let o = new DigitalReplicationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type simple_eventModel
                                                    = triv (fun () -> _simple_event.Value.unregisterWith(handler.Value)
                                                                      _simple_event.Value)
     do this.Bind(_simple_event)
+(* 
+    casting 
+*)
+    internal new () = simple_eventModel(null)
+    member internal this.Inject v = _simple_event.Value <- v
+    static member Cast (p : ICell<simple_event>) = 
+        if p :? simple_eventModel then 
+            p :?> simple_eventModel
+        else
+            let o = new simple_eventModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

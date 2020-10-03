@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type SobolBrownianGeneratorFactoryModel
     let _create                                    (factors : ICell<int>) (steps : ICell<int>)   
                                                    = triv (fun () -> _SobolBrownianGeneratorFactory.Value.create(factors.Value, steps.Value))
     do this.Bind(_SobolBrownianGeneratorFactory)
+(* 
+    casting 
+*)
+    internal new () = SobolBrownianGeneratorFactoryModel(null,null,null)
+    member internal this.Inject v = _SobolBrownianGeneratorFactory.Value <- v
+    static member Cast (p : ICell<SobolBrownianGeneratorFactory>) = 
+        if p :? SobolBrownianGeneratorFactoryModel then 
+            p :?> SobolBrownianGeneratorFactoryModel
+        else
+            let o = new SobolBrownianGeneratorFactoryModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type HelperModel
     let _derivative                                (x : ICell<double>)   
                                                    = triv (fun () -> _Helper.Value.derivative(x.Value))
     do this.Bind(_Helper)
+(* 
+    casting 
+*)
+    internal new () = HelperModel(null,null,null,null,null)
+    member internal this.Inject v = _Helper.Value <- v
+    static member Cast (p : ICell<Helper>) = 
+        if p :? HelperModel then 
+            p :?> HelperModel
+        else
+            let o = new HelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

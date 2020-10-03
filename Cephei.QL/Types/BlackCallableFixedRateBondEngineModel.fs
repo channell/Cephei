@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type BlackCallableFixedRateBondEngineModel
 *)
     let _BlackCallableFixedRateBondEngine          = cell (fun () -> new BlackCallableFixedRateBondEngine (fwdYieldVol.Value, discountCurve.Value))
     do this.Bind(_BlackCallableFixedRateBondEngine)
+(* 
+    casting 
+*)
+    internal new () = BlackCallableFixedRateBondEngineModel(null,null)
+    member internal this.Inject v = _BlackCallableFixedRateBondEngine.Value <- v
+    static member Cast (p : ICell<BlackCallableFixedRateBondEngine>) = 
+        if p :? BlackCallableFixedRateBondEngineModel then 
+            p :?> BlackCallableFixedRateBondEngineModel
+        else
+            let o = new BlackCallableFixedRateBondEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -75,6 +88,19 @@ type BlackCallableFixedRateBondEngineModel1
 *)
     let _BlackCallableFixedRateBondEngine          = cell (fun () -> new BlackCallableFixedRateBondEngine (yieldVolStructure.Value, discountCurve.Value))
     do this.Bind(_BlackCallableFixedRateBondEngine)
+(* 
+    casting 
+*)
+    internal new () = BlackCallableFixedRateBondEngineModel1(null,null)
+    member internal this.Inject v = _BlackCallableFixedRateBondEngine.Value <- v
+    static member Cast (p : ICell<BlackCallableFixedRateBondEngine>) = 
+        if p :? BlackCallableFixedRateBondEngineModel1 then 
+            p :?> BlackCallableFixedRateBondEngineModel1
+        else
+            let o = new BlackCallableFixedRateBondEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type ChiSquareDistributionModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _ChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_ChiSquareDistribution)
+(* 
+    casting 
+*)
+    internal new () = ChiSquareDistributionModel(null)
+    member internal this.Inject v = _ChiSquareDistribution.Value <- v
+    static member Cast (p : ICell<ChiSquareDistribution>) = 
+        if p :? ChiSquareDistributionModel then 
+            p :?> ChiSquareDistributionModel
+        else
+            let o = new ChiSquareDistributionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

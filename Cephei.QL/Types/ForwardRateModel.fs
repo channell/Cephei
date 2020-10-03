@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type ForwardRateModel
     let _zeroYieldImpl                             (i : ICell<Interpolation>) (t : ICell<double>)   
                                                    = triv (fun () -> _ForwardRate.Value.zeroYieldImpl(i.Value, t.Value))
     do this.Bind(_ForwardRate)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ForwardRate.Value <- v
+    static member Cast (p : ICell<ForwardRate>) = 
+        if p :? ForwardRateModel then 
+            p :?> ForwardRateModel
+        else
+            let o = new ForwardRateModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

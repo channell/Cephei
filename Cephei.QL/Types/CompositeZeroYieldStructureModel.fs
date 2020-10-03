@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type CompositeZeroYieldStructureModel
     let _update                                    = triv (fun () -> _CompositeZeroYieldStructure.Value.update()
                                                                      _CompositeZeroYieldStructure.Value)
     do this.Bind(_CompositeZeroYieldStructure)
+(* 
+    casting 
+*)
+    internal new () = CompositeZeroYieldStructureModel(null,null,null,null,null)
+    member internal this.Inject v = _CompositeZeroYieldStructure.Value <- v
+    static member Cast (p : ICell<CompositeZeroYieldStructure>) = 
+        if p :? CompositeZeroYieldStructureModel then 
+            p :?> CompositeZeroYieldStructureModel
+        else
+            let o = new CompositeZeroYieldStructureModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

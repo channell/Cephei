@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type SvenssonFittingModel
     let _solution                                  = triv (fun () -> _SvenssonFitting.Value.solution())
     let _weights                                   = triv (fun () -> _SvenssonFitting.Value.weights())
     do this.Bind(_SvenssonFitting)
+(* 
+    casting 
+*)
+    internal new () = SvenssonFittingModel(null,null)
+    member internal this.Inject v = _SvenssonFitting.Value <- v
+    static member Cast (p : ICell<SvenssonFitting>) = 
+        if p :? SvenssonFittingModel then 
+            p :?> SvenssonFittingModel
+        else
+            let o = new SvenssonFittingModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

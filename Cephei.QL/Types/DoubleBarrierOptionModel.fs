@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -85,6 +85,19 @@ type DoubleBarrierOptionModel
                                                                      _DoubleBarrierOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _DoubleBarrierOption).valuationDate())
     do this.Bind(_DoubleBarrierOption)
+(* 
+    casting 
+*)
+    internal new () = DoubleBarrierOptionModel(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _DoubleBarrierOption.Value <- v
+    static member Cast (p : ICell<DoubleBarrierOption>) = 
+        if p :? DoubleBarrierOptionModel then 
+            p :?> DoubleBarrierOptionModel
+        else
+            let o = new DoubleBarrierOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type FdmHullWhiteSolverModel
     let _valueAt                                   (s : ICell<double>)   
                                                    = triv (fun () -> _FdmHullWhiteSolver.Value.valueAt(s.Value))
     do this.Bind(_FdmHullWhiteSolver)
+(* 
+    casting 
+*)
+    internal new () = FdmHullWhiteSolverModel(null,null,null)
+    member internal this.Inject v = _FdmHullWhiteSolver.Value <- v
+    static member Cast (p : ICell<FdmHullWhiteSolver>) = 
+        if p :? FdmHullWhiteSolverModel then 
+            p :?> FdmHullWhiteSolverModel
+        else
+            let o = new FdmHullWhiteSolverModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

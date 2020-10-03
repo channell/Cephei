@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type ConstraintModel
     let _upperBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _Constraint.Value.upperBound(parameters.Value))
     do this.Bind(_Constraint)
+(* 
+    casting 
+*)
+    internal new () = ConstraintModel(null)
+    member internal this.Inject v = _Constraint.Value <- v
+    static member Cast (p : ICell<Constraint>) = 
+        if p :? ConstraintModel then 
+            p :?> ConstraintModel
+        else
+            let o = new ConstraintModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -94,6 +107,19 @@ type ConstraintModel1
     let _upperBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _Constraint.Value.upperBound(parameters.Value))
     do this.Bind(_Constraint)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Constraint.Value <- v
+    static member Cast (p : ICell<Constraint>) = 
+        if p :? ConstraintModel1 then 
+            p :?> ConstraintModel1
+        else
+            let o = new ConstraintModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

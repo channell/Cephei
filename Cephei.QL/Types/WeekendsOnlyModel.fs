@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -74,6 +74,19 @@ type WeekendsOnlyModel
                                                    = triv (fun () -> _WeekendsOnly.Value.removeHoliday(d.Value)
                                                                      _WeekendsOnly.Value)
     do this.Bind(_WeekendsOnly)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _WeekendsOnly.Value <- v
+    static member Cast (p : ICell<WeekendsOnly>) = 
+        if p :? WeekendsOnlyModel then 
+            p :?> WeekendsOnlyModel
+        else
+            let o = new WeekendsOnlyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

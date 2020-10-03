@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type KRWCurrencyModel
     let _ToString                                  = triv (fun () -> _KRWCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _KRWCurrency.Value.triangulationCurrency)
     do this.Bind(_KRWCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _KRWCurrency.Value <- v
+    static member Cast (p : ICell<KRWCurrency>) = 
+        if p :? KRWCurrencyModel then 
+            p :?> KRWCurrencyModel
+        else
+            let o = new KRWCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

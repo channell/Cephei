@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -107,6 +107,19 @@ type AssetSwapModel
                                                                      _AssetSwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).valuationDate())
     do this.Bind(_AssetSwap)
+(* 
+    casting 
+*)
+    internal new () = AssetSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _AssetSwap.Value <- v
+    static member Cast (p : ICell<AssetSwap>) = 
+        if p :? AssetSwapModel then 
+            p :?> AssetSwapModel
+        else
+            let o = new AssetSwapModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -237,6 +250,19 @@ type AssetSwapModel1
                                                                      _AssetSwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _AssetSwap).valuationDate())
     do this.Bind(_AssetSwap)
+(* 
+    casting 
+*)
+    internal new () = AssetSwapModel1(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _AssetSwap.Value <- v
+    static member Cast (p : ICell<AssetSwap>) = 
+        if p :? AssetSwapModel1 then 
+            p :?> AssetSwapModel1
+        else
+            let o = new AssetSwapModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

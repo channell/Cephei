@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type GaussHyperbolicPolynomialModel
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
                                                    = triv (fun () -> _GaussHyperbolicPolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussHyperbolicPolynomial)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _GaussHyperbolicPolynomial.Value <- v
+    static member Cast (p : ICell<GaussHyperbolicPolynomial>) = 
+        if p :? GaussHyperbolicPolynomialModel then 
+            p :?> GaussHyperbolicPolynomialModel
+        else
+            let o = new GaussHyperbolicPolynomialModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

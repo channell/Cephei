@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,6 +65,19 @@ type GaussLobattoIntegralModel
     let _value                                     (f : ICell<Func<double,double>>) (a : ICell<double>) (b : ICell<double>)   
                                                    = triv (fun () -> _GaussLobattoIntegral.Value.value(f.Value, a.Value, b.Value))
     do this.Bind(_GaussLobattoIntegral)
+(* 
+    casting 
+*)
+    internal new () = GaussLobattoIntegralModel(null,null,null,null)
+    member internal this.Inject v = _GaussLobattoIntegral.Value <- v
+    static member Cast (p : ICell<GaussLobattoIntegral>) = 
+        if p :? GaussLobattoIntegralModel then 
+            p :?> GaussLobattoIntegralModel
+        else
+            let o = new GaussLobattoIntegralModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

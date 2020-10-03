@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type AssetOrNothingPayoffModel
                                                    = triv (fun () -> _AssetOrNothingPayoff.Value.accept(v.Value)
                                                                      _AssetOrNothingPayoff.Value)
     do this.Bind(_AssetOrNothingPayoff)
+(* 
+    casting 
+*)
+    internal new () = AssetOrNothingPayoffModel(null,null)
+    member internal this.Inject v = _AssetOrNothingPayoff.Value <- v
+    static member Cast (p : ICell<AssetOrNothingPayoff>) = 
+        if p :? AssetOrNothingPayoffModel then 
+            p :?> AssetOrNothingPayoffModel
+        else
+            let o = new AssetOrNothingPayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

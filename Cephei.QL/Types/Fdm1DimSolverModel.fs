@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type Fdm1DimSolverModel
     let _thetaAt                                   (x : ICell<double>)   
                                                    = triv (fun () -> _Fdm1DimSolver.Value.thetaAt(x.Value))
     do this.Bind(_Fdm1DimSolver)
+(* 
+    casting 
+*)
+    internal new () = Fdm1DimSolverModel(null,null,null)
+    member internal this.Inject v = _Fdm1DimSolver.Value <- v
+    static member Cast (p : ICell<Fdm1DimSolver>) = 
+        if p :? Fdm1DimSolverModel then 
+            p :?> Fdm1DimSolverModel
+        else
+            let o = new Fdm1DimSolverModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

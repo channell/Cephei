@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -73,6 +73,19 @@ type SpreadedSmileSectionModel
     let _volatility1                               (strike : ICell<double>)   
                                                    = triv (fun () -> _SpreadedSmileSection.Value.volatility(strike.Value))
     do this.Bind(_SpreadedSmileSection)
+(* 
+    casting 
+*)
+    internal new () = SpreadedSmileSectionModel(null,null)
+    member internal this.Inject v = _SpreadedSmileSection.Value <- v
+    static member Cast (p : ICell<SpreadedSmileSection>) = 
+        if p :? SpreadedSmileSectionModel then 
+            p :?> SpreadedSmileSectionModel
+        else
+            let o = new SpreadedSmileSectionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

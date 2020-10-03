@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type BinomialDoubleBarrierEngineModel
 *)
     let _BinomialDoubleBarrierEngine               = cell (fun () -> new BinomialDoubleBarrierEngine (getTree.Value, getAsset.Value, Process.Value, timeSteps.Value, maxTimeSteps.Value))
     do this.Bind(_BinomialDoubleBarrierEngine)
+(* 
+    casting 
+*)
+    internal new () = BinomialDoubleBarrierEngineModel(null,null,null,null,null)
+    member internal this.Inject v = _BinomialDoubleBarrierEngine.Value <- v
+    static member Cast (p : ICell<BinomialDoubleBarrierEngine>) = 
+        if p :? BinomialDoubleBarrierEngineModel then 
+            p :?> BinomialDoubleBarrierEngineModel
+        else
+            let o = new BinomialDoubleBarrierEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

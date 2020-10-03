@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type DiscretizedOptionModel
     let _time                                      = triv (fun () -> _DiscretizedOption.Value.time())
     let _values                                    = triv (fun () -> _DiscretizedOption.Value.values())
     do this.Bind(_DiscretizedOption)
+(* 
+    casting 
+*)
+    internal new () = DiscretizedOptionModel(null,null,null)
+    member internal this.Inject v = _DiscretizedOption.Value <- v
+    static member Cast (p : ICell<DiscretizedOption>) = 
+        if p :? DiscretizedOptionModel then 
+            p :?> DiscretizedOptionModel
+        else
+            let o = new DiscretizedOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

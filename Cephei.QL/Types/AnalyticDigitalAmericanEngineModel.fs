@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -47,6 +47,19 @@ type AnalyticDigitalAmericanEngineModel
     let _AnalyticDigitalAmericanEngine             = cell (fun () -> new AnalyticDigitalAmericanEngine (Process.Value))
     let _knock_in                                  = triv (fun () -> _AnalyticDigitalAmericanEngine.Value.knock_in())
     do this.Bind(_AnalyticDigitalAmericanEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticDigitalAmericanEngineModel(null)
+    member internal this.Inject v = _AnalyticDigitalAmericanEngine.Value <- v
+    static member Cast (p : ICell<AnalyticDigitalAmericanEngine>) = 
+        if p :? AnalyticDigitalAmericanEngineModel then 
+            p :?> AnalyticDigitalAmericanEngineModel
+        else
+            let o = new AnalyticDigitalAmericanEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

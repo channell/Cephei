@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -106,6 +106,19 @@ type EuriborSwapIfrFixModel
                                                    = triv (fun () -> _EuriborSwapIfrFix.Value.unregisterWith(handler.Value)
                                                                      _EuriborSwapIfrFix.Value)
     do this.Bind(_EuriborSwapIfrFix)
+(* 
+    casting 
+*)
+    internal new () = EuriborSwapIfrFixModel(null,null,null)
+    member internal this.Inject v = _EuriborSwapIfrFix.Value <- v
+    static member Cast (p : ICell<EuriborSwapIfrFix>) = 
+        if p :? EuriborSwapIfrFixModel then 
+            p :?> EuriborSwapIfrFixModel
+        else
+            let o = new EuriborSwapIfrFixModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -239,6 +252,19 @@ type EuriborSwapIfrFixModel1
                                                    = triv (fun () -> _EuriborSwapIfrFix.Value.unregisterWith(handler.Value)
                                                                      _EuriborSwapIfrFix.Value)
     do this.Bind(_EuriborSwapIfrFix)
+(* 
+    casting 
+*)
+    internal new () = EuriborSwapIfrFixModel1(null,null)
+    member internal this.Inject v = _EuriborSwapIfrFix.Value <- v
+    static member Cast (p : ICell<EuriborSwapIfrFix>) = 
+        if p :? EuriborSwapIfrFixModel1 then 
+            p :?> EuriborSwapIfrFixModel1
+        else
+            let o = new EuriborSwapIfrFixModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -369,6 +395,19 @@ type EuriborSwapIfrFixModel2
                                                    = triv (fun () -> _EuriborSwapIfrFix.Value.unregisterWith(handler.Value)
                                                                      _EuriborSwapIfrFix.Value)
     do this.Bind(_EuriborSwapIfrFix)
+(* 
+    casting 
+*)
+    internal new () = EuriborSwapIfrFixModel2(null)
+    member internal this.Inject v = _EuriborSwapIfrFix.Value <- v
+    static member Cast (p : ICell<EuriborSwapIfrFix>) = 
+        if p :? EuriborSwapIfrFixModel2 then 
+            p :?> EuriborSwapIfrFixModel2
+        else
+            let o = new EuriborSwapIfrFixModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

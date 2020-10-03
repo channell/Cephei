@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type MixedLinearCubicModel
                                                    = triv (fun () -> _MixedLinearCubic.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value))
     let _requiredPoints                            = triv (fun () -> _MixedLinearCubic.Value.requiredPoints)
     do this.Bind(_MixedLinearCubic)
+(* 
+    casting 
+*)
+    internal new () = MixedLinearCubicModel(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _MixedLinearCubic.Value <- v
+    static member Cast (p : ICell<MixedLinearCubic>) = 
+        if p :? MixedLinearCubicModel then 
+            p :?> MixedLinearCubicModel
+        else
+            let o = new MixedLinearCubicModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

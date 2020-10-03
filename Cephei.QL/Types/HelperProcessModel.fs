@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -92,6 +92,31 @@ type HelperProcessModel
     let _update                                    = cell (fun () -> _HelperProcess.Value.update()
                                                                      _HelperProcess.Value)
     do this.Bind(_HelperProcess)
+(* 
+    casting 
+*)
+    internal new () = HelperProcessModel(null,null,null,null)
+    member internal this.Inject v = _HelperProcess.Value <- v
+    static member Cast (p : ICell<HelperProcess>) = 
+        if p :? HelperProcessModel then 
+            p :?> HelperProcessModel
+        else
+            let o = new HelperProcessModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = HelperProcessModel(null,null,null,null)
+    static member Cast (p : ICell<HelperProcess>) = 
+        if p :? HelperProcessModel then 
+            p :?> HelperProcessModel
+        else
+            let o = new HelperProcessModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

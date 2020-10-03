@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type HaltonRsgModel
     let _lastSequence                              = triv (fun () -> _HaltonRsg.Value.lastSequence())
     let _nextSequence                              = triv (fun () -> _HaltonRsg.Value.nextSequence())
     do this.Bind(_HaltonRsg)
+(* 
+    casting 
+*)
+    internal new () = HaltonRsgModel(null,null,null,null)
+    member internal this.Inject v = _HaltonRsg.Value <- v
+    static member Cast (p : ICell<HaltonRsg>) = 
+        if p :? HaltonRsgModel then 
+            p :?> HaltonRsgModel
+        else
+            let o = new HaltonRsgModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

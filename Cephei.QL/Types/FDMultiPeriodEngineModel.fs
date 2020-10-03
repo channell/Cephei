@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type FDMultiPeriodEngineModel
     let _grid                                      = triv (fun () -> _FDMultiPeriodEngine.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDMultiPeriodEngine.Value.intrinsicValues_)
     do this.Bind(_FDMultiPeriodEngine)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FDMultiPeriodEngine.Value <- v
+    static member Cast (p : ICell<FDMultiPeriodEngine>) = 
+        if p :? FDMultiPeriodEngineModel then 
+            p :?> FDMultiPeriodEngineModel
+        else
+            let o = new FDMultiPeriodEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

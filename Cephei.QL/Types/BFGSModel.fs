@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type BFGSModel
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _BFGS.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_BFGS)
+(* 
+    casting 
+*)
+    internal new () = BFGSModel(null)
+    member internal this.Inject v = _BFGS.Value <- v
+    static member Cast (p : ICell<BFGS>) = 
+        if p :? BFGSModel then 
+            p :?> BFGSModel
+        else
+            let o = new BFGSModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

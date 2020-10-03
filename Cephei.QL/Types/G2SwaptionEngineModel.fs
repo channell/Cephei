@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type G2SwaptionEngineModel
     let _update                                    = triv (fun () -> _G2SwaptionEngine.Value.update()
                                                                      _G2SwaptionEngine.Value)
     do this.Bind(_G2SwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = G2SwaptionEngineModel(null,null,null)
+    member internal this.Inject v = _G2SwaptionEngine.Value <- v
+    static member Cast (p : ICell<G2SwaptionEngine>) = 
+        if p :? G2SwaptionEngineModel then 
+            p :?> G2SwaptionEngineModel
+        else
+            let o = new G2SwaptionEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

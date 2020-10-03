@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -81,6 +81,19 @@ type CapFloorModel
                                                                      _CapFloor.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CapFloor).valuationDate())
     do this.Bind(_CapFloor)
+(* 
+    casting 
+*)
+    internal new () = CapFloorModel(null,null,null,null,null,null)
+    member internal this.Inject v = _CapFloor.Value <- v
+    static member Cast (p : ICell<CapFloor>) = 
+        if p :? CapFloorModel then 
+            p :?> CapFloorModel
+        else
+            let o = new CapFloorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -167,6 +180,19 @@ type CapFloorModel1
                                                                      _CapFloor.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CapFloor).valuationDate())
     do this.Bind(_CapFloor)
+(* 
+    casting 
+*)
+    internal new () = CapFloorModel1(null,null,null,null,null)
+    member internal this.Inject v = _CapFloor.Value <- v
+    static member Cast (p : ICell<CapFloor>) = 
+        if p :? CapFloorModel1 then 
+            p :?> CapFloorModel1
+        else
+            let o = new CapFloorModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

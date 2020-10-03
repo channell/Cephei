@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type PricipalLegModel
     let _withSign                                  (sign : ICell<int>)   
                                                    = triv (fun () -> _PricipalLeg.Value.withSign(sign.Value))
     do this.Bind(_PricipalLeg)
+(* 
+    casting 
+*)
+    internal new () = PricipalLegModel(null,null)
+    member internal this.Inject v = _PricipalLeg.Value <- v
+    static member Cast (p : ICell<PricipalLeg>) = 
+        if p :? PricipalLegModel then 
+            p :?> PricipalLegModel
+        else
+            let o = new PricipalLegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

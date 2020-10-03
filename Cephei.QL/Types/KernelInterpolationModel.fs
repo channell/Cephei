@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -75,6 +75,19 @@ type KernelInterpolationModel
                                                                      _KernelInterpolation.Value)
     let _extrapolate                               = triv (fun () -> _KernelInterpolation.Value.extrapolate)
     do this.Bind(_KernelInterpolation)
+(* 
+    casting 
+*)
+    internal new () = KernelInterpolationModel(null,null,null,null)
+    member internal this.Inject v = _KernelInterpolation.Value <- v
+    static member Cast (p : ICell<KernelInterpolation>) = 
+        if p :? KernelInterpolationModel then 
+            p :?> KernelInterpolationModel
+        else
+            let o = new KernelInterpolationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

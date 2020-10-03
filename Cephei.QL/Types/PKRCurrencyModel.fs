@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type PKRCurrencyModel
     let _ToString                                  = triv (fun () -> _PKRCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _PKRCurrency.Value.triangulationCurrency)
     do this.Bind(_PKRCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _PKRCurrency.Value <- v
+    static member Cast (p : ICell<PKRCurrency>) = 
+        if p :? PKRCurrencyModel then 
+            p :?> PKRCurrencyModel
+        else
+            let o = new PKRCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

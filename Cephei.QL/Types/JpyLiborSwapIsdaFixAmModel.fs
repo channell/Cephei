@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -104,6 +104,19 @@ type JpyLiborSwapIsdaFixAmModel
                                                    = triv (fun () -> _JpyLiborSwapIsdaFixAm.Value.unregisterWith(handler.Value)
                                                                      _JpyLiborSwapIsdaFixAm.Value)
     do this.Bind(_JpyLiborSwapIsdaFixAm)
+(* 
+    casting 
+*)
+    internal new () = JpyLiborSwapIsdaFixAmModel(null,null)
+    member internal this.Inject v = _JpyLiborSwapIsdaFixAm.Value <- v
+    static member Cast (p : ICell<JpyLiborSwapIsdaFixAm>) = 
+        if p :? JpyLiborSwapIsdaFixAmModel then 
+            p :?> JpyLiborSwapIsdaFixAmModel
+        else
+            let o = new JpyLiborSwapIsdaFixAmModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -234,6 +247,19 @@ type JpyLiborSwapIsdaFixAmModel1
                                                    = triv (fun () -> _JpyLiborSwapIsdaFixAm.Value.unregisterWith(handler.Value)
                                                                      _JpyLiborSwapIsdaFixAm.Value)
     do this.Bind(_JpyLiborSwapIsdaFixAm)
+(* 
+    casting 
+*)
+    internal new () = JpyLiborSwapIsdaFixAmModel1(null)
+    member internal this.Inject v = _JpyLiborSwapIsdaFixAm.Value <- v
+    static member Cast (p : ICell<JpyLiborSwapIsdaFixAm>) = 
+        if p :? JpyLiborSwapIsdaFixAmModel1 then 
+            p :?> JpyLiborSwapIsdaFixAmModel1
+        else
+            let o = new JpyLiborSwapIsdaFixAmModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

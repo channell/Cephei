@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type ZeroSpreadedTermStructureModel
     let _referenceDate                             = triv (fun () -> _ZeroSpreadedTermStructure.Value.referenceDate())
     let _settlementDays                            = triv (fun () -> _ZeroSpreadedTermStructure.Value.settlementDays())
     do this.Bind(_ZeroSpreadedTermStructure)
+(* 
+    casting 
+*)
+    internal new () = ZeroSpreadedTermStructureModel(null,null,null,null,null)
+    member internal this.Inject v = _ZeroSpreadedTermStructure.Value <- v
+    static member Cast (p : ICell<ZeroSpreadedTermStructure>) = 
+        if p :? ZeroSpreadedTermStructureModel then 
+            p :?> ZeroSpreadedTermStructureModel
+        else
+            let o = new ZeroSpreadedTermStructureModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

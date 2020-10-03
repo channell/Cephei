@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -89,6 +89,19 @@ type AUCPIModel
                                                    = triv (fun () -> _AUCPI.Value.unregisterWith(handler.Value)
                                                                      _AUCPI.Value)
     do this.Bind(_AUCPI)
+(* 
+    casting 
+*)
+    internal new () = AUCPIModel(null,null,null,null)
+    member internal this.Inject v = _AUCPI.Value <- v
+    static member Cast (p : ICell<AUCPI>) = 
+        if p :? AUCPIModel then 
+            p :?> AUCPIModel
+        else
+            let o = new AUCPIModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -187,6 +200,19 @@ type AUCPIModel1
                                                    = triv (fun () -> _AUCPI.Value.unregisterWith(handler.Value)
                                                                      _AUCPI.Value)
     do this.Bind(_AUCPI)
+(* 
+    casting 
+*)
+    internal new () = AUCPIModel1(null,null,null)
+    member internal this.Inject v = _AUCPI.Value <- v
+    static member Cast (p : ICell<AUCPI>) = 
+        if p :? AUCPIModel1 then 
+            p :?> AUCPIModel1
+        else
+            let o = new AUCPIModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

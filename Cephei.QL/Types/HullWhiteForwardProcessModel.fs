@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -96,6 +96,19 @@ type HullWhiteForwardProcessModel
     let _update                                    = triv (fun () -> _HullWhiteForwardProcess.Value.update()
                                                                      _HullWhiteForwardProcess.Value)
     do this.Bind(_HullWhiteForwardProcess)
+(* 
+    casting 
+*)
+    internal new () = HullWhiteForwardProcessModel(null,null,null)
+    member internal this.Inject v = _HullWhiteForwardProcess.Value <- v
+    static member Cast (p : ICell<HullWhiteForwardProcess>) = 
+        if p :? HullWhiteForwardProcessModel then 
+            p :?> HullWhiteForwardProcessModel
+        else
+            let o = new HullWhiteForwardProcessModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

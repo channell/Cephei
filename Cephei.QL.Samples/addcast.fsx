@@ -16,6 +16,7 @@ let rec allFiles directory pattern =
         let mutable inCons = false
         let mutable pams = 0
         let mutable typeName  = ""
+        let mutable notgeneric = true
 
         let edit (s : string) = 
 
@@ -29,8 +30,9 @@ let rec allFiles directory pattern =
                 inCons <- true
                 pams <- 0
                 typeName <- s.Split(' ').[1]
+                if s.Contains("<") then notgeneric <- false
 
-            if (s.Contains ("do this.Bind")) && (not (typeName.Contains("'"))) then
+            if (s.Contains ("do this.Bind")) && notgeneric then
                 let newcon =
                     if pams > 0 then 
                         "internal new () = " + typeName + "(" + (List.fold (fun a y -> a + ",null" ) "" [1..pams]).Substring(1) + ")"
@@ -41,12 +43,13 @@ let rec allFiles directory pattern =
     casting 
 *)
     {0}
+    member internal this.Inject v = _{1}.Value <- v
     static member Cast (p : ICell<{1}>) = 
         if p :? {2} then 
             p :?> {2}
         else
             let o = new {2} ()
-            o.Value <- p.Value
+            o.Inject p.Value
             o
                             ", newcon, className, typeName)
 
@@ -57,8 +60,7 @@ let rec allFiles directory pattern =
         let lines = 
             File.ReadAllLines s
             |> Array.map edit 
-        Console.WriteLine("--")
-//        File.WriteAllLines (s, lines, Encoding.UTF8) 
+        File.WriteAllLines (s, lines, Encoding.UTF8) 
     Directory.GetFiles directory
     |> Array.filter (fun p -> Regex.IsMatch (p, pattern))
     |> Array.iter filelines 

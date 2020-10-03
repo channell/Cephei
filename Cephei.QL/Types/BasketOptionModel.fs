@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -70,6 +70,19 @@ type BasketOptionModel
                                                                      _BasketOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _BasketOption).valuationDate())
     do this.Bind(_BasketOption)
+(* 
+    casting 
+*)
+    internal new () = BasketOptionModel(null,null,null,null)
+    member internal this.Inject v = _BasketOption.Value <- v
+    static member Cast (p : ICell<BasketOption>) = 
+        if p :? BasketOptionModel then 
+            p :?> BasketOptionModel
+        else
+            let o = new BasketOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

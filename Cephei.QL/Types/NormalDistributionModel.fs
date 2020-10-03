@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -47,6 +47,19 @@ type NormalDistributionModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _NormalDistribution.Value.value(x.Value))
     do this.Bind(_NormalDistribution)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _NormalDistribution.Value <- v
+    static member Cast (p : ICell<NormalDistribution>) = 
+        if p :? NormalDistributionModel then 
+            p :?> NormalDistributionModel
+        else
+            let o = new NormalDistributionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -80,6 +93,19 @@ type NormalDistributionModel1
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _NormalDistribution.Value.value(x.Value))
     do this.Bind(_NormalDistribution)
+(* 
+    casting 
+*)
+    internal new () = NormalDistributionModel1(null,null)
+    member internal this.Inject v = _NormalDistribution.Value <- v
+    static member Cast (p : ICell<NormalDistribution>) = 
+        if p :? NormalDistributionModel1 then 
+            p :?> NormalDistributionModel1
+        else
+            let o = new NormalDistributionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

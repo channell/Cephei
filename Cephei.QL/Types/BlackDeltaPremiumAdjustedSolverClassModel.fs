@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type BlackDeltaPremiumAdjustedSolverClassModel
     let _derivative                                (x : ICell<double>)   
                                                    = triv (fun () -> _BlackDeltaPremiumAdjustedSolverClass.Value.derivative(x.Value))
     do this.Bind(_BlackDeltaPremiumAdjustedSolverClass)
+(* 
+    casting 
+*)
+    internal new () = BlackDeltaPremiumAdjustedSolverClassModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _BlackDeltaPremiumAdjustedSolverClass.Value <- v
+    static member Cast (p : ICell<BlackDeltaPremiumAdjustedSolverClass>) = 
+        if p :? BlackDeltaPremiumAdjustedSolverClassModel then 
+            p :?> BlackDeltaPremiumAdjustedSolverClassModel
+        else
+            let o = new BlackDeltaPremiumAdjustedSolverClassModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

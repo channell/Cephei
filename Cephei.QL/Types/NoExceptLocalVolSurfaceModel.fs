@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -81,6 +81,19 @@ type NoExceptLocalVolSurfaceModel
                                                                      _NoExceptLocalVolSurface.Value)
     let _extrapolate                               = triv (fun () -> _NoExceptLocalVolSurface.Value.extrapolate)
     do this.Bind(_NoExceptLocalVolSurface)
+(* 
+    casting 
+*)
+    internal new () = NoExceptLocalVolSurfaceModel(null,null,null,null,null)
+    member internal this.Inject v = _NoExceptLocalVolSurface.Value <- v
+    static member Cast (p : ICell<NoExceptLocalVolSurface>) = 
+        if p :? NoExceptLocalVolSurfaceModel then 
+            p :?> NoExceptLocalVolSurfaceModel
+        else
+            let o = new NoExceptLocalVolSurfaceModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -168,6 +181,19 @@ type NoExceptLocalVolSurfaceModel1
                                                                      _NoExceptLocalVolSurface.Value)
     let _extrapolate                               = triv (fun () -> _NoExceptLocalVolSurface.Value.extrapolate)
     do this.Bind(_NoExceptLocalVolSurface)
+(* 
+    casting 
+*)
+    internal new () = NoExceptLocalVolSurfaceModel1(null,null,null,null,null)
+    member internal this.Inject v = _NoExceptLocalVolSurface.Value <- v
+    static member Cast (p : ICell<NoExceptLocalVolSurface>) = 
+        if p :? NoExceptLocalVolSurfaceModel1 then 
+            p :?> NoExceptLocalVolSurfaceModel1
+        else
+            let o = new NoExceptLocalVolSurfaceModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

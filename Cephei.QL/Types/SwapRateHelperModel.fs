@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -94,6 +94,19 @@ type SwapRateHelperModel
                                                    = triv (fun () -> _SwapRateHelper.Value.unregisterWith(handler.Value)
                                                                      _SwapRateHelper.Value)
     do this.Bind(_SwapRateHelper)
+(* 
+    casting 
+*)
+    internal new () = SwapRateHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwapRateHelper.Value <- v
+    static member Cast (p : ICell<SwapRateHelper>) = 
+        if p :? SwapRateHelperModel then 
+            p :?> SwapRateHelperModel
+        else
+            let o = new SwapRateHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -186,6 +199,19 @@ type SwapRateHelperModel1
                                                    = triv (fun () -> _SwapRateHelper.Value.unregisterWith(handler.Value)
                                                                      _SwapRateHelper.Value)
     do this.Bind(_SwapRateHelper)
+(* 
+    casting 
+*)
+    internal new () = SwapRateHelperModel1(null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwapRateHelper.Value <- v
+    static member Cast (p : ICell<SwapRateHelper>) = 
+        if p :? SwapRateHelperModel1 then 
+            p :?> SwapRateHelperModel1
+        else
+            let o = new SwapRateHelperModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -284,6 +310,19 @@ type SwapRateHelperModel2
                                                    = triv (fun () -> _SwapRateHelper.Value.unregisterWith(handler.Value)
                                                                      _SwapRateHelper.Value)
     do this.Bind(_SwapRateHelper)
+(* 
+    casting 
+*)
+    internal new () = SwapRateHelperModel2(null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwapRateHelper.Value <- v
+    static member Cast (p : ICell<SwapRateHelper>) = 
+        if p :? SwapRateHelperModel2 then 
+            p :?> SwapRateHelperModel2
+        else
+            let o = new SwapRateHelperModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -376,6 +415,19 @@ type SwapRateHelperModel3
                                                    = triv (fun () -> _SwapRateHelper.Value.unregisterWith(handler.Value)
                                                                      _SwapRateHelper.Value)
     do this.Bind(_SwapRateHelper)
+(* 
+    casting 
+*)
+    internal new () = SwapRateHelperModel3(null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwapRateHelper.Value <- v
+    static member Cast (p : ICell<SwapRateHelper>) = 
+        if p :? SwapRateHelperModel3 then 
+            p :?> SwapRateHelperModel3
+        else
+            let o = new SwapRateHelperModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -81,6 +81,19 @@ type DividendVanillaOptionModel
                                                                      _DividendVanillaOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _DividendVanillaOption).valuationDate())
     do this.Bind(_DividendVanillaOption)
+(* 
+    casting 
+*)
+    internal new () = DividendVanillaOptionModel(null,null,null,null,null,null)
+    member internal this.Inject v = _DividendVanillaOption.Value <- v
+    static member Cast (p : ICell<DividendVanillaOption>) = 
+        if p :? DividendVanillaOptionModel then 
+            p :?> DividendVanillaOptionModel
+        else
+            let o = new DividendVanillaOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

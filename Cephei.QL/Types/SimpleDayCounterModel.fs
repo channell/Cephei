@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type SimpleDayCounterModel
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _SimpleDayCounter.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_SimpleDayCounter)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _SimpleDayCounter.Value <- v
+    static member Cast (p : ICell<SimpleDayCounter>) = 
+        if p :? SimpleDayCounterModel then 
+            p :?> SimpleDayCounterModel
+        else
+            let o = new SimpleDayCounterModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

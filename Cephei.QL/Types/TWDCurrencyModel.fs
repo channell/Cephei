@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type TWDCurrencyModel
     let _ToString                                  = triv (fun () -> _TWDCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _TWDCurrency.Value.triangulationCurrency)
     do this.Bind(_TWDCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _TWDCurrency.Value <- v
+    static member Cast (p : ICell<TWDCurrency>) = 
+        if p :? TWDCurrencyModel then 
+            p :?> TWDCurrencyModel
+        else
+            let o = new TWDCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

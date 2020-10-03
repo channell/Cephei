@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -47,6 +47,19 @@ type BackwardFlatModel
                                                    = triv (fun () -> _BackwardFlat.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     let _requiredPoints                            = triv (fun () -> _BackwardFlat.Value.requiredPoints)
     do this.Bind(_BackwardFlat)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _BackwardFlat.Value <- v
+    static member Cast (p : ICell<BackwardFlat>) = 
+        if p :? BackwardFlatModel then 
+            p :?> BackwardFlatModel
+        else
+            let o = new BackwardFlatModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

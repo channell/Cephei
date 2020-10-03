@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type MonotonicParabolicModel
                                                                      _MonotonicParabolic.Value)
     let _extrapolate                               = triv (fun () -> _MonotonicParabolic.Value.extrapolate)
     do this.Bind(_MonotonicParabolic)
+(* 
+    casting 
+*)
+    internal new () = MonotonicParabolicModel(null,null,null)
+    member internal this.Inject v = _MonotonicParabolic.Value <- v
+    static member Cast (p : ICell<MonotonicParabolic>) = 
+        if p :? MonotonicParabolicModel then 
+            p :?> MonotonicParabolicModel
+        else
+            let o = new MonotonicParabolicModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

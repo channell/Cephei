@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type NoXABRConstraintModel
     let _upperBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _NoXABRConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_NoXABRConstraint)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _NoXABRConstraint.Value <- v
+    static member Cast (p : ICell<NoXABRConstraint>) = 
+        if p :? NoXABRConstraintModel then 
+            p :?> NoXABRConstraintModel
+        else
+            let o = new NoXABRConstraintModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

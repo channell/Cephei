@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -122,6 +122,19 @@ type OvernightIndexedCouponModel
                                                    = triv (fun () -> _OvernightIndexedCoupon.Value.unregisterWith(handler.Value)
                                                                      _OvernightIndexedCoupon.Value)
     do this.Bind(_OvernightIndexedCoupon)
+(* 
+    casting 
+*)
+    internal new () = OvernightIndexedCouponModel(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _OvernightIndexedCoupon.Value <- v
+    static member Cast (p : ICell<OvernightIndexedCoupon>) = 
+        if p :? OvernightIndexedCouponModel then 
+            p :?> OvernightIndexedCouponModel
+        else
+            let o = new OvernightIndexedCouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

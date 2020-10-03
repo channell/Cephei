@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type PriceErrorModel
     let _derivative                                (x : ICell<double>)   
                                                    = triv (fun () -> _PriceError.Value.derivative(x.Value))
     do this.Bind(_PriceError)
+(* 
+    casting 
+*)
+    internal new () = PriceErrorModel(null,null,null)
+    member internal this.Inject v = _PriceError.Value <- v
+    static member Cast (p : ICell<PriceError>) = 
+        if p :? PriceErrorModel then 
+            p :?> PriceErrorModel
+        else
+            let o = new PriceErrorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type TransformedGridModel
                                                    = triv (fun () -> _TransformedGrid.Value.transformedGrid(i.Value))
     let _transformedGridArray                      = triv (fun () -> _TransformedGrid.Value.transformedGridArray())
     do this.Bind(_TransformedGrid)
+(* 
+    casting 
+*)
+    internal new () = TransformedGridModel(null)
+    member internal this.Inject v = _TransformedGrid.Value <- v
+    static member Cast (p : ICell<TransformedGrid>) = 
+        if p :? TransformedGridModel then 
+            p :?> TransformedGridModel
+        else
+            let o = new TransformedGridModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -120,6 +133,19 @@ type TransformedGridModel1
                                                    = triv (fun () -> _TransformedGrid.Value.transformedGrid(i.Value))
     let _transformedGridArray                      = triv (fun () -> _TransformedGrid.Value.transformedGridArray())
     do this.Bind(_TransformedGrid)
+(* 
+    casting 
+*)
+    internal new () = TransformedGridModel1(null,null)
+    member internal this.Inject v = _TransformedGrid.Value <- v
+    static member Cast (p : ICell<TransformedGrid>) = 
+        if p :? TransformedGridModel1 then 
+            p :?> TransformedGridModel1
+        else
+            let o = new TransformedGridModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

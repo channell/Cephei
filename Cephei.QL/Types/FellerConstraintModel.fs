@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,31 @@ type FellerConstraintModel
     let _upperBound                                (parameters : ICell<Vector>)   
                                                    = cell (fun () -> _FellerConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_FellerConstraint)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FellerConstraint.Value <- v
+    static member Cast (p : ICell<FellerConstraint>) = 
+        if p :? FellerConstraintModel then 
+            p :?> FellerConstraintModel
+        else
+            let o = new FellerConstraintModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<FellerConstraint>) = 
+        if p :? FellerConstraintModel then 
+            p :?> FellerConstraintModel
+        else
+            let o = new FellerConstraintModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

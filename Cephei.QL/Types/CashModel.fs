@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -67,6 +67,19 @@ type CashModel
                                                                      _Cash.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).valuationDate())
     do this.Bind(_Cash)
+(* 
+    casting 
+*)
+    internal new () = CashModel(null,null,null,null,null,null)
+    member internal this.Inject v = _Cash.Value <- v
+    static member Cast (p : ICell<Cash>) = 
+        if p :? CashModel then 
+            p :?> CashModel
+        else
+            let o = new CashModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

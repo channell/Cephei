@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -89,6 +89,19 @@ type StrippedOptionletAdapterModel
                                                                      _StrippedOptionletAdapter.Value)
     let _extrapolate                               = triv (fun () -> _StrippedOptionletAdapter.Value.extrapolate)
     do this.Bind(_StrippedOptionletAdapter)
+(* 
+    casting 
+*)
+    internal new () = StrippedOptionletAdapterModel(null)
+    member internal this.Inject v = _StrippedOptionletAdapter.Value <- v
+    static member Cast (p : ICell<StrippedOptionletAdapter>) = 
+        if p :? StrippedOptionletAdapterModel then 
+            p :?> StrippedOptionletAdapterModel
+        else
+            let o = new StrippedOptionletAdapterModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

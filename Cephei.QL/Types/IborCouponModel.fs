@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -123,6 +123,19 @@ type IborCouponModel
                                                    = triv (fun () -> _IborCoupon.Value.unregisterWith(handler.Value)
                                                                      _IborCoupon.Value)
     do this.Bind(_IborCoupon)
+(* 
+    casting 
+*)
+    internal new () = IborCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _IborCoupon.Value <- v
+    static member Cast (p : ICell<IborCoupon>) = 
+        if p :? IborCouponModel then 
+            p :?> IborCouponModel
+        else
+            let o = new IborCouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -260,6 +273,19 @@ type IborCouponModel1
                                                    = triv (fun () -> _IborCoupon.Value.unregisterWith(handler.Value)
                                                                      _IborCoupon.Value)
     do this.Bind(_IborCoupon)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _IborCoupon.Value <- v
+    static member Cast (p : ICell<IborCoupon>) = 
+        if p :? IborCouponModel1 then 
+            p :?> IborCouponModel1
+        else
+            let o = new IborCouponModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

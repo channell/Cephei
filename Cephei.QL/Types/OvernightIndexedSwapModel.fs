@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -108,6 +108,19 @@ type OvernightIndexedSwapModel
                                                                      _OvernightIndexedSwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).valuationDate())
     do this.Bind(_OvernightIndexedSwap)
+(* 
+    casting 
+*)
+    internal new () = OvernightIndexedSwapModel(null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _OvernightIndexedSwap.Value <- v
+    static member Cast (p : ICell<OvernightIndexedSwap>) = 
+        if p :? OvernightIndexedSwapModel then 
+            p :?> OvernightIndexedSwapModel
+        else
+            let o = new OvernightIndexedSwapModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -241,6 +254,19 @@ type OvernightIndexedSwapModel1
                                                                      _OvernightIndexedSwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _OvernightIndexedSwap).valuationDate())
     do this.Bind(_OvernightIndexedSwap)
+(* 
+    casting 
+*)
+    internal new () = OvernightIndexedSwapModel1(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _OvernightIndexedSwap.Value <- v
+    static member Cast (p : ICell<OvernightIndexedSwap>) = 
+        if p :? OvernightIndexedSwapModel1 then 
+            p :?> OvernightIndexedSwapModel1
+        else
+            let o = new OvernightIndexedSwapModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

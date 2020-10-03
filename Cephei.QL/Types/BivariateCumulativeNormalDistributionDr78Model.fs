@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type BivariateCumulativeNormalDistributionDr78Model
     let _value                                     (a : ICell<double>) (b : ICell<double>)   
                                                    = triv (fun () -> _BivariateCumulativeNormalDistributionDr78.Value.value(a.Value, b.Value))
     do this.Bind(_BivariateCumulativeNormalDistributionDr78)
+(* 
+    casting 
+*)
+    internal new () = BivariateCumulativeNormalDistributionDr78Model(null)
+    member internal this.Inject v = _BivariateCumulativeNormalDistributionDr78.Value <- v
+    static member Cast (p : ICell<BivariateCumulativeNormalDistributionDr78>) = 
+        if p :? BivariateCumulativeNormalDistributionDr78Model then 
+            p :?> BivariateCumulativeNormalDistributionDr78Model
+        else
+            let o = new BivariateCumulativeNormalDistributionDr78Model ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

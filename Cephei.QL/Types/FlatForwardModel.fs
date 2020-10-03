@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -84,6 +84,19 @@ type FlatForwardModel
                                                                      _FlatForward.Value)
     let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
     do this.Bind(_FlatForward)
+(* 
+    casting 
+*)
+    internal new () = FlatForwardModel(null,null,null)
+    member internal this.Inject v = _FlatForward.Value <- v
+    static member Cast (p : ICell<FlatForward>) = 
+        if p :? FlatForwardModel then 
+            p :?> FlatForwardModel
+        else
+            let o = new FlatForwardModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -181,6 +194,19 @@ type FlatForwardModel1
                                                                      _FlatForward.Value)
     let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
     do this.Bind(_FlatForward)
+(* 
+    casting 
+*)
+    internal new () = FlatForwardModel1(null,null,null,null)
+    member internal this.Inject v = _FlatForward.Value <- v
+    static member Cast (p : ICell<FlatForward>) = 
+        if p :? FlatForwardModel1 then 
+            p :?> FlatForwardModel1
+        else
+            let o = new FlatForwardModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -283,6 +309,19 @@ type FlatForwardModel2
                                                                      _FlatForward.Value)
     let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
     do this.Bind(_FlatForward)
+(* 
+    casting 
+*)
+    internal new () = FlatForwardModel2(null,null,null,null,null,null)
+    member internal this.Inject v = _FlatForward.Value <- v
+    static member Cast (p : ICell<FlatForward>) = 
+        if p :? FlatForwardModel2 then 
+            p :?> FlatForwardModel2
+        else
+            let o = new FlatForwardModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -385,6 +424,19 @@ type FlatForwardModel3
                                                                      _FlatForward.Value)
     let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
     do this.Bind(_FlatForward)
+(* 
+    casting 
+*)
+    internal new () = FlatForwardModel3(null,null,null,null,null)
+    member internal this.Inject v = _FlatForward.Value <- v
+    static member Cast (p : ICell<FlatForward>) = 
+        if p :? FlatForwardModel3 then 
+            p :?> FlatForwardModel3
+        else
+            let o = new FlatForwardModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -484,6 +536,19 @@ type FlatForwardModel4
                                                                      _FlatForward.Value)
     let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
     do this.Bind(_FlatForward)
+(* 
+    casting 
+*)
+    internal new () = FlatForwardModel4(null,null,null,null)
+    member internal this.Inject v = _FlatForward.Value <- v
+    static member Cast (p : ICell<FlatForward>) = 
+        if p :? FlatForwardModel4 then 
+            p :?> FlatForwardModel4
+        else
+            let o = new FlatForwardModel4 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -586,6 +651,19 @@ type FlatForwardModel5
                                                                      _FlatForward.Value)
     let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
     do this.Bind(_FlatForward)
+(* 
+    casting 
+*)
+    internal new () = FlatForwardModel5(null,null,null,null,null,null)
+    member internal this.Inject v = _FlatForward.Value <- v
+    static member Cast (p : ICell<FlatForward>) = 
+        if p :? FlatForwardModel5 then 
+            p :?> FlatForwardModel5
+        else
+            let o = new FlatForwardModel5 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -688,6 +766,19 @@ type FlatForwardModel6
                                                                      _FlatForward.Value)
     let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
     do this.Bind(_FlatForward)
+(* 
+    casting 
+*)
+    internal new () = FlatForwardModel6(null,null,null,null,null)
+    member internal this.Inject v = _FlatForward.Value <- v
+    static member Cast (p : ICell<FlatForward>) = 
+        if p :? FlatForwardModel6 then 
+            p :?> FlatForwardModel6
+        else
+            let o = new FlatForwardModel6 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -789,6 +880,19 @@ type FlatForwardModel7
                                                                      _FlatForward.Value)
     let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
     do this.Bind(_FlatForward)
+(* 
+    casting 
+*)
+    internal new () = FlatForwardModel7(null,null,null,null,null)
+    member internal this.Inject v = _FlatForward.Value <- v
+    static member Cast (p : ICell<FlatForward>) = 
+        if p :? FlatForwardModel7 then 
+            p :?> FlatForwardModel7
+        else
+            let o = new FlatForwardModel7 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -888,6 +992,19 @@ type FlatForwardModel8
                                                                      _FlatForward.Value)
     let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
     do this.Bind(_FlatForward)
+(* 
+    casting 
+*)
+    internal new () = FlatForwardModel8(null,null,null,null)
+    member internal this.Inject v = _FlatForward.Value <- v
+    static member Cast (p : ICell<FlatForward>) = 
+        if p :? FlatForwardModel8 then 
+            p :?> FlatForwardModel8
+        else
+            let o = new FlatForwardModel8 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -984,6 +1101,19 @@ type FlatForwardModel9
                                                                      _FlatForward.Value)
     let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
     do this.Bind(_FlatForward)
+(* 
+    casting 
+*)
+    internal new () = FlatForwardModel9(null,null,null)
+    member internal this.Inject v = _FlatForward.Value <- v
+    static member Cast (p : ICell<FlatForward>) = 
+        if p :? FlatForwardModel9 then 
+            p :?> FlatForwardModel9
+        else
+            let o = new FlatForwardModel9 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -1083,6 +1213,19 @@ type FlatForwardModel10
                                                                      _FlatForward.Value)
     let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
     do this.Bind(_FlatForward)
+(* 
+    casting 
+*)
+    internal new () = FlatForwardModel10(null,null,null,null,null)
+    member internal this.Inject v = _FlatForward.Value <- v
+    static member Cast (p : ICell<FlatForward>) = 
+        if p :? FlatForwardModel10 then 
+            p :?> FlatForwardModel10
+        else
+            let o = new FlatForwardModel10 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -1182,6 +1325,19 @@ type FlatForwardModel11
                                                                      _FlatForward.Value)
     let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
     do this.Bind(_FlatForward)
+(* 
+    casting 
+*)
+    internal new () = FlatForwardModel11(null,null,null,null)
+    member internal this.Inject v = _FlatForward.Value <- v
+    static member Cast (p : ICell<FlatForward>) = 
+        if p :? FlatForwardModel11 then 
+            p :?> FlatForwardModel11
+        else
+            let o = new FlatForwardModel11 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

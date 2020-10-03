@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type LPP2HestonExpansionModel
     let _impliedVolatility                         (strike : ICell<double>) (forward : ICell<double>)   
                                                    = triv (fun () -> _LPP2HestonExpansion.Value.impliedVolatility(strike.Value, forward.Value))
     do this.Bind(_LPP2HestonExpansion)
+(* 
+    casting 
+*)
+    internal new () = LPP2HestonExpansionModel(null,null,null,null,null,null)
+    member internal this.Inject v = _LPP2HestonExpansion.Value <- v
+    static member Cast (p : ICell<LPP2HestonExpansion>) = 
+        if p :? LPP2HestonExpansionModel then 
+            p :?> LPP2HestonExpansionModel
+        else
+            let o = new LPP2HestonExpansionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

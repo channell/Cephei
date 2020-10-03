@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -92,6 +92,19 @@ type InflationIndexModel
                                                    = triv (fun () -> _InflationIndex.Value.unregisterWith(handler.Value)
                                                                      _InflationIndex.Value)
     do this.Bind(_InflationIndex)
+(* 
+    casting 
+*)
+    internal new () = InflationIndexModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _InflationIndex.Value <- v
+    static member Cast (p : ICell<InflationIndex>) = 
+        if p :? InflationIndexModel then 
+            p :?> InflationIndexModel
+        else
+            let o = new InflationIndexModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

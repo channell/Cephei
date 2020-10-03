@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -101,6 +101,19 @@ type DigitalIborLegModel
     let _withSpreads1                              (spread : ICell<double>)   
                                                    = triv (fun () -> _DigitalIborLeg.Value.withSpreads(spread.Value))
     do this.Bind(_DigitalIborLeg)
+(* 
+    casting 
+*)
+    internal new () = DigitalIborLegModel(null,null)
+    member internal this.Inject v = _DigitalIborLeg.Value <- v
+    static member Cast (p : ICell<DigitalIborLeg>) = 
+        if p :? DigitalIborLegModel then 
+            p :?> DigitalIborLegModel
+        else
+            let o = new DigitalIborLegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -47,6 +47,31 @@ type IntegrationModel
     let _isAdaptiveIntegration                     = cell (fun () -> _Integration.Value.isAdaptiveIntegration())
     let _numberOfEvaluations                       = cell (fun () -> _Integration.Value.numberOfEvaluations())
     do this.Bind(_Integration)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Integration.Value <- v
+    static member Cast (p : ICell<Integration>) = 
+        if p :? IntegrationModel then 
+            p :?> IntegrationModel
+        else
+            let o = new IntegrationModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<Integration>) = 
+        if p :? IntegrationModel then 
+            p :?> IntegrationModel
+        else
+            let o = new IntegrationModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

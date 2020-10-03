@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,31 @@ type ExchangeModel
                                                    = cell (fun () -> _Exchange.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _Exchange.Value.name())
     do this.Bind(_Exchange)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Exchange.Value <- v
+    static member Cast (p : ICell<Exchange>) = 
+        if p :? ExchangeModel then 
+            p :?> ExchangeModel
+        else
+            let o = new ExchangeModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<Exchange>) = 
+        if p :? ExchangeModel then 
+            p :?> ExchangeModel
+        else
+            let o = new ExchangeModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

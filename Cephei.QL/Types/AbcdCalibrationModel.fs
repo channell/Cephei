@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type AbcdCalibrationModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _AbcdCalibration.Value.value(x.Value))
     do this.Bind(_AbcdCalibration)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _AbcdCalibration.Value <- v
+    static member Cast (p : ICell<AbcdCalibration>) = 
+        if p :? AbcdCalibrationModel then 
+            p :?> AbcdCalibrationModel
+        else
+            let o = new AbcdCalibrationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -152,6 +165,19 @@ type AbcdCalibrationModel1
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _AbcdCalibration.Value.value(x.Value))
     do this.Bind(_AbcdCalibration)
+(* 
+    casting 
+*)
+    internal new () = AbcdCalibrationModel1(null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _AbcdCalibration.Value <- v
+    static member Cast (p : ICell<AbcdCalibration>) = 
+        if p :? AbcdCalibrationModel1 then 
+            p :?> AbcdCalibrationModel1
+        else
+            let o = new AbcdCalibrationModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

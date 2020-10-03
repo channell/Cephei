@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -69,6 +69,19 @@ type FdmDirichletBoundaryModel
                                                    = triv (fun () -> _FdmDirichletBoundary.Value.setTime(t.Value)
                                                                      _FdmDirichletBoundary.Value)
     do this.Bind(_FdmDirichletBoundary)
+(* 
+    casting 
+*)
+    internal new () = FdmDirichletBoundaryModel(null,null,null,null)
+    member internal this.Inject v = _FdmDirichletBoundary.Value <- v
+    static member Cast (p : ICell<FdmDirichletBoundary>) = 
+        if p :? FdmDirichletBoundaryModel then 
+            p :?> FdmDirichletBoundaryModel
+        else
+            let o = new FdmDirichletBoundaryModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

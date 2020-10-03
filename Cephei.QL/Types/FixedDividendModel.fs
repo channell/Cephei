@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -70,6 +70,19 @@ type FixedDividendModel
                                                    = triv (fun () -> _FixedDividend.Value.unregisterWith(handler.Value)
                                                                      _FixedDividend.Value)
     do this.Bind(_FixedDividend)
+(* 
+    casting 
+*)
+    internal new () = FixedDividendModel(null,null)
+    member internal this.Inject v = _FixedDividend.Value <- v
+    static member Cast (p : ICell<FixedDividend>) = 
+        if p :? FixedDividendModel then 
+            p :?> FixedDividendModel
+        else
+            let o = new FixedDividendModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

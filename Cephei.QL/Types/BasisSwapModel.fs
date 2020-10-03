@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -110,6 +110,19 @@ type BasisSwapModel
                                                                      _BasisSwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).valuationDate())
     do this.Bind(_BasisSwap)
+(* 
+    casting 
+*)
+    internal new () = BasisSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _BasisSwap.Value <- v
+    static member Cast (p : ICell<BasisSwap>) = 
+        if p :? BasisSwapModel then 
+            p :?> BasisSwapModel
+        else
+            let o = new BasisSwapModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -252,6 +265,19 @@ type BasisSwapModel1
                                                                      _BasisSwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _BasisSwap).valuationDate())
     do this.Bind(_BasisSwap)
+(* 
+    casting 
+*)
+    internal new () = BasisSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _BasisSwap.Value <- v
+    static member Cast (p : ICell<BasisSwap>) = 
+        if p :? BasisSwapModel1 then 
+            p :?> BasisSwapModel1
+        else
+            let o = new BasisSwapModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

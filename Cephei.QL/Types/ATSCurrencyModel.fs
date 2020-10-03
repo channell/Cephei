@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type ATSCurrencyModel
     let _ToString                                  = triv (fun () -> _ATSCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _ATSCurrency.Value.triangulationCurrency)
     do this.Bind(_ATSCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ATSCurrency.Value <- v
+    static member Cast (p : ICell<ATSCurrency>) = 
+        if p :? ATSCurrencyModel then 
+            p :?> ATSCurrencyModel
+        else
+            let o = new ATSCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

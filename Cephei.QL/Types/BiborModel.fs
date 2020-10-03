@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -97,6 +97,19 @@ type BiborModel
                                                    = triv (fun () -> _Bibor.Value.unregisterWith(handler.Value)
                                                                      _Bibor.Value)
     do this.Bind(_Bibor)
+(* 
+    casting 
+*)
+    internal new () = BiborModel(null,null)
+    member internal this.Inject v = _Bibor.Value <- v
+    static member Cast (p : ICell<Bibor>) = 
+        if p :? BiborModel then 
+            p :?> BiborModel
+        else
+            let o = new BiborModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

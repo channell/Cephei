@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type GRDCurrencyModel
     let _ToString                                  = triv (fun () -> _GRDCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _GRDCurrency.Value.triangulationCurrency)
     do this.Bind(_GRDCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _GRDCurrency.Value <- v
+    static member Cast (p : ICell<GRDCurrency>) = 
+        if p :? GRDCurrencyModel then 
+            p :?> GRDCurrencyModel
+        else
+            let o = new GRDCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

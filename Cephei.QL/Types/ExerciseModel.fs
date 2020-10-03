@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type ExerciseModel
     let _lastDate                                  = triv (fun () -> _Exercise.Value.lastDate())
     let _type                                      = triv (fun () -> _Exercise.Value.TYPE())
     do this.Bind(_Exercise)
+(* 
+    casting 
+*)
+    internal new () = ExerciseModel(null)
+    member internal this.Inject v = _Exercise.Value <- v
+    static member Cast (p : ICell<Exercise>) = 
+        if p :? ExerciseModel then 
+            p :?> ExerciseModel
+        else
+            let o = new ExerciseModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type FastFourierTransformModel
                                                    = triv (fun () -> _FastFourierTransform.Value.transform(input.Value, inputBeg.Value, inputEnd.Value, output.Value)
                                                                      _FastFourierTransform.Value)
     do this.Bind(_FastFourierTransform)
+(* 
+    casting 
+*)
+    internal new () = FastFourierTransformModel(null)
+    member internal this.Inject v = _FastFourierTransform.Value <- v
+    static member Cast (p : ICell<FastFourierTransform>) = 
+        if p :? FastFourierTransformModel then 
+            p :?> FastFourierTransformModel
+        else
+            let o = new FastFourierTransformModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -71,6 +71,19 @@ type EndCriteriaModel
     let _value                                     (iteration : ICell<int>) (statStateIterations : ICell<int>) (positiveOptimization : ICell<bool>) (fold : ICell<double>) (UnnamedParameter1 : ICell<double>) (fnew : ICell<double>) (normgnew : ICell<double>) (ecType : ICell<EndCriteria.Type>)   
                                                    = cell (fun () -> _EndCriteria.Value.value(iteration.Value, ref statStateIterations.Value, positiveOptimization.Value, fold.Value, UnnamedParameter1.Value, fnew.Value, normgnew.Value, ref ecType.Value))
     do this.Bind(_EndCriteria)
+(* 
+    casting 
+*)
+    internal new () = EndCriteriaModel(null,null,null,null,null)
+    member internal this.Inject v = _EndCriteria.Value <- v
+    static member Cast (p : ICell<EndCriteria>) = 
+        if p :? EndCriteriaModel then 
+            p :?> EndCriteriaModel
+        else
+            let o = new EndCriteriaModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

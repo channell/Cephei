@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -47,6 +47,19 @@ type EURegionModel
                                                    = triv (fun () -> _EURegion.Value.Equals(o.Value))
     let _name                                      = triv (fun () -> _EURegion.Value.name())
     do this.Bind(_EURegion)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _EURegion.Value <- v
+    static member Cast (p : ICell<EURegion>) = 
+        if p :? EURegionModel then 
+            p :?> EURegionModel
+        else
+            let o = new EURegionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

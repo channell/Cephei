@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type FloorTruncationModel
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _FloorTruncation.Value.Round(value.Value))
     do this.Bind(_FloorTruncation)
+(* 
+    casting 
+*)
+    internal new () = FloorTruncationModel(null,null)
+    member internal this.Inject v = _FloorTruncation.Value <- v
+    static member Cast (p : ICell<FloorTruncation>) = 
+        if p :? FloorTruncationModel then 
+            p :?> FloorTruncationModel
+        else
+            let o = new FloorTruncationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -88,6 +101,19 @@ type FloorTruncationModel1
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _FloorTruncation.Value.Round(value.Value))
     do this.Bind(_FloorTruncation)
+(* 
+    casting 
+*)
+    internal new () = FloorTruncationModel1(null)
+    member internal this.Inject v = _FloorTruncation.Value <- v
+    static member Cast (p : ICell<FloorTruncation>) = 
+        if p :? FloorTruncationModel1 then 
+            p :?> FloorTruncationModel1
+        else
+            let o = new FloorTruncationModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

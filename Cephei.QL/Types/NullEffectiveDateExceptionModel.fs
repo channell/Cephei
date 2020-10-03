@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -43,6 +43,19 @@ type NullEffectiveDateExceptionModel
 *)
     let _NullEffectiveDateException                = cell (fun () -> new NullEffectiveDateException ())
     do this.Bind(_NullEffectiveDateException)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _NullEffectiveDateException.Value <- v
+    static member Cast (p : ICell<NullEffectiveDateException>) = 
+        if p :? NullEffectiveDateExceptionModel then 
+            p :?> NullEffectiveDateExceptionModel
+        else
+            let o = new NullEffectiveDateExceptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -66,6 +79,19 @@ type NullEffectiveDateExceptionModel1
 *)
     let _NullEffectiveDateException                = cell (fun () -> new NullEffectiveDateException (message.Value))
     do this.Bind(_NullEffectiveDateException)
+(* 
+    casting 
+*)
+    internal new () = NullEffectiveDateExceptionModel1(null)
+    member internal this.Inject v = _NullEffectiveDateException.Value <- v
+    static member Cast (p : ICell<NullEffectiveDateException>) = 
+        if p :? NullEffectiveDateExceptionModel1 then 
+            p :?> NullEffectiveDateExceptionModel1
+        else
+            let o = new NullEffectiveDateExceptionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -92,6 +118,19 @@ type NullEffectiveDateExceptionModel2
 *)
     let _NullEffectiveDateException                = cell (fun () -> new NullEffectiveDateException (message.Value, inner.Value))
     do this.Bind(_NullEffectiveDateException)
+(* 
+    casting 
+*)
+    internal new () = NullEffectiveDateExceptionModel2(null,null)
+    member internal this.Inject v = _NullEffectiveDateException.Value <- v
+    static member Cast (p : ICell<NullEffectiveDateException>) = 
+        if p :? NullEffectiveDateExceptionModel2 then 
+            p :?> NullEffectiveDateExceptionModel2
+        else
+            let o = new NullEffectiveDateExceptionModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

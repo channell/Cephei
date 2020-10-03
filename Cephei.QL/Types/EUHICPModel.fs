@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type EUHICPModel
                                                    = triv (fun () -> _EUHICP.Value.unregisterWith(handler.Value)
                                                                      _EUHICP.Value)
     do this.Bind(_EUHICP)
+(* 
+    casting 
+*)
+    internal new () = EUHICPModel(null)
+    member internal this.Inject v = _EUHICP.Value <- v
+    static member Cast (p : ICell<EUHICP>) = 
+        if p :? EUHICPModel then 
+            p :?> EUHICPModel
+        else
+            let o = new EUHICPModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -176,6 +189,19 @@ type EUHICPModel1
                                                    = triv (fun () -> _EUHICP.Value.unregisterWith(handler.Value)
                                                                      _EUHICP.Value)
     do this.Bind(_EUHICP)
+(* 
+    casting 
+*)
+    internal new () = EUHICPModel1(null,null)
+    member internal this.Inject v = _EUHICP.Value <- v
+    static member Cast (p : ICell<EUHICP>) = 
+        if p :? EUHICPModel1 then 
+            p :?> EUHICPModel1
+        else
+            let o = new EUHICPModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

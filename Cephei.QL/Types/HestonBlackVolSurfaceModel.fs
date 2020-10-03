@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -85,6 +85,19 @@ type HestonBlackVolSurfaceModel
                                                                      _HestonBlackVolSurface.Value)
     let _extrapolate                               = triv (fun () -> _HestonBlackVolSurface.Value.extrapolate)
     do this.Bind(_HestonBlackVolSurface)
+(* 
+    casting 
+*)
+    internal new () = HestonBlackVolSurfaceModel(null)
+    member internal this.Inject v = _HestonBlackVolSurface.Value <- v
+    static member Cast (p : ICell<HestonBlackVolSurface>) = 
+        if p :? HestonBlackVolSurfaceModel then 
+            p :?> HestonBlackVolSurfaceModel
+        else
+            let o = new HestonBlackVolSurfaceModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

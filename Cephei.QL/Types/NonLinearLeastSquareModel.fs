@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type NonLinearLeastSquareModel
                                                    = triv (fun () -> _NonLinearLeastSquare.Value.setInitialValue(initialValue.Value)
                                                                      _NonLinearLeastSquare.Value)
     do this.Bind(_NonLinearLeastSquare)
+(* 
+    casting 
+*)
+    internal new () = NonLinearLeastSquareModel(null,null,null,null)
+    member internal this.Inject v = _NonLinearLeastSquare.Value <- v
+    static member Cast (p : ICell<NonLinearLeastSquare>) = 
+        if p :? NonLinearLeastSquareModel then 
+            p :?> NonLinearLeastSquareModel
+        else
+            let o = new NonLinearLeastSquareModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -104,6 +117,19 @@ type NonLinearLeastSquareModel1
                                                    = triv (fun () -> _NonLinearLeastSquare.Value.setInitialValue(initialValue.Value)
                                                                      _NonLinearLeastSquare.Value)
     do this.Bind(_NonLinearLeastSquare)
+(* 
+    casting 
+*)
+    internal new () = NonLinearLeastSquareModel1(null,null)
+    member internal this.Inject v = _NonLinearLeastSquare.Value <- v
+    static member Cast (p : ICell<NonLinearLeastSquare>) = 
+        if p :? NonLinearLeastSquareModel1 then 
+            p :?> NonLinearLeastSquareModel1
+        else
+            let o = new NonLinearLeastSquareModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -148,6 +174,19 @@ type NonLinearLeastSquareModel2
                                                    = triv (fun () -> _NonLinearLeastSquare.Value.setInitialValue(initialValue.Value)
                                                                      _NonLinearLeastSquare.Value)
     do this.Bind(_NonLinearLeastSquare)
+(* 
+    casting 
+*)
+    internal new () = NonLinearLeastSquareModel2(null,null,null)
+    member internal this.Inject v = _NonLinearLeastSquare.Value <- v
+    static member Cast (p : ICell<NonLinearLeastSquare>) = 
+        if p :? NonLinearLeastSquareModel2 then 
+            p :?> NonLinearLeastSquareModel2
+        else
+            let o = new NonLinearLeastSquareModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -189,6 +228,19 @@ type NonLinearLeastSquareModel3
                                                    = triv (fun () -> _NonLinearLeastSquare.Value.setInitialValue(initialValue.Value)
                                                                      _NonLinearLeastSquare.Value)
     do this.Bind(_NonLinearLeastSquare)
+(* 
+    casting 
+*)
+    internal new () = NonLinearLeastSquareModel3(null)
+    member internal this.Inject v = _NonLinearLeastSquare.Value <- v
+    static member Cast (p : ICell<NonLinearLeastSquare>) = 
+        if p :? NonLinearLeastSquareModel3 then 
+            p :?> NonLinearLeastSquareModel3
+        else
+            let o = new NonLinearLeastSquareModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

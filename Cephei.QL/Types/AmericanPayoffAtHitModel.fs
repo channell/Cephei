@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type AmericanPayoffAtHitModel
                                                    = triv (fun () -> _AmericanPayoffAtHit.Value.rho(maturity.Value))
     let _value                                     = triv (fun () -> _AmericanPayoffAtHit.Value.value())
     do this.Bind(_AmericanPayoffAtHit)
+(* 
+    casting 
+*)
+    internal new () = AmericanPayoffAtHitModel(null,null,null,null,null)
+    member internal this.Inject v = _AmericanPayoffAtHit.Value <- v
+    static member Cast (p : ICell<AmericanPayoffAtHit>) = 
+        if p :? AmericanPayoffAtHitModel then 
+            p :?> AmericanPayoffAtHitModel
+        else
+            let o = new AmericanPayoffAtHitModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

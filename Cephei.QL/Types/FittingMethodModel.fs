@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,31 @@ type FittingMethodModel
     let _solution                                  = cell (fun () -> _FittingMethod.Value.solution())
     let _weights                                   = cell (fun () -> _FittingMethod.Value.weights())
     do this.Bind(_FittingMethod)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FittingMethod.Value <- v
+    static member Cast (p : ICell<FittingMethod>) = 
+        if p :? FittingMethodModel then 
+            p :?> FittingMethodModel
+        else
+            let o = new FittingMethodModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<FittingMethod>) = 
+        if p :? FittingMethodModel then 
+            p :?> FittingMethodModel
+        else
+            let o = new FittingMethodModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

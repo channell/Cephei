@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type EURLibor6MModel
                                                    = triv (fun () -> _EURLibor6M.Value.unregisterWith(handler.Value)
                                                                      _EURLibor6M.Value)
     do this.Bind(_EURLibor6M)
+(* 
+    casting 
+*)
+    internal new () = EURLibor6MModel(null)
+    member internal this.Inject v = _EURLibor6M.Value <- v
+    static member Cast (p : ICell<EURLibor6M>) = 
+        if p :? EURLibor6MModel then 
+            p :?> EURLibor6MModel
+        else
+            let o = new EURLibor6MModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -207,6 +220,19 @@ type EURLibor6MModel1
                                                    = triv (fun () -> _EURLibor6M.Value.unregisterWith(handler.Value)
                                                                      _EURLibor6M.Value)
     do this.Bind(_EURLibor6M)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _EURLibor6M.Value <- v
+    static member Cast (p : ICell<EURLibor6M>) = 
+        if p :? EURLibor6MModel1 then 
+            p :?> EURLibor6MModel1
+        else
+            let o = new EURLibor6MModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

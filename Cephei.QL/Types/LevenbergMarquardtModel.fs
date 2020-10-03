@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type LevenbergMarquardtModel
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _LevenbergMarquardt.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_LevenbergMarquardt)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _LevenbergMarquardt.Value <- v
+    static member Cast (p : ICell<LevenbergMarquardt>) = 
+        if p :? LevenbergMarquardtModel then 
+            p :?> LevenbergMarquardtModel
+        else
+            let o = new LevenbergMarquardtModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -95,6 +108,19 @@ type LevenbergMarquardtModel1
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _LevenbergMarquardt.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_LevenbergMarquardt)
+(* 
+    casting 
+*)
+    internal new () = LevenbergMarquardtModel1(null,null,null,null)
+    member internal this.Inject v = _LevenbergMarquardt.Value <- v
+    static member Cast (p : ICell<LevenbergMarquardt>) = 
+        if p :? LevenbergMarquardtModel1 then 
+            p :?> LevenbergMarquardtModel1
+        else
+            let o = new LevenbergMarquardtModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

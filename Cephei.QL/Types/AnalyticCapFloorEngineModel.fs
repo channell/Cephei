@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type AnalyticCapFloorEngineModel
     let _update                                    = triv (fun () -> _AnalyticCapFloorEngine.Value.update()
                                                                      _AnalyticCapFloorEngine.Value)
     do this.Bind(_AnalyticCapFloorEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticCapFloorEngineModel(null)
+    member internal this.Inject v = _AnalyticCapFloorEngine.Value <- v
+    static member Cast (p : ICell<AnalyticCapFloorEngine>) = 
+        if p :? AnalyticCapFloorEngineModel then 
+            p :?> AnalyticCapFloorEngineModel
+        else
+            let o = new AnalyticCapFloorEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -106,6 +119,19 @@ type AnalyticCapFloorEngineModel1
     let _update                                    = triv (fun () -> _AnalyticCapFloorEngine.Value.update()
                                                                      _AnalyticCapFloorEngine.Value)
     do this.Bind(_AnalyticCapFloorEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticCapFloorEngineModel1(null,null)
+    member internal this.Inject v = _AnalyticCapFloorEngine.Value <- v
+    static member Cast (p : ICell<AnalyticCapFloorEngine>) = 
+        if p :? AnalyticCapFloorEngineModel1 then 
+            p :?> AnalyticCapFloorEngineModel1
+        else
+            let o = new AnalyticCapFloorEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

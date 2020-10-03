@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -47,6 +47,19 @@ type ForwardFlatModel
                                                    = triv (fun () -> _ForwardFlat.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     let _requiredPoints                            = triv (fun () -> _ForwardFlat.Value.requiredPoints)
     do this.Bind(_ForwardFlat)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ForwardFlat.Value <- v
+    static member Cast (p : ICell<ForwardFlat>) = 
+        if p :? ForwardFlatModel then 
+            p :?> ForwardFlatModel
+        else
+            let o = new ForwardFlatModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

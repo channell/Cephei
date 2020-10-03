@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type BlackConstantVolModel
     let _maxStrike                                 = triv (fun () -> _BlackConstantVol.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _BlackConstantVol.Value.minStrike())
     do this.Bind(_BlackConstantVol)
+(* 
+    casting 
+*)
+    internal new () = BlackConstantVolModel(null,null,null,null)
+    member internal this.Inject v = _BlackConstantVol.Value <- v
+    static member Cast (p : ICell<BlackConstantVol>) = 
+        if p :? BlackConstantVolModel then 
+            p :?> BlackConstantVolModel
+        else
+            let o = new BlackConstantVolModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -94,6 +107,19 @@ type BlackConstantVolModel1
     let _maxStrike                                 = triv (fun () -> _BlackConstantVol.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _BlackConstantVol.Value.minStrike())
     do this.Bind(_BlackConstantVol)
+(* 
+    casting 
+*)
+    internal new () = BlackConstantVolModel1(null,null,null,null)
+    member internal this.Inject v = _BlackConstantVol.Value <- v
+    static member Cast (p : ICell<BlackConstantVol>) = 
+        if p :? BlackConstantVolModel1 then 
+            p :?> BlackConstantVolModel1
+        else
+            let o = new BlackConstantVolModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -133,6 +159,19 @@ type BlackConstantVolModel2
     let _maxStrike                                 = triv (fun () -> _BlackConstantVol.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _BlackConstantVol.Value.minStrike())
     do this.Bind(_BlackConstantVol)
+(* 
+    casting 
+*)
+    internal new () = BlackConstantVolModel2(null,null,null,null)
+    member internal this.Inject v = _BlackConstantVol.Value <- v
+    static member Cast (p : ICell<BlackConstantVol>) = 
+        if p :? BlackConstantVolModel2 then 
+            p :?> BlackConstantVolModel2
+        else
+            let o = new BlackConstantVolModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -172,6 +211,19 @@ type BlackConstantVolModel3
     let _maxStrike                                 = triv (fun () -> _BlackConstantVol.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _BlackConstantVol.Value.minStrike())
     do this.Bind(_BlackConstantVol)
+(* 
+    casting 
+*)
+    internal new () = BlackConstantVolModel3(null,null,null,null)
+    member internal this.Inject v = _BlackConstantVol.Value <- v
+    static member Cast (p : ICell<BlackConstantVol>) = 
+        if p :? BlackConstantVolModel3 then 
+            p :?> BlackConstantVolModel3
+        else
+            let o = new BlackConstantVolModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

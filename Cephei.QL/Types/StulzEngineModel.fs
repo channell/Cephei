@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type StulzEngineModel
 *)
     let _StulzEngine                               = cell (fun () -> new StulzEngine (process1.Value, process2.Value, correlation.Value))
     do this.Bind(_StulzEngine)
+(* 
+    casting 
+*)
+    internal new () = StulzEngineModel(null,null,null)
+    member internal this.Inject v = _StulzEngine.Value <- v
+    static member Cast (p : ICell<StulzEngine>) = 
+        if p :? StulzEngineModel then 
+            p :?> StulzEngineModel
+        else
+            let o = new StulzEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

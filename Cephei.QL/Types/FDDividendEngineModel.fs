@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type FDDividendEngineModel
     let _grid                                      = triv (fun () -> _FDDividendEngine.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDDividendEngine.Value.intrinsicValues_)
     do this.Bind(_FDDividendEngine)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FDDividendEngine.Value <- v
+    static member Cast (p : ICell<FDDividendEngine>) = 
+        if p :? FDDividendEngineModel then 
+            p :?> FDDividendEngineModel
+        else
+            let o = new FDDividendEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -114,6 +127,19 @@ type FDDividendEngineModel1
     let _grid                                      = triv (fun () -> _FDDividendEngine.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDDividendEngine.Value.intrinsicValues_)
     do this.Bind(_FDDividendEngine)
+(* 
+    casting 
+*)
+    internal new () = FDDividendEngineModel1(null,null,null,null)
+    member internal this.Inject v = _FDDividendEngine.Value <- v
+    static member Cast (p : ICell<FDDividendEngine>) = 
+        if p :? FDDividendEngineModel1 then 
+            p :?> FDDividendEngineModel1
+        else
+            let o = new FDDividendEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

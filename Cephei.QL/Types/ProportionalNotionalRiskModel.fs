@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type ProportionalNotionalRiskModel
                                                    = triv (fun () -> _ProportionalNotionalRisk.Value.updatePath(events.Value, path.Value)
                                                                      _ProportionalNotionalRisk.Value)
     do this.Bind(_ProportionalNotionalRisk)
+(* 
+    casting 
+*)
+    internal new () = ProportionalNotionalRiskModel(null,null,null)
+    member internal this.Inject v = _ProportionalNotionalRisk.Value <- v
+    static member Cast (p : ICell<ProportionalNotionalRisk>) = 
+        if p :? ProportionalNotionalRiskModel then 
+            p :?> ProportionalNotionalRiskModel
+        else
+            let o = new ProportionalNotionalRiskModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

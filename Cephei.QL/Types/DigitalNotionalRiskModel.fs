@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type DigitalNotionalRiskModel
                                                    = triv (fun () -> _DigitalNotionalRisk.Value.updatePath(events.Value, path.Value)
                                                                      _DigitalNotionalRisk.Value)
     do this.Bind(_DigitalNotionalRisk)
+(* 
+    casting 
+*)
+    internal new () = DigitalNotionalRiskModel(null,null)
+    member internal this.Inject v = _DigitalNotionalRisk.Value <- v
+    static member Cast (p : ICell<DigitalNotionalRisk>) = 
+        if p :? DigitalNotionalRiskModel then 
+            p :?> DigitalNotionalRiskModel
+        else
+            let o = new DigitalNotionalRiskModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

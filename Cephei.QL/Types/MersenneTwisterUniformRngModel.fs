@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type MersenneTwisterUniformRngModel
     let _nextInt32                                 = triv (fun () -> _MersenneTwisterUniformRng.Value.nextInt32())
     let _nextReal                                  = triv (fun () -> _MersenneTwisterUniformRng.Value.nextReal())
     do this.Bind(_MersenneTwisterUniformRng)
+(* 
+    casting 
+*)
+    internal new () = MersenneTwisterUniformRngModel(null)
+    member internal this.Inject v = _MersenneTwisterUniformRng.Value <- v
+    static member Cast (p : ICell<MersenneTwisterUniformRng>) = 
+        if p :? MersenneTwisterUniformRngModel then 
+            p :?> MersenneTwisterUniformRngModel
+        else
+            let o = new MersenneTwisterUniformRngModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -82,6 +95,19 @@ type MersenneTwisterUniformRngModel1
     let _nextInt32                                 = triv (fun () -> _MersenneTwisterUniformRng.Value.nextInt32())
     let _nextReal                                  = triv (fun () -> _MersenneTwisterUniformRng.Value.nextReal())
     do this.Bind(_MersenneTwisterUniformRng)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _MersenneTwisterUniformRng.Value <- v
+    static member Cast (p : ICell<MersenneTwisterUniformRng>) = 
+        if p :? MersenneTwisterUniformRngModel1 then 
+            p :?> MersenneTwisterUniformRngModel1
+        else
+            let o = new MersenneTwisterUniformRngModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -115,6 +141,19 @@ type MersenneTwisterUniformRngModel2
     let _nextInt32                                 = triv (fun () -> _MersenneTwisterUniformRng.Value.nextInt32())
     let _nextReal                                  = triv (fun () -> _MersenneTwisterUniformRng.Value.nextReal())
     do this.Bind(_MersenneTwisterUniformRng)
+(* 
+    casting 
+*)
+    internal new () = MersenneTwisterUniformRngModel2(null)
+    member internal this.Inject v = _MersenneTwisterUniformRng.Value <- v
+    static member Cast (p : ICell<MersenneTwisterUniformRng>) = 
+        if p :? MersenneTwisterUniformRngModel2 then 
+            p :?> MersenneTwisterUniformRngModel2
+        else
+            let o = new MersenneTwisterUniformRngModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

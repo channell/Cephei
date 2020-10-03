@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -44,6 +44,31 @@ type doubleValueModel
     let _doubleValue                               = cell (fun () -> new doubleValue ())
     let _value                                     = cell (fun () -> _doubleValue.Value.value())
     do this.Bind(_doubleValue)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _doubleValue.Value <- v
+    static member Cast (p : ICell<doubleValue>) = 
+        if p :? doubleValueModel then 
+            p :?> doubleValueModel
+        else
+            let o = new doubleValueModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<doubleValue>) = 
+        if p :? doubleValueModel then 
+            p :?> doubleValueModel
+        else
+            let o = new doubleValueModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type TianModel
                                                    = triv (fun () -> _Tian.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _Tian.Value.columns())
     do this.Bind(_Tian)
+(* 
+    casting 
+*)
+    internal new () = TianModel(null,null,null,null)
+    member internal this.Inject v = _Tian.Value <- v
+    static member Cast (p : ICell<Tian>) = 
+        if p :? TianModel then 
+            p :?> TianModel
+        else
+            let o = new TianModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -109,6 +122,19 @@ type TianModel1
                                                    = triv (fun () -> _Tian.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _Tian.Value.columns())
     do this.Bind(_Tian)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Tian.Value <- v
+    static member Cast (p : ICell<Tian>) = 
+        if p :? TianModel1 then 
+            p :?> TianModel1
+        else
+            let o = new TianModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

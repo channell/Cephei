@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type KrugerCubicModel
                                                                      _KrugerCubic.Value)
     let _extrapolate                               = triv (fun () -> _KrugerCubic.Value.extrapolate)
     do this.Bind(_KrugerCubic)
+(* 
+    casting 
+*)
+    internal new () = KrugerCubicModel(null,null,null)
+    member internal this.Inject v = _KrugerCubic.Value <- v
+    static member Cast (p : ICell<KrugerCubic>) = 
+        if p :? KrugerCubicModel then 
+            p :?> KrugerCubicModel
+        else
+            let o = new KrugerCubicModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

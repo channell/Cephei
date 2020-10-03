@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -84,6 +84,19 @@ type ConvexMonotoneInterpolationModel
                                                                      _ConvexMonotoneInterpolation.Value)
     let _extrapolate                               = triv (fun () -> _ConvexMonotoneInterpolation.Value.extrapolate)
     do this.Bind(_ConvexMonotoneInterpolation)
+(* 
+    casting 
+*)
+    internal new () = ConvexMonotoneInterpolationModel(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _ConvexMonotoneInterpolation.Value <- v
+    static member Cast (p : ICell<ConvexMonotoneInterpolation>) = 
+        if p :? ConvexMonotoneInterpolationModel then 
+            p :?> ConvexMonotoneInterpolationModel
+        else
+            let o = new ConvexMonotoneInterpolationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -172,6 +185,19 @@ type ConvexMonotoneInterpolationModel1
                                                                      _ConvexMonotoneInterpolation.Value)
     let _extrapolate                               = triv (fun () -> _ConvexMonotoneInterpolation.Value.extrapolate)
     do this.Bind(_ConvexMonotoneInterpolation)
+(* 
+    casting 
+*)
+    internal new () = ConvexMonotoneInterpolationModel1(null,null,null,null,null,null,null)
+    member internal this.Inject v = _ConvexMonotoneInterpolation.Value <- v
+    static member Cast (p : ICell<ConvexMonotoneInterpolation>) = 
+        if p :? ConvexMonotoneInterpolationModel1 then 
+            p :?> ConvexMonotoneInterpolationModel1
+        else
+            let o = new ConvexMonotoneInterpolationModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

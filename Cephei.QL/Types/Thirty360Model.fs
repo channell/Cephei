@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type Thirty360Model
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _Thirty360.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_Thirty360)
+(* 
+    casting 
+*)
+    internal new () = Thirty360Model(null)
+    member internal this.Inject v = _Thirty360.Value <- v
+    static member Cast (p : ICell<Thirty360>) = 
+        if p :? Thirty360Model then 
+            p :?> Thirty360Model
+        else
+            let o = new Thirty360Model ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -103,6 +116,19 @@ type Thirty360Model1
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _Thirty360.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_Thirty360)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Thirty360.Value <- v
+    static member Cast (p : ICell<Thirty360>) = 
+        if p :? Thirty360Model1 then 
+            p :?> Thirty360Model1
+        else
+            let o = new Thirty360Model1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

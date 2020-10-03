@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type FdmSnapshotConditionModel
     let _getTime                                   = triv (fun () -> _FdmSnapshotCondition.Value.getTime())
     let _getValues                                 = triv (fun () -> _FdmSnapshotCondition.Value.getValues())
     do this.Bind(_FdmSnapshotCondition)
+(* 
+    casting 
+*)
+    internal new () = FdmSnapshotConditionModel(null)
+    member internal this.Inject v = _FdmSnapshotCondition.Value <- v
+    static member Cast (p : ICell<FdmSnapshotCondition>) = 
+        if p :? FdmSnapshotConditionModel then 
+            p :?> FdmSnapshotConditionModel
+        else
+            let o = new FdmSnapshotConditionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -67,6 +67,19 @@ type FDDividendEngineMerton73Model
     let _grid                                      = triv (fun () -> _FDDividendEngineMerton73.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDDividendEngineMerton73.Value.intrinsicValues_)
     do this.Bind(_FDDividendEngineMerton73)
+(* 
+    casting 
+*)
+    internal new () = FDDividendEngineMerton73Model(null,null,null,null)
+    member internal this.Inject v = _FDDividendEngineMerton73.Value <- v
+    static member Cast (p : ICell<FDDividendEngineMerton73>) = 
+        if p :? FDDividendEngineMerton73Model then 
+            p :?> FDDividendEngineMerton73Model
+        else
+            let o = new FDDividendEngineMerton73Model ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -118,6 +131,19 @@ type FDDividendEngineMerton73Model1
     let _grid                                      = triv (fun () -> _FDDividendEngineMerton73.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDDividendEngineMerton73.Value.intrinsicValues_)
     do this.Bind(_FDDividendEngineMerton73)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FDDividendEngineMerton73.Value <- v
+    static member Cast (p : ICell<FDDividendEngineMerton73>) = 
+        if p :? FDDividendEngineMerton73Model1 then 
+            p :?> FDDividendEngineMerton73Model1
+        else
+            let o = new FDDividendEngineMerton73Model1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,31 @@ type TSXModel
                                                    = cell (fun () -> _TSX.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _TSX.Value.name())
     do this.Bind(_TSX)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _TSX.Value <- v
+    static member Cast (p : ICell<TSX>) = 
+        if p :? TSXModel then 
+            p :?> TSXModel
+        else
+            let o = new TSXModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<TSX>) = 
+        if p :? TSXModel then 
+            p :?> TSXModel
+        else
+            let o = new TSXModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

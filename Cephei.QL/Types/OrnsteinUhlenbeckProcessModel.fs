@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -89,6 +89,19 @@ type OrnsteinUhlenbeckProcessModel
     let _update                                    = triv (fun () -> _OrnsteinUhlenbeckProcess.Value.update()
                                                                      _OrnsteinUhlenbeckProcess.Value)
     do this.Bind(_OrnsteinUhlenbeckProcess)
+(* 
+    casting 
+*)
+    internal new () = OrnsteinUhlenbeckProcessModel(null,null,null,null)
+    member internal this.Inject v = _OrnsteinUhlenbeckProcess.Value <- v
+    static member Cast (p : ICell<OrnsteinUhlenbeckProcess>) = 
+        if p :? OrnsteinUhlenbeckProcessModel then 
+            p :?> OrnsteinUhlenbeckProcessModel
+        else
+            let o = new OrnsteinUhlenbeckProcessModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

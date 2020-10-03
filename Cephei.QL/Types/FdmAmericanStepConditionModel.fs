@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type FdmAmericanStepConditionModel
                                                    = triv (fun () -> _FdmAmericanStepCondition.Value.applyTo(o.Value, t.Value)
                                                                      _FdmAmericanStepCondition.Value)
     do this.Bind(_FdmAmericanStepCondition)
+(* 
+    casting 
+*)
+    internal new () = FdmAmericanStepConditionModel(null,null)
+    member internal this.Inject v = _FdmAmericanStepCondition.Value <- v
+    static member Cast (p : ICell<FdmAmericanStepCondition>) = 
+        if p :? FdmAmericanStepConditionModel then 
+            p :?> FdmAmericanStepConditionModel
+        else
+            let o = new FdmAmericanStepConditionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

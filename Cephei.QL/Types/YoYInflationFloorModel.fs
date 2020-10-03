@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -75,6 +75,19 @@ type YoYInflationFloorModel
                                                                      _YoYInflationFloor.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationFloor).valuationDate())
     do this.Bind(_YoYInflationFloor)
+(* 
+    casting 
+*)
+    internal new () = YoYInflationFloorModel(null,null,null,null)
+    member internal this.Inject v = _YoYInflationFloor.Value <- v
+    static member Cast (p : ICell<YoYInflationFloor>) = 
+        if p :? YoYInflationFloorModel then 
+            p :?> YoYInflationFloorModel
+        else
+            let o = new YoYInflationFloorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

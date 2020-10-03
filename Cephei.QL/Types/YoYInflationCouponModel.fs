@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -120,6 +120,19 @@ type YoYInflationCouponModel
                                                    = triv (fun () -> _YoYInflationCoupon.Value.unregisterWith(handler.Value)
                                                                      _YoYInflationCoupon.Value)
     do this.Bind(_YoYInflationCoupon)
+(* 
+    casting 
+*)
+    internal new () = YoYInflationCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _YoYInflationCoupon.Value <- v
+    static member Cast (p : ICell<YoYInflationCoupon>) = 
+        if p :? YoYInflationCouponModel then 
+            p :?> YoYInflationCouponModel
+        else
+            let o = new YoYInflationCouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

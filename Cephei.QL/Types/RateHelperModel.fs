@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -67,6 +67,19 @@ type RateHelperModel
     let _update                                    = triv (fun () -> _RateHelper.Value.update()
                                                                      _RateHelper.Value)
     do this.Bind(_RateHelper)
+(* 
+    casting 
+*)
+    internal new () = RateHelperModel(null)
+    member internal this.Inject v = _RateHelper.Value <- v
+    static member Cast (p : ICell<RateHelper>) = 
+        if p :? RateHelperModel then 
+            p :?> RateHelperModel
+        else
+            let o = new RateHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -129,6 +142,19 @@ type RateHelperModel1
     let _update                                    = triv (fun () -> _RateHelper.Value.update()
                                                                      _RateHelper.Value)
     do this.Bind(_RateHelper)
+(* 
+    casting 
+*)
+    internal new () = RateHelperModel1(null)
+    member internal this.Inject v = _RateHelper.Value <- v
+    static member Cast (p : ICell<RateHelper>) = 
+        if p :? RateHelperModel1 then 
+            p :?> RateHelperModel1
+        else
+            let o = new RateHelperModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -188,6 +214,19 @@ type RateHelperModel2
     let _update                                    = triv (fun () -> _RateHelper.Value.update()
                                                                      _RateHelper.Value)
     do this.Bind(_RateHelper)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _RateHelper.Value <- v
+    static member Cast (p : ICell<RateHelper>) = 
+        if p :? RateHelperModel2 then 
+            p :?> RateHelperModel2
+        else
+            let o = new RateHelperModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -68,6 +68,19 @@ type RedemptionModel
                                                    = triv (fun () -> _Redemption.Value.unregisterWith(handler.Value)
                                                                      _Redemption.Value)
     do this.Bind(_Redemption)
+(* 
+    casting 
+*)
+    internal new () = RedemptionModel(null,null)
+    member internal this.Inject v = _Redemption.Value <- v
+    static member Cast (p : ICell<Redemption>) = 
+        if p :? RedemptionModel then 
+            p :?> RedemptionModel
+        else
+            let o = new RedemptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

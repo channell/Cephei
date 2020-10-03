@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type BlackSwaptionEngineModel
     let _termStructure                             = triv (fun () -> _BlackSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackSwaptionEngine.Value.volatility())
     do this.Bind(_BlackSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = BlackSwaptionEngineModel(null,null,null,null)
+    member internal this.Inject v = _BlackSwaptionEngine.Value <- v
+    static member Cast (p : ICell<BlackSwaptionEngine>) = 
+        if p :? BlackSwaptionEngineModel then 
+            p :?> BlackSwaptionEngineModel
+        else
+            let o = new BlackSwaptionEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -93,6 +106,19 @@ type BlackSwaptionEngineModel1
     let _termStructure                             = triv (fun () -> _BlackSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackSwaptionEngine.Value.volatility())
     do this.Bind(_BlackSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = BlackSwaptionEngineModel1(null,null,null,null,null)
+    member internal this.Inject v = _BlackSwaptionEngine.Value <- v
+    static member Cast (p : ICell<BlackSwaptionEngine>) = 
+        if p :? BlackSwaptionEngineModel1 then 
+            p :?> BlackSwaptionEngineModel1
+        else
+            let o = new BlackSwaptionEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -133,6 +159,19 @@ type BlackSwaptionEngineModel2
     let _termStructure                             = triv (fun () -> _BlackSwaptionEngine.Value.termStructure())
     let _volatility                                = triv (fun () -> _BlackSwaptionEngine.Value.volatility())
     do this.Bind(_BlackSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = BlackSwaptionEngineModel2(null,null,null,null,null)
+    member internal this.Inject v = _BlackSwaptionEngine.Value <- v
+    static member Cast (p : ICell<BlackSwaptionEngine>) = 
+        if p :? BlackSwaptionEngineModel2 then 
+            p :?> BlackSwaptionEngineModel2
+        else
+            let o = new BlackSwaptionEngineModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

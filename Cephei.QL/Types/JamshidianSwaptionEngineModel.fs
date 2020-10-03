@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type JamshidianSwaptionEngineModel
     let _update                                    = triv (fun () -> _JamshidianSwaptionEngine.Value.update()
                                                                      _JamshidianSwaptionEngine.Value)
     do this.Bind(_JamshidianSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = JamshidianSwaptionEngineModel(null)
+    member internal this.Inject v = _JamshidianSwaptionEngine.Value <- v
+    static member Cast (p : ICell<JamshidianSwaptionEngine>) = 
+        if p :? JamshidianSwaptionEngineModel then 
+            p :?> JamshidianSwaptionEngineModel
+        else
+            let o = new JamshidianSwaptionEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -106,6 +119,19 @@ type JamshidianSwaptionEngineModel1
     let _update                                    = triv (fun () -> _JamshidianSwaptionEngine.Value.update()
                                                                      _JamshidianSwaptionEngine.Value)
     do this.Bind(_JamshidianSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = JamshidianSwaptionEngineModel1(null,null)
+    member internal this.Inject v = _JamshidianSwaptionEngine.Value <- v
+    static member Cast (p : ICell<JamshidianSwaptionEngine>) = 
+        if p :? JamshidianSwaptionEngineModel1 then 
+            p :?> JamshidianSwaptionEngineModel1
+        else
+            let o = new JamshidianSwaptionEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

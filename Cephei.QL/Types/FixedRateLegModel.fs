@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type FixedRateLegModel
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
                                                    = triv (fun () -> _FixedRateLeg.Value.withPaymentAdjustment(convention.Value))
     do this.Bind(_FixedRateLeg)
+(* 
+    casting 
+*)
+    internal new () = FixedRateLegModel(null)
+    member internal this.Inject v = _FixedRateLeg.Value <- v
+    static member Cast (p : ICell<FixedRateLeg>) = 
+        if p :? FixedRateLegModel then 
+            p :?> FixedRateLegModel
+        else
+            let o = new FixedRateLegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

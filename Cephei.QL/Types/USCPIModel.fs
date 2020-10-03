@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type USCPIModel
                                                    = triv (fun () -> _USCPI.Value.unregisterWith(handler.Value)
                                                                      _USCPI.Value)
     do this.Bind(_USCPI)
+(* 
+    casting 
+*)
+    internal new () = USCPIModel(null)
+    member internal this.Inject v = _USCPI.Value <- v
+    static member Cast (p : ICell<USCPI>) = 
+        if p :? USCPIModel then 
+            p :?> USCPIModel
+        else
+            let o = new USCPIModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -176,6 +189,19 @@ type USCPIModel1
                                                    = triv (fun () -> _USCPI.Value.unregisterWith(handler.Value)
                                                                      _USCPI.Value)
     do this.Bind(_USCPI)
+(* 
+    casting 
+*)
+    internal new () = USCPIModel1(null,null)
+    member internal this.Inject v = _USCPI.Value <- v
+    static member Cast (p : ICell<USCPI>) = 
+        if p :? USCPIModel1 then 
+            p :?> USCPIModel1
+        else
+            let o = new USCPIModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

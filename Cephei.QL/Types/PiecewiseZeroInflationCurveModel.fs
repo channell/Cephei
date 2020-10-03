@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -144,6 +144,19 @@ type PiecewiseZeroInflationCurveModel
                                                                      _PiecewiseZeroInflationCurve.Value)
     let _extrapolate                               = triv (fun () -> _PiecewiseZeroInflationCurve.Value.extrapolate)
     do this.Bind(_PiecewiseZeroInflationCurve)
+(* 
+    casting 
+*)
+    internal new () = PiecewiseZeroInflationCurveModel(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _PiecewiseZeroInflationCurve.Value <- v
+    static member Cast (p : ICell<PiecewiseZeroInflationCurve>) = 
+        if p :? PiecewiseZeroInflationCurveModel then 
+            p :?> PiecewiseZeroInflationCurveModel
+        else
+            let o = new PiecewiseZeroInflationCurveModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -349,6 +362,19 @@ type PiecewiseZeroInflationCurveModel1
                                                                      _PiecewiseZeroInflationCurve.Value)
     let _extrapolate                               = triv (fun () -> _PiecewiseZeroInflationCurve.Value.extrapolate)
     do this.Bind(_PiecewiseZeroInflationCurve)
+(* 
+    casting 
+*)
+    internal new () = PiecewiseZeroInflationCurveModel1(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _PiecewiseZeroInflationCurve.Value <- v
+    static member Cast (p : ICell<PiecewiseZeroInflationCurve>) = 
+        if p :? PiecewiseZeroInflationCurveModel1 then 
+            p :?> PiecewiseZeroInflationCurveModel1
+        else
+            let o = new PiecewiseZeroInflationCurveModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -550,6 +576,19 @@ type PiecewiseZeroInflationCurveModel2
                                                                      _PiecewiseZeroInflationCurve.Value)
     let _extrapolate                               = triv (fun () -> _PiecewiseZeroInflationCurve.Value.extrapolate)
     do this.Bind(_PiecewiseZeroInflationCurve)
+(* 
+    casting 
+*)
+    internal new () = PiecewiseZeroInflationCurveModel2(null,null,null,null,null,null)
+    member internal this.Inject v = _PiecewiseZeroInflationCurve.Value <- v
+    static member Cast (p : ICell<PiecewiseZeroInflationCurve>) = 
+        if p :? PiecewiseZeroInflationCurveModel2 then 
+            p :?> PiecewiseZeroInflationCurveModel2
+        else
+            let o = new PiecewiseZeroInflationCurveModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -736,6 +775,19 @@ type PiecewiseZeroInflationCurveModel3
                                                                      _PiecewiseZeroInflationCurve.Value)
     let _extrapolate                               = triv (fun () -> _PiecewiseZeroInflationCurve.Value.extrapolate)
     do this.Bind(_PiecewiseZeroInflationCurve)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _PiecewiseZeroInflationCurve.Value <- v
+    static member Cast (p : ICell<PiecewiseZeroInflationCurve>) = 
+        if p :? PiecewiseZeroInflationCurveModel3 then 
+            p :?> PiecewiseZeroInflationCurveModel3
+        else
+            let o = new PiecewiseZeroInflationCurveModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

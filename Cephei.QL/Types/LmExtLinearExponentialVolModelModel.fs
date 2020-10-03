@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,6 +65,19 @@ type LmExtLinearExponentialVolModelModel
                                                                      _LmExtLinearExponentialVolModel.Value)
     let _size                                      = triv (fun () -> _LmExtLinearExponentialVolModel.Value.size())
     do this.Bind(_LmExtLinearExponentialVolModel)
+(* 
+    casting 
+*)
+    internal new () = LmExtLinearExponentialVolModelModel(null,null,null,null,null)
+    member internal this.Inject v = _LmExtLinearExponentialVolModel.Value <- v
+    static member Cast (p : ICell<LmExtLinearExponentialVolModel>) = 
+        if p :? LmExtLinearExponentialVolModelModel then 
+            p :?> LmExtLinearExponentialVolModelModel
+        else
+            let o = new LmExtLinearExponentialVolModelModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

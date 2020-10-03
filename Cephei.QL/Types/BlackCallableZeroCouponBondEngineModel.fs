@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type BlackCallableZeroCouponBondEngineModel
 *)
     let _BlackCallableZeroCouponBondEngine         = cell (fun () -> new BlackCallableZeroCouponBondEngine (yieldVolStructure.Value, discountCurve.Value))
     do this.Bind(_BlackCallableZeroCouponBondEngine)
+(* 
+    casting 
+*)
+    internal new () = BlackCallableZeroCouponBondEngineModel(null,null)
+    member internal this.Inject v = _BlackCallableZeroCouponBondEngine.Value <- v
+    static member Cast (p : ICell<BlackCallableZeroCouponBondEngine>) = 
+        if p :? BlackCallableZeroCouponBondEngineModel then 
+            p :?> BlackCallableZeroCouponBondEngineModel
+        else
+            let o = new BlackCallableZeroCouponBondEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -75,6 +88,19 @@ type BlackCallableZeroCouponBondEngineModel1
 *)
     let _BlackCallableZeroCouponBondEngine         = cell (fun () -> new BlackCallableZeroCouponBondEngine (fwdYieldVol.Value, discountCurve.Value))
     do this.Bind(_BlackCallableZeroCouponBondEngine)
+(* 
+    casting 
+*)
+    internal new () = BlackCallableZeroCouponBondEngineModel1(null,null)
+    member internal this.Inject v = _BlackCallableZeroCouponBondEngine.Value <- v
+    static member Cast (p : ICell<BlackCallableZeroCouponBondEngine>) = 
+        if p :? BlackCallableZeroCouponBondEngineModel1 then 
+            p :?> BlackCallableZeroCouponBondEngineModel1
+        else
+            let o = new BlackCallableZeroCouponBondEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

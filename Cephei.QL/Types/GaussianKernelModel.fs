@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type GaussianKernelModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _GaussianKernel.Value.value(x.Value))
     do this.Bind(_GaussianKernel)
+(* 
+    casting 
+*)
+    internal new () = GaussianKernelModel(null,null)
+    member internal this.Inject v = _GaussianKernel.Value <- v
+    static member Cast (p : ICell<GaussianKernel>) = 
+        if p :? GaussianKernelModel then 
+            p :?> GaussianKernelModel
+        else
+            let o = new GaussianKernelModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,31 @@ type PrivateObserverModel
     let _update                                    = cell (fun () -> _PrivateObserver.Value.update()
                                                                      _PrivateObserver.Value)
     do this.Bind(_PrivateObserver)
+(* 
+    casting 
+*)
+    internal new () = PrivateObserverModel(null)
+    member internal this.Inject v = _PrivateObserver.Value <- v
+    static member Cast (p : ICell<PrivateObserver>) = 
+        if p :? PrivateObserverModel then 
+            p :?> PrivateObserverModel
+        else
+            let o = new PrivateObserverModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = PrivateObserverModel(null)
+    static member Cast (p : ICell<PrivateObserver>) = 
+        if p :? PrivateObserverModel then 
+            p :?> PrivateObserverModel
+        else
+            let o = new PrivateObserverModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -74,6 +74,19 @@ type NullCalendarModel
                                                    = triv (fun () -> _NullCalendar.Value.removeHoliday(d.Value)
                                                                      _NullCalendar.Value)
     do this.Bind(_NullCalendar)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _NullCalendar.Value <- v
+    static member Cast (p : ICell<NullCalendar>) = 
+        if p :? NullCalendarModel then 
+            p :?> NullCalendarModel
+        else
+            let o = new NullCalendarModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

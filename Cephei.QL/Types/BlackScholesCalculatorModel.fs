@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type BlackScholesCalculatorModel
     let _vega                                      (maturity : ICell<double>)   
                                                    = triv (fun () -> _BlackScholesCalculator.Value.vega(maturity.Value))
     do this.Bind(_BlackScholesCalculator)
+(* 
+    casting 
+*)
+    internal new () = BlackScholesCalculatorModel(null,null,null,null,null)
+    member internal this.Inject v = _BlackScholesCalculator.Value <- v
+    static member Cast (p : ICell<BlackScholesCalculator>) = 
+        if p :? BlackScholesCalculatorModel then 
+            p :?> BlackScholesCalculatorModel
+        else
+            let o = new BlackScholesCalculatorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

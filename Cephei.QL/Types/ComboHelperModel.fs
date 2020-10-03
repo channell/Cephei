@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type ComboHelperModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _ComboHelper.Value.value(x.Value))
     do this.Bind(_ComboHelper)
+(* 
+    casting 
+*)
+    internal new () = ComboHelperModel(null,null,null)
+    member internal this.Inject v = _ComboHelper.Value <- v
+    static member Cast (p : ICell<ComboHelper>) = 
+        if p :? ComboHelperModel then 
+            p :?> ComboHelperModel
+        else
+            let o = new ComboHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

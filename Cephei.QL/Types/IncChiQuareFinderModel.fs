@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,31 @@ type IncChiQuareFinderModel
     let _derivative                                (x : ICell<double>)   
                                                    = cell (fun () -> _IncChiQuareFinder.Value.derivative(x.Value))
     do this.Bind(_IncChiQuareFinder)
+(* 
+    casting 
+*)
+    internal new () = IncChiQuareFinderModel(null,null)
+    member internal this.Inject v = _IncChiQuareFinder.Value <- v
+    static member Cast (p : ICell<IncChiQuareFinder>) = 
+        if p :? IncChiQuareFinderModel then 
+            p :?> IncChiQuareFinderModel
+        else
+            let o = new IncChiQuareFinderModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = IncChiQuareFinderModel(null,null)
+    static member Cast (p : ICell<IncChiQuareFinder>) = 
+        if p :? IncChiQuareFinderModel then 
+            p :?> IncChiQuareFinderModel
+        else
+            let o = new IncChiQuareFinderModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

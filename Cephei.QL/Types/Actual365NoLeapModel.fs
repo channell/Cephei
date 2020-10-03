@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type Actual365NoLeapModel
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _Actual365NoLeap.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_Actual365NoLeap)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Actual365NoLeap.Value <- v
+    static member Cast (p : ICell<Actual365NoLeap>) = 
+        if p :? Actual365NoLeapModel then 
+            p :?> Actual365NoLeapModel
+        else
+            let o = new Actual365NoLeapModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

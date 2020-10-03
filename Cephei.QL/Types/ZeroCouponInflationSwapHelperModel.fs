@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type ZeroCouponInflationSwapHelperModel
     let _update                                    = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.update()
                                                                      _ZeroCouponInflationSwapHelper.Value)
     do this.Bind(_ZeroCouponInflationSwapHelper)
+(* 
+    casting 
+*)
+    internal new () = ZeroCouponInflationSwapHelperModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _ZeroCouponInflationSwapHelper.Value <- v
+    static member Cast (p : ICell<ZeroCouponInflationSwapHelper>) = 
+        if p :? ZeroCouponInflationSwapHelperModel then 
+            p :?> ZeroCouponInflationSwapHelperModel
+        else
+            let o = new ZeroCouponInflationSwapHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

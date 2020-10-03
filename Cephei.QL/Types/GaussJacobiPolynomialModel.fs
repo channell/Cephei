@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type GaussJacobiPolynomialModel
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
                                                    = triv (fun () -> _GaussJacobiPolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussJacobiPolynomial)
+(* 
+    casting 
+*)
+    internal new () = GaussJacobiPolynomialModel(null,null)
+    member internal this.Inject v = _GaussJacobiPolynomial.Value <- v
+    static member Cast (p : ICell<GaussJacobiPolynomial>) = 
+        if p :? GaussJacobiPolynomialModel then 
+            p :?> GaussJacobiPolynomialModel
+        else
+            let o = new GaussJacobiPolynomialModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

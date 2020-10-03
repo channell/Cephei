@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type GaussHyperbolicIntegrationModel
     let _weights                                   = triv (fun () -> _GaussHyperbolicIntegration.Value.weights())
     let _x                                         = triv (fun () -> _GaussHyperbolicIntegration.Value.x())
     do this.Bind(_GaussHyperbolicIntegration)
+(* 
+    casting 
+*)
+    internal new () = GaussHyperbolicIntegrationModel(null)
+    member internal this.Inject v = _GaussHyperbolicIntegration.Value <- v
+    static member Cast (p : ICell<GaussHyperbolicIntegration>) = 
+        if p :? GaussHyperbolicIntegrationModel then 
+            p :?> GaussHyperbolicIntegrationModel
+        else
+            let o = new GaussHyperbolicIntegrationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

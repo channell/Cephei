@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type FDConditionEngineTemplateModel
     let _grid                                      = triv (fun () -> _FDConditionEngineTemplate.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDConditionEngineTemplate.Value.intrinsicValues_)
     do this.Bind(_FDConditionEngineTemplate)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FDConditionEngineTemplate.Value <- v
+    static member Cast (p : ICell<FDConditionEngineTemplate>) = 
+        if p :? FDConditionEngineTemplateModel then 
+            p :?> FDConditionEngineTemplateModel
+        else
+            let o = new FDConditionEngineTemplateModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -108,6 +121,19 @@ type FDConditionEngineTemplateModel1
     let _grid                                      = triv (fun () -> _FDConditionEngineTemplate.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDConditionEngineTemplate.Value.intrinsicValues_)
     do this.Bind(_FDConditionEngineTemplate)
+(* 
+    casting 
+*)
+    internal new () = FDConditionEngineTemplateModel1(null,null,null,null)
+    member internal this.Inject v = _FDConditionEngineTemplate.Value <- v
+    static member Cast (p : ICell<FDConditionEngineTemplate>) = 
+        if p :? FDConditionEngineTemplateModel1 then 
+            p :?> FDConditionEngineTemplateModel1
+        else
+            let o = new FDConditionEngineTemplateModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

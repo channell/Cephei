@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type ForwardSpreadedTermStructureModel
     let _referenceDate                             = triv (fun () -> _ForwardSpreadedTermStructure.Value.referenceDate())
     let _settlementDays                            = triv (fun () -> _ForwardSpreadedTermStructure.Value.settlementDays())
     do this.Bind(_ForwardSpreadedTermStructure)
+(* 
+    casting 
+*)
+    internal new () = ForwardSpreadedTermStructureModel(null,null)
+    member internal this.Inject v = _ForwardSpreadedTermStructure.Value <- v
+    static member Cast (p : ICell<ForwardSpreadedTermStructure>) = 
+        if p :? ForwardSpreadedTermStructureModel then 
+            p :?> ForwardSpreadedTermStructureModel
+        else
+            let o = new ForwardSpreadedTermStructureModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

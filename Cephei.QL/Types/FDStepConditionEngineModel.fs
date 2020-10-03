@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,6 +65,19 @@ type FDStepConditionEngineModel
     let _grid                                      = triv (fun () -> _FDStepConditionEngine.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDStepConditionEngine.Value.intrinsicValues_)
     do this.Bind(_FDStepConditionEngine)
+(* 
+    casting 
+*)
+    internal new () = FDStepConditionEngineModel(null,null,null,null)
+    member internal this.Inject v = _FDStepConditionEngine.Value <- v
+    static member Cast (p : ICell<FDStepConditionEngine>) = 
+        if p :? FDStepConditionEngineModel then 
+            p :?> FDStepConditionEngineModel
+        else
+            let o = new FDStepConditionEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -112,6 +125,19 @@ type FDStepConditionEngineModel1
     let _grid                                      = triv (fun () -> _FDStepConditionEngine.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDStepConditionEngine.Value.intrinsicValues_)
     do this.Bind(_FDStepConditionEngine)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FDStepConditionEngine.Value <- v
+    static member Cast (p : ICell<FDStepConditionEngine>) = 
+        if p :? FDStepConditionEngineModel1 then 
+            p :?> FDStepConditionEngineModel1
+        else
+            let o = new FDStepConditionEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

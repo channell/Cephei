@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -91,6 +91,19 @@ type CapFloorTermVolSurfaceModel
                                                                      _CapFloorTermVolSurface.Value)
     let _extrapolate                               = triv (fun () -> _CapFloorTermVolSurface.Value.extrapolate)
     do this.Bind(_CapFloorTermVolSurface)
+(* 
+    casting 
+*)
+    internal new () = CapFloorTermVolSurfaceModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _CapFloorTermVolSurface.Value <- v
+    static member Cast (p : ICell<CapFloorTermVolSurface>) = 
+        if p :? CapFloorTermVolSurfaceModel then 
+            p :?> CapFloorTermVolSurfaceModel
+        else
+            let o = new CapFloorTermVolSurfaceModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -196,6 +209,19 @@ type CapFloorTermVolSurfaceModel1
                                                                      _CapFloorTermVolSurface.Value)
     let _extrapolate                               = triv (fun () -> _CapFloorTermVolSurface.Value.extrapolate)
     do this.Bind(_CapFloorTermVolSurface)
+(* 
+    casting 
+*)
+    internal new () = CapFloorTermVolSurfaceModel1(null,null,null,null,null,null,null)
+    member internal this.Inject v = _CapFloorTermVolSurface.Value <- v
+    static member Cast (p : ICell<CapFloorTermVolSurface>) = 
+        if p :? CapFloorTermVolSurfaceModel1 then 
+            p :?> CapFloorTermVolSurfaceModel1
+        else
+            let o = new CapFloorTermVolSurfaceModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -301,6 +327,19 @@ type CapFloorTermVolSurfaceModel2
                                                                      _CapFloorTermVolSurface.Value)
     let _extrapolate                               = triv (fun () -> _CapFloorTermVolSurface.Value.extrapolate)
     do this.Bind(_CapFloorTermVolSurface)
+(* 
+    casting 
+*)
+    internal new () = CapFloorTermVolSurfaceModel2(null,null,null,null,null,null,null)
+    member internal this.Inject v = _CapFloorTermVolSurface.Value <- v
+    static member Cast (p : ICell<CapFloorTermVolSurface>) = 
+        if p :? CapFloorTermVolSurfaceModel2 then 
+            p :?> CapFloorTermVolSurfaceModel2
+        else
+            let o = new CapFloorTermVolSurfaceModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -406,6 +445,19 @@ type CapFloorTermVolSurfaceModel3
                                                                      _CapFloorTermVolSurface.Value)
     let _extrapolate                               = triv (fun () -> _CapFloorTermVolSurface.Value.extrapolate)
     do this.Bind(_CapFloorTermVolSurface)
+(* 
+    casting 
+*)
+    internal new () = CapFloorTermVolSurfaceModel3(null,null,null,null,null,null,null)
+    member internal this.Inject v = _CapFloorTermVolSurface.Value <- v
+    static member Cast (p : ICell<CapFloorTermVolSurface>) = 
+        if p :? CapFloorTermVolSurfaceModel3 then 
+            p :?> CapFloorTermVolSurfaceModel3
+        else
+            let o = new CapFloorTermVolSurfaceModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

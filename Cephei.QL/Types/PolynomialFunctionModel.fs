@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type PolynomialFunctionModel
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _PolynomialFunction.Value.value(t.Value))
     do this.Bind(_PolynomialFunction)
+(* 
+    casting 
+*)
+    internal new () = PolynomialFunctionModel(null)
+    member internal this.Inject v = _PolynomialFunction.Value <- v
+    static member Cast (p : ICell<PolynomialFunction>) = 
+        if p :? PolynomialFunctionModel then 
+            p :?> PolynomialFunctionModel
+        else
+            let o = new PolynomialFunctionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

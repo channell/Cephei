@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type LfmHullWhiteParameterizationModel
     let _factors                                   = triv (fun () -> _LfmHullWhiteParameterization.Value.factors())
     let _size                                      = triv (fun () -> _LfmHullWhiteParameterization.Value.size())
     do this.Bind(_LfmHullWhiteParameterization)
+(* 
+    casting 
+*)
+    internal new () = LfmHullWhiteParameterizationModel(null,null,null,null)
+    member internal this.Inject v = _LfmHullWhiteParameterization.Value <- v
+    static member Cast (p : ICell<LfmHullWhiteParameterization>) = 
+        if p :? LfmHullWhiteParameterizationModel then 
+            p :?> LfmHullWhiteParameterizationModel
+        else
+            let o = new LfmHullWhiteParameterizationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -117,6 +130,19 @@ type LfmHullWhiteParameterizationModel1
     let _factors                                   = triv (fun () -> _LfmHullWhiteParameterization.Value.factors())
     let _size                                      = triv (fun () -> _LfmHullWhiteParameterization.Value.size())
     do this.Bind(_LfmHullWhiteParameterization)
+(* 
+    casting 
+*)
+    internal new () = LfmHullWhiteParameterizationModel1(null,null)
+    member internal this.Inject v = _LfmHullWhiteParameterization.Value <- v
+    static member Cast (p : ICell<LfmHullWhiteParameterization>) = 
+        if p :? LfmHullWhiteParameterizationModel1 then 
+            p :?> LfmHullWhiteParameterizationModel1
+        else
+            let o = new LfmHullWhiteParameterizationModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

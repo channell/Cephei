@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type ContinuousAveragingAsianOptionModel
                                                                      _ContinuousAveragingAsianOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousAveragingAsianOption).valuationDate())
     do this.Bind(_ContinuousAveragingAsianOption)
+(* 
+    casting 
+*)
+    internal new () = ContinuousAveragingAsianOptionModel(null,null,null,null,null)
+    member internal this.Inject v = _ContinuousAveragingAsianOption.Value <- v
+    static member Cast (p : ICell<ContinuousAveragingAsianOption>) = 
+        if p :? ContinuousAveragingAsianOptionModel then 
+            p :?> ContinuousAveragingAsianOptionModel
+        else
+            let o = new ContinuousAveragingAsianOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

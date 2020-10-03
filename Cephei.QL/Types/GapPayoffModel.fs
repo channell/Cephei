@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type GapPayoffModel
                                                    = triv (fun () -> _GapPayoff.Value.accept(v.Value)
                                                                      _GapPayoff.Value)
     do this.Bind(_GapPayoff)
+(* 
+    casting 
+*)
+    internal new () = GapPayoffModel(null,null,null)
+    member internal this.Inject v = _GapPayoff.Value <- v
+    static member Cast (p : ICell<GapPayoff>) = 
+        if p :? GapPayoffModel then 
+            p :?> GapPayoffModel
+        else
+            let o = new GapPayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

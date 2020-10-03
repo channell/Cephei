@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type BjerksundStenslandApproximationEngineModel
 *)
     let _BjerksundStenslandApproximationEngine     = cell (fun () -> new BjerksundStenslandApproximationEngine (Process.Value))
     do this.Bind(_BjerksundStenslandApproximationEngine)
+(* 
+    casting 
+*)
+    internal new () = BjerksundStenslandApproximationEngineModel(null)
+    member internal this.Inject v = _BjerksundStenslandApproximationEngine.Value <- v
+    static member Cast (p : ICell<BjerksundStenslandApproximationEngine>) = 
+        if p :? BjerksundStenslandApproximationEngineModel then 
+            p :?> BjerksundStenslandApproximationEngineModel
+        else
+            let o = new BjerksundStenslandApproximationEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

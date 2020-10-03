@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type SymmetricSchurDecompositionModel
     let _eigenvalues                               = triv (fun () -> _SymmetricSchurDecomposition.Value.eigenvalues())
     let _eigenvectors                              = triv (fun () -> _SymmetricSchurDecomposition.Value.eigenvectors())
     do this.Bind(_SymmetricSchurDecomposition)
+(* 
+    casting 
+*)
+    internal new () = SymmetricSchurDecompositionModel(null)
+    member internal this.Inject v = _SymmetricSchurDecomposition.Value <- v
+    static member Cast (p : ICell<SymmetricSchurDecomposition>) = 
+        if p :? SymmetricSchurDecompositionModel then 
+            p :?> SymmetricSchurDecompositionModel
+        else
+            let o = new SymmetricSchurDecompositionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

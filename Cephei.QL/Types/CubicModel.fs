@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type CubicModel
                                                    = triv (fun () -> _Cubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     let _requiredPoints                            = triv (fun () -> _Cubic.Value.requiredPoints)
     do this.Bind(_Cubic)
+(* 
+    casting 
+*)
+    internal new () = CubicModel(null,null,null,null,null,null)
+    member internal this.Inject v = _Cubic.Value <- v
+    static member Cast (p : ICell<Cubic>) = 
+        if p :? CubicModel then 
+            p :?> CubicModel
+        else
+            let o = new CubicModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -94,6 +107,19 @@ type CubicModel1
                                                    = triv (fun () -> _Cubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     let _requiredPoints                            = triv (fun () -> _Cubic.Value.requiredPoints)
     do this.Bind(_Cubic)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Cubic.Value <- v
+    static member Cast (p : ICell<Cubic>) = 
+        if p :? CubicModel1 then 
+            p :?> CubicModel1
+        else
+            let o = new CubicModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

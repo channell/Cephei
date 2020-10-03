@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -73,6 +73,19 @@ type HestonModelModel
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _HestonModel.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_HestonModel)
+(* 
+    casting 
+*)
+    internal new () = HestonModelModel(null)
+    member internal this.Inject v = _HestonModel.Value <- v
+    static member Cast (p : ICell<HestonModel>) = 
+        if p :? HestonModelModel then 
+            p :?> HestonModelModel
+        else
+            let o = new HestonModelModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

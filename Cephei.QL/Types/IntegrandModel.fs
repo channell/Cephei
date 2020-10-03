@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type IntegrandModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _Integrand.Value.value(x.Value))
     do this.Bind(_Integrand)
+(* 
+    casting 
+*)
+    internal new () = IntegrandModel(null,null,null,null)
+    member internal this.Inject v = _Integrand.Value <- v
+    static member Cast (p : ICell<Integrand>) = 
+        if p :? IntegrandModel then 
+            p :?> IntegrandModel
+        else
+            let o = new IntegrandModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

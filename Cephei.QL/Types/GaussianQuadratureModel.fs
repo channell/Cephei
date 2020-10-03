@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type GaussianQuadratureModel
     let _weights                                   = triv (fun () -> _GaussianQuadrature.Value.weights())
     let _x                                         = triv (fun () -> _GaussianQuadrature.Value.x())
     do this.Bind(_GaussianQuadrature)
+(* 
+    casting 
+*)
+    internal new () = GaussianQuadratureModel(null,null)
+    member internal this.Inject v = _GaussianQuadrature.Value <- v
+    static member Cast (p : ICell<GaussianQuadrature>) = 
+        if p :? GaussianQuadratureModel then 
+            p :?> GaussianQuadratureModel
+        else
+            let o = new GaussianQuadratureModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

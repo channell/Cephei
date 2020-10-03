@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type PiecewiseConstantParameterModel
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _PiecewiseConstantParameter.Value.value(t.Value))
     do this.Bind(_PiecewiseConstantParameter)
+(* 
+    casting 
+*)
+    internal new () = PiecewiseConstantParameterModel(null,null)
+    member internal this.Inject v = _PiecewiseConstantParameter.Value <- v
+    static member Cast (p : ICell<PiecewiseConstantParameter>) = 
+        if p :? PiecewiseConstantParameterModel then 
+            p :?> PiecewiseConstantParameterModel
+        else
+            let o = new PiecewiseConstantParameterModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

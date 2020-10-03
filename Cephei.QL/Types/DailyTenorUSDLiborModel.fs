@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -97,6 +97,19 @@ type DailyTenorUSDLiborModel
                                                    = triv (fun () -> _DailyTenorUSDLibor.Value.unregisterWith(handler.Value)
                                                                      _DailyTenorUSDLibor.Value)
     do this.Bind(_DailyTenorUSDLibor)
+(* 
+    casting 
+*)
+    internal new () = DailyTenorUSDLiborModel(null,null)
+    member internal this.Inject v = _DailyTenorUSDLibor.Value <- v
+    static member Cast (p : ICell<DailyTenorUSDLibor>) = 
+        if p :? DailyTenorUSDLiborModel then 
+            p :?> DailyTenorUSDLiborModel
+        else
+            let o = new DailyTenorUSDLiborModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -213,6 +226,19 @@ type DailyTenorUSDLiborModel1
                                                    = triv (fun () -> _DailyTenorUSDLibor.Value.unregisterWith(handler.Value)
                                                                      _DailyTenorUSDLibor.Value)
     do this.Bind(_DailyTenorUSDLibor)
+(* 
+    casting 
+*)
+    internal new () = DailyTenorUSDLiborModel1(null)
+    member internal this.Inject v = _DailyTenorUSDLibor.Value <- v
+    static member Cast (p : ICell<DailyTenorUSDLibor>) = 
+        if p :? DailyTenorUSDLiborModel1 then 
+            p :?> DailyTenorUSDLiborModel1
+        else
+            let o = new DailyTenorUSDLiborModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

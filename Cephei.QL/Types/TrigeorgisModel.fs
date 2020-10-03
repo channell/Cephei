@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type TrigeorgisModel
                                                    = triv (fun () -> _Trigeorgis.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _Trigeorgis.Value.columns())
     do this.Bind(_Trigeorgis)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Trigeorgis.Value <- v
+    static member Cast (p : ICell<Trigeorgis>) = 
+        if p :? TrigeorgisModel then 
+            p :?> TrigeorgisModel
+        else
+            let o = new TrigeorgisModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -105,6 +118,19 @@ type TrigeorgisModel1
                                                    = triv (fun () -> _Trigeorgis.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _Trigeorgis.Value.columns())
     do this.Bind(_Trigeorgis)
+(* 
+    casting 
+*)
+    internal new () = TrigeorgisModel1(null,null,null,null)
+    member internal this.Inject v = _Trigeorgis.Value <- v
+    static member Cast (p : ICell<Trigeorgis>) = 
+        if p :? TrigeorgisModel1 then 
+            p :?> TrigeorgisModel1
+        else
+            let o = new TrigeorgisModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

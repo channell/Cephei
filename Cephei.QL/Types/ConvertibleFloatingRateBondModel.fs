@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -126,6 +126,19 @@ type ConvertibleFloatingRateBondModel
                                                                      _ConvertibleFloatingRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _ConvertibleFloatingRateBond).valuationDate())
     do this.Bind(_ConvertibleFloatingRateBond)
+(* 
+    casting 
+*)
+    internal new () = ConvertibleFloatingRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _ConvertibleFloatingRateBond.Value <- v
+    static member Cast (p : ICell<ConvertibleFloatingRateBond>) = 
+        if p :? ConvertibleFloatingRateBondModel then 
+            p :?> ConvertibleFloatingRateBondModel
+        else
+            let o = new ConvertibleFloatingRateBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

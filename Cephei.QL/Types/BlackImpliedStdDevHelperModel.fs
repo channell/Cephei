@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,31 @@ type BlackImpliedStdDevHelperModel
     let _value                                     (stdDev : ICell<double>)   
                                                    = cell (fun () -> _BlackImpliedStdDevHelper.Value.value(stdDev.Value))
     do this.Bind(_BlackImpliedStdDevHelper)
+(* 
+    casting 
+*)
+    internal new () = BlackImpliedStdDevHelperModel(null,null,null,null,null)
+    member internal this.Inject v = _BlackImpliedStdDevHelper.Value <- v
+    static member Cast (p : ICell<BlackImpliedStdDevHelper>) = 
+        if p :? BlackImpliedStdDevHelperModel then 
+            p :?> BlackImpliedStdDevHelperModel
+        else
+            let o = new BlackImpliedStdDevHelperModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = BlackImpliedStdDevHelperModel(null,null,null,null,null)
+    static member Cast (p : ICell<BlackImpliedStdDevHelper>) = 
+        if p :? BlackImpliedStdDevHelperModel then 
+            p :?> BlackImpliedStdDevHelperModel
+        else
+            let o = new BlackImpliedStdDevHelperModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

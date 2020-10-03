@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type GaussGegenbauerPolynomialModel
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
                                                    = triv (fun () -> _GaussGegenbauerPolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussGegenbauerPolynomial)
+(* 
+    casting 
+*)
+    internal new () = GaussGegenbauerPolynomialModel(null)
+    member internal this.Inject v = _GaussGegenbauerPolynomial.Value <- v
+    static member Cast (p : ICell<GaussGegenbauerPolynomial>) = 
+        if p :? GaussGegenbauerPolynomialModel then 
+            p :?> GaussGegenbauerPolynomialModel
+        else
+            let o = new GaussGegenbauerPolynomialModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

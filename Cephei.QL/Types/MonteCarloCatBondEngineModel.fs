@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type MonteCarloCatBondEngineModel
     let _MonteCarloCatBondEngine                   = cell (fun () -> new MonteCarloCatBondEngine (catRisk.Value, discountCurve.Value, includeSettlementDateFlows.Value))
     let _discountCurve                             = triv (fun () -> _MonteCarloCatBondEngine.Value.discountCurve())
     do this.Bind(_MonteCarloCatBondEngine)
+(* 
+    casting 
+*)
+    internal new () = MonteCarloCatBondEngineModel(null,null,null)
+    member internal this.Inject v = _MonteCarloCatBondEngine.Value <- v
+    static member Cast (p : ICell<MonteCarloCatBondEngine>) = 
+        if p :? MonteCarloCatBondEngineModel then 
+            p :?> MonteCarloCatBondEngineModel
+        else
+            let o = new MonteCarloCatBondEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type pair_doubleModel
                                                    = triv (fun () -> _pair_double.Value.set(first.Value, second.Value)
                                                                      _pair_double.Value)
     do this.Bind(_pair_double)
+(* 
+    casting 
+*)
+    internal new () = pair_doubleModel(null,null)
+    member internal this.Inject v = _pair_double.Value <- v
+    static member Cast (p : ICell<pair_double>) = 
+        if p :? pair_doubleModel then 
+            p :?> pair_doubleModel
+        else
+            let o = new pair_doubleModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

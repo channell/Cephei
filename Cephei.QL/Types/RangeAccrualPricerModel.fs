@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type RangeAccrualPricerModel
     let _update                                    = triv (fun () -> _RangeAccrualPricer.Value.update()
                                                                      _RangeAccrualPricer.Value)
     do this.Bind(_RangeAccrualPricer)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _RangeAccrualPricer.Value <- v
+    static member Cast (p : ICell<RangeAccrualPricer>) = 
+        if p :? RangeAccrualPricerModel then 
+            p :?> RangeAccrualPricerModel
+        else
+            let o = new RangeAccrualPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

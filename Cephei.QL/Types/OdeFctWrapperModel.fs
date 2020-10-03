@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,31 @@ type OdeFctWrapperModel
     let _value                                     (x : ICell<double>) (y : ICell<Generic.List<double>>)   
                                                    = cell (fun () -> _OdeFctWrapper.Value.value(x.Value, y.Value))
     do this.Bind(_OdeFctWrapper)
+(* 
+    casting 
+*)
+    internal new () = OdeFctWrapperModel(null)
+    member internal this.Inject v = _OdeFctWrapper.Value <- v
+    static member Cast (p : ICell<OdeFctWrapper>) = 
+        if p :? OdeFctWrapperModel then 
+            p :?> OdeFctWrapperModel
+        else
+            let o = new OdeFctWrapperModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = OdeFctWrapperModel(null)
+    static member Cast (p : ICell<OdeFctWrapper>) = 
+        if p :? OdeFctWrapperModel then 
+            p :?> OdeFctWrapperModel
+        else
+            let o = new OdeFctWrapperModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

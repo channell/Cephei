@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type CubicSplineOvershootingMinimization2Model
                                                                      _CubicSplineOvershootingMinimization2.Value)
     let _extrapolate                               = triv (fun () -> _CubicSplineOvershootingMinimization2.Value.extrapolate)
     do this.Bind(_CubicSplineOvershootingMinimization2)
+(* 
+    casting 
+*)
+    internal new () = CubicSplineOvershootingMinimization2Model(null,null,null)
+    member internal this.Inject v = _CubicSplineOvershootingMinimization2.Value <- v
+    static member Cast (p : ICell<CubicSplineOvershootingMinimization2>) = 
+        if p :? CubicSplineOvershootingMinimization2Model then 
+            p :?> CubicSplineOvershootingMinimization2Model
+        else
+            let o = new CubicSplineOvershootingMinimization2Model ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

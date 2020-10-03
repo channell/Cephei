@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type EulerDiscretizationModel
     let _variance                                  (Process : ICell<StochasticProcess1D>) (t0 : ICell<double>) (x0 : ICell<double>) (dt : ICell<double>)   
                                                    = triv (fun () -> _EulerDiscretization.Value.variance(Process.Value, t0.Value, x0.Value, dt.Value))
     do this.Bind(_EulerDiscretization)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _EulerDiscretization.Value <- v
+    static member Cast (p : ICell<EulerDiscretization>) = 
+        if p :? EulerDiscretizationModel then 
+            p :?> EulerDiscretizationModel
+        else
+            let o = new EulerDiscretizationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

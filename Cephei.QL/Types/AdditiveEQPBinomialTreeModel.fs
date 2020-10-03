@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type AdditiveEQPBinomialTreeModel
                                                    = triv (fun () -> _AdditiveEQPBinomialTree.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.columns())
     do this.Bind(_AdditiveEQPBinomialTree)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _AdditiveEQPBinomialTree.Value <- v
+    static member Cast (p : ICell<AdditiveEQPBinomialTree>) = 
+        if p :? AdditiveEQPBinomialTreeModel then 
+            p :?> AdditiveEQPBinomialTreeModel
+        else
+            let o = new AdditiveEQPBinomialTreeModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -105,6 +118,19 @@ type AdditiveEQPBinomialTreeModel1
                                                    = triv (fun () -> _AdditiveEQPBinomialTree.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.columns())
     do this.Bind(_AdditiveEQPBinomialTree)
+(* 
+    casting 
+*)
+    internal new () = AdditiveEQPBinomialTreeModel1(null,null,null,null)
+    member internal this.Inject v = _AdditiveEQPBinomialTree.Value <- v
+    static member Cast (p : ICell<AdditiveEQPBinomialTree>) = 
+        if p :? AdditiveEQPBinomialTreeModel1 then 
+            p :?> AdditiveEQPBinomialTreeModel1
+        else
+            let o = new AdditiveEQPBinomialTreeModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

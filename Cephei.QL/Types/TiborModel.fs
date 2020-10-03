@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type TiborModel
                                                    = triv (fun () -> _Tibor.Value.unregisterWith(handler.Value)
                                                                      _Tibor.Value)
     do this.Bind(_Tibor)
+(* 
+    casting 
+*)
+    internal new () = TiborModel(null)
+    member internal this.Inject v = _Tibor.Value <- v
+    static member Cast (p : ICell<Tibor>) = 
+        if p :? TiborModel then 
+            p :?> TiborModel
+        else
+            let o = new TiborModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -212,6 +225,19 @@ type TiborModel1
                                                    = triv (fun () -> _Tibor.Value.unregisterWith(handler.Value)
                                                                      _Tibor.Value)
     do this.Bind(_Tibor)
+(* 
+    casting 
+*)
+    internal new () = TiborModel1(null,null)
+    member internal this.Inject v = _Tibor.Value <- v
+    static member Cast (p : ICell<Tibor>) = 
+        if p :? TiborModel1 then 
+            p :?> TiborModel1
+        else
+            let o = new TiborModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

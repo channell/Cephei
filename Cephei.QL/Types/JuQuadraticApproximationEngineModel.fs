@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type JuQuadraticApproximationEngineModel
 *)
     let _JuQuadraticApproximationEngine            = cell (fun () -> new JuQuadraticApproximationEngine (Process.Value))
     do this.Bind(_JuQuadraticApproximationEngine)
+(* 
+    casting 
+*)
+    internal new () = JuQuadraticApproximationEngineModel(null)
+    member internal this.Inject v = _JuQuadraticApproximationEngine.Value <- v
+    static member Cast (p : ICell<JuQuadraticApproximationEngine>) = 
+        if p :? JuQuadraticApproximationEngineModel then 
+            p :?> JuQuadraticApproximationEngineModel
+        else
+            let o = new JuQuadraticApproximationEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

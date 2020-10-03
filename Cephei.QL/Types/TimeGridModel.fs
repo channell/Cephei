@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type TimeGridModel
                                                    = triv (fun () -> _TimeGrid.Value.[i.Value])
     let _Times                                     = triv (fun () -> _TimeGrid.Value.Times())
     do this.Bind(_TimeGrid)
+(* 
+    casting 
+*)
+    internal new () = TimeGridModel(null,null)
+    member internal this.Inject v = _TimeGrid.Value <- v
+    static member Cast (p : ICell<TimeGrid>) = 
+        if p :? TimeGridModel then 
+            p :?> TimeGridModel
+        else
+            let o = new TimeGridModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -121,6 +134,19 @@ type TimeGridModel1
                                                    = triv (fun () -> _TimeGrid.Value.[i.Value])
     let _Times                                     = triv (fun () -> _TimeGrid.Value.Times())
     do this.Bind(_TimeGrid)
+(* 
+    casting 
+*)
+    internal new () = TimeGridModel1(null)
+    member internal this.Inject v = _TimeGrid.Value <- v
+    static member Cast (p : ICell<TimeGrid>) = 
+        if p :? TimeGridModel1 then 
+            p :?> TimeGridModel1
+        else
+            let o = new TimeGridModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -179,6 +205,19 @@ type TimeGridModel2
                                                    = triv (fun () -> _TimeGrid.Value.[i.Value])
     let _Times                                     = triv (fun () -> _TimeGrid.Value.Times())
     do this.Bind(_TimeGrid)
+(* 
+    casting 
+*)
+    internal new () = TimeGridModel2(null,null)
+    member internal this.Inject v = _TimeGrid.Value <- v
+    static member Cast (p : ICell<TimeGrid>) = 
+        if p :? TimeGridModel2 then 
+            p :?> TimeGridModel2
+        else
+            let o = new TimeGridModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -240,6 +279,19 @@ type TimeGridModel3
                                                    = triv (fun () -> _TimeGrid.Value.[i.Value])
     let _Times                                     = triv (fun () -> _TimeGrid.Value.Times())
     do this.Bind(_TimeGrid)
+(* 
+    casting 
+*)
+    internal new () = TimeGridModel3(null,null,null)
+    member internal this.Inject v = _TimeGrid.Value <- v
+    static member Cast (p : ICell<TimeGrid>) = 
+        if p :? TimeGridModel3 then 
+            p :?> TimeGridModel3
+        else
+            let o = new TimeGridModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

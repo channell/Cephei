@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type NOKCurrencyModel
     let _ToString                                  = triv (fun () -> _NOKCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _NOKCurrency.Value.triangulationCurrency)
     do this.Bind(_NOKCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _NOKCurrency.Value <- v
+    static member Cast (p : ICell<NOKCurrency>) = 
+        if p :? NOKCurrencyModel then 
+            p :?> NOKCurrencyModel
+        else
+            let o = new NOKCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

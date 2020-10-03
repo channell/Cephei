@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,31 @@ type BEJModel
                                                    = cell (fun () -> _BEJ.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _BEJ.Value.name())
     do this.Bind(_BEJ)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _BEJ.Value <- v
+    static member Cast (p : ICell<BEJ>) = 
+        if p :? BEJModel then 
+            p :?> BEJModel
+        else
+            let o = new BEJModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<BEJ>) = 
+        if p :? BEJModel then 
+            p :?> BEJModel
+        else
+            let o = new BEJModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

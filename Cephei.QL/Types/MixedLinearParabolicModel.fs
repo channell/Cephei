@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type MixedLinearParabolicModel
                                                                      _MixedLinearParabolic.Value)
     let _extrapolate                               = triv (fun () -> _MixedLinearParabolic.Value.extrapolate)
     do this.Bind(_MixedLinearParabolic)
+(* 
+    casting 
+*)
+    internal new () = MixedLinearParabolicModel(null,null,null,null,null)
+    member internal this.Inject v = _MixedLinearParabolic.Value <- v
+    static member Cast (p : ICell<MixedLinearParabolic>) = 
+        if p :? MixedLinearParabolicModel then 
+            p :?> MixedLinearParabolicModel
+        else
+            let o = new MixedLinearParabolicModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

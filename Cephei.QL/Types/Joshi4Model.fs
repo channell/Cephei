@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type Joshi4Model
                                                    = triv (fun () -> _Joshi4.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _Joshi4.Value.columns())
     do this.Bind(_Joshi4)
+(* 
+    casting 
+*)
+    internal new () = Joshi4Model(null,null,null,null)
+    member internal this.Inject v = _Joshi4.Value <- v
+    static member Cast (p : ICell<Joshi4>) = 
+        if p :? Joshi4Model then 
+            p :?> Joshi4Model
+        else
+            let o = new Joshi4Model ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -109,6 +122,19 @@ type Joshi4Model1
                                                    = triv (fun () -> _Joshi4.Value.size(i.Value))
     let _columns                                   = triv (fun () -> _Joshi4.Value.columns())
     do this.Bind(_Joshi4)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Joshi4.Value <- v
+    static member Cast (p : ICell<Joshi4>) = 
+        if p :? Joshi4Model1 then 
+            p :?> Joshi4Model1
+        else
+            let o = new Joshi4Model1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

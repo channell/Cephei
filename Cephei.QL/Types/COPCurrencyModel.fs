@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type COPCurrencyModel
     let _ToString                                  = triv (fun () -> _COPCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _COPCurrency.Value.triangulationCurrency)
     do this.Bind(_COPCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _COPCurrency.Value <- v
+    static member Cast (p : ICell<COPCurrency>) = 
+        if p :? COPCurrencyModel then 
+            p :?> COPCurrencyModel
+        else
+            let o = new COPCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

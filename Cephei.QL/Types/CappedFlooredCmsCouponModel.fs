@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -132,6 +132,19 @@ type CappedFlooredCmsCouponModel
                                                    = triv (fun () -> _CappedFlooredCmsCoupon.Value.unregisterWith(handler.Value)
                                                                      _CappedFlooredCmsCoupon.Value)
     do this.Bind(_CappedFlooredCmsCoupon)
+(* 
+    casting 
+*)
+    internal new () = CappedFlooredCmsCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CappedFlooredCmsCoupon.Value <- v
+    static member Cast (p : ICell<CappedFlooredCmsCoupon>) = 
+        if p :? CappedFlooredCmsCouponModel then 
+            p :?> CappedFlooredCmsCouponModel
+        else
+            let o = new CappedFlooredCmsCouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -281,6 +294,19 @@ type CappedFlooredCmsCouponModel1
                                                    = triv (fun () -> _CappedFlooredCmsCoupon.Value.unregisterWith(handler.Value)
                                                                      _CappedFlooredCmsCoupon.Value)
     do this.Bind(_CappedFlooredCmsCoupon)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _CappedFlooredCmsCoupon.Value <- v
+    static member Cast (p : ICell<CappedFlooredCmsCoupon>) = 
+        if p :? CappedFlooredCmsCouponModel1 then 
+            p :?> CappedFlooredCmsCouponModel1
+        else
+            let o = new CappedFlooredCmsCouponModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

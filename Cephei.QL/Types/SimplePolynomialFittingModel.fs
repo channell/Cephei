@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type SimplePolynomialFittingModel
     let _solution                                  = triv (fun () -> _SimplePolynomialFitting.Value.solution())
     let _weights                                   = triv (fun () -> _SimplePolynomialFitting.Value.weights())
     do this.Bind(_SimplePolynomialFitting)
+(* 
+    casting 
+*)
+    internal new () = SimplePolynomialFittingModel(null,null,null,null)
+    member internal this.Inject v = _SimplePolynomialFitting.Value <- v
+    static member Cast (p : ICell<SimplePolynomialFitting>) = 
+        if p :? SimplePolynomialFittingModel then 
+            p :?> SimplePolynomialFittingModel
+        else
+            let o = new SimplePolynomialFittingModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

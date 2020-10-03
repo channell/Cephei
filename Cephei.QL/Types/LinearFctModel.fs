@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,31 @@ type LinearFctModel
     let _value                                     (x : ICell<Generic.List<double>>)   
                                                    = cell (fun () -> _LinearFct.Value.value(x.Value))
     do this.Bind(_LinearFct)
+(* 
+    casting 
+*)
+    internal new () = LinearFctModel(null)
+    member internal this.Inject v = _LinearFct.Value <- v
+    static member Cast (p : ICell<LinearFct>) = 
+        if p :? LinearFctModel then 
+            p :?> LinearFctModel
+        else
+            let o = new LinearFctModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = LinearFctModel(null)
+    static member Cast (p : ICell<LinearFct>) = 
+        if p :? LinearFctModel then 
+            p :?> LinearFctModel
+        else
+            let o = new LinearFctModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

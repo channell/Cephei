@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,6 +65,19 @@ type LogGridModel
                                                    = triv (fun () -> _LogGrid.Value.transformedGrid(i.Value))
     let _transformedGridArray                      = triv (fun () -> _LogGrid.Value.transformedGridArray())
     do this.Bind(_LogGrid)
+(* 
+    casting 
+*)
+    internal new () = LogGridModel(null)
+    member internal this.Inject v = _LogGrid.Value <- v
+    static member Cast (p : ICell<LogGrid>) = 
+        if p :? LogGridModel then 
+            p :?> LogGridModel
+        else
+            let o = new LogGridModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

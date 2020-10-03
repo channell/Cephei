@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type NumericHaganPricerModel
     let _update                                    = triv (fun () -> _NumericHaganPricer.Value.update()
                                                                      _NumericHaganPricer.Value)
     do this.Bind(_NumericHaganPricer)
+(* 
+    casting 
+*)
+    internal new () = NumericHaganPricerModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _NumericHaganPricer.Value <- v
+    static member Cast (p : ICell<NumericHaganPricer>) = 
+        if p :? NumericHaganPricerModel then 
+            p :?> NumericHaganPricerModel
+        else
+            let o = new NumericHaganPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

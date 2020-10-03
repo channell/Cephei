@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type Bkbm2MModel
                                                    = triv (fun () -> _Bkbm2M.Value.unregisterWith(handler.Value)
                                                                      _Bkbm2M.Value)
     do this.Bind(_Bkbm2M)
+(* 
+    casting 
+*)
+    internal new () = Bkbm2MModel(null)
+    member internal this.Inject v = _Bkbm2M.Value <- v
+    static member Cast (p : ICell<Bkbm2M>) = 
+        if p :? Bkbm2MModel then 
+            p :?> Bkbm2MModel
+        else
+            let o = new Bkbm2MModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

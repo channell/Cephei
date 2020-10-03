@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -75,6 +75,19 @@ type FraRateHelperModel
                                                    = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FraRateHelperModel(null,null,null,null,null)
+    member internal this.Inject v = _FraRateHelper.Value <- v
+    static member Cast (p : ICell<FraRateHelper>) = 
+        if p :? FraRateHelperModel then 
+            p :?> FraRateHelperModel
+        else
+            let o = new FraRateHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -149,6 +162,19 @@ type FraRateHelperModel1
                                                    = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FraRateHelperModel1(null,null,null,null,null)
+    member internal this.Inject v = _FraRateHelper.Value <- v
+    static member Cast (p : ICell<FraRateHelper>) = 
+        if p :? FraRateHelperModel1 then 
+            p :?> FraRateHelperModel1
+        else
+            let o = new FraRateHelperModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -233,6 +259,19 @@ type FraRateHelperModel2
                                                    = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FraRateHelperModel2(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FraRateHelper.Value <- v
+    static member Cast (p : ICell<FraRateHelper>) = 
+        if p :? FraRateHelperModel2 then 
+            p :?> FraRateHelperModel2
+        else
+            let o = new FraRateHelperModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -322,6 +361,19 @@ type FraRateHelperModel3
                                                    = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FraRateHelperModel3(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FraRateHelper.Value <- v
+    static member Cast (p : ICell<FraRateHelper>) = 
+        if p :? FraRateHelperModel3 then 
+            p :?> FraRateHelperModel3
+        else
+            let o = new FraRateHelperModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -401,6 +453,19 @@ type FraRateHelperModel4
                                                    = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FraRateHelperModel4(null,null,null,null,null)
+    member internal this.Inject v = _FraRateHelper.Value <- v
+    static member Cast (p : ICell<FraRateHelper>) = 
+        if p :? FraRateHelperModel4 then 
+            p :?> FraRateHelperModel4
+        else
+            let o = new FraRateHelperModel4 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -475,6 +540,19 @@ type FraRateHelperModel5
                                                    = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FraRateHelperModel5(null,null,null,null,null)
+    member internal this.Inject v = _FraRateHelper.Value <- v
+    static member Cast (p : ICell<FraRateHelper>) = 
+        if p :? FraRateHelperModel5 then 
+            p :?> FraRateHelperModel5
+        else
+            let o = new FraRateHelperModel5 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -559,6 +637,19 @@ type FraRateHelperModel6
                                                    = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FraRateHelperModel6(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FraRateHelper.Value <- v
+    static member Cast (p : ICell<FraRateHelper>) = 
+        if p :? FraRateHelperModel6 then 
+            p :?> FraRateHelperModel6
+        else
+            let o = new FraRateHelperModel6 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -648,6 +739,19 @@ type FraRateHelperModel7
                                                    = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FraRateHelperModel7(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FraRateHelper.Value <- v
+    static member Cast (p : ICell<FraRateHelper>) = 
+        if p :? FraRateHelperModel7 then 
+            p :?> FraRateHelperModel7
+        else
+            let o = new FraRateHelperModel7 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

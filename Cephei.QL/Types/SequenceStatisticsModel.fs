@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -98,6 +98,19 @@ type SequenceStatisticsModel
     let _variance                                  = triv (fun () -> _SequenceStatistics.Value.variance())
     let _weightSum                                 = triv (fun () -> _SequenceStatistics.Value.weightSum())
     do this.Bind(_SequenceStatistics)
+(* 
+    casting 
+*)
+    internal new () = SequenceStatisticsModel(null)
+    member internal this.Inject v = _SequenceStatistics.Value <- v
+    static member Cast (p : ICell<SequenceStatistics>) = 
+        if p :? SequenceStatisticsModel then 
+            p :?> SequenceStatisticsModel
+        else
+            let o = new SequenceStatisticsModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

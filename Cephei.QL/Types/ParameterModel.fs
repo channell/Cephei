@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type ParameterModel
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _Parameter.Value.value(t.Value))
     do this.Bind(_Parameter)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Parameter.Value <- v
+    static member Cast (p : ICell<Parameter>) = 
+        if p :? ParameterModel then 
+            p :?> ParameterModel
+        else
+            let o = new ParameterModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

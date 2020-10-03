@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,6 +49,19 @@ type MoneyModel
     let _ToString                                  = triv (fun () -> _Money.Value.ToString())
     let _value                                     = triv (fun () -> _Money.Value.value)
     do this.Bind(_Money)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Money.Value <- v
+    static member Cast (p : ICell<Money>) = 
+        if p :? MoneyModel then 
+            p :?> MoneyModel
+        else
+            let o = new MoneyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -86,6 +99,19 @@ type MoneyModel1
     let _ToString                                  = triv (fun () -> _Money.Value.ToString())
     let _value                                     = triv (fun () -> _Money.Value.value)
     do this.Bind(_Money)
+(* 
+    casting 
+*)
+    internal new () = MoneyModel1(null,null)
+    member internal this.Inject v = _Money.Value <- v
+    static member Cast (p : ICell<Money>) = 
+        if p :? MoneyModel1 then 
+            p :?> MoneyModel1
+        else
+            let o = new MoneyModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -125,6 +151,19 @@ type MoneyModel2
     let _ToString                                  = triv (fun () -> _Money.Value.ToString())
     let _value                                     = triv (fun () -> _Money.Value.value)
     do this.Bind(_Money)
+(* 
+    casting 
+*)
+    internal new () = MoneyModel2(null,null)
+    member internal this.Inject v = _Money.Value <- v
+    static member Cast (p : ICell<Money>) = 
+        if p :? MoneyModel2 then 
+            p :?> MoneyModel2
+        else
+            let o = new MoneyModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

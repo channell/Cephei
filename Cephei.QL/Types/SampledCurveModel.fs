@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -92,6 +92,19 @@ type SampledCurveModel
     let _valueAtCenter                             = triv (fun () -> _SampledCurve.Value.valueAtCenter())
     let _values                                    = triv (fun () -> _SampledCurve.Value.values())
     do this.Bind(_SampledCurve)
+(* 
+    casting 
+*)
+    internal new () = SampledCurveModel(null)
+    member internal this.Inject v = _SampledCurve.Value <- v
+    static member Cast (p : ICell<SampledCurve>) = 
+        if p :? SampledCurveModel then 
+            p :?> SampledCurveModel
+        else
+            let o = new SampledCurveModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -198,6 +211,19 @@ type SampledCurveModel1
     let _valueAtCenter                             = triv (fun () -> _SampledCurve.Value.valueAtCenter())
     let _values                                    = triv (fun () -> _SampledCurve.Value.values())
     do this.Bind(_SampledCurve)
+(* 
+    casting 
+*)
+    internal new () = SampledCurveModel1(null)
+    member internal this.Inject v = _SampledCurve.Value <- v
+    static member Cast (p : ICell<SampledCurve>) = 
+        if p :? SampledCurveModel1 then 
+            p :?> SampledCurveModel1
+        else
+            let o = new SampledCurveModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

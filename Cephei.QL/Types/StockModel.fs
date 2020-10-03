@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type StockModel
                                                                      _Stock.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Stock).valuationDate())
     do this.Bind(_Stock)
+(* 
+    casting 
+*)
+    internal new () = StockModel(null,null,null)
+    member internal this.Inject v = _Stock.Value <- v
+    static member Cast (p : ICell<Stock>) = 
+        if p :? StockModel then 
+            p :?> StockModel
+        else
+            let o = new StockModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

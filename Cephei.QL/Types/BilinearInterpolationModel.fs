@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -81,6 +81,19 @@ type BilinearInterpolationModel
                                                                      _BilinearInterpolation.Value)
     let _extrapolate                               = triv (fun () -> _BilinearInterpolation.Value.extrapolate)
     do this.Bind(_BilinearInterpolation)
+(* 
+    casting 
+*)
+    internal new () = BilinearInterpolationModel(null,null,null,null,null)
+    member internal this.Inject v = _BilinearInterpolation.Value <- v
+    static member Cast (p : ICell<BilinearInterpolation>) = 
+        if p :? BilinearInterpolationModel then 
+            p :?> BilinearInterpolationModel
+        else
+            let o = new BilinearInterpolationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

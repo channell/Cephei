@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type TripleBandLinearOpModel
                                                                      _TripleBandLinearOp.Value)
     let _toMatrix                                  = triv (fun () -> _TripleBandLinearOp.Value.toMatrix())
     do this.Bind(_TripleBandLinearOp)
+(* 
+    casting 
+*)
+    internal new () = TripleBandLinearOpModel(null)
+    member internal this.Inject v = _TripleBandLinearOp.Value <- v
+    static member Cast (p : ICell<TripleBandLinearOp>) = 
+        if p :? TripleBandLinearOpModel then 
+            p :?> TripleBandLinearOpModel
+        else
+            let o = new TripleBandLinearOpModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -180,6 +193,19 @@ type TripleBandLinearOpModel1
                                                                      _TripleBandLinearOp.Value)
     let _toMatrix                                  = triv (fun () -> _TripleBandLinearOp.Value.toMatrix())
     do this.Bind(_TripleBandLinearOp)
+(* 
+    casting 
+*)
+    internal new () = TripleBandLinearOpModel1(null,null)
+    member internal this.Inject v = _TripleBandLinearOp.Value <- v
+    static member Cast (p : ICell<TripleBandLinearOp>) = 
+        if p :? TripleBandLinearOpModel1 then 
+            p :?> TripleBandLinearOpModel1
+        else
+            let o = new TripleBandLinearOpModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

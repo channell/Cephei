@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type FdmSchemeDescModel
     let _TrBDF2                                    = triv (fun () -> _FdmSchemeDesc.Value.TrBDF2())
     let _type                                      = triv (fun () -> _FdmSchemeDesc.Value.TYPE)
     do this.Bind(_FdmSchemeDesc)
+(* 
+    casting 
+*)
+    internal new () = FdmSchemeDescModel(null,null,null)
+    member internal this.Inject v = _FdmSchemeDesc.Value <- v
+    static member Cast (p : ICell<FdmSchemeDesc>) = 
+        if p :? FdmSchemeDescModel then 
+            p :?> FdmSchemeDescModel
+        else
+            let o = new FdmSchemeDescModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -115,6 +128,19 @@ type FdmSchemeDescModel1
     let _TrBDF2                                    = triv (fun () -> _FdmSchemeDesc.Value.TrBDF2())
     let _type                                      = triv (fun () -> _FdmSchemeDesc.Value.TYPE)
     do this.Bind(_FdmSchemeDesc)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FdmSchemeDesc.Value <- v
+    static member Cast (p : ICell<FdmSchemeDesc>) = 
+        if p :? FdmSchemeDescModel1 then 
+            p :?> FdmSchemeDescModel1
+        else
+            let o = new FdmSchemeDescModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

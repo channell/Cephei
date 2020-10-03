@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type BDTCurrencyModel
     let _ToString                                  = triv (fun () -> _BDTCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _BDTCurrency.Value.triangulationCurrency)
     do this.Bind(_BDTCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _BDTCurrency.Value <- v
+    static member Cast (p : ICell<BDTCurrency>) = 
+        if p :? BDTCurrencyModel then 
+            p :?> BDTCurrencyModel
+        else
+            let o = new BDTCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

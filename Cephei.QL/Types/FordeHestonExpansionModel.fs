@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type FordeHestonExpansionModel
     let _impliedVolatility                         (strike : ICell<double>) (forward : ICell<double>)   
                                                    = triv (fun () -> _FordeHestonExpansion.Value.impliedVolatility(strike.Value, forward.Value))
     do this.Bind(_FordeHestonExpansion)
+(* 
+    casting 
+*)
+    internal new () = FordeHestonExpansionModel(null,null,null,null,null,null)
+    member internal this.Inject v = _FordeHestonExpansion.Value <- v
+    static member Cast (p : ICell<FordeHestonExpansion>) = 
+        if p :? FordeHestonExpansionModel then 
+            p :?> FordeHestonExpansionModel
+        else
+            let o = new FordeHestonExpansionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

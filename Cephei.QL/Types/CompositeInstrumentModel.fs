@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type CompositeInstrumentModel
                                                                      _CompositeInstrument.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CompositeInstrument).valuationDate())
     do this.Bind(_CompositeInstrument)
+(* 
+    casting 
+*)
+    internal new () = CompositeInstrumentModel(null,null)
+    member internal this.Inject v = _CompositeInstrument.Value <- v
+    static member Cast (p : ICell<CompositeInstrument>) = 
+        if p :? CompositeInstrumentModel then 
+            p :?> CompositeInstrumentModel
+        else
+            let o = new CompositeInstrumentModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

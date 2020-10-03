@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type BermudanExerciseModel
     let _lastDate                                  = triv (fun () -> _BermudanExercise.Value.lastDate())
     let _type                                      = triv (fun () -> _BermudanExercise.Value.TYPE())
     do this.Bind(_BermudanExercise)
+(* 
+    casting 
+*)
+    internal new () = BermudanExerciseModel(null)
+    member internal this.Inject v = _BermudanExercise.Value <- v
+    static member Cast (p : ICell<BermudanExercise>) = 
+        if p :? BermudanExerciseModel then 
+            p :?> BermudanExerciseModel
+        else
+            let o = new BermudanExerciseModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -90,6 +103,19 @@ type BermudanExerciseModel1
     let _lastDate                                  = triv (fun () -> _BermudanExercise.Value.lastDate())
     let _type                                      = triv (fun () -> _BermudanExercise.Value.TYPE())
     do this.Bind(_BermudanExercise)
+(* 
+    casting 
+*)
+    internal new () = BermudanExerciseModel1(null,null)
+    member internal this.Inject v = _BermudanExercise.Value <- v
+    static member Cast (p : ICell<BermudanExercise>) = 
+        if p :? BermudanExerciseModel1 then 
+            p :?> BermudanExerciseModel1
+        else
+            let o = new BermudanExerciseModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

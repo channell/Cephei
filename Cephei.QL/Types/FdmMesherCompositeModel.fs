@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type FdmMesherCompositeModel
                                                    = triv (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
     let _layout                                    = triv (fun () -> _FdmMesherComposite.Value.layout())
     do this.Bind(_FdmMesherComposite)
+(* 
+    casting 
+*)
+    internal new () = FdmMesherCompositeModel(null,null)
+    member internal this.Inject v = _FdmMesherComposite.Value <- v
+    static member Cast (p : ICell<FdmMesherComposite>) = 
+        if p :? FdmMesherCompositeModel then 
+            p :?> FdmMesherCompositeModel
+        else
+            let o = new FdmMesherCompositeModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -103,6 +116,19 @@ type FdmMesherCompositeModel1
                                                    = triv (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
     let _layout                                    = triv (fun () -> _FdmMesherComposite.Value.layout())
     do this.Bind(_FdmMesherComposite)
+(* 
+    casting 
+*)
+    internal new () = FdmMesherCompositeModel1(null)
+    member internal this.Inject v = _FdmMesherComposite.Value <- v
+    static member Cast (p : ICell<FdmMesherComposite>) = 
+        if p :? FdmMesherCompositeModel1 then 
+            p :?> FdmMesherCompositeModel1
+        else
+            let o = new FdmMesherCompositeModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -153,6 +179,19 @@ type FdmMesherCompositeModel2
                                                    = triv (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
     let _layout                                    = triv (fun () -> _FdmMesherComposite.Value.layout())
     do this.Bind(_FdmMesherComposite)
+(* 
+    casting 
+*)
+    internal new () = FdmMesherCompositeModel2(null,null,null,null)
+    member internal this.Inject v = _FdmMesherComposite.Value <- v
+    static member Cast (p : ICell<FdmMesherComposite>) = 
+        if p :? FdmMesherCompositeModel2 then 
+            p :?> FdmMesherCompositeModel2
+        else
+            let o = new FdmMesherCompositeModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -200,6 +239,19 @@ type FdmMesherCompositeModel3
                                                    = triv (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
     let _layout                                    = triv (fun () -> _FdmMesherComposite.Value.layout())
     do this.Bind(_FdmMesherComposite)
+(* 
+    casting 
+*)
+    internal new () = FdmMesherCompositeModel3(null)
+    member internal this.Inject v = _FdmMesherComposite.Value <- v
+    static member Cast (p : ICell<FdmMesherComposite>) = 
+        if p :? FdmMesherCompositeModel3 then 
+            p :?> FdmMesherCompositeModel3
+        else
+            let o = new FdmMesherCompositeModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -246,6 +298,19 @@ type FdmMesherCompositeModel4
                                                    = triv (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
     let _layout                                    = triv (fun () -> _FdmMesherComposite.Value.layout())
     do this.Bind(_FdmMesherComposite)
+(* 
+    casting 
+*)
+    internal new () = FdmMesherCompositeModel4(null,null)
+    member internal this.Inject v = _FdmMesherComposite.Value <- v
+    static member Cast (p : ICell<FdmMesherComposite>) = 
+        if p :? FdmMesherCompositeModel4 then 
+            p :?> FdmMesherCompositeModel4
+        else
+            let o = new FdmMesherCompositeModel4 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -295,6 +360,19 @@ type FdmMesherCompositeModel5
                                                    = triv (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
     let _layout                                    = triv (fun () -> _FdmMesherComposite.Value.layout())
     do this.Bind(_FdmMesherComposite)
+(* 
+    casting 
+*)
+    internal new () = FdmMesherCompositeModel5(null,null,null)
+    member internal this.Inject v = _FdmMesherComposite.Value <- v
+    static member Cast (p : ICell<FdmMesherComposite>) = 
+        if p :? FdmMesherCompositeModel5 then 
+            p :?> FdmMesherCompositeModel5
+        else
+            let o = new FdmMesherCompositeModel5 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

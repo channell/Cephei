@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type GMRESResultModel
     let _Errors                                    = triv (fun () -> _GMRESResult.Value.Errors)
     let _X                                         = triv (fun () -> _GMRESResult.Value.X)
     do this.Bind(_GMRESResult)
+(* 
+    casting 
+*)
+    internal new () = GMRESResultModel(null,null)
+    member internal this.Inject v = _GMRESResult.Value <- v
+    static member Cast (p : ICell<GMRESResult>) = 
+        if p :? GMRESResultModel then 
+            p :?> GMRESResultModel
+        else
+            let o = new GMRESResultModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

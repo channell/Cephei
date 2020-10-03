@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type SEKLiborModel
                                                    = triv (fun () -> _SEKLibor.Value.unregisterWith(handler.Value)
                                                                      _SEKLibor.Value)
     do this.Bind(_SEKLibor)
+(* 
+    casting 
+*)
+    internal new () = SEKLiborModel(null)
+    member internal this.Inject v = _SEKLibor.Value <- v
+    static member Cast (p : ICell<SEKLibor>) = 
+        if p :? SEKLiborModel then 
+            p :?> SEKLiborModel
+        else
+            let o = new SEKLiborModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -212,6 +225,19 @@ type SEKLiborModel1
                                                    = triv (fun () -> _SEKLibor.Value.unregisterWith(handler.Value)
                                                                      _SEKLibor.Value)
     do this.Bind(_SEKLibor)
+(* 
+    casting 
+*)
+    internal new () = SEKLiborModel1(null,null)
+    member internal this.Inject v = _SEKLibor.Value <- v
+    static member Cast (p : ICell<SEKLibor>) = 
+        if p :? SEKLiborModel1 then 
+            p :?> SEKLiborModel1
+        else
+            let o = new SEKLiborModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

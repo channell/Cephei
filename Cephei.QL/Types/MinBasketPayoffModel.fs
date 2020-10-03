@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type MinBasketPayoffModel
                                                    = triv (fun () -> _MinBasketPayoff.Value.accept(v.Value)
                                                                      _MinBasketPayoff.Value)
     do this.Bind(_MinBasketPayoff)
+(* 
+    casting 
+*)
+    internal new () = MinBasketPayoffModel(null)
+    member internal this.Inject v = _MinBasketPayoff.Value <- v
+    static member Cast (p : ICell<MinBasketPayoff>) = 
+        if p :? MinBasketPayoffModel then 
+            p :?> MinBasketPayoffModel
+        else
+            let o = new MinBasketPayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

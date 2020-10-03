@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type PlainVanillaPayoffModel
                                                    = triv (fun () -> _PlainVanillaPayoff.Value.accept(v.Value)
                                                                      _PlainVanillaPayoff.Value)
     do this.Bind(_PlainVanillaPayoff)
+(* 
+    casting 
+*)
+    internal new () = PlainVanillaPayoffModel(null,null)
+    member internal this.Inject v = _PlainVanillaPayoff.Value <- v
+    static member Cast (p : ICell<PlainVanillaPayoff>) = 
+        if p :? PlainVanillaPayoffModel then 
+            p :?> PlainVanillaPayoffModel
+        else
+            let o = new PlainVanillaPayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

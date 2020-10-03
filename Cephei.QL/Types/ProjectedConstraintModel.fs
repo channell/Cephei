@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type ProjectedConstraintModel
     let _upperBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _ProjectedConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_ProjectedConstraint)
+(* 
+    casting 
+*)
+    internal new () = ProjectedConstraintModel(null,null)
+    member internal this.Inject v = _ProjectedConstraint.Value <- v
+    static member Cast (p : ICell<ProjectedConstraint>) = 
+        if p :? ProjectedConstraintModel then 
+            p :?> ProjectedConstraintModel
+        else
+            let o = new ProjectedConstraintModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -104,6 +117,19 @@ type ProjectedConstraintModel1
     let _upperBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _ProjectedConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_ProjectedConstraint)
+(* 
+    casting 
+*)
+    internal new () = ProjectedConstraintModel1(null,null,null)
+    member internal this.Inject v = _ProjectedConstraint.Value <- v
+    static member Cast (p : ICell<ProjectedConstraint>) = 
+        if p :? ProjectedConstraintModel1 then 
+            p :?> ProjectedConstraintModel1
+        else
+            let o = new ProjectedConstraintModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

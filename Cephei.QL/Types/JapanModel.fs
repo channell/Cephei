@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -98,6 +98,19 @@ type JapanModel
                                                    = triv (fun () -> _Japan.Value.removeHoliday(d.Value)
                                                                      _Japan.Value)
     do this.Bind(_Japan)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Japan.Value <- v
+    static member Cast (p : ICell<Japan>) = 
+        if p :? JapanModel then 
+            p :?> JapanModel
+        else
+            let o = new JapanModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

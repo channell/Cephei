@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -70,6 +70,19 @@ type InterestRateModel
     let _ToString                                  = triv (fun () -> _InterestRate.Value.ToString())
     let _value                                     = triv (fun () -> _InterestRate.Value.value())
     do this.Bind(_InterestRate)
+(* 
+    casting 
+*)
+    internal new () = InterestRateModel(null,null,null,null)
+    member internal this.Inject v = _InterestRate.Value <- v
+    static member Cast (p : ICell<InterestRate>) = 
+        if p :? InterestRateModel then 
+            p :?> InterestRateModel
+        else
+            let o = new InterestRateModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -130,6 +143,19 @@ type InterestRateModel1
     let _ToString                                  = triv (fun () -> _InterestRate.Value.ToString())
     let _value                                     = triv (fun () -> _InterestRate.Value.value())
     do this.Bind(_InterestRate)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _InterestRate.Value <- v
+    static member Cast (p : ICell<InterestRate>) = 
+        if p :? InterestRateModel1 then 
+            p :?> InterestRateModel1
+        else
+            let o = new InterestRateModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

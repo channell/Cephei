@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -86,6 +86,19 @@ type BasisSwapHelperModel
                                                    = triv (fun () -> _BasisSwapHelper.Value.unregisterWith(handler.Value)
                                                                      _BasisSwapHelper.Value)
     do this.Bind(_BasisSwapHelper)
+(* 
+    casting 
+*)
+    internal new () = BasisSwapHelperModel(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _BasisSwapHelper.Value <- v
+    static member Cast (p : ICell<BasisSwapHelper>) = 
+        if p :? BasisSwapHelperModel then 
+            p :?> BasisSwapHelperModel
+        else
+            let o = new BasisSwapHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

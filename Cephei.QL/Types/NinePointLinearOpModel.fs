@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -72,6 +72,19 @@ type NinePointLinearOpModel
                                                                      _NinePointLinearOp.Value)
     let _toMatrix                                  = triv (fun () -> _NinePointLinearOp.Value.toMatrix())
     do this.Bind(_NinePointLinearOp)
+(* 
+    casting 
+*)
+    internal new () = NinePointLinearOpModel(null)
+    member internal this.Inject v = _NinePointLinearOp.Value <- v
+    static member Cast (p : ICell<NinePointLinearOp>) = 
+        if p :? NinePointLinearOpModel then 
+            p :?> NinePointLinearOpModel
+        else
+            let o = new NinePointLinearOpModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -150,6 +163,19 @@ type NinePointLinearOpModel1
                                                                      _NinePointLinearOp.Value)
     let _toMatrix                                  = triv (fun () -> _NinePointLinearOp.Value.toMatrix())
     do this.Bind(_NinePointLinearOp)
+(* 
+    casting 
+*)
+    internal new () = NinePointLinearOpModel1(null,null,null)
+    member internal this.Inject v = _NinePointLinearOp.Value <- v
+    static member Cast (p : ICell<NinePointLinearOp>) = 
+        if p :? NinePointLinearOpModel1 then 
+            p :?> NinePointLinearOpModel1
+        else
+            let o = new NinePointLinearOpModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

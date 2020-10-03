@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -47,6 +47,19 @@ type LogLinearModel
                                                    = triv (fun () -> _LogLinear.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     let _requiredPoints                            = triv (fun () -> _LogLinear.Value.requiredPoints)
     do this.Bind(_LogLinear)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _LogLinear.Value <- v
+    static member Cast (p : ICell<LogLinear>) = 
+        if p :? LogLinearModel then 
+            p :?> LogLinearModel
+        else
+            let o = new LogLinearModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

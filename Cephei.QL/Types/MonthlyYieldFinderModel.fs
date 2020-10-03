@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type MonthlyYieldFinderModel
     let _derivative                                (x : ICell<double>)   
                                                    = triv (fun () -> _MonthlyYieldFinder.Value.derivative(x.Value))
     do this.Bind(_MonthlyYieldFinder)
+(* 
+    casting 
+*)
+    internal new () = MonthlyYieldFinderModel(null,null,null)
+    member internal this.Inject v = _MonthlyYieldFinder.Value <- v
+    static member Cast (p : ICell<MonthlyYieldFinder>) = 
+        if p :? MonthlyYieldFinderModel then 
+            p :?> MonthlyYieldFinderModel
+        else
+            let o = new MonthlyYieldFinderModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

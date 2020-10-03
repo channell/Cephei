@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -81,6 +81,19 @@ type IndexedCashFlowModel
                                                    = triv (fun () -> _IndexedCashFlow.Value.unregisterWith(handler.Value)
                                                                      _IndexedCashFlow.Value)
     do this.Bind(_IndexedCashFlow)
+(* 
+    casting 
+*)
+    internal new () = IndexedCashFlowModel(null,null,null,null,null,null)
+    member internal this.Inject v = _IndexedCashFlow.Value <- v
+    static member Cast (p : ICell<IndexedCashFlow>) = 
+        if p :? IndexedCashFlowModel then 
+            p :?> IndexedCashFlowModel
+        else
+            let o = new IndexedCashFlowModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

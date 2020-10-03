@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -80,6 +80,19 @@ type BespokeCalendarModel
                                                    = triv (fun () -> _BespokeCalendar.Value.removeHoliday(d.Value)
                                                                      _BespokeCalendar.Value)
     do this.Bind(_BespokeCalendar)
+(* 
+    casting 
+*)
+    internal new () = BespokeCalendarModel(null)
+    member internal this.Inject v = _BespokeCalendar.Value <- v
+    static member Cast (p : ICell<BespokeCalendar>) = 
+        if p :? BespokeCalendarModel then 
+            p :?> BespokeCalendarModel
+        else
+            let o = new BespokeCalendarModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -166,6 +179,19 @@ type BespokeCalendarModel1
                                                    = triv (fun () -> _BespokeCalendar.Value.removeHoliday(d.Value)
                                                                      _BespokeCalendar.Value)
     do this.Bind(_BespokeCalendar)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _BespokeCalendar.Value <- v
+    static member Cast (p : ICell<BespokeCalendar>) = 
+        if p :? BespokeCalendarModel1 then 
+            p :?> BespokeCalendarModel1
+        else
+            let o = new BespokeCalendarModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

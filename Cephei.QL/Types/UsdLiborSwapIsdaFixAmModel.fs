@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -104,6 +104,19 @@ type UsdLiborSwapIsdaFixAmModel
                                                    = triv (fun () -> _UsdLiborSwapIsdaFixAm.Value.unregisterWith(handler.Value)
                                                                      _UsdLiborSwapIsdaFixAm.Value)
     do this.Bind(_UsdLiborSwapIsdaFixAm)
+(* 
+    casting 
+*)
+    internal new () = UsdLiborSwapIsdaFixAmModel(null,null)
+    member internal this.Inject v = _UsdLiborSwapIsdaFixAm.Value <- v
+    static member Cast (p : ICell<UsdLiborSwapIsdaFixAm>) = 
+        if p :? UsdLiborSwapIsdaFixAmModel then 
+            p :?> UsdLiborSwapIsdaFixAmModel
+        else
+            let o = new UsdLiborSwapIsdaFixAmModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -234,6 +247,19 @@ type UsdLiborSwapIsdaFixAmModel1
                                                    = triv (fun () -> _UsdLiborSwapIsdaFixAm.Value.unregisterWith(handler.Value)
                                                                      _UsdLiborSwapIsdaFixAm.Value)
     do this.Bind(_UsdLiborSwapIsdaFixAm)
+(* 
+    casting 
+*)
+    internal new () = UsdLiborSwapIsdaFixAmModel1(null)
+    member internal this.Inject v = _UsdLiborSwapIsdaFixAm.Value <- v
+    static member Cast (p : ICell<UsdLiborSwapIsdaFixAm>) = 
+        if p :? UsdLiborSwapIsdaFixAmModel1 then 
+            p :?> UsdLiborSwapIsdaFixAmModel1
+        else
+            let o = new UsdLiborSwapIsdaFixAmModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

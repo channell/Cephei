@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -112,6 +112,19 @@ type BrazilModel
                                                    = triv (fun () -> _Brazil.Value.removeHoliday(d.Value)
                                                                      _Brazil.Value)
     do this.Bind(_Brazil)
+(* 
+    casting 
+*)
+    internal new () = BrazilModel(null)
+    member internal this.Inject v = _Brazil.Value <- v
+    static member Cast (p : ICell<Brazil>) = 
+        if p :? BrazilModel then 
+            p :?> BrazilModel
+        else
+            let o = new BrazilModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -228,6 +241,19 @@ type BrazilModel1
                                                    = triv (fun () -> _Brazil.Value.removeHoliday(d.Value)
                                                                      _Brazil.Value)
     do this.Bind(_Brazil)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Brazil.Value <- v
+    static member Cast (p : ICell<Brazil>) = 
+        if p :? BrazilModel1 then 
+            p :?> BrazilModel1
+        else
+            let o = new BrazilModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

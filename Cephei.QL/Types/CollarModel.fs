@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type CollarModel
                                                                      _Collar.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Collar).valuationDate())
     do this.Bind(_Collar)
+(* 
+    casting 
+*)
+    internal new () = CollarModel(null,null,null,null,null)
+    member internal this.Inject v = _Collar.Value <- v
+    static member Cast (p : ICell<Collar>) = 
+        if p :? CollarModel then 
+            p :?> CollarModel
+        else
+            let o = new CollarModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

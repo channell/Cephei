@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -116,6 +116,19 @@ type ZeroCouponInflationSwapModel
                                                                      _ZeroCouponInflationSwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _ZeroCouponInflationSwap).valuationDate())
     do this.Bind(_ZeroCouponInflationSwap)
+(* 
+    casting 
+*)
+    internal new () = ZeroCouponInflationSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _ZeroCouponInflationSwap.Value <- v
+    static member Cast (p : ICell<ZeroCouponInflationSwap>) = 
+        if p :? ZeroCouponInflationSwapModel then 
+            p :?> ZeroCouponInflationSwapModel
+        else
+            let o = new ZeroCouponInflationSwapModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

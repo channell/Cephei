@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type ExplicitEulerSchemeModel
                                                    = triv (fun () -> _ExplicitEulerScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _ExplicitEulerScheme.Value)
     do this.Bind(_ExplicitEulerScheme)
+(* 
+    casting 
+*)
+    internal new () = ExplicitEulerSchemeModel(null,null)
+    member internal this.Inject v = _ExplicitEulerScheme.Value <- v
+    static member Cast (p : ICell<ExplicitEulerScheme>) = 
+        if p :? ExplicitEulerSchemeModel then 
+            p :?> ExplicitEulerSchemeModel
+        else
+            let o = new ExplicitEulerSchemeModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -92,6 +105,19 @@ type ExplicitEulerSchemeModel1
                                                    = triv (fun () -> _ExplicitEulerScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _ExplicitEulerScheme.Value)
     do this.Bind(_ExplicitEulerScheme)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ExplicitEulerScheme.Value <- v
+    static member Cast (p : ICell<ExplicitEulerScheme>) = 
+        if p :? ExplicitEulerSchemeModel1 then 
+            p :?> ExplicitEulerSchemeModel1
+        else
+            let o = new ExplicitEulerSchemeModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

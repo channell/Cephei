@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type QuoteModel
                                                                      _Quote.Value)
     let _value                                     = triv (fun () -> _Quote.Value.value())
     do this.Bind(_Quote)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Quote.Value <- v
+    static member Cast (p : ICell<Quote>) = 
+        if p :? QuoteModel then 
+            p :?> QuoteModel
+        else
+            let o = new QuoteModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

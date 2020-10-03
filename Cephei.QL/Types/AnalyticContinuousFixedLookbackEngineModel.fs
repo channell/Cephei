@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type AnalyticContinuousFixedLookbackEngineModel
 *)
     let _AnalyticContinuousFixedLookbackEngine     = cell (fun () -> new AnalyticContinuousFixedLookbackEngine (Process.Value))
     do this.Bind(_AnalyticContinuousFixedLookbackEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticContinuousFixedLookbackEngineModel(null)
+    member internal this.Inject v = _AnalyticContinuousFixedLookbackEngine.Value <- v
+    static member Cast (p : ICell<AnalyticContinuousFixedLookbackEngine>) = 
+        if p :? AnalyticContinuousFixedLookbackEngineModel then 
+            p :?> AnalyticContinuousFixedLookbackEngineModel
+        else
+            let o = new AnalyticContinuousFixedLookbackEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

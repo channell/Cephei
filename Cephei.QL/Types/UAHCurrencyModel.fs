@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type UAHCurrencyModel
     let _ToString                                  = triv (fun () -> _UAHCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _UAHCurrency.Value.triangulationCurrency)
     do this.Bind(_UAHCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _UAHCurrency.Value <- v
+    static member Cast (p : ICell<UAHCurrency>) = 
+        if p :? UAHCurrencyModel then 
+            p :?> UAHCurrencyModel
+        else
+            let o = new UAHCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

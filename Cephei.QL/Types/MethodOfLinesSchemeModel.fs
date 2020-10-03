@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type MethodOfLinesSchemeModel
                                                    = triv (fun () -> _MethodOfLinesScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _MethodOfLinesScheme.Value)
     do this.Bind(_MethodOfLinesScheme)
+(* 
+    casting 
+*)
+    internal new () = MethodOfLinesSchemeModel(null,null,null,null)
+    member internal this.Inject v = _MethodOfLinesScheme.Value <- v
+    static member Cast (p : ICell<MethodOfLinesScheme>) = 
+        if p :? MethodOfLinesSchemeModel then 
+            p :?> MethodOfLinesSchemeModel
+        else
+            let o = new MethodOfLinesSchemeModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -98,6 +111,19 @@ type MethodOfLinesSchemeModel1
                                                    = triv (fun () -> _MethodOfLinesScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _MethodOfLinesScheme.Value)
     do this.Bind(_MethodOfLinesScheme)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _MethodOfLinesScheme.Value <- v
+    static member Cast (p : ICell<MethodOfLinesScheme>) = 
+        if p :? MethodOfLinesSchemeModel1 then 
+            p :?> MethodOfLinesSchemeModel1
+        else
+            let o = new MethodOfLinesSchemeModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type DiscretizedDermanKaniBarrierOptionModel
     let _time                                      = triv (fun () -> _DiscretizedDermanKaniBarrierOption.Value.time())
     let _values                                    = triv (fun () -> _DiscretizedDermanKaniBarrierOption.Value.values())
     do this.Bind(_DiscretizedDermanKaniBarrierOption)
+(* 
+    casting 
+*)
+    internal new () = DiscretizedDermanKaniBarrierOptionModel(null,null,null)
+    member internal this.Inject v = _DiscretizedDermanKaniBarrierOption.Value <- v
+    static member Cast (p : ICell<DiscretizedDermanKaniBarrierOption>) = 
+        if p :? DiscretizedDermanKaniBarrierOptionModel then 
+            p :?> DiscretizedDermanKaniBarrierOptionModel
+        else
+            let o = new DiscretizedDermanKaniBarrierOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

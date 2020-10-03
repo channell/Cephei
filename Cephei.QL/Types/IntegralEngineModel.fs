@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type IntegralEngineModel
 *)
     let _IntegralEngine                            = cell (fun () -> new IntegralEngine (Process.Value))
     do this.Bind(_IntegralEngine)
+(* 
+    casting 
+*)
+    internal new () = IntegralEngineModel(null)
+    member internal this.Inject v = _IntegralEngine.Value <- v
+    static member Cast (p : ICell<IntegralEngine>) = 
+        if p :? IntegralEngineModel then 
+            p :?> IntegralEngineModel
+        else
+            let o = new IntegralEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

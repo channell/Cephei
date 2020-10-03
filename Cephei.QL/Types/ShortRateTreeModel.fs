@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,31 @@ type ShortRateTreeModel
                                                                      _ShortRateTree.Value)
     let _timeGrid                                  = cell (fun () -> _ShortRateTree.Value.timeGrid())
     do this.Bind(_ShortRateTree)
+(* 
+    casting 
+*)
+    internal new () = ShortRateTreeModel(null,null,null)
+    member internal this.Inject v = _ShortRateTree.Value <- v
+    static member Cast (p : ICell<ShortRateTree>) = 
+        if p :? ShortRateTreeModel then 
+            p :?> ShortRateTreeModel
+        else
+            let o = new ShortRateTreeModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = ShortRateTreeModel(null,null,null)
+    static member Cast (p : ICell<ShortRateTree>) = 
+        if p :? ShortRateTreeModel then 
+            p :?> ShortRateTreeModel
+        else
+            let o = new ShortRateTreeModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

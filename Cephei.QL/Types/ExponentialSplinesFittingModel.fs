@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type ExponentialSplinesFittingModel
     let _solution                                  = triv (fun () -> _ExponentialSplinesFitting.Value.solution())
     let _weights                                   = triv (fun () -> _ExponentialSplinesFitting.Value.weights())
     do this.Bind(_ExponentialSplinesFitting)
+(* 
+    casting 
+*)
+    internal new () = ExponentialSplinesFittingModel(null,null,null)
+    member internal this.Inject v = _ExponentialSplinesFitting.Value <- v
+    static member Cast (p : ICell<ExponentialSplinesFitting>) = 
+        if p :? ExponentialSplinesFittingModel then 
+            p :?> ExponentialSplinesFittingModel
+        else
+            let o = new ExponentialSplinesFittingModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

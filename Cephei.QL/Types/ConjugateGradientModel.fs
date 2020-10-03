@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type ConjugateGradientModel
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _ConjugateGradient.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_ConjugateGradient)
+(* 
+    casting 
+*)
+    internal new () = ConjugateGradientModel(null)
+    member internal this.Inject v = _ConjugateGradient.Value <- v
+    static member Cast (p : ICell<ConjugateGradient>) = 
+        if p :? ConjugateGradientModel then 
+            p :?> ConjugateGradientModel
+        else
+            let o = new ConjugateGradientModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

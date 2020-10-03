@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type MonotonicCubicNaturalSplineModel
                                                                      _MonotonicCubicNaturalSpline.Value)
     let _extrapolate                               = triv (fun () -> _MonotonicCubicNaturalSpline.Value.extrapolate)
     do this.Bind(_MonotonicCubicNaturalSpline)
+(* 
+    casting 
+*)
+    internal new () = MonotonicCubicNaturalSplineModel(null,null,null)
+    member internal this.Inject v = _MonotonicCubicNaturalSpline.Value <- v
+    static member Cast (p : ICell<MonotonicCubicNaturalSpline>) = 
+        if p :? MonotonicCubicNaturalSplineModel then 
+            p :?> MonotonicCubicNaturalSplineModel
+        else
+            let o = new MonotonicCubicNaturalSplineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

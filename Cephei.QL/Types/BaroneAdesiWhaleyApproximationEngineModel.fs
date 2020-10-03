@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type BaroneAdesiWhaleyApproximationEngineModel
 *)
     let _BaroneAdesiWhaleyApproximationEngine      = cell (fun () -> new BaroneAdesiWhaleyApproximationEngine (Process.Value))
     do this.Bind(_BaroneAdesiWhaleyApproximationEngine)
+(* 
+    casting 
+*)
+    internal new () = BaroneAdesiWhaleyApproximationEngineModel(null)
+    member internal this.Inject v = _BaroneAdesiWhaleyApproximationEngine.Value <- v
+    static member Cast (p : ICell<BaroneAdesiWhaleyApproximationEngine>) = 
+        if p :? BaroneAdesiWhaleyApproximationEngineModel then 
+            p :?> BaroneAdesiWhaleyApproximationEngineModel
+        else
+            let o = new BaroneAdesiWhaleyApproximationEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

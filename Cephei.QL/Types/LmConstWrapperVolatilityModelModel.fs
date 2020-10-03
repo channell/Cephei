@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type LmConstWrapperVolatilityModelModel
                                                                      _LmConstWrapperVolatilityModel.Value)
     let _size                                      = triv (fun () -> _LmConstWrapperVolatilityModel.Value.size())
     do this.Bind(_LmConstWrapperVolatilityModel)
+(* 
+    casting 
+*)
+    internal new () = LmConstWrapperVolatilityModelModel(null)
+    member internal this.Inject v = _LmConstWrapperVolatilityModel.Value <- v
+    static member Cast (p : ICell<LmConstWrapperVolatilityModel>) = 
+        if p :? LmConstWrapperVolatilityModelModel then 
+            p :?> LmConstWrapperVolatilityModelModel
+        else
+            let o = new LmConstWrapperVolatilityModelModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -63,6 +63,19 @@ type NeumannBCModel
                                                    = triv (fun () -> _NeumannBC.Value.setTime(t.Value)
                                                                      _NeumannBC.Value)
     do this.Bind(_NeumannBC)
+(* 
+    casting 
+*)
+    internal new () = NeumannBCModel(null,null)
+    member internal this.Inject v = _NeumannBC.Value <- v
+    static member Cast (p : ICell<NeumannBC>) = 
+        if p :? NeumannBCModel then 
+            p :?> NeumannBCModel
+        else
+            let o = new NeumannBCModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

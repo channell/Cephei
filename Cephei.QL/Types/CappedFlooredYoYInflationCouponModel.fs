@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -130,6 +130,19 @@ type CappedFlooredYoYInflationCouponModel
                                                    = triv (fun () -> _CappedFlooredYoYInflationCoupon.Value.unregisterWith(handler.Value)
                                                                      _CappedFlooredYoYInflationCoupon.Value)
     do this.Bind(_CappedFlooredYoYInflationCoupon)
+(* 
+    casting 
+*)
+    internal new () = CappedFlooredYoYInflationCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CappedFlooredYoYInflationCoupon.Value <- v
+    static member Cast (p : ICell<CappedFlooredYoYInflationCoupon>) = 
+        if p :? CappedFlooredYoYInflationCouponModel then 
+            p :?> CappedFlooredYoYInflationCouponModel
+        else
+            let o = new CappedFlooredYoYInflationCouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -282,6 +295,19 @@ type CappedFlooredYoYInflationCouponModel1
                                                    = triv (fun () -> _CappedFlooredYoYInflationCoupon.Value.unregisterWith(handler.Value)
                                                                      _CappedFlooredYoYInflationCoupon.Value)
     do this.Bind(_CappedFlooredYoYInflationCoupon)
+(* 
+    casting 
+*)
+    internal new () = CappedFlooredYoYInflationCouponModel1(null,null,null)
+    member internal this.Inject v = _CappedFlooredYoYInflationCoupon.Value <- v
+    static member Cast (p : ICell<CappedFlooredYoYInflationCoupon>) = 
+        if p :? CappedFlooredYoYInflationCouponModel1 then 
+            p :?> CappedFlooredYoYInflationCouponModel1
+        else
+            let o = new CappedFlooredYoYInflationCouponModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

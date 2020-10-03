@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type BachelierSpecModel
     let _vega                                      (strike : ICell<double>) (atmForward : ICell<double>) (stdDev : ICell<double>) (exerciseTime : ICell<double>) (annuity : ICell<double>) (displacement : ICell<double>)   
                                                    = triv (fun () -> _BachelierSpec.Value.vega(strike.Value, atmForward.Value, stdDev.Value, exerciseTime.Value, annuity.Value, displacement.Value))
     do this.Bind(_BachelierSpec)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _BachelierSpec.Value <- v
+    static member Cast (p : ICell<BachelierSpec>) = 
+        if p :? BachelierSpecModel then 
+            p :?> BachelierSpecModel
+        else
+            let o = new BachelierSpecModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

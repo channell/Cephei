@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type ActualActualModel
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _ActualActual.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_ActualActual)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ActualActual.Value <- v
+    static member Cast (p : ICell<ActualActual>) = 
+        if p :? ActualActualModel then 
+            p :?> ActualActualModel
+        else
+            let o = new ActualActualModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -104,6 +117,19 @@ type ActualActualModel1
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _ActualActual.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_ActualActual)
+(* 
+    casting 
+*)
+    internal new () = ActualActualModel1(null,null)
+    member internal this.Inject v = _ActualActual.Value <- v
+    static member Cast (p : ICell<ActualActual>) = 
+        if p :? ActualActualModel1 then 
+            p :?> ActualActualModel1
+        else
+            let o = new ActualActualModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -81,6 +81,19 @@ type BackwardflatLinearInterpolationModel
                                                                      _BackwardflatLinearInterpolation.Value)
     let _extrapolate                               = triv (fun () -> _BackwardflatLinearInterpolation.Value.extrapolate)
     do this.Bind(_BackwardflatLinearInterpolation)
+(* 
+    casting 
+*)
+    internal new () = BackwardflatLinearInterpolationModel(null,null,null,null,null)
+    member internal this.Inject v = _BackwardflatLinearInterpolation.Value <- v
+    static member Cast (p : ICell<BackwardflatLinearInterpolation>) = 
+        if p :? BackwardflatLinearInterpolationModel then 
+            p :?> BackwardflatLinearInterpolationModel
+        else
+            let o = new BackwardflatLinearInterpolationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type GMRESModel
     let _solveWithRestart                          (restart : ICell<int>) (b : ICell<Vector>) (x0 : ICell<Vector>)   
                                                    = triv (fun () -> _GMRES.Value.solveWithRestart(restart.Value, b.Value, x0.Value))
     do this.Bind(_GMRES)
+(* 
+    casting 
+*)
+    internal new () = GMRESModel(null,null,null,null)
+    member internal this.Inject v = _GMRES.Value <- v
+    static member Cast (p : ICell<GMRES>) = 
+        if p :? GMRESModel then 
+            p :?> GMRESModel
+        else
+            let o = new GMRESModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

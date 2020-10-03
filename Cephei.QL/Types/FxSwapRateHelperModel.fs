@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -90,6 +90,19 @@ type FxSwapRateHelperModel
                                                    = triv (fun () -> _FxSwapRateHelper.Value.unregisterWith(handler.Value)
                                                                      _FxSwapRateHelper.Value)
     do this.Bind(_FxSwapRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FxSwapRateHelperModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FxSwapRateHelper.Value <- v
+    static member Cast (p : ICell<FxSwapRateHelper>) = 
+        if p :? FxSwapRateHelperModel then 
+            p :?> FxSwapRateHelperModel
+        else
+            let o = new FxSwapRateHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

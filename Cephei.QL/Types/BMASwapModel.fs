@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -106,6 +106,19 @@ type BMASwapModel
                                                                      _BMASwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _BMASwap).valuationDate())
     do this.Bind(_BMASwap)
+(* 
+    casting 
+*)
+    internal new () = BMASwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _BMASwap.Value <- v
+    static member Cast (p : ICell<BMASwap>) = 
+        if p :? BMASwapModel then 
+            p :?> BMASwapModel
+        else
+            let o = new BMASwapModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

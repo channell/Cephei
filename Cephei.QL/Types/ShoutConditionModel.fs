@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type ShoutConditionModel
                                                    = triv (fun () -> _ShoutCondition.Value.applyTo(a.Value, t.Value)
                                                                      _ShoutCondition.Value)
     do this.Bind(_ShoutCondition)
+(* 
+    casting 
+*)
+    internal new () = ShoutConditionModel(null,null,null,null)
+    member internal this.Inject v = _ShoutCondition.Value <- v
+    static member Cast (p : ICell<ShoutCondition>) = 
+        if p :? ShoutConditionModel then 
+            p :?> ShoutConditionModel
+        else
+            let o = new ShoutConditionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -91,6 +104,19 @@ type ShoutConditionModel1
                                                    = triv (fun () -> _ShoutCondition.Value.applyTo(a.Value, t.Value)
                                                                      _ShoutCondition.Value)
     do this.Bind(_ShoutCondition)
+(* 
+    casting 
+*)
+    internal new () = ShoutConditionModel1(null,null,null)
+    member internal this.Inject v = _ShoutCondition.Value <- v
+    static member Cast (p : ICell<ShoutCondition>) = 
+        if p :? ShoutConditionModel1 then 
+            p :?> ShoutConditionModel1
+        else
+            let o = new ShoutConditionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

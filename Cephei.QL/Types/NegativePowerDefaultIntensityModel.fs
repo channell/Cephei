@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type NegativePowerDefaultIntensityModel
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
                                                    = triv (fun () -> _NegativePowerDefaultIntensity.Value.hazardRate(t.Value, s.Value))
     do this.Bind(_NegativePowerDefaultIntensity)
+(* 
+    casting 
+*)
+    internal new () = NegativePowerDefaultIntensityModel(null,null)
+    member internal this.Inject v = _NegativePowerDefaultIntensity.Value <- v
+    static member Cast (p : ICell<NegativePowerDefaultIntensity>) = 
+        if p :? NegativePowerDefaultIntensityModel then 
+            p :?> NegativePowerDefaultIntensityModel
+        else
+            let o = new NegativePowerDefaultIntensityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -89,6 +102,19 @@ type NegativePowerDefaultIntensityModel1
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
                                                    = triv (fun () -> _NegativePowerDefaultIntensity.Value.hazardRate(t.Value, s.Value))
     do this.Bind(_NegativePowerDefaultIntensity)
+(* 
+    casting 
+*)
+    internal new () = NegativePowerDefaultIntensityModel1(null,null,null)
+    member internal this.Inject v = _NegativePowerDefaultIntensity.Value <- v
+    static member Cast (p : ICell<NegativePowerDefaultIntensity>) = 
+        if p :? NegativePowerDefaultIntensityModel1 then 
+            p :?> NegativePowerDefaultIntensityModel1
+        else
+            let o = new NegativePowerDefaultIntensityModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

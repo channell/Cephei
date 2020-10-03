@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type StrikedTypePayoffModel
     let _value                                     (price : ICell<double>)   
                                                    = triv (fun () -> _StrikedTypePayoff.Value.value(price.Value))
     do this.Bind(_StrikedTypePayoff)
+(* 
+    casting 
+*)
+    internal new () = StrikedTypePayoffModel(null)
+    member internal this.Inject v = _StrikedTypePayoff.Value <- v
+    static member Cast (p : ICell<StrikedTypePayoff>) = 
+        if p :? StrikedTypePayoffModel then 
+            p :?> StrikedTypePayoffModel
+        else
+            let o = new StrikedTypePayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -98,6 +111,19 @@ type StrikedTypePayoffModel1
     let _value                                     (price : ICell<double>)   
                                                    = triv (fun () -> _StrikedTypePayoff.Value.value(price.Value))
     do this.Bind(_StrikedTypePayoff)
+(* 
+    casting 
+*)
+    internal new () = StrikedTypePayoffModel1(null,null)
+    member internal this.Inject v = _StrikedTypePayoff.Value <- v
+    static member Cast (p : ICell<StrikedTypePayoff>) = 
+        if p :? StrikedTypePayoffModel1 then 
+            p :?> StrikedTypePayoffModel1
+        else
+            let o = new StrikedTypePayoffModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,6 +65,19 @@ type LmLinearExponentialCorrelationModelModel
                                                                      _LmLinearExponentialCorrelationModel.Value)
     let _size                                      = triv (fun () -> _LmLinearExponentialCorrelationModel.Value.size())
     do this.Bind(_LmLinearExponentialCorrelationModel)
+(* 
+    casting 
+*)
+    internal new () = LmLinearExponentialCorrelationModelModel(null,null,null,null)
+    member internal this.Inject v = _LmLinearExponentialCorrelationModel.Value <- v
+    static member Cast (p : ICell<LmLinearExponentialCorrelationModel>) = 
+        if p :? LmLinearExponentialCorrelationModelModel then 
+            p :?> LmLinearExponentialCorrelationModelModel
+        else
+            let o = new LmLinearExponentialCorrelationModelModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

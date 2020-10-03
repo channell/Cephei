@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -62,6 +62,19 @@ type CompositeQuoteModel
                                                    = triv (fun () -> _CompositeQuote.Value.unregisterWith(handler.Value)
                                                                      _CompositeQuote.Value)
     do this.Bind(_CompositeQuote)
+(* 
+    casting 
+*)
+    internal new () = CompositeQuoteModel(null,null,null)
+    member internal this.Inject v = _CompositeQuote.Value <- v
+    static member Cast (p : ICell<CompositeQuote>) = 
+        if p :? CompositeQuoteModel then 
+            p :?> CompositeQuoteModel
+        else
+            let o = new CompositeQuoteModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

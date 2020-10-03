@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type DiscretizedCapFloorModel
     let _time                                      = triv (fun () -> _DiscretizedCapFloor.Value.time())
     let _values                                    = triv (fun () -> _DiscretizedCapFloor.Value.values())
     do this.Bind(_DiscretizedCapFloor)
+(* 
+    casting 
+*)
+    internal new () = DiscretizedCapFloorModel(null,null,null)
+    member internal this.Inject v = _DiscretizedCapFloor.Value <- v
+    static member Cast (p : ICell<DiscretizedCapFloor>) = 
+        if p :? DiscretizedCapFloorModel then 
+            p :?> DiscretizedCapFloorModel
+        else
+            let o = new DiscretizedCapFloorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type AmericanPayoffAtExpiryModel
     let _AmericanPayoffAtExpiry                    = cell (fun () -> new AmericanPayoffAtExpiry (spot.Value, discount.Value, dividendDiscount.Value, variance.Value, payoff.Value, knock_in.Value))
     let _value                                     = triv (fun () -> _AmericanPayoffAtExpiry.Value.value())
     do this.Bind(_AmericanPayoffAtExpiry)
+(* 
+    casting 
+*)
+    internal new () = AmericanPayoffAtExpiryModel(null,null,null,null,null,null)
+    member internal this.Inject v = _AmericanPayoffAtExpiry.Value <- v
+    static member Cast (p : ICell<AmericanPayoffAtExpiry>) = 
+        if p :? AmericanPayoffAtExpiryModel then 
+            p :?> AmericanPayoffAtExpiryModel
+        else
+            let o = new AmericanPayoffAtExpiryModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

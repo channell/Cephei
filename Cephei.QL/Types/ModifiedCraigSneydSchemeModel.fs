@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type ModifiedCraigSneydSchemeModel
                                                    = triv (fun () -> _ModifiedCraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _ModifiedCraigSneydScheme.Value)
     do this.Bind(_ModifiedCraigSneydScheme)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ModifiedCraigSneydScheme.Value <- v
+    static member Cast (p : ICell<ModifiedCraigSneydScheme>) = 
+        if p :? ModifiedCraigSneydSchemeModel then 
+            p :?> ModifiedCraigSneydSchemeModel
+        else
+            let o = new ModifiedCraigSneydSchemeModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -94,6 +107,19 @@ type ModifiedCraigSneydSchemeModel1
                                                    = triv (fun () -> _ModifiedCraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
                                                                      _ModifiedCraigSneydScheme.Value)
     do this.Bind(_ModifiedCraigSneydScheme)
+(* 
+    casting 
+*)
+    internal new () = ModifiedCraigSneydSchemeModel1(null,null,null,null)
+    member internal this.Inject v = _ModifiedCraigSneydScheme.Value <- v
+    static member Cast (p : ICell<ModifiedCraigSneydScheme>) = 
+        if p :? ModifiedCraigSneydSchemeModel1 then 
+            p :?> ModifiedCraigSneydSchemeModel1
+        else
+            let o = new ModifiedCraigSneydSchemeModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

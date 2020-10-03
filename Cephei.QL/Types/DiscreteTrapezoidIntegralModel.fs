@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -45,6 +45,19 @@ type DiscreteTrapezoidIntegralModel
     let _value                                     (x : ICell<Vector>) (f : ICell<Vector>)   
                                                    = triv (fun () -> _DiscreteTrapezoidIntegral.Value.value(x.Value, f.Value))
     do this.Bind(_DiscreteTrapezoidIntegral)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _DiscreteTrapezoidIntegral.Value <- v
+    static member Cast (p : ICell<DiscreteTrapezoidIntegral>) = 
+        if p :? DiscreteTrapezoidIntegralModel then 
+            p :?> DiscreteTrapezoidIntegralModel
+        else
+            let o = new DiscreteTrapezoidIntegralModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

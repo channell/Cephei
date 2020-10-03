@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type GaussKronrodNonAdaptiveModel
     let _value                                     (f : ICell<Func<double,double>>) (a : ICell<double>) (b : ICell<double>)   
                                                    = triv (fun () -> _GaussKronrodNonAdaptive.Value.value(f.Value, a.Value, b.Value))
     do this.Bind(_GaussKronrodNonAdaptive)
+(* 
+    casting 
+*)
+    internal new () = GaussKronrodNonAdaptiveModel(null,null,null)
+    member internal this.Inject v = _GaussKronrodNonAdaptive.Value <- v
+    static member Cast (p : ICell<GaussKronrodNonAdaptive>) = 
+        if p :? GaussKronrodNonAdaptiveModel then 
+            p :?> GaussKronrodNonAdaptiveModel
+        else
+            let o = new GaussKronrodNonAdaptiveModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

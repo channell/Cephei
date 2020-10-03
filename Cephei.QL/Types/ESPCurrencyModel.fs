@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type ESPCurrencyModel
     let _ToString                                  = triv (fun () -> _ESPCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _ESPCurrency.Value.triangulationCurrency)
     do this.Bind(_ESPCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ESPCurrency.Value <- v
+    static member Cast (p : ICell<ESPCurrency>) = 
+        if p :? ESPCurrencyModel then 
+            p :?> ESPCurrencyModel
+        else
+            let o = new ESPCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -91,6 +91,19 @@ type ScheduleModel
     let _until                                     (truncationDate : ICell<Date>)   
                                                    = triv (fun () -> _Schedule.Value.until(truncationDate.Value))
     do this.Bind(_Schedule)
+(* 
+    casting 
+*)
+    internal new () = ScheduleModel(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _Schedule.Value <- v
+    static member Cast (p : ICell<Schedule>) = 
+        if p :? ScheduleModel then 
+            p :?> ScheduleModel
+        else
+            let o = new ScheduleModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -192,6 +205,19 @@ type ScheduleModel1
     let _until                                     (truncationDate : ICell<Date>)   
                                                    = triv (fun () -> _Schedule.Value.until(truncationDate.Value))
     do this.Bind(_Schedule)
+(* 
+    casting 
+*)
+    internal new () = ScheduleModel1(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _Schedule.Value <- v
+    static member Cast (p : ICell<Schedule>) = 
+        if p :? ScheduleModel1 then 
+            p :?> ScheduleModel1
+        else
+            let o = new ScheduleModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -274,6 +300,19 @@ type ScheduleModel2
     let _until                                     (truncationDate : ICell<Date>)   
                                                    = triv (fun () -> _Schedule.Value.until(truncationDate.Value))
     do this.Bind(_Schedule)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Schedule.Value <- v
+    static member Cast (p : ICell<Schedule>) = 
+        if p :? ScheduleModel2 then 
+            p :?> ScheduleModel2
+        else
+            let o = new ScheduleModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

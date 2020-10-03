@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type SwaptionModel
                                                                      _Swaption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Swaption).valuationDate())
     do this.Bind(_Swaption)
+(* 
+    casting 
+*)
+    internal new () = SwaptionModel(null,null,null,null,null,null)
+    member internal this.Inject v = _Swaption.Value <- v
+    static member Cast (p : ICell<Swaption>) = 
+        if p :? SwaptionModel then 
+            p :?> SwaptionModel
+        else
+            let o = new SwaptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

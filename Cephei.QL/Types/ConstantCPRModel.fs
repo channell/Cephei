@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type ConstantCPRModel
     let _getSMM                                    (valDate : ICell<Date>)   
                                                    = triv (fun () -> _ConstantCPR.Value.getSMM(valDate.Value))
     do this.Bind(_ConstantCPR)
+(* 
+    casting 
+*)
+    internal new () = ConstantCPRModel(null)
+    member internal this.Inject v = _ConstantCPR.Value <- v
+    static member Cast (p : ICell<ConstantCPR>) = 
+        if p :? ConstantCPRModel then 
+            p :?> ConstantCPRModel
+        else
+            let o = new ConstantCPRModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

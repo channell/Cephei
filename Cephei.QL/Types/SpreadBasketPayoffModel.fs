@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type SpreadBasketPayoffModel
                                                    = triv (fun () -> _SpreadBasketPayoff.Value.accept(v.Value)
                                                                      _SpreadBasketPayoff.Value)
     do this.Bind(_SpreadBasketPayoff)
+(* 
+    casting 
+*)
+    internal new () = SpreadBasketPayoffModel(null)
+    member internal this.Inject v = _SpreadBasketPayoff.Value <- v
+    static member Cast (p : ICell<SpreadBasketPayoff>) = 
+        if p :? SpreadBasketPayoffModel then 
+            p :?> SpreadBasketPayoffModel
+        else
+            let o = new SpreadBasketPayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

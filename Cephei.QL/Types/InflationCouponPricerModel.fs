@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type InflationCouponPricerModel
     let _update                                    = triv (fun () -> _InflationCouponPricer.Value.update()
                                                                      _InflationCouponPricer.Value)
     do this.Bind(_InflationCouponPricer)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _InflationCouponPricer.Value <- v
+    static member Cast (p : ICell<InflationCouponPricer>) = 
+        if p :? InflationCouponPricerModel then 
+            p :?> InflationCouponPricerModel
+        else
+            let o = new InflationCouponPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

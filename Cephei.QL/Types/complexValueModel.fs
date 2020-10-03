@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -44,6 +44,31 @@ type complexValueModel
     let _complexValue                              = cell (fun () -> new complexValue ())
     let _value                                     = cell (fun () -> _complexValue.Value.value())
     do this.Bind(_complexValue)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _complexValue.Value <- v
+    static member Cast (p : ICell<complexValue>) = 
+        if p :? complexValueModel then 
+            p :?> complexValueModel
+        else
+            let o = new complexValueModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<complexValue>) = 
+        if p :? complexValueModel then 
+            p :?> complexValueModel
+        else
+            let o = new complexValueModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

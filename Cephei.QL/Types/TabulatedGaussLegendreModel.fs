@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type TabulatedGaussLegendreModel
     let _value                                     (f : ICell<Func<double,double>>)   
                                                    = triv (fun () -> _TabulatedGaussLegendre.Value.value(f.Value))
     do this.Bind(_TabulatedGaussLegendre)
+(* 
+    casting 
+*)
+    internal new () = TabulatedGaussLegendreModel(null)
+    member internal this.Inject v = _TabulatedGaussLegendre.Value <- v
+    static member Cast (p : ICell<TabulatedGaussLegendre>) = 
+        if p :? TabulatedGaussLegendreModel then 
+            p :?> TabulatedGaussLegendreModel
+        else
+            let o = new TabulatedGaussLegendreModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

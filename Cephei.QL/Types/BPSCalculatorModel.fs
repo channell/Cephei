@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,31 @@ type BPSCalculatorModel
                                                    = cell (fun () -> _BPSCalculator.Value.visit(o.Value)
                                                                      _BPSCalculator.Value)
     do this.Bind(_BPSCalculator)
+(* 
+    casting 
+*)
+    internal new () = BPSCalculatorModel(null)
+    member internal this.Inject v = _BPSCalculator.Value <- v
+    static member Cast (p : ICell<BPSCalculator>) = 
+        if p :? BPSCalculatorModel then 
+            p :?> BPSCalculatorModel
+        else
+            let o = new BPSCalculatorModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = BPSCalculatorModel(null)
+    static member Cast (p : ICell<BPSCalculator>) = 
+        if p :? BPSCalculatorModel then 
+            p :?> BPSCalculatorModel
+        else
+            let o = new BPSCalculatorModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

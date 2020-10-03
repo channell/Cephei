@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type PositiveConstraintModel
     let _upperBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _PositiveConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_PositiveConstraint)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _PositiveConstraint.Value <- v
+    static member Cast (p : ICell<PositiveConstraint>) = 
+        if p :? PositiveConstraintModel then 
+            p :?> PositiveConstraintModel
+        else
+            let o = new PositiveConstraintModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

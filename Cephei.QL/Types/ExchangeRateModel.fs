@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type ExchangeRateModel
     let _target                                    = triv (fun () -> _ExchangeRate.Value.target)
     let _type                                      = triv (fun () -> _ExchangeRate.Value.TYPE)
     do this.Bind(_ExchangeRate)
+(* 
+    casting 
+*)
+    internal new () = ExchangeRateModel(null,null,null)
+    member internal this.Inject v = _ExchangeRate.Value <- v
+    static member Cast (p : ICell<ExchangeRate>) = 
+        if p :? ExchangeRateModel then 
+            p :?> ExchangeRateModel
+        else
+            let o = new ExchangeRateModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -94,6 +107,19 @@ type ExchangeRateModel1
     let _target                                    = triv (fun () -> _ExchangeRate.Value.target)
     let _type                                      = triv (fun () -> _ExchangeRate.Value.TYPE)
     do this.Bind(_ExchangeRate)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ExchangeRate.Value <- v
+    static member Cast (p : ICell<ExchangeRate>) = 
+        if p :? ExchangeRateModel1 then 
+            p :?> ExchangeRateModel1
+        else
+            let o = new ExchangeRateModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

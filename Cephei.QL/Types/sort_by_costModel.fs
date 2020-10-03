@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -45,6 +45,31 @@ type sort_by_costModel
     let _Compare                                   (left : ICell<Candidate.Candidate>) (right : ICell<Candidate.Candidate>)   
                                                    = cell (fun () -> _sort_by_cost.Value.Compare(left.Value, right.Value))
     do this.Bind(_sort_by_cost)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _sort_by_cost.Value <- v
+    static member Cast (p : ICell<sort_by_cost>) = 
+        if p :? sort_by_costModel then 
+            p :?> sort_by_costModel
+        else
+            let o = new sort_by_costModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<sort_by_cost>) = 
+        if p :? sort_by_costModel then 
+            p :?> sort_by_costModel
+        else
+            let o = new sort_by_costModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

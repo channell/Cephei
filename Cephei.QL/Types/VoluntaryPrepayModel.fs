@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -68,6 +68,19 @@ type VoluntaryPrepayModel
                                                    = triv (fun () -> _VoluntaryPrepay.Value.unregisterWith(handler.Value)
                                                                      _VoluntaryPrepay.Value)
     do this.Bind(_VoluntaryPrepay)
+(* 
+    casting 
+*)
+    internal new () = VoluntaryPrepayModel(null,null)
+    member internal this.Inject v = _VoluntaryPrepay.Value <- v
+    static member Cast (p : ICell<VoluntaryPrepay>) = 
+        if p :? VoluntaryPrepayModel then 
+            p :?> VoluntaryPrepayModel
+        else
+            let o = new VoluntaryPrepayModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

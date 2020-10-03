@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type CHFCurrencyModel
     let _ToString                                  = triv (fun () -> _CHFCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _CHFCurrency.Value.triangulationCurrency)
     do this.Bind(_CHFCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _CHFCurrency.Value <- v
+    static member Cast (p : ICell<CHFCurrency>) = 
+        if p :? CHFCurrencyModel then 
+            p :?> CHFCurrencyModel
+        else
+            let o = new CHFCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

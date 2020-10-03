@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type FdmIndicesOnBoundaryModel
     let _FdmIndicesOnBoundary                      = cell (fun () -> new FdmIndicesOnBoundary (layout.Value, direction.Value, side.Value))
     let _getIndices                                = triv (fun () -> _FdmIndicesOnBoundary.Value.getIndices())
     do this.Bind(_FdmIndicesOnBoundary)
+(* 
+    casting 
+*)
+    internal new () = FdmIndicesOnBoundaryModel(null,null,null)
+    member internal this.Inject v = _FdmIndicesOnBoundary.Value <- v
+    static member Cast (p : ICell<FdmIndicesOnBoundary>) = 
+        if p :? FdmIndicesOnBoundaryModel then 
+            p :?> FdmIndicesOnBoundaryModel
+        else
+            let o = new FdmIndicesOnBoundaryModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

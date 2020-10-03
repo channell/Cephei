@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -120,6 +120,19 @@ type AverageBMACouponModel
                                                    = triv (fun () -> _AverageBMACoupon.Value.unregisterWith(handler.Value)
                                                                      _AverageBMACoupon.Value)
     do this.Bind(_AverageBMACoupon)
+(* 
+    casting 
+*)
+    internal new () = AverageBMACouponModel(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _AverageBMACoupon.Value <- v
+    static member Cast (p : ICell<AverageBMACoupon>) = 
+        if p :? AverageBMACouponModel then 
+            p :?> AverageBMACouponModel
+        else
+            let o = new AverageBMACouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

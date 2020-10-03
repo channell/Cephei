@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -100,6 +100,19 @@ type YoYInflationIndexModel
                                                    = triv (fun () -> _YoYInflationIndex.Value.unregisterWith(handler.Value)
                                                                      _YoYInflationIndex.Value)
     do this.Bind(_YoYInflationIndex)
+(* 
+    casting 
+*)
+    internal new () = YoYInflationIndexModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _YoYInflationIndex.Value <- v
+    static member Cast (p : ICell<YoYInflationIndex>) = 
+        if p :? YoYInflationIndexModel then 
+            p :?> YoYInflationIndexModel
+        else
+            let o = new YoYInflationIndexModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

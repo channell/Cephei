@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type FdmLogInnerValueModel
     let _innerValue                                (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
                                                    = triv (fun () -> _FdmLogInnerValue.Value.innerValue(iter.Value, t.Value))
     do this.Bind(_FdmLogInnerValue)
+(* 
+    casting 
+*)
+    internal new () = FdmLogInnerValueModel(null,null,null)
+    member internal this.Inject v = _FdmLogInnerValue.Value <- v
+    static member Cast (p : ICell<FdmLogInnerValue>) = 
+        if p :? FdmLogInnerValueModel then 
+            p :?> FdmLogInnerValueModel
+        else
+            let o = new FdmLogInnerValueModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

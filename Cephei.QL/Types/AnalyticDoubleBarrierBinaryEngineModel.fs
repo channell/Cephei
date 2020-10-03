@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type AnalyticDoubleBarrierBinaryEngineModel
 *)
     let _AnalyticDoubleBarrierBinaryEngine         = cell (fun () -> new AnalyticDoubleBarrierBinaryEngine (Process.Value))
     do this.Bind(_AnalyticDoubleBarrierBinaryEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticDoubleBarrierBinaryEngineModel(null)
+    member internal this.Inject v = _AnalyticDoubleBarrierBinaryEngine.Value <- v
+    static member Cast (p : ICell<AnalyticDoubleBarrierBinaryEngine>) = 
+        if p :? AnalyticDoubleBarrierBinaryEngineModel then 
+            p :?> AnalyticDoubleBarrierBinaryEngineModel
+        else
+            let o = new AnalyticDoubleBarrierBinaryEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

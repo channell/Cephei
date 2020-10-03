@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type SimpleQuoteModel
                                                    = triv (fun () -> _SimpleQuote.Value.unregisterWith(handler.Value)
                                                                      _SimpleQuote.Value)
     do this.Bind(_SimpleQuote)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _SimpleQuote.Value <- v
+    static member Cast (p : ICell<SimpleQuote>) = 
+        if p :? SimpleQuoteModel then 
+            p :?> SimpleQuoteModel
+        else
+            let o = new SimpleQuoteModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -99,6 +112,19 @@ type SimpleQuoteModel1
                                                    = triv (fun () -> _SimpleQuote.Value.unregisterWith(handler.Value)
                                                                      _SimpleQuote.Value)
     do this.Bind(_SimpleQuote)
+(* 
+    casting 
+*)
+    internal new () = SimpleQuoteModel1(null)
+    member internal this.Inject v = _SimpleQuote.Value <- v
+    static member Cast (p : ICell<SimpleQuote>) = 
+        if p :? SimpleQuoteModel1 then 
+            p :?> SimpleQuoteModel1
+        else
+            let o = new SimpleQuoteModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

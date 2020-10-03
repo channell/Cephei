@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type FdmSolverDescModel
     let _mesher                                    = triv (fun () -> _FdmSolverDesc.Value.mesher)
     let _timeSteps                                 = triv (fun () -> _FdmSolverDesc.Value.timeSteps)
     do this.Bind(_FdmSolverDesc)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FdmSolverDesc.Value <- v
+    static member Cast (p : ICell<FdmSolverDesc>) = 
+        if p :? FdmSolverDescModel then 
+            p :?> FdmSolverDescModel
+        else
+            let o = new FdmSolverDescModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

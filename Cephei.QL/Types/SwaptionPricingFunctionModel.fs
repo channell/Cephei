@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -66,6 +66,31 @@ type SwaptionPricingFunctionModel
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _SwaptionPricingFunction.Value.value(x.Value))
     do this.Bind(_SwaptionPricingFunction)
+(* 
+    casting 
+*)
+    internal new () = SwaptionPricingFunctionModel(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwaptionPricingFunction.Value <- v
+    static member Cast (p : ICell<SwaptionPricingFunction>) = 
+        if p :? SwaptionPricingFunctionModel then 
+            p :?> SwaptionPricingFunctionModel
+        else
+            let o = new SwaptionPricingFunctionModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    internal new () = SwaptionPricingFunctionModel(null,null,null,null,null,null,null,null,null,null)
+    static member Cast (p : ICell<SwaptionPricingFunction>) = 
+        if p :? SwaptionPricingFunctionModel then 
+            p :?> SwaptionPricingFunctionModel
+        else
+            let o = new SwaptionPricingFunctionModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

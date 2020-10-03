@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,31 @@ type KRXModel
                                                    = cell (fun () -> _KRX.Value.isBusinessDay(date.Value))
     let _name                                      = cell (fun () -> _KRX.Value.name())
     do this.Bind(_KRX)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _KRX.Value <- v
+    static member Cast (p : ICell<KRX>) = 
+        if p :? KRXModel then 
+            p :?> KRXModel
+        else
+            let o = new KRXModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<KRX>) = 
+        if p :? KRXModel then 
+            p :?> KRXModel
+        else
+            let o = new KRXModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

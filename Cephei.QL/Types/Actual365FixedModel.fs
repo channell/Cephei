@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type Actual365FixedModel
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _Actual365Fixed.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_Actual365Fixed)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Actual365Fixed.Value <- v
+    static member Cast (p : ICell<Actual365Fixed>) = 
+        if p :? Actual365FixedModel then 
+            p :?> Actual365FixedModel
+        else
+            let o = new Actual365FixedModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

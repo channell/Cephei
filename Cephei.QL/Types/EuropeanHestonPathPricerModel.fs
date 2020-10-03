@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type EuropeanHestonPathPricerModel
     let _value                                     (multiPath : ICell<IPath>)   
                                                    = triv (fun () -> _EuropeanHestonPathPricer.Value.value(multiPath.Value))
     do this.Bind(_EuropeanHestonPathPricer)
+(* 
+    casting 
+*)
+    internal new () = EuropeanHestonPathPricerModel(null,null,null)
+    member internal this.Inject v = _EuropeanHestonPathPricer.Value <- v
+    static member Cast (p : ICell<EuropeanHestonPathPricer>) = 
+        if p :? EuropeanHestonPathPricerModel then 
+            p :?> EuropeanHestonPathPricerModel
+        else
+            let o = new EuropeanHestonPathPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

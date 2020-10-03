@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type AnalyticContinuousFloatingLookbackEngineModel
 *)
     let _AnalyticContinuousFloatingLookbackEngine  = cell (fun () -> new AnalyticContinuousFloatingLookbackEngine (Process.Value))
     do this.Bind(_AnalyticContinuousFloatingLookbackEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticContinuousFloatingLookbackEngineModel(null)
+    member internal this.Inject v = _AnalyticContinuousFloatingLookbackEngine.Value <- v
+    static member Cast (p : ICell<AnalyticContinuousFloatingLookbackEngine>) = 
+        if p :? AnalyticContinuousFloatingLookbackEngineModel then 
+            p :?> AnalyticContinuousFloatingLookbackEngineModel
+        else
+            let o = new AnalyticContinuousFloatingLookbackEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

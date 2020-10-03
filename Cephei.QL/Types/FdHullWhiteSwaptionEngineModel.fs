@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -69,6 +69,19 @@ type FdHullWhiteSwaptionEngineModel
     let _update                                    = triv (fun () -> _FdHullWhiteSwaptionEngine.Value.update()
                                                                      _FdHullWhiteSwaptionEngine.Value)
     do this.Bind(_FdHullWhiteSwaptionEngine)
+(* 
+    casting 
+*)
+    internal new () = FdHullWhiteSwaptionEngineModel(null,null,null,null,null,null)
+    member internal this.Inject v = _FdHullWhiteSwaptionEngine.Value <- v
+    static member Cast (p : ICell<FdHullWhiteSwaptionEngine>) = 
+        if p :? FdHullWhiteSwaptionEngineModel then 
+            p :?> FdHullWhiteSwaptionEngineModel
+        else
+            let o = new FdHullWhiteSwaptionEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

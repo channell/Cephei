@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -86,6 +86,19 @@ type YYFRHICPModel
                                                    = triv (fun () -> _YYFRHICP.Value.unregisterWith(handler.Value)
                                                                      _YYFRHICP.Value)
     do this.Bind(_YYFRHICP)
+(* 
+    casting 
+*)
+    internal new () = YYFRHICPModel(null,null)
+    member internal this.Inject v = _YYFRHICP.Value <- v
+    static member Cast (p : ICell<YYFRHICP>) = 
+        if p :? YYFRHICPModel then 
+            p :?> YYFRHICPModel
+        else
+            let o = new YYFRHICPModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -180,6 +193,19 @@ type YYFRHICPModel1
                                                    = triv (fun () -> _YYFRHICP.Value.unregisterWith(handler.Value)
                                                                      _YYFRHICP.Value)
     do this.Bind(_YYFRHICP)
+(* 
+    casting 
+*)
+    internal new () = YYFRHICPModel1(null)
+    member internal this.Inject v = _YYFRHICP.Value <- v
+    static member Cast (p : ICell<YYFRHICP>) = 
+        if p :? YYFRHICPModel1 then 
+            p :?> YYFRHICPModel1
+        else
+            let o = new YYFRHICPModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

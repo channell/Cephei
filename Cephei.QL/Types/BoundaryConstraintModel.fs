@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type BoundaryConstraintModel
     let _upperBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _BoundaryConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_BoundaryConstraint)
+(* 
+    casting 
+*)
+    internal new () = BoundaryConstraintModel(null,null)
+    member internal this.Inject v = _BoundaryConstraint.Value <- v
+    static member Cast (p : ICell<BoundaryConstraint>) = 
+        if p :? BoundaryConstraintModel then 
+            p :?> BoundaryConstraintModel
+        else
+            let o = new BoundaryConstraintModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

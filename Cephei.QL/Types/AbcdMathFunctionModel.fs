@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -67,6 +67,19 @@ type AbcdMathFunctionModel
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _AbcdMathFunction.Value.value(t.Value))
     do this.Bind(_AbcdMathFunction)
+(* 
+    casting 
+*)
+    internal new () = AbcdMathFunctionModel(null)
+    member internal this.Inject v = _AbcdMathFunction.Value <- v
+    static member Cast (p : ICell<AbcdMathFunction>) = 
+        if p :? AbcdMathFunctionModel then 
+            p :?> AbcdMathFunctionModel
+        else
+            let o = new AbcdMathFunctionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -139,6 +152,19 @@ type AbcdMathFunctionModel1
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _AbcdMathFunction.Value.value(t.Value))
     do this.Bind(_AbcdMathFunction)
+(* 
+    casting 
+*)
+    internal new () = AbcdMathFunctionModel1(null,null,null,null)
+    member internal this.Inject v = _AbcdMathFunction.Value <- v
+    static member Cast (p : ICell<AbcdMathFunction>) = 
+        if p :? AbcdMathFunctionModel1 then 
+            p :?> AbcdMathFunctionModel1
+        else
+            let o = new AbcdMathFunctionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

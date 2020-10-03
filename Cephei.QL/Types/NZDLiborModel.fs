@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -97,6 +97,19 @@ type NZDLiborModel
                                                    = triv (fun () -> _NZDLibor.Value.unregisterWith(handler.Value)
                                                                      _NZDLibor.Value)
     do this.Bind(_NZDLibor)
+(* 
+    casting 
+*)
+    internal new () = NZDLiborModel(null,null)
+    member internal this.Inject v = _NZDLibor.Value <- v
+    static member Cast (p : ICell<NZDLibor>) = 
+        if p :? NZDLiborModel then 
+            p :?> NZDLiborModel
+        else
+            let o = new NZDLiborModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -213,6 +226,19 @@ type NZDLiborModel1
                                                    = triv (fun () -> _NZDLibor.Value.unregisterWith(handler.Value)
                                                                      _NZDLibor.Value)
     do this.Bind(_NZDLibor)
+(* 
+    casting 
+*)
+    internal new () = NZDLiborModel1(null)
+    member internal this.Inject v = _NZDLibor.Value <- v
+    static member Cast (p : ICell<NZDLibor>) = 
+        if p :? NZDLiborModel1 then 
+            p :?> NZDLiborModel1
+        else
+            let o = new NZDLiborModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

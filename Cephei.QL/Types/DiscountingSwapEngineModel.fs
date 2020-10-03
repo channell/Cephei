@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type DiscountingSwapEngineModel
 *)
     let _DiscountingSwapEngine                     = cell (fun () -> new DiscountingSwapEngine (discountCurve.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))
     do this.Bind(_DiscountingSwapEngine)
+(* 
+    casting 
+*)
+    internal new () = DiscountingSwapEngineModel(null,null,null,null)
+    member internal this.Inject v = _DiscountingSwapEngine.Value <- v
+    static member Cast (p : ICell<DiscountingSwapEngine>) = 
+        if p :? DiscountingSwapEngineModel then 
+            p :?> DiscountingSwapEngineModel
+        else
+            let o = new DiscountingSwapEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

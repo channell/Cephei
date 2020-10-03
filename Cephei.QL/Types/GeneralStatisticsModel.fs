@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type GeneralStatisticsModel
     let _variance                                  = triv (fun () -> _GeneralStatistics.Value.variance())
     let _weightSum                                 = triv (fun () -> _GeneralStatistics.Value.weightSum())
     do this.Bind(_GeneralStatistics)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _GeneralStatistics.Value <- v
+    static member Cast (p : ICell<GeneralStatistics>) = 
+        if p :? GeneralStatisticsModel then 
+            p :?> GeneralStatisticsModel
+        else
+            let o = new GeneralStatisticsModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

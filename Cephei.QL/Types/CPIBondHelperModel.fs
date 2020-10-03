@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -106,6 +106,19 @@ type CPIBondHelperModel
     let _update                                    = triv (fun () -> _CPIBondHelper.Value.update()
                                                                      _CPIBondHelper.Value)
     do this.Bind(_CPIBondHelper)
+(* 
+    casting 
+*)
+    internal new () = CPIBondHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CPIBondHelper.Value <- v
+    static member Cast (p : ICell<CPIBondHelper>) = 
+        if p :? CPIBondHelperModel then 
+            p :?> CPIBondHelperModel
+        else
+            let o = new CPIBondHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

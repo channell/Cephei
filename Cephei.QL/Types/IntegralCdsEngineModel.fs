@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type IntegralCdsEngineModel
 *)
     let _IntegralCdsEngine                         = cell (fun () -> new IntegralCdsEngine (step.Value, probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))
     do this.Bind(_IntegralCdsEngine)
+(* 
+    casting 
+*)
+    internal new () = IntegralCdsEngineModel(null,null,null,null,null)
+    member internal this.Inject v = _IntegralCdsEngine.Value <- v
+    static member Cast (p : ICell<IntegralCdsEngine>) = 
+        if p :? IntegralCdsEngineModel then 
+            p :?> IntegralCdsEngineModel
+        else
+            let o = new IntegralCdsEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type XABRConstraintModel
     let _upperBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _XABRConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_XABRConstraint)
+(* 
+    casting 
+*)
+    internal new () = XABRConstraintModel(null)
+    member internal this.Inject v = _XABRConstraint.Value <- v
+    static member Cast (p : ICell<XABRConstraint>) = 
+        if p :? XABRConstraintModel then 
+            p :?> XABRConstraintModel
+        else
+            let o = new XABRConstraintModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -102,6 +115,19 @@ type XABRConstraintModel1
     let _upperBound                                (parameters : ICell<Vector>)   
                                                    = triv (fun () -> _XABRConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_XABRConstraint)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _XABRConstraint.Value <- v
+    static member Cast (p : ICell<XABRConstraint>) = 
+        if p :? XABRConstraintModel1 then 
+            p :?> XABRConstraintModel1
+        else
+            let o = new XABRConstraintModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,31 @@ type SettingsModel
     let _withVegaRatio                             (vegaRatio : ICell<double>) (lowerRateBound : ICell<double>) (upperRateBound : ICell<double>)   
                                                    = cell (fun () -> _Settings.Value.withVegaRatio(vegaRatio.Value, lowerRateBound.Value, upperRateBound.Value))
     do this.Bind(_Settings)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Settings.Value <- v
+    static member Cast (p : ICell<Settings>) = 
+        if p :? SettingsModel then 
+            p :?> SettingsModel
+        else
+            let o = new SettingsModel ()
+            o.Inject p.Value
+            o
+                            
+(* 
+    casting 
+*)
+    
+    static member Cast (p : ICell<Settings>) = 
+        if p :? SettingsModel then 
+            p :?> SettingsModel
+        else
+            let o = new SettingsModel ()
+            o.Value <- p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

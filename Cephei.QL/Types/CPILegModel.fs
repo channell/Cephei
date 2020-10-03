@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -89,6 +89,19 @@ type CPILegModel
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
                                                    = triv (fun () -> _CPILeg.Value.withPaymentAdjustment(convention.Value))
     do this.Bind(_CPILeg)
+(* 
+    casting 
+*)
+    internal new () = CPILegModel(null,null,null,null)
+    member internal this.Inject v = _CPILeg.Value <- v
+    static member Cast (p : ICell<CPILeg>) = 
+        if p :? CPILegModel then 
+            p :?> CPILegModel
+        else
+            let o = new CPILegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

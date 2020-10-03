@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -65,6 +65,19 @@ type OvernightLegModel
     let _withSpreads1                              (spreads : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _OvernightLeg.Value.withSpreads(spreads.Value))
     do this.Bind(_OvernightLeg)
+(* 
+    casting 
+*)
+    internal new () = OvernightLegModel(null,null)
+    member internal this.Inject v = _OvernightLeg.Value <- v
+    static member Cast (p : ICell<OvernightLeg>) = 
+        if p :? OvernightLegModel then 
+            p :?> OvernightLegModel
+        else
+            let o = new OvernightLegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type SARCurrencyModel
     let _ToString                                  = triv (fun () -> _SARCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _SARCurrency.Value.triangulationCurrency)
     do this.Bind(_SARCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _SARCurrency.Value <- v
+    static member Cast (p : ICell<SARCurrency>) = 
+        if p :? SARCurrencyModel then 
+            p :?> SARCurrencyModel
+        else
+            let o = new SARCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

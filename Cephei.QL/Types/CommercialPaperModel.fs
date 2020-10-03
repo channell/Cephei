@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -74,6 +74,19 @@ type CommercialPaperModel
                                                                      _CommercialPaper.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CommercialPaper).valuationDate())
     do this.Bind(_CommercialPaper)
+(* 
+    casting 
+*)
+    internal new () = CommercialPaperModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CommercialPaper.Value <- v
+    static member Cast (p : ICell<CommercialPaper>) = 
+        if p :? CommercialPaperModel then 
+            p :?> CommercialPaperModel
+        else
+            let o = new CommercialPaperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

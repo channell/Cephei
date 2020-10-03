@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type LmConstWrapperCorrelationModelModel
                                                                      _LmConstWrapperCorrelationModel.Value)
     let _size                                      = triv (fun () -> _LmConstWrapperCorrelationModel.Value.size())
     do this.Bind(_LmConstWrapperCorrelationModel)
+(* 
+    casting 
+*)
+    internal new () = LmConstWrapperCorrelationModelModel(null)
+    member internal this.Inject v = _LmConstWrapperCorrelationModel.Value <- v
+    static member Cast (p : ICell<LmConstWrapperCorrelationModel>) = 
+        if p :? LmConstWrapperCorrelationModelModel then 
+            p :?> LmConstWrapperCorrelationModelModel
+        else
+            let o = new LmConstWrapperCorrelationModelModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

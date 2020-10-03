@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -110,6 +110,19 @@ type ZeroCouponBondModel
                                                                      _ZeroCouponBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _ZeroCouponBond).valuationDate())
     do this.Bind(_ZeroCouponBond)
+(* 
+    casting 
+*)
+    internal new () = ZeroCouponBondModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _ZeroCouponBond.Value <- v
+    static member Cast (p : ICell<ZeroCouponBond>) = 
+        if p :? ZeroCouponBondModel then 
+            p :?> ZeroCouponBondModel
+        else
+            let o = new ZeroCouponBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

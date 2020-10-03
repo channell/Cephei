@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -81,6 +81,19 @@ type yoyInflationLegModel
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
                                                    = triv (fun () -> _yoyInflationLeg.Value.withPaymentAdjustment(convention.Value))
     do this.Bind(_yoyInflationLeg)
+(* 
+    casting 
+*)
+    internal new () = yoyInflationLegModel(null,null,null,null)
+    member internal this.Inject v = _yoyInflationLeg.Value <- v
+    static member Cast (p : ICell<yoyInflationLeg>) = 
+        if p :? yoyInflationLegModel then 
+            p :?> yoyInflationLegModel
+        else
+            let o = new yoyInflationLegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

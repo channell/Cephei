@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -108,6 +108,19 @@ type BondModel
                                                                      _Bond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Bond).valuationDate())
     do this.Bind(_Bond)
+(* 
+    casting 
+*)
+    internal new () = BondModel(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _Bond.Value <- v
+    static member Cast (p : ICell<Bond>) = 
+        if p :? BondModel then 
+            p :?> BondModel
+        else
+            let o = new BondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -244,6 +257,19 @@ type BondModel1
                                                                      _Bond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Bond).valuationDate())
     do this.Bind(_Bond)
+(* 
+    casting 
+*)
+    internal new () = BondModel1(null,null,null,null,null,null)
+    member internal this.Inject v = _Bond.Value <- v
+    static member Cast (p : ICell<Bond>) = 
+        if p :? BondModel1 then 
+            p :?> BondModel1
+        else
+            let o = new BondModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

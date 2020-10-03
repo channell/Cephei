@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type TermStructureFittingParameterModel
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _TermStructureFittingParameter.Value.value(t.Value))
     do this.Bind(_TermStructureFittingParameter)
+(* 
+    casting 
+*)
+    internal new () = TermStructureFittingParameterModel(null)
+    member internal this.Inject v = _TermStructureFittingParameter.Value <- v
+    static member Cast (p : ICell<TermStructureFittingParameter>) = 
+        if p :? TermStructureFittingParameterModel then 
+            p :?> TermStructureFittingParameterModel
+        else
+            let o = new TermStructureFittingParameterModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -102,6 +115,19 @@ type TermStructureFittingParameterModel1
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _TermStructureFittingParameter.Value.value(t.Value))
     do this.Bind(_TermStructureFittingParameter)
+(* 
+    casting 
+*)
+    internal new () = TermStructureFittingParameterModel1(null)
+    member internal this.Inject v = _TermStructureFittingParameter.Value <- v
+    static member Cast (p : ICell<TermStructureFittingParameter>) = 
+        if p :? TermStructureFittingParameterModel1 then 
+            p :?> TermStructureFittingParameterModel1
+        else
+            let o = new TermStructureFittingParameterModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

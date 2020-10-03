@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -99,6 +99,19 @@ type DiscrepancyStatisticsModel
     let _variance                                  = triv (fun () -> _DiscrepancyStatistics.Value.variance())
     let _weightSum                                 = triv (fun () -> _DiscrepancyStatistics.Value.weightSum())
     do this.Bind(_DiscrepancyStatistics)
+(* 
+    casting 
+*)
+    internal new () = DiscrepancyStatisticsModel(null)
+    member internal this.Inject v = _DiscrepancyStatistics.Value <- v
+    static member Cast (p : ICell<DiscrepancyStatistics>) = 
+        if p :? DiscrepancyStatisticsModel then 
+            p :?> DiscrepancyStatisticsModel
+        else
+            let o = new DiscrepancyStatisticsModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -61,6 +61,19 @@ type QuadraticMinHelperModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _QuadraticMinHelper.Value.value(x.Value))
     do this.Bind(_QuadraticMinHelper)
+(* 
+    casting 
+*)
+    internal new () = QuadraticMinHelperModel(null,null,null,null,null,null)
+    member internal this.Inject v = _QuadraticMinHelper.Value <- v
+    static member Cast (p : ICell<QuadraticMinHelper>) = 
+        if p :? QuadraticMinHelperModel then 
+            p :?> QuadraticMinHelperModel
+        else
+            let o = new QuadraticMinHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

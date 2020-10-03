@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type MixedLinearKrugerCubicModel
                                                                      _MixedLinearKrugerCubic.Value)
     let _extrapolate                               = triv (fun () -> _MixedLinearKrugerCubic.Value.extrapolate)
     do this.Bind(_MixedLinearKrugerCubic)
+(* 
+    casting 
+*)
+    internal new () = MixedLinearKrugerCubicModel(null,null,null,null,null)
+    member internal this.Inject v = _MixedLinearKrugerCubic.Value <- v
+    static member Cast (p : ICell<MixedLinearKrugerCubic>) = 
+        if p :? MixedLinearKrugerCubicModel then 
+            p :?> MixedLinearKrugerCubicModel
+        else
+            let o = new MixedLinearKrugerCubicModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

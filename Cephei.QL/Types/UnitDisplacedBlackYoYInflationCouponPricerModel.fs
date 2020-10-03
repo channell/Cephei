@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -71,6 +71,19 @@ type UnitDisplacedBlackYoYInflationCouponPricerModel
     let _update                                    = triv (fun () -> _UnitDisplacedBlackYoYInflationCouponPricer.Value.update()
                                                                      _UnitDisplacedBlackYoYInflationCouponPricer.Value)
     do this.Bind(_UnitDisplacedBlackYoYInflationCouponPricer)
+(* 
+    casting 
+*)
+    internal new () = UnitDisplacedBlackYoYInflationCouponPricerModel(null)
+    member internal this.Inject v = _UnitDisplacedBlackYoYInflationCouponPricer.Value <- v
+    static member Cast (p : ICell<UnitDisplacedBlackYoYInflationCouponPricer>) = 
+        if p :? UnitDisplacedBlackYoYInflationCouponPricerModel then 
+            p :?> UnitDisplacedBlackYoYInflationCouponPricerModel
+        else
+            let o = new UnitDisplacedBlackYoYInflationCouponPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

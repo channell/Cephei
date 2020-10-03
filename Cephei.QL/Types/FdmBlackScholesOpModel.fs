@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -91,6 +91,19 @@ type FdmBlackScholesOpModel
     let _toMatrixDecomp                            = triv (fun () -> _FdmBlackScholesOp.Value.toMatrixDecomp())
     let _toMatrix                                  = triv (fun () -> _FdmBlackScholesOp.Value.toMatrix())
     do this.Bind(_FdmBlackScholesOp)
+(* 
+    casting 
+*)
+    internal new () = FdmBlackScholesOpModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _FdmBlackScholesOp.Value <- v
+    static member Cast (p : ICell<FdmBlackScholesOp>) = 
+        if p :? FdmBlackScholesOpModel then 
+            p :?> FdmBlackScholesOpModel
+        else
+            let o = new FdmBlackScholesOpModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

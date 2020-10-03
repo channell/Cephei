@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type FdmStepConditionCompositeModel
     let _conditions                                = triv (fun () -> _FdmStepConditionComposite.Value.conditions())
     let _stoppingTimes                             = triv (fun () -> _FdmStepConditionComposite.Value.stoppingTimes())
     do this.Bind(_FdmStepConditionComposite)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FdmStepConditionComposite.Value <- v
+    static member Cast (p : ICell<FdmStepConditionComposite>) = 
+        if p :? FdmStepConditionCompositeModel then 
+            p :?> FdmStepConditionCompositeModel
+        else
+            let o = new FdmStepConditionCompositeModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -82,6 +95,19 @@ type FdmStepConditionCompositeModel1
     let _conditions                                = triv (fun () -> _FdmStepConditionComposite.Value.conditions())
     let _stoppingTimes                             = triv (fun () -> _FdmStepConditionComposite.Value.stoppingTimes())
     do this.Bind(_FdmStepConditionComposite)
+(* 
+    casting 
+*)
+    internal new () = FdmStepConditionCompositeModel1(null,null)
+    member internal this.Inject v = _FdmStepConditionComposite.Value <- v
+    static member Cast (p : ICell<FdmStepConditionComposite>) = 
+        if p :? FdmStepConditionCompositeModel1 then 
+            p :?> FdmStepConditionCompositeModel1
+        else
+            let o = new FdmStepConditionCompositeModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -72,6 +72,19 @@ type PrincipalModel
                                                    = triv (fun () -> _Principal.Value.unregisterWith(handler.Value)
                                                                      _Principal.Value)
     do this.Bind(_Principal)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Principal.Value <- v
+    static member Cast (p : ICell<Principal>) = 
+        if p :? PrincipalModel then 
+            p :?> PrincipalModel
+        else
+            let o = new PrincipalModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -163,6 +176,19 @@ type PrincipalModel1
                                                    = triv (fun () -> _Principal.Value.unregisterWith(handler.Value)
                                                                      _Principal.Value)
     do this.Bind(_Principal)
+(* 
+    casting 
+*)
+    internal new () = PrincipalModel1(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _Principal.Value <- v
+    static member Cast (p : ICell<Principal>) = 
+        if p :? PrincipalModel1 then 
+            p :?> PrincipalModel1
+        else
+            let o = new PrincipalModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

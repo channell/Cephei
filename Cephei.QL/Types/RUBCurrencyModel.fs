@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type RUBCurrencyModel
     let _ToString                                  = triv (fun () -> _RUBCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _RUBCurrency.Value.triangulationCurrency)
     do this.Bind(_RUBCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _RUBCurrency.Value <- v
+    static member Cast (p : ICell<RUBCurrency>) = 
+        if p :? RUBCurrencyModel then 
+            p :?> RUBCurrencyModel
+        else
+            let o = new RUBCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

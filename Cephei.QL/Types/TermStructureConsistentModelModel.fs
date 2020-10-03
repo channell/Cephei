@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type TermStructureConsistentModelModel
                                                    = triv (fun () -> _TermStructureConsistentModel.Value.unregisterWith(handler.Value)
                                                                      _TermStructureConsistentModel.Value)
     do this.Bind(_TermStructureConsistentModel)
+(* 
+    casting 
+*)
+    internal new () = TermStructureConsistentModelModel(null)
+    member internal this.Inject v = _TermStructureConsistentModel.Value <- v
+    static member Cast (p : ICell<TermStructureConsistentModel>) = 
+        if p :? TermStructureConsistentModelModel then 
+            p :?> TermStructureConsistentModelModel
+        else
+            let o = new TermStructureConsistentModelModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

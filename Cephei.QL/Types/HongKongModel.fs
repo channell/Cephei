@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type HongKongModel
                                                    = triv (fun () -> _HongKong.Value.removeHoliday(d.Value)
                                                                      _HongKong.Value)
     do this.Bind(_HongKong)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _HongKong.Value <- v
+    static member Cast (p : ICell<HongKong>) = 
+        if p :? HongKongModel then 
+            p :?> HongKongModel
+        else
+            let o = new HongKongModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

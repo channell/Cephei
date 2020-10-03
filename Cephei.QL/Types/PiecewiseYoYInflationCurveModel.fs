@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -140,6 +140,19 @@ type PiecewiseYoYInflationCurveModel
                                                                      _PiecewiseYoYInflationCurve.Value)
     let _extrapolate                               = triv (fun () -> _PiecewiseYoYInflationCurve.Value.extrapolate)
     do this.Bind(_PiecewiseYoYInflationCurve)
+(* 
+    casting 
+*)
+    internal new () = PiecewiseYoYInflationCurveModel(null,null,null,null,null,null)
+    member internal this.Inject v = _PiecewiseYoYInflationCurve.Value <- v
+    static member Cast (p : ICell<PiecewiseYoYInflationCurve>) = 
+        if p :? PiecewiseYoYInflationCurveModel then 
+            p :?> PiecewiseYoYInflationCurveModel
+        else
+            let o = new PiecewiseYoYInflationCurveModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -343,6 +356,19 @@ type PiecewiseYoYInflationCurveModel1
                                                                      _PiecewiseYoYInflationCurve.Value)
     let _extrapolate                               = triv (fun () -> _PiecewiseYoYInflationCurve.Value.extrapolate)
     do this.Bind(_PiecewiseYoYInflationCurve)
+(* 
+    casting 
+*)
+    internal new () = PiecewiseYoYInflationCurveModel1(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _PiecewiseYoYInflationCurve.Value <- v
+    static member Cast (p : ICell<PiecewiseYoYInflationCurve>) = 
+        if p :? PiecewiseYoYInflationCurveModel1 then 
+            p :?> PiecewiseYoYInflationCurveModel1
+        else
+            let o = new PiecewiseYoYInflationCurveModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -548,6 +574,19 @@ type PiecewiseYoYInflationCurveModel2
                                                                      _PiecewiseYoYInflationCurve.Value)
     let _extrapolate                               = triv (fun () -> _PiecewiseYoYInflationCurve.Value.extrapolate)
     do this.Bind(_PiecewiseYoYInflationCurve)
+(* 
+    casting 
+*)
+    internal new () = PiecewiseYoYInflationCurveModel2(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _PiecewiseYoYInflationCurve.Value <- v
+    static member Cast (p : ICell<PiecewiseYoYInflationCurve>) = 
+        if p :? PiecewiseYoYInflationCurveModel2 then 
+            p :?> PiecewiseYoYInflationCurveModel2
+        else
+            let o = new PiecewiseYoYInflationCurveModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -736,6 +775,19 @@ type PiecewiseYoYInflationCurveModel3
                                                                      _PiecewiseYoYInflationCurve.Value)
     let _extrapolate                               = triv (fun () -> _PiecewiseYoYInflationCurve.Value.extrapolate)
     do this.Bind(_PiecewiseYoYInflationCurve)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _PiecewiseYoYInflationCurve.Value <- v
+    static member Cast (p : ICell<PiecewiseYoYInflationCurve>) = 
+        if p :? PiecewiseYoYInflationCurveModel3 then 
+            p :?> PiecewiseYoYInflationCurveModel3
+        else
+            let o = new PiecewiseYoYInflationCurveModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

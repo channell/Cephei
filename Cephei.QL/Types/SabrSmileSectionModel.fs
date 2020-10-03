@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -81,6 +81,19 @@ type SabrSmileSectionModel
                                                    = triv (fun () -> _SabrSmileSection.Value.volatility(strike.Value))
     let _volatilityType                            = triv (fun () -> _SabrSmileSection.Value.volatilityType())
     do this.Bind(_SabrSmileSection)
+(* 
+    casting 
+*)
+    internal new () = SabrSmileSectionModel(null,null,null,null,null,null)
+    member internal this.Inject v = _SabrSmileSection.Value <- v
+    static member Cast (p : ICell<SabrSmileSection>) = 
+        if p :? SabrSmileSectionModel then 
+            p :?> SabrSmileSectionModel
+        else
+            let o = new SabrSmileSectionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -167,6 +180,19 @@ type SabrSmileSectionModel1
                                                    = triv (fun () -> _SabrSmileSection.Value.volatility(strike.Value))
     let _volatilityType                            = triv (fun () -> _SabrSmileSection.Value.volatilityType())
     do this.Bind(_SabrSmileSection)
+(* 
+    casting 
+*)
+    internal new () = SabrSmileSectionModel1(null,null,null,null,null)
+    member internal this.Inject v = _SabrSmileSection.Value <- v
+    static member Cast (p : ICell<SabrSmileSection>) = 
+        if p :? SabrSmileSectionModel1 then 
+            p :?> SabrSmileSectionModel1
+        else
+            let o = new SabrSmileSectionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

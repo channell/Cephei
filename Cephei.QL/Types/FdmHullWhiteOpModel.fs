@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type FdmHullWhiteOpModel
     let _toMatrixDecomp                            = triv (fun () -> _FdmHullWhiteOp.Value.toMatrixDecomp())
     let _toMatrix                                  = triv (fun () -> _FdmHullWhiteOp.Value.toMatrix())
     do this.Bind(_FdmHullWhiteOp)
+(* 
+    casting 
+*)
+    internal new () = FdmHullWhiteOpModel(null,null,null)
+    member internal this.Inject v = _FdmHullWhiteOp.Value <- v
+    static member Cast (p : ICell<FdmHullWhiteOp>) = 
+        if p :? FdmHullWhiteOpModel then 
+            p :?> FdmHullWhiteOpModel
+        else
+            let o = new FdmHullWhiteOpModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type SecondOrderMixedDerivativeOpModel
                                                                      _SecondOrderMixedDerivativeOp.Value)
     let _toMatrix                                  = triv (fun () -> _SecondOrderMixedDerivativeOp.Value.toMatrix())
     do this.Bind(_SecondOrderMixedDerivativeOp)
+(* 
+    casting 
+*)
+    internal new () = SecondOrderMixedDerivativeOpModel(null,null,null)
+    member internal this.Inject v = _SecondOrderMixedDerivativeOp.Value <- v
+    static member Cast (p : ICell<SecondOrderMixedDerivativeOp>) = 
+        if p :? SecondOrderMixedDerivativeOpModel then 
+            p :?> SecondOrderMixedDerivativeOpModel
+        else
+            let o = new SecondOrderMixedDerivativeOpModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

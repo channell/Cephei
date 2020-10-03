@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type GaussJacobiIntegrationModel
     let _weights                                   = triv (fun () -> _GaussJacobiIntegration.Value.weights())
     let _x                                         = triv (fun () -> _GaussJacobiIntegration.Value.x())
     do this.Bind(_GaussJacobiIntegration)
+(* 
+    casting 
+*)
+    internal new () = GaussJacobiIntegrationModel(null,null,null)
+    member internal this.Inject v = _GaussJacobiIntegration.Value <- v
+    static member Cast (p : ICell<GaussJacobiIntegration>) = 
+        if p :? GaussJacobiIntegrationModel then 
+            p :?> GaussJacobiIntegrationModel
+        else
+            let o = new GaussJacobiIntegrationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

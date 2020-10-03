@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -130,6 +130,19 @@ type DigitalCmsCouponModel
                                                    = triv (fun () -> _DigitalCmsCoupon.Value.unregisterWith(handler.Value)
                                                                      _DigitalCmsCoupon.Value)
     do this.Bind(_DigitalCmsCoupon)
+(* 
+    casting 
+*)
+    internal new () = DigitalCmsCouponModel(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _DigitalCmsCoupon.Value <- v
+    static member Cast (p : ICell<DigitalCmsCoupon>) = 
+        if p :? DigitalCmsCouponModel then 
+            p :?> DigitalCmsCouponModel
+        else
+            let o = new DigitalCmsCouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -287,6 +300,19 @@ type DigitalCmsCouponModel1
                                                    = triv (fun () -> _DigitalCmsCoupon.Value.unregisterWith(handler.Value)
                                                                      _DigitalCmsCoupon.Value)
     do this.Bind(_DigitalCmsCoupon)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _DigitalCmsCoupon.Value <- v
+    static member Cast (p : ICell<DigitalCmsCoupon>) = 
+        if p :? DigitalCmsCouponModel1 then 
+            p :?> DigitalCmsCouponModel1
+        else
+            let o = new DigitalCmsCouponModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

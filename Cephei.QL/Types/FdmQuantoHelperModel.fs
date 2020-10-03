@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -71,6 +71,19 @@ type FdmQuantoHelperModel
     let _update                                    = triv (fun () -> _FdmQuantoHelper.Value.update()
                                                                      _FdmQuantoHelper.Value)
     do this.Bind(_FdmQuantoHelper)
+(* 
+    casting 
+*)
+    internal new () = FdmQuantoHelperModel(null,null,null,null,null)
+    member internal this.Inject v = _FdmQuantoHelper.Value <- v
+    static member Cast (p : ICell<FdmQuantoHelper>) = 
+        if p :? FdmQuantoHelperModel then 
+            p :?> FdmQuantoHelperModel
+        else
+            let o = new FdmQuantoHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

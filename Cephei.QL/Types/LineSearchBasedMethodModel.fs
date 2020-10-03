@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type LineSearchBasedMethodModel
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _LineSearchBasedMethod.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_LineSearchBasedMethod)
+(* 
+    casting 
+*)
+    internal new () = LineSearchBasedMethodModel(null)
+    member internal this.Inject v = _LineSearchBasedMethod.Value <- v
+    static member Cast (p : ICell<LineSearchBasedMethod>) = 
+        if p :? LineSearchBasedMethodModel then 
+            p :?> LineSearchBasedMethodModel
+        else
+            let o = new LineSearchBasedMethodModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

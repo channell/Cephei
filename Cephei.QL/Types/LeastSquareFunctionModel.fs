@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -61,6 +61,19 @@ type LeastSquareFunctionModel
     let _valuesAndJacobian                         (jac : ICell<Matrix>) (x : ICell<Vector>)   
                                                    = triv (fun () -> _LeastSquareFunction.Value.valuesAndJacobian(jac.Value, x.Value))
     do this.Bind(_LeastSquareFunction)
+(* 
+    casting 
+*)
+    internal new () = LeastSquareFunctionModel(null)
+    member internal this.Inject v = _LeastSquareFunction.Value <- v
+    static member Cast (p : ICell<LeastSquareFunction>) = 
+        if p :? LeastSquareFunctionModel then 
+            p :?> LeastSquareFunctionModel
+        else
+            let o = new LeastSquareFunctionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

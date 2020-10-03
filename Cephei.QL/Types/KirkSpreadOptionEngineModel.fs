@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type KirkSpreadOptionEngineModel
 *)
     let _KirkSpreadOptionEngine                    = cell (fun () -> new KirkSpreadOptionEngine (process1.Value, process2.Value, correlation.Value))
     do this.Bind(_KirkSpreadOptionEngine)
+(* 
+    casting 
+*)
+    internal new () = KirkSpreadOptionEngineModel(null,null,null)
+    member internal this.Inject v = _KirkSpreadOptionEngine.Value <- v
+    static member Cast (p : ICell<KirkSpreadOptionEngine>) = 
+        if p :? KirkSpreadOptionEngineModel then 
+            p :?> KirkSpreadOptionEngineModel
+        else
+            let o = new KirkSpreadOptionEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

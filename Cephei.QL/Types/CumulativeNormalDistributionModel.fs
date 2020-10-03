@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -47,6 +47,19 @@ type CumulativeNormalDistributionModel
     let _value                                     (z : ICell<double>)   
                                                    = triv (fun () -> _CumulativeNormalDistribution.Value.value(z.Value))
     do this.Bind(_CumulativeNormalDistribution)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _CumulativeNormalDistribution.Value <- v
+    static member Cast (p : ICell<CumulativeNormalDistribution>) = 
+        if p :? CumulativeNormalDistributionModel then 
+            p :?> CumulativeNormalDistributionModel
+        else
+            let o = new CumulativeNormalDistributionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -80,6 +93,19 @@ type CumulativeNormalDistributionModel1
     let _value                                     (z : ICell<double>)   
                                                    = triv (fun () -> _CumulativeNormalDistribution.Value.value(z.Value))
     do this.Bind(_CumulativeNormalDistribution)
+(* 
+    casting 
+*)
+    internal new () = CumulativeNormalDistributionModel1(null,null)
+    member internal this.Inject v = _CumulativeNormalDistribution.Value <- v
+    static member Cast (p : ICell<CumulativeNormalDistribution>) = 
+        if p :? CumulativeNormalDistributionModel1 then 
+            p :?> CumulativeNormalDistributionModel1
+        else
+            let o = new CumulativeNormalDistributionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

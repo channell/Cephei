@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type LocalVolSurfaceModel
                                                                      _LocalVolSurface.Value)
     let _extrapolate                               = triv (fun () -> _LocalVolSurface.Value.extrapolate)
     do this.Bind(_LocalVolSurface)
+(* 
+    casting 
+*)
+    internal new () = LocalVolSurfaceModel(null,null,null,null)
+    member internal this.Inject v = _LocalVolSurface.Value <- v
+    static member Cast (p : ICell<LocalVolSurface>) = 
+        if p :? LocalVolSurfaceModel then 
+            p :?> LocalVolSurfaceModel
+        else
+            let o = new LocalVolSurfaceModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -163,6 +176,19 @@ type LocalVolSurfaceModel1
                                                                      _LocalVolSurface.Value)
     let _extrapolate                               = triv (fun () -> _LocalVolSurface.Value.extrapolate)
     do this.Bind(_LocalVolSurface)
+(* 
+    casting 
+*)
+    internal new () = LocalVolSurfaceModel1(null,null,null,null)
+    member internal this.Inject v = _LocalVolSurface.Value <- v
+    static member Cast (p : ICell<LocalVolSurface>) = 
+        if p :? LocalVolSurfaceModel1 then 
+            p :?> LocalVolSurfaceModel1
+        else
+            let o = new LocalVolSurfaceModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

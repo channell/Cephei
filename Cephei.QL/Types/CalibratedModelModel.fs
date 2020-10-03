@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -67,6 +67,19 @@ type CalibratedModelModel
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _CalibratedModel.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_CalibratedModel)
+(* 
+    casting 
+*)
+    internal new () = CalibratedModelModel(null)
+    member internal this.Inject v = _CalibratedModel.Value <- v
+    static member Cast (p : ICell<CalibratedModel>) = 
+        if p :? CalibratedModelModel then 
+            p :?> CalibratedModelModel
+        else
+            let o = new CalibratedModelModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

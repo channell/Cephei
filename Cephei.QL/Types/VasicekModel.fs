@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -90,6 +90,19 @@ type VasicekModel
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _Vasicek.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_Vasicek)
+(* 
+    casting 
+*)
+    internal new () = VasicekModel(null,null,null,null,null)
+    member internal this.Inject v = _Vasicek.Value <- v
+    static member Cast (p : ICell<Vasicek>) = 
+        if p :? VasicekModel then 
+            p :?> VasicekModel
+        else
+            let o = new VasicekModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

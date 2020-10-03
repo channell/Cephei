@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type RendistatoCalculatorModel
     let _yield                                     = cell (fun () -> _RendistatoCalculator.Value.YIELD())
     let _yields                                    = cell (fun () -> _RendistatoCalculator.Value.yields())
     do this.Bind(_RendistatoCalculator)
+(* 
+    casting 
+*)
+    internal new () = RendistatoCalculatorModel(null,null,null)
+    member internal this.Inject v = _RendistatoCalculator.Value <- v
+    static member Cast (p : ICell<RendistatoCalculator>) = 
+        if p :? RendistatoCalculatorModel then 
+            p :?> RendistatoCalculatorModel
+        else
+            let o = new RendistatoCalculatorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

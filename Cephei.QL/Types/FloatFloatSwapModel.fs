@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -137,6 +137,19 @@ type FloatFloatSwapModel
                                                                      _FloatFloatSwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FloatFloatSwap).valuationDate())
     do this.Bind(_FloatFloatSwap)
+(* 
+    casting 
+*)
+    internal new () = FloatFloatSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FloatFloatSwap.Value <- v
+    static member Cast (p : ICell<FloatFloatSwap>) = 
+        if p :? FloatFloatSwapModel then 
+            p :?> FloatFloatSwapModel
+        else
+            let o = new FloatFloatSwapModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -320,6 +333,19 @@ type FloatFloatSwapModel1
                                                                      _FloatFloatSwap.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FloatFloatSwap).valuationDate())
     do this.Bind(_FloatFloatSwap)
+(* 
+    casting 
+*)
+    internal new () = FloatFloatSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FloatFloatSwap.Value <- v
+    static member Cast (p : ICell<FloatFloatSwap>) = 
+        if p :? FloatFloatSwapModel1 then 
+            p :?> FloatFloatSwapModel1
+        else
+            let o = new FloatFloatSwapModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

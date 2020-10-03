@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -78,6 +78,19 @@ type TridiagonalOperatorModel
                                                    = triv (fun () -> _TridiagonalOperator.Value.subtract(A.Value, B.Value))
     let _upperDiagonal                             = triv (fun () -> _TridiagonalOperator.Value.upperDiagonal())
     do this.Bind(_TridiagonalOperator)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _TridiagonalOperator.Value <- v
+    static member Cast (p : ICell<TridiagonalOperator>) = 
+        if p :? TridiagonalOperatorModel then 
+            p :?> TridiagonalOperatorModel
+        else
+            let o = new TridiagonalOperatorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -170,6 +183,19 @@ type TridiagonalOperatorModel1
                                                    = triv (fun () -> _TridiagonalOperator.Value.subtract(A.Value, B.Value))
     let _upperDiagonal                             = triv (fun () -> _TridiagonalOperator.Value.upperDiagonal())
     do this.Bind(_TridiagonalOperator)
+(* 
+    casting 
+*)
+    internal new () = TridiagonalOperatorModel1(null,null,null)
+    member internal this.Inject v = _TridiagonalOperator.Value <- v
+    static member Cast (p : ICell<TridiagonalOperator>) = 
+        if p :? TridiagonalOperatorModel1 then 
+            p :?> TridiagonalOperatorModel1
+        else
+            let o = new TridiagonalOperatorModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -261,6 +287,19 @@ type TridiagonalOperatorModel2
                                                    = triv (fun () -> _TridiagonalOperator.Value.subtract(A.Value, B.Value))
     let _upperDiagonal                             = triv (fun () -> _TridiagonalOperator.Value.upperDiagonal())
     do this.Bind(_TridiagonalOperator)
+(* 
+    casting 
+*)
+    internal new () = TridiagonalOperatorModel2(null)
+    member internal this.Inject v = _TridiagonalOperator.Value <- v
+    static member Cast (p : ICell<TridiagonalOperator>) = 
+        if p :? TridiagonalOperatorModel2 then 
+            p :?> TridiagonalOperatorModel2
+        else
+            let o = new TridiagonalOperatorModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

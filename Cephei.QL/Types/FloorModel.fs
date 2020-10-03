@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type FloorModel
                                                                      _Floor.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Floor).valuationDate())
     do this.Bind(_Floor)
+(* 
+    casting 
+*)
+    internal new () = FloorModel(null,null,null,null)
+    member internal this.Inject v = _Floor.Value <- v
+    static member Cast (p : ICell<Floor>) = 
+        if p :? FloorModel then 
+            p :?> FloorModel
+        else
+            let o = new FloorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

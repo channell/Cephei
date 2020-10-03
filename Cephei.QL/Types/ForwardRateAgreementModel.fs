@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -81,6 +81,19 @@ type ForwardRateAgreementModel
                                                                      _ForwardRateAgreement.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardRateAgreement).valuationDate())
     do this.Bind(_ForwardRateAgreement)
+(* 
+    casting 
+*)
+    internal new () = ForwardRateAgreementModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _ForwardRateAgreement.Value <- v
+    static member Cast (p : ICell<ForwardRateAgreement>) = 
+        if p :? ForwardRateAgreementModel then 
+            p :?> ForwardRateAgreementModel
+        else
+            let o = new ForwardRateAgreementModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

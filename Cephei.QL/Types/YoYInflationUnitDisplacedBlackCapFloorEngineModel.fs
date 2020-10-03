@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type YoYInflationUnitDisplacedBlackCapFloorEngineModel
                                                                      _YoYInflationUnitDisplacedBlackCapFloorEngine.Value)
     let _volatility                                = triv (fun () -> _YoYInflationUnitDisplacedBlackCapFloorEngine.Value.volatility())
     do this.Bind(_YoYInflationUnitDisplacedBlackCapFloorEngine)
+(* 
+    casting 
+*)
+    internal new () = YoYInflationUnitDisplacedBlackCapFloorEngineModel(null,null)
+    member internal this.Inject v = _YoYInflationUnitDisplacedBlackCapFloorEngine.Value <- v
+    static member Cast (p : ICell<YoYInflationUnitDisplacedBlackCapFloorEngine>) = 
+        if p :? YoYInflationUnitDisplacedBlackCapFloorEngineModel then 
+            p :?> YoYInflationUnitDisplacedBlackCapFloorEngineModel
+        else
+            let o = new YoYInflationUnitDisplacedBlackCapFloorEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

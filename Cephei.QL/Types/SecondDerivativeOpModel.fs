@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -85,6 +85,19 @@ type SecondDerivativeOpModel
                                                                      _SecondDerivativeOp.Value)
     let _toMatrix                                  = triv (fun () -> _SecondDerivativeOp.Value.toMatrix())
     do this.Bind(_SecondDerivativeOp)
+(* 
+    casting 
+*)
+    internal new () = SecondDerivativeOpModel(null,null)
+    member internal this.Inject v = _SecondDerivativeOp.Value <- v
+    static member Cast (p : ICell<SecondDerivativeOp>) = 
+        if p :? SecondDerivativeOpModel then 
+            p :?> SecondDerivativeOpModel
+        else
+            let o = new SecondDerivativeOpModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -181,6 +194,19 @@ type SecondDerivativeOpModel1
                                                                      _SecondDerivativeOp.Value)
     let _toMatrix                                  = triv (fun () -> _SecondDerivativeOp.Value.toMatrix())
     do this.Bind(_SecondDerivativeOp)
+(* 
+    casting 
+*)
+    internal new () = SecondDerivativeOpModel1(null)
+    member internal this.Inject v = _SecondDerivativeOp.Value <- v
+    static member Cast (p : ICell<SecondDerivativeOp>) = 
+        if p :? SecondDerivativeOpModel1 then 
+            p :?> SecondDerivativeOpModel1
+        else
+            let o = new SecondDerivativeOpModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

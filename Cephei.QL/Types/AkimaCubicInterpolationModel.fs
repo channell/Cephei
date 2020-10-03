@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type AkimaCubicInterpolationModel
                                                                      _AkimaCubicInterpolation.Value)
     let _extrapolate                               = triv (fun () -> _AkimaCubicInterpolation.Value.extrapolate)
     do this.Bind(_AkimaCubicInterpolation)
+(* 
+    casting 
+*)
+    internal new () = AkimaCubicInterpolationModel(null,null,null)
+    member internal this.Inject v = _AkimaCubicInterpolation.Value <- v
+    static member Cast (p : ICell<AkimaCubicInterpolation>) = 
+        if p :? AkimaCubicInterpolationModel then 
+            p :?> AkimaCubicInterpolationModel
+        else
+            let o = new AkimaCubicInterpolationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

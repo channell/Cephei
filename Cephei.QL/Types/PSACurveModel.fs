@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type PSACurveModel
     let _getSMM                                    (valDate : ICell<Date>)   
                                                    = triv (fun () -> _PSACurve.Value.getSMM(valDate.Value))
     do this.Bind(_PSACurve)
+(* 
+    casting 
+*)
+    internal new () = PSACurveModel(null,null)
+    member internal this.Inject v = _PSACurve.Value <- v
+    static member Cast (p : ICell<PSACurve>) = 
+        if p :? PSACurveModel then 
+            p :?> PSACurveModel
+        else
+            let o = new PSACurveModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -85,6 +98,19 @@ type PSACurveModel1
     let _getSMM                                    (valDate : ICell<Date>)   
                                                    = triv (fun () -> _PSACurve.Value.getSMM(valDate.Value))
     do this.Bind(_PSACurve)
+(* 
+    casting 
+*)
+    internal new () = PSACurveModel1(null)
+    member internal this.Inject v = _PSACurve.Value <- v
+    static member Cast (p : ICell<PSACurve>) = 
+        if p :? PSACurveModel1 then 
+            p :?> PSACurveModel1
+        else
+            let o = new PSACurveModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

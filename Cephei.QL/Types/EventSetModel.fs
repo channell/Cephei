@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type EventSetModel
     let _newSimulation                             (start : ICell<Date>) (End : ICell<Date>)   
                                                    = triv (fun () -> _EventSet.Value.newSimulation(start.Value, End.Value))
     do this.Bind(_EventSet)
+(* 
+    casting 
+*)
+    internal new () = EventSetModel(null,null,null)
+    member internal this.Inject v = _EventSet.Value <- v
+    static member Cast (p : ICell<EventSet>) = 
+        if p :? EventSetModel then 
+            p :?> EventSetModel
+        else
+            let o = new EventSetModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

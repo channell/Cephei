@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type CouponConversionModel
     let _Rate                                      = triv (fun () -> _CouponConversion.Value.Rate)
     let _ToString                                  = triv (fun () -> _CouponConversion.Value.ToString())
     do this.Bind(_CouponConversion)
+(* 
+    casting 
+*)
+    internal new () = CouponConversionModel(null,null)
+    member internal this.Inject v = _CouponConversion.Value <- v
+    static member Cast (p : ICell<CouponConversion>) = 
+        if p :? CouponConversionModel then 
+            p :?> CouponConversionModel
+        else
+            let o = new CouponConversionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

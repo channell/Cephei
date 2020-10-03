@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -47,6 +47,19 @@ type LinearModel
                                                    = triv (fun () -> _Linear.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     let _requiredPoints                            = triv (fun () -> _Linear.Value.requiredPoints)
     do this.Bind(_Linear)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Linear.Value <- v
+    static member Cast (p : ICell<Linear>) = 
+        if p :? LinearModel then 
+            p :?> LinearModel
+        else
+            let o = new LinearModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type ImpliedVolTermStructureModel
     let _maxStrike                                 = triv (fun () -> _ImpliedVolTermStructure.Value.maxStrike())
     let _minStrike                                 = triv (fun () -> _ImpliedVolTermStructure.Value.minStrike())
     do this.Bind(_ImpliedVolTermStructure)
+(* 
+    casting 
+*)
+    internal new () = ImpliedVolTermStructureModel(null,null)
+    member internal this.Inject v = _ImpliedVolTermStructure.Value <- v
+    static member Cast (p : ICell<ImpliedVolTermStructure>) = 
+        if p :? ImpliedVolTermStructureModel then 
+            p :?> ImpliedVolTermStructureModel
+        else
+            let o = new ImpliedVolTermStructureModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

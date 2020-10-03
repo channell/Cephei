@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -95,6 +95,19 @@ type NzocrModel
                                                    = triv (fun () -> _Nzocr.Value.unregisterWith(handler.Value)
                                                                      _Nzocr.Value)
     do this.Bind(_Nzocr)
+(* 
+    casting 
+*)
+    internal new () = NzocrModel(null)
+    member internal this.Inject v = _Nzocr.Value <- v
+    static member Cast (p : ICell<Nzocr>) = 
+        if p :? NzocrModel then 
+            p :?> NzocrModel
+        else
+            let o = new NzocrModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

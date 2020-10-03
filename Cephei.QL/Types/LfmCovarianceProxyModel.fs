@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -66,6 +66,19 @@ type LfmCovarianceProxyModel
     let _factors                                   = triv (fun () -> _LfmCovarianceProxy.Value.factors())
     let _size                                      = triv (fun () -> _LfmCovarianceProxy.Value.size())
     do this.Bind(_LfmCovarianceProxy)
+(* 
+    casting 
+*)
+    internal new () = LfmCovarianceProxyModel(null,null)
+    member internal this.Inject v = _LfmCovarianceProxy.Value <- v
+    static member Cast (p : ICell<LfmCovarianceProxy>) = 
+        if p :? LfmCovarianceProxyModel then 
+            p :?> LfmCovarianceProxyModel
+        else
+            let o = new LfmCovarianceProxyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

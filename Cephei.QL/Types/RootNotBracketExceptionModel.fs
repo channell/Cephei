@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type RootNotBracketExceptionModel
 *)
     let _RootNotBracketException                   = cell (fun () -> new RootNotBracketException (message.Value, inner.Value))
     do this.Bind(_RootNotBracketException)
+(* 
+    casting 
+*)
+    internal new () = RootNotBracketExceptionModel(null,null)
+    member internal this.Inject v = _RootNotBracketException.Value <- v
+    static member Cast (p : ICell<RootNotBracketException>) = 
+        if p :? RootNotBracketExceptionModel then 
+            p :?> RootNotBracketExceptionModel
+        else
+            let o = new RootNotBracketExceptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -73,6 +86,19 @@ type RootNotBracketExceptionModel1
 *)
     let _RootNotBracketException                   = cell (fun () -> new RootNotBracketException (message.Value))
     do this.Bind(_RootNotBracketException)
+(* 
+    casting 
+*)
+    internal new () = RootNotBracketExceptionModel1(null)
+    member internal this.Inject v = _RootNotBracketException.Value <- v
+    static member Cast (p : ICell<RootNotBracketException>) = 
+        if p :? RootNotBracketExceptionModel1 then 
+            p :?> RootNotBracketExceptionModel1
+        else
+            let o = new RootNotBracketExceptionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -94,6 +120,19 @@ type RootNotBracketExceptionModel2
 *)
     let _RootNotBracketException                   = cell (fun () -> new RootNotBracketException ())
     do this.Bind(_RootNotBracketException)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _RootNotBracketException.Value <- v
+    static member Cast (p : ICell<RootNotBracketException>) = 
+        if p :? RootNotBracketExceptionModel2 then 
+            p :?> RootNotBracketExceptionModel2
+        else
+            let o = new RootNotBracketExceptionModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

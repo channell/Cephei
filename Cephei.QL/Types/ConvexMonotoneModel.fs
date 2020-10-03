@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type ConvexMonotoneModel
                                                    = triv (fun () -> _ConvexMonotone.Value.localInterpolate(xBegin.Value, size.Value, yBegin.Value, localisation.Value, prevInterpolation.Value, finalSize.Value))
     let _requiredPoints                            = triv (fun () -> _ConvexMonotone.Value.requiredPoints)
     do this.Bind(_ConvexMonotone)
+(* 
+    casting 
+*)
+    internal new () = ConvexMonotoneModel(null,null,null)
+    member internal this.Inject v = _ConvexMonotone.Value <- v
+    static member Cast (p : ICell<ConvexMonotone>) = 
+        if p :? ConvexMonotoneModel then 
+            p :?> ConvexMonotoneModel
+        else
+            let o = new ConvexMonotoneModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -94,6 +107,19 @@ type ConvexMonotoneModel1
                                                    = triv (fun () -> _ConvexMonotone.Value.localInterpolate(xBegin.Value, size.Value, yBegin.Value, localisation.Value, prevInterpolation.Value, finalSize.Value))
     let _requiredPoints                            = triv (fun () -> _ConvexMonotone.Value.requiredPoints)
     do this.Bind(_ConvexMonotone)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ConvexMonotone.Value <- v
+    static member Cast (p : ICell<ConvexMonotone>) = 
+        if p :? ConvexMonotoneModel1 then 
+            p :?> ConvexMonotoneModel1
+        else
+            let o = new ConvexMonotoneModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

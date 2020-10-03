@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -81,6 +81,19 @@ type VannaVolgaInterpolationModel
                                                                      _VannaVolgaInterpolation.Value)
     let _extrapolate                               = triv (fun () -> _VannaVolgaInterpolation.Value.extrapolate)
     do this.Bind(_VannaVolgaInterpolation)
+(* 
+    casting 
+*)
+    internal new () = VannaVolgaInterpolationModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _VannaVolgaInterpolation.Value <- v
+    static member Cast (p : ICell<VannaVolgaInterpolation>) = 
+        if p :? VannaVolgaInterpolationModel then 
+            p :?> VannaVolgaInterpolationModel
+        else
+            let o = new VannaVolgaInterpolationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type SVDModel
     let _U                                         = triv (fun () -> _SVD.Value.U())
     let _V                                         = triv (fun () -> _SVD.Value.V())
     do this.Bind(_SVD)
+(* 
+    casting 
+*)
+    internal new () = SVDModel(null)
+    member internal this.Inject v = _SVD.Value <- v
+    static member Cast (p : ICell<SVD>) = 
+        if p :? SVDModel then 
+            p :?> SVDModel
+        else
+            let o = new SVDModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

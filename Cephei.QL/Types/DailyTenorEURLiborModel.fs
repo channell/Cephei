@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -97,6 +97,19 @@ type DailyTenorEURLiborModel
                                                    = triv (fun () -> _DailyTenorEURLibor.Value.unregisterWith(handler.Value)
                                                                      _DailyTenorEURLibor.Value)
     do this.Bind(_DailyTenorEURLibor)
+(* 
+    casting 
+*)
+    internal new () = DailyTenorEURLiborModel(null,null)
+    member internal this.Inject v = _DailyTenorEURLibor.Value <- v
+    static member Cast (p : ICell<DailyTenorEURLibor>) = 
+        if p :? DailyTenorEURLiborModel then 
+            p :?> DailyTenorEURLiborModel
+        else
+            let o = new DailyTenorEURLiborModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -210,6 +223,19 @@ type DailyTenorEURLiborModel1
                                                    = triv (fun () -> _DailyTenorEURLibor.Value.unregisterWith(handler.Value)
                                                                      _DailyTenorEURLibor.Value)
     do this.Bind(_DailyTenorEURLibor)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _DailyTenorEURLibor.Value <- v
+    static member Cast (p : ICell<DailyTenorEURLibor>) = 
+        if p :? DailyTenorEURLiborModel1 then 
+            p :?> DailyTenorEURLiborModel1
+        else
+            let o = new DailyTenorEURLiborModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -324,6 +350,19 @@ type DailyTenorEURLiborModel2
                                                    = triv (fun () -> _DailyTenorEURLibor.Value.unregisterWith(handler.Value)
                                                                      _DailyTenorEURLibor.Value)
     do this.Bind(_DailyTenorEURLibor)
+(* 
+    casting 
+*)
+    internal new () = DailyTenorEURLiborModel2(null)
+    member internal this.Inject v = _DailyTenorEURLibor.Value <- v
+    static member Cast (p : ICell<DailyTenorEURLibor>) = 
+        if p :? DailyTenorEURLiborModel2 then 
+            p :?> DailyTenorEURLiborModel2
+        else
+            let o = new DailyTenorEURLiborModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

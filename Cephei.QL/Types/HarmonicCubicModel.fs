@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -76,6 +76,19 @@ type HarmonicCubicModel
                                                                      _HarmonicCubic.Value)
     let _extrapolate                               = triv (fun () -> _HarmonicCubic.Value.extrapolate)
     do this.Bind(_HarmonicCubic)
+(* 
+    casting 
+*)
+    internal new () = HarmonicCubicModel(null,null,null)
+    member internal this.Inject v = _HarmonicCubic.Value <- v
+    static member Cast (p : ICell<HarmonicCubic>) = 
+        if p :? HarmonicCubicModel then 
+            p :?> HarmonicCubicModel
+        else
+            let o = new HarmonicCubicModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

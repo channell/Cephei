@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type FdmLinearOpIteratorModel
                                                    = triv (fun () -> _FdmLinearOpIterator.Value.swap(iter.Value)
                                                                      _FdmLinearOpIterator.Value)
     do this.Bind(_FdmLinearOpIterator)
+(* 
+    casting 
+*)
+    internal new () = FdmLinearOpIteratorModel(null)
+    member internal this.Inject v = _FdmLinearOpIterator.Value <- v
+    static member Cast (p : ICell<FdmLinearOpIterator>) = 
+        if p :? FdmLinearOpIteratorModel then 
+            p :?> FdmLinearOpIteratorModel
+        else
+            let o = new FdmLinearOpIteratorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -90,6 +103,19 @@ type FdmLinearOpIteratorModel1
                                                    = triv (fun () -> _FdmLinearOpIterator.Value.swap(iter.Value)
                                                                      _FdmLinearOpIterator.Value)
     do this.Bind(_FdmLinearOpIterator)
+(* 
+    casting 
+*)
+    internal new () = FdmLinearOpIteratorModel1(null)
+    member internal this.Inject v = _FdmLinearOpIterator.Value <- v
+    static member Cast (p : ICell<FdmLinearOpIterator>) = 
+        if p :? FdmLinearOpIteratorModel1 then 
+            p :?> FdmLinearOpIteratorModel1
+        else
+            let o = new FdmLinearOpIteratorModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -131,6 +157,19 @@ type FdmLinearOpIteratorModel2
                                                    = triv (fun () -> _FdmLinearOpIterator.Value.swap(iter.Value)
                                                                      _FdmLinearOpIterator.Value)
     do this.Bind(_FdmLinearOpIterator)
+(* 
+    casting 
+*)
+    internal new () = FdmLinearOpIteratorModel2(null,null,null)
+    member internal this.Inject v = _FdmLinearOpIterator.Value <- v
+    static member Cast (p : ICell<FdmLinearOpIterator>) = 
+        if p :? FdmLinearOpIteratorModel2 then 
+            p :?> FdmLinearOpIteratorModel2
+        else
+            let o = new FdmLinearOpIteratorModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -170,6 +209,19 @@ type FdmLinearOpIteratorModel3
                                                    = triv (fun () -> _FdmLinearOpIterator.Value.swap(iter.Value)
                                                                      _FdmLinearOpIterator.Value)
     do this.Bind(_FdmLinearOpIterator)
+(* 
+    casting 
+*)
+    internal new () = FdmLinearOpIteratorModel3(null)
+    member internal this.Inject v = _FdmLinearOpIterator.Value <- v
+    static member Cast (p : ICell<FdmLinearOpIterator>) = 
+        if p :? FdmLinearOpIteratorModel3 then 
+            p :?> FdmLinearOpIteratorModel3
+        else
+            let o = new FdmLinearOpIteratorModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

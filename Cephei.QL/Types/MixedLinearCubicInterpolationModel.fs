@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -89,6 +89,19 @@ type MixedLinearCubicInterpolationModel
                                                                      _MixedLinearCubicInterpolation.Value)
     let _extrapolate                               = triv (fun () -> _MixedLinearCubicInterpolation.Value.extrapolate)
     do this.Bind(_MixedLinearCubicInterpolation)
+(* 
+    casting 
+*)
+    internal new () = MixedLinearCubicInterpolationModel(null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _MixedLinearCubicInterpolation.Value <- v
+    static member Cast (p : ICell<MixedLinearCubicInterpolation>) = 
+        if p :? MixedLinearCubicInterpolationModel then 
+            p :?> MixedLinearCubicInterpolationModel
+        else
+            let o = new MixedLinearCubicInterpolationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

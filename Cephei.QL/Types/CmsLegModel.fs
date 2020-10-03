@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -83,6 +83,19 @@ type CmsLegModel
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
                                                    = triv (fun () -> _CmsLeg.Value.withPaymentAdjustment(convention.Value))
     do this.Bind(_CmsLeg)
+(* 
+    casting 
+*)
+    internal new () = CmsLegModel(null,null)
+    member internal this.Inject v = _CmsLeg.Value <- v
+    static member Cast (p : ICell<CmsLeg>) = 
+        if p :? CmsLegModel then 
+            p :?> CmsLegModel
+        else
+            let o = new CmsLegModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -69,6 +69,19 @@ type FDShoutEngineModel
     let _grid                                      = triv (fun () -> _FDShoutEngine.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDShoutEngine.Value.intrinsicValues_)
     do this.Bind(_FDShoutEngine)
+(* 
+    casting 
+*)
+    internal new () = FDShoutEngineModel(null,null,null,null)
+    member internal this.Inject v = _FDShoutEngine.Value <- v
+    static member Cast (p : ICell<FDShoutEngine>) = 
+        if p :? FDShoutEngineModel then 
+            p :?> FDShoutEngineModel
+        else
+            let o = new FDShoutEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -122,6 +135,19 @@ type FDShoutEngineModel1
     let _grid                                      = triv (fun () -> _FDShoutEngine.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDShoutEngine.Value.intrinsicValues_)
     do this.Bind(_FDShoutEngine)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _FDShoutEngine.Value <- v
+    static member Cast (p : ICell<FDShoutEngine>) = 
+        if p :? FDShoutEngineModel1 then 
+            p :?> FDShoutEngineModel1
+        else
+            let o = new FDShoutEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -90,6 +90,19 @@ type GeometricBrownianMotionProcessModel
     let _update                                    = triv (fun () -> _GeometricBrownianMotionProcess.Value.update()
                                                                      _GeometricBrownianMotionProcess.Value)
     do this.Bind(_GeometricBrownianMotionProcess)
+(* 
+    casting 
+*)
+    internal new () = GeometricBrownianMotionProcessModel(null,null,null)
+    member internal this.Inject v = _GeometricBrownianMotionProcess.Value <- v
+    static member Cast (p : ICell<GeometricBrownianMotionProcess>) = 
+        if p :? GeometricBrownianMotionProcessModel then 
+            p :?> GeometricBrownianMotionProcessModel
+        else
+            let o = new GeometricBrownianMotionProcessModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

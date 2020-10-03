@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -67,6 +67,19 @@ type FDDividendEngineShiftScaleModel
     let _grid                                      = triv (fun () -> _FDDividendEngineShiftScale.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDDividendEngineShiftScale.Value.intrinsicValues_)
     do this.Bind(_FDDividendEngineShiftScale)
+(* 
+    casting 
+*)
+    internal new () = FDDividendEngineShiftScaleModel(null,null,null,null)
+    member internal this.Inject v = _FDDividendEngineShiftScale.Value <- v
+    static member Cast (p : ICell<FDDividendEngineShiftScale>) = 
+        if p :? FDDividendEngineShiftScaleModel then 
+            p :?> FDDividendEngineShiftScaleModel
+        else
+            let o = new FDDividendEngineShiftScaleModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

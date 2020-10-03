@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -84,6 +84,19 @@ type FuturesRateHelperModel
     let _update                                    = triv (fun () -> _FuturesRateHelper.Value.update()
                                                                      _FuturesRateHelper.Value)
     do this.Bind(_FuturesRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FuturesRateHelperModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FuturesRateHelper.Value <- v
+    static member Cast (p : ICell<FuturesRateHelper>) = 
+        if p :? FuturesRateHelperModel then 
+            p :?> FuturesRateHelperModel
+        else
+            let o = new FuturesRateHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -164,6 +177,19 @@ type FuturesRateHelperModel1
     let _update                                    = triv (fun () -> _FuturesRateHelper.Value.update()
                                                                      _FuturesRateHelper.Value)
     do this.Bind(_FuturesRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FuturesRateHelperModel1(null,null,null,null,null)
+    member internal this.Inject v = _FuturesRateHelper.Value <- v
+    static member Cast (p : ICell<FuturesRateHelper>) = 
+        if p :? FuturesRateHelperModel1 then 
+            p :?> FuturesRateHelperModel1
+        else
+            let o = new FuturesRateHelperModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -240,6 +266,19 @@ type FuturesRateHelperModel2
     let _update                                    = triv (fun () -> _FuturesRateHelper.Value.update()
                                                                      _FuturesRateHelper.Value)
     do this.Bind(_FuturesRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FuturesRateHelperModel2(null,null,null,null,null)
+    member internal this.Inject v = _FuturesRateHelper.Value <- v
+    static member Cast (p : ICell<FuturesRateHelper>) = 
+        if p :? FuturesRateHelperModel2 then 
+            p :?> FuturesRateHelperModel2
+        else
+            let o = new FuturesRateHelperModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -318,6 +357,19 @@ type FuturesRateHelperModel3
     let _update                                    = triv (fun () -> _FuturesRateHelper.Value.update()
                                                                      _FuturesRateHelper.Value)
     do this.Bind(_FuturesRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FuturesRateHelperModel3(null,null,null,null,null,null)
+    member internal this.Inject v = _FuturesRateHelper.Value <- v
+    static member Cast (p : ICell<FuturesRateHelper>) = 
+        if p :? FuturesRateHelperModel3 then 
+            p :?> FuturesRateHelperModel3
+        else
+            let o = new FuturesRateHelperModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -397,6 +449,19 @@ type FuturesRateHelperModel4
     let _update                                    = triv (fun () -> _FuturesRateHelper.Value.update()
                                                                      _FuturesRateHelper.Value)
     do this.Bind(_FuturesRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FuturesRateHelperModel4(null,null,null,null,null,null)
+    member internal this.Inject v = _FuturesRateHelper.Value <- v
+    static member Cast (p : ICell<FuturesRateHelper>) = 
+        if p :? FuturesRateHelperModel4 then 
+            p :?> FuturesRateHelperModel4
+        else
+            let o = new FuturesRateHelperModel4 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -482,6 +547,19 @@ type FuturesRateHelperModel5
     let _update                                    = triv (fun () -> _FuturesRateHelper.Value.update()
                                                                      _FuturesRateHelper.Value)
     do this.Bind(_FuturesRateHelper)
+(* 
+    casting 
+*)
+    internal new () = FuturesRateHelperModel5(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FuturesRateHelper.Value <- v
+    static member Cast (p : ICell<FuturesRateHelper>) = 
+        if p :? FuturesRateHelperModel5 then 
+            p :?> FuturesRateHelperModel5
+        else
+            let o = new FuturesRateHelperModel5 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

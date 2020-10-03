@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -104,6 +104,19 @@ type ChfLiborSwapIsdaFixModel
                                                    = triv (fun () -> _ChfLiborSwapIsdaFix.Value.unregisterWith(handler.Value)
                                                                      _ChfLiborSwapIsdaFix.Value)
     do this.Bind(_ChfLiborSwapIsdaFix)
+(* 
+    casting 
+*)
+    internal new () = ChfLiborSwapIsdaFixModel(null,null)
+    member internal this.Inject v = _ChfLiborSwapIsdaFix.Value <- v
+    static member Cast (p : ICell<ChfLiborSwapIsdaFix>) = 
+        if p :? ChfLiborSwapIsdaFixModel then 
+            p :?> ChfLiborSwapIsdaFixModel
+        else
+            let o = new ChfLiborSwapIsdaFixModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -234,6 +247,19 @@ type ChfLiborSwapIsdaFixModel1
                                                    = triv (fun () -> _ChfLiborSwapIsdaFix.Value.unregisterWith(handler.Value)
                                                                      _ChfLiborSwapIsdaFix.Value)
     do this.Bind(_ChfLiborSwapIsdaFix)
+(* 
+    casting 
+*)
+    internal new () = ChfLiborSwapIsdaFixModel1(null)
+    member internal this.Inject v = _ChfLiborSwapIsdaFix.Value <- v
+    static member Cast (p : ICell<ChfLiborSwapIsdaFix>) = 
+        if p :? ChfLiborSwapIsdaFixModel1 then 
+            p :?> ChfLiborSwapIsdaFixModel1
+        else
+            let o = new ChfLiborSwapIsdaFixModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

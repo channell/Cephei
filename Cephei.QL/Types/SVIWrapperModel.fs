@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type SVIWrapperModel
     let _volatility                                (x : ICell<double>)   
                                                    = triv (fun () -> _SVIWrapper.Value.volatility(x.Value))
     do this.Bind(_SVIWrapper)
+(* 
+    casting 
+*)
+    internal new () = SVIWrapperModel(null,null,null,null)
+    member internal this.Inject v = _SVIWrapper.Value <- v
+    static member Cast (p : ICell<SVIWrapper>) = 
+        if p :? SVIWrapperModel then 
+            p :?> SVIWrapperModel
+        else
+            let o = new SVIWrapperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

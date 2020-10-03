@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type ImpliedVolHelperModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _ImpliedVolHelper.Value.value(x.Value))
     do this.Bind(_ImpliedVolHelper)
+(* 
+    casting 
+*)
+    internal new () = ImpliedVolHelperModel(null,null,null,null,null)
+    member internal this.Inject v = _ImpliedVolHelper.Value <- v
+    static member Cast (p : ICell<ImpliedVolHelper>) = 
+        if p :? ImpliedVolHelperModel then 
+            p :?> ImpliedVolHelperModel
+        else
+            let o = new ImpliedVolHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

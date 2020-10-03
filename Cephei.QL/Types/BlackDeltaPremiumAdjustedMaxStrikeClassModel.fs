@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type BlackDeltaPremiumAdjustedMaxStrikeClassModel
     let _derivative                                (x : ICell<double>)   
                                                    = triv (fun () -> _BlackDeltaPremiumAdjustedMaxStrikeClass.Value.derivative(x.Value))
     do this.Bind(_BlackDeltaPremiumAdjustedMaxStrikeClass)
+(* 
+    casting 
+*)
+    internal new () = BlackDeltaPremiumAdjustedMaxStrikeClassModel(null,null,null,null,null,null)
+    member internal this.Inject v = _BlackDeltaPremiumAdjustedMaxStrikeClass.Value <- v
+    static member Cast (p : ICell<BlackDeltaPremiumAdjustedMaxStrikeClass>) = 
+        if p :? BlackDeltaPremiumAdjustedMaxStrikeClassModel then 
+            p :?> BlackDeltaPremiumAdjustedMaxStrikeClassModel
+        else
+            let o = new BlackDeltaPremiumAdjustedMaxStrikeClassModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

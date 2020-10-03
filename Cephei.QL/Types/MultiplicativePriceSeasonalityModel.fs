@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type MultiplicativePriceSeasonalityModel
                                                    = triv (fun () -> _MultiplicativePriceSeasonality.Value.set(seasonalityBaseDate.Value, frequency.Value, seasonalityFactors.Value)
                                                                      _MultiplicativePriceSeasonality.Value)
     do this.Bind(_MultiplicativePriceSeasonality)
+(* 
+    casting 
+*)
+    internal new () = MultiplicativePriceSeasonalityModel(null,null,null)
+    member internal this.Inject v = _MultiplicativePriceSeasonality.Value <- v
+    static member Cast (p : ICell<MultiplicativePriceSeasonality>) = 
+        if p :? MultiplicativePriceSeasonalityModel then 
+            p :?> MultiplicativePriceSeasonalityModel
+        else
+            let o = new MultiplicativePriceSeasonalityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -114,6 +127,19 @@ type MultiplicativePriceSeasonalityModel1
                                                    = triv (fun () -> _MultiplicativePriceSeasonality.Value.set(seasonalityBaseDate.Value, frequency.Value, seasonalityFactors.Value)
                                                                      _MultiplicativePriceSeasonality.Value)
     do this.Bind(_MultiplicativePriceSeasonality)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _MultiplicativePriceSeasonality.Value <- v
+    static member Cast (p : ICell<MultiplicativePriceSeasonality>) = 
+        if p :? MultiplicativePriceSeasonalityModel1 then 
+            p :?> MultiplicativePriceSeasonalityModel1
+        else
+            let o = new MultiplicativePriceSeasonalityModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

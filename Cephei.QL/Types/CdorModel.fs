@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -97,6 +97,19 @@ type CdorModel
                                                    = triv (fun () -> _Cdor.Value.unregisterWith(handler.Value)
                                                                      _Cdor.Value)
     do this.Bind(_Cdor)
+(* 
+    casting 
+*)
+    internal new () = CdorModel(null,null)
+    member internal this.Inject v = _Cdor.Value <- v
+    static member Cast (p : ICell<Cdor>) = 
+        if p :? CdorModel then 
+            p :?> CdorModel
+        else
+            let o = new CdorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -213,6 +226,19 @@ type CdorModel1
                                                    = triv (fun () -> _Cdor.Value.unregisterWith(handler.Value)
                                                                      _Cdor.Value)
     do this.Bind(_Cdor)
+(* 
+    casting 
+*)
+    internal new () = CdorModel1(null)
+    member internal this.Inject v = _Cdor.Value <- v
+    static member Cast (p : ICell<Cdor>) = 
+        if p :? CdorModel1 then 
+            p :?> CdorModel1
+        else
+            let o = new CdorModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

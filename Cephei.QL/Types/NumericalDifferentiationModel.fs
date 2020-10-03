@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type NumericalDifferentiationModel
                                                    = triv (fun () -> _NumericalDifferentiation.Value.value(x.Value))
     let _weights                                   = triv (fun () -> _NumericalDifferentiation.Value.weights())
     do this.Bind(_NumericalDifferentiation)
+(* 
+    casting 
+*)
+    internal new () = NumericalDifferentiationModel(null,null,null,null,null)
+    member internal this.Inject v = _NumericalDifferentiation.Value <- v
+    static member Cast (p : ICell<NumericalDifferentiation>) = 
+        if p :? NumericalDifferentiationModel then 
+            p :?> NumericalDifferentiationModel
+        else
+            let o = new NumericalDifferentiationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -98,6 +111,19 @@ type NumericalDifferentiationModel1
                                                    = triv (fun () -> _NumericalDifferentiation.Value.value(x.Value))
     let _weights                                   = triv (fun () -> _NumericalDifferentiation.Value.weights())
     do this.Bind(_NumericalDifferentiation)
+(* 
+    casting 
+*)
+    internal new () = NumericalDifferentiationModel1(null,null,null)
+    member internal this.Inject v = _NumericalDifferentiation.Value <- v
+    static member Cast (p : ICell<NumericalDifferentiation>) = 
+        if p :? NumericalDifferentiationModel1 then 
+            p :?> NumericalDifferentiationModel1
+        else
+            let o = new NumericalDifferentiationModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type DownRoundingModel
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _DownRounding.Value.Round(value.Value))
     do this.Bind(_DownRounding)
+(* 
+    casting 
+*)
+    internal new () = DownRoundingModel(null,null)
+    member internal this.Inject v = _DownRounding.Value <- v
+    static member Cast (p : ICell<DownRounding>) = 
+        if p :? DownRoundingModel then 
+            p :?> DownRoundingModel
+        else
+            let o = new DownRoundingModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -88,6 +101,19 @@ type DownRoundingModel1
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _DownRounding.Value.Round(value.Value))
     do this.Bind(_DownRounding)
+(* 
+    casting 
+*)
+    internal new () = DownRoundingModel1(null)
+    member internal this.Inject v = _DownRounding.Value <- v
+    static member Cast (p : ICell<DownRounding>) = 
+        if p :? DownRoundingModel1 then 
+            p :?> DownRoundingModel1
+        else
+            let o = new DownRoundingModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

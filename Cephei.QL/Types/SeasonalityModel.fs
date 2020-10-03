@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,6 +49,19 @@ type SeasonalityModel
     let _isConsistent                              (iTS : ICell<InflationTermStructure>)   
                                                    = triv (fun () -> _Seasonality.Value.isConsistent(iTS.Value))
     do this.Bind(_Seasonality)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Seasonality.Value <- v
+    static member Cast (p : ICell<Seasonality>) = 
+        if p :? SeasonalityModel then 
+            p :?> SeasonalityModel
+        else
+            let o = new SeasonalityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

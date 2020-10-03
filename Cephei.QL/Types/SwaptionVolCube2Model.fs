@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -150,6 +150,19 @@ type SwaptionVolCube2Model
                                                                      _SwaptionVolCube2.Value)
     let _extrapolate                               = triv (fun () -> _SwaptionVolCube2.Value.extrapolate)
     do this.Bind(_SwaptionVolCube2)
+(* 
+    casting 
+*)
+    internal new () = SwaptionVolCube2Model(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwaptionVolCube2.Value <- v
+    static member Cast (p : ICell<SwaptionVolCube2>) = 
+        if p :? SwaptionVolCube2Model then 
+            p :?> SwaptionVolCube2Model
+        else
+            let o = new SwaptionVolCube2Model ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

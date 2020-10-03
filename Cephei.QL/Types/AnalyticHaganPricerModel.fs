@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type AnalyticHaganPricerModel
     let _update                                    = triv (fun () -> _AnalyticHaganPricer.Value.update()
                                                                      _AnalyticHaganPricer.Value)
     do this.Bind(_AnalyticHaganPricer)
+(* 
+    casting 
+*)
+    internal new () = AnalyticHaganPricerModel(null,null,null)
+    member internal this.Inject v = _AnalyticHaganPricer.Value <- v
+    static member Cast (p : ICell<AnalyticHaganPricer>) = 
+        if p :? AnalyticHaganPricerModel then 
+            p :?> AnalyticHaganPricerModel
+        else
+            let o = new AnalyticHaganPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

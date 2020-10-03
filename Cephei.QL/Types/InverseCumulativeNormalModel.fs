@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -45,6 +45,19 @@ type InverseCumulativeNormalModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseCumulativeNormal.Value.value(x.Value))
     do this.Bind(_InverseCumulativeNormal)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _InverseCumulativeNormal.Value <- v
+    static member Cast (p : ICell<InverseCumulativeNormal>) = 
+        if p :? InverseCumulativeNormalModel then 
+            p :?> InverseCumulativeNormalModel
+        else
+            let o = new InverseCumulativeNormalModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -74,6 +87,19 @@ type InverseCumulativeNormalModel1
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseCumulativeNormal.Value.value(x.Value))
     do this.Bind(_InverseCumulativeNormal)
+(* 
+    casting 
+*)
+    internal new () = InverseCumulativeNormalModel1(null,null)
+    member internal this.Inject v = _InverseCumulativeNormal.Value <- v
+    static member Cast (p : ICell<InverseCumulativeNormal>) = 
+        if p :? InverseCumulativeNormalModel1 then 
+            p :?> InverseCumulativeNormalModel1
+        else
+            let o = new InverseCumulativeNormalModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

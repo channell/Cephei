@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -137,6 +137,19 @@ type CPIBondModel
                                                                      _CPIBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CPIBond).valuationDate())
     do this.Bind(_CPIBond)
+(* 
+    casting 
+*)
+    internal new () = CPIBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CPIBond.Value <- v
+    static member Cast (p : ICell<CPIBond>) = 
+        if p :? CPIBondModel then 
+            p :?> CPIBondModel
+        else
+            let o = new CPIBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

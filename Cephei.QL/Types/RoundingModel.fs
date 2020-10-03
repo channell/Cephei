@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -55,6 +55,19 @@ type RoundingModel
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _Rounding.Value.Round(value.Value))
     do this.Bind(_Rounding)
+(* 
+    casting 
+*)
+    internal new () = RoundingModel(null,null,null)
+    member internal this.Inject v = _Rounding.Value <- v
+    static member Cast (p : ICell<Rounding>) = 
+        if p :? RoundingModel then 
+            p :?> RoundingModel
+        else
+            let o = new RoundingModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -88,6 +101,19 @@ type RoundingModel1
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _Rounding.Value.Round(value.Value))
     do this.Bind(_Rounding)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Rounding.Value <- v
+    static member Cast (p : ICell<Rounding>) = 
+        if p :? RoundingModel1 then 
+            p :?> RoundingModel1
+        else
+            let o = new RoundingModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -123,6 +149,19 @@ type RoundingModel2
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _Rounding.Value.Round(value.Value))
     do this.Bind(_Rounding)
+(* 
+    casting 
+*)
+    internal new () = RoundingModel2(null,null)
+    member internal this.Inject v = _Rounding.Value <- v
+    static member Cast (p : ICell<Rounding>) = 
+        if p :? RoundingModel2 then 
+            p :?> RoundingModel2
+        else
+            let o = new RoundingModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -158,6 +197,19 @@ type RoundingModel3
     let _Round                                     (value : ICell<double>)   
                                                    = triv (fun () -> _Rounding.Value.Round(value.Value))
     do this.Bind(_Rounding)
+(* 
+    casting 
+*)
+    internal new () = RoundingModel3(null)
+    member internal this.Inject v = _Rounding.Value <- v
+    static member Cast (p : ICell<Rounding>) = 
+        if p :? RoundingModel3 then 
+            p :?> RoundingModel3
+        else
+            let o = new RoundingModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

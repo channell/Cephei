@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type DayCounterModel
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _DayCounter.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_DayCounter)
+(* 
+    casting 
+*)
+    internal new () = DayCounterModel(null)
+    member internal this.Inject v = _DayCounter.Value <- v
+    static member Cast (p : ICell<DayCounter>) = 
+        if p :? DayCounterModel then 
+            p :?> DayCounterModel
+        else
+            let o = new DayCounterModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -103,6 +116,19 @@ type DayCounterModel1
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
                                                    = triv (fun () -> _DayCounter.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_DayCounter)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _DayCounter.Value <- v
+    static member Cast (p : ICell<DayCounter>) = 
+        if p :? DayCounterModel1 then 
+            p :?> DayCounterModel1
+        else
+            let o = new DayCounterModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

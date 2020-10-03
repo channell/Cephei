@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -60,6 +60,19 @@ type AverageBasketPayoffModel
                                                    = triv (fun () -> _AverageBasketPayoff.Value.accept(v.Value)
                                                                      _AverageBasketPayoff.Value)
     do this.Bind(_AverageBasketPayoff)
+(* 
+    casting 
+*)
+    internal new () = AverageBasketPayoffModel(null,null)
+    member internal this.Inject v = _AverageBasketPayoff.Value <- v
+    static member Cast (p : ICell<AverageBasketPayoff>) = 
+        if p :? AverageBasketPayoffModel then 
+            p :?> AverageBasketPayoffModel
+        else
+            let o = new AverageBasketPayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -110,6 +123,19 @@ type AverageBasketPayoffModel1
                                                    = triv (fun () -> _AverageBasketPayoff.Value.accept(v.Value)
                                                                      _AverageBasketPayoff.Value)
     do this.Bind(_AverageBasketPayoff)
+(* 
+    casting 
+*)
+    internal new () = AverageBasketPayoffModel1(null,null)
+    member internal this.Inject v = _AverageBasketPayoff.Value <- v
+    static member Cast (p : ICell<AverageBasketPayoff>) = 
+        if p :? AverageBasketPayoffModel1 then 
+            p :?> AverageBasketPayoffModel1
+        else
+            let o = new AverageBasketPayoffModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

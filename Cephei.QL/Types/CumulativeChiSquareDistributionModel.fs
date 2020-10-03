@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type CumulativeChiSquareDistributionModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _CumulativeChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_CumulativeChiSquareDistribution)
+(* 
+    casting 
+*)
+    internal new () = CumulativeChiSquareDistributionModel(null)
+    member internal this.Inject v = _CumulativeChiSquareDistribution.Value <- v
+    static member Cast (p : ICell<CumulativeChiSquareDistribution>) = 
+        if p :? CumulativeChiSquareDistributionModel then 
+            p :?> CumulativeChiSquareDistributionModel
+        else
+            let o = new CumulativeChiSquareDistributionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

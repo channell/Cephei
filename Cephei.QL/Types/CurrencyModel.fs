@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type CurrencyModel
     let _ToString                                  = triv (fun () -> _Currency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _Currency.Value.triangulationCurrency)
     do this.Bind(_Currency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _Currency.Value <- v
+    static member Cast (p : ICell<Currency>) = 
+        if p :? CurrencyModel then 
+            p :?> CurrencyModel
+        else
+            let o = new CurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -119,6 +132,19 @@ type CurrencyModel1
     let _ToString                                  = triv (fun () -> _Currency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _Currency.Value.triangulationCurrency)
     do this.Bind(_Currency)
+(* 
+    casting 
+*)
+    internal new () = CurrencyModel1(null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _Currency.Value <- v
+    static member Cast (p : ICell<Currency>) = 
+        if p :? CurrencyModel1 then 
+            p :?> CurrencyModel1
+        else
+            let o = new CurrencyModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -192,6 +218,19 @@ type CurrencyModel2
     let _ToString                                  = triv (fun () -> _Currency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _Currency.Value.triangulationCurrency)
     do this.Bind(_Currency)
+(* 
+    casting 
+*)
+    internal new () = CurrencyModel2(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _Currency.Value <- v
+    static member Cast (p : ICell<Currency>) = 
+        if p :? CurrencyModel2 then 
+            p :?> CurrencyModel2
+        else
+            let o = new CurrencyModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type DEMCurrencyModel
     let _ToString                                  = triv (fun () -> _DEMCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _DEMCurrency.Value.triangulationCurrency)
     do this.Bind(_DEMCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _DEMCurrency.Value <- v
+    static member Cast (p : ICell<DEMCurrency>) = 
+        if p :? DEMCurrencyModel then 
+            p :?> DEMCurrencyModel
+        else
+            let o = new DEMCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

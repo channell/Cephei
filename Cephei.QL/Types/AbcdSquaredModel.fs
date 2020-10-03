@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type AbcdSquaredModel
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _AbcdSquared.Value.value(t.Value))
     do this.Bind(_AbcdSquared)
+(* 
+    casting 
+*)
+    internal new () = AbcdSquaredModel(null,null,null,null,null,null)
+    member internal this.Inject v = _AbcdSquared.Value <- v
+    static member Cast (p : ICell<AbcdSquared>) = 
+        if p :? AbcdSquaredModel then 
+            p :?> AbcdSquaredModel
+        else
+            let o = new AbcdSquaredModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

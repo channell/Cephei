@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -64,6 +64,19 @@ type FdmSimpleProcess1DMesherModel
     let _locations                                 = triv (fun () -> _FdmSimpleProcess1DMesher.Value.locations())
     let _size                                      = triv (fun () -> _FdmSimpleProcess1DMesher.Value.size())
     do this.Bind(_FdmSimpleProcess1DMesher)
+(* 
+    casting 
+*)
+    internal new () = FdmSimpleProcess1DMesherModel(null,null,null,null,null,null)
+    member internal this.Inject v = _FdmSimpleProcess1DMesher.Value <- v
+    static member Cast (p : ICell<FdmSimpleProcess1DMesher>) = 
+        if p :? FdmSimpleProcess1DMesherModel then 
+            p :?> FdmSimpleProcess1DMesherModel
+        else
+            let o = new FdmSimpleProcess1DMesherModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

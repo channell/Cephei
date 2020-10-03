@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type NonCentralCumulativeChiSquareSankaranApproxModel
 *)
     let _NonCentralCumulativeChiSquareSankaranApprox = cell (fun () -> new NonCentralCumulativeChiSquareSankaranApprox (df.Value, ncp.Value))
     do this.Bind(_NonCentralCumulativeChiSquareSankaranApprox)
+(* 
+    casting 
+*)
+    internal new () = NonCentralCumulativeChiSquareSankaranApproxModel(null,null)
+    member internal this.Inject v = _NonCentralCumulativeChiSquareSankaranApprox.Value <- v
+    static member Cast (p : ICell<NonCentralCumulativeChiSquareSankaranApprox>) = 
+        if p :? NonCentralCumulativeChiSquareSankaranApproxModel then 
+            p :?> NonCentralCumulativeChiSquareSankaranApproxModel
+        else
+            let o = new NonCentralCumulativeChiSquareSankaranApproxModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

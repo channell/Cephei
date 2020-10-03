@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -130,6 +130,19 @@ type ConstantSwaptionVolatilityModel
                                                                      _ConstantSwaptionVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantSwaptionVolatility.Value.extrapolate)
     do this.Bind(_ConstantSwaptionVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantSwaptionVolatilityModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _ConstantSwaptionVolatility.Value <- v
+    static member Cast (p : ICell<ConstantSwaptionVolatility>) = 
+        if p :? ConstantSwaptionVolatilityModel then 
+            p :?> ConstantSwaptionVolatilityModel
+        else
+            let o = new ConstantSwaptionVolatilityModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -313,6 +326,19 @@ type ConstantSwaptionVolatilityModel1
                                                                      _ConstantSwaptionVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantSwaptionVolatility.Value.extrapolate)
     do this.Bind(_ConstantSwaptionVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantSwaptionVolatilityModel1(null,null,null,null,null,null,null)
+    member internal this.Inject v = _ConstantSwaptionVolatility.Value <- v
+    static member Cast (p : ICell<ConstantSwaptionVolatility>) = 
+        if p :? ConstantSwaptionVolatilityModel1 then 
+            p :?> ConstantSwaptionVolatilityModel1
+        else
+            let o = new ConstantSwaptionVolatilityModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -496,6 +522,19 @@ type ConstantSwaptionVolatilityModel2
                                                                      _ConstantSwaptionVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantSwaptionVolatility.Value.extrapolate)
     do this.Bind(_ConstantSwaptionVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantSwaptionVolatilityModel2(null,null,null,null,null,null,null)
+    member internal this.Inject v = _ConstantSwaptionVolatility.Value <- v
+    static member Cast (p : ICell<ConstantSwaptionVolatility>) = 
+        if p :? ConstantSwaptionVolatilityModel2 then 
+            p :?> ConstantSwaptionVolatilityModel2
+        else
+            let o = new ConstantSwaptionVolatilityModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -679,6 +718,19 @@ type ConstantSwaptionVolatilityModel3
                                                                      _ConstantSwaptionVolatility.Value)
     let _extrapolate                               = triv (fun () -> _ConstantSwaptionVolatility.Value.extrapolate)
     do this.Bind(_ConstantSwaptionVolatility)
+(* 
+    casting 
+*)
+    internal new () = ConstantSwaptionVolatilityModel3(null,null,null,null,null,null,null)
+    member internal this.Inject v = _ConstantSwaptionVolatility.Value <- v
+    static member Cast (p : ICell<ConstantSwaptionVolatility>) = 
+        if p :? ConstantSwaptionVolatilityModel3 then 
+            p :?> ConstantSwaptionVolatilityModel3
+        else
+            let o = new ConstantSwaptionVolatilityModel3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type BinomialBarrierEngineModel
 *)
     let _BinomialBarrierEngine                     = cell (fun () -> new BinomialBarrierEngine (getTree.Value, getAsset.Value, Process.Value, timeSteps.Value, maxTimeSteps.Value))
     do this.Bind(_BinomialBarrierEngine)
+(* 
+    casting 
+*)
+    internal new () = BinomialBarrierEngineModel(null,null,null,null,null)
+    member internal this.Inject v = _BinomialBarrierEngine.Value <- v
+    static member Cast (p : ICell<BinomialBarrierEngine>) = 
+        if p :? BinomialBarrierEngineModel then 
+            p :?> BinomialBarrierEngineModel
+        else
+            let o = new BinomialBarrierEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

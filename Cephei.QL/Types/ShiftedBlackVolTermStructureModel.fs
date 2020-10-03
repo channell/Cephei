@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -87,6 +87,19 @@ type ShiftedBlackVolTermStructureModel
                                                                      _ShiftedBlackVolTermStructure.Value)
     let _extrapolate                               = triv (fun () -> _ShiftedBlackVolTermStructure.Value.extrapolate)
     do this.Bind(_ShiftedBlackVolTermStructure)
+(* 
+    casting 
+*)
+    internal new () = ShiftedBlackVolTermStructureModel(null,null)
+    member internal this.Inject v = _ShiftedBlackVolTermStructure.Value <- v
+    static member Cast (p : ICell<ShiftedBlackVolTermStructure>) = 
+        if p :? ShiftedBlackVolTermStructureModel then 
+            p :?> ShiftedBlackVolTermStructureModel
+        else
+            let o = new ShiftedBlackVolTermStructureModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

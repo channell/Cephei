@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type NullParameterModel
     let _value                                     (t : ICell<double>)   
                                                    = triv (fun () -> _NullParameter.Value.value(t.Value))
     do this.Bind(_NullParameter)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _NullParameter.Value <- v
+    static member Cast (p : ICell<NullParameter>) = 
+        if p :? NullParameterModel then 
+            p :?> NullParameterModel
+        else
+            let o = new NullParameterModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

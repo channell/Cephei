@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -88,6 +88,19 @@ type G2Model
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _G2.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_G2)
+(* 
+    casting 
+*)
+    internal new () = G2Model(null,null,null,null)
+    member internal this.Inject v = _G2.Value <- v
+    static member Cast (p : ICell<G2>) = 
+        if p :? G2Model then 
+            p :?> G2Model
+        else
+            let o = new G2Model ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -181,6 +194,19 @@ type G2Model1
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _G2.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_G2)
+(* 
+    casting 
+*)
+    internal new () = G2Model1(null)
+    member internal this.Inject v = _G2.Value <- v
+    static member Cast (p : ICell<G2>) = 
+        if p :? G2Model1 then 
+            p :?> G2Model1
+        else
+            let o = new G2Model1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -275,6 +301,19 @@ type G2Model2
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _G2.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_G2)
+(* 
+    casting 
+*)
+    internal new () = G2Model2(null,null,null)
+    member internal this.Inject v = _G2.Value <- v
+    static member Cast (p : ICell<G2>) = 
+        if p :? G2Model2 then 
+            p :?> G2Model2
+        else
+            let o = new G2Model2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -375,6 +414,19 @@ type G2Model3
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _G2.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_G2)
+(* 
+    casting 
+*)
+    internal new () = G2Model3(null,null,null,null,null)
+    member internal this.Inject v = _G2.Value <- v
+    static member Cast (p : ICell<G2>) = 
+        if p :? G2Model3 then 
+            p :?> G2Model3
+        else
+            let o = new G2Model3 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -479,6 +531,19 @@ type G2Model4
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _G2.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_G2)
+(* 
+    casting 
+*)
+    internal new () = G2Model4(null,null,null,null,null,null)
+    member internal this.Inject v = _G2.Value <- v
+    static member Cast (p : ICell<G2>) = 
+        if p :? G2Model4 then 
+            p :?> G2Model4
+        else
+            let o = new G2Model4 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -576,6 +641,19 @@ type G2Model5
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
                                                    = triv (fun () -> _G2.Value.value(parameters.Value, instruments.Value))
     do this.Bind(_G2)
+(* 
+    casting 
+*)
+    internal new () = G2Model5(null,null)
+    member internal this.Inject v = _G2.Value <- v
+    static member Cast (p : ICell<G2>) = 
+        if p :? G2Model5 then 
+            p :?> G2Model5
+        else
+            let o = new G2Model5 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

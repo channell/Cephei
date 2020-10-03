@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type BiCGStabModel
     let _solve                                     (b : ICell<Vector>) (x0 : ICell<Vector>)   
                                                    = triv (fun () -> _BiCGStab.Value.solve(b.Value, x0.Value))
     do this.Bind(_BiCGStab)
+(* 
+    casting 
+*)
+    internal new () = BiCGStabModel(null,null,null,null)
+    member internal this.Inject v = _BiCGStab.Value <- v
+    static member Cast (p : ICell<BiCGStab>) = 
+        if p :? BiCGStabModel then 
+            p :?> BiCGStabModel
+        else
+            let o = new BiCGStabModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

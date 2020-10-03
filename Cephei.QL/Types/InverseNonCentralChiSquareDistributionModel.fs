@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type InverseNonCentralChiSquareDistributionModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralChiSquareDistribution)
+(* 
+    casting 
+*)
+    internal new () = InverseNonCentralChiSquareDistributionModel(null,null)
+    member internal this.Inject v = _InverseNonCentralChiSquareDistribution.Value <- v
+    static member Cast (p : ICell<InverseNonCentralChiSquareDistribution>) = 
+        if p :? InverseNonCentralChiSquareDistributionModel then 
+            p :?> InverseNonCentralChiSquareDistributionModel
+        else
+            let o = new InverseNonCentralChiSquareDistributionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -83,6 +96,19 @@ type InverseNonCentralChiSquareDistributionModel1
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralChiSquareDistribution)
+(* 
+    casting 
+*)
+    internal new () = InverseNonCentralChiSquareDistributionModel1(null,null,null)
+    member internal this.Inject v = _InverseNonCentralChiSquareDistribution.Value <- v
+    static member Cast (p : ICell<InverseNonCentralChiSquareDistribution>) = 
+        if p :? InverseNonCentralChiSquareDistributionModel1 then 
+            p :?> InverseNonCentralChiSquareDistributionModel1
+        else
+            let o = new InverseNonCentralChiSquareDistributionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -119,6 +145,19 @@ type InverseNonCentralChiSquareDistributionModel2
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralChiSquareDistribution)
+(* 
+    casting 
+*)
+    internal new () = InverseNonCentralChiSquareDistributionModel2(null,null,null,null)
+    member internal this.Inject v = _InverseNonCentralChiSquareDistribution.Value <- v
+    static member Cast (p : ICell<InverseNonCentralChiSquareDistribution>) = 
+        if p :? InverseNonCentralChiSquareDistributionModel2 then 
+            p :?> InverseNonCentralChiSquareDistributionModel2
+        else
+            let o = new InverseNonCentralChiSquareDistributionModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

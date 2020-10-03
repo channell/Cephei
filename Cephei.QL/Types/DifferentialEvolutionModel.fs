@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -49,6 +49,19 @@ type DifferentialEvolutionModel
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
                                                    = triv (fun () -> _DifferentialEvolution.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_DifferentialEvolution)
+(* 
+    casting 
+*)
+    internal new () = DifferentialEvolutionModel(null)
+    member internal this.Inject v = _DifferentialEvolution.Value <- v
+    static member Cast (p : ICell<DifferentialEvolution>) = 
+        if p :? DifferentialEvolutionModel then 
+            p :?> DifferentialEvolutionModel
+        else
+            let o = new DifferentialEvolutionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

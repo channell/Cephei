@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type YearOnYearInflationSwapHelperModel
     let _update                                    = triv (fun () -> _YearOnYearInflationSwapHelper.Value.update()
                                                                      _YearOnYearInflationSwapHelper.Value)
     do this.Bind(_YearOnYearInflationSwapHelper)
+(* 
+    casting 
+*)
+    internal new () = YearOnYearInflationSwapHelperModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _YearOnYearInflationSwapHelper.Value <- v
+    static member Cast (p : ICell<YearOnYearInflationSwapHelper>) = 
+        if p :? YearOnYearInflationSwapHelperModel then 
+            p :?> YearOnYearInflationSwapHelperModel
+        else
+            let o = new YearOnYearInflationSwapHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

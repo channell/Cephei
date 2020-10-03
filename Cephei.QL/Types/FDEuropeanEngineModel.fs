@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -69,6 +69,19 @@ type FDEuropeanEngineModel
     let _grid                                      = triv (fun () -> _FDEuropeanEngine.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDEuropeanEngine.Value.intrinsicValues_)
     do this.Bind(_FDEuropeanEngine)
+(* 
+    casting 
+*)
+    internal new () = FDEuropeanEngineModel(null,null,null,null)
+    member internal this.Inject v = _FDEuropeanEngine.Value <- v
+    static member Cast (p : ICell<FDEuropeanEngine>) = 
+        if p :? FDEuropeanEngineModel then 
+            p :?> FDEuropeanEngineModel
+        else
+            let o = new FDEuropeanEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -129,6 +142,19 @@ type FDEuropeanEngineModel1
     let _grid                                      = triv (fun () -> _FDEuropeanEngine.Value.grid())
     let _intrinsicValues_                          = triv (fun () -> _FDEuropeanEngine.Value.intrinsicValues_)
     do this.Bind(_FDEuropeanEngine)
+(* 
+    casting 
+*)
+    internal new () = FDEuropeanEngineModel1(null,null,null)
+    member internal this.Inject v = _FDEuropeanEngine.Value <- v
+    static member Cast (p : ICell<FDEuropeanEngine>) = 
+        if p :? FDEuropeanEngineModel1 then 
+            p :?> FDEuropeanEngineModel1
+        else
+            let o = new FDEuropeanEngineModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

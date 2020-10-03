@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -52,6 +52,19 @@ type EuropeanPathPricerModel
     let _value                                     (path : ICell<IPath>)   
                                                    = triv (fun () -> _EuropeanPathPricer.Value.value(path.Value))
     do this.Bind(_EuropeanPathPricer)
+(* 
+    casting 
+*)
+    internal new () = EuropeanPathPricerModel(null,null,null)
+    member internal this.Inject v = _EuropeanPathPricer.Value <- v
+    static member Cast (p : ICell<EuropeanPathPricer>) = 
+        if p :? EuropeanPathPricerModel then 
+            p :?> EuropeanPathPricerModel
+        else
+            let o = new EuropeanPathPricerModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -53,6 +53,19 @@ type GaussLaguerreIntegrationModel
     let _weights                                   = triv (fun () -> _GaussLaguerreIntegration.Value.weights())
     let _x                                         = triv (fun () -> _GaussLaguerreIntegration.Value.x())
     do this.Bind(_GaussLaguerreIntegration)
+(* 
+    casting 
+*)
+    internal new () = GaussLaguerreIntegrationModel(null,null)
+    member internal this.Inject v = _GaussLaguerreIntegration.Value <- v
+    static member Cast (p : ICell<GaussLaguerreIntegration>) = 
+        if p :? GaussLaguerreIntegrationModel then 
+            p :?> GaussLaguerreIntegrationModel
+        else
+            let o = new GaussLaguerreIntegrationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

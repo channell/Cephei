@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -47,6 +47,19 @@ type ZARegionModel
                                                    = triv (fun () -> _ZARegion.Value.Equals(o.Value))
     let _name                                      = triv (fun () -> _ZARegion.Value.name())
     do this.Bind(_ZARegion)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _ZARegion.Value <- v
+    static member Cast (p : ICell<ZARegion>) = 
+        if p :? ZARegionModel then 
+            p :?> ZARegionModel
+        else
+            let o = new ZARegionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -100,6 +100,19 @@ type FittedBondDiscountCurveModel
                                                                      _FittedBondDiscountCurve.Value)
     let _extrapolate                               = triv (fun () -> _FittedBondDiscountCurve.Value.extrapolate)
     do this.Bind(_FittedBondDiscountCurve)
+(* 
+    casting 
+*)
+    internal new () = FittedBondDiscountCurveModel(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FittedBondDiscountCurve.Value <- v
+    static member Cast (p : ICell<FittedBondDiscountCurve>) = 
+        if p :? FittedBondDiscountCurveModel then 
+            p :?> FittedBondDiscountCurveModel
+        else
+            let o = new FittedBondDiscountCurveModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -217,6 +230,19 @@ type FittedBondDiscountCurveModel1
                                                                      _FittedBondDiscountCurve.Value)
     let _extrapolate                               = triv (fun () -> _FittedBondDiscountCurve.Value.extrapolate)
     do this.Bind(_FittedBondDiscountCurve)
+(* 
+    casting 
+*)
+    internal new () = FittedBondDiscountCurveModel1(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FittedBondDiscountCurve.Value <- v
+    static member Cast (p : ICell<FittedBondDiscountCurve>) = 
+        if p :? FittedBondDiscountCurveModel1 then 
+            p :?> FittedBondDiscountCurveModel1
+        else
+            let o = new FittedBondDiscountCurveModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

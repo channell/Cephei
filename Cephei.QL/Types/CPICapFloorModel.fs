@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -91,6 +91,19 @@ type CPICapFloorModel
                                                                      _CPICapFloor.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CPICapFloor).valuationDate())
     do this.Bind(_CPICapFloor)
+(* 
+    casting 
+*)
+    internal new () = CPICapFloorModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CPICapFloor.Value <- v
+    static member Cast (p : ICell<CPICapFloor>) = 
+        if p :? CPICapFloorModel then 
+            p :?> CPICapFloorModel
+        else
+            let o = new CPICapFloorModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

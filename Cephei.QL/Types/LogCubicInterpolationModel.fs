@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -85,6 +85,19 @@ type LogCubicInterpolationModel
                                                                      _LogCubicInterpolation.Value)
     let _extrapolate                               = triv (fun () -> _LogCubicInterpolation.Value.extrapolate)
     do this.Bind(_LogCubicInterpolation)
+(* 
+    casting 
+*)
+    internal new () = LogCubicInterpolationModel(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _LogCubicInterpolation.Value <- v
+    static member Cast (p : ICell<LogCubicInterpolation>) = 
+        if p :? LogCubicInterpolationModel then 
+            p :?> LogCubicInterpolationModel
+        else
+            let o = new LogCubicInterpolationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

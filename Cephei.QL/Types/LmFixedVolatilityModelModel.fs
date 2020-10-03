@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -59,6 +59,19 @@ type LmFixedVolatilityModelModel
                                                                      _LmFixedVolatilityModel.Value)
     let _size                                      = triv (fun () -> _LmFixedVolatilityModel.Value.size())
     do this.Bind(_LmFixedVolatilityModel)
+(* 
+    casting 
+*)
+    internal new () = LmFixedVolatilityModelModel(null,null)
+    member internal this.Inject v = _LmFixedVolatilityModel.Value <- v
+    static member Cast (p : ICell<LmFixedVolatilityModel>) = 
+        if p :? LmFixedVolatilityModelModel then 
+            p :?> LmFixedVolatilityModelModel
+        else
+            let o = new LmFixedVolatilityModelModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

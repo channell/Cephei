@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -50,6 +50,19 @@ type CumulativeBinomialDistributionModel
     let _value                                     (k : ICell<int64>)   
                                                    = triv (fun () -> _CumulativeBinomialDistribution.Value.value(k.Value))
     do this.Bind(_CumulativeBinomialDistribution)
+(* 
+    casting 
+*)
+    internal new () = CumulativeBinomialDistributionModel(null,null)
+    member internal this.Inject v = _CumulativeBinomialDistribution.Value <- v
+    static member Cast (p : ICell<CumulativeBinomialDistribution>) = 
+        if p :? CumulativeBinomialDistributionModel then 
+            p :?> CumulativeBinomialDistributionModel
+        else
+            let o = new CumulativeBinomialDistributionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -106,6 +106,19 @@ type CCTEUModel
                                                                      _CCTEU.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _CCTEU).valuationDate())
     do this.Bind(_CCTEU)
+(* 
+    casting 
+*)
+    internal new () = CCTEUModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _CCTEU.Value <- v
+    static member Cast (p : ICell<CCTEU>) = 
+        if p :? CCTEUModel then 
+            p :?> CCTEUModel
+        else
+            let o = new CCTEUModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

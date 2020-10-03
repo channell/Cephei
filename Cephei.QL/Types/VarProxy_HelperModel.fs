@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type VarProxy_HelperModel
                                                    = triv (fun () -> _VarProxy_Helper.Value.value(t.Value))
     let _volaModel_                                = triv (fun () -> _VarProxy_Helper.Value.volaModel_)
     do this.Bind(_VarProxy_Helper)
+(* 
+    casting 
+*)
+    internal new () = VarProxy_HelperModel(null,null,null)
+    member internal this.Inject v = _VarProxy_Helper.Value <- v
+    static member Cast (p : ICell<VarProxy_Helper>) = 
+        if p :? VarProxy_HelperModel then 
+            p :?> VarProxy_HelperModel
+        else
+            let o = new VarProxy_HelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

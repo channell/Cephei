@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -107,6 +107,19 @@ type LiborModel
                                                    = triv (fun () -> _Libor.Value.unregisterWith(handler.Value)
                                                                      _Libor.Value)
     do this.Bind(_Libor)
+(* 
+    casting 
+*)
+    internal new () = LiborModel(null,null,null,null,null,null,null)
+    member internal this.Inject v = _Libor.Value <- v
+    static member Cast (p : ICell<Libor>) = 
+        if p :? LiborModel then 
+            p :?> LiborModel
+        else
+            let o = new LiborModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -79,6 +79,19 @@ type CapHelperModel
     let _volatility                                = triv (fun () -> (withEvaluationDate _evaluationDate _CapHelper).volatility())
     let _volatilityType                            = triv (fun () -> (withEvaluationDate _evaluationDate _CapHelper).volatilityType())
     do this.Bind(_CapHelper)
+(* 
+    casting 
+*)
+    internal new () = CapHelperModel(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CapHelper.Value <- v
+    static member Cast (p : ICell<CapHelper>) = 
+        if p :? CapHelperModel then 
+            p :?> CapHelperModel
+        else
+            let o = new CapHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

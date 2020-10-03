@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -73,6 +73,19 @@ type DatedOISRateHelperModel
     let _update                                    = triv (fun () -> _DatedOISRateHelper.Value.update()
                                                                      _DatedOISRateHelper.Value)
     do this.Bind(_DatedOISRateHelper)
+(* 
+    casting 
+*)
+    internal new () = DatedOISRateHelperModel(null,null,null,null)
+    member internal this.Inject v = _DatedOISRateHelper.Value <- v
+    static member Cast (p : ICell<DatedOISRateHelper>) = 
+        if p :? DatedOISRateHelperModel then 
+            p :?> DatedOISRateHelperModel
+        else
+            let o = new DatedOISRateHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

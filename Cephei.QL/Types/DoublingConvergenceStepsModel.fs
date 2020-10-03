@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type DoublingConvergenceStepsModel
     let _nextSamples                               (current : ICell<int>)   
                                                    = triv (fun () -> _DoublingConvergenceSteps.Value.nextSamples(current.Value))
     do this.Bind(_DoublingConvergenceSteps)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _DoublingConvergenceSteps.Value <- v
+    static member Cast (p : ICell<DoublingConvergenceSteps>) = 
+        if p :? DoublingConvergenceStepsModel then 
+            p :?> DoublingConvergenceStepsModel
+        else
+            let o = new DoublingConvergenceStepsModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

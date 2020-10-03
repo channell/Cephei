@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -57,6 +57,19 @@ type GaussHermitePolynomialModel
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
                                                    = triv (fun () -> _GaussHermitePolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussHermitePolynomial)
+(* 
+    casting 
+*)
+    internal new () = GaussHermitePolynomialModel(null)
+    member internal this.Inject v = _GaussHermitePolynomial.Value <- v
+    static member Cast (p : ICell<GaussHermitePolynomial>) = 
+        if p :? GaussHermitePolynomialModel then 
+            p :?> GaussHermitePolynomialModel
+        else
+            let o = new GaussHermitePolynomialModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -100,6 +113,19 @@ type GaussHermitePolynomialModel1
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
                                                    = triv (fun () -> _GaussHermitePolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussHermitePolynomial)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _GaussHermitePolynomial.Value <- v
+    static member Cast (p : ICell<GaussHermitePolynomial>) = 
+        if p :? GaussHermitePolynomialModel1 then 
+            p :?> GaussHermitePolynomialModel1
+        else
+            let o = new GaussHermitePolynomialModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

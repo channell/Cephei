@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -120,6 +120,19 @@ type SwapIndexModel
                                                    = triv (fun () -> _SwapIndex.Value.unregisterWith(handler.Value)
                                                                      _SwapIndex.Value)
     do this.Bind(_SwapIndex)
+(* 
+    casting 
+*)
+    internal new () = SwapIndexModel(null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwapIndex.Value <- v
+    static member Cast (p : ICell<SwapIndex>) = 
+        if p :? SwapIndexModel then 
+            p :?> SwapIndexModel
+        else
+            let o = new SwapIndexModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -274,6 +287,19 @@ type SwapIndexModel1
                                                    = triv (fun () -> _SwapIndex.Value.unregisterWith(handler.Value)
                                                                      _SwapIndex.Value)
     do this.Bind(_SwapIndex)
+(* 
+    casting 
+*)
+    internal new () = SwapIndexModel1(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SwapIndex.Value <- v
+    static member Cast (p : ICell<SwapIndex>) = 
+        if p :? SwapIndexModel1 then 
+            p :?> SwapIndexModel1
+        else
+            let o = new SwapIndexModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -408,6 +434,19 @@ type SwapIndexModel2
                                                    = triv (fun () -> _SwapIndex.Value.unregisterWith(handler.Value)
                                                                      _SwapIndex.Value)
     do this.Bind(_SwapIndex)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _SwapIndex.Value <- v
+    static member Cast (p : ICell<SwapIndex>) = 
+        if p :? SwapIndexModel2 then 
+            p :?> SwapIndexModel2
+        else
+            let o = new SwapIndexModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

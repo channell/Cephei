@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type AnalyticDoubleBarrierBinaryEngineHelperModel
     let _payoffKIKO                                (spot : ICell<double>) (variance : ICell<double>) (barrierType : ICell<DoubleBarrier.Type>) (maxIteration : ICell<int>) (requiredConvergence : ICell<double>)   
                                                    = triv (fun () -> _AnalyticDoubleBarrierBinaryEngineHelper.Value.payoffKIKO(spot.Value, variance.Value, barrierType.Value, maxIteration.Value, requiredConvergence.Value))
     do this.Bind(_AnalyticDoubleBarrierBinaryEngineHelper)
+(* 
+    casting 
+*)
+    internal new () = AnalyticDoubleBarrierBinaryEngineHelperModel(null,null,null)
+    member internal this.Inject v = _AnalyticDoubleBarrierBinaryEngineHelper.Value <- v
+    static member Cast (p : ICell<AnalyticDoubleBarrierBinaryEngineHelper>) = 
+        if p :? AnalyticDoubleBarrierBinaryEngineHelperModel then 
+            p :?> AnalyticDoubleBarrierBinaryEngineHelperModel
+        else
+            let o = new AnalyticDoubleBarrierBinaryEngineHelperModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

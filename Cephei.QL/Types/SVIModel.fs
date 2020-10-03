@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -84,6 +84,19 @@ type SVIModel
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xEnd : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> _SVI.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value))
     do this.Bind(_SVI)
+(* 
+    casting 
+*)
+    internal new () = SVIModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _SVI.Value <- v
+    static member Cast (p : ICell<SVI>) = 
+        if p :? SVIModel then 
+            p :?> SVIModel
+        else
+            let o = new SVIModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

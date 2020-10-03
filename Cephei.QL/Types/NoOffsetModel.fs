@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -45,6 +45,19 @@ type NoOffsetModel
     let _paymentDate                               (eventDate : ICell<Date>)   
                                                    = triv (fun () -> _NoOffset.Value.paymentDate(eventDate.Value))
     do this.Bind(_NoOffset)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _NoOffset.Value <- v
+    static member Cast (p : ICell<NoOffset>) = 
+        if p :? NoOffsetModel then 
+            p :?> NoOffsetModel
+        else
+            let o = new NoOffsetModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

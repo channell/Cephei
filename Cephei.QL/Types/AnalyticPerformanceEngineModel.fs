@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type AnalyticPerformanceEngineModel
 *)
     let _AnalyticPerformanceEngine                 = cell (fun () -> new AnalyticPerformanceEngine (Process.Value))
     do this.Bind(_AnalyticPerformanceEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticPerformanceEngineModel(null)
+    member internal this.Inject v = _AnalyticPerformanceEngine.Value <- v
+    static member Cast (p : ICell<AnalyticPerformanceEngine>) = 
+        if p :? AnalyticPerformanceEngineModel then 
+            p :?> AnalyticPerformanceEngineModel
+        else
+            let o = new AnalyticPerformanceEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

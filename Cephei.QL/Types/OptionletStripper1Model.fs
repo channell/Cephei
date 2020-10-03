@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -85,6 +85,19 @@ type OptionletStripper1Model
     let _termVolSurface                            = triv (fun () -> _OptionletStripper1.Value.termVolSurface())
     let _volatilityType                            = triv (fun () -> _OptionletStripper1.Value.volatilityType())
     do this.Bind(_OptionletStripper1)
+(* 
+    casting 
+*)
+    internal new () = OptionletStripper1Model(null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _OptionletStripper1.Value <- v
+    static member Cast (p : ICell<OptionletStripper1>) = 
+        if p :? OptionletStripper1Model then 
+            p :?> OptionletStripper1Model
+        else
+            let o = new OptionletStripper1Model ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

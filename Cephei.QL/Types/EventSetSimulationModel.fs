@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type EventSetSimulationModel
     let _nextPath                                  (path : ICell<Generic.List<KeyValuePair<Date,double>>>)   
                                                    = triv (fun () -> _EventSetSimulation.Value.nextPath(path.Value))
     do this.Bind(_EventSetSimulation)
+(* 
+    casting 
+*)
+    internal new () = EventSetSimulationModel(null,null,null,null,null)
+    member internal this.Inject v = _EventSetSimulation.Value <- v
+    static member Cast (p : ICell<EventSetSimulation>) = 
+        if p :? EventSetSimulationModel then 
+            p :?> EventSetSimulationModel
+        else
+            let o = new EventSetSimulationModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

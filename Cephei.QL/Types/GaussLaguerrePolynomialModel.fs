@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -54,6 +54,19 @@ type GaussLaguerrePolynomialModel
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
                                                    = triv (fun () -> _GaussLaguerrePolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussLaguerrePolynomial)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _GaussLaguerrePolynomial.Value <- v
+    static member Cast (p : ICell<GaussLaguerrePolynomial>) = 
+        if p :? GaussLaguerrePolynomialModel then 
+            p :?> GaussLaguerrePolynomialModel
+        else
+            let o = new GaussLaguerrePolynomialModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -99,6 +112,19 @@ type GaussLaguerrePolynomialModel1
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
                                                    = triv (fun () -> _GaussLaguerrePolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussLaguerrePolynomial)
+(* 
+    casting 
+*)
+    internal new () = GaussLaguerrePolynomialModel1(null)
+    member internal this.Inject v = _GaussLaguerrePolynomial.Value <- v
+    static member Cast (p : ICell<GaussLaguerrePolynomial>) = 
+        if p :? GaussLaguerrePolynomialModel1 then 
+            p :?> GaussLaguerrePolynomialModel1
+        else
+            let o = new GaussLaguerrePolynomialModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

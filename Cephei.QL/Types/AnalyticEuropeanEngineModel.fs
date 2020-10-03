@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -46,6 +46,19 @@ type AnalyticEuropeanEngineModel
 *)
     let _AnalyticEuropeanEngine                    = cell (fun () -> new AnalyticEuropeanEngine (Process.Value))
     do this.Bind(_AnalyticEuropeanEngine)
+(* 
+    casting 
+*)
+    internal new () = AnalyticEuropeanEngineModel(null)
+    member internal this.Inject v = _AnalyticEuropeanEngine.Value <- v
+    static member Cast (p : ICell<AnalyticEuropeanEngine>) = 
+        if p :? AnalyticEuropeanEngineModel then 
+            p :?> AnalyticEuropeanEngineModel
+        else
+            let o = new AnalyticEuropeanEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type FdmBermudanStepConditionModel
                                                                      _FdmBermudanStepCondition.Value)
     let _exerciseTimes                             = triv (fun () -> _FdmBermudanStepCondition.Value.exerciseTimes())
     do this.Bind(_FdmBermudanStepCondition)
+(* 
+    casting 
+*)
+    internal new () = FdmBermudanStepConditionModel(null,null,null,null,null)
+    member internal this.Inject v = _FdmBermudanStepCondition.Value <- v
+    static member Cast (p : ICell<FdmBermudanStepCondition>) = 
+        if p :? FdmBermudanStepConditionModel then 
+            p :?> FdmBermudanStepConditionModel
+        else
+            let o = new FdmBermudanStepConditionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type AUDCurrencyModel
     let _ToString                                  = triv (fun () -> _AUDCurrency.Value.ToString())
     let _triangulationCurrency                     = triv (fun () -> _AUDCurrency.Value.triangulationCurrency)
     do this.Bind(_AUDCurrency)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _AUDCurrency.Value <- v
+    static member Cast (p : ICell<AUDCurrency>) = 
+        if p :? AUDCurrencyModel then 
+            p :?> AUDCurrencyModel
+        else
+            let o = new AUDCurrencyModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

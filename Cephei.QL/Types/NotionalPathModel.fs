@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -51,6 +51,19 @@ type NotionalPathModel
     let _reset                                     = triv (fun () -> _NotionalPath.Value.reset()
                                                                      _NotionalPath.Value)
     do this.Bind(_NotionalPath)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _NotionalPath.Value <- v
+    static member Cast (p : ICell<NotionalPath>) = 
+        if p :? NotionalPathModel then 
+            p :?> NotionalPathModel
+        else
+            let o = new NotionalPathModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

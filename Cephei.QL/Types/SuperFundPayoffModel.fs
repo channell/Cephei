@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type SuperFundPayoffModel
                                                    = triv (fun () -> _SuperFundPayoff.Value.accept(v.Value)
                                                                      _SuperFundPayoff.Value)
     do this.Bind(_SuperFundPayoff)
+(* 
+    casting 
+*)
+    internal new () = SuperFundPayoffModel(null,null)
+    member internal this.Inject v = _SuperFundPayoff.Value <- v
+    static member Cast (p : ICell<SuperFundPayoff>) = 
+        if p :? SuperFundPayoffModel then 
+            p :?> SuperFundPayoffModel
+        else
+            let o = new SuperFundPayoffModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

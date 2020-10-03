@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -124,6 +124,19 @@ type FixedRateBondModel
                                                                      _FixedRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).valuationDate())
     do this.Bind(_FixedRateBond)
+(* 
+    casting 
+*)
+    internal new () = FixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FixedRateBond.Value <- v
+    static member Cast (p : ICell<FixedRateBond>) = 
+        if p :? FixedRateBondModel then 
+            p :?> FixedRateBondModel
+        else
+            let o = new FixedRateBondModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -303,6 +316,19 @@ type FixedRateBondModel1
                                                                      _FixedRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).valuationDate())
     do this.Bind(_FixedRateBond)
+(* 
+    casting 
+*)
+    internal new () = FixedRateBondModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FixedRateBond.Value <- v
+    static member Cast (p : ICell<FixedRateBond>) = 
+        if p :? FixedRateBondModel1 then 
+            p :?> FixedRateBondModel1
+        else
+            let o = new FixedRateBondModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -473,6 +499,19 @@ type FixedRateBondModel2
                                                                      _FixedRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).valuationDate())
     do this.Bind(_FixedRateBond)
+(* 
+    casting 
+*)
+    internal new () = FixedRateBondModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _FixedRateBond.Value <- v
+    static member Cast (p : ICell<FixedRateBond>) = 
+        if p :? FixedRateBondModel2 then 
+            p :?> FixedRateBondModel2
+        else
+            let o = new FixedRateBondModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

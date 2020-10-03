@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type GammaDistributionModel
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _GammaDistribution.Value.value(x.Value))
     do this.Bind(_GammaDistribution)
+(* 
+    casting 
+*)
+    internal new () = GammaDistributionModel(null)
+    member internal this.Inject v = _GammaDistribution.Value <- v
+    static member Cast (p : ICell<GammaDistribution>) = 
+        if p :? GammaDistributionModel then 
+            p :?> GammaDistributionModel
+        else
+            let o = new GammaDistributionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

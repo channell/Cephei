@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -56,6 +56,19 @@ type eqn6Model
     let _value                                     (x : ICell<double>)   
                                                    = triv (fun () -> _eqn6.Value.value(x.Value))
     do this.Bind(_eqn6)
+(* 
+    casting 
+*)
+    internal new () = eqn6Model(null,null,null,null,null)
+    member internal this.Inject v = _eqn6.Value <- v
+    static member Cast (p : ICell<eqn6>) = 
+        if p :? eqn6Model then 
+            p :?> eqn6Model
+        else
+            let o = new eqn6Model ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -48,6 +48,19 @@ type NotTradableExceptionModel
 *)
     let _NotTradableException                      = cell (fun () -> new NotTradableException (message.Value, inner.Value))
     do this.Bind(_NotTradableException)
+(* 
+    casting 
+*)
+    internal new () = NotTradableExceptionModel(null,null)
+    member internal this.Inject v = _NotTradableException.Value <- v
+    static member Cast (p : ICell<NotTradableException>) = 
+        if p :? NotTradableExceptionModel then 
+            p :?> NotTradableExceptionModel
+        else
+            let o = new NotTradableExceptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -73,6 +86,19 @@ type NotTradableExceptionModel1
 *)
     let _NotTradableException                      = cell (fun () -> new NotTradableException (message.Value))
     do this.Bind(_NotTradableException)
+(* 
+    casting 
+*)
+    internal new () = NotTradableExceptionModel1(null)
+    member internal this.Inject v = _NotTradableException.Value <- v
+    static member Cast (p : ICell<NotTradableException>) = 
+        if p :? NotTradableExceptionModel1 then 
+            p :?> NotTradableExceptionModel1
+        else
+            let o = new NotTradableExceptionModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -94,6 +120,19 @@ type NotTradableExceptionModel2
 *)
     let _NotTradableException                      = cell (fun () -> new NotTradableException ())
     do this.Bind(_NotTradableException)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _NotTradableException.Value <- v
+    static member Cast (p : ICell<NotTradableException>) = 
+        if p :? NotTradableExceptionModel2 then 
+            p :?> NotTradableExceptionModel2
+        else
+            let o = new NotTradableExceptionModel2 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

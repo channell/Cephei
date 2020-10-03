@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -58,6 +58,19 @@ type ForwardPerformanceVanillaEngineModel
     let _update                                    = triv (fun () -> _ForwardPerformanceVanillaEngine.Value.update()
                                                                      _ForwardPerformanceVanillaEngine.Value)
     do this.Bind(_ForwardPerformanceVanillaEngine)
+(* 
+    casting 
+*)
+    internal new () = ForwardPerformanceVanillaEngineModel(null,null)
+    member internal this.Inject v = _ForwardPerformanceVanillaEngine.Value <- v
+    static member Cast (p : ICell<ForwardPerformanceVanillaEngine>) = 
+        if p :? ForwardPerformanceVanillaEngineModel then 
+            p :?> ForwardPerformanceVanillaEngineModel
+        else
+            let o = new ForwardPerformanceVanillaEngineModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -77,6 +77,19 @@ type VanillaOptionModel
                                                                      _VanillaOption.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _VanillaOption).valuationDate())
     do this.Bind(_VanillaOption)
+(* 
+    casting 
+*)
+    internal new () = VanillaOptionModel(null,null,null,null)
+    member internal this.Inject v = _VanillaOption.Value <- v
+    static member Cast (p : ICell<VanillaOption>) = 
+        if p :? VanillaOptionModel then 
+            p :?> VanillaOptionModel
+        else
+            let o = new VanillaOptionModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties

@@ -1,4 +1,4 @@
-(*
+﻿(*
 Copyright (C) 2020 Cepheis Ltd (steve.channell@cepheis.com)
 
 This file is part of Cephei.QL Project https://github.com/channell/Cephei
@@ -123,6 +123,19 @@ type CmsSpreadCouponModel
                                                    = triv (fun () -> _CmsSpreadCoupon.Value.unregisterWith(handler.Value)
                                                                      _CmsSpreadCoupon.Value)
     do this.Bind(_CmsSpreadCoupon)
+(* 
+    casting 
+*)
+    internal new () = CmsSpreadCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    member internal this.Inject v = _CmsSpreadCoupon.Value <- v
+    static member Cast (p : ICell<CmsSpreadCoupon>) = 
+        if p :? CmsSpreadCouponModel then 
+            p :?> CmsSpreadCouponModel
+        else
+            let o = new CmsSpreadCouponModel ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
@@ -260,6 +273,19 @@ type CmsSpreadCouponModel1
                                                    = triv (fun () -> _CmsSpreadCoupon.Value.unregisterWith(handler.Value)
                                                                      _CmsSpreadCoupon.Value)
     do this.Bind(_CmsSpreadCoupon)
+(* 
+    casting 
+*)
+    
+    member internal this.Inject v = _CmsSpreadCoupon.Value <- v
+    static member Cast (p : ICell<CmsSpreadCoupon>) = 
+        if p :? CmsSpreadCouponModel1 then 
+            p :?> CmsSpreadCouponModel1
+        else
+            let o = new CmsSpreadCouponModel1 ()
+            o.Inject p.Value
+            o
+                            
 
 (* 
     Externally visible/bindable properties
