@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SdIY8NXfTG0Olo4ocmREtdeejDXWFFA2v+LDGUPpEP+tzrB00T3mTnf0JqBqALLaqhU494rYCGIgho1/M6ZsBQ==",
+  "dgSpecHash": "lJMthCMrWmUWXjP5Lv+JswD/T/V9usXbJyJVGGpRXbA6jKBA5BsIyKr3YmKHdGRHBEHxjo98JdNf2KNECGTYgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj",
+  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Orleans\\Cephei.Orleans.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\3.0.0\\microsoft.aspnetcore.connections.abstractions.3.0.0.nupkg.sha512",

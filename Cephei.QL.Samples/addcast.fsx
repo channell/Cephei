@@ -33,7 +33,7 @@ let rec allFiles directory pattern =
             if (s.Contains ("do this.Bind")) && (not (typeName.Contains("'"))) then
                 let newcon =
                     if pams > 0 then 
-                        "internal new () = " + typeName + "(" + (List.fold (fun a y -> a + ",null" ) "" [0..pams]).Substring(1) + ")"
+                        "internal new () = " + typeName + "(" + (List.fold (fun a y -> a + ",null" ) "" [1..pams]).Substring(1) + ")"
                     else 
                         ""
                 let caster = String.Format ("
