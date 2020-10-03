@@ -90,7 +90,7 @@ module BondHelperFunction =
 
                 let _price = Helper.toHandle<Quote> price "price" 
                 let _bond = Helper.toCell<Bond> bond "bond" 
-                let _useCleanPrice = Helper.toCell<bool> useCleanPrice "useCleanPrice" 
+                let _useCleanPrice = Helper.toDefault<bool> useCleanPrice "useCleanPrice" true
                 let builder () = withMnemonic mnemonic (Fun.BondHelper 
                                                             _price.cell 
                                                             _bond.cell 

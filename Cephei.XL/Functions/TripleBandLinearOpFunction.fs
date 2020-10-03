@@ -280,7 +280,7 @@ module TripleBandLinearOpFunction =
                 let _a = Helper.toCell<Vector> a "a" 
                 let _x = Helper.toCell<TripleBandLinearOp> x "x" 
                 let _y = Helper.toCell<TripleBandLinearOp> y "y" 
-                let _b = Helper.toCell<Vector> b "b" 
+                let _b = Helper.toCell<Vector> b "b"
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Axpyb
                                                             _a.cell 
                                                             _x.cell 
@@ -661,7 +661,7 @@ module TripleBandLinearOpFunction =
                 let _TripleBandLinearOp = Helper.toCell<TripleBandLinearOp> triplebandlinearop "TripleBandLinearOp"  
                 let _r = Helper.toCell<Vector> r "r" 
                 let _a = Helper.toCell<double> a "a" 
-                let _b = Helper.toCell<double> b "b" 
+                let _b = Helper.toDefault<double> b "b" 1.0
                 let builder () = withMnemonic mnemonic ((_TripleBandLinearOp.cell :?> TripleBandLinearOpModel).Solve_splitting
                                                             _r.cell 
                                                             _a.cell 

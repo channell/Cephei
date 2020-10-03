@@ -51,7 +51,7 @@ module GaussHermiteIntegrationFunction =
             try
 
                 let _n = Helper.toCell<int> n "n" 
-                let _mu = Helper.toCell<double> mu "mu" 
+                let _mu = Helper.toDefault<double> mu "mu" 0.0
                 let builder () = withMnemonic mnemonic (Fun.GaussHermiteIntegration 
                                                             _n.cell 
                                                             _mu.cell 

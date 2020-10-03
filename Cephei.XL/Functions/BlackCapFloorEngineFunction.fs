@@ -54,7 +54,7 @@ module BlackCapFloorEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<OptionletVolatilityStructure> vol "vol" 
-                let _displacement = Helper.toCell<double> displacement "displacement" 
+                let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
                 let builder () = withMnemonic mnemonic (Fun.BlackCapFloorEngine1 
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -105,8 +105,8 @@ module BlackCapFloorEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<Quote> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let _displacement = Helper.toCell<double> displacement "displacement" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
                 let builder () = withMnemonic mnemonic (Fun.BlackCapFloorEngine2
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -160,8 +160,8 @@ module BlackCapFloorEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toCell<double> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let _displacement = Helper.toCell<double> displacement "displacement" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
                 let builder () = withMnemonic mnemonic (Fun.BlackCapFloorEngine
                                                             _discountCurve.cell 
                                                             _vol.cell 

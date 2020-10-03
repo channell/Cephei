@@ -164,8 +164,8 @@ module TqrEigenDecompositionFunction =
 
                 let _diag = Helper.toCell<Vector> diag "diag" 
                 let _sub = Helper.toCell<Vector> sub "sub" 
-                let _calc = Helper.toCell<TqrEigenDecomposition.EigenVectorCalculation> calc "calc" 
-                let _strategy = Helper.toCell<TqrEigenDecomposition.ShiftStrategy> strategy "strategy" 
+                let _calc = Helper.toDefault<TqrEigenDecomposition.EigenVectorCalculation> calc "calc" TqrEigenDecomposition.EigenVectorCalculation.WithEigenVector
+                let _strategy = Helper.toDefault<TqrEigenDecomposition.ShiftStrategy> strategy "strategy" TqrEigenDecomposition.ShiftStrategy.CloseEigenValue
                 let builder () = withMnemonic mnemonic (Fun.TqrEigenDecomposition 
                                                             _diag.cell 
                                                             _sub.cell 

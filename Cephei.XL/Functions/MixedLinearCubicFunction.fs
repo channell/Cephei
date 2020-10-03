@@ -155,11 +155,11 @@ module MixedLinearCubicFunction =
                 let _n = Helper.toCell<int> n "n" 
                 let _behavior = Helper.toCell<Behavior> behavior "behavior" 
                 let _da = Helper.toCell<CubicInterpolation.DerivativeApprox> da "da" 
-                let _monotonic = Helper.toCell<bool> monotonic "monotonic" 
-                let _leftCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> leftCondition "leftCondition" 
-                let _leftConditionValue = Helper.toCell<double> leftConditionValue "leftConditionValue" 
-                let _rightCondition = Helper.toCell<CubicInterpolation.BoundaryCondition> rightCondition "rightCondition" 
-                let _rightConditionValue = Helper.toCell<double> rightConditionValue "rightConditionValue" 
+                let _monotonic = Helper.toDefault<bool> monotonic "monotonic" true
+                let _leftCondition = Helper.toDefault<CubicInterpolation.BoundaryCondition> leftCondition "leftCondition" QLNet.CubicInterpolation.BoundaryCondition.SecondDerivative
+                let _leftConditionValue = Helper.toDefault<double> leftConditionValue "leftConditionValue" 0.0
+                let _rightCondition = Helper.toDefault<CubicInterpolation.BoundaryCondition> rightCondition "rightCondition" CubicInterpolation.BoundaryCondition.SecondDerivative
+                let _rightConditionValue = Helper.toDefault<double> rightConditionValue "rightConditionValue" 0.0
                 let builder () = withMnemonic mnemonic (Fun.MixedLinearCubic 
                                                             _n.cell 
                                                             _behavior.cell 

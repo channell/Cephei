@@ -56,8 +56,8 @@ module BachelierSwaptionEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toCell<double> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let _model = Helper.toCell<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _model = Helper.toDefault<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel.DiscountCurve
                 let builder () = withMnemonic mnemonic (Fun.BachelierSwaptionEngine 
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -111,8 +111,8 @@ module BachelierSwaptionEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<Quote> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let _model = Helper.toCell<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _model = Helper.toDefault<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel.DiscountCurve
                 let builder () = withMnemonic mnemonic (Fun.BachelierSwaptionEngine2 
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -164,7 +164,7 @@ module BachelierSwaptionEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<SwaptionVolatilityStructure> vol "vol" 
-                let _model = Helper.toCell<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" 
+                let _model = Helper.toDefault<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel.DiscountCurve
                 let builder () = withMnemonic mnemonic (Fun.BachelierSwaptionEngine1
                                                             _discountCurve.cell 
                                                             _vol.cell 

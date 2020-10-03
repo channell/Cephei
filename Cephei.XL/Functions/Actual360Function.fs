@@ -48,7 +48,7 @@ module Actual360Function =
 
             try
 
-                let _c = Helper.toCell<bool> c "c" 
+                let _c = Helper.toDefault<bool> c "c" false
                 let builder () = withMnemonic mnemonic (Fun.Actual360 
                                                             _c.cell 
                                                        ) :> ICell

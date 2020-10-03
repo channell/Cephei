@@ -58,9 +58,9 @@ module BlackSwaptionEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toCell<double> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _displacement = Helper.toNullable<double> displacement "displacement"
-                let _model = Helper.toCell<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel> model "model" 
+                let _model = Helper.toDefault<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel.DiscountCurve
                 let builder () = withMnemonic mnemonic (Fun.BlackSwaptionEngine2 
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -118,7 +118,7 @@ module BlackSwaptionEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<SwaptionVolatilityStructure> vol "vol" 
                 let _displacement = Helper.toNullable<double> displacement "displacement"
-                let _model = Helper.toCell<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel> model "model" 
+                let _model = Helper.toDefault<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel.DiscountCurve
                 let builder () = withMnemonic mnemonic (Fun.BlackSwaptionEngine
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -174,9 +174,9 @@ module BlackSwaptionEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<Quote> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _displacement = Helper.toNullable<double> displacement "displacement"
-                let _model = Helper.toCell<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel> model "model" 
+                let _model = Helper.toDefault<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel.DiscountCurve
                 let builder () = withMnemonic mnemonic (Fun.BlackSwaptionEngine1
                                                             _discountCurve.cell 
                                                             _vol.cell 

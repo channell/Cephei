@@ -57,7 +57,7 @@ module BiCGStabFunction =
                 let _A = Helper.toCell<BiCGStab.MatrixMult> A "A" 
                 let _maxIter = Helper.toCell<int> maxIter "maxIter" 
                 let _relTol = Helper.toCell<double> relTol "relTol" 
-                let _preConditioner = Helper.toCell<BiCGStab.MatrixMult> preConditioner "preConditioner" 
+                let _preConditioner = Helper.toDefault<BiCGStab.MatrixMult> preConditioner "preConditioner" null
                 let builder () = withMnemonic mnemonic (Fun.BiCGStab 
                                                             _A.cell 
                                                             _maxIter.cell 
@@ -153,7 +153,7 @@ module BiCGStabFunction =
 
                 let _BiCGStab = Helper.toCell<BiCGStab> bicgstab "BiCGStab"  
                 let _b = Helper.toCell<Vector> b "b" 
-                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _x0 = Helper.toDefault<Vector> x0 "x0" null
                 let builder () = withMnemonic mnemonic ((_BiCGStab.cell :?> BiCGStabModel).Solve
                                                             _b.cell 
                                                             _x0.cell 

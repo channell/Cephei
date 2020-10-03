@@ -56,8 +56,8 @@ module FDShoutEngineFunction =
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
-                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
+                let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
+                let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
                 let builder () = withMnemonic mnemonic ((_FDShoutEngine.cell :?> FDShoutEngineModel).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -109,9 +109,9 @@ module FDShoutEngineFunction =
             try
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
-                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
-                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
+                let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
+                let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
+                let _timeDependent = Helper.toDefault<bool> timeDependent "timeDependent" false
                 let builder () = withMnemonic mnemonic (Fun.FDShoutEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 

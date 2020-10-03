@@ -96,7 +96,7 @@ module LfmHullWhiteParameterizationFunction =
 
                 let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LfmHullWhiteParameterization.cell :?> LfmHullWhiteParameterizationModel).Covariance
                                                             _t.cell 
                                                             _x.cell 
@@ -186,7 +186,7 @@ module LfmHullWhiteParameterizationFunction =
 
                 let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LfmHullWhiteParameterization.cell :?> LfmHullWhiteParameterizationModel).Diffusion1
                                                             _t.cell 
                                                             _x.cell 
@@ -234,7 +234,7 @@ module LfmHullWhiteParameterizationFunction =
 
                 let _LfmHullWhiteParameterization = Helper.toCell<LfmHullWhiteParameterization> lfmhullwhiteparameterization "LfmHullWhiteParameterization"  
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LfmHullWhiteParameterization.cell :?> LfmHullWhiteParameterizationModel).IntegratedCovariance
                                                             _t.cell 
                                                             _x.cell 

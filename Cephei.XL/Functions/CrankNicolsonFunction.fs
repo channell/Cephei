@@ -131,7 +131,7 @@ module CrankNicolsonFunction =
                 let _CrankNicolson = Helper.toCell<CrankNicolson> cranknicolson "CrankNicolson"  
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
-                let _additionalFields = Helper.toCell<Object[]> additionalFields "additionalFields" 
+                let _additionalFields = Helper.toDefault<Object[]> additionalFields "additionalFields" null
                 let builder () = withMnemonic mnemonic ((_CrankNicolson.cell :?> CrankNicolsonModel).Factory
                                                             _L.cell 
                                                             _bcs.cell 

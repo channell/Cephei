@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5Nf0KzS4Ov0/eG0akVjVD+V3zZKMHUiHt2GjJ8KCSPPtdh8QGv+Cx4peoG9pNMceLfjehXv+wk95Gi2i3AVUow==",
+  "dgSpecHash": "ojQeN93uXLQ3nq7N+RFHYtRtws/BPBM4YkXtUkXn1a7cMgIK41ZDLkRGn3t/ayUBieuv2b3WYMyYTL9bcRF7cg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
+  "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

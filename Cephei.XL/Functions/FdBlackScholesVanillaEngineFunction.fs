@@ -66,14 +66,14 @@ module FdBlackScholesVanillaEngineFunction =
             try
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let _quantoHelper = Helper.toCell<FdmQuantoHelper> quantoHelper "quantoHelper" 
-                let _tGrid = Helper.toCell<int> tGrid "tGrid" 
-                let _xGrid = Helper.toCell<int> xGrid "xGrid" 
-                let _dampingSteps = Helper.toCell<int> dampingSteps "dampingSteps" 
-                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" 
-                let _localVol = Helper.toCell<bool> localVol "localVol" 
+                let _quantoHelper = Helper.toDefault<FdmQuantoHelper> quantoHelper "quantoHelper" null
+                let _tGrid = Helper.toDefault<int> tGrid "tGrid" 100
+                let _xGrid = Helper.toDefault<int> xGrid "xGrid" 100
+                let _dampingSteps = Helper.toDefault<int> dampingSteps "dampingSteps" 0
+                let _schemeDesc = Helper.toDefault<FdmSchemeDesc> schemeDesc "schemeDesc" null
+                let _localVol = Helper.toDefault<bool> localVol "localVol" false
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
-                let _cashDividendModel = Helper.toCell<FdBlackScholesVanillaEngine.CashDividendModel> cashDividendModel "cashDividendModel" 
+                let _cashDividendModel = Helper.toDefault<FdBlackScholesVanillaEngine.CashDividendModel> cashDividendModel "cashDividendModel" FdBlackScholesVanillaEngine.CashDividendModel.Spot
                 let builder () = withMnemonic mnemonic (Fun.FdBlackScholesVanillaEngine1 
                                                             _Process.cell 
                                                             _quantoHelper.cell 
@@ -149,13 +149,13 @@ module FdBlackScholesVanillaEngineFunction =
             try
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let _tGrid = Helper.toCell<int> tGrid "tGrid" 
-                let _xGrid = Helper.toCell<int> xGrid "xGrid" 
-                let _dampingSteps = Helper.toCell<int> dampingSteps "dampingSteps" 
-                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" 
-                let _localVol = Helper.toCell<bool> localVol "localVol" 
+                let _tGrid = Helper.toDefault<int> tGrid "tGrid" 100
+                let _xGrid = Helper.toDefault<int> xGrid "xGrid" 100
+                let _dampingSteps = Helper.toDefault<int> dampingSteps "dampingSteps" 0
+                let _schemeDesc = Helper.toDefault<FdmSchemeDesc> schemeDesc "schemeDesc" null
+                let _localVol = Helper.toDefault<bool> localVol "localVol" false
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
-                let _cashDividendModel = Helper.toCell<FdBlackScholesVanillaEngine.CashDividendModel> cashDividendModel "cashDividendModel" 
+                let _cashDividendModel = Helper.toDefault<FdBlackScholesVanillaEngine.CashDividendModel> cashDividendModel "cashDividendModel" FdBlackScholesVanillaEngine.CashDividendModel.Spot
                 let builder () = withMnemonic mnemonic (Fun.FdBlackScholesVanillaEngine
                                                             _Process.cell 
                                                             _tGrid.cell 

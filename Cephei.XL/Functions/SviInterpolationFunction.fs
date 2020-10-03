@@ -501,13 +501,13 @@ module SviInterpolationFunction =
                 let _sigmaIsFixed = Helper.toCell<bool> sigmaIsFixed "sigmaIsFixed" 
                 let _rhoIsFixed = Helper.toCell<bool> rhoIsFixed "rhoIsFixed" 
                 let _mIsFixed = Helper.toCell<bool> mIsFixed "mIsFixed" 
-                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let _optMethod = Helper.toCell<OptimizationMethod> optMethod "optMethod" 
-                let _errorAccept = Helper.toCell<double> errorAccept "errorAccept" 
-                let _useMaxError = Helper.toCell<bool> useMaxError "useMaxError" 
-                let _maxGuesses = Helper.toCell<int> maxGuesses "maxGuesses" 
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
+                let _vegaWeighted = Helper.toDefault<bool> vegaWeighted "vegaWeighted" true
+                let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
+                let _optMethod = Helper.toDefault<OptimizationMethod> optMethod "optMethod" null
+                let _errorAccept = Helper.toDefault<double> errorAccept "errorAccept" 0.0020
+                let _useMaxError = Helper.toDefault<bool> useMaxError "useMaxError" false
+                let _maxGuesses = Helper.toDefault<int> maxGuesses "maxGuesses" 50
+                let _addParams = Helper.toDefault<Generic.List<Nullable<double>>> addParams "addParams" null
                 let builder () = withMnemonic mnemonic (Fun.SviInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 

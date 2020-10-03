@@ -69,8 +69,8 @@ module VannaVolgaBarrierEngineFunction =
                 let _spotFX = Helper.toHandle<Quote> spotFX "spotFX" 
                 let _domesticTS = Helper.toHandle<YieldTermStructure> domesticTS "domesticTS" 
                 let _foreignTS = Helper.toHandle<YieldTermStructure> foreignTS "foreignTS" 
-                let _adaptVanDelta = Helper.toCell<bool> adaptVanDelta "adaptVanDelta" 
-                let _bsPriceWithSmile = Helper.toCell<double> bsPriceWithSmile "bsPriceWithSmile" 
+                let _adaptVanDelta = Helper.toDefault<bool> adaptVanDelta "adaptVanDelta" false
+                let _bsPriceWithSmile = Helper.toDefault<double> bsPriceWithSmile "bsPriceWithSmile" 0.0
                 let builder () = withMnemonic mnemonic (Fun.VannaVolgaBarrierEngine 
                                                             _atmVol.cell 
                                                             _vol25Put.cell 

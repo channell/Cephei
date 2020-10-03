@@ -90,7 +90,7 @@ module HaltonRsgFunction =
 
                 let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
-                let _seed = Helper.toCell<uint64> seed "seed" 
+                let _seed = Helper.toDefault<uint64> seed "seed" 0UL
                 let builder () = withMnemonic mnemonic ((_HaltonRsg.cell :?> HaltonRsgModel).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
@@ -139,9 +139,9 @@ module HaltonRsgFunction =
             try
 
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
-                let _seed = Helper.toCell<uint64> seed "seed" 
-                let _randomStart = Helper.toCell<bool> randomStart "randomStart" 
-                let _randomShift = Helper.toCell<bool> randomShift "randomShift" 
+                let _seed = Helper.toDefault<uint64> seed "seed" 0UL
+                let _randomStart = Helper.toDefault<bool> randomStart "randomStart" true
+                let _randomShift = Helper.toDefault<bool> randomShift "randomShift" false
                 let builder () = withMnemonic mnemonic (Fun.HaltonRsg 
                                                             _dimensionality.cell 
                                                             _seed.cell 

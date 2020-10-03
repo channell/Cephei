@@ -68,8 +68,8 @@ module BlackVarianceSurfaceFunction =
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _blackVolMatrix = Helper.toCell<Matrix> blackVolMatrix "blackVolMatrix" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _lowerExtrapolation = Helper.toCell<BlackVarianceSurface.Extrapolation> lowerExtrapolation "lowerExtrapolation" 
-                let _upperExtrapolation = Helper.toCell<BlackVarianceSurface.Extrapolation> upperExtrapolation "upperExtrapolation" 
+                let _lowerExtrapolation = Helper.toDefault<BlackVarianceSurface.Extrapolation> lowerExtrapolation "lowerExtrapolation" BlackVarianceSurface.Extrapolation.InterpolatorDefaultExtrapolation
+                let _upperExtrapolation = Helper.toDefault<BlackVarianceSurface.Extrapolation> upperExtrapolation "upperExtrapolation" BlackVarianceSurface.Extrapolation.InterpolatorDefaultExtrapolation
                 let builder () = withMnemonic mnemonic (Fun.BlackVarianceSurface 
                                                             _referenceDate.cell 
                                                             _calendar.cell 

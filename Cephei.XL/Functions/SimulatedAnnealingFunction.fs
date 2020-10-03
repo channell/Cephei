@@ -108,7 +108,7 @@ module SimulatedAnnealingFunction =
                 let _T0 = Helper.toCell<double> T0 "T0" 
                 let _K = Helper.toCell<int> K "K" 
                 let _alpha = Helper.toCell<double> alpha "alpha" 
-                let _rng = Helper.toCell<'RNG> rng "rng" 
+                let _rng = Helper.toDefault<'RNG> rng "rng" default(RNG)
                 let builder () = withMnemonic mnemonic (Fun.SimulatedAnnealing 
                                                             _lambda.cell 
                                                             _T0.cell 
@@ -169,7 +169,7 @@ module SimulatedAnnealingFunction =
                 let _T0 = Helper.toCell<double> T0 "T0" 
                 let _epsilon = Helper.toCell<double> epsilon "epsilon" 
                 let _m = Helper.toCell<int> m "m" 
-                let _rng = Helper.toCell<'RNG> rng "rng" 
+                let _rng = Helper.toDefault<'RNG> rng "rng" default(RNG)
                 let builder () = withMnemonic mnemonic (Fun.SimulatedAnnealing1 
                                                             _lambda.cell 
                                                             _T0.cell 

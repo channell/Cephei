@@ -26,6 +26,9 @@ module public  Model =
     let setRange m l o =
         _state.Value.Ranges.[kv m l] <- o
 
+    let hasRange m l =
+        _state.Value.Ranges.ContainsKey (kv m l)
+
     let clearRange s =
         _state.Value.Ranges |> 
         Seq.filter (fun i -> i.Key.Key = s) |>

@@ -60,7 +60,7 @@ module LmExponentialCorrelationModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmExponentialCorrelationModel.cell :?> LmExponentialCorrelationModelModel).Correlation
                                                             _i.cell 
                                                             _j.cell 
@@ -114,7 +114,7 @@ module LmExponentialCorrelationModelFunction =
 
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmExponentialCorrelationModel.cell :?> LmExponentialCorrelationModelModel).Correlation1
                                                             _t.cell 
                                                             _x.cell 
@@ -241,7 +241,7 @@ module LmExponentialCorrelationModelFunction =
 
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmExponentialCorrelationModel.cell :?> LmExponentialCorrelationModelModel).PseudoSqrt
                                                             _t.cell 
                                                             _x.cell 

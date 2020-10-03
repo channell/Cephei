@@ -602,13 +602,13 @@ module ScheduleFunction =
 
                 let _effectiveDate = Helper.toCell<Date> effectiveDate "effectiveDate" 
                 let _terminationDate = Helper.toCell<Date> terminationDate "terminationDate" 
-                let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let _terminationDateConvention = Helper.toCell<BusinessDayConvention> terminationDateConvention "terminationDateConvention" 
-                let _rule = Helper.toCell<DateGeneration.Rule> rule "rule" 
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let _firstDate = Helper.toCell<Date> firstDate "firstDate" 
+                let _tenor = Helper.toDefault<Period> tenor "tenor" null
+                let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
+                let _convention = Helper.toDefault<BusinessDayConvention> convention "convention" BusinessDayConvention.Unadjusted
+                let _terminationDateConvention = Helper.toCell<BusinessDayConvention> terminationDateConvention "terminationDateConvention"
+                let _rule = Helper.toCell<DateGeneration.Rule> rule "rule"
+                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth"
+                let _firstDate = Helper.toCell<Date> firstDate "firstDate"
                 let _nextToLastDate = Helper.toCell<Date> nextToLastDate "nextToLastDate" 
                 let builder () = withMnemonic mnemonic (Fun.Schedule 
                                                             _effectiveDate.cell 
@@ -719,13 +719,13 @@ module ScheduleFunction =
             try
 
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
-                let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
+                let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
+                let _convention = Helper.toDefault<BusinessDayConvention> convention "convention" BusinessDayConvention.Unadjusted
                 let _terminationDateConvention = Helper.toNullable<BusinessDayConvention> terminationDateConvention "terminationDateConvention"
-                let _tenor = Helper.toCell<Period> tenor "tenor" 
+                let _tenor = Helper.toDefault<Period> tenor "tenor" null
                 let _rule = Helper.toNullable<DateGeneration.Rule> rule "rule"
                 let _endOfMonth = Helper.toNullable<bool> endOfMonth "endOfMonth"
-                let _isRegular = Helper.toCell<Generic.IList<bool>> isRegular "isRegular" 
+                let _isRegular = Helper.toDefault<Generic.IList<bool>> isRegular "isRegular" null
                 let builder () = withMnemonic mnemonic (Fun.Schedule1
                                                             _dates.cell 
                                                             _calendar.cell 

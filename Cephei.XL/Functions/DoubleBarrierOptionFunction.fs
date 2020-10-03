@@ -142,10 +142,10 @@ module DoubleBarrierOptionFunction =
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let _targetValue = Helper.toCell<double> targetValue "targetValue" 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let _minVol = Helper.toCell<double> minVol "minVol" 
-                let _maxVol = Helper.toCell<double> maxVol "maxVol" 
+                let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-4
+                let _maxEvaluations = Helper.toDefault<int> maxEvaluations "maxEvaluations" 100
+                let _minVol = Helper.toDefault<double> minVol "minVol" 1.0e-7
+                let _maxVol = Helper.toDefault<double> maxVol "maxVol" 4.0
                 let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _Process.cell 

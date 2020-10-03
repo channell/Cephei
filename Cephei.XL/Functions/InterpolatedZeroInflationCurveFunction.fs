@@ -327,7 +327,7 @@ module InterpolatedZeroInflationCurveFunction =
                 let _yTS = Helper.toHandle<YieldTermStructure> yTS "yTS" 
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _rates = Helper.toCell<Generic.List<double>> rates "rates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroInflationCurve 
                                                             _referenceDate.cell 
                                                             _calendar.cell 

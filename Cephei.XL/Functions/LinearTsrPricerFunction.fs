@@ -269,8 +269,8 @@ module LinearTsrPricerFunction =
                 let _swaptionVol = Helper.toHandle<SwaptionVolatilityStructure> swaptionVol "swaptionVol" 
                 let _meanReversion = Helper.toHandle<Quote> meanReversion "meanReversion" 
                 let _couponDiscountCurve = Helper.toHandle<YieldTermStructure> couponDiscountCurve "couponDiscountCurve" 
-                let _settings = Helper.toCell<LinearTsrPricer.Settings> settings "settings" 
-                let _integrator = Helper.toCell<Integrator> integrator "integrator" 
+                let _settings = Helper.toDefault<LinearTsrPricer.Settings> settings "settings" null
+                let _integrator = Helper.toDefault<Integrator> integrator "integrator" null
                 let builder () = withMnemonic mnemonic (Fun.LinearTsrPricer 
                                                             _swaptionVol.cell 
                                                             _meanReversion.cell 

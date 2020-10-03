@@ -62,7 +62,7 @@ module ChinaFunction =
 
             try
 
-                let _market = Helper.toCell<China.Market> market "market" 
+                let _market = Helper.toDefault<China.Market> market "market" China.Market.SSE
                 let builder () = withMnemonic mnemonic (Fun.China 
                                                             _market.cell 
                                                        ) :> ICell

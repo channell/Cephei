@@ -108,10 +108,10 @@ module ModifiedCraigSneydSchemeFunction =
 
             try
 
-                let _theta = Helper.toCell<double> theta "theta" 
+                let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let _mu = Helper.toCell<double> mu "mu" 
                 let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
-                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
+                let _bcSet = Helper.toDefault<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" null
                 let builder () = withMnemonic mnemonic (Fun.ModifiedCraigSneydScheme1
                                                             _theta.cell 
                                                             _mu.cell 
@@ -239,7 +239,7 @@ module ModifiedCraigSneydSchemeFunction =
                 let _ModifiedCraigSneydScheme = Helper.toCell<ModifiedCraigSneydScheme> modifiedcraigsneydscheme "ModifiedCraigSneydScheme"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let _theta = Helper.toCell<double> theta "theta" 
+                let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let builder () = withMnemonic mnemonic ((_ModifiedCraigSneydScheme.cell :?> ModifiedCraigSneydSchemeModel).Step
                                                             _a.cell 
                                                             _t.cell 

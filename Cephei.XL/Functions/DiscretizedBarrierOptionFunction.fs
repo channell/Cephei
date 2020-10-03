@@ -54,7 +54,7 @@ module DiscretizedBarrierOptionFunction =
 
                 let _DiscretizedBarrierOption = Helper.toCell<DiscretizedBarrierOption> discretizedbarrieroption "DiscretizedBarrierOption"  
                 let _optvalues = Helper.toCell<Vector> optvalues "optvalues" 
-                let _grid = Helper.toCell<Vector> grid "grid" 
+                let _grid = Helper.toDefault<Vector> grid "grid" null
                 let builder () = withMnemonic mnemonic ((_DiscretizedBarrierOption.cell :?> DiscretizedBarrierOptionModel).CheckBarrier
                                                             _optvalues.cell 
                                                             _grid.cell 
@@ -102,7 +102,7 @@ module DiscretizedBarrierOptionFunction =
 
                 let _args = Helper.toCell<BarrierOption.Arguments> args "args" 
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
-                let _grid = Helper.toCell<TimeGrid> grid "grid" 
+                let _grid = Helper.toDefault<TimeGrid> grid "grid" null
                 let builder () = withMnemonic mnemonic (Fun.DiscretizedBarrierOption 
                                                             _args.cell 
                                                             _Process.cell 

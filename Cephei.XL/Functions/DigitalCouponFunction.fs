@@ -212,14 +212,14 @@ module DigitalCouponFunction =
 
                 let _underlying = Helper.toCell<FloatingRateCoupon> underlying "underlying" 
                 let _callStrike = Helper.toNullable<double> callStrike "callStrike"
-                let _callPosition = Helper.toCell<Position.Type> callPosition "callPosition" 
-                let _isCallATMIncluded = Helper.toCell<bool> isCallATMIncluded "isCallATMIncluded" 
+                let _callPosition = Helper.toDefault<Position.Type> callPosition "callPosition" Position.Type.Long
+                let _isCallATMIncluded = Helper.toDefault<bool> isCallATMIncluded "isCallATMIncluded" false
                 let _callDigitalPayoff = Helper.toNullable<double> callDigitalPayoff "callDigitalPayoff"
                 let _putStrike = Helper.toNullable<double> putStrike "putStrike"
-                let _putPosition = Helper.toCell<Position.Type> putPosition "putPosition" 
-                let _isPutATMIncluded = Helper.toCell<bool> isPutATMIncluded "isPutATMIncluded" 
+                let _putPosition = Helper.toDefault<Position.Type> putPosition "putPosition" Position.Type.Long
+                let _isPutATMIncluded = Helper.toDefault<bool> isPutATMIncluded "isPutATMIncluded" false
                 let _putDigitalPayoff = Helper.toNullable<double> putDigitalPayoff "putDigitalPayoff"
-                let _replication = Helper.toCell<DigitalReplication> replication "replication" 
+                let _replication = Helper.toDefault<DigitalReplication> replication "replication" null
                 let builder () = withMnemonic mnemonic (Fun.DigitalCoupon 
                                                             _underlying.cell 
                                                             _callStrike.cell 
@@ -337,14 +337,14 @@ module DigitalCouponFunction =
                 let _DigitalCoupon = Helper.toCell<DigitalCoupon> digitalcoupon "DigitalCoupon"  
                 let _underlying = Helper.toCell<FloatingRateCoupon> underlying "underlying" 
                 let _callStrike = Helper.toNullable<double> callStrike "callStrike"
-                let _callPosition = Helper.toCell<Position.Type> callPosition "callPosition" 
-                let _isCallATMIncluded = Helper.toCell<bool> isCallATMIncluded "isCallATMIncluded" 
+                let _callPosition = Helper.toDefault<Position.Type> callPosition "callPosition" Position.Type.Long
+                let _isCallATMIncluded = Helper.toDefault<bool> isCallATMIncluded "isCallATMIncluded" false
                 let _callDigitalPayoff = Helper.toNullable<double> callDigitalPayoff "callDigitalPayoff"
                 let _putStrike = Helper.toNullable<double> putStrike "putStrike"
-                let _putPosition = Helper.toCell<Position.Type> putPosition "putPosition" 
-                let _isPutATMIncluded = Helper.toCell<bool> isPutATMIncluded "isPutATMIncluded" 
+                let _putPosition = Helper.toDefault<Position.Type> putPosition "putPosition" Position.Type.Long
+                let _isPutATMIncluded = Helper.toDefault<bool> isPutATMIncluded "isPutATMIncluded" false
                 let _putDigitalPayoff = Helper.toNullable<double> putDigitalPayoff "putDigitalPayoff"
-                let _replication = Helper.toCell<DigitalReplication> replication "replication" 
+                let _replication = Helper.toDefault<DigitalReplication> replication "replication" null
                 let builder () = withMnemonic mnemonic ((_DigitalCoupon.cell :?> DigitalCouponModel).Factory
                                                             _underlying.cell 
                                                             _callStrike.cell 

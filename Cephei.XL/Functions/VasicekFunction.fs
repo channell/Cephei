@@ -298,9 +298,9 @@ module VasicekFunction =
 
                 let _r0 = Helper.toCell<double> r0 "r0" 
                 let _a = Helper.toCell<double> a "a" 
-                let _b = Helper.toCell<double> b "b" 
-                let _sigma = Helper.toCell<double> sigma "sigma" 
-                let _lambda = Helper.toCell<double> lambda "lambda" 
+                let _b = Helper.toDefault<double> b "b" 0.05
+                let _sigma = Helper.toDefault<double> sigma "sigma" 0.01
+                let _lambda = Helper.toDefault<double> lambda "lambda" 0.0
                 let builder () = withMnemonic mnemonic (Fun.Vasicek 
                                                             _r0.cell 
                                                             _a.cell 

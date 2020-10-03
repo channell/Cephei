@@ -65,8 +65,8 @@ module FixedLocalVolSurfaceFunction =
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _localVolMatrix = Helper.toCell<Matrix> localVolMatrix "localVolMatrix" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _lowerExtrapolation = Helper.toCell<FixedLocalVolSurface.Extrapolation> lowerExtrapolation "lowerExtrapolation" 
-                let _upperExtrapolation = Helper.toCell<FixedLocalVolSurface.Extrapolation> upperExtrapolation "upperExtrapolation" 
+                let _lowerExtrapolation = Helper.toDefault<FixedLocalVolSurface.Extrapolation> lowerExtrapolation "lowerExtrapolation" FixedLocalVolSurface.Extrapolation.ConstantExtrapolation
+                let _upperExtrapolation = Helper.toDefault<FixedLocalVolSurface.Extrapolation> upperExtrapolation "upperExtrapolation" FixedLocalVolSurface.Extrapolation.ConstantExtrapolation
                 let builder () = withMnemonic mnemonic (Fun.FixedLocalVolSurface2 
                                                             _referenceDate.cell 
                                                             _dates.cell 
@@ -138,8 +138,8 @@ module FixedLocalVolSurfaceFunction =
                 let _strikes = Helper.toCell<Generic.List<Generic.List<double>>> strikes "strikes" 
                 let _localVolMatrix = Helper.toCell<Matrix> localVolMatrix "localVolMatrix" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _lowerExtrapolation = Helper.toCell<FixedLocalVolSurface.Extrapolation> lowerExtrapolation "lowerExtrapolation" 
-                let _upperExtrapolation = Helper.toCell<FixedLocalVolSurface.Extrapolation> upperExtrapolation "upperExtrapolation" 
+                let _lowerExtrapolation = Helper.toDefault<FixedLocalVolSurface.Extrapolation> lowerExtrapolation "lowerExtrapolation" FixedLocalVolSurface.Extrapolation.ConstantExtrapolation
+                let _upperExtrapolation = Helper.toDefault<FixedLocalVolSurface.Extrapolation> upperExtrapolation "upperExtrapolation" FixedLocalVolSurface.Extrapolation.ConstantExtrapolation
                 let builder () = withMnemonic mnemonic (Fun.FixedLocalVolSurface 
                                                             _referenceDate.cell 
                                                             _times.cell 
@@ -211,8 +211,8 @@ module FixedLocalVolSurfaceFunction =
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _localVolMatrix = Helper.toCell<Matrix> localVolMatrix "localVolMatrix" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _lowerExtrapolation = Helper.toCell<FixedLocalVolSurface.Extrapolation> lowerExtrapolation "lowerExtrapolation" 
-                let _upperExtrapolation = Helper.toCell<FixedLocalVolSurface.Extrapolation> upperExtrapolation "upperExtrapolation" 
+                let _lowerExtrapolation = Helper.toDefault<FixedLocalVolSurface.Extrapolation> lowerExtrapolation "lowerExtrapolation" FixedLocalVolSurface.Extrapolation.ConstantExtrapolation
+                let _upperExtrapolation = Helper.toDefault<FixedLocalVolSurface.Extrapolation> upperExtrapolation "upperExtrapolation" FixedLocalVolSurface.Extrapolation.ConstantExtrapolation
                 let builder () = withMnemonic mnemonic (Fun.FixedLocalVolSurface1
                                                             _referenceDate.cell 
                                                             _times.cell 
@@ -415,7 +415,7 @@ module FixedLocalVolSurfaceFunction =
             try
 
                 let _FixedLocalVolSurface = Helper.toCell<FixedLocalVolSurface> fixedlocalvolsurface "FixedLocalVolSurface"  
-                let _i = Helper.toCell<Interpolator> i "i" 
+                let _i = Helper.toDefault<Interpolator> i "i" default(Interpolator)
                 let builder () = withMnemonic mnemonic ((_FixedLocalVolSurface.cell :?> FixedLocalVolSurfaceModel).SetInterpolation
                                                             _i.cell 
                                                        ) :> ICell

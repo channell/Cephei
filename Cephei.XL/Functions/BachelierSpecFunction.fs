@@ -133,7 +133,7 @@ module BachelierSpecFunction =
                 let _atmForward = Helper.toCell<double> atmForward "atmForward" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _annuity = Helper.toCell<double> annuity "annuity" 
-                let _displacement = Helper.toCell<double> displacement "displacement" 
+                let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
                 let builder () = withMnemonic mnemonic ((_BachelierSpec.cell :?> BachelierSpecModel).Value
                                                             _Type.cell 
                                                             _strike.cell 
@@ -205,7 +205,7 @@ module BachelierSpecFunction =
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" 
                 let _annuity = Helper.toCell<double> annuity "annuity" 
-                let _displacement = Helper.toCell<double> displacement "displacement" 
+                let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
                 let builder () = withMnemonic mnemonic ((_BachelierSpec.cell :?> BachelierSpecModel).Vega
                                                             _strike.cell 
                                                             _atmForward.cell 

@@ -63,7 +63,7 @@ module AmericanPayoffAtExpiryFunction =
                 let _dividendDiscount = Helper.toCell<double> dividendDiscount "dividendDiscount" 
                 let _variance = Helper.toCell<double> variance "variance" 
                 let _payoff = Helper.toCell<StrikedTypePayoff> payoff "payoff" 
-                let _knock_in = Helper.toCell<bool> knock_in "knock_in" 
+                let _knock_in = Helper.toDefault<bool> knock_in "knock_in" true
                 let builder () = withMnemonic mnemonic (Fun.AmericanPayoffAtExpiry 
                                                             _spot.cell 
                                                             _discount.cell 

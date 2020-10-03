@@ -274,9 +274,9 @@ module ZeroSpreadedTermStructureFunction =
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
-                let _comp = Helper.toCell<Compounding> comp "comp" 
-                let _freq = Helper.toCell<Frequency> freq "freq" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _comp = Helper.toDefault<Compounding> comp "comp" Compounding.Continuous
+                let _freq = Helper.toDefault<Frequency> freq "freq" Frequency.NoFrequency
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.ZeroSpreadedTermStructure 
                                                             _h.cell 
                                                             _spread.cell 

@@ -58,7 +58,7 @@ module GMRESFunction =
                 let _A = Helper.toCell<MatrixMult> A "A" 
                 let _maxIter = Helper.toCell<int> maxIter "maxIter" 
                 let _relTol = Helper.toCell<double> relTol "relTol" 
-                let _preConditioner = Helper.toCell<MatrixMult> preConditioner "preConditioner" 
+                let _preConditioner = Helper.toDefault<MatrixMult> preConditioner "preConditioner" null
                 let builder () = withMnemonic mnemonic (Fun.GMRES 
                                                             _A.cell 
                                                             _maxIter.cell 
@@ -155,7 +155,7 @@ module GMRESFunction =
 
                 let _GMRES = Helper.toCell<GMRES> gmres "GMRES"  
                 let _b = Helper.toCell<Vector> b "b" 
-                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _x0 = Helper.toDefault<Vector> x0 "x0" null
                 let builder () = withMnemonic mnemonic ((_GMRES.cell :?> GMRESModel).Solve
                                                             _b.cell 
                                                             _x0.cell 
@@ -206,7 +206,7 @@ module GMRESFunction =
                 let _GMRES = Helper.toCell<GMRES> gmres "GMRES"  
                 let _restart = Helper.toCell<int> restart "restart" 
                 let _b = Helper.toCell<Vector> b "b" 
-                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _x0 = Helper.toDefault<Vector> x0 "x0" null
                 let builder () = withMnemonic mnemonic ((_GMRES.cell :?> GMRESModel).SolveWithRestart
                                                             _restart.cell 
                                                             _b.cell 

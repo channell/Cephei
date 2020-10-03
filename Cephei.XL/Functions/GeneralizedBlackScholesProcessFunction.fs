@@ -390,7 +390,7 @@ module GeneralizedBlackScholesProcessFunction =
                 let _dividendTS = Helper.toHandle<YieldTermStructure> dividendTS "dividendTS" 
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _blackVolTS = Helper.toHandle<BlackVolTermStructure> blackVolTS "blackVolTS" 
-                let _disc = Helper.toCell<IDiscretization1D> disc "disc" 
+                let _disc = Helper.toDefault<IDiscretization1D> disc "disc" null
                 let builder () = withMnemonic mnemonic (Fun.GeneralizedBlackScholesProcess1 
                                                             _x0.cell 
                                                             _dividendTS.cell 
@@ -454,7 +454,7 @@ module GeneralizedBlackScholesProcessFunction =
                 let _riskFreeTS = Helper.toHandle<YieldTermStructure> riskFreeTS "riskFreeTS" 
                 let _blackVolTS = Helper.toHandle<BlackVolTermStructure> blackVolTS "blackVolTS" 
                 let _localVolTS = Helper.toCell<RelinkableHandle<LocalVolTermStructure>> localVolTS "localVolTS" 
-                let _disc = Helper.toCell<IDiscretization1D> disc "disc" 
+                let _disc = Helper.toDefault<IDiscretization1D> disc "disc" null
                 let builder () = withMnemonic mnemonic (Fun.GeneralizedBlackScholesProcess
                                                             _x0.cell 
                                                             _dividendTS.cell 

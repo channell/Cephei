@@ -95,7 +95,7 @@ module FuturesRateHelperFunction =
                 let _price = Helper.toCell<double> price "price" 
                 let _iborStartDate = Helper.toCell<Date> iborStartDate "iborStartDate" 
                 let _i = Helper.toCell<IborIndex> i "i" 
-                let _convAdj = Helper.toCell<double> convAdj "convAdj" 
+                let _convAdj = Helper.toDefault<double> convAdj "convAdj" 0.0
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
                 let builder () = withMnemonic mnemonic (Fun.FuturesRateHelper1 
                                                             _price.cell 
@@ -220,7 +220,7 @@ module FuturesRateHelperFunction =
                 let _iborStartDate = Helper.toCell<Date> iborStartDate "iborStartDate" 
                 let _iborEndDate = Helper.toCell<Date> iborEndDate "iborEndDate" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _convAdj = Helper.toCell<double> convAdj "convAdj" 
+                let _convAdj = Helper.toDefault<double> convAdj "convAdj" 0.0
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
                 let builder () = withMnemonic mnemonic (Fun.FuturesRateHelper3
                                                             _price.cell 
@@ -363,7 +363,7 @@ module FuturesRateHelperFunction =
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _convexityAdjustment = Helper.toCell<double> convexityAdjustment "convexityAdjustment" 
+                let _convexityAdjustment = Helper.toDefault<double> convexityAdjustment "convexityAdjustment" 0.0
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
                 let builder () = withMnemonic mnemonic (Fun.FuturesRateHelper5 
                                                             _price.cell 

@@ -57,7 +57,7 @@ module BlackStyleSwaptionEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _volatility = Helper.toHandle<SwaptionVolatilityStructure> volatility "volatility" 
                 let _displacement = Helper.toNullable<Nullable<double> displacement "displacement"
-                let _model = Helper.toCell<CashAnnuityModel> model "model" 
+                let _model = Helper.toDefault<CashAnnuityModel> model "model" CashAnnuityModel.DiscountCurve
                 let builder () = withMnemonic mnemonic (Fun.BlackStyleSwaptionEngine 
                                                             _discountCurve.cell 
                                                             _volatility.cell 
@@ -113,9 +113,9 @@ module BlackStyleSwaptionEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<Quote> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _displacement = Helper.toNullable<double> displacement "displacement"
-                let _model = Helper.toCell<CashAnnuityModel> model "model" 
+                let _model = Helper.toDefault<CashAnnuityModel> model "model" CashAnnuityModel.DiscountCurve
                 let builder () = withMnemonic mnemonic (Fun.BlackStyleSwaptionEngine1 
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -174,9 +174,9 @@ module BlackStyleSwaptionEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toCell<double> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _displacement = Helper.toNullable<double> displacement "displacement"
-                let _model = Helper.toCell<CashAnnuityModel> model "model" 
+                let _model = Helper.toDefault<CashAnnuityModel> model "model" CashAnnuityModel.DiscountCurve
                 let builder () = withMnemonic mnemonic (Fun.BlackStyleSwaptionEngine2 
                                                             _discountCurve.cell 
                                                             _vol.cell 

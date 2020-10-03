@@ -245,7 +245,7 @@ module LevenbergMarquardtFunction =
                 let _epsfcn = Helper.toCell<double> epsfcn "epsfcn" 
                 let _xtol = Helper.toCell<double> xtol "xtol" 
                 let _gtol = Helper.toCell<double> gtol "gtol" 
-                let _useCostFunctionsJacobian = Helper.toCell<bool> useCostFunctionsJacobian "useCostFunctionsJacobian" 
+                let _useCostFunctionsJacobian = Helper.toDefault<bool> useCostFunctionsJacobian "useCostFunctionsJacobian" false
                 let builder () = withMnemonic mnemonic (Fun.LevenbergMarquardt1 
                                                             _epsfcn.cell 
                                                             _xtol.cell 

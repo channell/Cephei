@@ -54,7 +54,7 @@ module BachelierCapFloorEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<Quote> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.BachelierCapFloorEngine1 
                                                             _discountCurve.cell 
                                                             _vol.cell 
@@ -103,7 +103,7 @@ module BachelierCapFloorEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toCell<double> vol "vol" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.BachelierCapFloorEngine2
                                                             _discountCurve.cell 
                                                             _vol.cell 

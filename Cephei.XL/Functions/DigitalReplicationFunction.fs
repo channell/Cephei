@@ -50,8 +50,8 @@ module DigitalReplicationFunction =
 
             try
 
-                let _t = Helper.toCell<Replication.Type> t "t" 
-                let _gap = Helper.toCell<double> gap "gap" 
+                let _t = Helper.toDefault<Replication.Type> t "t" Replication.Type.Central
+                let _gap = Helper.toDefault<double> gap "gap" 1e-4
                 let builder () = withMnemonic mnemonic (Fun.DigitalReplication 
                                                             _t.cell 
                                                             _gap.cell 

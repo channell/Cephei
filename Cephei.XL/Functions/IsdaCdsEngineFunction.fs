@@ -65,9 +65,9 @@ module IsdaCdsEngineFunction =
                 let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
-                let _numericalFix = Helper.toCell<IsdaCdsEngine.NumericalFix> numericalFix "numericalFix" 
-                let _accrualBias = Helper.toCell<IsdaCdsEngine.AccrualBias> accrualBias "accrualBias" 
-                let _forwardsInCouponPeriod = Helper.toCell<IsdaCdsEngine.ForwardsInCouponPeriod> forwardsInCouponPeriod "forwardsInCouponPeriod" 
+                let _numericalFix = Helper.toDefault<IsdaCdsEngine.NumericalFix> numericalFix "numericalFix" IsdaCdsEngine.NumericalFix.Taylor
+                let _accrualBias = Helper.toDefault<IsdaCdsEngine.AccrualBias> accrualBias "accrualBias" IsdaCdsEngine.AccrualBias.HalfDayBias
+                let _forwardsInCouponPeriod = Helper.toDefault<IsdaCdsEngine.ForwardsInCouponPeriod> forwardsInCouponPeriod "forwardsInCouponPeriod" IsdaCdsEngine.ForwardsInCouponPeriod.Piecewise
                 let builder () = withMnemonic mnemonic (Fun.IsdaCdsEngine 
                                                             _probability.cell 
                                                             _recoveryRate.cell 

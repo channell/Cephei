@@ -96,7 +96,7 @@ module ZeroInflationIndexFunction =
 
                 let _ZeroInflationIndex = Helper.toCell<ZeroInflationIndex> zeroinflationindex "ZeroInflationIndex"  
                 let _aFixingDate = Helper.toCell<Date> aFixingDate "aFixingDate" 
-                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
+                let _forecastTodaysFixing = Helper.toDefault<bool> forecastTodaysFixing "forecastTodaysFixing" false
                 let builder () = withMnemonic mnemonic ((_ZeroInflationIndex.cell :?> ZeroInflationIndexModel).Fixing
                                                             _aFixingDate.cell 
                                                             _forecastTodaysFixing.cell 

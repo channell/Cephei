@@ -101,8 +101,8 @@ module InterestRateFunction =
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let _refStart = Helper.toCell<Date> refStart "refStart" 
-                let _refEnd = Helper.toCell<Date> refEnd "refEnd" 
+                let _refStart = Helper.toDefault<Date> refStart "refStart" null
+                let _refEnd = Helper.toDefault<Date> refEnd "refEnd" null
                 let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).CompoundFactor1
                                                             _d1.cell 
                                                             _d2.cell 
@@ -233,8 +233,8 @@ module InterestRateFunction =
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let _refStart = Helper.toCell<Date> refStart "refStart" 
-                let _refEnd = Helper.toCell<Date> refEnd "refEnd" 
+                let _refStart = Helper.toDefault<Date> refStart "refStart" null
+                let _refEnd = Helper.toDefault<Date> refEnd "refEnd" null
                 let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).DiscountFactor
                                                             _d1.cell 
                                                             _d2.cell 
@@ -344,8 +344,8 @@ module InterestRateFunction =
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let _refStart = Helper.toCell<Date> refStart "refStart" 
-                let _refEnd = Helper.toCell<Date> refEnd "refEnd" 
+                let _refStart = Helper.toDefault<Date> refStart "refStart" null
+                let _refEnd = Helper.toDefault<Date> refEnd "refEnd" null
                 let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).EquivalentRate
                                                             _resultDC.cell 
                                                             _comp.cell 

@@ -45,14 +45,13 @@ module Helper =
     let subscriberModelRange<'t> (format : Generic.List<ICell<'t>> -> string -> obj[,]) (rtd : IValueRTD) (models : ICell) (layout : string) =
         (new RTDModelRangeObserver<'t> (rtd, (models :?> ICell<Generic.List<ICell<'t>>>), format, layout)) :> IDisposable
 
-    type CellSource<'t> = {cell : ICell<'t>; source : string}
-    
     // Summary: Convert the excel value orreference to a cell
     let toCell<'T> (o : obj) (attribute : string) : CellSource<'T> = 
 
         if typeof<'T>.IsEnum then
-            { cell = value (Enum.Parse(typeof<'T>, o.ToString()) :?> 'T)
-            ; source =  "(value " + typeof<'T>.Name + "." + (Enum.Parse(typeof<'T>, o.ToString()) :?> 'T).ToString() + ")"
+            let en = Enum.Parse(typeof<'T>, o.ToString()) :?> 'T
+            { cell = (value en)
+            ; source =  "(value " + typeof<'T>.Name + "." + en.ToString() + ")"
             }
         elif not (o = null) && o :? string then
             let s = o :?> string
@@ -114,7 +113,7 @@ module Helper =
 
     // Summary: convert value or use default
     let toDefault<'T> (o : obj) (attribute : string) (defaultValue : 'T) : CellSource<'T> = 
-        if o = null then 
+        if o = null || o :? ExcelDna.Integration.ExcelMissing then 
             { cell = value defaultValue 
             ; source = "(value " + defaultValue.ToString() + ")"
             }
@@ -174,10 +173,10 @@ module Helper =
         "[|" + (cs |> Array.fold (fun a y -> a + ";" + y) "").Substring(1) + "|]"
 
     let hashFold (cs : ICell array) = 
-        cs |> Array.fold (fun a y -> (a <<< 4)  ^^^ y.Mnemonic.GetHashCode()) 0
+        cs |> Array.fold (fun a y -> (a <<< 4)  ^^^ if y.Mnemonic = null then y.Box.GetHashCode() else y.Mnemonic.GetHashCode()) 0
 
     let hashFold2 (cs : ICell<'t> array) = 
-        cs |> Array.fold (fun a y -> (a <<< 4)  ^^^ y.Mnemonic.GetHashCode()) 0
+        cs |> Array.fold (fun a y -> (a <<< 4)  ^^^ if y.Mnemonic = null then y.Box.GetHashCode() else y.Mnemonic.GetHashCode()) 0
 
     // apply a generic format for conversion to Excel types
     let rec genericFormat (o : obj) : obj =

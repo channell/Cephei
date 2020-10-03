@@ -51,7 +51,7 @@ module AmericanExerciseFunction =
             try
 
                 let _latest = Helper.toCell<Date> latest "latest" 
-                let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" 
+                let _payoffAtExpiry = Helper.toDefault<bool> payoffAtExpiry "payoffAtExpiry" false
                 let builder () = withMnemonic mnemonic (Fun.AmericanExercise 
                                                             _latest.cell 
                                                             _payoffAtExpiry.cell 
@@ -97,7 +97,7 @@ module AmericanExerciseFunction =
 
                 let _earliestDate = Helper.toCell<Date> earliestDate "earliestDate" 
                 let _latestDate = Helper.toCell<Date> latestDate "latestDate" 
-                let _payoffAtExpiry = Helper.toCell<bool> payoffAtExpiry "payoffAtExpiry" 
+                let _payoffAtExpiry = Helper.toDefault<bool> payoffAtExpiry "payoffAtExpiry" false
                 let builder () = withMnemonic mnemonic (Fun.AmericanExercise1 
                                                             _earliestDate.cell 
                                                             _latestDate.cell 

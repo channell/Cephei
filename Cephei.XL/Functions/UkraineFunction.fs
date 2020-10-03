@@ -62,7 +62,7 @@ module UkraineFunction =
 
             try
 
-                let _m = Helper.toCell<Ukraine.Market> m "m" 
+                let _m = Helper.toDefault<Ukraine.Market> m "m" Ukraine.Market.USE
                 let builder () = withMnemonic mnemonic (Fun.Ukraine 
                                                             _m.cell 
                                                        ) :> ICell

@@ -48,7 +48,7 @@ module LineSearchBasedMethodFunction =
 
             try
 
-                let _lineSearch = Helper.toCell<LineSearch> lineSearch "lineSearch" 
+                let _lineSearch = Helper.toDefault<LineSearch> lineSearch "lineSearch" null
                 let builder () = withMnemonic mnemonic (Fun.LineSearchBasedMethod 
                                                             _lineSearch.cell 
                                                        ) :> ICell

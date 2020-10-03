@@ -126,7 +126,7 @@ module FdmLinearOpIteratorFunction =
 
             try
 
-                let _index = Helper.toCell<int> index "index" 
+                let _index = Helper.toDefault<int> index "index" 0
                 let builder () = withMnemonic mnemonic (Fun.FdmLinearOpIterator 
                                                             _index.cell 
                                                        ) :> ICell
@@ -243,7 +243,7 @@ module FdmLinearOpIteratorFunction =
 
                 let _dim = Helper.toCell<Generic.List<int>> dim "dim" 
                 let _coordinates = Helper.toCell<Generic.List<int>> coordinates "coordinates" 
-                let _index = Helper.toCell<int> index "index" 
+                let _index = Helper.toDefault<int> index "index" 0
                 let builder () = withMnemonic mnemonic (Fun.FdmLinearOpIterator2
                                                             _dim.cell 
                                                             _coordinates.cell 

@@ -66,7 +66,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _vols = Helper.toCell<Matrix> vols "vols" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolSurface3
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -139,7 +139,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _vols = Helper.toCell<Matrix> vols "vols" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolSurface
                                                             _settlementDate.cell 
                                                             _calendar.cell 
@@ -212,7 +212,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _vols = Helper.toCell<Generic.List<Generic.List<Handle<Quote>>>> vols "vols" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolSurface1
                                                             _settlementDate.cell 
                                                             _calendar.cell 
@@ -286,7 +286,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _vols = Helper.toCell<Generic.List<Generic.List<Handle<Quote>>>> vols "vols" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolSurface3 
                                                             _settlementDays.cell 
                                                             _calendar.cell 

@@ -459,10 +459,10 @@ module SabrInterpolatedSmileSectionFunction =
                 let _isNuFixed = Helper.toCell<bool> isNuFixed "isNuFixed" 
                 let _isRhoFixed = Helper.toCell<bool> isRhoFixed "isRhoFixed" 
                 let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic (Fun.SabrInterpolatedSmileSection1 
                                                             _optionDate.cell 
                                                             _forward.cell 
@@ -605,10 +605,10 @@ module SabrInterpolatedSmileSectionFunction =
                 let _isNuFixed = Helper.toCell<bool> isNuFixed "isNuFixed" 
                 let _isRhoFixed = Helper.toCell<bool> isRhoFixed "isRhoFixed" 
                 let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic (Fun.SabrInterpolatedSmileSection
                                                             _optionDate.cell 
                                                             _forward.cell 
@@ -1182,7 +1182,7 @@ module SabrInterpolatedSmileSectionFunction =
                 let _SabrInterpolatedSmileSection = Helper.toCell<SabrInterpolatedSmileSection> sabrinterpolatedsmilesection "SabrInterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic ((_SabrInterpolatedSmileSection.cell :?> SabrInterpolatedSmileSectionModel).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 

@@ -76,9 +76,9 @@ module AbcdFunction =
                 let _bIsFixed = Helper.toCell<bool> bIsFixed "bIsFixed" 
                 let _cIsFixed = Helper.toCell<bool> cIsFixed "cIsFixed" 
                 let _dIsFixed = Helper.toCell<bool> dIsFixed "dIsFixed" 
-                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let _optMethod = Helper.toCell<OptimizationMethod> optMethod "optMethod" 
+                let _vegaWeighted = Helper.toDefault<bool> vegaWeighted "vegaWeighted" false
+                let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
+                let _optMethod = Helper.toDefault<OptimizationMethod> optMethod "optMethod" null
                 let builder () = withMnemonic mnemonic (Fun.Abcd 
                                                             _a.cell 
                                                             _b.cell 

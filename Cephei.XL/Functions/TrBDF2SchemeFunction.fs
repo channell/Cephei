@@ -99,7 +99,7 @@ module TrBDF2SchemeFunction =
                 let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
-                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
+                let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
                 let builder () = withMnemonic mnemonic ((_TrBDF2Scheme.cell :?> TrBDF2SchemeModel).Factory
                                                             _L.cell 
                                                             _bcs.cell 
@@ -231,7 +231,7 @@ module TrBDF2SchemeFunction =
                 let _TrBDF2Scheme = Helper.toCell<TrBDF2Scheme> trbdf2scheme "TrBDF2Scheme"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let _theta = Helper.toCell<double> theta "theta" 
+                let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let builder () = withMnemonic mnemonic ((_TrBDF2Scheme.cell :?> TrBDF2SchemeModel).Step
                                                             _a.cell 
                                                             _t.cell 
@@ -289,9 +289,9 @@ module TrBDF2SchemeFunction =
                 let _alpha = Helper.toCell<double> alpha "alpha" 
                 let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
                 let _trapezoidalScheme = Helper.toCell<'TrapezoidalScheme> trapezoidalScheme "trapezoidalScheme" 
-                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
-                let _relTol = Helper.toCell<double> relTol "relTol" 
-                let _solverType = Helper.toCell<TrBDF2Scheme<'TrapezoidalScheme>.SolverType> solverType "solverType" 
+                let _bcSet = Helper.toDefault<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" null
+                let _relTol = Helper.toDefault<double> relTol "relTol" 1E-8
+                let _solverType = Helper.toDefault<TrBDF2Scheme<'TrapezoidalScheme>.SolverType> solverType "solverType" TrBDF2Scheme<TrapezoidalScheme>.SolverType.BiCGstab
                 let builder () = withMnemonic mnemonic (Fun.TrBDF2Scheme 
                                                             _alpha.cell 
                                                             _map.cell 

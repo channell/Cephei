@@ -113,17 +113,17 @@ module AbcdInterpolationFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let _a = Helper.toCell<double> a "a" 
-                let _b = Helper.toCell<double> b "b" 
-                let _c = Helper.toCell<double> c "c" 
-                let _d = Helper.toCell<double> d "d" 
-                let _aIsFixed = Helper.toCell<bool> aIsFixed "aIsFixed" 
-                let _bIsFixed = Helper.toCell<bool> bIsFixed "bIsFixed" 
-                let _cIsFixed = Helper.toCell<bool> cIsFixed "cIsFixed" 
-                let _dIsFixed = Helper.toCell<bool> dIsFixed "dIsFixed" 
-                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let _optMethod = Helper.toCell<OptimizationMethod> optMethod "optMethod" 
+                let _a = Helper.toDefault<double> a "a" -0.06
+                let _b = Helper.toDefault<double> b "b" 0.17
+                let _c = Helper.toDefault<double> c "c" 0.54
+                let _d = Helper.toDefault<double> d "d" 0.17
+                let _aIsFixed = Helper.toDefault<bool> aIsFixed "aIsFixed" false
+                let _bIsFixed = Helper.toDefault<bool> bIsFixed "bIsFixed" false
+                let _cIsFixed = Helper.toDefault<bool> cIsFixed "cIsFixed" false
+                let _dIsFixed = Helper.toDefault<bool> dIsFixed "dIsFixed" false
+                let _vegaWeighted = Helper.toDefault<bool> vegaWeighted "vegaWeighted" false
+                let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
+                let _optMethod = Helper.toDefault<OptimizationMethod> optMethod "optMethod" null
                 let builder () = withMnemonic mnemonic (Fun.AbcdInterpolation 
                                                             _xBegin.cell 
                                                             _size.cell 
@@ -923,7 +923,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let _b = Helper.toCell<bool> b "b" 
+                let _b = Helper.toCell<bool> b "b"
                 let builder () = withMnemonic mnemonic ((_AbcdInterpolation.cell :?> AbcdInterpolationModel).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
@@ -965,7 +965,7 @@ module AbcdInterpolationFunction =
             try
 
                 let _AbcdInterpolation = Helper.toCell<AbcdInterpolation> abcdinterpolation "AbcdInterpolation"  
-                let _b = Helper.toCell<bool> b "b" 
+                let _b = Helper.toCell<bool> b "b"
                 let builder () = withMnemonic mnemonic ((_AbcdInterpolation.cell :?> AbcdInterpolationModel).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell

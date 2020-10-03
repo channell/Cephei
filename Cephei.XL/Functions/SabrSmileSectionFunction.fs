@@ -167,8 +167,8 @@ module SabrSmileSectionFunction =
                 let _timeToExpiry = Helper.toCell<double> timeToExpiry "timeToExpiry" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _sabrParams = Helper.toCell<Generic.List<double>> sabrParams "sabrParams" 
-                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _volatilityType = Helper.toDefault<VolatilityType> volatilityType "volatilityType" VolatilityType.ShiftedLognormal
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic (Fun.SabrSmileSection1 
                                                             _timeToExpiry.cell 
                                                             _forward.cell 
@@ -230,9 +230,9 @@ module SabrSmileSectionFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _sabrParams = Helper.toCell<Generic.List<double>> sabrParams "sabrParams" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _volatilityType = Helper.toDefault<VolatilityType> volatilityType "volatilityType" VolatilityType.ShiftedLognormal
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic (Fun.SabrSmileSection
                                                             _d.cell 
                                                             _forward.cell 
@@ -766,8 +766,8 @@ module SabrSmileSectionFunction =
 
                 let _SabrSmileSection = Helper.toCell<SabrSmileSection> sabrsmilesection "SabrSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _volatilityType = Helper.toDefault<VolatilityType> volatilityType "volatilityType" VolatilityType.ShiftedLognormal
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic ((_SabrSmileSection.cell :?> SabrSmileSectionModel).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 

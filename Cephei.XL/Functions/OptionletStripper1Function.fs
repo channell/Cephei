@@ -175,12 +175,12 @@ module OptionletStripper1Function =
                 let _termVolSurface = Helper.toCell<CapFloorTermVolSurface> termVolSurface "termVolSurface" 
                 let _index = Helper.toCell<IborIndex> index "index" 
                 let _switchStrike = Helper.toNullable<double> switchStrike "switchStrike"
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let _maxIter = Helper.toCell<int> maxIter "maxIter" 
+                let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-6
+                let _maxIter = Helper.toDefault<int> maxIter "maxIter" 100
                 let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let _displacement = Helper.toCell<double> displacement "displacement" 
-                let _dontThrow = Helper.toCell<bool> dontThrow "dontThrow" 
+                let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
+                let _dontThrow = Helper.toDefault<bool> dontThrow "dontThrow" false
                 let builder () = withMnemonic mnemonic (Fun.OptionletStripper1 
                                                             _termVolSurface.cell 
                                                             _index.cell 

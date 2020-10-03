@@ -115,7 +115,7 @@ module GarmanKohlagenProcessFunction =
                 let _foreignRiskFreeTS = Helper.toHandle<YieldTermStructure> foreignRiskFreeTS "foreignRiskFreeTS" 
                 let _domesticRiskFreeTS = Helper.toHandle<YieldTermStructure> domesticRiskFreeTS "domesticRiskFreeTS" 
                 let _blackVolTS = Helper.toHandle<BlackVolTermStructure> blackVolTS "blackVolTS" 
-                let _d = Helper.toCell<IDiscretization1D> d "d" 
+                let _d = Helper.toDefault<IDiscretization1D> d "d" null
                 let builder () = withMnemonic mnemonic (Fun.GarmanKohlagenProcess1 
                                                             _x0.cell 
                                                             _foreignRiskFreeTS.cell 
@@ -179,7 +179,7 @@ module GarmanKohlagenProcessFunction =
                 let _domesticRiskFreeTS = Helper.toHandle<YieldTermStructure> domesticRiskFreeTS "domesticRiskFreeTS" 
                 let _blackVolTS = Helper.toHandle<BlackVolTermStructure> blackVolTS "blackVolTS" 
                 let _localVolTS = Helper.toCell<RelinkableHandle<LocalVolTermStructure>> localVolTS "localVolTS" 
-                let _d = Helper.toCell<IDiscretization1D> d "d" 
+                let _d = Helper.toDefault<IDiscretization1D> d "d" null
                 let builder () = withMnemonic mnemonic (Fun.GarmanKohlagenProcess
                                                             _x0.cell 
                                                             _foreignRiskFreeTS.cell 
@@ -726,7 +726,7 @@ module GarmanKohlagenProcessFunction =
             try
 
                 let _GarmanKohlagenProcess = Helper.toCell<GarmanKohlagenProcess> garmankohlagenprocess "GarmanKohlagenProcess"  
-                let _d = Helper.toCell<Date> d "d" 
+                let _d = Helper.toDefault<Date> d "d" null
                 let builder () = withMnemonic mnemonic ((_GarmanKohlagenProcess.cell :?> GarmanKohlagenProcessModel).Time
                                                             _d.cell 
                                                        ) :> ICell

@@ -277,9 +277,9 @@ module InterpolatedDiscountCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve 
                                                             _dates.cell 
                                                             _discounts.cell 
@@ -340,7 +340,7 @@ module InterpolatedDiscountCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve1 
                                                             _dates.cell 
                                                             _discounts.cell 
@@ -397,8 +397,8 @@ module InterpolatedDiscountCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve2 
                                                             _dates.cell 
                                                             _discounts.cell 
@@ -462,10 +462,10 @@ module InterpolatedDiscountCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _discounts = Helper.toCell<Generic.List<double>> discounts "discounts" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve3 
                                                             _dates.cell 
                                                             _discounts.cell 
@@ -531,11 +531,11 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve4 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -597,9 +597,9 @@ module InterpolatedDiscountCurveFunction =
 
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve5 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 
@@ -655,9 +655,9 @@ module InterpolatedDiscountCurveFunction =
             try
 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedDiscountCurve6 
                                                             _dayCounter.cell 
                                                             _jumps.cell 

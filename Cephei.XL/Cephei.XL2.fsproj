@@ -8,6 +8,10 @@
     <NoWarn>49</NoWarn>
     <OutputPath>..\bin\Debug\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\bin\Release\</OutputPath>
+    <NoWarn>49</NoWarn>
+  </PropertyGroup>
 
    <ItemGroup>
     <Compile Include="Functions\GarmanKohlagenProcessFunction.fs" />

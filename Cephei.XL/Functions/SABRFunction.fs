@@ -148,15 +148,15 @@ module SABRFunction =
                 let _betaIsFixed = Helper.toCell<bool> betaIsFixed "betaIsFixed" 
                 let _nuIsFixed = Helper.toCell<bool> nuIsFixed "nuIsFixed" 
                 let _rhoIsFixed = Helper.toCell<bool> rhoIsFixed "rhoIsFixed" 
-                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let _optMethod = Helper.toCell<OptimizationMethod> optMethod "optMethod" 
-                let _errorAccept = Helper.toCell<double> errorAccept "errorAccept" 
-                let _useMaxError = Helper.toCell<bool> useMaxError "useMaxError" 
-                let _maxGuesses = Helper.toCell<int> maxGuesses "maxGuesses" 
-                let _shift = Helper.toCell<double> shift "shift" 
-                let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
-                let _approximationModel = Helper.toCell<SabrApproximationModel> approximationModel "approximationModel" 
+                let _vegaWeighted = Helper.toDefault<bool> vegaWeighted "vegaWeighted" false
+                let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
+                let _optMethod = Helper.toDefault<OptimizationMethod> optMethod "optMethod" null
+                let _errorAccept = Helper.toDefault<double> errorAccept "errorAccept" 0.0020
+                let _useMaxError = Helper.toDefault<bool> useMaxError "useMaxError" false
+                let _maxGuesses = Helper.toDefault<int> maxGuesses "maxGuesses" 50
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
+                let _volatilityType = Helper.toDefault<VolatilityType> volatilityType "volatilityType" VolatilityType.ShiftedLognormal
+                let _approximationModel = Helper.toDefault<SabrApproximationModel> approximationModel "approximationModel" SabrApproximationModel.Hagan2002
                 let builder () = withMnemonic mnemonic (Fun.SABR 
                                                             _t.cell 
                                                             _forward.cell 

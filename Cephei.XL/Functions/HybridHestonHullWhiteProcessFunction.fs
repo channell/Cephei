@@ -405,7 +405,7 @@ module HybridHestonHullWhiteProcessFunction =
                 let _hestonProcess = Helper.toCell<HestonProcess> hestonProcess "hestonProcess" 
                 let _hullWhiteProcess = Helper.toCell<HullWhiteForwardProcess> hullWhiteProcess "hullWhiteProcess" 
                 let _corrEquityShortRate = Helper.toCell<double> corrEquityShortRate "corrEquityShortRate" 
-                let _discretization = Helper.toCell<HybridHestonHullWhiteProcess.Discretization> discretization "discretization" 
+                let _discretization = Helper.toDefault<HybridHestonHullWhiteProcess.Discretization> discretization "discretization" HybridHestonHullWhiteProcess.Discretization.BSMHullWhite
                 let builder () = withMnemonic mnemonic (Fun.HybridHestonHullWhiteProcess 
                                                             _hestonProcess.cell 
                                                             _hullWhiteProcess.cell 

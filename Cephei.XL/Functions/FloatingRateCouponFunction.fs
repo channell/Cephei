@@ -265,12 +265,12 @@ module FloatingRateCouponFunction =
                 let _endDate = Helper.toCell<Date> endDate "endDate" 
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let _index = Helper.toCell<InterestRateIndex> index "index" 
-                let _gearing = Helper.toCell<double> gearing "gearing" 
-                let _spread = Helper.toCell<double> spread "spread" 
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _isInArrears = Helper.toCell<bool> isInArrears "isInArrears" 
+                let _gearing = Helper.toDefault<double> gearing "gearing" 1.0
+                let _spread = Helper.toDefault<double> spread "spread" 0.0
+                let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
+                let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
+                let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
+                let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
                 let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Factory
                                                             _nominal.cell 
                                                             _paymentDate.cell 
@@ -473,12 +473,12 @@ module FloatingRateCouponFunction =
                 let _endDate = Helper.toCell<Date> endDate "endDate" 
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let _index = Helper.toCell<InterestRateIndex> index "index" 
-                let _gearing = Helper.toCell<double> gearing "gearing" 
-                let _spread = Helper.toCell<double> spread "spread" 
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _isInArrears = Helper.toCell<bool> isInArrears "isInArrears" 
+                let _gearing = Helper.toDefault<double> gearing "gearing" 1.0
+                let _spread = Helper.toDefault<double> spread "spread" 0.0
+                let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
+                let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
+                let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
+                let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
                 let builder () = withMnemonic mnemonic (Fun.FloatingRateCoupon
                                                             _paymentDate.cell 
                                                             _nominal.cell 

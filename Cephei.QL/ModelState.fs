@@ -2,6 +2,7 @@
 
 open System.Collections.Generic 
 open Cephei.Cell
+open Cephei.Cell.Generic
 open System
 
 
@@ -30,4 +31,5 @@ type ModelState () =
     member this.Ranges = _ranges
     member this.Rtd = _rtd
 
+type CellSource<'t> = {cell : ICell<'t>; source : string}
 

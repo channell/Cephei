@@ -499,9 +499,9 @@ module SviInterpolatedSmileSectionFunction =
                 let _isRhoFixed = Helper.toCell<bool> isRhoFixed "isRhoFixed" 
                 let _isMFixed = Helper.toCell<bool> isMFixed "isMFixed" 
                 let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.SviInterpolatedSmileSection 
                                                             _optionDate.cell 
                                                             _forward.cell 
@@ -651,9 +651,9 @@ module SviInterpolatedSmileSectionFunction =
                 let _isRhoFixed = Helper.toCell<bool> isRhoFixed "isRhoFixed" 
                 let _isMFixed = Helper.toCell<bool> isMFixed "isMFixed" 
                 let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.SviInterpolatedSmileSection1 
                                                             _optionDate.cell 
                                                             _forward.cell 

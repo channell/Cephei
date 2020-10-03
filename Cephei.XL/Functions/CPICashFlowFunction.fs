@@ -178,9 +178,9 @@ module CPICashFlowFunction =
                 let _baseFixing = Helper.toCell<double> baseFixing "baseFixing" 
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
-                let _growthOnly = Helper.toCell<bool> growthOnly "growthOnly" 
-                let _interpolation = Helper.toCell<InterpolationType> interpolation "interpolation" 
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _growthOnly = Helper.toDefault<bool> growthOnly "growthOnly" false
+                let _interpolation = Helper.toDefault<InterpolationType> interpolation "interpolation" InterpolationType.AsIndex
+                let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.NoFrequency
                 let builder () = withMnemonic mnemonic (Fun.CPICashFlow 
                                                             _notional.cell 
                                                             _index.cell 

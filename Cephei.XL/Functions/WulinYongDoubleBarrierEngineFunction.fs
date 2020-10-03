@@ -52,7 +52,7 @@ module WulinYongDoubleBarrierEngineFunction =
             try
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let _series = Helper.toCell<int> series "series" 
+                let _series = Helper.toDefault<int> series "series" 5
                 let builder () = withMnemonic mnemonic (Fun.WulinYongDoubleBarrierEngine 
                                                             _Process.cell 
                                                             _series.cell 

@@ -57,7 +57,7 @@ module InflationIndexFunction =
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
+                let _forceOverwrite = Helper.toDefault<bool> forceOverwrite "forceOverwrite" false
                 let builder () = withMnemonic mnemonic ((_InflationIndex.cell :?> InflationIndexModel).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
@@ -217,7 +217,7 @@ module InflationIndexFunction =
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
+                let _forecastTodaysFixing = Helper.toDefault<bool> forecastTodaysFixing "forecastTodaysFixing" false
                 let builder () = withMnemonic mnemonic ((_InflationIndex.cell :?> InflationIndexModel).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
@@ -635,7 +635,7 @@ module InflationIndexFunction =
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
+                let _forceOverwrite = Helper.toDefault<bool> forceOverwrite "forceOverwrite" false
                 let builder () = withMnemonic mnemonic ((_InflationIndex.cell :?> InflationIndexModel).AddFixings
                                                             _d.cell 
                                                             _v.cell 
@@ -686,7 +686,7 @@ module InflationIndexFunction =
 
                 let _InflationIndex = Helper.toCell<InflationIndex> inflationindex "InflationIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
-                let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
+                let _forceOverwrite = Helper.toDefault<bool> forceOverwrite "forceOverwrite" false
                 let builder () = withMnemonic mnemonic ((_InflationIndex.cell :?> InflationIndexModel).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 

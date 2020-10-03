@@ -1651,21 +1651,31 @@ let rec allFiles directory pattern =
 
     let filelines (s : string) = 
         let className : string = 
-            let a = s.Split('.')
-            a.[a.Length-2]
+            let a = s.Split('\\', '.')
+            let b = a.[a.Length-2]
+            b.Substring(0, b.LastIndexOf("Function"))
         let map = 
             edits |> Array.filter (fun i -> i.cn = className)
         let lines = 
+            let edit (l : string) =
+                let n = 
+                    map |> Array.fold (fun (a :string) y -> if a.Contains(" " + y.pn + " ") && a.Contains("Helper.toCell<") then a.Replace("Helper.toCell<" , "Helper.toDefault<") +  y.dv else a) l
+                if not (n = l) then 
+                    Console.WriteLine ("Edited {0} from \n\t|{1}| to \n\t|{2}|", className, l, n)
+                    n
+                else 
+                    l
+            Console.WriteLine ("Processing {0} ", className)
+
             File.ReadAllLines s
-            |> Array.map (fun l -> l.Replace("; subscriber = Helper.subscriberModel ", "; subscriber = Helper.subscriberModel<" + className + "> " ))
+            |> Array.map edit 
         File.WriteAllLines (s, lines, Encoding.UTF8) 
     Directory.GetFiles directory
     |> Array.filter (fun p -> Regex.IsMatch (p, pattern))
     |> Array.iter filelines 
 
 let directories = 
-    [ @"C:\Users\steve\source\repos\Cephei2\Cephei.XL" 
-    ; @"C:\Users\steve\source\repos\Cephei2\Cephei.XLC" 
+    [ @"C:\Users\steve\source\repos\Cephei2\Cephei.XL\Functions" 
     ]
 directories |> List.iter (fun d -> allFiles d "\.fs$")
 

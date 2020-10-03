@@ -85,10 +85,10 @@ module CraigSneydSchemeFunction =
 
             try
 
-                let _theta = Helper.toCell<double> theta "theta" 
+                let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let _mu = Helper.toCell<double> mu "mu" 
                 let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
-                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
+                let _bcSet = Helper.toDefault<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" null
                 let builder () = withMnemonic mnemonic (Fun.CraigSneydScheme
                                                             _theta.cell 
                                                             _mu.cell 
@@ -143,7 +143,7 @@ module CraigSneydSchemeFunction =
                 let _CraigSneydScheme = Helper.toCell<CraigSneydScheme> craigsneydscheme "CraigSneydScheme"  
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
-                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
+                let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
                 let builder () = withMnemonic mnemonic ((_CraigSneydScheme.cell :?> CraigSneydSchemeModel).Factory
                                                             _L.cell 
                                                             _bcs.cell 
@@ -239,7 +239,7 @@ module CraigSneydSchemeFunction =
                 let _CraigSneydScheme = Helper.toCell<CraigSneydScheme> craigsneydscheme "CraigSneydScheme"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let _theta = Helper.toCell<double> theta "theta" 
+                let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let builder () = withMnemonic mnemonic ((_CraigSneydScheme.cell :?> CraigSneydSchemeModel).Step
                                                             _a.cell 
                                                             _t.cell 

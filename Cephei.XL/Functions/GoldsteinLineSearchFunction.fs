@@ -54,10 +54,10 @@ module GoldsteinLineSearchFunction =
 
             try
 
-                let _eps = Helper.toCell<double> eps "eps" 
-                let _alpha = Helper.toCell<double> alpha "alpha" 
-                let _beta = Helper.toCell<double> beta "beta" 
-                let _extrapolation = Helper.toCell<double> extrapolation "extrapolation" 
+                let _eps = Helper.toDefault<double> eps "eps" 1e-8
+                let _alpha = Helper.toDefault<double> alpha "alpha" 0.05
+                let _beta = Helper.toDefault<double> beta "beta" 0.65
+                let _extrapolation = Helper.toDefault<double> extrapolation "extrapolation" 1.5
                 let builder () = withMnemonic mnemonic (Fun.GoldsteinLineSearch 
                                                             _eps.cell 
                                                             _alpha.cell 
@@ -390,7 +390,7 @@ module GoldsteinLineSearchFunction =
                 let _GoldsteinLineSearch = Helper.toCell<GoldsteinLineSearch> goldsteinlinesearch "GoldsteinLineSearch"  
                 let _data = Helper.toCell<Vector> data "data" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
-                let _beta = Helper.toCell<double> beta "beta" 
+                let _beta = Helper.toDefault<double> beta "beta" 0.65
                 let _Constraint = Helper.toCell<Constraint> Constraint "Constraint" 
                 let builder () = withMnemonic mnemonic ((_GoldsteinLineSearch.cell :?> GoldsteinLineSearchModel).Update
                                                             _data.cell 

@@ -69,11 +69,11 @@ module FittedBondDiscountCurveFunction =
                 let _bondHelpers = Helper.toCell<Generic.List<BondHelper>> bondHelpers "bondHelpers" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _fittingMethod = Helper.toCell<FittedBondDiscountCurve.FittingMethod> fittingMethod "fittingMethod" 
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let _guess = Helper.toCell<Vector> guess "guess" 
-                let _simplexLambda = Helper.toCell<double> simplexLambda "simplexLambda" 
-                let _maxStationaryStateIterations = Helper.toCell<int> maxStationaryStateIterations "maxStationaryStateIterations" 
+                let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-10
+                let _maxEvaluations = Helper.toDefault<int> maxEvaluations "maxEvaluations" 10000
+                let _guess = Helper.toDefault<Vector> guess "guess" null
+                let _simplexLambda = Helper.toDefault<double> simplexLambda "simplexLambda" 1.0
+                let _maxStationaryStateIterations = Helper.toDefault<int> maxStationaryStateIterations "maxStationaryStateIterations" 100
                 let builder () = withMnemonic mnemonic (Fun.FittedBondDiscountCurve1 
                                                             _referenceDate.cell 
                                                             _bondHelpers.cell 
@@ -157,11 +157,11 @@ module FittedBondDiscountCurveFunction =
                 let _bondHelpers = Helper.toCell<Generic.List<BondHelper>> bondHelpers "bondHelpers" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _fittingMethod = Helper.toCell<FittedBondDiscountCurve.FittingMethod> fittingMethod "fittingMethod" 
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let _guess = Helper.toCell<Vector> guess "guess" 
-                let _simplexLambda = Helper.toCell<double> simplexLambda "simplexLambda" 
-                let _maxStationaryStateIterations = Helper.toCell<int> maxStationaryStateIterations "maxStationaryStateIterations" 
+                let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-10
+                let _maxEvaluations = Helper.toDefault<int> maxEvaluations "maxEvaluations" 10000
+                let _guess = Helper.toDefault<Vector> guess "guess" null
+                let _simplexLambda = Helper.toDefault<double> simplexLambda "simplexLambda" 1.0
+                let _maxStationaryStateIterations = Helper.toDefault<int> maxStationaryStateIterations "maxStationaryStateIterations" 100
                 let builder () = withMnemonic mnemonic (Fun.FittedBondDiscountCurve
                                                             _settlementDays.cell 
                                                             _calendar.cell 

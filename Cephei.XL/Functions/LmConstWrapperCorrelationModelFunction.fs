@@ -60,7 +60,7 @@ module LmConstWrapperCorrelationModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmConstWrapperCorrelationModel.cell :?> LmConstWrapperCorrelationModelModel).Correlation1
                                                             _i.cell 
                                                             _j.cell 
@@ -114,7 +114,7 @@ module LmConstWrapperCorrelationModelFunction =
 
                 let _LmConstWrapperCorrelationModel = Helper.toCell<LmConstWrapperCorrelationModel> lmconstwrappercorrelationmodel "LmConstWrapperCorrelationModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmConstWrapperCorrelationModel.cell :?> LmConstWrapperCorrelationModelModel).Correlation
                                                             _t.cell 
                                                             _x.cell 
@@ -271,7 +271,7 @@ module LmConstWrapperCorrelationModelFunction =
 
                 let _LmConstWrapperCorrelationModel = Helper.toCell<LmConstWrapperCorrelationModel> lmconstwrappercorrelationmodel "LmConstWrapperCorrelationModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmConstWrapperCorrelationModel.cell :?> LmConstWrapperCorrelationModelModel).PseudoSqrt
                                                             _t.cell 
                                                             _x.cell 

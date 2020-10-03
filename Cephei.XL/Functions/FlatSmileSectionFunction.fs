@@ -99,7 +99,7 @@ module FlatSmileSectionFunction =
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _atmLevel = Helper.toNullable<double> atmLevel "atmLevel"
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic (Fun.FlatSmileSection 
                                                             _exerciseTime.cell 
                                                             _vol.cell 
@@ -166,10 +166,10 @@ module FlatSmileSectionFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _vol = Helper.toCell<double> vol "vol" 
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _referenceDate = Helper.toDefault<Date> referenceDate "referenceDate" null
                 let _atmLevel = Helper.toNullable<double> atmLevel "atmLevel"
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic (Fun.FlatSmileSection1 
                                                             _d.cell 
                                                             _vol.cell 
@@ -779,7 +779,7 @@ module FlatSmileSectionFunction =
                 let _FlatSmileSection = Helper.toCell<FlatSmileSection> flatsmilesection "FlatSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic ((_FlatSmileSection.cell :?> FlatSmileSectionModel).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 

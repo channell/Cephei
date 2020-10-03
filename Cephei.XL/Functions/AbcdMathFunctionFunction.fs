@@ -127,10 +127,10 @@ module AbcdMathFunctionFunction =
 
             try
 
-                let _a = Helper.toCell<double> a "a" 
-                let _b = Helper.toCell<double> b "b" 
-                let _c = Helper.toCell<double> c "c" 
-                let _d = Helper.toCell<double> d "d" 
+                let _a = Helper.toDefault<double> a "a" 0.002
+                let _b = Helper.toDefault<double> b "b" 0.001
+                let _c = Helper.toDefault<double> c "c" 0.16
+                let _d = Helper.toDefault<double> d "d" 0.0005
                 let builder () = withMnemonic mnemonic (Fun.AbcdMathFunction1 
                                                             _a.cell 
                                                             _b.cell 

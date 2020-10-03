@@ -25,14 +25,15 @@ module Values =
     let ValueRange
         ([<ExcelArgument(Name="Mnemonic", Description="Identifier")>] mnemonic : string) 
         ([<ExcelArgument(Name="Mnemonic", Description="Identifier")>] layout : string) 
+        : obj[,]
         =
         let layout = layout.ToUpper()
 
         if mnemonic = null || mnemonic = "" || layout = null || layout = "" then
             Array2D.create<obj> 0 1 "#NA"
-        elif not (("CT, RT, C ,R").Contains(layout)) then 
-            Array2D.create<obj> 1 1 "#Invalid Layout"
-        else
+        elif not (("CT, RT, C ,R").Contains(layout.ToUpper())) then 
+            Model.range mnemonic ("C")
+        else 
             Model.range mnemonic (layout.ToUpper())
 
 (*********************************************************************************************************************************************************

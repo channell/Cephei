@@ -57,7 +57,7 @@ module GaussLobattoIntegralFunction =
                 let _maxIterations = Helper.toCell<int> maxIterations "maxIterations" 
                 let _absAccuracy = Helper.toNullable<double> absAccuracy "absAccuracy"
                 let _relAccuracy = Helper.toNullable<double> relAccuracy "relAccuracy"
-                let _useConvergenceEstimate = Helper.toCell<bool> useConvergenceEstimate "useConvergenceEstimate" 
+                let _useConvergenceEstimate = Helper.toDefault<bool> useConvergenceEstimate "useConvergenceEstimate" true
                 let builder () = withMnemonic mnemonic (Fun.GaussLobattoIntegral 
                                                             _maxIterations.cell 
                                                             _absAccuracy.cell 

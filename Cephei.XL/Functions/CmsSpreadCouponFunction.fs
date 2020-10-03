@@ -76,12 +76,12 @@ module CmsSpreadCouponFunction =
                 let _endDate = Helper.toCell<Date> endDate "endDate" 
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let _index = Helper.toCell<SwapSpreadIndex> index "index" 
-                let _gearing = Helper.toCell<double> gearing "gearing" 
-                let _spread = Helper.toCell<double> spread "spread" 
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _isInArrears = Helper.toCell<bool> isInArrears "isInArrears" 
+                let _gearing = Helper.toDefault<double> gearing "gearing" 1.0
+                let _spread = Helper.toDefault<double> spread "spread" 0.0
+                let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
+                let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
+                let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
+                let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
                 let builder () = withMnemonic mnemonic (Fun.CmsSpreadCoupon 
                                                             _paymentDate.cell 
                                                             _nominal.cell 
@@ -435,12 +435,12 @@ module CmsSpreadCouponFunction =
                 let _endDate = Helper.toCell<Date> endDate "endDate" 
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let _index = Helper.toCell<InterestRateIndex> index "index" 
-                let _gearing = Helper.toCell<double> gearing "gearing" 
-                let _spread = Helper.toCell<double> spread "spread" 
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _isInArrears = Helper.toCell<bool> isInArrears "isInArrears" 
+                let _gearing = Helper.toDefault<double> gearing "gearing" 1.0
+                let _spread = Helper.toDefault<double> spread "spread" 0.0
+                let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
+                let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
+                let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
+                let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
                 let builder () = withMnemonic mnemonic ((_CmsSpreadCoupon.cell :?> CmsSpreadCouponModel).Factory
                                                             _nominal.cell 
                                                             _paymentDate.cell 

@@ -135,10 +135,10 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let _spreads = Helper.toCell<Generic.List<Handle<Quote>>> spreads "spreads" 
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let _factory = Helper.toCell<'Interpolator> factory "factory" 
+                let _compounding = Helper.toDefault<Compounding> compounding "compounding" Compounding.Continuous
+                let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.NoFrequency
+                let _dc = Helper.toDefault<DayCounter> dc "dc" default(DayCounter)
+                let _factory = Helper.toDefault<'Interpolator> factory "factory" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedPiecewiseZeroSpreadedTermStructure 
                                                             _h.cell 
                                                             _spreads.cell 

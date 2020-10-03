@@ -74,8 +74,8 @@ module BasisSwapHelperFunction =
                 let _shortIndex = Helper.toCell<IborIndex> shortIndex "shortIndex" 
                 let _longIndex = Helper.toCell<IborIndex> longIndex "longIndex" 
                 let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
-                let _eom = Helper.toCell<bool> eom "eom" 
-                let _spreadOnShort = Helper.toCell<bool> spreadOnShort "spreadOnShort" 
+                let _eom = Helper.toDefault<bool> eom "eom" true
+                let _spreadOnShort = Helper.toDefault<bool> spreadOnShort "spreadOnShort" true
                 let builder () = withMnemonic mnemonic (Fun.BasisSwapHelper 
                                                             _spreadQuote.cell 
                                                             _settlementDays.cell 

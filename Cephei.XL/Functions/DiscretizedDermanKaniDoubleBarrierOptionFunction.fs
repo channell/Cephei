@@ -54,7 +54,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
 
                 let _args = Helper.toCell<DoubleBarrierOption.Arguments> args "args" 
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
-                let _grid = Helper.toCell<TimeGrid> grid "grid" 
+                let _grid = Helper.toDefault<TimeGrid> grid "grid" null
                 let builder () = withMnemonic mnemonic (Fun.DiscretizedDermanKaniDoubleBarrierOption 
                                                             _args.cell 
                                                             _Process.cell 

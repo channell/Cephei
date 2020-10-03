@@ -245,8 +245,8 @@ module SobolBrownianGeneratorFunction =
                 let _factors = Helper.toCell<int> factors "factors" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _ordering = Helper.toCell<SobolBrownianGenerator.Ordering> ordering "ordering" 
-                let _seed = Helper.toCell<uint64> seed "seed" 
-                let _directionIntegers = Helper.toCell<SobolRsg.DirectionIntegers> directionIntegers "directionIntegers" 
+                let _seed = Helper.toDefault<uint64> seed "seed" 0UL
+                let _directionIntegers = Helper.toDefault<SobolRsg.DirectionIntegers> directionIntegers "directionIntegers" SobolRsg.DirectionIntegers.Jaeckel
                 let builder () = withMnemonic mnemonic (Fun.SobolBrownianGenerator 
                                                             _factors.cell 
                                                             _steps.cell 

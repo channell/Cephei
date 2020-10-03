@@ -63,7 +63,7 @@ module CapFloorTermVolCurveFunction =
                 let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" 
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _vols = Helper.toCell<Generic.List<double>> vols "vols" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolCurve1 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -130,7 +130,7 @@ module CapFloorTermVolCurveFunction =
                 let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" 
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _vols = Helper.toCell<Generic.List<double>> vols "vols" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolCurve3
                                                             _settlementDate.cell 
                                                             _calendar.cell 
@@ -197,7 +197,7 @@ module CapFloorTermVolCurveFunction =
                 let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" 
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _vols = Helper.toCell<Generic.List<Handle<Quote>>> vols "vols" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolCurve2 
                                                             _settlementDate.cell 
                                                             _calendar.cell 
@@ -264,7 +264,7 @@ module CapFloorTermVolCurveFunction =
                 let _bdc = Helper.toCell<BusinessDayConvention> bdc "bdc" 
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _vols = Helper.toCell<Generic.List<Handle<Quote>>> vols "vols" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.CapFloorTermVolCurve
                                                             _settlementDays.cell 
                                                             _calendar.cell 

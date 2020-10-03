@@ -180,10 +180,10 @@ module YoYInflationCapFloorFunction =
                 let _price = Helper.toCell<double> price "price" 
                 let _yoyCurve = Helper.toHandle<YoYInflationTermStructure> yoyCurve "yoyCurve" 
                 let _guess = Helper.toCell<double> guess "guess" 
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let _minVol = Helper.toCell<double> minVol "minVol" 
-                let _maxVol = Helper.toCell<double> maxVol "maxVol" 
+                let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-4
+                let _maxEvaluations = Helper.toDefault<int> maxEvaluations "maxEvaluations" 100
+                let _minVol = Helper.toDefault<double> minVol "minVol" 1.0e-7
+                let _maxVol = Helper.toDefault<double> maxVol "maxVol" 4.0
                 let builder () = withMnemonic mnemonic ((_YoYInflationCapFloor.cell :?> YoYInflationCapFloorModel).ImpliedVolatility
                                                             _price.cell 
                                                             _yoyCurve.cell 

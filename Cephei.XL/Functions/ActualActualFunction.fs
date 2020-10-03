@@ -82,7 +82,7 @@ module ActualActualFunction =
             try
 
                 let _c = Helper.toCell<ActualActual.Convention> c "c" 
-                let _schedule = Helper.toCell<Schedule> schedule "schedule" 
+                let _schedule = Helper.toDefault<Schedule> schedule "schedule" null
                 let builder () = withMnemonic mnemonic (Fun.ActualActual1 
                                                             _c.cell 
                                                             _schedule.cell 

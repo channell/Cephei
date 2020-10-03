@@ -51,7 +51,7 @@ module BondFunction =
             try
 
                 let _Bond = Helper.toCell<Bond> bond "Bond"  
-                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let builder () = withMnemonic mnemonic ((_Bond.cell :?> BondModel).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -108,8 +108,8 @@ module BondFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _faceAmount = Helper.toCell<double> faceAmount "faceAmount" 
                 let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
-                let _cashflows = Helper.toCell<Generic.List<CashFlow>> cashflows "cashflows" 
+                let _issueDate = Helper.toDefault<Date> issueDate "issueDate" null
+                let _cashflows = Helper.toDefault<Generic.List<CashFlow>> cashflows "cashflows" null
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.Bond 
@@ -181,8 +181,8 @@ module BondFunction =
 
                 let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
-                let _coupons = Helper.toCell<Generic.List<CashFlow>> coupons "coupons" 
+                let _issueDate = Helper.toDefault<Date> issueDate "issueDate" null
+                let _coupons = Helper.toDefault<Generic.List<CashFlow>> coupons "coupons" null
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.Bond1 
@@ -359,7 +359,7 @@ module BondFunction =
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
-                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let builder () = withMnemonic mnemonic ((_Bond.cell :?> BondModel).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -425,7 +425,7 @@ module BondFunction =
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
-                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let builder () = withMnemonic mnemonic ((_Bond.cell :?> BondModel).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
@@ -587,7 +587,7 @@ module BondFunction =
             try
 
                 let _Bond = Helper.toCell<Bond> bond "Bond"  
-                let _d = Helper.toCell<Date> d "d" 
+                let _d = Helper.toDefault<Date> d "d" null
                 let builder () = withMnemonic mnemonic ((_Bond.cell :?> BondModel).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
@@ -665,7 +665,7 @@ module BondFunction =
             try
 
                 let _Bond = Helper.toCell<Bond> bond "Bond"  
-                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let builder () = withMnemonic mnemonic ((_Bond.cell :?> BondModel).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -707,7 +707,7 @@ module BondFunction =
             try
 
                 let _Bond = Helper.toCell<Bond> bond "Bond"  
-                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let builder () = withMnemonic mnemonic ((_Bond.cell :?> BondModel).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -749,7 +749,7 @@ module BondFunction =
             try
 
                 let _Bond = Helper.toCell<Bond> bond "Bond"  
-                let _d = Helper.toCell<Date> d "d" 
+                let _d = Helper.toDefault<Date> d "d" null
                 let builder () = withMnemonic mnemonic ((_Bond.cell :?> BondModel).Notional
                                                             _d.cell 
                                                        ) :> ICell
@@ -827,7 +827,7 @@ module BondFunction =
             try
 
                 let _Bond = Helper.toCell<Bond> bond "Bond"  
-                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let builder () = withMnemonic mnemonic ((_Bond.cell :?> BondModel).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -869,7 +869,7 @@ module BondFunction =
             try
 
                 let _Bond = Helper.toCell<Bond> bond "Bond"  
-                let _settlement = Helper.toCell<Date> settlement "settlement" 
+                let _settlement = Helper.toDefault<Date> settlement "settlement" null
                 let builder () = withMnemonic mnemonic ((_Bond.cell :?> BondModel).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
@@ -983,7 +983,7 @@ module BondFunction =
             try
 
                 let _Bond = Helper.toCell<Bond> bond "Bond"  
-                let _date = Helper.toCell<Date> date "date" 
+                let _date = Helper.toDefault<Date> date "date" null
                 let builder () = withMnemonic mnemonic ((_Bond.cell :?> BondModel).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
@@ -1191,9 +1191,9 @@ module BondFunction =
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
-                let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
+                let _settlement = Helper.toDefault<Date> settlement "settlement" null
+                let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-8
+                let _maxEvaluations = Helper.toDefault<int> maxEvaluations "maxEvaluations" 100
                 let builder () = withMnemonic mnemonic ((_Bond.cell :?> BondModel).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
@@ -1264,8 +1264,8 @@ module BondFunction =
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
+                let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-8
+                let _maxEvaluations = Helper.toDefault<int> maxEvaluations "maxEvaluations" 100
                 let builder () = withMnemonic mnemonic ((_Bond.cell :?> BondModel).Yield
                                                             _dc.cell 
                                                             _comp.cell 

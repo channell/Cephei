@@ -222,10 +222,10 @@ module YoYInflationCouponFunction =
                 let _yoyIndex = Helper.toCell<YoYInflationIndex> yoyIndex "yoyIndex" 
                 let _observationLag = Helper.toCell<Period> observationLag "observationLag" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _gearing = Helper.toCell<double> gearing "gearing" 
-                let _spread = Helper.toCell<double> spread "spread" 
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
+                let _gearing = Helper.toDefault<double> gearing "gearing" 1.0
+                let _spread = Helper.toDefault<double> spread "spread" 0.0
+                let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
+                let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let builder () = withMnemonic mnemonic (Fun.YoYInflationCoupon 
                                                             _paymentDate.cell 
                                                             _nominal.cell 

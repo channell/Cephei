@@ -53,7 +53,7 @@ module BlackIborCouponPricerFunction =
             try
 
                 let _v = Helper.toHandle<OptionletVolatilityStructure> v "v" 
-                let _timingAdjustment = Helper.toCell<BlackIborCouponPricer.TimingAdjustment> timingAdjustment "timingAdjustment" 
+                let _timingAdjustment = Helper.toDefault<BlackIborCouponPricer.TimingAdjustment> timingAdjustment "timingAdjustment" BlackIborCouponPricer.TimingAdjustment.Black76
                 let _correlation = Helper.toHandle<Quote> correlation "correlation" 
                 let builder () = withMnemonic mnemonic (Fun.BlackIborCouponPricer 
                                                             _v.cell 

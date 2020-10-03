@@ -61,8 +61,8 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let _spreads = Helper.toCell<Generic.List<Handle<Quote>>> spreads "spreads" 
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _compounding = Helper.toDefault<Compounding> compounding "compounding" Compounding.Continuous
+                let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.NoFrequency
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
                 let builder () = withMnemonic mnemonic (Fun.PiecewiseZeroSpreadedTermStructure 
                                                             _h.cell 

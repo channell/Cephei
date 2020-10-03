@@ -91,9 +91,9 @@ module SimplePolynomialFittingFunction =
             try
 
                 let _degree = Helper.toCell<int> degree "degree" 
-                let _constrainAtZero = Helper.toCell<bool> constrainAtZero "constrainAtZero" 
-                let _weights = Helper.toCell<Vector> weights "weights" 
-                let _optimizationMethod = Helper.toCell<OptimizationMethod> optimizationMethod "optimizationMethod" 
+                let _constrainAtZero = Helper.toDefault<bool> constrainAtZero "constrainAtZero" true
+                let _weights = Helper.toDefault<Vector> weights "weights" null
+                let _optimizationMethod = Helper.toDefault<OptimizationMethod> optimizationMethod "optimizationMethod" null
                 let builder () = withMnemonic mnemonic (Fun.SimplePolynomialFitting 
                                                             _degree.cell 
                                                             _constrainAtZero.cell 

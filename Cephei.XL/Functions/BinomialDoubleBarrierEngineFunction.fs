@@ -60,7 +60,7 @@ module BinomialDoubleBarrierEngineFunction =
                 let _getAsset = Helper.toCell<BinomialDoubleBarrierEngine.GetAsset> getAsset "getAsset" 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
-                let _maxTimeSteps = Helper.toCell<int> maxTimeSteps "maxTimeSteps" 
+                let _maxTimeSteps = Helper.toDefault<int> maxTimeSteps "maxTimeSteps" 0
                 let builder () = withMnemonic mnemonic (Fun.BinomialDoubleBarrierEngine 
                                                             _getTree.cell 
                                                             _getAsset.cell 
@@ -120,7 +120,7 @@ module BinomialDoubleBarrierEngineFunction =
                 let _BinomialDoubleBarrierEngine = Helper.toCell<BinomialDoubleBarrierEngine> binomialdoublebarrierengine "BinomialDoubleBarrierEngine"  
                 let _args = Helper.toCell<DoubleBarrierOption.Arguments> args "args" 
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
-                let _grid = Helper.toCell<TimeGrid> grid "grid" 
+                let _grid = Helper.toDefault<TimeGrid> grid "grid" null
                 let builder () = withMnemonic mnemonic ((_BinomialDoubleBarrierEngine.cell :?> BinomialDoubleBarrierEngineModel).getAsset
                                                             _args.cell 
                                                             _Process.cell 

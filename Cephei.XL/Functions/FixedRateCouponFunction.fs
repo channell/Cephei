@@ -183,9 +183,9 @@ module FixedRateCouponFunction =
                 let _interestRate = Helper.toCell<InterestRate> interestRate "interestRate" 
                 let _accrualStartDate = Helper.toCell<Date> accrualStartDate "accrualStartDate" 
                 let _accrualEndDate = Helper.toCell<Date> accrualEndDate "accrualEndDate" 
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let _exCouponDate = Helper.toCell<Date> exCouponDate "exCouponDate" 
+                let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
+                let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
+                let _exCouponDate = Helper.toDefault<Date> exCouponDate "exCouponDate" null
                 let _amount = Helper.toNullable<double> amount "amount"
                 let builder () = withMnemonic mnemonic (Fun.FixedRateCoupon 
                                                             _paymentDate.cell 
@@ -269,9 +269,9 @@ module FixedRateCouponFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _accrualStartDate = Helper.toCell<Date> accrualStartDate "accrualStartDate" 
                 let _accrualEndDate = Helper.toCell<Date> accrualEndDate "accrualEndDate" 
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let _exCouponDate = Helper.toCell<Date> exCouponDate "exCouponDate" 
+                let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
+                let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
+                let _exCouponDate = Helper.toDefault<Date> exCouponDate "exCouponDate" null
                 let builder () = withMnemonic mnemonic (Fun.FixedRateCoupon1 
                                                             _paymentDate.cell 
                                                             _nominal.cell 

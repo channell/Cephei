@@ -145,7 +145,7 @@ module FdmBlackScholesOpFunction =
             try
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
-                let _direction = Helper.toCell<int> direction "direction" 
+                let _direction = Helper.toDefault<int> direction "direction" 0
                 let _r = Helper.toCell<Vector> r "r" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Apply_direction
                                                             _direction.cell 
@@ -323,10 +323,10 @@ module FdmBlackScholesOpFunction =
                 let _mesher = Helper.toCell<FdmMesher> mesher "mesher" 
                 let _bsProcess = Helper.toCell<GeneralizedBlackScholesProcess> bsProcess "bsProcess" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let _localVol = Helper.toCell<bool> localVol "localVol" 
+                let _localVol = Helper.toDefault<bool> localVol "localVol" false
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
-                let _direction = Helper.toCell<int> direction "direction" 
-                let _quantoHelper = Helper.toCell<FdmQuantoHelper> quantoHelper "quantoHelper" 
+                let _direction = Helper.toDefault<int> direction "direction" 0
+                let _quantoHelper = Helper.toDefault<FdmQuantoHelper> quantoHelper "quantoHelper" null
                 let builder () = withMnemonic mnemonic (Fun.FdmBlackScholesOp 
                                                             _mesher.cell 
                                                             _bsProcess.cell 
@@ -688,7 +688,7 @@ module FdmBlackScholesOpFunction =
             try
 
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
-                let _direction = Helper.toCell<int> direction "direction" 
+                let _direction = Helper.toDefault<int> direction "direction" 0
                 let _r = Helper.toCell<Vector> r "r" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_FdmBlackScholesOp.cell :?> FdmBlackScholesOpModel).Solve_splitting

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\Cephei.XL1.fsproj": {}
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XL1.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+    "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
       "version": "1.11.4",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj",
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj",
         "projectName": "QLNetCephei",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\obj\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
       "version": "3.0.3",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
         "projectName": "Cephei.Cell",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\obj\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -137,14 +137,14 @@
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
         "projectName": "Cephei.QLNetHelper",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\obj\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -165,11 +165,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
               }
             }
           }
@@ -204,14 +204,14 @@
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
       "version": "3.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
         "projectName": "Cephei.QL",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\obj\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -232,14 +232,14 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
               }
             }
           }
@@ -275,14 +275,14 @@
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\Cephei.XL1.fsproj": {
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XL1.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\Cephei.XL1.fsproj",
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XL1.fsproj",
         "projectName": "Cephei.XL1",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\Cephei.XL1.fsproj",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XL1.fsproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\obj\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -303,20 +303,20 @@
         "frameworks": {
           "net48": {
             "projectReferences": {
-              "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj"
               }
             }
           }
@@ -340,14 +340,14 @@
         }
       }
     },
-    "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj": {
+    "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj",
+        "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj",
         "projectName": "Cephei.XLM",
-        "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj",
+        "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\obj\\",
+        "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -368,17 +368,17 @@
         "frameworks": {
           "net48": {
             "projectReferences": {
-              "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj"
               },
-              "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
-                "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
+              "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
+                "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
               }
             }
           }

@@ -491,14 +491,14 @@ module SwaptionVolCube1xFunction =
                 let _parametersGuess = Helper.toCell<Generic.List<Generic.List<Handle<Quote>>>> parametersGuess "parametersGuess" 
                 let _isParameterFixed = Helper.toCell<Generic.List<bool>> isParameterFixed "isParameterFixed" 
                 let _isAtmCalibrated = Helper.toCell<bool> isAtmCalibrated "isAtmCalibrated" 
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _maxErrorTolerance = Helper.toNullable<double> maxErrorTolerance "maxErrorTolerance"
-                let _optMethod = Helper.toCell<OptimizationMethod> optMethod "optMethod" 
+                let _optMethod = Helper.toDefault<OptimizationMethod> optMethod "optMethod" null
                 let _errorAccept = Helper.toNullable<double> errorAccept "errorAccept"
-                let _useMaxError = Helper.toCell<bool> useMaxError "useMaxError" 
-                let _maxGuesses = Helper.toCell<int> maxGuesses "maxGuesses" 
-                let _backwardFlat = Helper.toCell<bool> backwardFlat "backwardFlat" 
-                let _cutoffStrike = Helper.toCell<double> cutoffStrike "cutoffStrike" 
+                let _useMaxError = Helper.toDefault<bool> useMaxError "useMaxError" false
+                let _maxGuesses = Helper.toDefault<int> maxGuesses "maxGuesses" 50
+                let _backwardFlat = Helper.toDefault<bool> backwardFlat "backwardFlat" false
+                let _cutoffStrike = Helper.toDefault<double> cutoffStrike "cutoffStrike" 0.0001
                 let builder () = withMnemonic mnemonic (Fun.SwaptionVolCube1x 
                                                             _atmVolStructure.cell 
                                                             _optionTenors.cell 

@@ -95,8 +95,8 @@ module CompositeZeroYieldStructureFunction =
                 let _h1 = Helper.toHandle<YieldTermStructure> h1 "h1" 
                 let _h2 = Helper.toHandle<YieldTermStructure> h2 "h2" 
                 let _f = Helper.toCell<Func<double,double,double>> f "f" 
-                let _comp = Helper.toCell<Compounding> comp "comp" 
-                let _freq = Helper.toCell<Frequency> freq "freq" 
+                let _comp = Helper.toDefault<Compounding> comp "comp" Compounding.Continuous
+                let _freq = Helper.toDefault<Frequency> freq "freq" Frequency.NoFrequency
                 let builder () = withMnemonic mnemonic (Fun.CompositeZeroYieldStructure 
                                                             _h1.cell 
                                                             _h2.cell 

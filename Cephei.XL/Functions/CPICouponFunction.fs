@@ -159,10 +159,10 @@ module CPICouponFunction =
                 let _observationInterpolation = Helper.toCell<InterpolationType> observationInterpolation "observationInterpolation" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" 
-                let _spread = Helper.toCell<double> spread "spread" 
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let _exCouponDate = Helper.toCell<Date> exCouponDate "exCouponDate" 
+                let _spread = Helper.toDefault<double> spread "spread" 0.0
+                let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
+                let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
+                let _exCouponDate = Helper.toDefault<Date> exCouponDate "exCouponDate" null
                 let builder () = withMnemonic mnemonic (Fun.CPICoupon 
                                                             _baseCPI.cell 
                                                             _paymentDate.cell 

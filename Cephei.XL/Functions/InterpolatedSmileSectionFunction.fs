@@ -318,10 +318,10 @@ module InterpolatedSmileSectionFunction =
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _stdDevHandles = Helper.toCell<Generic.List<Handle<Quote>>> stdDevHandles "stdDevHandles" 
                 let _atmLevel = Helper.toHandle<Quote> atmLevel "atmLevel" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedSmileSection 
                                                             _timeToExpiry.cell 
                                                             _strikes.cell 
@@ -397,10 +397,10 @@ module InterpolatedSmileSectionFunction =
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _stdDevs = Helper.toCell<Generic.List<double>> stdDevs "stdDevs" 
                 let _atmLevel = Helper.toCell<double> atmLevel "atmLevel" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedSmileSection1 
                                                             _timeToExpiry.cell 
                                                             _strikes.cell 
@@ -478,11 +478,11 @@ module InterpolatedSmileSectionFunction =
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _stdDevHandles = Helper.toCell<Generic.List<Handle<Quote>>> stdDevHandles "stdDevHandles" 
                 let _atmLevel = Helper.toHandle<Quote> atmLevel "atmLevel" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
+                let _referenceDate = Helper.toDefault<Date> referenceDate "referenceDate" null
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedSmileSection2 
                                                             _d.cell 
                                                             _strikes.cell 
@@ -561,10 +561,10 @@ module InterpolatedSmileSectionFunction =
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
                 let _stdDevs = Helper.toCell<Generic.List<double>> stdDevs "stdDevs" 
                 let _atmLevel = Helper.toCell<double> atmLevel "atmLevel" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
-                let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
+                let _referenceDate = Helper.toDefault<Date> referenceDate "referenceDate" null
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedSmileSection3 
                                                             _d.cell 
                                                             _strikes.cell 
@@ -1465,7 +1465,7 @@ module InterpolatedSmileSectionFunction =
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
-                let _shift = Helper.toCell<double> shift "shift" 
+                let _shift = Helper.toDefault<double> shift "shift" 0.0
                 let builder () = withMnemonic mnemonic ((_InterpolatedSmileSection.cell :?> InterpolatedSmileSectionModel).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 

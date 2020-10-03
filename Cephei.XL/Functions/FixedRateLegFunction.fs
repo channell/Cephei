@@ -541,7 +541,7 @@ module FixedRateLegFunction =
                 let _period = Helper.toCell<Period> period "period" 
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
+                let _endOfMonth = Helper.toDefault<bool> endOfMonth "endOfMonth" false
                 let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithExCouponPeriod
                                                             _period.cell 
                                                             _cal.cell 

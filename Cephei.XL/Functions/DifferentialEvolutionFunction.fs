@@ -84,7 +84,7 @@ module DifferentialEvolutionFunction =
 
             try
 
-                let _configuration = Helper.toCell<DifferentialEvolution.Configuration> configuration "configuration" 
+                let _configuration = Helper.toDefault<DifferentialEvolution.Configuration> configuration "configuration" null
                 let builder () = withMnemonic mnemonic (Fun.DifferentialEvolution 
                                                             _configuration.cell 
                                                        ) :> ICell

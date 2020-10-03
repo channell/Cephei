@@ -51,7 +51,7 @@ module CCTEUFunction =
             try
 
                 let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
-                let _d = Helper.toCell<Date> d "d" 
+                let _d = Helper.toDefault<Date> d "d" null
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
@@ -105,8 +105,8 @@ module CCTEUFunction =
                 let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
                 let _spread = Helper.toCell<double> spread "spread" 
                 let _fwdCurve = Helper.toHandle<YieldTermStructure> fwdCurve "fwdCurve" 
-                let _startDate = Helper.toCell<Date> startDate "startDate" 
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
+                let _startDate = Helper.toDefault<Date> startDate "startDate" null
+                let _issueDate = Helper.toDefault<Date> issueDate "issueDate" null
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.CCTEU 
@@ -514,7 +514,7 @@ module CCTEUFunction =
             try
 
                 let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
-                let _d = Helper.toCell<Date> d "d" 
+                let _d = Helper.toDefault<Date> d "d" null
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
@@ -676,7 +676,7 @@ module CCTEUFunction =
             try
 
                 let _CCTEU = Helper.toCell<CCTEU> ccteu "CCTEU"  
-                let _d = Helper.toCell<Date> d "d" 
+                let _d = Helper.toDefault<Date> d "d" null
                 let builder () = withMnemonic mnemonic ((_CCTEU.cell :?> CCTEUModel).Notional
                                                             _d.cell 
                                                        ) :> ICell

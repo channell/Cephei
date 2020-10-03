@@ -60,7 +60,7 @@ module MixedLinearParabolicFunction =
                 let _xEnd = Helper.toCell<int> xEnd "xEnd" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _n = Helper.toCell<int> n "n" 
-                let _behavior = Helper.toCell<Behavior> behavior "behavior" 
+                let _behavior = Helper.toDefault<Behavior> behavior "behavior" Behavior.ShareRanges
                 let builder () = withMnemonic mnemonic (Fun.MixedLinearParabolic 
                                                             _xBegin.cell 
                                                             _xEnd.cell 

@@ -334,9 +334,9 @@ module InflationCouponFunction =
                 let _index = Helper.toCell<InflationIndex> index "index" 
                 let _observationLag = Helper.toCell<Period> observationLag "observationLag" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
-                let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let _exCouponDate = Helper.toCell<Date> exCouponDate "exCouponDate" 
+                let _refPeriodStart = Helper.toDefault<Date> refPeriodStart "refPeriodStart" null
+                let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
+                let _exCouponDate = Helper.toDefault<Date> exCouponDate "exCouponDate" null
                 let builder () = withMnemonic mnemonic (Fun.InflationCoupon 
                                                             _paymentDate.cell 
                                                             _nominal.cell 

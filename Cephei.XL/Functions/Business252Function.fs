@@ -48,7 +48,7 @@ module Business252Function =
 
             try
 
-                let _c = Helper.toCell<Calendar> c "c" 
+                let _c = Helper.toDefault<Calendar> c "c" null
                 let builder () = withMnemonic mnemonic (Fun.Business252 
                                                             _c.cell 
                                                        ) :> ICell

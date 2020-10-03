@@ -70,7 +70,7 @@ module CounterpartyAdjSwapEngineFunction =
                 let _ctptyDTS = Helper.toHandle<DefaultProbabilityTermStructure> ctptyDTS "ctptyDTS" 
                 let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" 
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
-                let _invstRecoveryRate = Helper.toCell<double> invstRecoveryRate "invstRecoveryRate" 
+                let _invstRecoveryRate = Helper.toDefault<double> invstRecoveryRate "invstRecoveryRate" 0.999
                 let builder () = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine 
                                                             _discountCurve.cell 
                                                             _blackVol.cell 
@@ -143,7 +143,7 @@ module CounterpartyAdjSwapEngineFunction =
                 let _ctptyDTS = Helper.toHandle<DefaultProbabilityTermStructure> ctptyDTS "ctptyDTS" 
                 let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" 
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
-                let _invstRecoveryRate = Helper.toCell<double> invstRecoveryRate "invstRecoveryRate" 
+                let _invstRecoveryRate = Helper.toDefault<double> invstRecoveryRate "invstRecoveryRate" 0.999
                 let builder () = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine1 
                                                             _discountCurve.cell 
                                                             _blackVol.cell 
@@ -216,7 +216,7 @@ module CounterpartyAdjSwapEngineFunction =
                 let _ctptyDTS = Helper.toHandle<DefaultProbabilityTermStructure> ctptyDTS "ctptyDTS" 
                 let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" 
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
-                let _invstRecoveryRate = Helper.toCell<double> invstRecoveryRate "invstRecoveryRate" 
+                let _invstRecoveryRate = Helper.toDefault<double> invstRecoveryRate "invstRecoveryRate" 0.999
                 let builder () = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine2 
                                                             _discountCurve.cell 
                                                             _swaptionEngine.cell 

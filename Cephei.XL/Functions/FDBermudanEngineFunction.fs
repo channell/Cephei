@@ -56,9 +56,9 @@ module FDBermudanEngineFunction =
             try
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
-                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
-                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
+                let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
+                let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
+                let _timeDependent = Helper.toDefault<bool> timeDependent "timeDependent" false
                 let builder () = withMnemonic mnemonic (Fun.FDBermudanEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -348,9 +348,9 @@ module FDBermudanEngineFunction =
 
                 let _FDBermudanEngine = Helper.toCell<FDBermudanEngine> fdbermudanengine "FDBermudanEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
-                let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
-                let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
+                let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
+                let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
+                let _timeDependent = Helper.toDefault<bool> timeDependent "timeDependent" false
                 let builder () = withMnemonic mnemonic ((_FDBermudanEngine.cell :?> FDBermudanEngineModel).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 

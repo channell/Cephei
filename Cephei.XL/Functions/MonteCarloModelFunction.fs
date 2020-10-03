@@ -106,9 +106,9 @@ module MonteCarloModelFunction =
                 let _pathPricer = Helper.toCell<PathPricer<IPath>> pathPricer "pathPricer" 
                 let _sampleAccumulator = Helper.toCell<'S> sampleAccumulator "sampleAccumulator" 
                 let _antitheticVariate = Helper.toCell<bool> antitheticVariate "antitheticVariate" 
-                let _cvPathPricer = Helper.toCell<PathPricer<IPath>> cvPathPricer "cvPathPricer" 
-                let _cvOptionValue = Helper.toCell<double> cvOptionValue "cvOptionValue" 
-                let _cvPathGenerator = Helper.toCell<IPathGenerator<IRNG>> cvPathGenerator "cvPathGenerator" 
+                let _cvPathPricer = Helper.toDefault<PathPricer<IPath>> cvPathPricer "cvPathPricer" null
+                let _cvOptionValue = Helper.toDefault<double> cvOptionValue "cvOptionValue" 0
+                let _cvPathGenerator = Helper.toDefault<IPathGenerator<IRNG>> cvPathGenerator "cvPathGenerator" null
                 let builder () = withMnemonic mnemonic (Fun.MonteCarloModel 
                                                             _pathGenerator.cell 
                                                             _pathPricer.cell 

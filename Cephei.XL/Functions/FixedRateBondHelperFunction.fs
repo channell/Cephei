@@ -118,15 +118,15 @@ module FixedRateBondHelperFunction =
                 let _schedule = Helper.toCell<Schedule> schedule "schedule" 
                 let _coupons = Helper.toCell<Generic.List<double>> coupons "coupons" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _paymentConvention = Helper.toCell<BusinessDayConvention> paymentConvention "paymentConvention" 
-                let _redemption = Helper.toCell<double> redemption "redemption" 
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
-                let _paymentCalendar = Helper.toCell<Calendar> paymentCalendar "paymentCalendar" 
-                let _exCouponPeriod = Helper.toCell<Period> exCouponPeriod "exCouponPeriod" 
-                let _exCouponCalendar = Helper.toCell<Calendar> exCouponCalendar "exCouponCalendar" 
-                let _exCouponConvention = Helper.toCell<BusinessDayConvention> exCouponConvention "exCouponConvention" 
-                let _exCouponEndOfMonth = Helper.toCell<bool> exCouponEndOfMonth "exCouponEndOfMonth" 
-                let _useCleanPrice = Helper.toCell<bool> useCleanPrice "useCleanPrice" 
+                let _paymentConvention = Helper.toDefault<BusinessDayConvention> paymentConvention "paymentConvention" BusinessDayConvention.Following
+                let _redemption = Helper.toDefault<double> redemption "redemption" 100.0
+                let _issueDate = Helper.toDefault<Date> issueDate "issueDate" null
+                let _paymentCalendar = Helper.toDefault<Calendar> paymentCalendar "paymentCalendar" null
+                let _exCouponPeriod = Helper.toDefault<Period> exCouponPeriod "exCouponPeriod" null
+                let _exCouponCalendar = Helper.toDefault<Calendar> exCouponCalendar "exCouponCalendar" null
+                let _exCouponConvention = Helper.toDefault<BusinessDayConvention> exCouponConvention "exCouponConvention" BusinessDayConvention.Unadjusted
+                let _exCouponEndOfMonth = Helper.toDefault<bool> exCouponEndOfMonth "exCouponEndOfMonth" false
+                let _useCleanPrice = Helper.toDefault<bool> useCleanPrice "useCleanPrice" true
                 let builder () = withMnemonic mnemonic (Fun.FixedRateBondHelper 
                                                             _price.cell 
                                                             _settlementDays.cell 

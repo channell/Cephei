@@ -60,7 +60,7 @@ module LmLinearExponentialCorrelationModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialCorrelationModel.cell :?> LmLinearExponentialCorrelationModelModel).Correlation
                                                             _i.cell 
                                                             _j.cell 
@@ -114,7 +114,7 @@ module LmLinearExponentialCorrelationModelFunction =
 
                 let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialCorrelationModel.cell :?> LmLinearExponentialCorrelationModelModel).Correlation1
                                                             _t.cell 
                                                             _x.cell 
@@ -289,7 +289,7 @@ module LmLinearExponentialCorrelationModelFunction =
 
                 let _LmLinearExponentialCorrelationModel = Helper.toCell<LmLinearExponentialCorrelationModel> lmlinearexponentialcorrelationmodel "LmLinearExponentialCorrelationModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialCorrelationModel.cell :?> LmLinearExponentialCorrelationModelModel).PseudoSqrt
                                                             _t.cell 
                                                             _x.cell 

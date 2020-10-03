@@ -61,8 +61,8 @@ module FdmSimpleProcess1DMesherFunction =
                 let _size = Helper.toCell<int> size "size" 
                 let _Process = Helper.toCell<StochasticProcess1D> Process "Process" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let _tAvgSteps = Helper.toCell<int> tAvgSteps "tAvgSteps" 
-                let _epsilon = Helper.toCell<double> epsilon "epsilon" 
+                let _tAvgSteps = Helper.toDefault<int> tAvgSteps "tAvgSteps" 10
+                let _epsilon = Helper.toDefault<double> epsilon "epsilon" 0.0001
                 let _mandatoryPoint = Helper.toNullable<double> mandatoryPoint "mandatoryPoint"
                 let builder () = withMnemonic mnemonic (Fun.FdmSimpleProcess1DMesher 
                                                             _size.cell 

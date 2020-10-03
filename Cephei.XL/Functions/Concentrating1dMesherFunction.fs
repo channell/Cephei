@@ -59,8 +59,8 @@ module Concentrating1dMesherFunction =
                 let _start = Helper.toCell<double> start "start" 
                 let _End = Helper.toCell<double> End "End" 
                 let _size = Helper.toCell<int> size "size" 
-                let _cPoints = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> cPoints "cPoints" 
-                let _requireCPoint = Helper.toCell<bool> requireCPoint "requireCPoint" 
+                let _cPoints = Helper.toDefault<Pair<Nullable<double>,Nullable<double>>> cPoints "cPoints" null
+                let _requireCPoint = Helper.toDefault<bool> requireCPoint "requireCPoint" false
                 let builder () = withMnemonic mnemonic (Fun.Concentrating1dMesher1 
                                                             _start.cell 
                                                             _End.cell 
@@ -120,8 +120,8 @@ module Concentrating1dMesherFunction =
                 let _start = Helper.toCell<double> start "start" 
                 let _End = Helper.toCell<double> End "End" 
                 let _size = Helper.toCell<int> size "size" 
-                let _cPoints = Helper.toCell<Generic.List<Tuple<Nullable<double>,Nullable<double>,bool>>> cPoints "cPoints" 
-                let _tol = Helper.toCell<double> tol "tol" 
+                let _cPoints = Helper.toDefault<Generic.List<Tuple<Nullable<double>,Nullable<double>,bool>>> cPoints "cPoints" null
+                let _tol = Helper.toDefault<double> tol "tol" 1e-8
                 let builder () = withMnemonic mnemonic (Fun.Concentrating1dMesher
                                                             _start.cell 
                                                             _End.cell 

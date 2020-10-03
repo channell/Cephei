@@ -51,7 +51,7 @@ module BTPFunction =
             try
 
                 let _BTP = Helper.toCell<BTP> btp "BTP"  
-                let _d = Helper.toCell<Date> d "d" 
+                let _d = Helper.toDefault<Date> d "d" null
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
@@ -105,8 +105,8 @@ module BTPFunction =
                 let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
                 let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" 
                 let _redemption = Helper.toCell<double> redemption "redemption" 
-                let _startDate = Helper.toCell<Date> startDate "startDate" 
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
+                let _startDate = Helper.toDefault<Date> startDate "startDate" null
+                let _issueDate = Helper.toDefault<Date> issueDate "issueDate" null
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.BTP 
@@ -175,8 +175,8 @@ module BTPFunction =
 
                 let _maturityDate = Helper.toCell<Date> maturityDate "maturityDate" 
                 let _fixedRate = Helper.toCell<double> fixedRate "fixedRate" 
-                let _startDate = Helper.toCell<Date> startDate "startDate" 
-                let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
+                let _startDate = Helper.toDefault<Date> startDate "startDate" null
+                let _issueDate = Helper.toDefault<Date> issueDate "issueDate" null
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.BTP1 
@@ -240,9 +240,9 @@ module BTPFunction =
 
                 let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
-                let _settlementDate = Helper.toCell<Date> settlementDate "settlementDate" 
-                let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
+                let _settlementDate = Helper.toDefault<Date> settlementDate "settlementDate" null
+                let _accuracy = Helper.toDefault<double> accuracy "accuracy" 1.0e-8
+                let _maxEvaluations = Helper.toDefault<int> maxEvaluations "maxEvaluations" 100
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).Yield
                                                             _cleanPrice.cell 
                                                             _settlementDate.cell 
@@ -713,7 +713,7 @@ module BTPFunction =
             try
 
                 let _BTP = Helper.toCell<BTP> btp "BTP"  
-                let _d = Helper.toCell<Date> d "d" 
+                let _d = Helper.toDefault<Date> d "d" null
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
@@ -875,7 +875,7 @@ module BTPFunction =
             try
 
                 let _BTP = Helper.toCell<BTP> btp "BTP"  
-                let _d = Helper.toCell<Date> d "d" 
+                let _d = Helper.toDefault<Date> d "d" null
                 let builder () = withMnemonic mnemonic ((_BTP.cell :?> BTPModel).Notional
                                                             _d.cell 
                                                        ) :> ICell

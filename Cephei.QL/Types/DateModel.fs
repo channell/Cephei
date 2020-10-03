@@ -152,6 +152,18 @@ type DateModel1
     do this.Bind(_Date)
 
 (* 
+    casting 
+*)
+    internal new () = DateModel1(null)
+    static member Cast (p : ICell<Date>) = 
+        if p :? DateModel1 then 
+            p :?> DateModel1
+        else
+            let o = new DateModel1 ()
+            o.Value <- p.Value
+            o
+
+(* 
     Externally visible/bindable properties
 *)
     member this.serialNumber                       = _serialNumber 

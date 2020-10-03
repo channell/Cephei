@@ -90,7 +90,7 @@ module SobolBrownianBridgeRsgFunction =
 
                 let _SobolBrownianBridgeRsg = Helper.toCell<SobolBrownianBridgeRsg> sobolbrownianbridgersg "SobolBrownianBridgeRsg"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
-                let _seed = Helper.toCell<uint64> seed "seed" 
+                let _seed = Helper.toDefault<uint64> seed "seed" 0UL
                 let builder () = withMnemonic mnemonic ((_SobolBrownianBridgeRsg.cell :?> SobolBrownianBridgeRsgModel).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
@@ -218,9 +218,9 @@ module SobolBrownianBridgeRsgFunction =
 
                 let _factors = Helper.toCell<int> factors "factors" 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let _ordering = Helper.toCell<SobolBrownianGenerator.Ordering> ordering "ordering" 
-                let _seed = Helper.toCell<uint64> seed "seed" 
-                let _directionIntegers = Helper.toCell<SobolRsg.DirectionIntegers> directionIntegers "directionIntegers" 
+                let _ordering = Helper.toDefault<SobolBrownianGenerator.Ordering> ordering "ordering" SobolBrownianGenerator.Ordering.Diagonal
+                let _seed = Helper.toDefault<uint64> seed "seed" 0UL
+                let _directionIntegers = Helper.toDefault<SobolRsg.DirectionIntegers> directionIntegers "directionIntegers" SobolRsg.DirectionIntegers.JoeKuoD7
                 let builder () = withMnemonic mnemonic (Fun.SobolBrownianBridgeRsg 
                                                             _factors.cell 
                                                             _steps.cell 

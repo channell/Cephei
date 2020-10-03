@@ -54,10 +54,10 @@ module CoxIngersollRossFunction =
 
             try
 
-                let _r0 = Helper.toCell<double> r0 "r0" 
-                let _theta = Helper.toCell<double> theta "theta" 
-                let _k = Helper.toCell<double> k "k" 
-                let _sigma = Helper.toCell<double> sigma "sigma" 
+                let _r0 = Helper.toDefault<double> r0 "r0" 0.05
+                let _theta = Helper.toDefault<double> theta "theta" 0.1
+                let _k = Helper.toDefault<double> k "k" 0.1
+                let _sigma = Helper.toDefault<double> sigma "sigma" 0.1
                 let builder () = withMnemonic mnemonic (Fun.CoxIngersollRoss 
                                                             _r0.cell 
                                                             _theta.cell 

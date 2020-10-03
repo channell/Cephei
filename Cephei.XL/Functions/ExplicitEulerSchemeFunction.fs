@@ -82,7 +82,7 @@ module ExplicitEulerSchemeFunction =
             try
 
                 let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
-                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
+                let _bcSet = Helper.toDefault<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" null
                 let builder () = withMnemonic mnemonic (Fun.ExplicitEulerScheme
                                                             _map.cell 
                                                             _bcSet.cell 
@@ -131,7 +131,7 @@ module ExplicitEulerSchemeFunction =
                 let _ExplicitEulerScheme = Helper.toCell<ExplicitEulerScheme> expliciteulerscheme "ExplicitEulerScheme"  
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
-                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
+                let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
                 let builder () = withMnemonic mnemonic ((_ExplicitEulerScheme.cell :?> ExplicitEulerSchemeModel).Factory
                                                             _L.cell 
                                                             _bcs.cell 
@@ -227,7 +227,7 @@ module ExplicitEulerSchemeFunction =
                 let _ExplicitEulerScheme = Helper.toCell<ExplicitEulerScheme> expliciteulerscheme "ExplicitEulerScheme"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let _theta = Helper.toCell<double> theta "theta" 
+                let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let builder () = withMnemonic mnemonic ((_ExplicitEulerScheme.cell :?> ExplicitEulerSchemeModel).Step
                                                             _a.cell 
                                                             _t.cell 

@@ -99,7 +99,7 @@ module Trbdf2Function =
                 let _Trbdf2 = Helper.toCell<Trbdf2> trbdf2 "Trbdf2"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let _theta = Helper.toCell<double> theta "theta" 
+                let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let builder () = withMnemonic mnemonic ((_Trbdf2.cell :?> Trbdf2Model).Step
                                                             _a.cell 
                                                             _t.cell 

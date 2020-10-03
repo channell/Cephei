@@ -60,7 +60,7 @@ module LmLinearExponentialVolatilityModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialVolatilityModel.cell :?> LmLinearExponentialVolatilityModelModel).IntegratedVariance
                                                             _i.cell 
                                                             _j.cell 
@@ -178,7 +178,7 @@ module LmLinearExponentialVolatilityModelFunction =
                 let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialVolatilityModel.cell :?> LmLinearExponentialVolatilityModelModel).Volatility
                                                             _i.cell 
                                                             _t.cell 
@@ -229,7 +229,7 @@ module LmLinearExponentialVolatilityModelFunction =
 
                 let _LmLinearExponentialVolatilityModel = Helper.toCell<LmLinearExponentialVolatilityModel> lmlinearexponentialvolatilitymodel "LmLinearExponentialVolatilityModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmLinearExponentialVolatilityModel.cell :?> LmLinearExponentialVolatilityModelModel).Volatility1
                                                             _t.cell 
                                                             _x.cell 

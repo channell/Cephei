@@ -103,8 +103,8 @@ module SobolBrownianGeneratorFactoryFunction =
             try
 
                 let _ordering = Helper.toCell<SobolBrownianGenerator.Ordering> ordering "ordering" 
-                let _seed = Helper.toCell<uint64> seed "seed" 
-                let _integers = Helper.toCell<SobolRsg.DirectionIntegers> integers "integers" 
+                let _seed = Helper.toDefault<uint64> seed "seed" 0UL
+                let _integers = Helper.toDefault<SobolRsg.DirectionIntegers> integers "integers" SobolRsg.DirectionIntegers.Jaeckel
                 let builder () = withMnemonic mnemonic (Fun.SobolBrownianGeneratorFactory 
                                                             _ordering.cell 
                                                             _seed.cell 

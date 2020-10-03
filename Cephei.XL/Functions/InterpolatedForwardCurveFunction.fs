@@ -274,7 +274,7 @@ module InterpolatedForwardCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve 
                                                             _dates.cell 
                                                             _forwards.cell 
@@ -331,8 +331,8 @@ module InterpolatedForwardCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve1 
                                                             _dates.cell 
                                                             _forwards.cell 
@@ -396,10 +396,10 @@ module InterpolatedForwardCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve2 
                                                             _dates.cell 
                                                             _forwards.cell 
@@ -465,11 +465,11 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve3 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -528,9 +528,9 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve4 
                                                             _dayCounter.cell 
                                                             _jumps.cell 
@@ -586,9 +586,9 @@ module InterpolatedForwardCurveFunction =
 
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve5 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 
@@ -650,9 +650,9 @@ module InterpolatedForwardCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _forwards = Helper.toCell<Generic.List<double>> forwards "forwards" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedForwardCurve6 
                                                             _dates.cell 
                                                             _forwards.cell 

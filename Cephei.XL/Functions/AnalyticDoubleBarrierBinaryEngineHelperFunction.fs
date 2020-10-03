@@ -111,8 +111,8 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let _spot = Helper.toCell<double> spot "spot" 
                 let _variance = Helper.toCell<double> variance "variance" 
                 let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" 
-                let _maxIteration = Helper.toCell<int> maxIteration "maxIteration" 
-                let _requiredConvergence = Helper.toCell<double> requiredConvergence "requiredConvergence" 
+                let _maxIteration = Helper.toDefault<int> maxIteration "maxIteration" 100
+                let _requiredConvergence = Helper.toDefault<double> requiredConvergence "requiredConvergence" 1e-8
                 let builder () = withMnemonic mnemonic ((_AnalyticDoubleBarrierBinaryEngineHelper.cell :?> AnalyticDoubleBarrierBinaryEngineHelperModel).PayoffAtExpiry
                                                             _spot.cell 
                                                             _variance.cell 
@@ -177,8 +177,8 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let _spot = Helper.toCell<double> spot "spot" 
                 let _variance = Helper.toCell<double> variance "variance" 
                 let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" 
-                let _maxIteration = Helper.toCell<int> maxIteration "maxIteration" 
-                let _requiredConvergence = Helper.toCell<double> requiredConvergence "requiredConvergence" 
+                let _maxIteration = Helper.toDefault<int> maxIteration "maxIteration" 100
+                let _requiredConvergence = Helper.toDefault<double> requiredConvergence "requiredConvergence" 1e-8
                 let builder () = withMnemonic mnemonic ((_AnalyticDoubleBarrierBinaryEngineHelper.cell :?> AnalyticDoubleBarrierBinaryEngineHelperModel).PayoffKIKO
                                                             _spot.cell 
                                                             _variance.cell 

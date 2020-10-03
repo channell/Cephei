@@ -266,11 +266,11 @@ module SwapRateHelperFunction =
                 let _fixedDayCount = Helper.toCell<DayCounter> fixedDayCount "fixedDayCount" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
-                let _fwdStart = Helper.toCell<Period> fwdStart "fwdStart" 
+                let _fwdStart = Helper.toDefault<Period> fwdStart "fwdStart" null
                 let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
                 let _settlementDays = Helper.toNullable<int> settlementDays "settlementDays"
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
+                let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
+                let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder () = withMnemonic mnemonic (Fun.SwapRateHelper2 
                                                             _rate.cell 
                                                             _tenor.cell 
@@ -375,11 +375,11 @@ module SwapRateHelperFunction =
                 let _fixedDayCount = Helper.toCell<DayCounter> fixedDayCount "fixedDayCount" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
-                let _fwdStart = Helper.toCell<Period> fwdStart "fwdStart" 
+                let _fwdStart = Helper.toDefault<Period> fwdStart "fwdStart" null
                 let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
                 let _settlementDays = Helper.toNullable<int> settlementDays "settlementDays"
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
+                let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
+                let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder () = withMnemonic mnemonic (Fun.SwapRateHelper
                                                             _rate.cell 
                                                             _tenor.cell 
@@ -467,10 +467,10 @@ module SwapRateHelperFunction =
                 let _rate = Helper.toHandle<Quote> rate "rate" 
                 let _swapIndex = Helper.toCell<SwapIndex> swapIndex "swapIndex" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
-                let _fwdStart = Helper.toCell<Period> fwdStart "fwdStart" 
+                let _fwdStart = Helper.toDefault<Period> fwdStart "fwdStart" null
                 let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
+                let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
+                let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder () = withMnemonic mnemonic (Fun.SwapRateHelper3
                                                             _rate.cell 
                                                             _swapIndex.cell 
@@ -540,10 +540,10 @@ module SwapRateHelperFunction =
                 let _rate = Helper.toCell<double> rate "rate" 
                 let _swapIndex = Helper.toCell<SwapIndex> swapIndex "swapIndex" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
-                let _fwdStart = Helper.toCell<Period> fwdStart "fwdStart" 
+                let _fwdStart = Helper.toDefault<Period> fwdStart "fwdStart" null
                 let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
+                let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
+                let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder () = withMnemonic mnemonic (Fun.SwapRateHelper1
                                                             _rate.cell 
                                                             _swapIndex.cell 

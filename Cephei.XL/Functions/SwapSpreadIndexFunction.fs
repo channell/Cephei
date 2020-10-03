@@ -396,8 +396,8 @@ module SwapSpreadIndexFunction =
                 let _familyName = Helper.toCell<String> familyName "familyName" 
                 let _swapIndex1 = Helper.toCell<SwapIndex> swapIndex1 "swapIndex1" 
                 let _swapIndex2 = Helper.toCell<SwapIndex> swapIndex2 "swapIndex2" 
-                let _gearing1 = Helper.toCell<double> gearing1 "gearing1" 
-                let _gearing2 = Helper.toCell<double> gearing2 "gearing2" 
+                let _gearing1 = Helper.toDefault<double> gearing1 "gearing1" 1.0
+                let _gearing2 = Helper.toDefault<double> gearing2 "gearing2" -1.0
                 let builder () = withMnemonic mnemonic (Fun.SwapSpreadIndex
                                                             _familyName.cell 
                                                             _swapIndex1.cell 

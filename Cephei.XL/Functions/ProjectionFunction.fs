@@ -135,7 +135,7 @@ module ProjectionFunction =
             try
 
                 let _parameterValues = Helper.toCell<Vector> parameterValues "parameterValues" 
-                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
+                let _fixParameters = Helper.toDefault<Generic.List<bool>> fixParameters "fixParameters" null
                 let builder () = withMnemonic mnemonic (Fun.Projection 
                                                             _parameterValues.cell 
                                                             _fixParameters.cell 

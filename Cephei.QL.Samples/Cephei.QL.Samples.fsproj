@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="addcast.fsx" />
     <None Include="defalV.fsx" />
     <None Include="EditFiles.fsx" />
     <None Include="KLOC.fsx" />

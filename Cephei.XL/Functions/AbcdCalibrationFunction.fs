@@ -176,16 +176,16 @@ module AbcdCalibrationFunction =
 
                 let _t = Helper.toCell<Generic.List<double>> t "t" 
                 let _blackVols = Helper.toCell<Generic.List<double>> blackVols "blackVols" 
-                let _aGuess = Helper.toCell<double> aGuess "aGuess" 
-                let _bGuess = Helper.toCell<double> bGuess "bGuess" 
-                let _cGuess = Helper.toCell<double> cGuess "cGuess" 
-                let _dGuess = Helper.toCell<double> dGuess "dGuess" 
-                let _aIsFixed = Helper.toCell<bool> aIsFixed "aIsFixed" 
-                let _bIsFixed = Helper.toCell<bool> bIsFixed "bIsFixed" 
-                let _cIsFixed = Helper.toCell<bool> cIsFixed "cIsFixed" 
-                let _dIsFixed = Helper.toCell<bool> dIsFixed "dIsFixed" 
-                let _vegaWeighted = Helper.toCell<bool> vegaWeighted "vegaWeighted" 
-                let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
+                let _aGuess = Helper.toDefault<double> aGuess "aGuess" -0.06
+                let _bGuess = Helper.toDefault<double> bGuess "bGuess" 0.17
+                let _cGuess = Helper.toDefault<double> cGuess "cGuess" 0.54
+                let _dGuess = Helper.toDefault<double> dGuess "dGuess" 0.17
+                let _aIsFixed = Helper.toDefault<bool> aIsFixed "aIsFixed" false
+                let _bIsFixed = Helper.toDefault<bool> bIsFixed "bIsFixed" false
+                let _cIsFixed = Helper.toDefault<bool> cIsFixed "cIsFixed" false
+                let _dIsFixed = Helper.toDefault<bool> dIsFixed "dIsFixed" false
+                let _vegaWeighted = Helper.toDefault<bool> vegaWeighted "vegaWeighted" false
+                let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let builder () = withMnemonic mnemonic (Fun.AbcdCalibration1
                                                             _t.cell 

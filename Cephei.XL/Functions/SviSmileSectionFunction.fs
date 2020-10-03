@@ -250,7 +250,7 @@ module SviSmileSectionFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _sviParameters = Helper.toCell<Generic.List<double>> sviParameters "sviParameters" 
-                let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let builder () = withMnemonic mnemonic (Fun.SviSmileSection1 
                                                             _d.cell 
                                                             _forward.cell 

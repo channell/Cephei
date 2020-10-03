@@ -126,7 +126,7 @@ module TabulatedGaussLegendreFunction =
 
             try
 
-                let _n = Helper.toCell<int> n "n" 
+                let _n = Helper.toDefault<int> n "n" 20
                 let builder () = withMnemonic mnemonic (Fun.TabulatedGaussLegendre 
                                                             _n.cell 
                                                        ) :> ICell

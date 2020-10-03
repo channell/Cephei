@@ -65,7 +65,7 @@ module IsraelFunction =
 
             try
 
-                let _m = Helper.toCell<Israel.Market> m "m" 
+                let _m = Helper.toDefault<Israel.Market> m "m" Israel.Market.Settlement
                 let builder () = withMnemonic mnemonic (Fun.Israel 
                                                             _m.cell 
                                                        ) :> ICell

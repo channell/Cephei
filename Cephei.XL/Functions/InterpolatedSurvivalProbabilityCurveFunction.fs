@@ -279,10 +279,10 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _probabilities = Helper.toCell<Generic.List<double>> probabilities "probabilities" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedSurvivalProbabilityCurve 
                                                             _dates.cell 
                                                             _probabilities.cell 

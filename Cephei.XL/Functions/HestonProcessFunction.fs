@@ -348,7 +348,7 @@ module HestonProcessFunction =
                 let _theta = Helper.toCell<double> theta "theta" 
                 let _sigma = Helper.toCell<double> sigma "sigma" 
                 let _rho = Helper.toCell<double> rho "rho" 
-                let _d = Helper.toCell<HestonProcess.Discretization> d "d" 
+                let _d = Helper.toDefault<HestonProcess.Discretization> d "d" HestonProcess.Discretization.QuadraticExponentialMartingale
                 let builder () = withMnemonic mnemonic (Fun.HestonProcess 
                                                             _riskFreeRate.cell 
                                                             _dividendYield.cell 

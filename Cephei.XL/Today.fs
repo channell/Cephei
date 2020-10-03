@@ -60,7 +60,6 @@ module Today =
             { mnemonic = "Today"
             ; creator = fun () -> new Today() :> ICell
             ; subscriber = Helper.subscriber format
-            ; source = "cell " + value.ToString()
-            ; hash = 0
-            } |> ignore 
-        Model.value "Today"
+            ; source = "(value DateTime.Today)"
+            ; hash = 0 
+            } 

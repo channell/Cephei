@@ -6,6 +6,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>..\bin\Debug\</OutputPath>
+    <NoWarn>49</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>49</NoWarn>
+    <OutputPath>..\bin\Release\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

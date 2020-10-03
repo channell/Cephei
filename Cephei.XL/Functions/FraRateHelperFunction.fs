@@ -74,8 +74,8 @@ module FraRateHelperFunction =
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
+                let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
+                let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper7 
                                                             _rate.cell 
                                                             _monthsToStart.cell 
@@ -150,8 +150,8 @@ module FraRateHelperFunction =
                 let _rate = Helper.toCell<double> rate "rate" 
                 let _periodToStart = Helper.toCell<Period> periodToStart "periodToStart" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
+                let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
+                let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper
                                                             _rate.cell 
                                                             _periodToStart.cell 
@@ -211,8 +211,8 @@ module FraRateHelperFunction =
                 let _rate = Helper.toHandle<Quote> rate "rate" 
                 let _periodToStart = Helper.toCell<Period> periodToStart "periodToStart" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
+                let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
+                let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper1
                                                             _rate.cell 
                                                             _periodToStart.cell 
@@ -287,8 +287,8 @@ module FraRateHelperFunction =
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
+                let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
+                let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper2
                                                             _rate.cell 
                                                             _periodToStart.cell 
@@ -378,8 +378,8 @@ module FraRateHelperFunction =
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
+                let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
+                let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper3
                                                             _rate.cell 
                                                             _periodToStart.cell 
@@ -454,8 +454,8 @@ module FraRateHelperFunction =
                 let _rate = Helper.toCell<double> rate "rate" 
                 let _monthsToStart = Helper.toCell<int> monthsToStart "monthsToStart" 
                 let _i = Helper.toCell<IborIndex> i "i" 
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
+                let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
+                let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper4
                                                             _rate.cell 
                                                             _monthsToStart.cell 
@@ -530,8 +530,8 @@ module FraRateHelperFunction =
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
+                let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
+                let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper6 
                                                             _rate.cell 
                                                             _monthsToStart.cell 
@@ -606,8 +606,8 @@ module FraRateHelperFunction =
                 let _rate = Helper.toHandle<Quote> rate "rate" 
                 let _monthsToStart = Helper.toCell<int> monthsToStart "monthsToStart" 
                 let _i = Helper.toCell<IborIndex> i "i" 
-                let _pillarChoice = Helper.toCell<Pillar.Choice> pillarChoice "pillarChoice" 
-                let _customPillarDate = Helper.toCell<Date> customPillarDate "customPillarDate" 
+                let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
+                let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder () = withMnemonic mnemonic (Fun.FraRateHelper5 
                                                             _rate.cell 
                                                             _monthsToStart.cell 

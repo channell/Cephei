@@ -118,10 +118,10 @@ module NumericHaganPricerFunction =
                 let _swaptionVol = Helper.toHandle<SwaptionVolatilityStructure> swaptionVol "swaptionVol" 
                 let _modelOfYieldCurve = Helper.toCell<GFunctionFactory.YieldCurveModel> modelOfYieldCurve "modelOfYieldCurve" 
                 let _meanReversion = Helper.toHandle<Quote> meanReversion "meanReversion" 
-                let _lowerLimit = Helper.toCell<double> lowerLimit "lowerLimit" 
-                let _upperLimit = Helper.toCell<double> upperLimit "upperLimit" 
-                let _precision = Helper.toCell<double> precision "precision" 
-                let _hardUpperLimit = Helper.toCell<double> hardUpperLimit "hardUpperLimit" 
+                let _lowerLimit = Helper.toDefault<double> lowerLimit "lowerLimit" 0.0
+                let _upperLimit = Helper.toDefault<double> upperLimit "upperLimit" 1.0
+                let _precision = Helper.toDefault<double> precision "precision" 1.0e-6
+                let _hardUpperLimit = Helper.toDefault<double> hardUpperLimit "hardUpperLimit" Double.MaxValue
                 let builder () = withMnemonic mnemonic (Fun.NumericHaganPricer 
                                                             _swaptionVol.cell 
                                                             _modelOfYieldCurve.cell 

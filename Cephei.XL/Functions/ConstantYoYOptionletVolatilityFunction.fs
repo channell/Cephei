@@ -74,8 +74,8 @@ module ConstantYoYOptionletVolatilityFunction =
                 let _observationLag = Helper.toCell<Period> observationLag "observationLag" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _indexIsInterpolated = Helper.toCell<bool> indexIsInterpolated "indexIsInterpolated" 
-                let _minStrike = Helper.toCell<double> minStrike "minStrike" 
-                let _maxStrike = Helper.toCell<double> maxStrike "maxStrike" 
+                let _minStrike = Helper.toDefault<double> minStrike "minStrike" -1.0
+                let _maxStrike = Helper.toDefault<double> maxStrike "maxStrike" 100.0
                 let builder () = withMnemonic mnemonic (Fun.ConstantYoYOptionletVolatility 
                                                             _v.cell 
                                                             _settlementDays.cell 

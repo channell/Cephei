@@ -239,11 +239,11 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _settlementDays = Helper.toCell<int> settlementDays "settlementDays" 
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
+                let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroCurve 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -302,9 +302,9 @@ module InterpolatedZeroCurveFunction =
             try
 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroCurve1 
                                                             _dayCounter.cell 
                                                             _jumps.cell 
@@ -360,9 +360,9 @@ module InterpolatedZeroCurveFunction =
 
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroCurve2 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 
@@ -426,10 +426,10 @@ module InterpolatedZeroCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _yields = Helper.toCell<Generic.List<double>> yields "yields" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
+                let _compounding = Helper.toDefault<Compounding> compounding "compounding" Compounding.Continuous
+                let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.Annual
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroCurve3 
                                                             _dates.cell 
                                                             _yields.cell 
@@ -499,10 +499,10 @@ module InterpolatedZeroCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _yields = Helper.toCell<Generic.List<double>> yields "yields" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
-                let _refDate = Helper.toCell<Date> refDate "refDate" 
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
+                let _compounding = Helper.toDefault<Compounding> compounding "compounding" Compounding.Continuous
+                let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.Annual
+                let _refDate = Helper.toDefault<Date> refDate "refDate" null
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroCurve4 
                                                             _dates.cell 
                                                             _yields.cell 
@@ -576,12 +576,12 @@ module InterpolatedZeroCurveFunction =
                 let _dates = Helper.toCell<Generic.List<Date>> dates "dates" 
                 let _yields = Helper.toCell<Generic.List<double>> yields "yields" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _calendar = Helper.toCell<Calendar> calendar "calendar" 
-                let _jumps = Helper.toCell<Generic.List<Handle<Quote>>> jumps "jumps" 
-                let _jumpDates = Helper.toCell<Generic.List<Date>> jumpDates "jumpDates" 
-                let _interpolator = Helper.toCell<'Interpolator> interpolator "interpolator" 
-                let _compounding = Helper.toCell<Compounding> compounding "compounding" 
-                let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _calendar = Helper.toDefault<Calendar> calendar "calendar" null
+                let _jumps = Helper.toDefault<Generic.List<Handle<Quote>>> jumps "jumps" null
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" null
+                let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
+                let _compounding = Helper.toDefault<Compounding> compounding "compounding" Compounding.Continuous
+                let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.Annual
                 let builder () = withMnemonic mnemonic (Fun.InterpolatedZeroCurve5 
                                                             _dates.cell 
                                                             _yields.cell 

@@ -100,7 +100,7 @@ module LmFixedVolatilityModelFunction =
                 let _LmFixedVolatilityModel = Helper.toCell<LmFixedVolatilityModel> lmfixedvolatilitymodel "LmFixedVolatilityModel"  
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmFixedVolatilityModel.cell :?> LmFixedVolatilityModelModel).Volatility
                                                             _i.cell 
                                                             _t.cell 
@@ -151,7 +151,7 @@ module LmFixedVolatilityModelFunction =
 
                 let _LmFixedVolatilityModel = Helper.toCell<LmFixedVolatilityModel> lmfixedvolatilitymodel "LmFixedVolatilityModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmFixedVolatilityModel.cell :?> LmFixedVolatilityModelModel).Volatility1
                                                             _t.cell 
                                                             _x.cell 
@@ -205,7 +205,7 @@ module LmFixedVolatilityModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
-                let _x = Helper.toCell<Vector> x "x" 
+                let _x = Helper.toDefault<Vector> x "x" null
                 let builder () = withMnemonic mnemonic ((_LmFixedVolatilityModel.cell :?> LmFixedVolatilityModelModel).IntegratedVariance
                                                             _i.cell 
                                                             _j.cell 

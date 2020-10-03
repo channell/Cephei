@@ -96,7 +96,7 @@ module FdmHullWhiteSolverFunction =
 
                 let _model = Helper.toHandle<HullWhite> model "model" 
                 let _solverDesc = Helper.toCell<FdmSolverDesc> solverDesc "solverDesc" 
-                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" 
+                let _schemeDesc = Helper.toDefault<FdmSchemeDesc> schemeDesc "schemeDesc" null
                 let builder () = withMnemonic mnemonic (Fun.FdmHullWhiteSolver 
                                                             _model.cell 
                                                             _solverDesc.cell 

@@ -310,9 +310,9 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapTenors = Helper.toCell<Generic.List<Period>> swapTenors "swapTenors" 
                 let _vols = Helper.toCell<Matrix> vols "vols" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _flatExtrapolation = Helper.toCell<bool> flatExtrapolation "flatExtrapolation" 
+                let _flatExtrapolation = Helper.toDefault<bool> flatExtrapolation "flatExtrapolation" false
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let _shifts = Helper.toCell<Matrix> shifts "shifts" 
+                let _shifts = Helper.toDefault<Matrix> shifts "shifts" null
                 let builder () = withMnemonic mnemonic (Fun.SwaptionVolatilityMatrix2
                                                             _calendar.cell 
                                                             _bdc.cell 
@@ -398,9 +398,9 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapTenors = Helper.toCell<Generic.List<Period>> swapTenors "swapTenors" 
                 let _vols = Helper.toCell<Generic.List<Generic.List<Handle<Quote>>>> vols "vols" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _flatExtrapolation = Helper.toCell<bool> flatExtrapolation "flatExtrapolation" 
+                let _flatExtrapolation = Helper.toDefault<bool> flatExtrapolation "flatExtrapolation" false
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let _shifts = Helper.toCell<Generic.List<Generic.List<double>>> shifts "shifts" 
+                let _shifts = Helper.toDefault<Generic.List<Generic.List<double>>> shifts "shifts" null
                 let builder () = withMnemonic mnemonic (Fun.SwaptionVolatilityMatrix3
                                                             _referenceDate.cell 
                                                             _calendar.cell 
@@ -489,9 +489,9 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapTenors = Helper.toCell<Generic.List<Period>> swapTenors "swapTenors" 
                 let _vols = Helper.toCell<Matrix> vols "vols" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _flatExtrapolation = Helper.toCell<bool> flatExtrapolation "flatExtrapolation" 
+                let _flatExtrapolation = Helper.toDefault<bool> flatExtrapolation "flatExtrapolation" false
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let _shifts = Helper.toCell<Matrix> shifts "shifts" 
+                let _shifts = Helper.toDefault<Matrix> shifts "shifts" null
                 let builder () = withMnemonic mnemonic (Fun.SwaptionVolatilityMatrix1
                                                             _referenceDate.cell 
                                                             _calendar.cell 
@@ -574,9 +574,9 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapTenors = Helper.toCell<Generic.List<Period>> swapTenors "swapTenors" 
                 let _vols = Helper.toCell<Matrix> vols "vols" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _flatExtrapolation = Helper.toCell<bool> flatExtrapolation "flatExtrapolation" 
+                let _flatExtrapolation = Helper.toDefault<bool> flatExtrapolation "flatExtrapolation" false
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let _shifts = Helper.toCell<Matrix> shifts "shifts" 
+                let _shifts = Helper.toDefault<Matrix> shifts "shifts" null
                 let builder () = withMnemonic mnemonic (Fun.SwaptionVolatilityMatrix
                                                             _today.cell 
                                                             _optionDates.cell 
@@ -656,9 +656,9 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapTenors = Helper.toCell<Generic.List<Period>> swapTenors "swapTenors" 
                 let _vols = Helper.toCell<Generic.List<Generic.List<Handle<Quote>>>> vols "vols" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let _flatExtrapolation = Helper.toCell<bool> flatExtrapolation "flatExtrapolation" 
+                let _flatExtrapolation = Helper.toDefault<bool> flatExtrapolation "flatExtrapolation" false
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
-                let _shifts = Helper.toCell<Generic.List<Generic.List<double>>> shifts "shifts" 
+                let _shifts = Helper.toDefault<Generic.List<Generic.List<double>>> shifts "shifts" null
                 let builder () = withMnemonic mnemonic (Fun.SwaptionVolatilityMatrix4 
                                                             _calendar.cell 
                                                             _bdc.cell 

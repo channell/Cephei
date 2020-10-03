@@ -279,7 +279,7 @@ module IndexedCashFlowFunction =
                 let _baseDate = Helper.toCell<Date> baseDate "baseDate" 
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
-                let _growthOnly = Helper.toCell<bool> growthOnly "growthOnly" 
+                let _growthOnly = Helper.toDefault<bool> growthOnly "growthOnly" false
                 let builder () = withMnemonic mnemonic (Fun.IndexedCashFlow 
                                                             _notional.cell 
                                                             _index.cell 

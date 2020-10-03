@@ -100,7 +100,7 @@ module AnalyticHestonEngineFunction =
             try
 
                 let _model = Helper.toCell<HestonModel> model "model" 
-                let _integrationOrder = Helper.toCell<int> integrationOrder "integrationOrder" 
+                let _integrationOrder = Helper.toDefault<int> integrationOrder "integrationOrder" 144
                 let builder () = withMnemonic mnemonic (Fun.AnalyticHestonEngine1 
                                                             _model.cell 
                                                             _integrationOrder.cell 

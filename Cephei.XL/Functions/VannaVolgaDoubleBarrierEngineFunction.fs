@@ -56,7 +56,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
 
                 let _VannaVolgaDoubleBarrierEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine> vannavolgadoublebarrierengine "VannaVolgaDoubleBarrierEngine"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let _series = Helper.toCell<int> series "series" 
+                let _series = Helper.toDefault<int> series "series" 5
                 let builder () = withMnemonic mnemonic ((_VannaVolgaDoubleBarrierEngine.cell :?> VannaVolgaDoubleBarrierEngineModel).GetOriginalEngine
                                                             _Process.cell 
                                                             _series.cell 
@@ -128,9 +128,9 @@ module VannaVolgaDoubleBarrierEngineFunction =
                 let _domesticTS = Helper.toHandle<YieldTermStructure> domesticTS "domesticTS" 
                 let _foreignTS = Helper.toHandle<YieldTermStructure> foreignTS "foreignTS" 
                 let _getEngine = Helper.toCell<VannaVolgaDoubleBarrierEngine.GetOriginalEngine> getEngine "getEngine" 
-                let _adaptVanDelta = Helper.toCell<bool> adaptVanDelta "adaptVanDelta" 
-                let _bsPriceWithSmile = Helper.toCell<double> bsPriceWithSmile "bsPriceWithSmile" 
-                let _series = Helper.toCell<int> series "series" 
+                let _adaptVanDelta = Helper.toDefault<bool> adaptVanDelta "adaptVanDelta" false
+                let _bsPriceWithSmile = Helper.toDefault<double> bsPriceWithSmile "bsPriceWithSmile" 0.0
+                let _series = Helper.toDefault<int> series "series" 5
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.VannaVolgaDoubleBarrierEngine 

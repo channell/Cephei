@@ -57,7 +57,7 @@ module MethodOfLinesSchemeFunction =
                 let _MethodOfLinesScheme = Helper.toCell<MethodOfLinesScheme> methodoflinesscheme "MethodOfLinesScheme"  
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
-                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
+                let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
                 let builder () = withMnemonic mnemonic ((_MethodOfLinesScheme.cell :?> MethodOfLinesSchemeModel).Factory
                                                             _L.cell 
                                                             _bcs.cell 
@@ -111,7 +111,7 @@ module MethodOfLinesSchemeFunction =
                 let _eps = Helper.toCell<double> eps "eps" 
                 let _relInitStepSize = Helper.toCell<double> relInitStepSize "relInitStepSize" 
                 let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
-                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
+                let _bcSet = Helper.toDefault<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" null
                 let builder () = withMnemonic mnemonic (Fun.MethodOfLinesScheme 
                                                             _eps.cell 
                                                             _relInitStepSize.cell 
@@ -239,7 +239,7 @@ module MethodOfLinesSchemeFunction =
                 let _MethodOfLinesScheme = Helper.toCell<MethodOfLinesScheme> methodoflinesscheme "MethodOfLinesScheme"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let _theta = Helper.toCell<double> theta "theta" 
+                let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let builder () = withMnemonic mnemonic ((_MethodOfLinesScheme.cell :?> MethodOfLinesSchemeModel).Step
                                                             _a.cell 
                                                             _t.cell 

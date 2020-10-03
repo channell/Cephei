@@ -51,7 +51,7 @@ module GaussLaguerreIntegrationFunction =
             try
 
                 let _n = Helper.toCell<int> n "n" 
-                let _s = Helper.toCell<double> s "s" 
+                let _s = Helper.toDefault<double> s "s" 0.0
                 let builder () = withMnemonic mnemonic (Fun.GaussLaguerreIntegration 
                                                             _n.cell 
                                                             _s.cell 

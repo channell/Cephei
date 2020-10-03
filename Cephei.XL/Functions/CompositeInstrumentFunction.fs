@@ -54,7 +54,7 @@ module CompositeInstrumentFunction =
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _instrument = Helper.toCell<Instrument> instrument "instrument" 
-                let _multiplier = Helper.toCell<double> multiplier "multiplier" 
+                let _multiplier = Helper.toDefault<double> multiplier "multiplier" 1.0
                 let builder () = withMnemonic mnemonic ((_CompositeInstrument.cell :?> CompositeInstrumentModel).Add
                                                             _instrument.cell 
                                                             _multiplier.cell 
@@ -139,7 +139,7 @@ module CompositeInstrumentFunction =
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _instrument = Helper.toCell<Instrument> instrument "instrument" 
-                let _multiplier = Helper.toCell<double> multiplier "multiplier" 
+                let _multiplier = Helper.toDefault<double> multiplier "multiplier" 1.0
                 let builder () = withMnemonic mnemonic ((_CompositeInstrument.cell :?> CompositeInstrumentModel).Subtract
                                                             _instrument.cell 
                                                             _multiplier.cell 

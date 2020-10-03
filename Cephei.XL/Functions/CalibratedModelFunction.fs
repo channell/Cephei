@@ -64,9 +64,9 @@ module CalibratedModelFunction =
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
-                let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
-                let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
+                let _additionalConstraint = Helper.toDefault<Constraint> additionalConstraint "additionalConstraint" null
+                let _weights = Helper.toDefault<Generic.List<double>> weights "weights" null
+                let _fixParameters = Helper.toDefault<Generic.List<bool>> fixParameters "fixParameters" null
                 let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 

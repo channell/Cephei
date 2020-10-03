@@ -60,11 +60,11 @@ module FdHullWhiteSwaptionEngineFunction =
             try
 
                 let _model = Helper.toCell<HullWhite> model "model" 
-                let _tGrid = Helper.toCell<int> tGrid "tGrid" 
-                let _xGrid = Helper.toCell<int> xGrid "xGrid" 
-                let _dampingSteps = Helper.toCell<int> dampingSteps "dampingSteps" 
-                let _invEps = Helper.toCell<double> invEps "invEps" 
-                let _schemeDesc = Helper.toCell<FdmSchemeDesc> schemeDesc "schemeDesc" 
+                let _tGrid = Helper.toDefault<int> tGrid "tGrid" 100
+                let _xGrid = Helper.toDefault<int> xGrid "xGrid" 100
+                let _dampingSteps = Helper.toDefault<int> dampingSteps "dampingSteps" 0
+                let _invEps = Helper.toDefault<double> invEps "invEps" 1e-5
+                let _schemeDesc = Helper.toDefault<FdmSchemeDesc> schemeDesc "schemeDesc" null
                 let builder () = withMnemonic mnemonic (Fun.FdHullWhiteSwaptionEngine 
                                                             _model.cell 
                                                             _tGrid.cell 

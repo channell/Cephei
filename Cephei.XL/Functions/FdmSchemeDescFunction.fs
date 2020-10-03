@@ -349,8 +349,8 @@ module FdmSchemeDescFunction =
             try
 
                 let _FdmSchemeDesc = Helper.toCell<FdmSchemeDesc> fdmschemedesc "FdmSchemeDesc"  
-                let _eps = Helper.toCell<double> eps "eps" 
-                let _relInitStepSize = Helper.toCell<double> relInitStepSize "relInitStepSize" 
+                let _eps = Helper.toDefault<double> eps "eps" 0.001
+                let _relInitStepSize = Helper.toDefault<double> relInitStepSize "relInitStepSize" 0.01
                 let builder () = withMnemonic mnemonic ((_FdmSchemeDesc.cell :?> FdmSchemeDescModel).MethodOfLines
                                                             _eps.cell 
                                                             _relInitStepSize.cell 

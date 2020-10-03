@@ -96,7 +96,7 @@ module YoYInflationIndexFunction =
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
+                let _forecastTodaysFixing = Helper.toDefault<bool> forecastTodaysFixing "forecastTodaysFixing" false
                 let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 

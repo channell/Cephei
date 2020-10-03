@@ -76,12 +76,12 @@ module FdmBlackScholesMesherFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _xMinConstraint = Helper.toNullable<double> xMinConstraint "xMinConstraint"
                 let _xMaxConstraint = Helper.toNullable<double> xMaxConstraint "xMaxConstraint"
-                let _eps = Helper.toCell<double> eps "eps" 
-                let _scaleFactor = Helper.toCell<double> scaleFactor "scaleFactor" 
-                let _cPoint = Helper.toCell<Pair<Nullable<double>,Nullable<double>>> cPoint "cPoint" 
-                let _dividendSchedule = Helper.toCell<DividendSchedule> dividendSchedule "dividendSchedule" 
-                let _fdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmQuantoHelper "fdmQuantoHelper" 
-                let _spotAdjustment = Helper.toCell<double> spotAdjustment "spotAdjustment" 
+                let _eps = Helper.toDefault<double> eps "eps" 0.0001
+                let _scaleFactor = Helper.toDefault<double> scaleFactor "scaleFactor" 1.5
+                let _cPoint = Helper.toDefault<Pair<Nullable<double>,Nullable<double>>> cPoint "cPoint" null
+                let _dividendSchedule = Helper.toDefault<DividendSchedule> dividendSchedule "dividendSchedule" null
+                let _fdmQuantoHelper = Helper.toDefault<FdmQuantoHelper> fdmQuantoHelper "fdmQuantoHelper" null
+                let _spotAdjustment = Helper.toDefault<double> spotAdjustment "spotAdjustment" 0.0
                 let builder () = withMnemonic mnemonic (Fun.FdmBlackScholesMesher 
                                                             _size.cell 
                                                             _Process.cell 

@@ -56,11 +56,11 @@ module CrankNicolsonSchemeFunction =
 
             try
 
-                let _theta = Helper.toCell<double> theta "theta" 
+                let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let _map = Helper.toCell<FdmLinearOpComposite> map "map" 
-                let _bcSet = Helper.toCell<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" 
-                let _relTol = Helper.toCell<double> relTol "relTol" 
-                let _solverType = Helper.toCell<ImplicitEulerScheme.SolverType> solverType "solverType" 
+                let _bcSet = Helper.toDefault<Generic.List<BoundaryCondition<FdmLinearOp>>> bcSet "bcSet" null
+                let _relTol = Helper.toDefault<double> relTol "relTol" 1E-8
+                let _solverType = Helper.toDefault<ImplicitEulerScheme.SolverType> solverType "solverType" ImplicitEulerScheme.SolverType.BiCGstab
                 let builder () = withMnemonic mnemonic (Fun.CrankNicolsonScheme 
                                                             _theta.cell 
                                                             _map.cell 
@@ -149,7 +149,7 @@ module CrankNicolsonSchemeFunction =
                 let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme"  
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
-                let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
+                let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
                 let builder () = withMnemonic mnemonic ((_CrankNicolsonScheme.cell :?> CrankNicolsonSchemeModel).Factory
                                                             _L.cell 
                                                             _bcs.cell 
@@ -281,7 +281,7 @@ module CrankNicolsonSchemeFunction =
                 let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let _theta = Helper.toCell<double> theta "theta" 
+                let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let builder () = withMnemonic mnemonic ((_CrankNicolsonScheme.cell :?> CrankNicolsonSchemeModel).Step
                                                             _a.cell 
                                                             _t.cell 

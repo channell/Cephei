@@ -57,7 +57,7 @@ module AnalyticH1HWEngineFunction =
                 let _model = Helper.toCell<HestonModel> model "model" 
                 let _hullWhiteModel = Helper.toCell<HullWhite> hullWhiteModel "hullWhiteModel" 
                 let _rhoSr = Helper.toCell<double> rhoSr "rhoSr" 
-                let _integrationOrder = Helper.toCell<int> integrationOrder "integrationOrder" 
+                let _integrationOrder = Helper.toDefault<int> integrationOrder "integrationOrder" 144
                 let builder () = withMnemonic mnemonic (Fun.AnalyticH1HWEngine 
                                                             _model.cell 
                                                             _hullWhiteModel.cell 

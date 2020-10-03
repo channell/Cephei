@@ -84,7 +84,7 @@ module MixedSchemeFunction =
             try
 
                 let _L = Helper.toCell<'Operator> L "L" 
-                let _theta = Helper.toCell<double> theta "theta" 
+                let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let _bcs = Helper.toCell<Generic.List<BoundaryCondition<IOperator>>> bcs "bcs" 
                 let builder () = withMnemonic mnemonic (Fun.MixedScheme1 
                                                             _L.cell 
@@ -179,7 +179,7 @@ module MixedSchemeFunction =
                 let _MixedScheme = Helper.toCell<MixedScheme> mixedscheme "MixedScheme"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let _theta = Helper.toCell<double> theta "theta" 
+                let _theta = Helper.toDefault<double> theta "theta" 1.0
                 let builder () = withMnemonic mnemonic ((_MixedScheme.cell :?> MixedSchemeModel).Step
                                                             _o.cell 
                                                             _t.cell 

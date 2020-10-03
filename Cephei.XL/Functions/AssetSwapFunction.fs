@@ -70,16 +70,16 @@ module AssetSwapFunction =
 
             try
 
-                let _parAssetSwap = Helper.toCell<bool> parAssetSwap "parAssetSwap" 
+                let _parAssetSwap = Helper.toDefault<bool> parAssetSwap "parAssetSwap" true
                 let _bond = Helper.toCell<Bond> bond "bond" 
                 let _bondCleanPrice = Helper.toCell<double> bondCleanPrice "bondCleanPrice" 
                 let _nonParRepayment = Helper.toCell<double> nonParRepayment "nonParRepayment" 
                 let _gearing = Helper.toCell<double> gearing "gearing" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
-                let _spread = Helper.toCell<double> spread "spread" 
-                let _floatingDayCount = Helper.toCell<DayCounter> floatingDayCount "floatingDayCount" 
-                let _dealMaturity = Helper.toCell<Date> dealMaturity "dealMaturity" 
-                let _payBondCoupon = Helper.toCell<bool> payBondCoupon "payBondCoupon" 
+                let _spread = Helper.toDefault<double> spread "spread" 0.0
+                let _floatingDayCount = Helper.toDefault<DayCounter> floatingDayCount "floatingDayCount" null
+                let _dealMaturity = Helper.toDefault<Date> dealMaturity "dealMaturity" null
+                let _payBondCoupon = Helper.toDefault<bool> payBondCoupon "payBondCoupon" false
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.AssetSwap 
@@ -169,14 +169,14 @@ module AssetSwapFunction =
 
             try
 
-                let _payBondCoupon = Helper.toCell<bool> payBondCoupon "payBondCoupon" 
+                let _payBondCoupon = Helper.toDefault<bool> payBondCoupon "payBondCoupon" false
                 let _bond = Helper.toCell<Bond> bond "bond" 
                 let _bondCleanPrice = Helper.toCell<double> bondCleanPrice "bondCleanPrice" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
-                let _spread = Helper.toCell<double> spread "spread" 
-                let _floatSchedule = Helper.toCell<Schedule> floatSchedule "floatSchedule" 
-                let _floatingDayCount = Helper.toCell<DayCounter> floatingDayCount "floatingDayCount" 
-                let _parAssetSwap = Helper.toCell<bool> parAssetSwap "parAssetSwap" 
+                let _spread = Helper.toDefault<double> spread "spread" 0.0
+                let _floatSchedule = Helper.toDefault<Schedule> floatSchedule "floatSchedule" null
+                let _floatingDayCount = Helper.toDefault<DayCounter> floatingDayCount "floatingDayCount" null
+                let _parAssetSwap = Helper.toDefault<bool> parAssetSwap "parAssetSwap" true
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder () = withMnemonic mnemonic (Fun.AssetSwap1 

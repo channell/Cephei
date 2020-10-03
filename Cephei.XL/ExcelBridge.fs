@@ -71,7 +71,10 @@ type ValueRTD ()  =
             if not (listener = (null :> IDisposable)) then 
                 _subscriptions.[kv] <- listener
                 let cell = Model.cell mnemonic
-                cell.Box
+                if Model.hasRange mnemonic layout then
+                    mnemonic :> obj
+                else
+                    cell.Box
             else
                 "#NotValue" :> obj
 

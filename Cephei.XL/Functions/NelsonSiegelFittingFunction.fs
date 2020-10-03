@@ -86,8 +86,8 @@ module NelsonSiegelFittingFunction =
 
             try
 
-                let _weights = Helper.toCell<Vector> weights "weights" 
-                let _optimizationMethod = Helper.toCell<OptimizationMethod> optimizationMethod "optimizationMethod" 
+                let _weights = Helper.toDefault<Vector> weights "weights" null
+                let _optimizationMethod = Helper.toDefault<OptimizationMethod> optimizationMethod "optimizationMethod" null
                 let builder () = withMnemonic mnemonic (Fun.NelsonSiegelFitting 
                                                             _weights.cell 
                                                             _optimizationMethod.cell 

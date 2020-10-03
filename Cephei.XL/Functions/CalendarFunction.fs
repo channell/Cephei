@@ -132,7 +132,7 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let _c = Helper.toCell<BusinessDayConvention> c "c" 
+                let _c = Helper.toDefault<BusinessDayConvention> c "c" BusinessDayConvention.Following
                 let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).Adjust
                                                             _d.cell 
                                                             _c.cell 
@@ -188,8 +188,8 @@ module CalendarFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _n = Helper.toCell<int> n "n" 
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
-                let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
+                let _c = Helper.toDefault<BusinessDayConvention> c "c" BusinessDayConvention.Following
+                let _endOfMonth = Helper.toDefault<bool> endOfMonth "endOfMonth" false
                 let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).Advance1
                                                             _d.cell 
                                                             _n.cell 
@@ -251,8 +251,8 @@ module CalendarFunction =
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _p = Helper.toCell<Period> p "p" 
-                let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
+                let _c = Helper.toDefault<BusinessDayConvention> c "c" BusinessDayConvention.Following
+                let _endOfMonth = Helper.toDefault<bool> endOfMonth "endOfMonth" false
                 let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).Advance
                                                             _d.cell 
                                                             _p.cell 
@@ -311,8 +311,8 @@ module CalendarFunction =
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _from = Helper.toCell<Date> from "from" 
                 let _To = Helper.toCell<Date> To "To" 
-                let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
-                let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
+                let _includeFirst = Helper.toDefault<bool> includeFirst "includeFirst" true
+                let _includeLast = Helper.toDefault<bool> includeLast "includeLast" false
                 let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 

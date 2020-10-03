@@ -152,7 +152,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _UnnamedParameter1 = Helper.toCell<double> UnnamedParameter1 "UnnamedParameter1" 
-                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_OrnsteinUhlenbeckProcess.cell :?> OrnsteinUhlenbeckProcessModel).Expectation
                                                             _UnnamedParameter1.cell 
@@ -242,8 +242,8 @@ module OrnsteinUhlenbeckProcessFunction =
 
                 let _speed = Helper.toCell<double> speed "speed" 
                 let _vol = Helper.toCell<double> vol "vol" 
-                let _x0 = Helper.toCell<double> x0 "x0" 
-                let _level = Helper.toCell<double> level "level" 
+                let _x0 = Helper.toDefault<double> x0 "x0" 0.0
+                let _level = Helper.toDefault<double> level "level" 0.0
                 let builder () = withMnemonic mnemonic (Fun.OrnsteinUhlenbeckProcess 
                                                             _speed.cell 
                                                             _vol.cell 
@@ -333,7 +333,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _t = Helper.toCell<double> t "t" 
-                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _dt = Helper.toCell<double> dt "dt" 
                 let builder () = withMnemonic mnemonic ((_OrnsteinUhlenbeckProcess.cell :?> OrnsteinUhlenbeckProcessModel).StdDeviation
                                                             _t.cell 
@@ -558,7 +558,7 @@ module OrnsteinUhlenbeckProcessFunction =
             try
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
-                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _dx = Helper.toCell<double> dx "dx" 
                 let builder () = withMnemonic mnemonic ((_OrnsteinUhlenbeckProcess.cell :?> OrnsteinUhlenbeckProcessModel).Apply
                                                             _x0.cell 
@@ -611,7 +611,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
-                let _x0 = Helper.toCell<Vector> x0 "x0" 
+                let _x0 = Helper.toCell<Vector> x0 "x0"
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<Vector> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_OrnsteinUhlenbeckProcess.cell :?> OrnsteinUhlenbeckProcessModel).Evolve
@@ -671,7 +671,7 @@ module OrnsteinUhlenbeckProcessFunction =
 
                 let _OrnsteinUhlenbeckProcess = Helper.toCell<OrnsteinUhlenbeckProcess> ornsteinuhlenbeckprocess "OrnsteinUhlenbeckProcess"  
                 let _t0 = Helper.toCell<double> t0 "t0" 
-                let _x0 = Helper.toCell<double> x0 "x0" 
+                let _x0 = Helper.toDefault<double> x0 "x0" 0.0
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<double> dw "dw" 
                 let builder () = withMnemonic mnemonic ((_OrnsteinUhlenbeckProcess.cell :?> OrnsteinUhlenbeckProcessModel).Evolve1
