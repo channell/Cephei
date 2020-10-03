@@ -61,7 +61,7 @@ module FDDividendEngineShiftScaleFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((_FDDividendEngineShiftScale.cell :?> FDDividendEngineShiftScaleModel).Factory2
+                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).Factory2
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -176,7 +176,7 @@ module FDDividendEngineShiftScaleFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((_FDDividendEngineShiftScale.cell :?> FDDividendEngineShiftScaleModel).Factory
+                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -228,7 +228,7 @@ module FDDividendEngineShiftScaleFunction =
 
                 let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
-                let builder () = withMnemonic mnemonic ((_FDDividendEngineShiftScale.cell :?> FDDividendEngineShiftScaleModel).SetStepCondition
+                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (o : FDDividendEngineShiftScale) (l:string) = o.ToString() :> obj
@@ -267,7 +267,7 @@ module FDDividendEngineShiftScaleFunction =
             try
 
                 let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEngineShiftScale.cell :?> FDDividendEngineShiftScaleModel).EnsureStrikeInGrid
+                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDDividendEngineShiftScale) (l:string) = o.ToString() :> obj
 
@@ -303,7 +303,7 @@ module FDDividendEngineShiftScaleFunction =
             try
 
                 let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEngineShiftScale.cell :?> FDDividendEngineShiftScaleModel).GetResidualTime
+                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -339,7 +339,7 @@ module FDDividendEngineShiftScaleFunction =
             try
 
                 let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEngineShiftScale.cell :?> FDDividendEngineShiftScaleModel).Grid
+                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -375,7 +375,7 @@ module FDDividendEngineShiftScaleFunction =
             try
 
                 let _FDDividendEngineShiftScale = Helper.toCell<FDDividendEngineShiftScale> fddividendengineshiftscale "FDDividendEngineShiftScale"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEngineShiftScale.cell :?> FDDividendEngineShiftScaleModel).IntrinsicValues_
+                let builder () = withMnemonic mnemonic ((FDDividendEngineShiftScaleModel.Cast _FDDividendEngineShiftScale.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 

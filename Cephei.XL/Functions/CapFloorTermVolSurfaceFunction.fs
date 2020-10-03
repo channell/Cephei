@@ -343,7 +343,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).MaxDate
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -379,7 +379,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).MaxStrike
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -415,7 +415,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).MinStrike
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -451,7 +451,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).OptionDates
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -487,7 +487,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).OptionTenors
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionTenors
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -523,7 +523,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).OptionTimes
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -559,7 +559,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).Strikes
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Strikes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -595,7 +595,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).Update
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Update
                                                        ) :> ICell
                 let format (o : CapFloorTermVolSurface) (l:string) = o.ToString() :> obj
 
@@ -640,7 +640,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _length = Helper.toCell<Period> length "length" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).Volatility
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Volatility
                                                             _length.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -694,7 +694,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).Volatility1
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Volatility1
                                                             _t.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -748,7 +748,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _End = Helper.toCell<Date> End "End" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).Volatility2
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Volatility2
                                                             _End.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -793,7 +793,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -832,7 +832,7 @@ module CapFloorTermVolSurfaceFunction =
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).OptionDateFromTenor
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -871,7 +871,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).Calendar
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -907,7 +907,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).DayCounter
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -943,7 +943,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).MaxTime
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -979,7 +979,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).ReferenceDate
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1015,7 +1015,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).SettlementDays
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1054,7 +1054,7 @@ module CapFloorTermVolSurfaceFunction =
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).TimeFromReference
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1093,7 +1093,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1132,7 +1132,7 @@ module CapFloorTermVolSurfaceFunction =
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CapFloorTermVolSurface) (l:string) = o.ToString() :> obj
@@ -1174,7 +1174,7 @@ module CapFloorTermVolSurfaceFunction =
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CapFloorTermVolSurface) (l:string) = o.ToString() :> obj
@@ -1213,7 +1213,7 @@ module CapFloorTermVolSurfaceFunction =
             try
 
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolSurface.cell :?> CapFloorTermVolSurfaceModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

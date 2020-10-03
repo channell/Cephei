@@ -104,7 +104,7 @@ module JapanFunction =
             try
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).AddedHolidays
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -143,7 +143,7 @@ module JapanFunction =
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).AddHoliday
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Japan) (l:string) = o.ToString() :> obj
@@ -188,7 +188,7 @@ module JapanFunction =
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).Adjust
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -245,7 +245,7 @@ module JapanFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).Advance1
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -308,7 +308,7 @@ module JapanFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).Advance
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -368,7 +368,7 @@ module JapanFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).BusinessDaysBetween
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -416,7 +416,7 @@ module JapanFunction =
             try
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).Calendar
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -452,7 +452,7 @@ module JapanFunction =
             try
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).Empty
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -491,7 +491,7 @@ module JapanFunction =
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -533,7 +533,7 @@ module JapanFunction =
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).Equals
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -575,7 +575,7 @@ module JapanFunction =
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).IsBusinessDay
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -617,7 +617,7 @@ module JapanFunction =
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).IsEndOfMonth
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -659,7 +659,7 @@ module JapanFunction =
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).IsHoliday
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -701,7 +701,7 @@ module JapanFunction =
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).IsWeekend
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -742,7 +742,7 @@ module JapanFunction =
             try
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).Name
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -778,7 +778,7 @@ module JapanFunction =
             try
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).RemovedHolidays
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -817,7 +817,7 @@ module JapanFunction =
 
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Japan.cell :?> JapanModel).RemoveHoliday
+                let builder () = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Japan) (l:string) = o.ToString() :> obj

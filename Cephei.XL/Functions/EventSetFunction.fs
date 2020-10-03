@@ -104,7 +104,7 @@ module EventSetFunction =
                 let _EventSet = Helper.toCell<EventSet> eventset "EventSet"  
                 let _start = Helper.toCell<Date> start "start" 
                 let _End = Helper.toCell<Date> End "End" 
-                let builder () = withMnemonic mnemonic ((_EventSet.cell :?> EventSetModel).NewSimulation
+                let builder () = withMnemonic mnemonic ((EventSetModel.Cast _EventSet.cell).NewSimulation
                                                             _start.cell 
                                                             _End.cell 
                                                        ) :> ICell

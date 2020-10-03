@@ -61,7 +61,7 @@ module FDDividendEngineFunction =
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
                 let _timeDependent = Helper.toDefault<bool> timeDependent "timeDependent" false
-                let builder () = withMnemonic mnemonic ((_FDDividendEngine.cell :?> FDDividendEngineModel).Factory2
+                let builder () = withMnemonic mnemonic ((FDDividendEngineModel.Cast _FDDividendEngine.cell).Factory2
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -207,7 +207,7 @@ module FDDividendEngineFunction =
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
                 let _timeDependent = Helper.toDefault<bool> timeDependent "timeDependent" false
-                let builder () = withMnemonic mnemonic ((_FDDividendEngine.cell :?> FDDividendEngineModel).Factory
+                let builder () = withMnemonic mnemonic ((FDDividendEngineModel.Cast _FDDividendEngine.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -259,7 +259,7 @@ module FDDividendEngineFunction =
 
                 let _FDDividendEngine = Helper.toCell<FDDividendEngine> fddividendengine "FDDividendEngine"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
-                let builder () = withMnemonic mnemonic ((_FDDividendEngine.cell :?> FDDividendEngineModel).SetStepCondition
+                let builder () = withMnemonic mnemonic ((FDDividendEngineModel.Cast _FDDividendEngine.cell).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (o : FDDividendEngine) (l:string) = o.ToString() :> obj
@@ -298,7 +298,7 @@ module FDDividendEngineFunction =
             try
 
                 let _FDDividendEngine = Helper.toCell<FDDividendEngine> fddividendengine "FDDividendEngine"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEngine.cell :?> FDDividendEngineModel).EnsureStrikeInGrid
+                let builder () = withMnemonic mnemonic ((FDDividendEngineModel.Cast _FDDividendEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDDividendEngine) (l:string) = o.ToString() :> obj
 
@@ -334,7 +334,7 @@ module FDDividendEngineFunction =
             try
 
                 let _FDDividendEngine = Helper.toCell<FDDividendEngine> fddividendengine "FDDividendEngine"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEngine.cell :?> FDDividendEngineModel).GetResidualTime
+                let builder () = withMnemonic mnemonic ((FDDividendEngineModel.Cast _FDDividendEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -370,7 +370,7 @@ module FDDividendEngineFunction =
             try
 
                 let _FDDividendEngine = Helper.toCell<FDDividendEngine> fddividendengine "FDDividendEngine"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEngine.cell :?> FDDividendEngineModel).Grid
+                let builder () = withMnemonic mnemonic ((FDDividendEngineModel.Cast _FDDividendEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -406,7 +406,7 @@ module FDDividendEngineFunction =
             try
 
                 let _FDDividendEngine = Helper.toCell<FDDividendEngine> fddividendengine "FDDividendEngine"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEngine.cell :?> FDDividendEngineModel).IntrinsicValues_
+                let builder () = withMnemonic mnemonic ((FDDividendEngineModel.Cast _FDDividendEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 

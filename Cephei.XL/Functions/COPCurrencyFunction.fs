@@ -80,7 +80,7 @@ module COPCurrencyFunction =
             try
 
                 let _COPCurrency = Helper.toCell<COPCurrency> copcurrency "COPCurrency"  
-                let builder () = withMnemonic mnemonic ((_COPCurrency.cell :?> COPCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((COPCurrencyModel.Cast _COPCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module COPCurrencyFunction =
             try
 
                 let _COPCurrency = Helper.toCell<COPCurrency> copcurrency "COPCurrency"  
-                let builder () = withMnemonic mnemonic ((_COPCurrency.cell :?> COPCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((COPCurrencyModel.Cast _COPCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module COPCurrencyFunction =
 
                 let _COPCurrency = Helper.toCell<COPCurrency> copcurrency "COPCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_COPCurrency.cell :?> COPCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((COPCurrencyModel.Cast _COPCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module COPCurrencyFunction =
             try
 
                 let _COPCurrency = Helper.toCell<COPCurrency> copcurrency "COPCurrency"  
-                let builder () = withMnemonic mnemonic ((_COPCurrency.cell :?> COPCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((COPCurrencyModel.Cast _COPCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module COPCurrencyFunction =
             try
 
                 let _COPCurrency = Helper.toCell<COPCurrency> copcurrency "COPCurrency"  
-                let builder () = withMnemonic mnemonic ((_COPCurrency.cell :?> COPCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((COPCurrencyModel.Cast _COPCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module COPCurrencyFunction =
             try
 
                 let _COPCurrency = Helper.toCell<COPCurrency> copcurrency "COPCurrency"  
-                let builder () = withMnemonic mnemonic ((_COPCurrency.cell :?> COPCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((COPCurrencyModel.Cast _COPCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module COPCurrencyFunction =
             try
 
                 let _COPCurrency = Helper.toCell<COPCurrency> copcurrency "COPCurrency"  
-                let builder () = withMnemonic mnemonic ((_COPCurrency.cell :?> COPCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((COPCurrencyModel.Cast _COPCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module COPCurrencyFunction =
             try
 
                 let _COPCurrency = Helper.toCell<COPCurrency> copcurrency "COPCurrency"  
-                let builder () = withMnemonic mnemonic ((_COPCurrency.cell :?> COPCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((COPCurrencyModel.Cast _COPCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module COPCurrencyFunction =
             try
 
                 let _COPCurrency = Helper.toCell<COPCurrency> copcurrency "COPCurrency"  
-                let builder () = withMnemonic mnemonic ((_COPCurrency.cell :?> COPCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((COPCurrencyModel.Cast _COPCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module COPCurrencyFunction =
             try
 
                 let _COPCurrency = Helper.toCell<COPCurrency> copcurrency "COPCurrency"  
-                let builder () = withMnemonic mnemonic ((_COPCurrency.cell :?> COPCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((COPCurrencyModel.Cast _COPCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module COPCurrencyFunction =
             try
 
                 let _COPCurrency = Helper.toCell<COPCurrency> copcurrency "COPCurrency"  
-                let builder () = withMnemonic mnemonic ((_COPCurrency.cell :?> COPCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((COPCurrencyModel.Cast _COPCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module COPCurrencyFunction =
             try
 
                 let _COPCurrency = Helper.toCell<COPCurrency> copcurrency "COPCurrency"  
-                let builder () = withMnemonic mnemonic ((_COPCurrency.cell :?> COPCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((COPCurrencyModel.Cast _COPCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

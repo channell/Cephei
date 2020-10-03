@@ -92,7 +92,7 @@ module BFGSFunction =
                 let _BFGS = Helper.toCell<BFGS> bfgs "BFGS"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((_BFGS.cell :?> BFGSModel).Minimize
+                let builder () = withMnemonic mnemonic ((BFGSModel.Cast _BFGS.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell

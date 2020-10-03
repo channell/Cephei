@@ -58,7 +58,7 @@ module FDDividendEuropeanEngineFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
-                let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).Factory
+                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -193,7 +193,7 @@ module FDDividendEuropeanEngineFunction =
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
@@ -232,7 +232,7 @@ module FDDividendEuropeanEngineFunction =
             try
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).Reset
+                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
 
@@ -271,7 +271,7 @@ module FDDividendEuropeanEngineFunction =
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
@@ -310,7 +310,7 @@ module FDDividendEuropeanEngineFunction =
             try
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).Update
+                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).Update
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
 
@@ -346,7 +346,7 @@ module FDDividendEuropeanEngineFunction =
             try
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).EnsureStrikeInGrid
+                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDDividendEuropeanEngine) (l:string) = o.ToString() :> obj
 
@@ -382,7 +382,7 @@ module FDDividendEuropeanEngineFunction =
             try
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).GetResidualTime
+                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -418,7 +418,7 @@ module FDDividendEuropeanEngineFunction =
             try
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).Grid
+                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -454,7 +454,7 @@ module FDDividendEuropeanEngineFunction =
             try
 
                 let _FDDividendEuropeanEngine = Helper.toCell<FDDividendEuropeanEngine> fddividendeuropeanengine "FDDividendEuropeanEngine"  
-                let builder () = withMnemonic mnemonic ((_FDDividendEuropeanEngine.cell :?> FDDividendEuropeanEngineModel).IntrinsicValues_
+                let builder () = withMnemonic mnemonic ((FDDividendEuropeanEngineModel.Cast _FDDividendEuropeanEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 

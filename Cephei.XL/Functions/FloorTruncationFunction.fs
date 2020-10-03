@@ -129,7 +129,7 @@ module FloorTruncationFunction =
             try
 
                 let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
-                let builder () = withMnemonic mnemonic ((_FloorTruncation.cell :?> FloorTruncationModel).Digit
+                let builder () = withMnemonic mnemonic ((FloorTruncationModel.Cast _FloorTruncation.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -165,7 +165,7 @@ module FloorTruncationFunction =
             try
 
                 let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
-                let builder () = withMnemonic mnemonic ((_FloorTruncation.cell :?> FloorTruncationModel).GetType
+                let builder () = withMnemonic mnemonic ((FloorTruncationModel.Cast _FloorTruncation.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -201,7 +201,7 @@ module FloorTruncationFunction =
             try
 
                 let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
-                let builder () = withMnemonic mnemonic ((_FloorTruncation.cell :?> FloorTruncationModel).Precision
+                let builder () = withMnemonic mnemonic ((FloorTruncationModel.Cast _FloorTruncation.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -240,7 +240,7 @@ module FloorTruncationFunction =
 
                 let _FloorTruncation = Helper.toCell<FloorTruncation> floortruncation "FloorTruncation"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((_FloorTruncation.cell :?> FloorTruncationModel).Round
+                let builder () = withMnemonic mnemonic ((FloorTruncationModel.Cast _FloorTruncation.cell).Round
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

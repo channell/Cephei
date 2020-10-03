@@ -155,7 +155,7 @@ module FdmBlackScholesMesherFunction =
 
                 let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_FdmBlackScholesMesher.cell :?> FdmBlackScholesMesherModel).Dminus
+                let builder () = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Dminus
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -197,7 +197,7 @@ module FdmBlackScholesMesherFunction =
 
                 let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_FdmBlackScholesMesher.cell :?> FdmBlackScholesMesherModel).Dplus
+                let builder () = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Dplus
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -239,7 +239,7 @@ module FdmBlackScholesMesherFunction =
 
                 let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_FdmBlackScholesMesher.cell :?> FdmBlackScholesMesherModel).Location
+                let builder () = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Location
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -278,7 +278,7 @@ module FdmBlackScholesMesherFunction =
             try
 
                 let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
-                let builder () = withMnemonic mnemonic ((_FdmBlackScholesMesher.cell :?> FdmBlackScholesMesherModel).Locations
+                let builder () = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Locations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -314,7 +314,7 @@ module FdmBlackScholesMesherFunction =
             try
 
                 let _FdmBlackScholesMesher = Helper.toCell<FdmBlackScholesMesher> fdmblackscholesmesher "FdmBlackScholesMesher"  
-                let builder () = withMnemonic mnemonic ((_FdmBlackScholesMesher.cell :?> FdmBlackScholesMesherModel).Size
+                let builder () = withMnemonic mnemonic ((FdmBlackScholesMesherModel.Cast _FdmBlackScholesMesher.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

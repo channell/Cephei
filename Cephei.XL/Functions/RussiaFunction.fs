@@ -130,7 +130,7 @@ module RussiaFunction =
             try
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).AddedHolidays
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -169,7 +169,7 @@ module RussiaFunction =
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).AddHoliday
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Russia) (l:string) = o.ToString() :> obj
@@ -214,7 +214,7 @@ module RussiaFunction =
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).Adjust
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -271,7 +271,7 @@ module RussiaFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).Advance1
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -334,7 +334,7 @@ module RussiaFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).Advance
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -394,7 +394,7 @@ module RussiaFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).BusinessDaysBetween
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -442,7 +442,7 @@ module RussiaFunction =
             try
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).Calendar
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -478,7 +478,7 @@ module RussiaFunction =
             try
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).Empty
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -517,7 +517,7 @@ module RussiaFunction =
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -559,7 +559,7 @@ module RussiaFunction =
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).Equals
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -601,7 +601,7 @@ module RussiaFunction =
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).IsBusinessDay
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -643,7 +643,7 @@ module RussiaFunction =
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).IsEndOfMonth
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -685,7 +685,7 @@ module RussiaFunction =
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).IsHoliday
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -727,7 +727,7 @@ module RussiaFunction =
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).IsWeekend
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -768,7 +768,7 @@ module RussiaFunction =
             try
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).Name
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -804,7 +804,7 @@ module RussiaFunction =
             try
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).RemovedHolidays
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -843,7 +843,7 @@ module RussiaFunction =
 
                 let _Russia = Helper.toCell<Russia> russia "Russia"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Russia.cell :?> RussiaModel).RemoveHoliday
+                let builder () = withMnemonic mnemonic ((RussiaModel.Cast _Russia.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Russia) (l:string) = o.ToString() :> obj

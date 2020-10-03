@@ -55,7 +55,7 @@ module PdeShortRateFunction =
                 let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_PdeShortRate.cell :?> PdeShortRateModel).Diffusion
+                let builder () = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module PdeShortRateFunction =
                 let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_PdeShortRate.cell :?> PdeShortRateModel).Discount
+                let builder () = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).Discount
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -151,7 +151,7 @@ module PdeShortRateFunction =
                 let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_PdeShortRate.cell :?> PdeShortRateModel).Drift
+                let builder () = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -196,7 +196,7 @@ module PdeShortRateFunction =
 
                 let _PdeShortRate = Helper.toCell<PdeShortRate> pdeshortrate "PdeShortRate"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic ((_PdeShortRate.cell :?> PdeShortRateModel).Factory
+                let builder () = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).Factory
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PdeSecondOrderParabolic>) l
@@ -312,7 +312,7 @@ module PdeShortRateFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _tg = Helper.toCell<TransformedGrid> tg "tg" 
                 let _L = Helper.toCell<TridiagonalOperator> L "L" 
-                let builder () = withMnemonic mnemonic ((_PdeShortRate.cell :?> PdeShortRateModel).GenerateOperator
+                let builder () = withMnemonic mnemonic ((PdeShortRateModel.Cast _PdeShortRate.cell).GenerateOperator
                                                             _t.cell 
                                                             _tg.cell 
                                                             _L.cell 

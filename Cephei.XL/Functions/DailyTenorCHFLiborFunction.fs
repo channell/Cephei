@@ -92,7 +92,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -131,7 +131,7 @@ module DailyTenorCHFLiborFunction =
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).Clone
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).Clone
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -170,7 +170,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -215,7 +215,7 @@ module DailyTenorCHFLiborFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).ForecastFixing1
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
@@ -263,7 +263,7 @@ module DailyTenorCHFLiborFunction =
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).ForecastFixing
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -302,7 +302,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).ForwardingTermStructure
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -341,7 +341,7 @@ module DailyTenorCHFLiborFunction =
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -380,7 +380,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).Currency
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -416,7 +416,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).DayCounter
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -452,7 +452,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).FamilyName
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -494,7 +494,7 @@ module DailyTenorCHFLiborFunction =
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).Fixing
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -536,7 +536,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -575,7 +575,7 @@ module DailyTenorCHFLiborFunction =
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).FixingDate
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -614,7 +614,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).FixingDays
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -653,7 +653,7 @@ module DailyTenorCHFLiborFunction =
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -692,7 +692,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).Name
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -731,7 +731,7 @@ module DailyTenorCHFLiborFunction =
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).PastFixing
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -770,7 +770,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).Tenor
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -806,7 +806,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).Update
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).Update
                                                        ) :> ICell
                 let format (o : DailyTenorCHFLibor) (l:string) = o.ToString() :> obj
 
@@ -845,7 +845,7 @@ module DailyTenorCHFLiborFunction =
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).ValueDate
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -893,7 +893,7 @@ module DailyTenorCHFLiborFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).AddFixing
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -947,7 +947,7 @@ module DailyTenorCHFLiborFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).AddFixings
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -998,7 +998,7 @@ module DailyTenorCHFLiborFunction =
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -1040,7 +1040,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1076,7 +1076,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : DailyTenorCHFLibor) (l:string) = o.ToString() :> obj
 
@@ -1115,7 +1115,7 @@ module DailyTenorCHFLiborFunction =
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DailyTenorCHFLibor) (l:string) = o.ToString() :> obj
@@ -1154,7 +1154,7 @@ module DailyTenorCHFLiborFunction =
             try
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1193,7 +1193,7 @@ module DailyTenorCHFLiborFunction =
 
                 let _DailyTenorCHFLibor = Helper.toCell<DailyTenorCHFLibor> dailytenorchflibor "DailyTenorCHFLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_DailyTenorCHFLibor.cell :?> DailyTenorCHFLiborModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((DailyTenorCHFLiborModel.Cast _DailyTenorCHFLibor.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DailyTenorCHFLibor) (l:string) = o.ToString() :> obj

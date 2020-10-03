@@ -94,7 +94,7 @@ module DenmarkFunction =
             try
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).AddedHolidays
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -133,7 +133,7 @@ module DenmarkFunction =
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).AddHoliday
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Denmark) (l:string) = o.ToString() :> obj
@@ -178,7 +178,7 @@ module DenmarkFunction =
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).Adjust
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -235,7 +235,7 @@ module DenmarkFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).Advance1
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -298,7 +298,7 @@ module DenmarkFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).Advance
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -358,7 +358,7 @@ module DenmarkFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).BusinessDaysBetween
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -406,7 +406,7 @@ module DenmarkFunction =
             try
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).Calendar
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -442,7 +442,7 @@ module DenmarkFunction =
             try
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).Empty
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -481,7 +481,7 @@ module DenmarkFunction =
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -523,7 +523,7 @@ module DenmarkFunction =
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).Equals
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -565,7 +565,7 @@ module DenmarkFunction =
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).IsBusinessDay
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -607,7 +607,7 @@ module DenmarkFunction =
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).IsEndOfMonth
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -649,7 +649,7 @@ module DenmarkFunction =
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).IsHoliday
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -691,7 +691,7 @@ module DenmarkFunction =
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).IsWeekend
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -732,7 +732,7 @@ module DenmarkFunction =
             try
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).Name
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -768,7 +768,7 @@ module DenmarkFunction =
             try
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).RemovedHolidays
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -807,7 +807,7 @@ module DenmarkFunction =
 
                 let _Denmark = Helper.toCell<Denmark> denmark "Denmark"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Denmark.cell :?> DenmarkModel).RemoveHoliday
+                let builder () = withMnemonic mnemonic ((DenmarkModel.Cast _Denmark.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Denmark) (l:string) = o.ToString() :> obj

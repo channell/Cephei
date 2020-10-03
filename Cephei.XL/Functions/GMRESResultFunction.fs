@@ -49,7 +49,7 @@ module GMRESResultFunction =
             try
 
                 let _GMRESResult = Helper.toCell<GMRESResult> gmresresult "GMRESResult"  
-                let builder () = withMnemonic mnemonic ((_GMRESResult.cell :?> GMRESResultModel).Errors
+                let builder () = withMnemonic mnemonic ((GMRESResultModel.Cast _GMRESResult.cell).Errors
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -128,7 +128,7 @@ module GMRESResultFunction =
             try
 
                 let _GMRESResult = Helper.toCell<GMRESResult> gmresresult "GMRESResult"  
-                let builder () = withMnemonic mnemonic ((_GMRESResult.cell :?> GMRESResultModel).X
+                let builder () = withMnemonic mnemonic ((GMRESResultModel.Cast _GMRESResult.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

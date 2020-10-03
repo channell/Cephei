@@ -49,7 +49,7 @@ module InstrumentFunction =
             try
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
-                let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).CASH
+                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module InstrumentFunction =
             try
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
-                let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -121,7 +121,7 @@ module InstrumentFunction =
             try
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
-                let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).IsExpired
+                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -157,7 +157,7 @@ module InstrumentFunction =
             try
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
-                let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).NPV
+                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -196,7 +196,7 @@ module InstrumentFunction =
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).Result
+                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -238,7 +238,7 @@ module InstrumentFunction =
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Instrument) (l:string) = o.ToString() :> obj
@@ -277,7 +277,7 @@ module InstrumentFunction =
             try
 
                 let _Instrument = Helper.toCell<Instrument> instrument "Instrument"  
-                let builder () = withMnemonic mnemonic ((_Instrument.cell :?> InstrumentModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((InstrumentModel.Cast _Instrument.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

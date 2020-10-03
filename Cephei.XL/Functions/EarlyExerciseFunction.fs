@@ -92,7 +92,7 @@ module EarlyExerciseFunction =
             try
 
                 let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
-                let builder () = withMnemonic mnemonic ((_EarlyExercise.cell :?> EarlyExerciseModel).PayoffAtExpiry
+                let builder () = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).PayoffAtExpiry
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -131,7 +131,7 @@ module EarlyExerciseFunction =
 
                 let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_EarlyExercise.cell :?> EarlyExerciseModel).Date
+                let builder () = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).Date
                                                             _index.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -170,7 +170,7 @@ module EarlyExerciseFunction =
             try
 
                 let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
-                let builder () = withMnemonic mnemonic ((_EarlyExercise.cell :?> EarlyExerciseModel).Dates
+                let builder () = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -206,7 +206,7 @@ module EarlyExerciseFunction =
             try
 
                 let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
-                let builder () = withMnemonic mnemonic ((_EarlyExercise.cell :?> EarlyExerciseModel).LastDate
+                let builder () = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -242,7 +242,7 @@ module EarlyExerciseFunction =
             try
 
                 let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
-                let builder () = withMnemonic mnemonic ((_EarlyExercise.cell :?> EarlyExerciseModel).Type
+                let builder () = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 

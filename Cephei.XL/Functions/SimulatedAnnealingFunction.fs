@@ -55,7 +55,7 @@ module SimulatedAnnealingFunction =
                 let _SimulatedAnnealing = Helper.toCell<SimulatedAnnealing> simulatedannealing "SimulatedAnnealing"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((_SimulatedAnnealing.cell :?> SimulatedAnnealingModel).Minimize
+                let builder () = withMnemonic mnemonic ((SimulatedAnnealingModel.Cast _SimulatedAnnealing.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell

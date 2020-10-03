@@ -49,7 +49,7 @@ module ExponentialSplinesFittingFunction =
             try
 
                 let _ExponentialSplinesFitting = Helper.toCell<ExponentialSplinesFitting> exponentialsplinesfitting "ExponentialSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((_ExponentialSplinesFitting.cell :?> ExponentialSplinesFittingModel).Clone
+                let builder () = withMnemonic mnemonic ((ExponentialSplinesFittingModel.Cast _ExponentialSplinesFitting.cell).Clone
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
@@ -134,7 +134,7 @@ module ExponentialSplinesFittingFunction =
             try
 
                 let _ExponentialSplinesFitting = Helper.toCell<ExponentialSplinesFitting> exponentialsplinesfitting "ExponentialSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((_ExponentialSplinesFitting.cell :?> ExponentialSplinesFittingModel).Size
+                let builder () = withMnemonic mnemonic ((ExponentialSplinesFittingModel.Cast _ExponentialSplinesFitting.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -170,7 +170,7 @@ module ExponentialSplinesFittingFunction =
             try
 
                 let _ExponentialSplinesFitting = Helper.toCell<ExponentialSplinesFitting> exponentialsplinesfitting "ExponentialSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((_ExponentialSplinesFitting.cell :?> ExponentialSplinesFittingModel).ConstrainAtZero
+                let builder () = withMnemonic mnemonic ((ExponentialSplinesFittingModel.Cast _ExponentialSplinesFitting.cell).ConstrainAtZero
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -212,7 +212,7 @@ module ExponentialSplinesFittingFunction =
                 let _ExponentialSplinesFitting = Helper.toCell<ExponentialSplinesFitting> exponentialsplinesfitting "ExponentialSplinesFitting"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_ExponentialSplinesFitting.cell :?> ExponentialSplinesFittingModel).Discount
+                let builder () = withMnemonic mnemonic ((ExponentialSplinesFittingModel.Cast _ExponentialSplinesFitting.cell).Discount
                                                             _x.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -254,7 +254,7 @@ module ExponentialSplinesFittingFunction =
             try
 
                 let _ExponentialSplinesFitting = Helper.toCell<ExponentialSplinesFitting> exponentialsplinesfitting "ExponentialSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((_ExponentialSplinesFitting.cell :?> ExponentialSplinesFittingModel).MinimumCostValue
+                let builder () = withMnemonic mnemonic ((ExponentialSplinesFittingModel.Cast _ExponentialSplinesFitting.cell).MinimumCostValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -290,7 +290,7 @@ module ExponentialSplinesFittingFunction =
             try
 
                 let _ExponentialSplinesFitting = Helper.toCell<ExponentialSplinesFitting> exponentialsplinesfitting "ExponentialSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((_ExponentialSplinesFitting.cell :?> ExponentialSplinesFittingModel).NumberOfIterations
+                let builder () = withMnemonic mnemonic ((ExponentialSplinesFittingModel.Cast _ExponentialSplinesFitting.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -326,7 +326,7 @@ module ExponentialSplinesFittingFunction =
             try
 
                 let _ExponentialSplinesFitting = Helper.toCell<ExponentialSplinesFitting> exponentialsplinesfitting "ExponentialSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((_ExponentialSplinesFitting.cell :?> ExponentialSplinesFittingModel).OptimizationMethod
+                let builder () = withMnemonic mnemonic ((ExponentialSplinesFittingModel.Cast _ExponentialSplinesFitting.cell).OptimizationMethod
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
@@ -362,7 +362,7 @@ module ExponentialSplinesFittingFunction =
             try
 
                 let _ExponentialSplinesFitting = Helper.toCell<ExponentialSplinesFitting> exponentialsplinesfitting "ExponentialSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((_ExponentialSplinesFitting.cell :?> ExponentialSplinesFittingModel).Solution
+                let builder () = withMnemonic mnemonic ((ExponentialSplinesFittingModel.Cast _ExponentialSplinesFitting.cell).Solution
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -398,7 +398,7 @@ module ExponentialSplinesFittingFunction =
             try
 
                 let _ExponentialSplinesFitting = Helper.toCell<ExponentialSplinesFitting> exponentialsplinesfitting "ExponentialSplinesFitting"  
-                let builder () = withMnemonic mnemonic ((_ExponentialSplinesFitting.cell :?> ExponentialSplinesFittingModel).Weights
+                let builder () = withMnemonic mnemonic ((ExponentialSplinesFittingModel.Cast _ExponentialSplinesFitting.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

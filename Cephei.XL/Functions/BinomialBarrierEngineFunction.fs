@@ -121,7 +121,7 @@ module BinomialBarrierEngineFunction =
                 let _args = Helper.toCell<BarrierOption.Arguments> args "args" 
                 let _Process = Helper.toCell<StochasticProcess> Process "Process" 
                 let _grid = Helper.toDefault<TimeGrid> grid "grid" null
-                let builder () = withMnemonic mnemonic ((_BinomialBarrierEngine.cell :?> BinomialBarrierEngineModel).getAsset
+                let builder () = withMnemonic mnemonic ((BinomialBarrierEngineModel.Cast _BinomialBarrierEngine.cell).getAsset
                                                             _args.cell 
                                                             _Process.cell 
                                                             _grid.cell 
@@ -180,7 +180,7 @@ module BinomialBarrierEngineFunction =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((_BinomialBarrierEngine.cell :?> BinomialBarrierEngineModel).getTree
+                let builder () = withMnemonic mnemonic ((BinomialBarrierEngineModel.Cast _BinomialBarrierEngine.cell).getTree
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 

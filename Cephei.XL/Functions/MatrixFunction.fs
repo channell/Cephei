@@ -52,7 +52,7 @@ module MatrixFunction =
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _c = Helper.toCell<int> c "c" 
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).Column
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Column
                                                             _c.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -91,7 +91,7 @@ module MatrixFunction =
             try
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).Columns
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -127,7 +127,7 @@ module MatrixFunction =
             try
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).Diagonal
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -163,7 +163,7 @@ module MatrixFunction =
             try
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).Empty
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -202,7 +202,7 @@ module MatrixFunction =
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).Fill
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Fill
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : Matrix) (l:string) = o.ToString() :> obj
@@ -247,7 +247,7 @@ module MatrixFunction =
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _start = Helper.toCell<int> start "start" 
                 let _length = Helper.toCell<int> length "length" 
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).GetRange
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).GetRange
                                                             _start.cell 
                                                             _length.cell 
                                                        ) :> ICell
@@ -452,7 +452,7 @@ module MatrixFunction =
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _r = Helper.toCell<int> r "r" 
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).Row
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Row
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -491,7 +491,7 @@ module MatrixFunction =
             try
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).Rows
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Rows
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -539,7 +539,7 @@ module MatrixFunction =
                 let _j1 = Helper.toCell<int> j1 "j1" 
                 let _i2 = Helper.toCell<int> i2 "i2" 
                 let _j2 = Helper.toCell<int> j2 "j2" 
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).Swap
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).Swap
                                                             _i1.cell 
                                                             _j1.cell 
                                                             _i2.cell 
@@ -593,7 +593,7 @@ module MatrixFunction =
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _r1 = Helper.toCell<int> r1 "r1" 
                 let _r2 = Helper.toCell<int> r2 "r2" 
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).SwapRow
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).SwapRow
                                                             _r1.cell 
                                                             _r2.cell 
                                                        ) :> ICell
@@ -638,7 +638,7 @@ module MatrixFunction =
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).This
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).This
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -683,7 +683,7 @@ module MatrixFunction =
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).This1
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).This1
                                                             _i.cell 
                                                             _j.cell 
                                                        ) :> ICell
@@ -725,7 +725,7 @@ module MatrixFunction =
             try
 
                 let _Matrix = Helper.toCell<Matrix> matrix "Matrix"  
-                let builder () = withMnemonic mnemonic ((_Matrix.cell :?> MatrixModel).ToString
+                let builder () = withMnemonic mnemonic ((MatrixModel.Cast _Matrix.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 

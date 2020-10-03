@@ -58,7 +58,7 @@ module VannaVolgaFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((_VannaVolga.cell :?> VannaVolgaModel).Interpolate
+                let builder () = withMnemonic mnemonic ((VannaVolgaModel.Cast _VannaVolga.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 

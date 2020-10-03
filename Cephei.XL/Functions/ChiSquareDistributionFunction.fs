@@ -89,7 +89,7 @@ module ChiSquareDistributionFunction =
 
                 let _ChiSquareDistribution = Helper.toCell<ChiSquareDistribution> chisquaredistribution "ChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_ChiSquareDistribution.cell :?> ChiSquareDistributionModel).Value
+                let builder () = withMnemonic mnemonic ((ChiSquareDistributionModel.Cast _ChiSquareDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

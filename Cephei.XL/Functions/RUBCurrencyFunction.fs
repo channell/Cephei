@@ -80,7 +80,7 @@ module RUBCurrencyFunction =
             try
 
                 let _RUBCurrency = Helper.toCell<RUBCurrency> rubcurrency "RUBCurrency"  
-                let builder () = withMnemonic mnemonic ((_RUBCurrency.cell :?> RUBCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((RUBCurrencyModel.Cast _RUBCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module RUBCurrencyFunction =
             try
 
                 let _RUBCurrency = Helper.toCell<RUBCurrency> rubcurrency "RUBCurrency"  
-                let builder () = withMnemonic mnemonic ((_RUBCurrency.cell :?> RUBCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((RUBCurrencyModel.Cast _RUBCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module RUBCurrencyFunction =
 
                 let _RUBCurrency = Helper.toCell<RUBCurrency> rubcurrency "RUBCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_RUBCurrency.cell :?> RUBCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((RUBCurrencyModel.Cast _RUBCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module RUBCurrencyFunction =
             try
 
                 let _RUBCurrency = Helper.toCell<RUBCurrency> rubcurrency "RUBCurrency"  
-                let builder () = withMnemonic mnemonic ((_RUBCurrency.cell :?> RUBCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((RUBCurrencyModel.Cast _RUBCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module RUBCurrencyFunction =
             try
 
                 let _RUBCurrency = Helper.toCell<RUBCurrency> rubcurrency "RUBCurrency"  
-                let builder () = withMnemonic mnemonic ((_RUBCurrency.cell :?> RUBCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((RUBCurrencyModel.Cast _RUBCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module RUBCurrencyFunction =
             try
 
                 let _RUBCurrency = Helper.toCell<RUBCurrency> rubcurrency "RUBCurrency"  
-                let builder () = withMnemonic mnemonic ((_RUBCurrency.cell :?> RUBCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((RUBCurrencyModel.Cast _RUBCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module RUBCurrencyFunction =
             try
 
                 let _RUBCurrency = Helper.toCell<RUBCurrency> rubcurrency "RUBCurrency"  
-                let builder () = withMnemonic mnemonic ((_RUBCurrency.cell :?> RUBCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((RUBCurrencyModel.Cast _RUBCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module RUBCurrencyFunction =
             try
 
                 let _RUBCurrency = Helper.toCell<RUBCurrency> rubcurrency "RUBCurrency"  
-                let builder () = withMnemonic mnemonic ((_RUBCurrency.cell :?> RUBCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((RUBCurrencyModel.Cast _RUBCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module RUBCurrencyFunction =
             try
 
                 let _RUBCurrency = Helper.toCell<RUBCurrency> rubcurrency "RUBCurrency"  
-                let builder () = withMnemonic mnemonic ((_RUBCurrency.cell :?> RUBCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((RUBCurrencyModel.Cast _RUBCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module RUBCurrencyFunction =
             try
 
                 let _RUBCurrency = Helper.toCell<RUBCurrency> rubcurrency "RUBCurrency"  
-                let builder () = withMnemonic mnemonic ((_RUBCurrency.cell :?> RUBCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((RUBCurrencyModel.Cast _RUBCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module RUBCurrencyFunction =
             try
 
                 let _RUBCurrency = Helper.toCell<RUBCurrency> rubcurrency "RUBCurrency"  
-                let builder () = withMnemonic mnemonic ((_RUBCurrency.cell :?> RUBCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((RUBCurrencyModel.Cast _RUBCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module RUBCurrencyFunction =
             try
 
                 let _RUBCurrency = Helper.toCell<RUBCurrency> rubcurrency "RUBCurrency"  
-                let builder () = withMnemonic mnemonic ((_RUBCurrency.cell :?> RUBCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((RUBCurrencyModel.Cast _RUBCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

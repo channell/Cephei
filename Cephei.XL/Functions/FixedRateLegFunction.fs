@@ -86,7 +86,7 @@ module FixedRateLegFunction =
             try
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).Value
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -134,7 +134,7 @@ module FixedRateLegFunction =
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates3
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates3
                                                             _couponRates.cell 
                                                             _paymentDayCounter.cell 
                                                             _comp.cell 
@@ -188,7 +188,7 @@ module FixedRateLegFunction =
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRate = Helper.toCell<double> couponRate "couponRate" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates6
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates6
                                                             _couponRate.cell 
                                                             _paymentDayCounter.cell 
                                                        ) :> ICell
@@ -239,7 +239,7 @@ module FixedRateLegFunction =
                 let _couponRate = Helper.toCell<double> couponRate "couponRate" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates1
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates1
                                                             _couponRate.cell 
                                                             _paymentDayCounter.cell 
                                                             _comp.cell 
@@ -296,7 +296,7 @@ module FixedRateLegFunction =
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates
                                                             _couponRate.cell 
                                                             _paymentDayCounter.cell 
                                                             _comp.cell 
@@ -353,7 +353,7 @@ module FixedRateLegFunction =
                 let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _comp = Helper.toCell<Compounding> comp "comp" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates7
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates7
                                                             _couponRates.cell 
                                                             _paymentDayCounter.cell 
                                                             _comp.cell 
@@ -401,7 +401,7 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRate = Helper.toCell<InterestRate> couponRate "couponRate" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates5
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates5
                                                             _couponRate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
@@ -443,7 +443,7 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRates = Helper.toCell<Generic.List<InterestRate>> couponRates "couponRates" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates4
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates4
                                                             _couponRates.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
@@ -488,7 +488,7 @@ module FixedRateLegFunction =
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _couponRates = Helper.toCell<Generic.List<double>> couponRates "couponRates" 
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithCouponRates2
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithCouponRates2
                                                             _couponRates.cell 
                                                             _paymentDayCounter.cell 
                                                        ) :> ICell
@@ -542,7 +542,7 @@ module FixedRateLegFunction =
                 let _cal = Helper.toCell<Calendar> cal "cal" 
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let _endOfMonth = Helper.toDefault<bool> endOfMonth "endOfMonth" false
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithExCouponPeriod
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithExCouponPeriod
                                                             _period.cell 
                                                             _cal.cell 
                                                             _convention.cell 
@@ -593,7 +593,7 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithFirstPeriodDayCounter
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithFirstPeriodDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
@@ -635,7 +635,7 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithLastPeriodDayCounter
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithLastPeriodDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
@@ -677,7 +677,7 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _cal = Helper.toCell<Calendar> cal "cal" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithPaymentCalendar
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithPaymentCalendar
                                                             _cal.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
@@ -719,7 +719,7 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithNotionals1
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
@@ -761,7 +761,7 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithNotionals
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
@@ -803,7 +803,7 @@ module FixedRateLegFunction =
 
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder () = withMnemonic mnemonic ((_FixedRateLeg.cell :?> FixedRateLegModel).WithPaymentAdjustment
+                let builder () = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l

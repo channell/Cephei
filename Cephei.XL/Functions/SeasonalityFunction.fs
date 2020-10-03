@@ -58,7 +58,7 @@ module SeasonalityFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((_Seasonality.cell :?> SeasonalityModel).CorrectYoYRate
+                let builder () = withMnemonic mnemonic ((SeasonalityModel.Cast _Seasonality.cell).CorrectYoYRate
                                                             _d.cell 
                                                             _r.cell 
                                                             _iTS.cell 
@@ -112,7 +112,7 @@ module SeasonalityFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((_Seasonality.cell :?> SeasonalityModel).CorrectZeroRate
+                let builder () = withMnemonic mnemonic ((SeasonalityModel.Cast _Seasonality.cell).CorrectZeroRate
                                                             _d.cell 
                                                             _r.cell 
                                                             _iTS.cell 
@@ -160,7 +160,7 @@ module SeasonalityFunction =
 
                 let _Seasonality = Helper.toCell<Seasonality> seasonality "Seasonality"  
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((_Seasonality.cell :?> SeasonalityModel).IsConsistent
+                let builder () = withMnemonic mnemonic ((SeasonalityModel.Cast _Seasonality.cell).IsConsistent
                                                             _iTS.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

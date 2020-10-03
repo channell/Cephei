@@ -110,7 +110,7 @@ module GMRESFunction =
 
                 let _GMRES = Helper.toCell<GMRES> gmres "GMRES"  
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_GMRES.cell :?> GMRESModel).MatrixMult
+                let builder () = withMnemonic mnemonic ((GMRESModel.Cast _GMRES.cell).MatrixMult
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -156,7 +156,7 @@ module GMRESFunction =
                 let _GMRES = Helper.toCell<GMRES> gmres "GMRES"  
                 let _b = Helper.toCell<Vector> b "b" 
                 let _x0 = Helper.toDefault<Vector> x0 "x0" null
-                let builder () = withMnemonic mnemonic ((_GMRES.cell :?> GMRESModel).Solve
+                let builder () = withMnemonic mnemonic ((GMRESModel.Cast _GMRES.cell).Solve
                                                             _b.cell 
                                                             _x0.cell 
                                                        ) :> ICell
@@ -207,7 +207,7 @@ module GMRESFunction =
                 let _restart = Helper.toCell<int> restart "restart" 
                 let _b = Helper.toCell<Vector> b "b" 
                 let _x0 = Helper.toDefault<Vector> x0 "x0" null
-                let builder () = withMnemonic mnemonic ((_GMRES.cell :?> GMRESModel).SolveWithRestart
+                let builder () = withMnemonic mnemonic ((GMRESModel.Cast _GMRES.cell).SolveWithRestart
                                                             _restart.cell 
                                                             _b.cell 
                                                             _x0.cell 

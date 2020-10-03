@@ -67,7 +67,7 @@ module CalibratedModelFunction =
                 let _additionalConstraint = Helper.toDefault<Constraint> additionalConstraint "additionalConstraint" null
                 let _weights = Helper.toDefault<Generic.List<double>> weights "weights" null
                 let _fixParameters = Helper.toDefault<Generic.List<bool>> fixParameters "fixParameters" null
-                let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).Calibrate
+                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
                                                             _endCriteria.cell 
@@ -158,7 +158,7 @@ module CalibratedModelFunction =
             try
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
-                let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).Constraint
+                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
@@ -194,7 +194,7 @@ module CalibratedModelFunction =
             try
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
-                let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).EndCriteria
+                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module CalibratedModelFunction =
             try
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
-                let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).NotifyObservers
+                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
@@ -266,7 +266,7 @@ module CalibratedModelFunction =
             try
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
-                let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).Parameters
+                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -305,7 +305,7 @@ module CalibratedModelFunction =
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
@@ -347,7 +347,7 @@ module CalibratedModelFunction =
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).SetParams
+                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
@@ -389,7 +389,7 @@ module CalibratedModelFunction =
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
@@ -428,7 +428,7 @@ module CalibratedModelFunction =
             try
 
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
-                let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).Update
+                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Update
                                                        ) :> ICell
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
@@ -470,7 +470,7 @@ module CalibratedModelFunction =
                 let _CalibratedModel = Helper.toCell<CalibratedModel> calibratedmodel "CalibratedModel"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
-                let builder () = withMnemonic mnemonic ((_CalibratedModel.cell :?> CalibratedModelModel).Value
+                let builder () = withMnemonic mnemonic ((CalibratedModelModel.Cast _CalibratedModel.cell).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
                                                        ) :> ICell

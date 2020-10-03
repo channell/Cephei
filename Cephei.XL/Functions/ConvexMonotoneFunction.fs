@@ -129,7 +129,7 @@ module ConvexMonotoneFunction =
             try
 
                 let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
-                let builder () = withMnemonic mnemonic ((_ConvexMonotone.cell :?> ConvexMonotoneModel).DataSizeAdjustment
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).DataSizeAdjustment
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -165,7 +165,7 @@ module ConvexMonotoneFunction =
             try
 
                 let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
-                let builder () = withMnemonic mnemonic ((_ConvexMonotone.cell :?> ConvexMonotoneModel).Global
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -210,7 +210,7 @@ module ConvexMonotoneFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((_ConvexMonotone.cell :?> ConvexMonotoneModel).Interpolate
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -273,7 +273,7 @@ module ConvexMonotoneFunction =
                 let _localisation = Helper.toCell<int> localisation "localisation" 
                 let _prevInterpolation = Helper.toCell<ConvexMonotoneInterpolation> prevInterpolation "prevInterpolation" 
                 let _finalSize = Helper.toCell<int> finalSize "finalSize" 
-                let builder () = withMnemonic mnemonic ((_ConvexMonotone.cell :?> ConvexMonotoneModel).LocalInterpolate
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).LocalInterpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -327,7 +327,7 @@ module ConvexMonotoneFunction =
             try
 
                 let _ConvexMonotone = Helper.toCell<ConvexMonotone> convexmonotone "ConvexMonotone"  
-                let builder () = withMnemonic mnemonic ((_ConvexMonotone.cell :?> ConvexMonotoneModel).RequiredPoints
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneModel.Cast _ConvexMonotone.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

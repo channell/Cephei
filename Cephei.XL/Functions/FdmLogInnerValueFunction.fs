@@ -55,7 +55,7 @@ module FdmLogInnerValueFunction =
                 let _FdmLogInnerValue = Helper.toCell<FdmLogInnerValue> fdmloginnervalue "FdmLogInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_FdmLogInnerValue.cell :?> FdmLogInnerValueModel).AvgInnerValue
+                let builder () = withMnemonic mnemonic ((FdmLogInnerValueModel.Cast _FdmLogInnerValue.cell).AvgInnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -152,7 +152,7 @@ module FdmLogInnerValueFunction =
                 let _FdmLogInnerValue = Helper.toCell<FdmLogInnerValue> fdmloginnervalue "FdmLogInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_FdmLogInnerValue.cell :?> FdmLogInnerValueModel).InnerValue
+                let builder () = withMnemonic mnemonic ((FdmLogInnerValueModel.Cast _FdmLogInnerValue.cell).InnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell

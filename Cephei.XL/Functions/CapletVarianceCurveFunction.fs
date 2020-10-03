@@ -104,7 +104,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).DayCounter
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -140,7 +140,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).MaxDate
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -176,7 +176,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).MaxStrike
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -212,7 +212,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).MinStrike
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -257,7 +257,7 @@ module CapletVarianceCurveFunction =
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).BlackVariance
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).BlackVariance
                                                             _optionTime.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -311,7 +311,7 @@ module CapletVarianceCurveFunction =
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).BlackVariance2
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).BlackVariance2
                                                             _optionTenor.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -365,7 +365,7 @@ module CapletVarianceCurveFunction =
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).BlackVariance1
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).BlackVariance1
                                                             _optionDate.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -410,7 +410,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).Displacement
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).Displacement
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -452,7 +452,7 @@ module CapletVarianceCurveFunction =
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _extr = Helper.toCell<bool> extr "extr" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).SmileSection
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).SmileSection
                                                             _optionTime.cell 
                                                             _extr.cell 
                                                        ) :> ICell
@@ -500,7 +500,7 @@ module CapletVarianceCurveFunction =
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _extr = Helper.toCell<bool> extr "extr" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).SmileSection2
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).SmileSection2
                                                             _optionDate.cell 
                                                             _extr.cell 
                                                        ) :> ICell
@@ -548,7 +548,7 @@ module CapletVarianceCurveFunction =
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).SmileSection1
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).SmileSection1
                                                             _optionTenor.cell 
                                                             _extr.cell 
                                                        ) :> ICell
@@ -599,7 +599,7 @@ module CapletVarianceCurveFunction =
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).Volatility2
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).Volatility2
                                                             _optionTime.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -653,7 +653,7 @@ module CapletVarianceCurveFunction =
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).Volatility1
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).Volatility1
                                                             _optionDate.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -707,7 +707,7 @@ module CapletVarianceCurveFunction =
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).Volatility
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).Volatility
                                                             _optionTenor.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -752,7 +752,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).VolatilityType
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
@@ -788,7 +788,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -827,7 +827,7 @@ module CapletVarianceCurveFunction =
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).OptionDateFromTenor
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -866,7 +866,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).Calendar
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -902,7 +902,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).MaxTime
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -938,7 +938,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).ReferenceDate
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -974,7 +974,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).SettlementDays
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1013,7 +1013,7 @@ module CapletVarianceCurveFunction =
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).TimeFromReference
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1052,7 +1052,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).Update
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).Update
                                                        ) :> ICell
                 let format (o : CapletVarianceCurve) (l:string) = o.ToString() :> obj
 
@@ -1088,7 +1088,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1127,7 +1127,7 @@ module CapletVarianceCurveFunction =
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CapletVarianceCurve) (l:string) = o.ToString() :> obj
@@ -1169,7 +1169,7 @@ module CapletVarianceCurveFunction =
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CapletVarianceCurve) (l:string) = o.ToString() :> obj
@@ -1208,7 +1208,7 @@ module CapletVarianceCurveFunction =
             try
 
                 let _CapletVarianceCurve = Helper.toCell<CapletVarianceCurve> capletvariancecurve "CapletVarianceCurve"  
-                let builder () = withMnemonic mnemonic ((_CapletVarianceCurve.cell :?> CapletVarianceCurveModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((CapletVarianceCurveModel.Cast _CapletVarianceCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

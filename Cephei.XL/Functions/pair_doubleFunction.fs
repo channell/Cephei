@@ -52,7 +52,7 @@ module pair_doubleFunction =
 
                 let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
                 let _other = Helper.toCell<Pair<double,double>> other "other" 
-                let builder () = withMnemonic mnemonic ((_pair_double.cell :?> pair_doubleModel).CompareTo
+                let builder () = withMnemonic mnemonic ((pair_doubleModel.Cast _pair_double.cell).CompareTo
                                                             _other.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -134,7 +134,7 @@ module pair_doubleFunction =
             try
 
                 let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
-                let builder () = withMnemonic mnemonic ((_pair_double.cell :?> pair_doubleModel).First
+                let builder () = withMnemonic mnemonic ((pair_doubleModel.Cast _pair_double.cell).First
                                                        ) :> ICell
                 let format (o : double) (l:string) = o.ToString() :> obj
 
@@ -170,7 +170,7 @@ module pair_doubleFunction =
             try
 
                 let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
-                let builder () = withMnemonic mnemonic ((_pair_double.cell :?> pair_doubleModel).Second
+                let builder () = withMnemonic mnemonic ((pair_doubleModel.Cast _pair_double.cell).Second
                                                        ) :> ICell
                 let format (o : double) (l:string) = o.ToString() :> obj
 
@@ -212,7 +212,7 @@ module pair_doubleFunction =
                 let _pair_double = Helper.toCell<pair_double> pair_double "pair_double"  
                 let _first = Helper.toCell<double> first "first" 
                 let _second = Helper.toCell<double> second "second" 
-                let builder () = withMnemonic mnemonic ((_pair_double.cell :?> pair_doubleModel).Set
+                let builder () = withMnemonic mnemonic ((pair_doubleModel.Cast _pair_double.cell).Set
                                                             _first.cell 
                                                             _second.cell 
                                                        ) :> ICell

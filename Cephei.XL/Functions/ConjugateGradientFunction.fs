@@ -92,7 +92,7 @@ module ConjugateGradientFunction =
                 let _ConjugateGradient = Helper.toCell<ConjugateGradient> conjugategradient "ConjugateGradient"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((_ConjugateGradient.cell :?> ConjugateGradientModel).Minimize
+                let builder () = withMnemonic mnemonic ((ConjugateGradientModel.Cast _ConjugateGradient.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell

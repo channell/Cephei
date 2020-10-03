@@ -52,7 +52,7 @@ module PeriodFunction =
 
                 let _Period = Helper.toCell<Period> period "Period"  
                 let _obj = Helper.toCell<Object> obj "obj" 
-                let builder () = withMnemonic mnemonic ((_Period.cell :?> PeriodModel).CompareTo
+                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).CompareTo
                                                             _obj.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -94,7 +94,7 @@ module PeriodFunction =
 
                 let _Period = Helper.toCell<Period> period "Period"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Period.cell :?> PeriodModel).Equals
+                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -133,7 +133,7 @@ module PeriodFunction =
             try
 
                 let _Period = Helper.toCell<Period> period "Period"  
-                let builder () = withMnemonic mnemonic ((_Period.cell :?> PeriodModel).Frequency
+                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
@@ -169,7 +169,7 @@ module PeriodFunction =
             try
 
                 let _Period = Helper.toCell<Period> period "Period"  
-                let builder () = withMnemonic mnemonic ((_Period.cell :?> PeriodModel).Length
+                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Length
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -205,7 +205,7 @@ module PeriodFunction =
             try
 
                 let _Period = Helper.toCell<Period> period "Period"  
-                let builder () = withMnemonic mnemonic ((_Period.cell :?> PeriodModel).Normalize
+                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Normalize
                                                        ) :> ICell
                 let format (o : Period) (l:string) = o.ToString() :> obj
 
@@ -389,7 +389,7 @@ module PeriodFunction =
             try
 
                 let _Period = Helper.toCell<Period> period "Period"  
-                let builder () = withMnemonic mnemonic ((_Period.cell :?> PeriodModel).ToShortString
+                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).ToShortString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -425,7 +425,7 @@ module PeriodFunction =
             try
 
                 let _Period = Helper.toCell<Period> period "Period"  
-                let builder () = withMnemonic mnemonic ((_Period.cell :?> PeriodModel).ToString
+                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -461,7 +461,7 @@ module PeriodFunction =
             try
 
                 let _Period = Helper.toCell<Period> period "Period"  
-                let builder () = withMnemonic mnemonic ((_Period.cell :?> PeriodModel).Units
+                let builder () = withMnemonic mnemonic ((PeriodModel.Cast _Period.cell).Units
                                                        ) :> ICell
                 let format (o : TimeUnit) (l:string) = o.ToString() :> obj
 

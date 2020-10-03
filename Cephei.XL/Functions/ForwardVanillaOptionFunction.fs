@@ -116,7 +116,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).Delta
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -152,7 +152,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).DeltaForward
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -188,7 +188,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).DividendRho
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -224,7 +224,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).Elasticity
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -260,7 +260,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).Gamma
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -296,7 +296,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).IsExpired
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -332,7 +332,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).ItmCashProbability
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -368,7 +368,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).Rho
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -404,7 +404,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).StrikeSensitivity
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -440,7 +440,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).Theta
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -476,7 +476,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).ThetaPerDay
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -512,7 +512,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).Vega
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -548,7 +548,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).Exercise
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -584,7 +584,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).Payoff
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -620,7 +620,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).CASH
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -656,7 +656,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -692,7 +692,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).NPV
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -731,7 +731,7 @@ module ForwardVanillaOptionFunction =
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).Result
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -773,7 +773,7 @@ module ForwardVanillaOptionFunction =
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : ForwardVanillaOption) (l:string) = o.ToString() :> obj
@@ -812,7 +812,7 @@ module ForwardVanillaOptionFunction =
             try
 
                 let _ForwardVanillaOption = Helper.toCell<ForwardVanillaOption> forwardvanillaoption "ForwardVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_ForwardVanillaOption.cell :?> ForwardVanillaOptionModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((ForwardVanillaOptionModel.Cast _ForwardVanillaOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

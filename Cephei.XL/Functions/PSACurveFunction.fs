@@ -52,7 +52,7 @@ module PSACurveFunction =
 
                 let _PSACurve = Helper.toCell<PSACurve> psacurve "PSACurve"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
-                let builder () = withMnemonic mnemonic ((_PSACurve.cell :?> PSACurveModel).GetCPR
+                let builder () = withMnemonic mnemonic ((PSACurveModel.Cast _PSACurve.cell).GetCPR
                                                             _valDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -94,7 +94,7 @@ module PSACurveFunction =
 
                 let _PSACurve = Helper.toCell<PSACurve> psacurve "PSACurve"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
-                let builder () = withMnemonic mnemonic ((_PSACurve.cell :?> PSACurveModel).GetSMM
+                let builder () = withMnemonic mnemonic ((PSACurveModel.Cast _PSACurve.cell).GetSMM
                                                             _valDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

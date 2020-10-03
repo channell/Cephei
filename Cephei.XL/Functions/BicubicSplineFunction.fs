@@ -116,7 +116,7 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).DerivativeX
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).DerivativeX
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -164,7 +164,7 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).DerivativeXY
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).DerivativeXY
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -212,7 +212,7 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).DerivativeY
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).DerivativeY
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -260,7 +260,7 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).SecondDerivativeX
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).SecondDerivativeX
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -308,7 +308,7 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).SecondDerivativeY
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).SecondDerivativeY
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -356,7 +356,7 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).IsInRange
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).IsInRange
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -401,7 +401,7 @@ module BicubicSplineFunction =
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).LocateX
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).LocateX
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -443,7 +443,7 @@ module BicubicSplineFunction =
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).LocateY
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).LocateY
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -482,7 +482,7 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).Update
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).Update
                                                        ) :> ICell
                 let format (o : BicubicSpline) (l:string) = o.ToString() :> obj
 
@@ -524,7 +524,7 @@ module BicubicSplineFunction =
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).Value1
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).Value1
                                                             _x.cell 
                                                             _y.cell 
                                                        ) :> ICell
@@ -575,7 +575,7 @@ module BicubicSplineFunction =
                 let _x = Helper.toCell<double> x "x" 
                 let _y = Helper.toCell<double> y "y" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).Value
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).Value
                                                             _x.cell 
                                                             _y.cell 
                                                             _allowExtrapolation.cell 
@@ -620,7 +620,7 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).XMax
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -656,7 +656,7 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).XMin
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -692,7 +692,7 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).XValues
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).XValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -728,7 +728,7 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).YMax
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).YMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -764,7 +764,7 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).YMin
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).YMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -800,7 +800,7 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).YValues
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).YValues
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -836,7 +836,7 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).ZData
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).ZData
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
@@ -872,7 +872,7 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -911,7 +911,7 @@ module BicubicSplineFunction =
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : BicubicSpline) (l:string) = o.ToString() :> obj
@@ -953,7 +953,7 @@ module BicubicSplineFunction =
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : BicubicSpline) (l:string) = o.ToString() :> obj
@@ -992,7 +992,7 @@ module BicubicSplineFunction =
             try
 
                 let _BicubicSpline = Helper.toCell<BicubicSpline> bicubicspline "BicubicSpline"  
-                let builder () = withMnemonic mnemonic ((_BicubicSpline.cell :?> BicubicSplineModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((BicubicSplineModel.Cast _BicubicSpline.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

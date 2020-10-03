@@ -125,7 +125,7 @@ module ConvexMonotone4MinHelperFunction =
 
                 let _ConvexMonotone4MinHelper = Helper.toCell<ConvexMonotone4MinHelper> convexmonotone4minhelper "ConvexMonotone4MinHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_ConvexMonotone4MinHelper.cell :?> ConvexMonotone4MinHelperModel).Primitive
+                let builder () = withMnemonic mnemonic ((ConvexMonotone4MinHelperModel.Cast _ConvexMonotone4MinHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -167,7 +167,7 @@ module ConvexMonotone4MinHelperFunction =
 
                 let _ConvexMonotone4MinHelper = Helper.toCell<ConvexMonotone4MinHelper> convexmonotone4minhelper "ConvexMonotone4MinHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_ConvexMonotone4MinHelper.cell :?> ConvexMonotone4MinHelperModel).Value
+                let builder () = withMnemonic mnemonic ((ConvexMonotone4MinHelperModel.Cast _ConvexMonotone4MinHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -206,7 +206,7 @@ module ConvexMonotone4MinHelperFunction =
             try
 
                 let _ConvexMonotone4MinHelper = Helper.toCell<ConvexMonotone4MinHelper> convexmonotone4minhelper "ConvexMonotone4MinHelper"  
-                let builder () = withMnemonic mnemonic ((_ConvexMonotone4MinHelper.cell :?> ConvexMonotone4MinHelperModel).FNext
+                let builder () = withMnemonic mnemonic ((ConvexMonotone4MinHelperModel.Cast _ConvexMonotone4MinHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

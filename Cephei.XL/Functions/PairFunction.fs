@@ -49,7 +49,7 @@ module PairFunction =
             try
 
                 let _Pair = Helper.toCell<Pair> pair "Pair"  
-                let builder () = withMnemonic mnemonic ((_Pair.cell :?> PairModel).First
+                let builder () = withMnemonic mnemonic ((PairModel.Cast _Pair.cell).First
                                                        ) :> ICell
                 let format (o : TFirst) (l:string) = o.ToString() :> obj
 
@@ -159,7 +159,7 @@ module PairFunction =
             try
 
                 let _Pair = Helper.toCell<Pair> pair "Pair"  
-                let builder () = withMnemonic mnemonic ((_Pair.cell :?> PairModel).Second
+                let builder () = withMnemonic mnemonic ((PairModel.Cast _Pair.cell).Second
                                                        ) :> ICell
                 let format (o : TSecond) (l:string) = o.ToString() :> obj
 
@@ -201,7 +201,7 @@ module PairFunction =
                 let _Pair = Helper.toCell<Pair> pair "Pair"  
                 let _first = Helper.toCell<'TFirst> first "first" 
                 let _second = Helper.toCell<'TSecond> second "second" 
-                let builder () = withMnemonic mnemonic ((_Pair.cell :?> PairModel).Set
+                let builder () = withMnemonic mnemonic ((PairModel.Cast _Pair.cell).Set
                                                             _first.cell 
                                                             _second.cell 
                                                        ) :> ICell

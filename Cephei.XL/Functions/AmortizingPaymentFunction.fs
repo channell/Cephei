@@ -92,7 +92,7 @@ module AmortizingPaymentFunction =
             try
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
-                let builder () = withMnemonic mnemonic ((_AmortizingPayment.cell :?> AmortizingPaymentModel).Amount
+                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -128,7 +128,7 @@ module AmortizingPaymentFunction =
             try
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
-                let builder () = withMnemonic mnemonic ((_AmortizingPayment.cell :?> AmortizingPaymentModel).Date
+                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -167,7 +167,7 @@ module AmortizingPaymentFunction =
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_AmortizingPayment.cell :?> AmortizingPaymentModel).CompareTo
+                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -209,7 +209,7 @@ module AmortizingPaymentFunction =
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_AmortizingPayment.cell :?> AmortizingPaymentModel).Equals
+                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -248,7 +248,7 @@ module AmortizingPaymentFunction =
             try
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
-                let builder () = withMnemonic mnemonic ((_AmortizingPayment.cell :?> AmortizingPaymentModel).ExCouponDate
+                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -290,7 +290,7 @@ module AmortizingPaymentFunction =
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((_AmortizingPayment.cell :?> AmortizingPaymentModel).HasOccurred
+                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -335,7 +335,7 @@ module AmortizingPaymentFunction =
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((_AmortizingPayment.cell :?> AmortizingPaymentModel).TradingExCoupon
+                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -377,7 +377,7 @@ module AmortizingPaymentFunction =
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_AmortizingPayment.cell :?> AmortizingPaymentModel).Accept
+                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : AmortizingPayment) (l:string) = o.ToString() :> obj
@@ -419,7 +419,7 @@ module AmortizingPaymentFunction =
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_AmortizingPayment.cell :?> AmortizingPaymentModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AmortizingPayment) (l:string) = o.ToString() :> obj
@@ -461,7 +461,7 @@ module AmortizingPaymentFunction =
 
                 let _AmortizingPayment = Helper.toCell<AmortizingPayment> amortizingpayment "AmortizingPayment"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_AmortizingPayment.cell :?> AmortizingPaymentModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((AmortizingPaymentModel.Cast _AmortizingPayment.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AmortizingPayment) (l:string) = o.ToString() :> obj

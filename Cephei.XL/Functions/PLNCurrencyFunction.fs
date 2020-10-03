@@ -80,7 +80,7 @@ module PLNCurrencyFunction =
             try
 
                 let _PLNCurrency = Helper.toCell<PLNCurrency> plncurrency "PLNCurrency"  
-                let builder () = withMnemonic mnemonic ((_PLNCurrency.cell :?> PLNCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((PLNCurrencyModel.Cast _PLNCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module PLNCurrencyFunction =
             try
 
                 let _PLNCurrency = Helper.toCell<PLNCurrency> plncurrency "PLNCurrency"  
-                let builder () = withMnemonic mnemonic ((_PLNCurrency.cell :?> PLNCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((PLNCurrencyModel.Cast _PLNCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module PLNCurrencyFunction =
 
                 let _PLNCurrency = Helper.toCell<PLNCurrency> plncurrency "PLNCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_PLNCurrency.cell :?> PLNCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((PLNCurrencyModel.Cast _PLNCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module PLNCurrencyFunction =
             try
 
                 let _PLNCurrency = Helper.toCell<PLNCurrency> plncurrency "PLNCurrency"  
-                let builder () = withMnemonic mnemonic ((_PLNCurrency.cell :?> PLNCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((PLNCurrencyModel.Cast _PLNCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module PLNCurrencyFunction =
             try
 
                 let _PLNCurrency = Helper.toCell<PLNCurrency> plncurrency "PLNCurrency"  
-                let builder () = withMnemonic mnemonic ((_PLNCurrency.cell :?> PLNCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((PLNCurrencyModel.Cast _PLNCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module PLNCurrencyFunction =
             try
 
                 let _PLNCurrency = Helper.toCell<PLNCurrency> plncurrency "PLNCurrency"  
-                let builder () = withMnemonic mnemonic ((_PLNCurrency.cell :?> PLNCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((PLNCurrencyModel.Cast _PLNCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module PLNCurrencyFunction =
             try
 
                 let _PLNCurrency = Helper.toCell<PLNCurrency> plncurrency "PLNCurrency"  
-                let builder () = withMnemonic mnemonic ((_PLNCurrency.cell :?> PLNCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((PLNCurrencyModel.Cast _PLNCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module PLNCurrencyFunction =
             try
 
                 let _PLNCurrency = Helper.toCell<PLNCurrency> plncurrency "PLNCurrency"  
-                let builder () = withMnemonic mnemonic ((_PLNCurrency.cell :?> PLNCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((PLNCurrencyModel.Cast _PLNCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module PLNCurrencyFunction =
             try
 
                 let _PLNCurrency = Helper.toCell<PLNCurrency> plncurrency "PLNCurrency"  
-                let builder () = withMnemonic mnemonic ((_PLNCurrency.cell :?> PLNCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((PLNCurrencyModel.Cast _PLNCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module PLNCurrencyFunction =
             try
 
                 let _PLNCurrency = Helper.toCell<PLNCurrency> plncurrency "PLNCurrency"  
-                let builder () = withMnemonic mnemonic ((_PLNCurrency.cell :?> PLNCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((PLNCurrencyModel.Cast _PLNCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module PLNCurrencyFunction =
             try
 
                 let _PLNCurrency = Helper.toCell<PLNCurrency> plncurrency "PLNCurrency"  
-                let builder () = withMnemonic mnemonic ((_PLNCurrency.cell :?> PLNCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((PLNCurrencyModel.Cast _PLNCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module PLNCurrencyFunction =
             try
 
                 let _PLNCurrency = Helper.toCell<PLNCurrency> plncurrency "PLNCurrency"  
-                let builder () = withMnemonic mnemonic ((_PLNCurrency.cell :?> PLNCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((PLNCurrencyModel.Cast _PLNCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

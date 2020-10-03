@@ -129,7 +129,7 @@ module DownRoundingFunction =
             try
 
                 let _DownRounding = Helper.toCell<DownRounding> downrounding "DownRounding"  
-                let builder () = withMnemonic mnemonic ((_DownRounding.cell :?> DownRoundingModel).Digit
+                let builder () = withMnemonic mnemonic ((DownRoundingModel.Cast _DownRounding.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -165,7 +165,7 @@ module DownRoundingFunction =
             try
 
                 let _DownRounding = Helper.toCell<DownRounding> downrounding "DownRounding"  
-                let builder () = withMnemonic mnemonic ((_DownRounding.cell :?> DownRoundingModel).GetType
+                let builder () = withMnemonic mnemonic ((DownRoundingModel.Cast _DownRounding.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -201,7 +201,7 @@ module DownRoundingFunction =
             try
 
                 let _DownRounding = Helper.toCell<DownRounding> downrounding "DownRounding"  
-                let builder () = withMnemonic mnemonic ((_DownRounding.cell :?> DownRoundingModel).Precision
+                let builder () = withMnemonic mnemonic ((DownRoundingModel.Cast _DownRounding.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -240,7 +240,7 @@ module DownRoundingFunction =
 
                 let _DownRounding = Helper.toCell<DownRounding> downrounding "DownRounding"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((_DownRounding.cell :?> DownRoundingModel).Round
+                let builder () = withMnemonic mnemonic ((DownRoundingModel.Cast _DownRounding.cell).Round
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

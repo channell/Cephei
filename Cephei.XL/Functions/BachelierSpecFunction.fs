@@ -80,7 +80,7 @@ module BachelierSpecFunction =
             try
 
                 let _BachelierSpec = Helper.toCell<BachelierSpec> bachelierspec "BachelierSpec"  
-                let builder () = withMnemonic mnemonic ((_BachelierSpec.cell :?> BachelierSpecModel).Type
+                let builder () = withMnemonic mnemonic ((BachelierSpecModel.Cast _BachelierSpec.cell).Type
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
@@ -134,7 +134,7 @@ module BachelierSpecFunction =
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _annuity = Helper.toCell<double> annuity "annuity" 
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder () = withMnemonic mnemonic ((_BachelierSpec.cell :?> BachelierSpecModel).Value
+                let builder () = withMnemonic mnemonic ((BachelierSpecModel.Cast _BachelierSpec.cell).Value
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _atmForward.cell 
@@ -206,7 +206,7 @@ module BachelierSpecFunction =
                 let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" 
                 let _annuity = Helper.toCell<double> annuity "annuity" 
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder () = withMnemonic mnemonic ((_BachelierSpec.cell :?> BachelierSpecModel).Vega
+                let builder () = withMnemonic mnemonic ((BachelierSpecModel.Cast _BachelierSpec.cell).Vega
                                                             _strike.cell 
                                                             _atmForward.cell 
                                                             _stdDev.cell 

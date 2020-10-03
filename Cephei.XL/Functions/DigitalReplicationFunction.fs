@@ -92,7 +92,7 @@ module DigitalReplicationFunction =
             try
 
                 let _DigitalReplication = Helper.toCell<DigitalReplication> digitalreplication "DigitalReplication"  
-                let builder () = withMnemonic mnemonic ((_DigitalReplication.cell :?> DigitalReplicationModel).Gap
+                let builder () = withMnemonic mnemonic ((DigitalReplicationModel.Cast _DigitalReplication.cell).Gap
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -128,7 +128,7 @@ module DigitalReplicationFunction =
             try
 
                 let _DigitalReplication = Helper.toCell<DigitalReplication> digitalreplication "DigitalReplication"  
-                let builder () = withMnemonic mnemonic ((_DigitalReplication.cell :?> DigitalReplicationModel).ReplicationType
+                let builder () = withMnemonic mnemonic ((DigitalReplicationModel.Cast _DigitalReplication.cell).ReplicationType
                                                        ) :> ICell
                 let format (o : Replication.Type) (l:string) = o.ToString() :> obj
 

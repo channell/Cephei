@@ -49,7 +49,7 @@ module LfmCovarianceProxyFunction =
             try
 
                 let _LfmCovarianceProxy = Helper.toCell<LfmCovarianceProxy> lfmcovarianceproxy "LfmCovarianceProxy"  
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).CorrelationModel
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).CorrelationModel
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmCorrelationModel>) l
 
@@ -85,7 +85,7 @@ module LfmCovarianceProxyFunction =
             try
 
                 let _LfmCovarianceProxy = Helper.toCell<LfmCovarianceProxy> lfmcovarianceproxy "LfmCovarianceProxy"  
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).CorrModel
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).CorrModel
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmCorrelationModel>) l
 
@@ -121,7 +121,7 @@ module LfmCovarianceProxyFunction =
             try
 
                 let _LfmCovarianceProxy = Helper.toCell<LfmCovarianceProxy> lfmcovarianceproxy "LfmCovarianceProxy"  
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).CorrModel_
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).CorrModel_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmCorrelationModel>) l
 
@@ -163,7 +163,7 @@ module LfmCovarianceProxyFunction =
                 let _LfmCovarianceProxy = Helper.toCell<LfmCovarianceProxy> lfmcovarianceproxy "LfmCovarianceProxy"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).Covariance
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).Covariance
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -211,7 +211,7 @@ module LfmCovarianceProxyFunction =
                 let _LfmCovarianceProxy = Helper.toCell<LfmCovarianceProxy> lfmcovarianceproxy "LfmCovarianceProxy"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).Diffusion1
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).Diffusion1
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -256,7 +256,7 @@ module LfmCovarianceProxyFunction =
 
                 let _LfmCovarianceProxy = Helper.toCell<LfmCovarianceProxy> lfmcovarianceproxy "LfmCovarianceProxy"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).Diffusion
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).Diffusion
                                                             _t.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
@@ -307,7 +307,7 @@ module LfmCovarianceProxyFunction =
                 let _j = Helper.toCell<int> j "j" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).IntegratedCovariance1
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).IntegratedCovariance1
                                                             _i.cell 
                                                             _j.cell 
                                                             _t.cell 
@@ -364,7 +364,7 @@ module LfmCovarianceProxyFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _j = Helper.toCell<int> j "j" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).IntegratedCovariance
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).IntegratedCovariance
                                                             _i.cell 
                                                             _j.cell 
                                                             _t.cell 
@@ -452,7 +452,7 @@ module LfmCovarianceProxyFunction =
             try
 
                 let _LfmCovarianceProxy = Helper.toCell<LfmCovarianceProxy> lfmcovarianceproxy "LfmCovarianceProxy"  
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).VolaModel
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).VolaModel
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmVolatilityModel>) l
 
@@ -488,7 +488,7 @@ module LfmCovarianceProxyFunction =
             try
 
                 let _LfmCovarianceProxy = Helper.toCell<LfmCovarianceProxy> lfmcovarianceproxy "LfmCovarianceProxy"  
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).VolaModel_
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).VolaModel_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmVolatilityModel>) l
 
@@ -524,7 +524,7 @@ module LfmCovarianceProxyFunction =
             try
 
                 let _LfmCovarianceProxy = Helper.toCell<LfmCovarianceProxy> lfmcovarianceproxy "LfmCovarianceProxy"  
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).VolatilityModel
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).VolatilityModel
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmVolatilityModel>) l
 
@@ -560,7 +560,7 @@ module LfmCovarianceProxyFunction =
             try
 
                 let _LfmCovarianceProxy = Helper.toCell<LfmCovarianceProxy> lfmcovarianceproxy "LfmCovarianceProxy"  
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).Factors
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -596,7 +596,7 @@ module LfmCovarianceProxyFunction =
             try
 
                 let _LfmCovarianceProxy = Helper.toCell<LfmCovarianceProxy> lfmcovarianceproxy "LfmCovarianceProxy"  
-                let builder () = withMnemonic mnemonic ((_LfmCovarianceProxy.cell :?> LfmCovarianceProxyModel).Size
+                let builder () = withMnemonic mnemonic ((LfmCovarianceProxyModel.Cast _LfmCovarianceProxy.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

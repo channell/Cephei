@@ -55,7 +55,7 @@ module FdmAmericanStepConditionFunction =
                 let _FdmAmericanStepCondition = Helper.toCell<FdmAmericanStepCondition> fdmamericanstepcondition "FdmAmericanStepCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_FdmAmericanStepCondition.cell :?> FdmAmericanStepConditionModel).ApplyTo
+                let builder () = withMnemonic mnemonic ((FdmAmericanStepConditionModel.Cast _FdmAmericanStepCondition.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell

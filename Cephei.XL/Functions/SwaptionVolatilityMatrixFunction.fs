@@ -55,7 +55,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Locate
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Locate
                                                             _optionTime.cell 
                                                             _swapLength.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Locate1
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Locate1
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
                                                        ) :> ICell
@@ -145,7 +145,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).MaxDate
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -181,7 +181,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).MaxStrike
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -217,7 +217,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).MaxSwapTenor
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).MaxSwapTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -253,7 +253,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).MinStrike
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -720,7 +720,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).VolatilityType
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
@@ -759,7 +759,7 @@ module SwaptionVolatilityMatrixFunction =
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).OptionDateFromTime
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).OptionDateFromTime
                                                             _optionTime.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -798,7 +798,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).OptionDates
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).OptionDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -834,7 +834,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).OptionTenors
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).OptionTenors
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -870,7 +870,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).OptionTimes
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).OptionTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -906,7 +906,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).SwapLengths
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).SwapLengths
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -942,7 +942,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).SwapTenors
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).SwapTenors
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -978,7 +978,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Update
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Update
                                                        ) :> ICell
                 let format (o : SwaptionVolatilityMatrix) (l:string) = o.ToString() :> obj
 
@@ -1026,7 +1026,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).BlackVariance4
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).BlackVariance4
                                                             _optionTime.cell 
                                                             _swapLength.cell 
                                                             _strike.cell 
@@ -1086,7 +1086,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).BlackVariance5
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).BlackVariance5
                                                             _optionDate.cell 
                                                             _swapLength.cell 
                                                             _strike.cell 
@@ -1146,7 +1146,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).BlackVariance3
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).BlackVariance3
                                                             _optionTenor.cell 
                                                             _swapLength.cell 
                                                             _strike.cell 
@@ -1206,7 +1206,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).BlackVariance2
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).BlackVariance2
                                                             _optionTime.cell 
                                                             _swapTenor.cell 
                                                             _strike.cell 
@@ -1266,7 +1266,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).BlackVariance1
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).BlackVariance1
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
                                                             _strike.cell 
@@ -1326,7 +1326,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).BlackVariance
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).BlackVariance
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
                                                             _strike.cell 
@@ -1374,7 +1374,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).MaxSwapLength
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).MaxSwapLength
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1419,7 +1419,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Shift4
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Shift4
                                                             _optionTime.cell 
                                                             _swapTenor.cell 
                                                             _extrapolate.cell 
@@ -1473,7 +1473,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Shift5
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Shift5
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
                                                             _extrapolate.cell 
@@ -1527,7 +1527,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Shift1
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Shift1
                                                             _optionDate.cell 
                                                             _swapLength.cell 
                                                             _extrapolate.cell 
@@ -1581,7 +1581,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Shift
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Shift
                                                             _optionTime.cell 
                                                             _swapLength.cell 
                                                             _extrapolate.cell 
@@ -1635,7 +1635,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Shift2
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Shift2
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
                                                             _extrapolate.cell 
@@ -1689,7 +1689,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Shift3
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Shift3
                                                             _optionTenor.cell 
                                                             _swapLength.cell 
                                                             _extrapolate.cell 
@@ -1743,7 +1743,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _optionTenor = Helper.toCell<Period> optionTenor "optionTenor" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).SmileSection1
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).SmileSection1
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
                                                             _extr.cell 
@@ -1797,7 +1797,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _optionTime = Helper.toCell<double> optionTime "optionTime" 
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _extr = Helper.toCell<bool> extr "extr" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).SmileSection2
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).SmileSection2
                                                             _optionTime.cell 
                                                             _swapLength.cell 
                                                             _extr.cell 
@@ -1851,7 +1851,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _optionDate = Helper.toCell<Date> optionDate "optionDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _extr = Helper.toCell<bool> extr "extr" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).SmileSection
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).SmileSection
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
                                                             _extr.cell 
@@ -1902,7 +1902,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
                 let _start = Helper.toCell<Date> start "start" 
                 let _End = Helper.toCell<Date> End "End" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).SwapLength
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).SwapLength
                                                             _start.cell 
                                                             _End.cell 
                                                        ) :> ICell
@@ -1947,7 +1947,7 @@ module SwaptionVolatilityMatrixFunction =
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).SwapLength1
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).SwapLength1
                                                             _swapTenor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1998,7 +1998,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Volatility4
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Volatility4
                                                             _optionDate.cell 
                                                             _swapTenor.cell 
                                                             _strike.cell 
@@ -2058,7 +2058,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Volatility2
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Volatility2
                                                             _optionDate.cell 
                                                             _swapLength.cell 
                                                             _strike.cell 
@@ -2118,7 +2118,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Volatility5
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Volatility5
                                                             _optionTenor.cell 
                                                             _swapTenor.cell 
                                                             _strike.cell 
@@ -2178,7 +2178,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Volatility1
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Volatility1
                                                             _optionTenor.cell 
                                                             _swapLength.cell 
                                                             _strike.cell 
@@ -2238,7 +2238,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapLength = Helper.toCell<double> swapLength "swapLength" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Volatility3
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Volatility3
                                                             _optionTime.cell 
                                                             _swapLength.cell 
                                                             _strike.cell 
@@ -2298,7 +2298,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Volatility
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Volatility
                                                             _optionTime.cell 
                                                             _swapTenor.cell 
                                                             _strike.cell 
@@ -2346,7 +2346,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -2385,7 +2385,7 @@ module SwaptionVolatilityMatrixFunction =
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).OptionDateFromTenor
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -2424,7 +2424,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Calendar
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -2460,7 +2460,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).DayCounter
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -2496,7 +2496,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).MaxTime
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -2532,7 +2532,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).ReferenceDate
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -2568,7 +2568,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).SettlementDays
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -2607,7 +2607,7 @@ module SwaptionVolatilityMatrixFunction =
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).TimeFromReference
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -2646,7 +2646,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -2685,7 +2685,7 @@ module SwaptionVolatilityMatrixFunction =
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : SwaptionVolatilityMatrix) (l:string) = o.ToString() :> obj
@@ -2727,7 +2727,7 @@ module SwaptionVolatilityMatrixFunction =
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : SwaptionVolatilityMatrix) (l:string) = o.ToString() :> obj
@@ -2766,7 +2766,7 @@ module SwaptionVolatilityMatrixFunction =
             try
 
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
-                let builder () = withMnemonic mnemonic ((_SwaptionVolatilityMatrix.cell :?> SwaptionVolatilityMatrixModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

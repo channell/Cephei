@@ -52,7 +52,7 @@ module GaussHyperbolicPolynomialFunction =
 
                 let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_GaussHyperbolicPolynomial.cell :?> GaussHyperbolicPolynomialModel).Alpha
+                let builder () = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Alpha
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -94,7 +94,7 @@ module GaussHyperbolicPolynomialFunction =
 
                 let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_GaussHyperbolicPolynomial.cell :?> GaussHyperbolicPolynomialModel).Beta
+                let builder () = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Beta
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -133,7 +133,7 @@ module GaussHyperbolicPolynomialFunction =
             try
 
                 let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
-                let builder () = withMnemonic mnemonic ((_GaussHyperbolicPolynomial.cell :?> GaussHyperbolicPolynomialModel).Mu_0
+                let builder () = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -172,7 +172,7 @@ module GaussHyperbolicPolynomialFunction =
 
                 let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_GaussHyperbolicPolynomial.cell :?> GaussHyperbolicPolynomialModel).W
+                let builder () = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).W
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -217,7 +217,7 @@ module GaussHyperbolicPolynomialFunction =
                 let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_GaussHyperbolicPolynomial.cell :?> GaussHyperbolicPolynomialModel).Value
+                let builder () = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).Value
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -265,7 +265,7 @@ module GaussHyperbolicPolynomialFunction =
                 let _GaussHyperbolicPolynomial = Helper.toCell<GaussHyperbolicPolynomial> gausshyperbolicpolynomial "GaussHyperbolicPolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_GaussHyperbolicPolynomial.cell :?> GaussHyperbolicPolynomialModel).WeightedValue
+                let builder () = withMnemonic mnemonic ((GaussHyperbolicPolynomialModel.Cast _GaussHyperbolicPolynomial.cell).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell

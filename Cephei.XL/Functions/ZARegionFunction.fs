@@ -80,7 +80,7 @@ module ZARegionFunction =
             try
 
                 let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion"  
-                let builder () = withMnemonic mnemonic ((_ZARegion.cell :?> ZARegionModel).Code
+                let builder () = withMnemonic mnemonic ((ZARegionModel.Cast _ZARegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -119,7 +119,7 @@ module ZARegionFunction =
 
                 let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_ZARegion.cell :?> ZARegionModel).Equals
+                let builder () = withMnemonic mnemonic ((ZARegionModel.Cast _ZARegion.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -158,7 +158,7 @@ module ZARegionFunction =
             try
 
                 let _ZARegion = Helper.toCell<ZARegion> zaregion "ZARegion"  
-                let builder () = withMnemonic mnemonic ((_ZARegion.cell :?> ZARegionModel).Name
+                let builder () = withMnemonic mnemonic ((ZARegionModel.Cast _ZARegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 

@@ -49,7 +49,7 @@ module OptionFunction =
             try
 
                 let _Option = Helper.toCell<Option> option "Option"  
-                let builder () = withMnemonic mnemonic ((_Option.cell :?> OptionModel).Exercise
+                let builder () = withMnemonic mnemonic ((OptionModel.Cast _Option.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -140,7 +140,7 @@ module OptionFunction =
             try
 
                 let _Option = Helper.toCell<Option> option "Option"  
-                let builder () = withMnemonic mnemonic ((_Option.cell :?> OptionModel).Payoff
+                let builder () = withMnemonic mnemonic ((OptionModel.Cast _Option.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -176,7 +176,7 @@ module OptionFunction =
             try
 
                 let _Option = Helper.toCell<Option> option "Option"  
-                let builder () = withMnemonic mnemonic ((_Option.cell :?> OptionModel).CASH
+                let builder () = withMnemonic mnemonic ((OptionModel.Cast _Option.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -212,7 +212,7 @@ module OptionFunction =
             try
 
                 let _Option = Helper.toCell<Option> option "Option"  
-                let builder () = withMnemonic mnemonic ((_Option.cell :?> OptionModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((OptionModel.Cast _Option.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -248,7 +248,7 @@ module OptionFunction =
             try
 
                 let _Option = Helper.toCell<Option> option "Option"  
-                let builder () = withMnemonic mnemonic ((_Option.cell :?> OptionModel).IsExpired
+                let builder () = withMnemonic mnemonic ((OptionModel.Cast _Option.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -284,7 +284,7 @@ module OptionFunction =
             try
 
                 let _Option = Helper.toCell<Option> option "Option"  
-                let builder () = withMnemonic mnemonic ((_Option.cell :?> OptionModel).NPV
+                let builder () = withMnemonic mnemonic ((OptionModel.Cast _Option.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -323,7 +323,7 @@ module OptionFunction =
 
                 let _Option = Helper.toCell<Option> option "Option"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_Option.cell :?> OptionModel).Result
+                let builder () = withMnemonic mnemonic ((OptionModel.Cast _Option.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -365,7 +365,7 @@ module OptionFunction =
 
                 let _Option = Helper.toCell<Option> option "Option"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_Option.cell :?> OptionModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((OptionModel.Cast _Option.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Option) (l:string) = o.ToString() :> obj
@@ -404,7 +404,7 @@ module OptionFunction =
             try
 
                 let _Option = Helper.toCell<Option> option "Option"  
-                let builder () = withMnemonic mnemonic ((_Option.cell :?> OptionModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((OptionModel.Cast _Option.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

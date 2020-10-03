@@ -49,7 +49,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).AdjustedFixing
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).BaseCPI
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).BaseCPI
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -242,7 +242,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).CpiIndex
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).CpiIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
@@ -278,7 +278,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).FixedRate
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).FixedRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -314,7 +314,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).IndexFixing
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -353,7 +353,7 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _onDate = Helper.toCell<Date> onDate "onDate" 
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).IndexObservation
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).IndexObservation
                                                             _onDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -392,7 +392,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).ObservationInterpolation
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ObservationInterpolation
                                                        ) :> ICell
                 let format (o : InterpolationType) (l:string) = o.ToString() :> obj
 
@@ -428,7 +428,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).Spread
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -467,7 +467,7 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).AccruedAmount
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -506,7 +506,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).Amount
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -542,7 +542,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).DayCounter
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -578,7 +578,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).FixingDate
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -614,7 +614,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).FixingDays
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -650,7 +650,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).Index
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationIndex>) l
 
@@ -686,7 +686,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).ObservationLag
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -725,7 +725,7 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _discountingCurve = Helper.toHandle<YieldTermStructure> discountingCurve "discountingCurve" 
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).Price
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Price
                                                             _discountingCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -764,7 +764,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).Pricer
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationCouponPricer>) l
 
@@ -800,7 +800,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).Rate
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -839,7 +839,7 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _pricer = Helper.toCell<InflationCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).SetPricer
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : CPICoupon) (l:string) = o.ToString() :> obj
@@ -878,7 +878,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).Update
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Update
                                                        ) :> ICell
                 let format (o : CPICoupon) (l:string) = o.ToString() :> obj
 
@@ -914,7 +914,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).AccrualDays
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -950,7 +950,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).AccrualEndDate
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -986,7 +986,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).AccrualPeriod
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1022,7 +1022,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).AccrualStartDate
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1061,7 +1061,7 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).AccruedDays
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1103,7 +1103,7 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).AccruedPeriod
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1142,7 +1142,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).Date
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1178,7 +1178,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).ExCouponDate
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1214,7 +1214,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).Nominal
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1250,7 +1250,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).ReferencePeriodEnd
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1286,7 +1286,7 @@ module CPICouponFunction =
             try
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).ReferencePeriodStart
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1325,7 +1325,7 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).CompareTo
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1367,7 +1367,7 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).Equals
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1412,7 +1412,7 @@ module CPICouponFunction =
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).HasOccurred
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -1457,7 +1457,7 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).TradingExCoupon
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1499,7 +1499,7 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).Accept
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : CPICoupon) (l:string) = o.ToString() :> obj
@@ -1541,7 +1541,7 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CPICoupon) (l:string) = o.ToString() :> obj
@@ -1583,7 +1583,7 @@ module CPICouponFunction =
 
                 let _CPICoupon = Helper.toCell<CPICoupon> cpicoupon "CPICoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_CPICoupon.cell :?> CPICouponModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((CPICouponModel.Cast _CPICoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CPICoupon) (l:string) = o.ToString() :> obj

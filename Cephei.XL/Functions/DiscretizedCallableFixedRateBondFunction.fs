@@ -98,7 +98,7 @@ module DiscretizedCallableFixedRateBondFunction =
             try
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).MandatoryTimes
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -137,7 +137,7 @@ module DiscretizedCallableFixedRateBondFunction =
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).Reset
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).Reset
                                                             _size.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
@@ -176,7 +176,7 @@ module DiscretizedCallableFixedRateBondFunction =
             try
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).AdjustValues
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
 
@@ -218,7 +218,7 @@ module DiscretizedCallableFixedRateBondFunction =
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
                 let _Method = Helper.toCell<Lattice> Method "Method" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).Initialize
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).Initialize
                                                             _Method.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -260,7 +260,7 @@ module DiscretizedCallableFixedRateBondFunction =
             try
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).Method
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
@@ -299,7 +299,7 @@ module DiscretizedCallableFixedRateBondFunction =
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).PartialRollback
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).PartialRollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
@@ -338,7 +338,7 @@ module DiscretizedCallableFixedRateBondFunction =
             try
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).PostAdjustValues
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
 
@@ -374,7 +374,7 @@ module DiscretizedCallableFixedRateBondFunction =
             try
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).PreAdjustValues
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
 
@@ -410,7 +410,7 @@ module DiscretizedCallableFixedRateBondFunction =
             try
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).PresentValue
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -449,7 +449,7 @@ module DiscretizedCallableFixedRateBondFunction =
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).Rollback
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).Rollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
@@ -491,7 +491,7 @@ module DiscretizedCallableFixedRateBondFunction =
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).SetTime
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
@@ -533,7 +533,7 @@ module DiscretizedCallableFixedRateBondFunction =
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).SetValues
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).SetValues
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
@@ -572,7 +572,7 @@ module DiscretizedCallableFixedRateBondFunction =
             try
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).Time
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -608,7 +608,7 @@ module DiscretizedCallableFixedRateBondFunction =
             try
 
                 let _DiscretizedCallableFixedRateBond = Helper.toCell<DiscretizedCallableFixedRateBond> discretizedcallablefixedratebond "DiscretizedCallableFixedRateBond"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedCallableFixedRateBond.cell :?> DiscretizedCallableFixedRateBondModel).Values
+                let builder () = withMnemonic mnemonic ((DiscretizedCallableFixedRateBondModel.Cast _DiscretizedCallableFixedRateBond.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

@@ -92,7 +92,7 @@ module GaussianQuadratureFunction =
             try
 
                 let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
-                let builder () = withMnemonic mnemonic ((_GaussianQuadrature.cell :?> GaussianQuadratureModel).Order
+                let builder () = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -131,7 +131,7 @@ module GaussianQuadratureFunction =
 
                 let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((_GaussianQuadrature.cell :?> GaussianQuadratureModel).Value
+                let builder () = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -170,7 +170,7 @@ module GaussianQuadratureFunction =
             try
 
                 let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
-                let builder () = withMnemonic mnemonic ((_GaussianQuadrature.cell :?> GaussianQuadratureModel).Weights
+                let builder () = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -206,7 +206,7 @@ module GaussianQuadratureFunction =
             try
 
                 let _GaussianQuadrature = Helper.toCell<GaussianQuadrature> gaussianquadrature "GaussianQuadrature"  
-                let builder () = withMnemonic mnemonic ((_GaussianQuadrature.cell :?> GaussianQuadratureModel).X
+                let builder () = withMnemonic mnemonic ((GaussianQuadratureModel.Cast _GaussianQuadrature.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

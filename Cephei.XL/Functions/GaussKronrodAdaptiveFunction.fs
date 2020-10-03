@@ -94,7 +94,7 @@ module GaussKronrodAdaptiveFunction =
             try
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
-                let builder () = withMnemonic mnemonic ((_GaussKronrodAdaptive.cell :?> GaussKronrodAdaptiveModel).AbsoluteAccuracy
+                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -130,7 +130,7 @@ module GaussKronrodAdaptiveFunction =
             try
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
-                let builder () = withMnemonic mnemonic ((_GaussKronrodAdaptive.cell :?> GaussKronrodAdaptiveModel).AbsoluteError
+                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -166,7 +166,7 @@ module GaussKronrodAdaptiveFunction =
             try
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
-                let builder () = withMnemonic mnemonic ((_GaussKronrodAdaptive.cell :?> GaussKronrodAdaptiveModel).IntegrationSuccess
+                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -202,7 +202,7 @@ module GaussKronrodAdaptiveFunction =
             try
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
-                let builder () = withMnemonic mnemonic ((_GaussKronrodAdaptive.cell :?> GaussKronrodAdaptiveModel).MaxEvaluations
+                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -238,7 +238,7 @@ module GaussKronrodAdaptiveFunction =
             try
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
-                let builder () = withMnemonic mnemonic ((_GaussKronrodAdaptive.cell :?> GaussKronrodAdaptiveModel).NumberOfEvaluations
+                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -277,7 +277,7 @@ module GaussKronrodAdaptiveFunction =
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder () = withMnemonic mnemonic ((_GaussKronrodAdaptive.cell :?> GaussKronrodAdaptiveModel).SetAbsoluteAccuracy
+                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
                                                        ) :> ICell
                 let format (o : GaussKronrodAdaptive) (l:string) = o.ToString() :> obj
@@ -319,7 +319,7 @@ module GaussKronrodAdaptiveFunction =
 
                 let _GaussKronrodAdaptive = Helper.toCell<GaussKronrodAdaptive> gausskronrodadaptive "GaussKronrodAdaptive"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((_GaussKronrodAdaptive.cell :?> GaussKronrodAdaptiveModel).SetMaxEvaluations
+                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (o : GaussKronrodAdaptive) (l:string) = o.ToString() :> obj
@@ -367,7 +367,7 @@ module GaussKronrodAdaptiveFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic ((_GaussKronrodAdaptive.cell :?> GaussKronrodAdaptiveModel).Value
+                let builder () = withMnemonic mnemonic ((GaussKronrodAdaptiveModel.Cast _GaussKronrodAdaptive.cell).Value
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 

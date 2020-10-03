@@ -52,7 +52,7 @@ module LinearTsrPricerFunction =
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).CapletPrice
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -94,7 +94,7 @@ module LinearTsrPricerFunction =
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).CapletRate
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -136,7 +136,7 @@ module LinearTsrPricerFunction =
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).FloorletPrice
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -178,7 +178,7 @@ module LinearTsrPricerFunction =
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).FloorletRate
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -220,7 +220,7 @@ module LinearTsrPricerFunction =
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" 
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).Initialize
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
@@ -320,7 +320,7 @@ module LinearTsrPricerFunction =
             try
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).MeanReversion
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).MeanReversion
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -359,7 +359,7 @@ module LinearTsrPricerFunction =
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _meanReversion = Helper.toHandle<Quote> meanReversion "meanReversion" 
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).SetMeanReversion
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).SetMeanReversion
                                                             _meanReversion.cell 
                                                        ) :> ICell
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
@@ -398,7 +398,7 @@ module LinearTsrPricerFunction =
             try
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).SwapletPrice
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -434,7 +434,7 @@ module LinearTsrPricerFunction =
             try
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).SwapletRate
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -473,7 +473,7 @@ module LinearTsrPricerFunction =
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _v = Helper.toHandle<SwaptionVolatilityStructure> v "v" 
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).SetSwaptionVolatility
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).SetSwaptionVolatility
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
@@ -512,7 +512,7 @@ module LinearTsrPricerFunction =
             try
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).SwaptionVolatility
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).SwaptionVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 
@@ -551,7 +551,7 @@ module LinearTsrPricerFunction =
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
@@ -593,7 +593,7 @@ module LinearTsrPricerFunction =
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
@@ -632,7 +632,7 @@ module LinearTsrPricerFunction =
             try
 
                 let _LinearTsrPricer = Helper.toCell<LinearTsrPricer> lineartsrpricer "LinearTsrPricer"  
-                let builder () = withMnemonic mnemonic ((_LinearTsrPricer.cell :?> LinearTsrPricerModel).Update
+                let builder () = withMnemonic mnemonic ((LinearTsrPricerModel.Cast _LinearTsrPricer.cell).Update
                                                        ) :> ICell
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
 

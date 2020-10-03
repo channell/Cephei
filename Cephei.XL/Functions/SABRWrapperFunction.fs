@@ -107,7 +107,7 @@ module SABRWrapperFunction =
 
                 let _SABRWrapper = Helper.toCell<SABRWrapper> sabrwrapper "SABRWrapper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_SABRWrapper.cell :?> SABRWrapperModel).Volatility
+                let builder () = withMnemonic mnemonic ((SABRWrapperModel.Cast _SABRWrapper.cell).Volatility
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

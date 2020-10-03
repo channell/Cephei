@@ -101,7 +101,7 @@ module HongKongFunction =
             try
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).AddedHolidays
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -140,7 +140,7 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).AddHoliday
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : HongKong) (l:string) = o.ToString() :> obj
@@ -185,7 +185,7 @@ module HongKongFunction =
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).Adjust
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -242,7 +242,7 @@ module HongKongFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).Advance1
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -305,7 +305,7 @@ module HongKongFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).Advance
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -365,7 +365,7 @@ module HongKongFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).BusinessDaysBetween
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -413,7 +413,7 @@ module HongKongFunction =
             try
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).Calendar
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -449,7 +449,7 @@ module HongKongFunction =
             try
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).Empty
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -488,7 +488,7 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -530,7 +530,7 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).Equals
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -572,7 +572,7 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).IsBusinessDay
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -614,7 +614,7 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).IsEndOfMonth
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -656,7 +656,7 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).IsHoliday
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -698,7 +698,7 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).IsWeekend
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -739,7 +739,7 @@ module HongKongFunction =
             try
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).Name
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -775,7 +775,7 @@ module HongKongFunction =
             try
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).RemovedHolidays
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -814,7 +814,7 @@ module HongKongFunction =
 
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_HongKong.cell :?> HongKongModel).RemoveHoliday
+                let builder () = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : HongKong) (l:string) = o.ToString() :> obj

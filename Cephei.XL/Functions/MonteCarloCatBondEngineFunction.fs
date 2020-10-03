@@ -50,7 +50,7 @@ module MonteCarloCatBondEngineFunction =
             try
 
                 let _MonteCarloCatBondEngine = Helper.toCell<MonteCarloCatBondEngine> montecarlocatbondengine "MonteCarloCatBondEngine"  
-                let builder () = withMnemonic mnemonic ((_MonteCarloCatBondEngine.cell :?> MonteCarloCatBondEngineModel).DiscountCurve
+                let builder () = withMnemonic mnemonic ((MonteCarloCatBondEngineModel.Cast _MonteCarloCatBondEngine.cell).DiscountCurve
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 

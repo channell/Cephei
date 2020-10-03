@@ -52,7 +52,7 @@ module InflationCouponFunction =
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).AccruedAmount
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -91,7 +91,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).Amount
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -127,7 +127,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).DayCounter
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -163,7 +163,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).FixingDate
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -199,7 +199,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).FixingDays
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -235,7 +235,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).Index
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationIndex>) l
 
@@ -271,7 +271,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).IndexFixing
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -404,7 +404,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).ObservationLag
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -443,7 +443,7 @@ module InflationCouponFunction =
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _discountingCurve = Helper.toHandle<YieldTermStructure> discountingCurve "discountingCurve" 
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).Price
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).Price
                                                             _discountingCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -482,7 +482,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).Pricer
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationCouponPricer>) l
 
@@ -518,7 +518,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).Rate
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -557,7 +557,7 @@ module InflationCouponFunction =
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _pricer = Helper.toCell<InflationCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).SetPricer
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : InflationCoupon) (l:string) = o.ToString() :> obj
@@ -596,7 +596,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).Update
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : InflationCoupon) (l:string) = o.ToString() :> obj
 
@@ -632,7 +632,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).AccrualDays
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -668,7 +668,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).AccrualEndDate
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -704,7 +704,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).AccrualPeriod
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -740,7 +740,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).AccrualStartDate
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -779,7 +779,7 @@ module InflationCouponFunction =
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).AccruedDays
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -821,7 +821,7 @@ module InflationCouponFunction =
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).AccruedPeriod
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -860,7 +860,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).Date
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -896,7 +896,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).ExCouponDate
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -932,7 +932,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).Nominal
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -968,7 +968,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).ReferencePeriodEnd
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1004,7 +1004,7 @@ module InflationCouponFunction =
             try
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).ReferencePeriodStart
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1043,7 +1043,7 @@ module InflationCouponFunction =
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).CompareTo
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1085,7 +1085,7 @@ module InflationCouponFunction =
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).Equals
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1130,7 +1130,7 @@ module InflationCouponFunction =
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).HasOccurred
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -1175,7 +1175,7 @@ module InflationCouponFunction =
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).TradingExCoupon
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1217,7 +1217,7 @@ module InflationCouponFunction =
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).Accept
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : InflationCoupon) (l:string) = o.ToString() :> obj
@@ -1259,7 +1259,7 @@ module InflationCouponFunction =
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : InflationCoupon) (l:string) = o.ToString() :> obj
@@ -1301,7 +1301,7 @@ module InflationCouponFunction =
 
                 let _InflationCoupon = Helper.toCell<InflationCoupon> inflationcoupon "InflationCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_InflationCoupon.cell :?> InflationCouponModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((InflationCouponModel.Cast _InflationCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : InflationCoupon) (l:string) = o.ToString() :> obj

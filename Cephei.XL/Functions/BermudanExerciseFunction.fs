@@ -129,7 +129,7 @@ module BermudanExerciseFunction =
             try
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
-                let builder () = withMnemonic mnemonic ((_BermudanExercise.cell :?> BermudanExerciseModel).PayoffAtExpiry
+                let builder () = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).PayoffAtExpiry
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -168,7 +168,7 @@ module BermudanExerciseFunction =
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_BermudanExercise.cell :?> BermudanExerciseModel).Date
+                let builder () = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Date
                                                             _index.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -207,7 +207,7 @@ module BermudanExerciseFunction =
             try
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
-                let builder () = withMnemonic mnemonic ((_BermudanExercise.cell :?> BermudanExerciseModel).Dates
+                let builder () = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -243,7 +243,7 @@ module BermudanExerciseFunction =
             try
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
-                let builder () = withMnemonic mnemonic ((_BermudanExercise.cell :?> BermudanExerciseModel).LastDate
+                let builder () = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).LastDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -279,7 +279,7 @@ module BermudanExerciseFunction =
             try
 
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
-                let builder () = withMnemonic mnemonic ((_BermudanExercise.cell :?> BermudanExerciseModel).Type
+                let builder () = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 

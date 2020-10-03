@@ -227,7 +227,7 @@ module BlackStyleSwaptionEngineFunction =
             try
 
                 let _BlackStyleSwaptionEngine = Helper.toCell<BlackStyleSwaptionEngine> blackstyleswaptionengine "BlackStyleSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((_BlackStyleSwaptionEngine.cell :?> BlackStyleSwaptionEngineModel).TermStructure
+                let builder () = withMnemonic mnemonic ((BlackStyleSwaptionEngineModel.Cast _BlackStyleSwaptionEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -263,7 +263,7 @@ module BlackStyleSwaptionEngineFunction =
             try
 
                 let _BlackStyleSwaptionEngine = Helper.toCell<BlackStyleSwaptionEngine> blackstyleswaptionengine "BlackStyleSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((_BlackStyleSwaptionEngine.cell :?> BlackStyleSwaptionEngineModel).Volatility
+                let builder () = withMnemonic mnemonic ((BlackStyleSwaptionEngineModel.Cast _BlackStyleSwaptionEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 

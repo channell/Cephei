@@ -138,7 +138,7 @@ module MCDiscreteGeometricAPEngineFunction =
 
                 let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((MCDiscreteGeometricAPEngineModel.Cast _MCDiscreteGeometricAPEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : MCDiscreteGeometricAPEngine) (l:string) = o.ToString() :> obj
@@ -177,7 +177,7 @@ module MCDiscreteGeometricAPEngineFunction =
             try
 
                 let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
-                let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).Reset
+                let builder () = withMnemonic mnemonic ((MCDiscreteGeometricAPEngineModel.Cast _MCDiscreteGeometricAPEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : MCDiscreteGeometricAPEngine) (l:string) = o.ToString() :> obj
 
@@ -216,7 +216,7 @@ module MCDiscreteGeometricAPEngineFunction =
 
                 let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((MCDiscreteGeometricAPEngineModel.Cast _MCDiscreteGeometricAPEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : MCDiscreteGeometricAPEngine) (l:string) = o.ToString() :> obj
@@ -255,7 +255,7 @@ module MCDiscreteGeometricAPEngineFunction =
             try
 
                 let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
-                let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).Update
+                let builder () = withMnemonic mnemonic ((MCDiscreteGeometricAPEngineModel.Cast _MCDiscreteGeometricAPEngine.cell).Update
                                                        ) :> ICell
                 let format (o : MCDiscreteGeometricAPEngine) (l:string) = o.ToString() :> obj
 
@@ -291,7 +291,7 @@ module MCDiscreteGeometricAPEngineFunction =
             try
 
                 let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
-                let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((MCDiscreteGeometricAPEngineModel.Cast _MCDiscreteGeometricAPEngine.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -327,7 +327,7 @@ module MCDiscreteGeometricAPEngineFunction =
             try
 
                 let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
-                let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).SampleAccumulator
+                let builder () = withMnemonic mnemonic ((MCDiscreteGeometricAPEngineModel.Cast _MCDiscreteGeometricAPEngine.cell).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
 
@@ -372,7 +372,7 @@ module MCDiscreteGeometricAPEngineFunction =
                 let _tolerance = Helper.toCell<double> tolerance "tolerance" 
                 let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
                 let _minSamples = Helper.toCell<int> minSamples "minSamples" 
-                let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).Value
+                let builder () = withMnemonic mnemonic ((MCDiscreteGeometricAPEngineModel.Cast _MCDiscreteGeometricAPEngine.cell).Value
                                                             _tolerance.cell 
                                                             _maxSamples.cell 
                                                             _minSamples.cell 
@@ -420,7 +420,7 @@ module MCDiscreteGeometricAPEngineFunction =
 
                 let _MCDiscreteGeometricAPEngine = Helper.toCell<MCDiscreteGeometricAPEngine> mcdiscretegeometricapengine "MCDiscreteGeometricAPEngine"  
                 let _samples = Helper.toCell<int> samples "samples" 
-                let builder () = withMnemonic mnemonic ((_MCDiscreteGeometricAPEngine.cell :?> MCDiscreteGeometricAPEngineModel).ValueWithSamples
+                let builder () = withMnemonic mnemonic ((MCDiscreteGeometricAPEngineModel.Cast _MCDiscreteGeometricAPEngine.cell).ValueWithSamples
                                                             _samples.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

@@ -108,7 +108,7 @@ module IndiaFunction =
             try
 
                 let _India = Helper.toCell<India> india "India"  
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).AddedHolidays
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -147,7 +147,7 @@ module IndiaFunction =
 
                 let _India = Helper.toCell<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).AddHoliday
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : India) (l:string) = o.ToString() :> obj
@@ -192,7 +192,7 @@ module IndiaFunction =
                 let _India = Helper.toCell<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).Adjust
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -249,7 +249,7 @@ module IndiaFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).Advance1
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -312,7 +312,7 @@ module IndiaFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).Advance
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -372,7 +372,7 @@ module IndiaFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).BusinessDaysBetween
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -420,7 +420,7 @@ module IndiaFunction =
             try
 
                 let _India = Helper.toCell<India> india "India"  
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).Calendar
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -456,7 +456,7 @@ module IndiaFunction =
             try
 
                 let _India = Helper.toCell<India> india "India"  
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).Empty
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -495,7 +495,7 @@ module IndiaFunction =
 
                 let _India = Helper.toCell<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -537,7 +537,7 @@ module IndiaFunction =
 
                 let _India = Helper.toCell<India> india "India"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).Equals
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -579,7 +579,7 @@ module IndiaFunction =
 
                 let _India = Helper.toCell<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).IsBusinessDay
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -621,7 +621,7 @@ module IndiaFunction =
 
                 let _India = Helper.toCell<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).IsEndOfMonth
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -663,7 +663,7 @@ module IndiaFunction =
 
                 let _India = Helper.toCell<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).IsHoliday
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -705,7 +705,7 @@ module IndiaFunction =
 
                 let _India = Helper.toCell<India> india "India"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).IsWeekend
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -746,7 +746,7 @@ module IndiaFunction =
             try
 
                 let _India = Helper.toCell<India> india "India"  
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).Name
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -782,7 +782,7 @@ module IndiaFunction =
             try
 
                 let _India = Helper.toCell<India> india "India"  
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).RemovedHolidays
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -821,7 +821,7 @@ module IndiaFunction =
 
                 let _India = Helper.toCell<India> india "India"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_India.cell :?> IndiaModel).RemoveHoliday
+                let builder () = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : India) (l:string) = o.ToString() :> obj

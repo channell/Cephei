@@ -134,7 +134,7 @@ module DividendVanillaOptionFunction =
                 let _maxEvaluations = Helper.toDefault<int> maxEvaluations "maxEvaluations" 100
                 let _minVol = Helper.toDefault<double> minVol "minVol" 1.0e-7
                 let _maxVol = Helper.toDefault<double> maxVol "maxVol" 4.0
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).ImpliedVolatility
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _Process.cell 
                                                             _accuracy.cell 
@@ -188,7 +188,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).Delta
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -224,7 +224,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).DeltaForward
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -260,7 +260,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).DividendRho
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -296,7 +296,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).Elasticity
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -332,7 +332,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).Gamma
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -368,7 +368,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).IsExpired
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -404,7 +404,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).ItmCashProbability
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -440,7 +440,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).Rho
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -476,7 +476,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).StrikeSensitivity
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -512,7 +512,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).Theta
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -548,7 +548,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).ThetaPerDay
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -584,7 +584,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).Vega
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -620,7 +620,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).Exercise
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -656,7 +656,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).Payoff
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -692,7 +692,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).CASH
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -728,7 +728,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -764,7 +764,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).NPV
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -803,7 +803,7 @@ module DividendVanillaOptionFunction =
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).Result
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -845,7 +845,7 @@ module DividendVanillaOptionFunction =
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : DividendVanillaOption) (l:string) = o.ToString() :> obj
@@ -884,7 +884,7 @@ module DividendVanillaOptionFunction =
             try
 
                 let _DividendVanillaOption = Helper.toCell<DividendVanillaOption> dividendvanillaoption "DividendVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DividendVanillaOption.cell :?> DividendVanillaOptionModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((DividendVanillaOptionModel.Cast _DividendVanillaOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

@@ -104,7 +104,7 @@ module LinearInterpolationFunction =
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).Derivative
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -146,7 +146,7 @@ module LinearInterpolationFunction =
             try
 
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).Empty
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -188,7 +188,7 @@ module LinearInterpolationFunction =
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).Primitive
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -236,7 +236,7 @@ module LinearInterpolationFunction =
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).SecondDerivative
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -278,7 +278,7 @@ module LinearInterpolationFunction =
             try
 
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).Update
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : LinearInterpolation) (l:string) = o.ToString() :> obj
 
@@ -320,7 +320,7 @@ module LinearInterpolationFunction =
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).Value1
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -365,7 +365,7 @@ module LinearInterpolationFunction =
 
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).Value
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -404,7 +404,7 @@ module LinearInterpolationFunction =
             try
 
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).XMax
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -440,7 +440,7 @@ module LinearInterpolationFunction =
             try
 
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).XMin
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -476,7 +476,7 @@ module LinearInterpolationFunction =
             try
 
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -515,7 +515,7 @@ module LinearInterpolationFunction =
 
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LinearInterpolation) (l:string) = o.ToString() :> obj
@@ -557,7 +557,7 @@ module LinearInterpolationFunction =
 
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LinearInterpolation) (l:string) = o.ToString() :> obj
@@ -596,7 +596,7 @@ module LinearInterpolationFunction =
             try
 
                 let _LinearInterpolation = Helper.toCell<LinearInterpolation> linearinterpolation "LinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((_LinearInterpolation.cell :?> LinearInterpolationModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((LinearInterpolationModel.Cast _LinearInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

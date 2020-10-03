@@ -119,7 +119,7 @@ module FdmBackwardSolverFunction =
                 let _To = Helper.toCell<double> To "To" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _dampingSteps = Helper.toCell<int> dampingSteps "dampingSteps" 
-                let builder () = withMnemonic mnemonic ((_FdmBackwardSolver.cell :?> FdmBackwardSolverModel).Rollback
+                let builder () = withMnemonic mnemonic ((FdmBackwardSolverModel.Cast _FdmBackwardSolver.cell).Rollback
                                                             _a.cell 
                                                             _from.cell 
                                                             _To.cell 

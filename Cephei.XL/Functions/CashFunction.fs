@@ -116,7 +116,7 @@ module CashFunction =
             try
 
                 let _Cash = Helper.toCell<Cash> cash "Cash"  
-                let builder () = withMnemonic mnemonic ((_Cash.cell :?> CashModel).PrincipalLeg
+                let builder () = withMnemonic mnemonic ((CashModel.Cast _Cash.cell).PrincipalLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -152,7 +152,7 @@ module CashFunction =
             try
 
                 let _Cash = Helper.toCell<Cash> cash "Cash"  
-                let builder () = withMnemonic mnemonic ((_Cash.cell :?> CashModel).IsExpired
+                let builder () = withMnemonic mnemonic ((CashModel.Cast _Cash.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -188,7 +188,7 @@ module CashFunction =
             try
 
                 let _Cash = Helper.toCell<Cash> cash "Cash"  
-                let builder () = withMnemonic mnemonic ((_Cash.cell :?> CashModel).CASH
+                let builder () = withMnemonic mnemonic ((CashModel.Cast _Cash.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -224,7 +224,7 @@ module CashFunction =
             try
 
                 let _Cash = Helper.toCell<Cash> cash "Cash"  
-                let builder () = withMnemonic mnemonic ((_Cash.cell :?> CashModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((CashModel.Cast _Cash.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -260,7 +260,7 @@ module CashFunction =
             try
 
                 let _Cash = Helper.toCell<Cash> cash "Cash"  
-                let builder () = withMnemonic mnemonic ((_Cash.cell :?> CashModel).NPV
+                let builder () = withMnemonic mnemonic ((CashModel.Cast _Cash.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -299,7 +299,7 @@ module CashFunction =
 
                 let _Cash = Helper.toCell<Cash> cash "Cash"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_Cash.cell :?> CashModel).Result
+                let builder () = withMnemonic mnemonic ((CashModel.Cast _Cash.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -341,7 +341,7 @@ module CashFunction =
 
                 let _Cash = Helper.toCell<Cash> cash "Cash"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_Cash.cell :?> CashModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((CashModel.Cast _Cash.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Cash) (l:string) = o.ToString() :> obj
@@ -380,7 +380,7 @@ module CashFunction =
             try
 
                 let _Cash = Helper.toCell<Cash> cash "Cash"  
-                let builder () = withMnemonic mnemonic ((_Cash.cell :?> CashModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((CashModel.Cast _Cash.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

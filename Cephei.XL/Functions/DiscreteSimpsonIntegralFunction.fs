@@ -55,7 +55,7 @@ module DiscreteSimpsonIntegralFunction =
                 let _DiscreteSimpsonIntegral = Helper.toCell<DiscreteSimpsonIntegral> discretesimpsonintegral "DiscreteSimpsonIntegral"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _f = Helper.toCell<Vector> f "f" 
-                let builder () = withMnemonic mnemonic ((_DiscreteSimpsonIntegral.cell :?> DiscreteSimpsonIntegralModel).Value
+                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegralModel.Cast _DiscreteSimpsonIntegral.cell).Value
                                                             _x.cell 
                                                             _f.cell 
                                                        ) :> ICell

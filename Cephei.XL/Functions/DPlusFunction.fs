@@ -99,7 +99,7 @@ module DPlusFunction =
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).Add
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Add
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
@@ -145,7 +145,7 @@ module DPlusFunction =
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).ApplyTo
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -184,7 +184,7 @@ module DPlusFunction =
             try
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).Clone
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -220,7 +220,7 @@ module DPlusFunction =
             try
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).Diagonal
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -259,7 +259,7 @@ module DPlusFunction =
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).Identity
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Identity
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
@@ -298,7 +298,7 @@ module DPlusFunction =
             try
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).IsTimeDependent
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -334,7 +334,7 @@ module DPlusFunction =
             try
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).LowerDiagonal
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).LowerDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -376,7 +376,7 @@ module DPlusFunction =
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _a = Helper.toCell<double> a "a" 
                 let _o = Helper.toCell<IOperator> o "o" 
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).Multiply
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Multiply
                                                             _a.cell 
                                                             _o.cell 
                                                        ) :> ICell
@@ -424,7 +424,7 @@ module DPlusFunction =
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).SetFirstRow
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetFirstRow
                                                             _valB.cell 
                                                             _valC.cell 
                                                        ) :> ICell
@@ -472,7 +472,7 @@ module DPlusFunction =
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).SetLastRow
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetLastRow
                                                             _valA.cell 
                                                             _valB.cell 
                                                        ) :> ICell
@@ -526,7 +526,7 @@ module DPlusFunction =
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).SetMidRow
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetMidRow
                                                             _i.cell 
                                                             _valA.cell 
                                                             _valB.cell 
@@ -583,7 +583,7 @@ module DPlusFunction =
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).SetMidRows
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetMidRows
                                                             _valA.cell 
                                                             _valB.cell 
                                                             _valC.cell 
@@ -631,7 +631,7 @@ module DPlusFunction =
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).SetTime
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DPlus) (l:string) = o.ToString() :> obj
@@ -670,7 +670,7 @@ module DPlusFunction =
             try
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).Size
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -709,7 +709,7 @@ module DPlusFunction =
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).SolveFor
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -754,7 +754,7 @@ module DPlusFunction =
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let _tol = Helper.toCell<double> tol "tol" 
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).SOR
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).SOR
                                                             _rhs.cell 
                                                             _tol.cell 
                                                        ) :> ICell
@@ -802,7 +802,7 @@ module DPlusFunction =
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).Subtract
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).Subtract
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
@@ -844,7 +844,7 @@ module DPlusFunction =
             try
 
                 let _DPlus = Helper.toCell<DPlus> dplus "DPlus"  
-                let builder () = withMnemonic mnemonic ((_DPlus.cell :?> DPlusModel).UpperDiagonal
+                let builder () = withMnemonic mnemonic ((DPlusModel.Cast _DPlus.cell).UpperDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

@@ -55,7 +55,7 @@ module CompositeInstrumentFunction =
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _instrument = Helper.toCell<Instrument> instrument "instrument" 
                 let _multiplier = Helper.toDefault<double> multiplier "multiplier" 1.0
-                let builder () = withMnemonic mnemonic ((_CompositeInstrument.cell :?> CompositeInstrumentModel).Add
+                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).Add
                                                             _instrument.cell 
                                                             _multiplier.cell 
                                                        ) :> ICell
@@ -98,7 +98,7 @@ module CompositeInstrumentFunction =
             try
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
-                let builder () = withMnemonic mnemonic ((_CompositeInstrument.cell :?> CompositeInstrumentModel).IsExpired
+                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -140,7 +140,7 @@ module CompositeInstrumentFunction =
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _instrument = Helper.toCell<Instrument> instrument "instrument" 
                 let _multiplier = Helper.toDefault<double> multiplier "multiplier" 1.0
-                let builder () = withMnemonic mnemonic ((_CompositeInstrument.cell :?> CompositeInstrumentModel).Subtract
+                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).Subtract
                                                             _instrument.cell 
                                                             _multiplier.cell 
                                                        ) :> ICell
@@ -182,7 +182,7 @@ module CompositeInstrumentFunction =
             try
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
-                let builder () = withMnemonic mnemonic ((_CompositeInstrument.cell :?> CompositeInstrumentModel).CASH
+                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -218,7 +218,7 @@ module CompositeInstrumentFunction =
             try
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
-                let builder () = withMnemonic mnemonic ((_CompositeInstrument.cell :?> CompositeInstrumentModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -254,7 +254,7 @@ module CompositeInstrumentFunction =
             try
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
-                let builder () = withMnemonic mnemonic ((_CompositeInstrument.cell :?> CompositeInstrumentModel).NPV
+                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -293,7 +293,7 @@ module CompositeInstrumentFunction =
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_CompositeInstrument.cell :?> CompositeInstrumentModel).Result
+                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -335,7 +335,7 @@ module CompositeInstrumentFunction =
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_CompositeInstrument.cell :?> CompositeInstrumentModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CompositeInstrument) (l:string) = o.ToString() :> obj
@@ -374,7 +374,7 @@ module CompositeInstrumentFunction =
             try
 
                 let _CompositeInstrument = Helper.toCell<CompositeInstrument> compositeinstrument "CompositeInstrument"  
-                let builder () = withMnemonic mnemonic ((_CompositeInstrument.cell :?> CompositeInstrumentModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((CompositeInstrumentModel.Cast _CompositeInstrument.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

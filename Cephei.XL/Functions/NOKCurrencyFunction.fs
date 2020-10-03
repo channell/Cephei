@@ -80,7 +80,7 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((_NOKCurrency.cell :?> NOKCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((_NOKCurrency.cell :?> NOKCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module NOKCurrencyFunction =
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_NOKCurrency.cell :?> NOKCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((_NOKCurrency.cell :?> NOKCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((_NOKCurrency.cell :?> NOKCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((_NOKCurrency.cell :?> NOKCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((_NOKCurrency.cell :?> NOKCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((_NOKCurrency.cell :?> NOKCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((_NOKCurrency.cell :?> NOKCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((_NOKCurrency.cell :?> NOKCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((_NOKCurrency.cell :?> NOKCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module NOKCurrencyFunction =
             try
 
                 let _NOKCurrency = Helper.toCell<NOKCurrency> nokcurrency "NOKCurrency"  
-                let builder () = withMnemonic mnemonic ((_NOKCurrency.cell :?> NOKCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((NOKCurrencyModel.Cast _NOKCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

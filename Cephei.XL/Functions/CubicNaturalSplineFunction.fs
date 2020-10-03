@@ -98,7 +98,7 @@ module CubicNaturalSplineFunction =
             try
 
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).ACoefficients
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -134,7 +134,7 @@ module CubicNaturalSplineFunction =
             try
 
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).BCoefficients
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -170,7 +170,7 @@ module CubicNaturalSplineFunction =
             try
 
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).CCoefficients
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -212,7 +212,7 @@ module CubicNaturalSplineFunction =
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).Derivative
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -254,7 +254,7 @@ module CubicNaturalSplineFunction =
             try
 
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).Empty
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -296,7 +296,7 @@ module CubicNaturalSplineFunction =
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).Primitive
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -344,7 +344,7 @@ module CubicNaturalSplineFunction =
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).SecondDerivative
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -386,7 +386,7 @@ module CubicNaturalSplineFunction =
             try
 
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).Update
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).Update
                                                        ) :> ICell
                 let format (o : CubicNaturalSpline) (l:string) = o.ToString() :> obj
 
@@ -428,7 +428,7 @@ module CubicNaturalSplineFunction =
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).Value1
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -473,7 +473,7 @@ module CubicNaturalSplineFunction =
 
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).Value
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -512,7 +512,7 @@ module CubicNaturalSplineFunction =
             try
 
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).XMax
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -548,7 +548,7 @@ module CubicNaturalSplineFunction =
             try
 
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).XMin
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -584,7 +584,7 @@ module CubicNaturalSplineFunction =
             try
 
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -623,7 +623,7 @@ module CubicNaturalSplineFunction =
 
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CubicNaturalSpline) (l:string) = o.ToString() :> obj
@@ -665,7 +665,7 @@ module CubicNaturalSplineFunction =
 
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CubicNaturalSpline) (l:string) = o.ToString() :> obj
@@ -704,7 +704,7 @@ module CubicNaturalSplineFunction =
             try
 
                 let _CubicNaturalSpline = Helper.toCell<CubicNaturalSpline> cubicnaturalspline "CubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_CubicNaturalSpline.cell :?> CubicNaturalSplineModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((CubicNaturalSplineModel.Cast _CubicNaturalSpline.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

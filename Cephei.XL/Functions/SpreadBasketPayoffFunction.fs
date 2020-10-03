@@ -52,7 +52,7 @@ module SpreadBasketPayoffFunction =
 
                 let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((_SpreadBasketPayoff.cell :?> SpreadBasketPayoffModel).Accumulate
+                let builder () = withMnemonic mnemonic ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).Accumulate
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -128,7 +128,7 @@ module SpreadBasketPayoffFunction =
             try
 
                 let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((_SpreadBasketPayoff.cell :?> SpreadBasketPayoffModel).BasePayoff
+                let builder () = withMnemonic mnemonic ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).BasePayoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -164,7 +164,7 @@ module SpreadBasketPayoffFunction =
             try
 
                 let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((_SpreadBasketPayoff.cell :?> SpreadBasketPayoffModel).Description
+                let builder () = withMnemonic mnemonic ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -200,7 +200,7 @@ module SpreadBasketPayoffFunction =
             try
 
                 let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((_SpreadBasketPayoff.cell :?> SpreadBasketPayoffModel).Name
+                let builder () = withMnemonic mnemonic ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -239,7 +239,7 @@ module SpreadBasketPayoffFunction =
 
                 let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((_SpreadBasketPayoff.cell :?> SpreadBasketPayoffModel).Value1
+                let builder () = withMnemonic mnemonic ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).Value1
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -281,7 +281,7 @@ module SpreadBasketPayoffFunction =
 
                 let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((_SpreadBasketPayoff.cell :?> SpreadBasketPayoffModel).Value
+                let builder () = withMnemonic mnemonic ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -323,7 +323,7 @@ module SpreadBasketPayoffFunction =
 
                 let _SpreadBasketPayoff = Helper.toCell<SpreadBasketPayoff> spreadbasketpayoff "SpreadBasketPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_SpreadBasketPayoff.cell :?> SpreadBasketPayoffModel).Accept
+                let builder () = withMnemonic mnemonic ((SpreadBasketPayoffModel.Cast _SpreadBasketPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : SpreadBasketPayoff) (l:string) = o.ToString() :> obj

@@ -49,7 +49,7 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).A
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).B
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -133,7 +133,7 @@ module VasicekFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _bondMaturity = Helper.toCell<double> bondMaturity "bondMaturity" 
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).DiscountBondOption
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).DiscountBondOption
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _maturity.cell 
@@ -181,7 +181,7 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).Dynamics
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Dynamics
                                                        ) :> ICell
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
 
@@ -217,7 +217,7 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).Lambda
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Lambda
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -253,7 +253,7 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).Sigma
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -353,7 +353,7 @@ module VasicekFunction =
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).Discount
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Discount
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -401,7 +401,7 @@ module VasicekFunction =
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _rate = Helper.toCell<double> rate "rate" 
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).DiscountBond1
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).DiscountBond1
                                                             _now.cell 
                                                             _maturity.cell 
                                                             _rate.cell 
@@ -455,7 +455,7 @@ module VasicekFunction =
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _factors = Helper.toCell<Vector> factors "factors" 
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).DiscountBond
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).DiscountBond
                                                             _now.cell 
                                                             _maturity.cell 
                                                             _factors.cell 
@@ -503,7 +503,7 @@ module VasicekFunction =
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
                 let _grid = Helper.toCell<TimeGrid> grid "grid" 
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).Tree
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Tree
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
@@ -560,7 +560,7 @@ module VasicekFunction =
                 let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
                 let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
                 let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).Calibrate
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
                                                             _endCriteria.cell 
@@ -614,7 +614,7 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).Constraint
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
@@ -650,7 +650,7 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).EndCriteria
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
@@ -686,7 +686,7 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).NotifyObservers
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
 
@@ -722,7 +722,7 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).Parameters
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -761,7 +761,7 @@ module VasicekFunction =
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
@@ -803,7 +803,7 @@ module VasicekFunction =
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).SetParams
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
@@ -845,7 +845,7 @@ module VasicekFunction =
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
@@ -884,7 +884,7 @@ module VasicekFunction =
             try
 
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).Update
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Update
                                                        ) :> ICell
                 let format (o : Vasicek) (l:string) = o.ToString() :> obj
 
@@ -926,7 +926,7 @@ module VasicekFunction =
                 let _Vasicek = Helper.toCell<Vasicek> vasicek "Vasicek"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
-                let builder () = withMnemonic mnemonic ((_Vasicek.cell :?> VasicekModel).Value
+                let builder () = withMnemonic mnemonic ((VasicekModel.Cast _Vasicek.cell).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
                                                        ) :> ICell

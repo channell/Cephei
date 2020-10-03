@@ -58,7 +58,7 @@ module ModifiedCraigSneydSchemeFunction =
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalInputs = Helper.toCell<Object[]> additionalInputs "additionalInputs" 
-                let builder () = withMnemonic mnemonic ((_ModifiedCraigSneydScheme.cell :?> ModifiedCraigSneydSchemeModel).Factory
+                let builder () = withMnemonic mnemonic ((ModifiedCraigSneydSchemeModel.Cast _ModifiedCraigSneydScheme.cell).Factory
                                                             _L.cell 
                                                             _bcs.cell 
                                                             _additionalInputs.cell 
@@ -192,7 +192,7 @@ module ModifiedCraigSneydSchemeFunction =
 
                 let _ModifiedCraigSneydScheme = Helper.toCell<ModifiedCraigSneydScheme> modifiedcraigsneydscheme "ModifiedCraigSneydScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_ModifiedCraigSneydScheme.cell :?> ModifiedCraigSneydSchemeModel).SetStep
+                let builder () = withMnemonic mnemonic ((ModifiedCraigSneydSchemeModel.Cast _ModifiedCraigSneydScheme.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : ModifiedCraigSneydScheme) (l:string) = o.ToString() :> obj
@@ -240,7 +240,7 @@ module ModifiedCraigSneydSchemeFunction =
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder () = withMnemonic mnemonic ((_ModifiedCraigSneydScheme.cell :?> ModifiedCraigSneydSchemeModel).Step
+                let builder () = withMnemonic mnemonic ((ModifiedCraigSneydSchemeModel.Cast _ModifiedCraigSneydScheme.cell).Step
                                                             _a.cell 
                                                             _t.cell 
                                                             _theta.cell 

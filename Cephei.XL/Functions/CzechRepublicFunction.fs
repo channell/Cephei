@@ -96,7 +96,7 @@ module CzechRepublicFunction =
             try
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).AddedHolidays
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -135,7 +135,7 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).AddHoliday
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : CzechRepublic) (l:string) = o.ToString() :> obj
@@ -180,7 +180,7 @@ module CzechRepublicFunction =
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).Adjust
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -237,7 +237,7 @@ module CzechRepublicFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).Advance1
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -300,7 +300,7 @@ module CzechRepublicFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).Advance
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -360,7 +360,7 @@ module CzechRepublicFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).BusinessDaysBetween
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -408,7 +408,7 @@ module CzechRepublicFunction =
             try
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).Calendar
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -444,7 +444,7 @@ module CzechRepublicFunction =
             try
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).Empty
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -483,7 +483,7 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -525,7 +525,7 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).Equals
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -567,7 +567,7 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).IsBusinessDay
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -609,7 +609,7 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).IsEndOfMonth
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -651,7 +651,7 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).IsHoliday
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -693,7 +693,7 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).IsWeekend
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -734,7 +734,7 @@ module CzechRepublicFunction =
             try
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).Name
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -770,7 +770,7 @@ module CzechRepublicFunction =
             try
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).RemovedHolidays
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -809,7 +809,7 @@ module CzechRepublicFunction =
 
                 let _CzechRepublic = Helper.toCell<CzechRepublic> czechrepublic "CzechRepublic"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CzechRepublic.cell :?> CzechRepublicModel).RemoveHoliday
+                let builder () = withMnemonic mnemonic ((CzechRepublicModel.Cast _CzechRepublic.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : CzechRepublic) (l:string) = o.ToString() :> obj

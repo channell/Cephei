@@ -281,7 +281,7 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).ImpliedQuote
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -320,7 +320,7 @@ module DepositRateHelperFunction =
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).SetTermStructure
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DepositRateHelper) (l:string) = o.ToString() :> obj
@@ -359,7 +359,7 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).Update
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).Update
                                                        ) :> ICell
                 let format (o : DepositRateHelper) (l:string) = o.ToString() :> obj
 
@@ -395,7 +395,7 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).EarliestDate
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -431,7 +431,7 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).LatestDate
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -467,7 +467,7 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).LatestRelevantDate
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -503,7 +503,7 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -539,7 +539,7 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).PillarDate
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -575,7 +575,7 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).Quote
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -611,7 +611,7 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).QuoteError
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -647,7 +647,7 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).QuoteIsValid
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -683,7 +683,7 @@ module DepositRateHelperFunction =
             try
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).QuoteValue
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -722,7 +722,7 @@ module DepositRateHelperFunction =
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DepositRateHelper) (l:string) = o.ToString() :> obj
@@ -764,7 +764,7 @@ module DepositRateHelperFunction =
 
                 let _DepositRateHelper = Helper.toCell<DepositRateHelper> depositratehelper "DepositRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_DepositRateHelper.cell :?> DepositRateHelperModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((DepositRateHelperModel.Cast _DepositRateHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DepositRateHelper) (l:string) = o.ToString() :> obj

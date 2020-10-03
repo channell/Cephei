@@ -49,7 +49,7 @@ module TreeFunction =
             try
 
                 let _Tree = Helper.toCell<Tree> tree "Tree"  
-                let builder () = withMnemonic mnemonic ((_Tree.cell :?> TreeModel).Columns
+                let builder () = withMnemonic mnemonic ((TreeModel.Cast _Tree.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

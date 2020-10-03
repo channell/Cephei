@@ -80,7 +80,7 @@ module BGLCurrencyFunction =
             try
 
                 let _BGLCurrency = Helper.toCell<BGLCurrency> bglcurrency "BGLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BGLCurrency.cell :?> BGLCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((BGLCurrencyModel.Cast _BGLCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module BGLCurrencyFunction =
             try
 
                 let _BGLCurrency = Helper.toCell<BGLCurrency> bglcurrency "BGLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BGLCurrency.cell :?> BGLCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((BGLCurrencyModel.Cast _BGLCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module BGLCurrencyFunction =
 
                 let _BGLCurrency = Helper.toCell<BGLCurrency> bglcurrency "BGLCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_BGLCurrency.cell :?> BGLCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((BGLCurrencyModel.Cast _BGLCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module BGLCurrencyFunction =
             try
 
                 let _BGLCurrency = Helper.toCell<BGLCurrency> bglcurrency "BGLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BGLCurrency.cell :?> BGLCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((BGLCurrencyModel.Cast _BGLCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module BGLCurrencyFunction =
             try
 
                 let _BGLCurrency = Helper.toCell<BGLCurrency> bglcurrency "BGLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BGLCurrency.cell :?> BGLCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((BGLCurrencyModel.Cast _BGLCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module BGLCurrencyFunction =
             try
 
                 let _BGLCurrency = Helper.toCell<BGLCurrency> bglcurrency "BGLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BGLCurrency.cell :?> BGLCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((BGLCurrencyModel.Cast _BGLCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module BGLCurrencyFunction =
             try
 
                 let _BGLCurrency = Helper.toCell<BGLCurrency> bglcurrency "BGLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BGLCurrency.cell :?> BGLCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((BGLCurrencyModel.Cast _BGLCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module BGLCurrencyFunction =
             try
 
                 let _BGLCurrency = Helper.toCell<BGLCurrency> bglcurrency "BGLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BGLCurrency.cell :?> BGLCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((BGLCurrencyModel.Cast _BGLCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module BGLCurrencyFunction =
             try
 
                 let _BGLCurrency = Helper.toCell<BGLCurrency> bglcurrency "BGLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BGLCurrency.cell :?> BGLCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((BGLCurrencyModel.Cast _BGLCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module BGLCurrencyFunction =
             try
 
                 let _BGLCurrency = Helper.toCell<BGLCurrency> bglcurrency "BGLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BGLCurrency.cell :?> BGLCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((BGLCurrencyModel.Cast _BGLCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module BGLCurrencyFunction =
             try
 
                 let _BGLCurrency = Helper.toCell<BGLCurrency> bglcurrency "BGLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BGLCurrency.cell :?> BGLCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((BGLCurrencyModel.Cast _BGLCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module BGLCurrencyFunction =
             try
 
                 let _BGLCurrency = Helper.toCell<BGLCurrency> bglcurrency "BGLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BGLCurrency.cell :?> BGLCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((BGLCurrencyModel.Cast _BGLCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

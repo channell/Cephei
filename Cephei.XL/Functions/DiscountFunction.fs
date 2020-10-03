@@ -55,7 +55,7 @@ module DiscountFunction =
                 let _Discount = Helper.toCell<Discount> discount "Discount"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).DiscountImpl
+                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module DiscountFunction =
                 let _Discount = Helper.toCell<Discount> discount "Discount"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).ForwardImpl
+                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -157,7 +157,7 @@ module DiscountFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).Guess
+                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).Guess
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -208,7 +208,7 @@ module DiscountFunction =
 
                 let _Discount = Helper.toCell<Discount> discount "Discount"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).InitialDate
+                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -250,7 +250,7 @@ module DiscountFunction =
 
                 let _Discount = Helper.toCell<Discount> discount "Discount"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).InitialValue
+                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).InitialValue
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -289,7 +289,7 @@ module DiscountFunction =
             try
 
                 let _Discount = Helper.toCell<Discount> discount "Discount"  
-                let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).MaxIterations
+                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -337,7 +337,7 @@ module DiscountFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).MaxValueAfter
+                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -397,7 +397,7 @@ module DiscountFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).MinValueAfter
+                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -454,7 +454,7 @@ module DiscountFunction =
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).UpdateGuess
+                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).UpdateGuess
                                                             _data.cell 
                                                             _discount.cell 
                                                             _i.cell 
@@ -505,7 +505,7 @@ module DiscountFunction =
                 let _Discount = Helper.toCell<Discount> discount "Discount"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_Discount.cell :?> DiscountModel).ZeroYieldImpl
+                let builder () = withMnemonic mnemonic ((DiscountModel.Cast _Discount.cell).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell

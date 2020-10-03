@@ -49,7 +49,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).A
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).B
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -121,7 +121,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).EndCriteria
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
@@ -157,7 +157,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).Expiry
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Expiry
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -193,7 +193,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).Forward
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Forward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -229,7 +229,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).InterpolationWeights
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).InterpolationWeights
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -265,7 +265,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).M
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).M
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -301,7 +301,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).MaxError
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).MaxError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -337,7 +337,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).Rho
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -373,7 +373,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).RmsError
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).RmsError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -409,7 +409,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).Sigma
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Sigma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -614,7 +614,7 @@ module SviInterpolationFunction =
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).Derivative
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -656,7 +656,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).Empty
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -698,7 +698,7 @@ module SviInterpolationFunction =
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).Primitive
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -746,7 +746,7 @@ module SviInterpolationFunction =
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).SecondDerivative
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -788,7 +788,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).Update
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : SviInterpolation) (l:string) = o.ToString() :> obj
 
@@ -830,7 +830,7 @@ module SviInterpolationFunction =
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).Value1
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -875,7 +875,7 @@ module SviInterpolationFunction =
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).Value
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -914,7 +914,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).XMax
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -950,7 +950,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).XMin
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -986,7 +986,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1025,7 +1025,7 @@ module SviInterpolationFunction =
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : SviInterpolation) (l:string) = o.ToString() :> obj
@@ -1067,7 +1067,7 @@ module SviInterpolationFunction =
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : SviInterpolation) (l:string) = o.ToString() :> obj
@@ -1106,7 +1106,7 @@ module SviInterpolationFunction =
             try
 
                 let _SviInterpolation = Helper.toCell<SviInterpolation> sviinterpolation "SviInterpolation"  
-                let builder () = withMnemonic mnemonic ((_SviInterpolation.cell :?> SviInterpolationModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((SviInterpolationModel.Cast _SviInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

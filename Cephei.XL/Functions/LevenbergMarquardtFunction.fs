@@ -62,7 +62,7 @@ module LevenbergMarquardtFunction =
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let _iflag = Helper.toCell<int> iflag "iflag" 
-                let builder () = withMnemonic mnemonic ((_LevenbergMarquardt.cell :?> LevenbergMarquardtModel).Fcn
+                let builder () = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).Fcn
                                                             _m.cell 
                                                             _n.cell 
                                                             _x.cell 
@@ -110,7 +110,7 @@ module LevenbergMarquardtFunction =
             try
 
                 let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
-                let builder () = withMnemonic mnemonic ((_LevenbergMarquardt.cell :?> LevenbergMarquardtModel).GetInfo
+                let builder () = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).GetInfo
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -158,7 +158,7 @@ module LevenbergMarquardtFunction =
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<Vector> x "x" 
                 let _iflag = Helper.toCell<int> iflag "iflag" 
-                let builder () = withMnemonic mnemonic ((_LevenbergMarquardt.cell :?> LevenbergMarquardtModel).JacFcn
+                let builder () = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).JacFcn
                                                             _m.cell 
                                                             _n.cell 
                                                             _x.cell 
@@ -298,7 +298,7 @@ module LevenbergMarquardtFunction =
                 let _LevenbergMarquardt = Helper.toCell<LevenbergMarquardt> levenbergmarquardt "LevenbergMarquardt"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((_LevenbergMarquardt.cell :?> LevenbergMarquardtModel).Minimize
+                let builder () = withMnemonic mnemonic ((LevenbergMarquardtModel.Cast _LevenbergMarquardt.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell

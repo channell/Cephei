@@ -80,7 +80,7 @@ module SGDCurrencyFunction =
             try
 
                 let _SGDCurrency = Helper.toCell<SGDCurrency> sgdcurrency "SGDCurrency"  
-                let builder () = withMnemonic mnemonic ((_SGDCurrency.cell :?> SGDCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((SGDCurrencyModel.Cast _SGDCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module SGDCurrencyFunction =
             try
 
                 let _SGDCurrency = Helper.toCell<SGDCurrency> sgdcurrency "SGDCurrency"  
-                let builder () = withMnemonic mnemonic ((_SGDCurrency.cell :?> SGDCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((SGDCurrencyModel.Cast _SGDCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module SGDCurrencyFunction =
 
                 let _SGDCurrency = Helper.toCell<SGDCurrency> sgdcurrency "SGDCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_SGDCurrency.cell :?> SGDCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((SGDCurrencyModel.Cast _SGDCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module SGDCurrencyFunction =
             try
 
                 let _SGDCurrency = Helper.toCell<SGDCurrency> sgdcurrency "SGDCurrency"  
-                let builder () = withMnemonic mnemonic ((_SGDCurrency.cell :?> SGDCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((SGDCurrencyModel.Cast _SGDCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module SGDCurrencyFunction =
             try
 
                 let _SGDCurrency = Helper.toCell<SGDCurrency> sgdcurrency "SGDCurrency"  
-                let builder () = withMnemonic mnemonic ((_SGDCurrency.cell :?> SGDCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((SGDCurrencyModel.Cast _SGDCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module SGDCurrencyFunction =
             try
 
                 let _SGDCurrency = Helper.toCell<SGDCurrency> sgdcurrency "SGDCurrency"  
-                let builder () = withMnemonic mnemonic ((_SGDCurrency.cell :?> SGDCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((SGDCurrencyModel.Cast _SGDCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module SGDCurrencyFunction =
             try
 
                 let _SGDCurrency = Helper.toCell<SGDCurrency> sgdcurrency "SGDCurrency"  
-                let builder () = withMnemonic mnemonic ((_SGDCurrency.cell :?> SGDCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((SGDCurrencyModel.Cast _SGDCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module SGDCurrencyFunction =
             try
 
                 let _SGDCurrency = Helper.toCell<SGDCurrency> sgdcurrency "SGDCurrency"  
-                let builder () = withMnemonic mnemonic ((_SGDCurrency.cell :?> SGDCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((SGDCurrencyModel.Cast _SGDCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module SGDCurrencyFunction =
             try
 
                 let _SGDCurrency = Helper.toCell<SGDCurrency> sgdcurrency "SGDCurrency"  
-                let builder () = withMnemonic mnemonic ((_SGDCurrency.cell :?> SGDCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((SGDCurrencyModel.Cast _SGDCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module SGDCurrencyFunction =
             try
 
                 let _SGDCurrency = Helper.toCell<SGDCurrency> sgdcurrency "SGDCurrency"  
-                let builder () = withMnemonic mnemonic ((_SGDCurrency.cell :?> SGDCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((SGDCurrencyModel.Cast _SGDCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module SGDCurrencyFunction =
             try
 
                 let _SGDCurrency = Helper.toCell<SGDCurrency> sgdcurrency "SGDCurrency"  
-                let builder () = withMnemonic mnemonic ((_SGDCurrency.cell :?> SGDCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((SGDCurrencyModel.Cast _SGDCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module SGDCurrencyFunction =
             try
 
                 let _SGDCurrency = Helper.toCell<SGDCurrency> sgdcurrency "SGDCurrency"  
-                let builder () = withMnemonic mnemonic ((_SGDCurrency.cell :?> SGDCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((SGDCurrencyModel.Cast _SGDCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

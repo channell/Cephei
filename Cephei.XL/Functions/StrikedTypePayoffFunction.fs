@@ -49,7 +49,7 @@ module StrikedTypePayoffFunction =
             try
 
                 let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
-                let builder () = withMnemonic mnemonic ((_StrikedTypePayoff.cell :?> StrikedTypePayoffModel).Description
+                let builder () = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module StrikedTypePayoffFunction =
             try
 
                 let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
-                let builder () = withMnemonic mnemonic ((_StrikedTypePayoff.cell :?> StrikedTypePayoffModel).Strike
+                let builder () = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -201,7 +201,7 @@ module StrikedTypePayoffFunction =
             try
 
                 let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
-                let builder () = withMnemonic mnemonic ((_StrikedTypePayoff.cell :?> StrikedTypePayoffModel).OptionType
+                let builder () = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
@@ -240,7 +240,7 @@ module StrikedTypePayoffFunction =
 
                 let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_StrikedTypePayoff.cell :?> StrikedTypePayoffModel).Accept
+                let builder () = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : StrikedTypePayoff) (l:string) = o.ToString() :> obj
@@ -279,7 +279,7 @@ module StrikedTypePayoffFunction =
             try
 
                 let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
-                let builder () = withMnemonic mnemonic ((_StrikedTypePayoff.cell :?> StrikedTypePayoffModel).Name
+                let builder () = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -318,7 +318,7 @@ module StrikedTypePayoffFunction =
 
                 let _StrikedTypePayoff = Helper.toCell<StrikedTypePayoff> strikedtypepayoff "StrikedTypePayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((_StrikedTypePayoff.cell :?> StrikedTypePayoffModel).Value
+                let builder () = withMnemonic mnemonic ((StrikedTypePayoffModel.Cast _StrikedTypePayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

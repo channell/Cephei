@@ -55,7 +55,7 @@ module DayCounterFunction =
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((_DayCounter.cell :?> DayCounterModel).DayCount
+                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
@@ -97,7 +97,7 @@ module DayCounterFunction =
             try
 
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
-                let builder () = withMnemonic mnemonic ((_DayCounter.cell :?> DayCounterModel).DayCounter
+                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -201,7 +201,7 @@ module DayCounterFunction =
             try
 
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
-                let builder () = withMnemonic mnemonic ((_DayCounter.cell :?> DayCounterModel).Empty
+                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -240,7 +240,7 @@ module DayCounterFunction =
 
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_DayCounter.cell :?> DayCounterModel).Equals
+                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -279,7 +279,7 @@ module DayCounterFunction =
             try
 
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
-                let builder () = withMnemonic mnemonic ((_DayCounter.cell :?> DayCounterModel).Name
+                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -315,7 +315,7 @@ module DayCounterFunction =
             try
 
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
-                let builder () = withMnemonic mnemonic ((_DayCounter.cell :?> DayCounterModel).ToString
+                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -363,7 +363,7 @@ module DayCounterFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
                 let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let builder () = withMnemonic mnemonic ((_DayCounter.cell :?> DayCounterModel).YearFraction
+                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refPeriodStart.cell 
@@ -417,7 +417,7 @@ module DayCounterFunction =
                 let _DayCounter = Helper.toCell<DayCounter> daycounter "DayCounter"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((_DayCounter.cell :?> DayCounterModel).YearFraction1
+                let builder () = withMnemonic mnemonic ((DayCounterModel.Cast _DayCounter.cell).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell

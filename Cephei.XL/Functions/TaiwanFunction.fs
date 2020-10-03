@@ -94,7 +94,7 @@ module TaiwanFunction =
             try
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).AddedHolidays
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -133,7 +133,7 @@ module TaiwanFunction =
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).AddHoliday
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Taiwan) (l:string) = o.ToString() :> obj
@@ -178,7 +178,7 @@ module TaiwanFunction =
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).Adjust
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -235,7 +235,7 @@ module TaiwanFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).Advance1
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -298,7 +298,7 @@ module TaiwanFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).Advance
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -358,7 +358,7 @@ module TaiwanFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).BusinessDaysBetween
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -406,7 +406,7 @@ module TaiwanFunction =
             try
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).Calendar
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -442,7 +442,7 @@ module TaiwanFunction =
             try
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).Empty
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -481,7 +481,7 @@ module TaiwanFunction =
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -523,7 +523,7 @@ module TaiwanFunction =
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).Equals
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -565,7 +565,7 @@ module TaiwanFunction =
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).IsBusinessDay
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -607,7 +607,7 @@ module TaiwanFunction =
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).IsEndOfMonth
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -649,7 +649,7 @@ module TaiwanFunction =
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).IsHoliday
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -691,7 +691,7 @@ module TaiwanFunction =
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).IsWeekend
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -732,7 +732,7 @@ module TaiwanFunction =
             try
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).Name
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -768,7 +768,7 @@ module TaiwanFunction =
             try
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).RemovedHolidays
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -807,7 +807,7 @@ module TaiwanFunction =
 
                 let _Taiwan = Helper.toCell<Taiwan> taiwan "Taiwan"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Taiwan.cell :?> TaiwanModel).RemoveHoliday
+                let builder () = withMnemonic mnemonic ((TaiwanModel.Cast _Taiwan.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Taiwan) (l:string) = o.ToString() :> obj

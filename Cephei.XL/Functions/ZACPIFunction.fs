@@ -132,7 +132,7 @@ module ZACPIFunction =
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
                 let _h = Helper.toHandle<ZeroInflationTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).Clone
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
@@ -177,7 +177,7 @@ module ZACPIFunction =
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
                 let _aFixingDate = Helper.toCell<Date> aFixingDate "aFixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).Fixing
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Fixing
                                                             _aFixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -219,7 +219,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).ZeroInflationTermStructure
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).ZeroInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
 
@@ -264,7 +264,7 @@ module ZACPIFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).AddFixing
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
@@ -310,7 +310,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).AvailabilityLag
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -346,7 +346,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).Currency
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -382,7 +382,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).FamilyName
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -418,7 +418,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -454,7 +454,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).Frequency
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
@@ -490,7 +490,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).Interpolated
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -529,7 +529,7 @@ module ZACPIFunction =
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -568,7 +568,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).Name
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -604,7 +604,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).Region
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
@@ -640,7 +640,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).Revised
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -676,7 +676,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).Update
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).Update
                                                        ) :> ICell
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
@@ -721,7 +721,7 @@ module ZACPIFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).AddFixings
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -772,7 +772,7 @@ module ZACPIFunction =
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -814,7 +814,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -850,7 +850,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
@@ -889,7 +889,7 @@ module ZACPIFunction =
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
@@ -928,7 +928,7 @@ module ZACPIFunction =
             try
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -967,7 +967,7 @@ module ZACPIFunction =
 
                 let _ZACPI = Helper.toCell<ZACPI> zacpi "ZACPI"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_ZACPI.cell :?> ZACPIModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((ZACPIModel.Cast _ZACPI.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj

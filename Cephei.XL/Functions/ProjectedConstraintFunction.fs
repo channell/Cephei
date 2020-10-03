@@ -141,7 +141,7 @@ module ProjectedConstraintFunction =
             try
 
                 let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
-                let builder () = withMnemonic mnemonic ((_ProjectedConstraint.cell :?> ProjectedConstraintModel).Empty
+                let builder () = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -180,7 +180,7 @@ module ProjectedConstraintFunction =
 
                 let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((_ProjectedConstraint.cell :?> ProjectedConstraintModel).LowerBound
+                let builder () = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -222,7 +222,7 @@ module ProjectedConstraintFunction =
 
                 let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((_ProjectedConstraint.cell :?> ProjectedConstraintModel).Test
+                let builder () = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).Test
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -270,7 +270,7 @@ module ProjectedConstraintFunction =
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder () = withMnemonic mnemonic ((_ProjectedConstraint.cell :?> ProjectedConstraintModel).Update
+                let builder () = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).Update
                                                             _p.cell 
                                                             _direction.cell 
                                                             _beta.cell 
@@ -318,7 +318,7 @@ module ProjectedConstraintFunction =
 
                 let _ProjectedConstraint = Helper.toCell<ProjectedConstraint> projectedconstraint "ProjectedConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((_ProjectedConstraint.cell :?> ProjectedConstraintModel).UpperBound
+                let builder () = withMnemonic mnemonic ((ProjectedConstraintModel.Cast _ProjectedConstraint.cell).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

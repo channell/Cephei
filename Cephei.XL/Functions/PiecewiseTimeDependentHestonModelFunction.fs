@@ -49,7 +49,7 @@ module PiecewiseTimeDependentHestonModelFunction =
             try
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).DividendYield
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).DividendYield
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -88,7 +88,7 @@ module PiecewiseTimeDependentHestonModelFunction =
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).Kappa
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).Kappa
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -215,7 +215,7 @@ module PiecewiseTimeDependentHestonModelFunction =
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).Rho
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).Rho
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -254,7 +254,7 @@ module PiecewiseTimeDependentHestonModelFunction =
             try
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).RiskFreeRate
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).RiskFreeRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -290,7 +290,7 @@ module PiecewiseTimeDependentHestonModelFunction =
             try
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).S0
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).S0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -329,7 +329,7 @@ module PiecewiseTimeDependentHestonModelFunction =
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).Sigma
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).Sigma
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -371,7 +371,7 @@ module PiecewiseTimeDependentHestonModelFunction =
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).Theta
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).Theta
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -410,7 +410,7 @@ module PiecewiseTimeDependentHestonModelFunction =
             try
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).TimeGrid
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).TimeGrid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
 
@@ -446,7 +446,7 @@ module PiecewiseTimeDependentHestonModelFunction =
             try
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).V0
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).V0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -500,7 +500,7 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
                 let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
                 let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).Calibrate
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
                                                             _endCriteria.cell 
@@ -554,7 +554,7 @@ module PiecewiseTimeDependentHestonModelFunction =
             try
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).Constraint
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
@@ -590,7 +590,7 @@ module PiecewiseTimeDependentHestonModelFunction =
             try
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).EndCriteria
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
@@ -626,7 +626,7 @@ module PiecewiseTimeDependentHestonModelFunction =
             try
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).NotifyObservers
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : PiecewiseTimeDependentHestonModel) (l:string) = o.ToString() :> obj
 
@@ -662,7 +662,7 @@ module PiecewiseTimeDependentHestonModelFunction =
             try
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).Parameters
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -701,7 +701,7 @@ module PiecewiseTimeDependentHestonModelFunction =
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseTimeDependentHestonModel) (l:string) = o.ToString() :> obj
@@ -743,7 +743,7 @@ module PiecewiseTimeDependentHestonModelFunction =
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).SetParams
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseTimeDependentHestonModel) (l:string) = o.ToString() :> obj
@@ -785,7 +785,7 @@ module PiecewiseTimeDependentHestonModelFunction =
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : PiecewiseTimeDependentHestonModel) (l:string) = o.ToString() :> obj
@@ -824,7 +824,7 @@ module PiecewiseTimeDependentHestonModelFunction =
             try
 
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).Update
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).Update
                                                        ) :> ICell
                 let format (o : PiecewiseTimeDependentHestonModel) (l:string) = o.ToString() :> obj
 
@@ -866,7 +866,7 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let _PiecewiseTimeDependentHestonModel = Helper.toCell<PiecewiseTimeDependentHestonModel> piecewisetimedependenthestonmodel "PiecewiseTimeDependentHestonModel"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
-                let builder () = withMnemonic mnemonic ((_PiecewiseTimeDependentHestonModel.cell :?> PiecewiseTimeDependentHestonModelModel).Value
+                let builder () = withMnemonic mnemonic ((PiecewiseTimeDependentHestonModelModel.Cast _PiecewiseTimeDependentHestonModel.cell).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
                                                        ) :> ICell

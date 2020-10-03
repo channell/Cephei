@@ -49,7 +49,7 @@ module HaltonRsgFunction =
             try
 
                 let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
-                let builder () = withMnemonic mnemonic ((_HaltonRsg.cell :?> HaltonRsgModel).Dimension
+                let builder () = withMnemonic mnemonic ((HaltonRsgModel.Cast _HaltonRsg.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -91,7 +91,7 @@ module HaltonRsgFunction =
                 let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toDefault<uint64> seed "seed" 0UL
-                let builder () = withMnemonic mnemonic ((_HaltonRsg.cell :?> HaltonRsgModel).Factory
+                let builder () = withMnemonic mnemonic ((HaltonRsgModel.Cast _HaltonRsg.cell).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                        ) :> ICell
@@ -189,7 +189,7 @@ module HaltonRsgFunction =
             try
 
                 let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
-                let builder () = withMnemonic mnemonic ((_HaltonRsg.cell :?> HaltonRsgModel).LastSequence
+                let builder () = withMnemonic mnemonic ((HaltonRsgModel.Cast _HaltonRsg.cell).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.value.ToArray()) l)
 
@@ -227,7 +227,7 @@ module HaltonRsgFunction =
             try
 
                 let _HaltonRsg = Helper.toCell<HaltonRsg> haltonrsg "HaltonRsg"  
-                let builder () = withMnemonic mnemonic ((_HaltonRsg.cell :?> HaltonRsgModel).NextSequence
+                let builder () = withMnemonic mnemonic ((HaltonRsgModel.Cast _HaltonRsg.cell).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 

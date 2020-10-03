@@ -52,7 +52,7 @@ module MonteCarloModelFunction =
 
                 let _MonteCarloModel = Helper.toCell<MonteCarloModel> montecarlomodel "MonteCarloModel"  
                 let _samples = Helper.toCell<int> samples "samples" 
-                let builder () = withMnemonic mnemonic ((_MonteCarloModel.cell :?> MonteCarloModelModel).AddSamples
+                let builder () = withMnemonic mnemonic ((MonteCarloModelModel.Cast _MonteCarloModel.cell).AddSamples
                                                             _samples.cell 
                                                        ) :> ICell
                 let format (o : MonteCarloModel) (l:string) = o.ToString() :> obj
@@ -164,7 +164,7 @@ module MonteCarloModelFunction =
             try
 
                 let _MonteCarloModel = Helper.toCell<MonteCarloModel> montecarlomodel "MonteCarloModel"  
-                let builder () = withMnemonic mnemonic ((_MonteCarloModel.cell :?> MonteCarloModelModel).SampleAccumulator
+                let builder () = withMnemonic mnemonic ((MonteCarloModelModel.Cast _MonteCarloModel.cell).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
 

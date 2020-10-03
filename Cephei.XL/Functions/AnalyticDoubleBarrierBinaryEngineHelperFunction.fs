@@ -113,7 +113,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" 
                 let _maxIteration = Helper.toDefault<int> maxIteration "maxIteration" 100
                 let _requiredConvergence = Helper.toDefault<double> requiredConvergence "requiredConvergence" 1e-8
-                let builder () = withMnemonic mnemonic ((_AnalyticDoubleBarrierBinaryEngineHelper.cell :?> AnalyticDoubleBarrierBinaryEngineHelperModel).PayoffAtExpiry
+                let builder () = withMnemonic mnemonic ((AnalyticDoubleBarrierBinaryEngineHelperModel.Cast _AnalyticDoubleBarrierBinaryEngineHelper.cell).PayoffAtExpiry
                                                             _spot.cell 
                                                             _variance.cell 
                                                             _barrierType.cell 
@@ -179,7 +179,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let _barrierType = Helper.toCell<DoubleBarrier.Type> barrierType "barrierType" 
                 let _maxIteration = Helper.toDefault<int> maxIteration "maxIteration" 100
                 let _requiredConvergence = Helper.toDefault<double> requiredConvergence "requiredConvergence" 1e-8
-                let builder () = withMnemonic mnemonic ((_AnalyticDoubleBarrierBinaryEngineHelper.cell :?> AnalyticDoubleBarrierBinaryEngineHelperModel).PayoffKIKO
+                let builder () = withMnemonic mnemonic ((AnalyticDoubleBarrierBinaryEngineHelperModel.Cast _AnalyticDoubleBarrierBinaryEngineHelper.cell).PayoffKIKO
                                                             _spot.cell 
                                                             _variance.cell 
                                                             _barrierType.cell 

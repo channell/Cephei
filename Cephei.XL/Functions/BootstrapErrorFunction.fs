@@ -101,7 +101,7 @@ module BootstrapErrorFunction =
 
                 let _BootstrapError = Helper.toCell<BootstrapError> bootstraperror "BootstrapError"  
                 let _guess = Helper.toCell<double> guess "guess" 
-                let builder () = withMnemonic mnemonic ((_BootstrapError.cell :?> BootstrapErrorModel).Value
+                let builder () = withMnemonic mnemonic ((BootstrapErrorModel.Cast _BootstrapError.cell).Value
                                                             _guess.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -143,7 +143,7 @@ module BootstrapErrorFunction =
 
                 let _BootstrapError = Helper.toCell<BootstrapError> bootstraperror "BootstrapError"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_BootstrapError.cell :?> BootstrapErrorModel).Derivative
+                let builder () = withMnemonic mnemonic ((BootstrapErrorModel.Cast _BootstrapError.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

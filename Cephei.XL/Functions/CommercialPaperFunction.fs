@@ -134,7 +134,7 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((_CommercialPaper.cell :?> CommercialPaperModel).FixedLeg
+                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).FixedLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -170,7 +170,7 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((_CommercialPaper.cell :?> CommercialPaperModel).PrincipalLeg
+                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).PrincipalLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -206,7 +206,7 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((_CommercialPaper.cell :?> CommercialPaperModel).IsExpired
+                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -242,7 +242,7 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((_CommercialPaper.cell :?> CommercialPaperModel).CASH
+                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -278,7 +278,7 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((_CommercialPaper.cell :?> CommercialPaperModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -314,7 +314,7 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((_CommercialPaper.cell :?> CommercialPaperModel).NPV
+                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -353,7 +353,7 @@ module CommercialPaperFunction =
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_CommercialPaper.cell :?> CommercialPaperModel).Result
+                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -395,7 +395,7 @@ module CommercialPaperFunction =
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_CommercialPaper.cell :?> CommercialPaperModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CommercialPaper) (l:string) = o.ToString() :> obj
@@ -434,7 +434,7 @@ module CommercialPaperFunction =
             try
 
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
-                let builder () = withMnemonic mnemonic ((_CommercialPaper.cell :?> CommercialPaperModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

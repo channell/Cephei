@@ -49,7 +49,7 @@ module QuadraticHelperFunction =
             try
 
                 let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper"  
-                let builder () = withMnemonic mnemonic ((_QuadraticHelper.cell :?> QuadraticHelperModel).FNext
+                let builder () = withMnemonic mnemonic ((QuadraticHelperModel.Cast _QuadraticHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -88,7 +88,7 @@ module QuadraticHelperFunction =
 
                 let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_QuadraticHelper.cell :?> QuadraticHelperModel).Primitive
+                let builder () = withMnemonic mnemonic ((QuadraticHelperModel.Cast _QuadraticHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -197,7 +197,7 @@ module QuadraticHelperFunction =
 
                 let _QuadraticHelper = Helper.toCell<QuadraticHelper> quadratichelper "QuadraticHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_QuadraticHelper.cell :?> QuadraticHelperModel).Value
+                let builder () = withMnemonic mnemonic ((QuadraticHelperModel.Cast _QuadraticHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

@@ -56,7 +56,7 @@ module ExchangeRateManagerFunction =
                 let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
                 let _rate = Helper.toCell<ExchangeRate> rate "rate" 
                 let _startDate = Helper.toCell<Date> startDate "startDate" 
-                let builder () = withMnemonic mnemonic ((_ExchangeRateManager.cell :?> ExchangeRateManagerModel).Add
+                let builder () = withMnemonic mnemonic ((ExchangeRateManagerModel.Cast _ExchangeRateManager.cell).Add
                                                             _rate.cell 
                                                             _startDate.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module ExchangeRateManagerFunction =
 
                 let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
                 let _rate = Helper.toCell<ExchangeRate> rate "rate" 
-                let builder () = withMnemonic mnemonic ((_ExchangeRateManager.cell :?> ExchangeRateManagerModel).Add
+                let builder () = withMnemonic mnemonic ((ExchangeRateManagerModel.Cast _ExchangeRateManager.cell).Add
                                                             _rate.cell 
                                                        ) :> ICell
                 let format (o : ExchangeRateManager) (l:string) = o.ToString() :> obj
@@ -143,7 +143,7 @@ module ExchangeRateManagerFunction =
             try
 
                 let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
-                let builder () = withMnemonic mnemonic ((_ExchangeRateManager.cell :?> ExchangeRateManagerModel).Clear
+                let builder () = withMnemonic mnemonic ((ExchangeRateManagerModel.Cast _ExchangeRateManager.cell).Clear
                                                        ) :> ICell
                 let format (o : ExchangeRateManager) (l:string) = o.ToString() :> obj
 
@@ -191,7 +191,7 @@ module ExchangeRateManagerFunction =
                 let _target = Helper.toCell<Currency> target "target" 
                 let _date = Helper.toCell<Date> date "date" 
                 let _Type = Helper.toCell<ExchangeRate.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic ((_ExchangeRateManager.cell :?> ExchangeRateManagerModel).Lookup
+                let builder () = withMnemonic mnemonic ((ExchangeRateManagerModel.Cast _ExchangeRateManager.cell).Lookup
                                                             _source.cell 
                                                             _target.cell 
                                                             _date.cell 
@@ -248,7 +248,7 @@ module ExchangeRateManagerFunction =
                 let _source = Helper.toCell<Currency> source "source" 
                 let _target = Helper.toCell<Currency> target "target" 
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((_ExchangeRateManager.cell :?> ExchangeRateManagerModel).Lookup1
+                let builder () = withMnemonic mnemonic ((ExchangeRateManagerModel.Cast _ExchangeRateManager.cell).Lookup1
                                                             _source.cell 
                                                             _target.cell 
                                                             _date.cell 
@@ -299,7 +299,7 @@ module ExchangeRateManagerFunction =
                 let _ExchangeRateManager = Helper.toCell<ExchangeRateManager> exchangeratemanager "ExchangeRateManager"  
                 let _source = Helper.toCell<Currency> source "source" 
                 let _target = Helper.toCell<Currency> target "target" 
-                let builder () = withMnemonic mnemonic ((_ExchangeRateManager.cell :?> ExchangeRateManagerModel).Lookup2
+                let builder () = withMnemonic mnemonic ((ExchangeRateManagerModel.Cast _ExchangeRateManager.cell).Lookup2
                                                             _source.cell 
                                                             _target.cell 
                                                        ) :> ICell

@@ -49,7 +49,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedPiecewiseZeroSpreadedTermStructure.cell :?> InterpolatedPiecewiseZeroSpreadedTermStructureModel).Calendar
+                let builder () = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -85,7 +85,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedPiecewiseZeroSpreadedTermStructure.cell :?> InterpolatedPiecewiseZeroSpreadedTermStructureModel).DayCounter
+                let builder () = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -194,7 +194,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedPiecewiseZeroSpreadedTermStructure.cell :?> InterpolatedPiecewiseZeroSpreadedTermStructureModel).MaxDate
+                let builder () = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -230,7 +230,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedPiecewiseZeroSpreadedTermStructure.cell :?> InterpolatedPiecewiseZeroSpreadedTermStructureModel).ReferenceDate
+                let builder () = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -266,7 +266,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
             try
 
                 let _InterpolatedPiecewiseZeroSpreadedTermStructure = Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> interpolatedpiecewisezerospreadedtermstructure "InterpolatedPiecewiseZeroSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedPiecewiseZeroSpreadedTermStructure.cell :?> InterpolatedPiecewiseZeroSpreadedTermStructureModel).SettlementDays
+                let builder () = withMnemonic mnemonic ((InterpolatedPiecewiseZeroSpreadedTermStructureModel.Cast _InterpolatedPiecewiseZeroSpreadedTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

@@ -139,7 +139,7 @@ module FDEngineAdapterFunction =
 
                 let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDEngineAdapter) (l:string) = o.ToString() :> obj
@@ -178,7 +178,7 @@ module FDEngineAdapterFunction =
             try
 
                 let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
-                let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).Reset
+                let builder () = withMnemonic mnemonic ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).Reset
                                                        ) :> ICell
                 let format (o : FDEngineAdapter) (l:string) = o.ToString() :> obj
 
@@ -217,7 +217,7 @@ module FDEngineAdapterFunction =
 
                 let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDEngineAdapter) (l:string) = o.ToString() :> obj
@@ -256,7 +256,7 @@ module FDEngineAdapterFunction =
             try
 
                 let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
-                let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).Update
+                let builder () = withMnemonic mnemonic ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).Update
                                                        ) :> ICell
                 let format (o : FDEngineAdapter) (l:string) = o.ToString() :> obj
 
@@ -292,7 +292,7 @@ module FDEngineAdapterFunction =
             try
 
                 let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
-                let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).EnsureStrikeInGrid
+                let builder () = withMnemonic mnemonic ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDEngineAdapter) (l:string) = o.ToString() :> obj
 
@@ -340,7 +340,7 @@ module FDEngineAdapterFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).Factory
+                let builder () = withMnemonic mnemonic ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -388,7 +388,7 @@ module FDEngineAdapterFunction =
             try
 
                 let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
-                let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).GetResidualTime
+                let builder () = withMnemonic mnemonic ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -424,7 +424,7 @@ module FDEngineAdapterFunction =
             try
 
                 let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
-                let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).Grid
+                let builder () = withMnemonic mnemonic ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -460,7 +460,7 @@ module FDEngineAdapterFunction =
             try
 
                 let _FDEngineAdapter = Helper.toCell<FDEngineAdapter> fdengineadapter "FDEngineAdapter"  
-                let builder () = withMnemonic mnemonic ((_FDEngineAdapter.cell :?> FDEngineAdapterModel).IntrinsicValues_
+                let builder () = withMnemonic mnemonic ((FDEngineAdapterModel.Cast _FDEngineAdapter.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 

@@ -55,7 +55,7 @@ module NegativePowerDefaultIntensityFunction =
                 let _NegativePowerDefaultIntensity = Helper.toCell<NegativePowerDefaultIntensity> negativepowerdefaultintensity "NegativePowerDefaultIntensity"  
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((_NegativePowerDefaultIntensity.cell :?> NegativePowerDefaultIntensityModel).DefaultRecovery
+                let builder () = withMnemonic mnemonic ((NegativePowerDefaultIntensityModel.Cast _NegativePowerDefaultIntensity.cell).DefaultRecovery
                                                             _t.cell 
                                                             _s.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module NegativePowerDefaultIntensityFunction =
                 let _NegativePowerDefaultIntensity = Helper.toCell<NegativePowerDefaultIntensity> negativepowerdefaultintensity "NegativePowerDefaultIntensity"  
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((_NegativePowerDefaultIntensity.cell :?> NegativePowerDefaultIntensityModel).HazardRate
+                let builder () = withMnemonic mnemonic ((NegativePowerDefaultIntensityModel.Cast _NegativePowerDefaultIntensity.cell).HazardRate
                                                             _t.cell 
                                                             _s.cell 
                                                        ) :> ICell

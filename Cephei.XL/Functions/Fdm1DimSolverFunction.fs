@@ -52,7 +52,7 @@ module Fdm1DimSolverFunction =
 
                 let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_Fdm1DimSolver.cell :?> Fdm1DimSolverModel).DerivativeX
+                let builder () = withMnemonic mnemonic ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).DerivativeX
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -94,7 +94,7 @@ module Fdm1DimSolverFunction =
 
                 let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_Fdm1DimSolver.cell :?> Fdm1DimSolverModel).DerivativeXX
+                let builder () = withMnemonic mnemonic ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).DerivativeXX
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -185,7 +185,7 @@ module Fdm1DimSolverFunction =
 
                 let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_Fdm1DimSolver.cell :?> Fdm1DimSolverModel).InterpolateAt
+                let builder () = withMnemonic mnemonic ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).InterpolateAt
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -227,7 +227,7 @@ module Fdm1DimSolverFunction =
 
                 let _Fdm1DimSolver = Helper.toCell<Fdm1DimSolver> fdm1dimsolver "Fdm1DimSolver"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_Fdm1DimSolver.cell :?> Fdm1DimSolverModel).ThetaAt
+                let builder () = withMnemonic mnemonic ((Fdm1DimSolverModel.Cast _Fdm1DimSolver.cell).ThetaAt
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

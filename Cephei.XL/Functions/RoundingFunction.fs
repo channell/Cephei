@@ -49,7 +49,7 @@ module RoundingFunction =
             try
 
                 let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
-                let builder () = withMnemonic mnemonic ((_Rounding.cell :?> RoundingModel).Digit
+                let builder () = withMnemonic mnemonic ((RoundingModel.Cast _Rounding.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module RoundingFunction =
             try
 
                 let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
-                let builder () = withMnemonic mnemonic ((_Rounding.cell :?> RoundingModel).GetType
+                let builder () = withMnemonic mnemonic ((RoundingModel.Cast _Rounding.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -121,7 +121,7 @@ module RoundingFunction =
             try
 
                 let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
-                let builder () = withMnemonic mnemonic ((_Rounding.cell :?> RoundingModel).Precision
+                let builder () = withMnemonic mnemonic ((RoundingModel.Cast _Rounding.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -160,7 +160,7 @@ module RoundingFunction =
 
                 let _Rounding = Helper.toCell<Rounding> rounding "Rounding"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((_Rounding.cell :?> RoundingModel).Round
+                let builder () = withMnemonic mnemonic ((RoundingModel.Cast _Rounding.cell).Round
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

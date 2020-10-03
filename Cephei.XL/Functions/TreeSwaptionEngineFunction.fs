@@ -234,7 +234,7 @@ module TreeSwaptionEngineFunction =
             try
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((_TreeSwaptionEngine.cell :?> TreeSwaptionEngineModel).Update
+                let builder () = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
 
@@ -274,7 +274,7 @@ module TreeSwaptionEngineFunction =
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType>> model "model" 
-                let builder () = withMnemonic mnemonic ((_TreeSwaptionEngine.cell :?> TreeSwaptionEngineModel).SetModel
+                let builder () = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -316,7 +316,7 @@ module TreeSwaptionEngineFunction =
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_TreeSwaptionEngine.cell :?> TreeSwaptionEngineModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -355,7 +355,7 @@ module TreeSwaptionEngineFunction =
             try
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((_TreeSwaptionEngine.cell :?> TreeSwaptionEngineModel).Reset
+                let builder () = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj
 
@@ -394,7 +394,7 @@ module TreeSwaptionEngineFunction =
 
                 let _TreeSwaptionEngine = Helper.toCell<TreeSwaptionEngine> treeswaptionengine "TreeSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_TreeSwaptionEngine.cell :?> TreeSwaptionEngineModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((TreeSwaptionEngineModel.Cast _TreeSwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TreeSwaptionEngine) (l:string) = o.ToString() :> obj

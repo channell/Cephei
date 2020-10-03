@@ -92,7 +92,7 @@ module VoluntaryPrepayFunction =
             try
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
-                let builder () = withMnemonic mnemonic ((_VoluntaryPrepay.cell :?> VoluntaryPrepayModel).Amount
+                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -128,7 +128,7 @@ module VoluntaryPrepayFunction =
             try
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
-                let builder () = withMnemonic mnemonic ((_VoluntaryPrepay.cell :?> VoluntaryPrepayModel).Date
+                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -167,7 +167,7 @@ module VoluntaryPrepayFunction =
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_VoluntaryPrepay.cell :?> VoluntaryPrepayModel).CompareTo
+                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -209,7 +209,7 @@ module VoluntaryPrepayFunction =
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_VoluntaryPrepay.cell :?> VoluntaryPrepayModel).Equals
+                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -248,7 +248,7 @@ module VoluntaryPrepayFunction =
             try
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
-                let builder () = withMnemonic mnemonic ((_VoluntaryPrepay.cell :?> VoluntaryPrepayModel).ExCouponDate
+                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -290,7 +290,7 @@ module VoluntaryPrepayFunction =
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((_VoluntaryPrepay.cell :?> VoluntaryPrepayModel).HasOccurred
+                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -335,7 +335,7 @@ module VoluntaryPrepayFunction =
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((_VoluntaryPrepay.cell :?> VoluntaryPrepayModel).TradingExCoupon
+                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -377,7 +377,7 @@ module VoluntaryPrepayFunction =
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_VoluntaryPrepay.cell :?> VoluntaryPrepayModel).Accept
+                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : VoluntaryPrepay) (l:string) = o.ToString() :> obj
@@ -419,7 +419,7 @@ module VoluntaryPrepayFunction =
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_VoluntaryPrepay.cell :?> VoluntaryPrepayModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : VoluntaryPrepay) (l:string) = o.ToString() :> obj
@@ -461,7 +461,7 @@ module VoluntaryPrepayFunction =
 
                 let _VoluntaryPrepay = Helper.toCell<VoluntaryPrepay> voluntaryprepay "VoluntaryPrepay"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_VoluntaryPrepay.cell :?> VoluntaryPrepayModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((VoluntaryPrepayModel.Cast _VoluntaryPrepay.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : VoluntaryPrepay) (l:string) = o.ToString() :> obj

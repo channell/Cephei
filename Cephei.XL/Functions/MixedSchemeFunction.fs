@@ -132,7 +132,7 @@ module MixedSchemeFunction =
 
                 let _MixedScheme = Helper.toCell<MixedScheme> mixedscheme "MixedScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_MixedScheme.cell :?> MixedSchemeModel).SetStep
+                let builder () = withMnemonic mnemonic ((MixedSchemeModel.Cast _MixedScheme.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : MixedScheme) (l:string) = o.ToString() :> obj
@@ -180,7 +180,7 @@ module MixedSchemeFunction =
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder () = withMnemonic mnemonic ((_MixedScheme.cell :?> MixedSchemeModel).Step
+                let builder () = withMnemonic mnemonic ((MixedSchemeModel.Cast _MixedScheme.cell).Step
                                                             _o.cell 
                                                             _t.cell 
                                                             _theta.cell 

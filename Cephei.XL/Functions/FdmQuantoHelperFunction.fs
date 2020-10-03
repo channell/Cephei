@@ -49,7 +49,7 @@ module FdmQuantoHelperFunction =
             try
 
                 let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
-                let builder () = withMnemonic mnemonic ((_FdmQuantoHelper.cell :?> FdmQuantoHelperModel).EquityFxCorrelation
+                let builder () = withMnemonic mnemonic ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).EquityFxCorrelation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module FdmQuantoHelperFunction =
             try
 
                 let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
-                let builder () = withMnemonic mnemonic ((_FdmQuantoHelper.cell :?> FdmQuantoHelperModel).ExchRateATMlevel
+                let builder () = withMnemonic mnemonic ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).ExchRateATMlevel
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -182,7 +182,7 @@ module FdmQuantoHelperFunction =
             try
 
                 let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
-                let builder () = withMnemonic mnemonic ((_FdmQuantoHelper.cell :?> FdmQuantoHelperModel).ForeignTermStructure
+                let builder () = withMnemonic mnemonic ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).ForeignTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YieldTermStructure>) l
 
@@ -218,7 +218,7 @@ module FdmQuantoHelperFunction =
             try
 
                 let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
-                let builder () = withMnemonic mnemonic ((_FdmQuantoHelper.cell :?> FdmQuantoHelperModel).FxVolatilityTermStructure
+                let builder () = withMnemonic mnemonic ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).FxVolatilityTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackVolTermStructure>) l
 
@@ -263,7 +263,7 @@ module FdmQuantoHelperFunction =
                 let _equityVol = Helper.toCell<Vector> equityVol "equityVol" 
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder () = withMnemonic mnemonic ((_FdmQuantoHelper.cell :?> FdmQuantoHelperModel).QuantoAdjustment1
+                let builder () = withMnemonic mnemonic ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).QuantoAdjustment1
                                                             _equityVol.cell 
                                                             _t1.cell 
                                                             _t2.cell 
@@ -317,7 +317,7 @@ module FdmQuantoHelperFunction =
                 let _equityVol = Helper.toCell<double> equityVol "equityVol" 
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder () = withMnemonic mnemonic ((_FdmQuantoHelper.cell :?> FdmQuantoHelperModel).QuantoAdjustment
+                let builder () = withMnemonic mnemonic ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).QuantoAdjustment
                                                             _equityVol.cell 
                                                             _t1.cell 
                                                             _t2.cell 
@@ -365,7 +365,7 @@ module FdmQuantoHelperFunction =
 
                 let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FdmQuantoHelper.cell :?> FdmQuantoHelperModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FdmQuantoHelper) (l:string) = o.ToString() :> obj
@@ -404,7 +404,7 @@ module FdmQuantoHelperFunction =
             try
 
                 let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
-                let builder () = withMnemonic mnemonic ((_FdmQuantoHelper.cell :?> FdmQuantoHelperModel).RiskFreeTermStructure
+                let builder () = withMnemonic mnemonic ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).RiskFreeTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YieldTermStructure>) l
 
@@ -443,7 +443,7 @@ module FdmQuantoHelperFunction =
 
                 let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FdmQuantoHelper.cell :?> FdmQuantoHelperModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FdmQuantoHelper) (l:string) = o.ToString() :> obj
@@ -482,7 +482,7 @@ module FdmQuantoHelperFunction =
             try
 
                 let _FdmQuantoHelper = Helper.toCell<FdmQuantoHelper> fdmquantohelper "FdmQuantoHelper"  
-                let builder () = withMnemonic mnemonic ((_FdmQuantoHelper.cell :?> FdmQuantoHelperModel).Update
+                let builder () = withMnemonic mnemonic ((FdmQuantoHelperModel.Cast _FdmQuantoHelper.cell).Update
                                                        ) :> ICell
                 let format (o : FdmQuantoHelper) (l:string) = o.ToString() :> obj
 

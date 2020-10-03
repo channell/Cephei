@@ -84,7 +84,7 @@ module FDMultiPeriodEngineFunction =
 
                 let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
-                let builder () = withMnemonic mnemonic ((_FDMultiPeriodEngine.cell :?> FDMultiPeriodEngineModel).SetStepCondition
+                let builder () = withMnemonic mnemonic ((FDMultiPeriodEngineModel.Cast _FDMultiPeriodEngine.cell).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (o : FDMultiPeriodEngine) (l:string) = o.ToString() :> obj
@@ -123,7 +123,7 @@ module FDMultiPeriodEngineFunction =
             try
 
                 let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
-                let builder () = withMnemonic mnemonic ((_FDMultiPeriodEngine.cell :?> FDMultiPeriodEngineModel).EnsureStrikeInGrid
+                let builder () = withMnemonic mnemonic ((FDMultiPeriodEngineModel.Cast _FDMultiPeriodEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDMultiPeriodEngine) (l:string) = o.ToString() :> obj
 
@@ -171,7 +171,7 @@ module FDMultiPeriodEngineFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((_FDMultiPeriodEngine.cell :?> FDMultiPeriodEngineModel).Factory
+                let builder () = withMnemonic mnemonic ((FDMultiPeriodEngineModel.Cast _FDMultiPeriodEngine.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -219,7 +219,7 @@ module FDMultiPeriodEngineFunction =
             try
 
                 let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
-                let builder () = withMnemonic mnemonic ((_FDMultiPeriodEngine.cell :?> FDMultiPeriodEngineModel).GetResidualTime
+                let builder () = withMnemonic mnemonic ((FDMultiPeriodEngineModel.Cast _FDMultiPeriodEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -255,7 +255,7 @@ module FDMultiPeriodEngineFunction =
             try
 
                 let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
-                let builder () = withMnemonic mnemonic ((_FDMultiPeriodEngine.cell :?> FDMultiPeriodEngineModel).Grid
+                let builder () = withMnemonic mnemonic ((FDMultiPeriodEngineModel.Cast _FDMultiPeriodEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -291,7 +291,7 @@ module FDMultiPeriodEngineFunction =
             try
 
                 let _FDMultiPeriodEngine = Helper.toCell<FDMultiPeriodEngine> fdmultiperiodengine "FDMultiPeriodEngine"  
-                let builder () = withMnemonic mnemonic ((_FDMultiPeriodEngine.cell :?> FDMultiPeriodEngineModel).IntrinsicValues_
+                let builder () = withMnemonic mnemonic ((FDMultiPeriodEngineModel.Cast _FDMultiPeriodEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 

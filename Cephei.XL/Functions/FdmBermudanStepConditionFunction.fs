@@ -55,7 +55,7 @@ module FdmBermudanStepConditionFunction =
                 let _FdmBermudanStepCondition = Helper.toCell<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_FdmBermudanStepCondition.cell :?> FdmBermudanStepConditionModel).ApplyTo
+                let builder () = withMnemonic mnemonic ((FdmBermudanStepConditionModel.Cast _FdmBermudanStepCondition.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -97,7 +97,7 @@ module FdmBermudanStepConditionFunction =
             try
 
                 let _FdmBermudanStepCondition = Helper.toCell<FdmBermudanStepCondition> fdmbermudanstepcondition "FdmBermudanStepCondition"  
-                let builder () = withMnemonic mnemonic ((_FdmBermudanStepCondition.cell :?> FdmBermudanStepConditionModel).ExerciseTimes
+                let builder () = withMnemonic mnemonic ((FdmBermudanStepConditionModel.Cast _FdmBermudanStepCondition.cell).ExerciseTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 

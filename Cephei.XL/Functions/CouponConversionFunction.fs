@@ -92,7 +92,7 @@ module CouponConversionFunction =
             try
 
                 let _CouponConversion = Helper.toCell<CouponConversion> couponconversion "CouponConversion"  
-                let builder () = withMnemonic mnemonic ((_CouponConversion.cell :?> CouponConversionModel).Date
+                let builder () = withMnemonic mnemonic ((CouponConversionModel.Cast _CouponConversion.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -128,7 +128,7 @@ module CouponConversionFunction =
             try
 
                 let _CouponConversion = Helper.toCell<CouponConversion> couponconversion "CouponConversion"  
-                let builder () = withMnemonic mnemonic ((_CouponConversion.cell :?> CouponConversionModel).Rate
+                let builder () = withMnemonic mnemonic ((CouponConversionModel.Cast _CouponConversion.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -164,7 +164,7 @@ module CouponConversionFunction =
             try
 
                 let _CouponConversion = Helper.toCell<CouponConversion> couponconversion "CouponConversion"  
-                let builder () = withMnemonic mnemonic ((_CouponConversion.cell :?> CouponConversionModel).ToString
+                let builder () = withMnemonic mnemonic ((CouponConversionModel.Cast _CouponConversion.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 

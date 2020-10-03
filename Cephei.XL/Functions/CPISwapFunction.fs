@@ -49,7 +49,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).BaseCPI
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).BaseCPI
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).CpiLeg
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).CpiLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -272,7 +272,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FairRate
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FairRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -308,7 +308,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FairSpread
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FairSpread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -344,7 +344,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FixedDayCount
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FixedDayCount
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -380,7 +380,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FixedIndex
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FixedIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
@@ -416,7 +416,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FixedLegNPV
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FixedLegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -452,7 +452,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FixedPaymentRoll
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FixedPaymentRoll
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -488,7 +488,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FixedRate
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FixedRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -524,7 +524,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FixedSchedule
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FixedSchedule
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
@@ -560,7 +560,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FixingDays
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -596,7 +596,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FloatDayCount
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FloatDayCount
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -632,7 +632,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FloatIndex
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FloatIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
@@ -668,7 +668,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FloatLeg
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FloatLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -704,7 +704,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FloatLegNPV
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FloatLegNPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -740,7 +740,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FloatPaymentRoll
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FloatPaymentRoll
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -776,7 +776,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).FloatSchedule
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).FloatSchedule
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
@@ -812,7 +812,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).InflationNominal
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).InflationNominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -848,7 +848,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).Nominal
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -884,7 +884,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).ObservationInterpolation
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).ObservationInterpolation
                                                        ) :> ICell
                 let format (o : InterpolationType) (l:string) = o.ToString() :> obj
 
@@ -920,7 +920,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).ObservationLag
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).ObservationLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -956,7 +956,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).Spread
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -992,7 +992,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).SubtractInflationNominal
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).SubtractInflationNominal
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1028,7 +1028,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).Type
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).Type
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -1067,7 +1067,7 @@ module CPISwapFunction =
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).EndDiscounts
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).EndDiscounts
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1107,7 +1107,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).Engine
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).Engine
                                                        ) :> ICell
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
 
@@ -1144,7 +1144,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).IsExpired
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1183,7 +1183,7 @@ module CPISwapFunction =
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).Leg
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).Leg
                                                             _j.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
@@ -1225,7 +1225,7 @@ module CPISwapFunction =
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).LegBPS
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).LegBPS
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1267,7 +1267,7 @@ module CPISwapFunction =
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).LegNPV
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).LegNPV
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1306,7 +1306,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1342,7 +1342,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).NpvDateDiscount
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).NpvDateDiscount
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -1381,7 +1381,7 @@ module CPISwapFunction =
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).Payer
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).Payer
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1420,7 +1420,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).StartDate
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1459,7 +1459,7 @@ module CPISwapFunction =
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).StartDiscounts
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).StartDiscounts
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -1498,7 +1498,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).CASH
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1534,7 +1534,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1570,7 +1570,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).NPV
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1609,7 +1609,7 @@ module CPISwapFunction =
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).Result
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -1651,7 +1651,7 @@ module CPISwapFunction =
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CPISwap) (l:string) = o.ToString() :> obj
@@ -1690,7 +1690,7 @@ module CPISwapFunction =
             try
 
                 let _CPISwap = Helper.toCell<CPISwap> cpiswap "CPISwap"  
-                let builder () = withMnemonic mnemonic ((_CPISwap.cell :?> CPISwapModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((CPISwapModel.Cast _CPISwap.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

@@ -58,7 +58,7 @@ module SVIFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _xEnd = Helper.toCell<int> xEnd "xEnd" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((_SVI.cell :?> SVIModel).Interpolate
+                let builder () = withMnemonic mnemonic ((SVIModel.Cast _SVI.cell).Interpolate
                                                             _xBegin.cell 
                                                             _xEnd.cell 
                                                             _yBegin.cell 

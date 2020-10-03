@@ -49,7 +49,7 @@ module LogLinearFunction =
             try
 
                 let _LogLinear = Helper.toCell<LogLinear> loglinear "LogLinear"  
-                let builder () = withMnemonic mnemonic ((_LogLinear.cell :?> LogLinearModel).Global
+                let builder () = withMnemonic mnemonic ((LogLinearModel.Cast _LogLinear.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -94,7 +94,7 @@ module LogLinearFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((_LogLinear.cell :?> LogLinearModel).Interpolate
+                let builder () = withMnemonic mnemonic ((LogLinearModel.Cast _LogLinear.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -139,7 +139,7 @@ module LogLinearFunction =
             try
 
                 let _LogLinear = Helper.toCell<LogLinear> loglinear "LogLinear"  
-                let builder () = withMnemonic mnemonic ((_LogLinear.cell :?> LogLinearModel).RequiredPoints
+                let builder () = withMnemonic mnemonic ((LogLinearModel.Cast _LogLinear.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

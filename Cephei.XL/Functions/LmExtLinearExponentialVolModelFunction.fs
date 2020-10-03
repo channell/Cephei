@@ -61,7 +61,7 @@ module LmExtLinearExponentialVolModelFunction =
                 let _j = Helper.toCell<int> j "j" 
                 let _u = Helper.toCell<double> u "u" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((_LmExtLinearExponentialVolModel.cell :?> LmExtLinearExponentialVolModelModel).IntegratedVariance
+                let builder () = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).IntegratedVariance
                                                             _i.cell 
                                                             _j.cell 
                                                             _u.cell 
@@ -176,7 +176,7 @@ module LmExtLinearExponentialVolModelFunction =
                 let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((_LmExtLinearExponentialVolModel.cell :?> LmExtLinearExponentialVolModelModel).Volatility1
+                let builder () = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Volatility1
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -227,7 +227,7 @@ module LmExtLinearExponentialVolModelFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toDefault<Vector> x "x" null
-                let builder () = withMnemonic mnemonic ((_LmExtLinearExponentialVolModel.cell :?> LmExtLinearExponentialVolModelModel).Volatility
+                let builder () = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Volatility
                                                             _i.cell 
                                                             _t.cell 
                                                             _x.cell 
@@ -272,7 +272,7 @@ module LmExtLinearExponentialVolModelFunction =
             try
 
                 let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
-                let builder () = withMnemonic mnemonic ((_LmExtLinearExponentialVolModel.cell :?> LmExtLinearExponentialVolModelModel).Parameters
+                let builder () = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Parameters
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -311,7 +311,7 @@ module LmExtLinearExponentialVolModelFunction =
 
                 let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let _arguments = Helper.toCell<Generic.List<Parameter>> arguments "arguments" 
-                let builder () = withMnemonic mnemonic ((_LmExtLinearExponentialVolModel.cell :?> LmExtLinearExponentialVolModelModel).SetParams
+                let builder () = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).SetParams
                                                             _arguments.cell 
                                                        ) :> ICell
                 let format (o : LmExtLinearExponentialVolModel) (l:string) = o.ToString() :> obj
@@ -350,7 +350,7 @@ module LmExtLinearExponentialVolModelFunction =
             try
 
                 let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
-                let builder () = withMnemonic mnemonic ((_LmExtLinearExponentialVolModel.cell :?> LmExtLinearExponentialVolModelModel).Size
+                let builder () = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

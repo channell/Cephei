@@ -110,7 +110,7 @@ module ConstantGradHelperFunction =
             try
 
                 let _ConstantGradHelper = Helper.toCell<ConstantGradHelper> constantgradhelper "ConstantGradHelper"  
-                let builder () = withMnemonic mnemonic ((_ConstantGradHelper.cell :?> ConstantGradHelperModel).FNext
+                let builder () = withMnemonic mnemonic ((ConstantGradHelperModel.Cast _ConstantGradHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -149,7 +149,7 @@ module ConstantGradHelperFunction =
 
                 let _ConstantGradHelper = Helper.toCell<ConstantGradHelper> constantgradhelper "ConstantGradHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_ConstantGradHelper.cell :?> ConstantGradHelperModel).Primitive
+                let builder () = withMnemonic mnemonic ((ConstantGradHelperModel.Cast _ConstantGradHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -191,7 +191,7 @@ module ConstantGradHelperFunction =
 
                 let _ConstantGradHelper = Helper.toCell<ConstantGradHelper> constantgradhelper "ConstantGradHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_ConstantGradHelper.cell :?> ConstantGradHelperModel).Value
+                let builder () = withMnemonic mnemonic ((ConstantGradHelperModel.Cast _ConstantGradHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

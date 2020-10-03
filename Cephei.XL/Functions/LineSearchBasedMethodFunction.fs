@@ -92,7 +92,7 @@ module LineSearchBasedMethodFunction =
                 let _LineSearchBasedMethod = Helper.toCell<LineSearchBasedMethod> linesearchbasedmethod "LineSearchBasedMethod"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((_LineSearchBasedMethod.cell :?> LineSearchBasedMethodModel).Minimize
+                let builder () = withMnemonic mnemonic ((LineSearchBasedMethodModel.Cast _LineSearchBasedMethod.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell

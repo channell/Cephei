@@ -98,7 +98,7 @@ module DigitalNotionalRiskFunction =
                 let _DigitalNotionalRisk = Helper.toCell<DigitalNotionalRisk> digitalnotionalrisk "DigitalNotionalRisk"  
                 let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" 
                 let _path = Helper.toCell<NotionalPath> path "path" 
-                let builder () = withMnemonic mnemonic ((_DigitalNotionalRisk.cell :?> DigitalNotionalRiskModel).UpdatePath
+                let builder () = withMnemonic mnemonic ((DigitalNotionalRiskModel.Cast _DigitalNotionalRisk.cell).UpdatePath
                                                             _events.cell 
                                                             _path.cell 
                                                        ) :> ICell

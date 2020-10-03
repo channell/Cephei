@@ -95,7 +95,7 @@ module MoroInverseCumulativeNormalFunction =
 
                 let _MoroInverseCumulativeNormal = Helper.toCell<MoroInverseCumulativeNormal> moroinversecumulativenormal "MoroInverseCumulativeNormal"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_MoroInverseCumulativeNormal.cell :?> MoroInverseCumulativeNormalModel).Value
+                let builder () = withMnemonic mnemonic ((MoroInverseCumulativeNormalModel.Cast _MoroInverseCumulativeNormal.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

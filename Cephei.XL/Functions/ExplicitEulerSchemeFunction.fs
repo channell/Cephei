@@ -132,7 +132,7 @@ module ExplicitEulerSchemeFunction =
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
-                let builder () = withMnemonic mnemonic ((_ExplicitEulerScheme.cell :?> ExplicitEulerSchemeModel).Factory
+                let builder () = withMnemonic mnemonic ((ExplicitEulerSchemeModel.Cast _ExplicitEulerScheme.cell).Factory
                                                             _L.cell 
                                                             _bcs.cell 
                                                             _additionalInputs.cell 
@@ -180,7 +180,7 @@ module ExplicitEulerSchemeFunction =
 
                 let _ExplicitEulerScheme = Helper.toCell<ExplicitEulerScheme> expliciteulerscheme "ExplicitEulerScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_ExplicitEulerScheme.cell :?> ExplicitEulerSchemeModel).SetStep
+                let builder () = withMnemonic mnemonic ((ExplicitEulerSchemeModel.Cast _ExplicitEulerScheme.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : ExplicitEulerScheme) (l:string) = o.ToString() :> obj
@@ -228,7 +228,7 @@ module ExplicitEulerSchemeFunction =
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder () = withMnemonic mnemonic ((_ExplicitEulerScheme.cell :?> ExplicitEulerSchemeModel).Step
+                let builder () = withMnemonic mnemonic ((ExplicitEulerSchemeModel.Cast _ExplicitEulerScheme.cell).Step
                                                             _a.cell 
                                                             _t.cell 
                                                             _theta.cell 

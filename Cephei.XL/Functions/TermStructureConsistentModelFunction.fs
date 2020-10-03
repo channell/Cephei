@@ -52,7 +52,7 @@ module TermStructureConsistentModelFunction =
 
                 let _TermStructureConsistentModel = Helper.toCell<TermStructureConsistentModel> termstructureconsistentmodel "TermStructureConsistentModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_TermStructureConsistentModel.cell :?> TermStructureConsistentModelModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((TermStructureConsistentModelModel.Cast _TermStructureConsistentModel.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TermStructureConsistentModel) (l:string) = o.ToString() :> obj
@@ -91,7 +91,7 @@ module TermStructureConsistentModelFunction =
             try
 
                 let _TermStructureConsistentModel = Helper.toCell<TermStructureConsistentModel> termstructureconsistentmodel "TermStructureConsistentModel"  
-                let builder () = withMnemonic mnemonic ((_TermStructureConsistentModel.cell :?> TermStructureConsistentModelModel).TermStructure
+                let builder () = withMnemonic mnemonic ((TermStructureConsistentModelModel.Cast _TermStructureConsistentModel.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -167,7 +167,7 @@ module TermStructureConsistentModelFunction =
 
                 let _TermStructureConsistentModel = Helper.toCell<TermStructureConsistentModel> termstructureconsistentmodel "TermStructureConsistentModel"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_TermStructureConsistentModel.cell :?> TermStructureConsistentModelModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((TermStructureConsistentModelModel.Cast _TermStructureConsistentModel.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TermStructureConsistentModel) (l:string) = o.ToString() :> obj

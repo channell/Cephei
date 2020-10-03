@@ -129,7 +129,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -168,7 +168,7 @@ module TRLiborFunction =
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).Clone
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).Clone
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -207,7 +207,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -252,7 +252,7 @@ module TRLiborFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).ForecastFixing1
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
@@ -300,7 +300,7 @@ module TRLiborFunction =
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).ForecastFixing
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -339,7 +339,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).ForwardingTermStructure
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -378,7 +378,7 @@ module TRLiborFunction =
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -417,7 +417,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).Currency
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -453,7 +453,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).DayCounter
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -489,7 +489,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).FamilyName
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -531,7 +531,7 @@ module TRLiborFunction =
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).Fixing
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -573,7 +573,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -612,7 +612,7 @@ module TRLiborFunction =
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).FixingDate
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -651,7 +651,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).FixingDays
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -690,7 +690,7 @@ module TRLiborFunction =
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -729,7 +729,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).Name
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -768,7 +768,7 @@ module TRLiborFunction =
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).PastFixing
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -807,7 +807,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).Tenor
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -843,7 +843,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).Update
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).Update
                                                        ) :> ICell
                 let format (o : TRLibor) (l:string) = o.ToString() :> obj
 
@@ -882,7 +882,7 @@ module TRLiborFunction =
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).ValueDate
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -930,7 +930,7 @@ module TRLiborFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).AddFixing
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -984,7 +984,7 @@ module TRLiborFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).AddFixings
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -1035,7 +1035,7 @@ module TRLiborFunction =
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -1077,7 +1077,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1113,7 +1113,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : TRLibor) (l:string) = o.ToString() :> obj
 
@@ -1152,7 +1152,7 @@ module TRLiborFunction =
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TRLibor) (l:string) = o.ToString() :> obj
@@ -1191,7 +1191,7 @@ module TRLiborFunction =
             try
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1230,7 +1230,7 @@ module TRLiborFunction =
 
                 let _TRLibor = Helper.toCell<TRLibor> trlibor "TRLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_TRLibor.cell :?> TRLiborModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((TRLiborModel.Cast _TRLibor.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TRLibor) (l:string) = o.ToString() :> obj

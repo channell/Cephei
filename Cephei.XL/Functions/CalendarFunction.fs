@@ -49,7 +49,7 @@ module CalendarFunction =
             try
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).AddedHolidays
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -88,7 +88,7 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).AddHoliday
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Calendar) (l:string) = o.ToString() :> obj
@@ -133,7 +133,7 @@ module CalendarFunction =
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toDefault<BusinessDayConvention> c "c" BusinessDayConvention.Following
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).Adjust
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -190,7 +190,7 @@ module CalendarFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toDefault<BusinessDayConvention> c "c" BusinessDayConvention.Following
                 let _endOfMonth = Helper.toDefault<bool> endOfMonth "endOfMonth" false
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).Advance1
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -253,7 +253,7 @@ module CalendarFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toDefault<BusinessDayConvention> c "c" BusinessDayConvention.Following
                 let _endOfMonth = Helper.toDefault<bool> endOfMonth "endOfMonth" false
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).Advance
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -313,7 +313,7 @@ module CalendarFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toDefault<bool> includeFirst "includeFirst" true
                 let _includeLast = Helper.toDefault<bool> includeLast "includeLast" false
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).BusinessDaysBetween
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -361,7 +361,7 @@ module CalendarFunction =
             try
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).Calendar
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -465,7 +465,7 @@ module CalendarFunction =
             try
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).Empty
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -504,7 +504,7 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -546,7 +546,7 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).Equals
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -588,7 +588,7 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).IsBusinessDay
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -630,7 +630,7 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).IsEndOfMonth
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -672,7 +672,7 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).IsHoliday
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -714,7 +714,7 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).IsWeekend
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -755,7 +755,7 @@ module CalendarFunction =
             try
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).Name
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -791,7 +791,7 @@ module CalendarFunction =
             try
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).RemovedHolidays
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -830,7 +830,7 @@ module CalendarFunction =
 
                 let _Calendar = Helper.toCell<Calendar> calendar "Calendar"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Calendar.cell :?> CalendarModel).RemoveHoliday
+                let builder () = withMnemonic mnemonic ((CalendarModel.Cast _Calendar.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Calendar) (l:string) = o.ToString() :> obj

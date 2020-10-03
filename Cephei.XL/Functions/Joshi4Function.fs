@@ -61,7 +61,7 @@ module Joshi4Function =
                 let _End = Helper.toCell<double> End "End" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((_Joshi4.cell :?> Joshi4Model).Factory
+                let builder () = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Factory
                                                             _Process.cell 
                                                             _End.cell 
                                                             _steps.cell 
@@ -204,7 +204,7 @@ module Joshi4Function =
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((_Joshi4.cell :?> Joshi4Model).Probability
+                let builder () = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Probability
                                                             _x.cell 
                                                             _y.cell 
                                                             _branch.cell 
@@ -255,7 +255,7 @@ module Joshi4Function =
                 let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_Joshi4.cell :?> Joshi4Model).Underlying
+                let builder () = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
@@ -306,7 +306,7 @@ module Joshi4Function =
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((_Joshi4.cell :?> Joshi4Model).Descendant
+                let builder () = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Descendant
                                                             _x.cell 
                                                             _index.cell 
                                                             _branch.cell 
@@ -354,7 +354,7 @@ module Joshi4Function =
 
                 let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_Joshi4.cell :?> Joshi4Model).Size
+                let builder () = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -393,7 +393,7 @@ module Joshi4Function =
             try
 
                 let _Joshi4 = Helper.toCell<Joshi4> joshi4 "Joshi4"  
-                let builder () = withMnemonic mnemonic ((_Joshi4.cell :?> Joshi4Model).Columns
+                let builder () = withMnemonic mnemonic ((Joshi4Model.Cast _Joshi4.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

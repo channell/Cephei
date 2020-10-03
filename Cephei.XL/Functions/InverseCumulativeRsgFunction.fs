@@ -49,7 +49,7 @@ module InverseCumulativeRsgFunction =
             try
 
                 let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
-                let builder () = withMnemonic mnemonic ((_InverseCumulativeRsg.cell :?> InverseCumulativeRsgModel).Dimension
+                let builder () = withMnemonic mnemonic ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -91,7 +91,7 @@ module InverseCumulativeRsgFunction =
                 let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
                 let _dimensionality = Helper.toCell<int> dimensionality "dimensionality" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic ((_InverseCumulativeRsg.cell :?> InverseCumulativeRsgModel).Factory
+                let builder () = withMnemonic mnemonic ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).Factory
                                                             _dimensionality.cell 
                                                             _seed.cell 
                                                        ) :> ICell
@@ -213,7 +213,7 @@ module InverseCumulativeRsgFunction =
             try
 
                 let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
-                let builder () = withMnemonic mnemonic ((_InverseCumulativeRsg.cell :?> InverseCumulativeRsgModel).LastSequence
+                let builder () = withMnemonic mnemonic ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).LastSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -249,7 +249,7 @@ module InverseCumulativeRsgFunction =
             try
 
                 let _InverseCumulativeRsg = Helper.toCell<InverseCumulativeRsg> inversecumulativersg "InverseCumulativeRsg"  
-                let builder () = withMnemonic mnemonic ((_InverseCumulativeRsg.cell :?> InverseCumulativeRsgModel).NextSequence
+                let builder () = withMnemonic mnemonic ((InverseCumulativeRsgModel.Cast _InverseCumulativeRsg.cell).NextSequence
                                                        ) :> ICell
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 

@@ -80,7 +80,7 @@ module CZKCurrencyFunction =
             try
 
                 let _CZKCurrency = Helper.toCell<CZKCurrency> czkcurrency "CZKCurrency"  
-                let builder () = withMnemonic mnemonic ((_CZKCurrency.cell :?> CZKCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((CZKCurrencyModel.Cast _CZKCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module CZKCurrencyFunction =
             try
 
                 let _CZKCurrency = Helper.toCell<CZKCurrency> czkcurrency "CZKCurrency"  
-                let builder () = withMnemonic mnemonic ((_CZKCurrency.cell :?> CZKCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((CZKCurrencyModel.Cast _CZKCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module CZKCurrencyFunction =
 
                 let _CZKCurrency = Helper.toCell<CZKCurrency> czkcurrency "CZKCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_CZKCurrency.cell :?> CZKCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((CZKCurrencyModel.Cast _CZKCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module CZKCurrencyFunction =
             try
 
                 let _CZKCurrency = Helper.toCell<CZKCurrency> czkcurrency "CZKCurrency"  
-                let builder () = withMnemonic mnemonic ((_CZKCurrency.cell :?> CZKCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((CZKCurrencyModel.Cast _CZKCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module CZKCurrencyFunction =
             try
 
                 let _CZKCurrency = Helper.toCell<CZKCurrency> czkcurrency "CZKCurrency"  
-                let builder () = withMnemonic mnemonic ((_CZKCurrency.cell :?> CZKCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((CZKCurrencyModel.Cast _CZKCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module CZKCurrencyFunction =
             try
 
                 let _CZKCurrency = Helper.toCell<CZKCurrency> czkcurrency "CZKCurrency"  
-                let builder () = withMnemonic mnemonic ((_CZKCurrency.cell :?> CZKCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((CZKCurrencyModel.Cast _CZKCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module CZKCurrencyFunction =
             try
 
                 let _CZKCurrency = Helper.toCell<CZKCurrency> czkcurrency "CZKCurrency"  
-                let builder () = withMnemonic mnemonic ((_CZKCurrency.cell :?> CZKCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((CZKCurrencyModel.Cast _CZKCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module CZKCurrencyFunction =
             try
 
                 let _CZKCurrency = Helper.toCell<CZKCurrency> czkcurrency "CZKCurrency"  
-                let builder () = withMnemonic mnemonic ((_CZKCurrency.cell :?> CZKCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((CZKCurrencyModel.Cast _CZKCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module CZKCurrencyFunction =
             try
 
                 let _CZKCurrency = Helper.toCell<CZKCurrency> czkcurrency "CZKCurrency"  
-                let builder () = withMnemonic mnemonic ((_CZKCurrency.cell :?> CZKCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((CZKCurrencyModel.Cast _CZKCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module CZKCurrencyFunction =
             try
 
                 let _CZKCurrency = Helper.toCell<CZKCurrency> czkcurrency "CZKCurrency"  
-                let builder () = withMnemonic mnemonic ((_CZKCurrency.cell :?> CZKCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((CZKCurrencyModel.Cast _CZKCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module CZKCurrencyFunction =
             try
 
                 let _CZKCurrency = Helper.toCell<CZKCurrency> czkcurrency "CZKCurrency"  
-                let builder () = withMnemonic mnemonic ((_CZKCurrency.cell :?> CZKCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((CZKCurrencyModel.Cast _CZKCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module CZKCurrencyFunction =
             try
 
                 let _CZKCurrency = Helper.toCell<CZKCurrency> czkcurrency "CZKCurrency"  
-                let builder () = withMnemonic mnemonic ((_CZKCurrency.cell :?> CZKCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((CZKCurrencyModel.Cast _CZKCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

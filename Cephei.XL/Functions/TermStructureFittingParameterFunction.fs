@@ -123,7 +123,7 @@ module TermStructureFittingParameterFunction =
             try
 
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
-                let builder () = withMnemonic mnemonic ((_TermStructureFittingParameter.cell :?> TermStructureFittingParameterModel).Constraint
+                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
@@ -159,7 +159,7 @@ module TermStructureFittingParameterFunction =
             try
 
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
-                let builder () = withMnemonic mnemonic ((_TermStructureFittingParameter.cell :?> TermStructureFittingParameterModel).Implementation
+                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Implementation
                                                        ) :> ICell
                 let format (o : Parameter.Impl) (l:string) = o.ToString() :> obj
 
@@ -195,7 +195,7 @@ module TermStructureFittingParameterFunction =
             try
 
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
-                let builder () = withMnemonic mnemonic ((_TermStructureFittingParameter.cell :?> TermStructureFittingParameterModel).Parameters
+                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -237,7 +237,7 @@ module TermStructureFittingParameterFunction =
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_TermStructureFittingParameter.cell :?> TermStructureFittingParameterModel).SetParam
+                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).SetParam
                                                             _i.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -279,7 +279,7 @@ module TermStructureFittingParameterFunction =
             try
 
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
-                let builder () = withMnemonic mnemonic ((_TermStructureFittingParameter.cell :?> TermStructureFittingParameterModel).Size
+                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -318,7 +318,7 @@ module TermStructureFittingParameterFunction =
 
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((_TermStructureFittingParameter.cell :?> TermStructureFittingParameterModel).TestParams
+                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).TestParams
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -360,7 +360,7 @@ module TermStructureFittingParameterFunction =
 
                 let _TermStructureFittingParameter = Helper.toCell<TermStructureFittingParameter> termstructurefittingparameter "TermStructureFittingParameter"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_TermStructureFittingParameter.cell :?> TermStructureFittingParameterModel).Value
+                let builder () = withMnemonic mnemonic ((TermStructureFittingParameterModel.Cast _TermStructureFittingParameter.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

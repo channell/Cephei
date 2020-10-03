@@ -52,7 +52,7 @@ module AverageBasketPayoffFunction =
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).Accumulate
+                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Accumulate
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -177,7 +177,7 @@ module AverageBasketPayoffFunction =
             try
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).BasePayoff
+                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).BasePayoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -213,7 +213,7 @@ module AverageBasketPayoffFunction =
             try
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).Description
+                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -249,7 +249,7 @@ module AverageBasketPayoffFunction =
             try
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
-                let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).Name
+                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -288,7 +288,7 @@ module AverageBasketPayoffFunction =
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let _a = Helper.toCell<Vector> a "a" 
-                let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).Value1
+                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Value1
                                                             _a.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -330,7 +330,7 @@ module AverageBasketPayoffFunction =
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).Value
+                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -372,7 +372,7 @@ module AverageBasketPayoffFunction =
 
                 let _AverageBasketPayoff = Helper.toCell<AverageBasketPayoff> averagebasketpayoff "AverageBasketPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_AverageBasketPayoff.cell :?> AverageBasketPayoffModel).Accept
+                let builder () = withMnemonic mnemonic ((AverageBasketPayoffModel.Cast _AverageBasketPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : AverageBasketPayoff) (l:string) = o.ToString() :> obj

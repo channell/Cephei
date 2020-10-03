@@ -153,7 +153,7 @@ module UnitedKingdomFunction =
             try
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).AddedHolidays
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -192,7 +192,7 @@ module UnitedKingdomFunction =
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).AddHoliday
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : UnitedKingdom) (l:string) = o.ToString() :> obj
@@ -237,7 +237,7 @@ module UnitedKingdomFunction =
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).Adjust
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -294,7 +294,7 @@ module UnitedKingdomFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).Advance1
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -357,7 +357,7 @@ module UnitedKingdomFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).Advance
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -417,7 +417,7 @@ module UnitedKingdomFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).BusinessDaysBetween
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -465,7 +465,7 @@ module UnitedKingdomFunction =
             try
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).Calendar
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -501,7 +501,7 @@ module UnitedKingdomFunction =
             try
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).Empty
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -540,7 +540,7 @@ module UnitedKingdomFunction =
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -582,7 +582,7 @@ module UnitedKingdomFunction =
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).Equals
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -624,7 +624,7 @@ module UnitedKingdomFunction =
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).IsBusinessDay
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -666,7 +666,7 @@ module UnitedKingdomFunction =
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).IsEndOfMonth
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -708,7 +708,7 @@ module UnitedKingdomFunction =
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).IsHoliday
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -750,7 +750,7 @@ module UnitedKingdomFunction =
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).IsWeekend
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -791,7 +791,7 @@ module UnitedKingdomFunction =
             try
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).Name
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -827,7 +827,7 @@ module UnitedKingdomFunction =
             try
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).RemovedHolidays
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -866,7 +866,7 @@ module UnitedKingdomFunction =
 
                 let _UnitedKingdom = Helper.toCell<UnitedKingdom> unitedkingdom "UnitedKingdom"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_UnitedKingdom.cell :?> UnitedKingdomModel).RemoveHoliday
+                let builder () = withMnemonic mnemonic ((UnitedKingdomModel.Cast _UnitedKingdom.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : UnitedKingdom) (l:string) = o.ToString() :> obj

@@ -52,7 +52,7 @@ module Trbdf2Function =
 
                 let _Trbdf2 = Helper.toCell<Trbdf2> trbdf2 "Trbdf2"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_Trbdf2.cell :?> Trbdf2Model).SetStep
+                let builder () = withMnemonic mnemonic ((Trbdf2Model.Cast _Trbdf2.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : Trbdf2) (l:string) = o.ToString() :> obj
@@ -100,7 +100,7 @@ module Trbdf2Function =
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder () = withMnemonic mnemonic ((_Trbdf2.cell :?> Trbdf2Model).Step
+                let builder () = withMnemonic mnemonic ((Trbdf2Model.Cast _Trbdf2.cell).Step
                                                             _a.cell 
                                                             _t.cell 
                                                             _theta.cell 

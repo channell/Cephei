@@ -138,7 +138,7 @@ module EqualJumpsBinomialTreeFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _y = Helper.toCell<int> y "y" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((_EqualJumpsBinomialTree.cell :?> EqualJumpsBinomialTreeModel).Probability
+                let builder () = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Probability
                                                             _x.cell 
                                                             _y.cell 
                                                             _branch.cell 
@@ -189,7 +189,7 @@ module EqualJumpsBinomialTreeFunction =
                 let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_EqualJumpsBinomialTree.cell :?> EqualJumpsBinomialTreeModel).Underlying
+                let builder () = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
@@ -240,7 +240,7 @@ module EqualJumpsBinomialTreeFunction =
                 let _x = Helper.toCell<int> x "x" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((_EqualJumpsBinomialTree.cell :?> EqualJumpsBinomialTreeModel).Descendant
+                let builder () = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Descendant
                                                             _x.cell 
                                                             _index.cell 
                                                             _branch.cell 
@@ -288,7 +288,7 @@ module EqualJumpsBinomialTreeFunction =
 
                 let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_EqualJumpsBinomialTree.cell :?> EqualJumpsBinomialTreeModel).Size
+                let builder () = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -327,7 +327,7 @@ module EqualJumpsBinomialTreeFunction =
             try
 
                 let _EqualJumpsBinomialTree = Helper.toCell<EqualJumpsBinomialTree> equaljumpsbinomialtree "EqualJumpsBinomialTree"  
-                let builder () = withMnemonic mnemonic ((_EqualJumpsBinomialTree.cell :?> EqualJumpsBinomialTreeModel).Columns
+                let builder () = withMnemonic mnemonic ((EqualJumpsBinomialTreeModel.Cast _EqualJumpsBinomialTree.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

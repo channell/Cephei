@@ -80,7 +80,7 @@ module CYPCurrencyFunction =
             try
 
                 let _CYPCurrency = Helper.toCell<CYPCurrency> cypcurrency "CYPCurrency"  
-                let builder () = withMnemonic mnemonic ((_CYPCurrency.cell :?> CYPCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((CYPCurrencyModel.Cast _CYPCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module CYPCurrencyFunction =
             try
 
                 let _CYPCurrency = Helper.toCell<CYPCurrency> cypcurrency "CYPCurrency"  
-                let builder () = withMnemonic mnemonic ((_CYPCurrency.cell :?> CYPCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((CYPCurrencyModel.Cast _CYPCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module CYPCurrencyFunction =
 
                 let _CYPCurrency = Helper.toCell<CYPCurrency> cypcurrency "CYPCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_CYPCurrency.cell :?> CYPCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((CYPCurrencyModel.Cast _CYPCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module CYPCurrencyFunction =
             try
 
                 let _CYPCurrency = Helper.toCell<CYPCurrency> cypcurrency "CYPCurrency"  
-                let builder () = withMnemonic mnemonic ((_CYPCurrency.cell :?> CYPCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((CYPCurrencyModel.Cast _CYPCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module CYPCurrencyFunction =
             try
 
                 let _CYPCurrency = Helper.toCell<CYPCurrency> cypcurrency "CYPCurrency"  
-                let builder () = withMnemonic mnemonic ((_CYPCurrency.cell :?> CYPCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((CYPCurrencyModel.Cast _CYPCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module CYPCurrencyFunction =
             try
 
                 let _CYPCurrency = Helper.toCell<CYPCurrency> cypcurrency "CYPCurrency"  
-                let builder () = withMnemonic mnemonic ((_CYPCurrency.cell :?> CYPCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((CYPCurrencyModel.Cast _CYPCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module CYPCurrencyFunction =
             try
 
                 let _CYPCurrency = Helper.toCell<CYPCurrency> cypcurrency "CYPCurrency"  
-                let builder () = withMnemonic mnemonic ((_CYPCurrency.cell :?> CYPCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((CYPCurrencyModel.Cast _CYPCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module CYPCurrencyFunction =
             try
 
                 let _CYPCurrency = Helper.toCell<CYPCurrency> cypcurrency "CYPCurrency"  
-                let builder () = withMnemonic mnemonic ((_CYPCurrency.cell :?> CYPCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((CYPCurrencyModel.Cast _CYPCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module CYPCurrencyFunction =
             try
 
                 let _CYPCurrency = Helper.toCell<CYPCurrency> cypcurrency "CYPCurrency"  
-                let builder () = withMnemonic mnemonic ((_CYPCurrency.cell :?> CYPCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((CYPCurrencyModel.Cast _CYPCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module CYPCurrencyFunction =
             try
 
                 let _CYPCurrency = Helper.toCell<CYPCurrency> cypcurrency "CYPCurrency"  
-                let builder () = withMnemonic mnemonic ((_CYPCurrency.cell :?> CYPCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((CYPCurrencyModel.Cast _CYPCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module CYPCurrencyFunction =
             try
 
                 let _CYPCurrency = Helper.toCell<CYPCurrency> cypcurrency "CYPCurrency"  
-                let builder () = withMnemonic mnemonic ((_CYPCurrency.cell :?> CYPCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((CYPCurrencyModel.Cast _CYPCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module CYPCurrencyFunction =
             try
 
                 let _CYPCurrency = Helper.toCell<CYPCurrency> cypcurrency "CYPCurrency"  
-                let builder () = withMnemonic mnemonic ((_CYPCurrency.cell :?> CYPCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((CYPCurrencyModel.Cast _CYPCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

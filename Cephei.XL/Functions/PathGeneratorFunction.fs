@@ -49,7 +49,7 @@ module PathGeneratorFunction =
             try
 
                 let _PathGenerator = Helper.toCell<PathGenerator> pathgenerator "PathGenerator"  
-                let builder () = withMnemonic mnemonic ((_PathGenerator.cell :?> PathGeneratorModel).Antithetic
+                let builder () = withMnemonic mnemonic ((PathGeneratorModel.Cast _PathGenerator.cell).Antithetic
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 
@@ -85,7 +85,7 @@ module PathGeneratorFunction =
             try
 
                 let _PathGenerator = Helper.toCell<PathGenerator> pathgenerator "PathGenerator"  
-                let builder () = withMnemonic mnemonic ((_PathGenerator.cell :?> PathGeneratorModel).Next
+                let builder () = withMnemonic mnemonic ((PathGeneratorModel.Cast _PathGenerator.cell).Next
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 

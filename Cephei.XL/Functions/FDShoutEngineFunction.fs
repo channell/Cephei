@@ -58,7 +58,7 @@ module FDShoutEngineFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
-                let builder () = withMnemonic mnemonic ((_FDShoutEngine.cell :?> FDShoutEngineModel).Factory
+                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -193,7 +193,7 @@ module FDShoutEngineFunction =
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FDShoutEngine.cell :?> FDShoutEngineModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDShoutEngine) (l:string) = o.ToString() :> obj
@@ -232,7 +232,7 @@ module FDShoutEngineFunction =
             try
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
-                let builder () = withMnemonic mnemonic ((_FDShoutEngine.cell :?> FDShoutEngineModel).Reset
+                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : FDShoutEngine) (l:string) = o.ToString() :> obj
 
@@ -271,7 +271,7 @@ module FDShoutEngineFunction =
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FDShoutEngine.cell :?> FDShoutEngineModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FDShoutEngine) (l:string) = o.ToString() :> obj
@@ -310,7 +310,7 @@ module FDShoutEngineFunction =
             try
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
-                let builder () = withMnemonic mnemonic ((_FDShoutEngine.cell :?> FDShoutEngineModel).Update
+                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).Update
                                                        ) :> ICell
                 let format (o : FDShoutEngine) (l:string) = o.ToString() :> obj
 
@@ -346,7 +346,7 @@ module FDShoutEngineFunction =
             try
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
-                let builder () = withMnemonic mnemonic ((_FDShoutEngine.cell :?> FDShoutEngineModel).EnsureStrikeInGrid
+                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDShoutEngine) (l:string) = o.ToString() :> obj
 
@@ -382,7 +382,7 @@ module FDShoutEngineFunction =
             try
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
-                let builder () = withMnemonic mnemonic ((_FDShoutEngine.cell :?> FDShoutEngineModel).GetResidualTime
+                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -418,7 +418,7 @@ module FDShoutEngineFunction =
             try
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
-                let builder () = withMnemonic mnemonic ((_FDShoutEngine.cell :?> FDShoutEngineModel).Grid
+                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -454,7 +454,7 @@ module FDShoutEngineFunction =
             try
 
                 let _FDShoutEngine = Helper.toCell<FDShoutEngine> fdshoutengine "FDShoutEngine"  
-                let builder () = withMnemonic mnemonic ((_FDShoutEngine.cell :?> FDShoutEngineModel).IntrinsicValues_
+                let builder () = withMnemonic mnemonic ((FDShoutEngineModel.Cast _FDShoutEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 

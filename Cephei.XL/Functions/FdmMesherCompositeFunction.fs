@@ -55,7 +55,7 @@ module FdmMesherCompositeFunction =
                 let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder () = withMnemonic mnemonic ((_FdmMesherComposite.cell :?> FdmMesherCompositeModel).Dminus
+                let builder () = withMnemonic mnemonic ((FdmMesherCompositeModel.Cast _FdmMesherComposite.cell).Dminus
                                                             _iter.cell 
                                                             _direction.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module FdmMesherCompositeFunction =
                 let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder () = withMnemonic mnemonic ((_FdmMesherComposite.cell :?> FdmMesherCompositeModel).Dplus
+                let builder () = withMnemonic mnemonic ((FdmMesherCompositeModel.Cast _FdmMesherComposite.cell).Dplus
                                                             _iter.cell 
                                                             _direction.cell 
                                                        ) :> ICell
@@ -409,7 +409,7 @@ module FdmMesherCompositeFunction =
             try
 
                 let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite"  
-                let builder () = withMnemonic mnemonic ((_FdmMesherComposite.cell :?> FdmMesherCompositeModel).GetFdm1dMeshers
+                let builder () = withMnemonic mnemonic ((FdmMesherCompositeModel.Cast _FdmMesherComposite.cell).GetFdm1dMeshers
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Fdm1dMesher>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -451,7 +451,7 @@ module FdmMesherCompositeFunction =
                 let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder () = withMnemonic mnemonic ((_FdmMesherComposite.cell :?> FdmMesherCompositeModel).Location
+                let builder () = withMnemonic mnemonic ((FdmMesherCompositeModel.Cast _FdmMesherComposite.cell).Location
                                                             _iter.cell 
                                                             _direction.cell 
                                                        ) :> ICell
@@ -496,7 +496,7 @@ module FdmMesherCompositeFunction =
 
                 let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite"  
                 let _direction = Helper.toCell<int> direction "direction" 
-                let builder () = withMnemonic mnemonic ((_FdmMesherComposite.cell :?> FdmMesherCompositeModel).Locations
+                let builder () = withMnemonic mnemonic ((FdmMesherCompositeModel.Cast _FdmMesherComposite.cell).Locations
                                                             _direction.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -535,7 +535,7 @@ module FdmMesherCompositeFunction =
             try
 
                 let _FdmMesherComposite = Helper.toCell<FdmMesherComposite> fdmmeshercomposite "FdmMesherComposite"  
-                let builder () = withMnemonic mnemonic ((_FdmMesherComposite.cell :?> FdmMesherCompositeModel).Layout
+                let builder () = withMnemonic mnemonic ((FdmMesherCompositeModel.Cast _FdmMesherComposite.cell).Layout
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpLayout>) l
 

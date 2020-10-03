@@ -101,7 +101,7 @@ module MonthlyYieldFinderFunction =
 
                 let _MonthlyYieldFinder = Helper.toCell<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder"  
                 let _Yield = Helper.toCell<double> Yield "Yield" 
-                let builder () = withMnemonic mnemonic ((_MonthlyYieldFinder.cell :?> MonthlyYieldFinderModel).Value
+                let builder () = withMnemonic mnemonic ((MonthlyYieldFinderModel.Cast _MonthlyYieldFinder.cell).Value
                                                             _Yield.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -143,7 +143,7 @@ module MonthlyYieldFinderFunction =
 
                 let _MonthlyYieldFinder = Helper.toCell<MonthlyYieldFinder> monthlyyieldfinder "MonthlyYieldFinder"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_MonthlyYieldFinder.cell :?> MonthlyYieldFinderModel).Derivative
+                let builder () = withMnemonic mnemonic ((MonthlyYieldFinderModel.Cast _MonthlyYieldFinder.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

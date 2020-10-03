@@ -52,7 +52,7 @@ module RelinkableHandleFunction =
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _h = Helper.toCell<'T> h "h" 
-                let builder () = withMnemonic mnemonic ((_RelinkableHandle.cell :?> RelinkableHandleModel).LinkTo
+                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).LinkTo
                                                             _h.cell 
                                                        ) :> ICell
                 let format (o : RelinkableHandle) (l:string) = o.ToString() :> obj
@@ -97,7 +97,7 @@ module RelinkableHandleFunction =
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _h = Helper.toCell<'T> h "h" 
                 let _registerAsObserver = Helper.toCell<bool> registerAsObserver "registerAsObserver" 
-                let builder () = withMnemonic mnemonic ((_RelinkableHandle.cell :?> RelinkableHandleModel).LinkTo1
+                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).LinkTo1
                                                             _h.cell 
                                                             _registerAsObserver.cell 
                                                        ) :> ICell
@@ -250,7 +250,7 @@ module RelinkableHandleFunction =
             try
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
-                let builder () = withMnemonic mnemonic ((_RelinkableHandle.cell :?> RelinkableHandleModel).CurrentLink
+                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).CurrentLink
                                                        ) :> ICell
                 let format (o : T) (l:string) = o.ToString() :> obj
 
@@ -286,7 +286,7 @@ module RelinkableHandleFunction =
             try
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
-                let builder () = withMnemonic mnemonic ((_RelinkableHandle.cell :?> RelinkableHandleModel).Empty
+                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -325,7 +325,7 @@ module RelinkableHandleFunction =
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_RelinkableHandle.cell :?> RelinkableHandleModel).Equals
+                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -364,7 +364,7 @@ module RelinkableHandleFunction =
             try
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
-                let builder () = withMnemonic mnemonic ((_RelinkableHandle.cell :?> RelinkableHandleModel).Link
+                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).Link
                                                        ) :> ICell
                 let format (o : T) (l:string) = o.ToString() :> obj
 
@@ -403,7 +403,7 @@ module RelinkableHandleFunction =
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_RelinkableHandle.cell :?> RelinkableHandleModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RelinkableHandle) (l:string) = o.ToString() :> obj
@@ -445,7 +445,7 @@ module RelinkableHandleFunction =
 
                 let _RelinkableHandle = Helper.toCell<RelinkableHandle> relinkablehandle "RelinkableHandle"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_RelinkableHandle.cell :?> RelinkableHandleModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((RelinkableHandleModel.Cast _RelinkableHandle.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RelinkableHandle) (l:string) = o.ToString() :> obj

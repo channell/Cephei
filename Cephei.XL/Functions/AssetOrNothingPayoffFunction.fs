@@ -92,7 +92,7 @@ module AssetOrNothingPayoffFunction =
             try
 
                 let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
-                let builder () = withMnemonic mnemonic ((_AssetOrNothingPayoff.cell :?> AssetOrNothingPayoffModel).Name
+                let builder () = withMnemonic mnemonic ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -131,7 +131,7 @@ module AssetOrNothingPayoffFunction =
 
                 let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((_AssetOrNothingPayoff.cell :?> AssetOrNothingPayoffModel).Value
+                let builder () = withMnemonic mnemonic ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -170,7 +170,7 @@ module AssetOrNothingPayoffFunction =
             try
 
                 let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
-                let builder () = withMnemonic mnemonic ((_AssetOrNothingPayoff.cell :?> AssetOrNothingPayoffModel).Description
+                let builder () = withMnemonic mnemonic ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -206,7 +206,7 @@ module AssetOrNothingPayoffFunction =
             try
 
                 let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
-                let builder () = withMnemonic mnemonic ((_AssetOrNothingPayoff.cell :?> AssetOrNothingPayoffModel).Strike
+                let builder () = withMnemonic mnemonic ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -242,7 +242,7 @@ module AssetOrNothingPayoffFunction =
             try
 
                 let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
-                let builder () = withMnemonic mnemonic ((_AssetOrNothingPayoff.cell :?> AssetOrNothingPayoffModel).OptionType
+                let builder () = withMnemonic mnemonic ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
@@ -281,7 +281,7 @@ module AssetOrNothingPayoffFunction =
 
                 let _AssetOrNothingPayoff = Helper.toCell<AssetOrNothingPayoff> assetornothingpayoff "AssetOrNothingPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_AssetOrNothingPayoff.cell :?> AssetOrNothingPayoffModel).Accept
+                let builder () = withMnemonic mnemonic ((AssetOrNothingPayoffModel.Cast _AssetOrNothingPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : AssetOrNothingPayoff) (l:string) = o.ToString() :> obj

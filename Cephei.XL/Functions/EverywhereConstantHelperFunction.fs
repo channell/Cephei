@@ -98,7 +98,7 @@ module EverywhereConstantHelperFunction =
             try
 
                 let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
-                let builder () = withMnemonic mnemonic ((_EverywhereConstantHelper.cell :?> EverywhereConstantHelperModel).FNext
+                let builder () = withMnemonic mnemonic ((EverywhereConstantHelperModel.Cast _EverywhereConstantHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -137,7 +137,7 @@ module EverywhereConstantHelperFunction =
 
                 let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_EverywhereConstantHelper.cell :?> EverywhereConstantHelperModel).Primitive
+                let builder () = withMnemonic mnemonic ((EverywhereConstantHelperModel.Cast _EverywhereConstantHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -179,7 +179,7 @@ module EverywhereConstantHelperFunction =
 
                 let _EverywhereConstantHelper = Helper.toCell<EverywhereConstantHelper> everywhereconstanthelper "EverywhereConstantHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_EverywhereConstantHelper.cell :?> EverywhereConstantHelperModel).Value
+                let builder () = withMnemonic mnemonic ((EverywhereConstantHelperModel.Cast _EverywhereConstantHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

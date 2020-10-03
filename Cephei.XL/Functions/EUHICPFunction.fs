@@ -132,7 +132,7 @@ module EUHICPFunction =
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
                 let _h = Helper.toHandle<ZeroInflationTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).Clone
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
@@ -177,7 +177,7 @@ module EUHICPFunction =
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
                 let _aFixingDate = Helper.toCell<Date> aFixingDate "aFixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).Fixing
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Fixing
                                                             _aFixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -219,7 +219,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).ZeroInflationTermStructure
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).ZeroInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
 
@@ -264,7 +264,7 @@ module EUHICPFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).AddFixing
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
@@ -310,7 +310,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).AvailabilityLag
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -346,7 +346,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).Currency
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -382,7 +382,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).FamilyName
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -418,7 +418,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -454,7 +454,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).Frequency
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
@@ -490,7 +490,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).Interpolated
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -529,7 +529,7 @@ module EUHICPFunction =
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -568,7 +568,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).Name
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -604,7 +604,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).Region
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
@@ -640,7 +640,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).Revised
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -676,7 +676,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).Update
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).Update
                                                        ) :> ICell
                 let format (o : EUHICP) (l:string) = o.ToString() :> obj
 
@@ -721,7 +721,7 @@ module EUHICPFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).AddFixings
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -772,7 +772,7 @@ module EUHICPFunction =
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -814,7 +814,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -850,7 +850,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : EUHICP) (l:string) = o.ToString() :> obj
 
@@ -889,7 +889,7 @@ module EUHICPFunction =
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : EUHICP) (l:string) = o.ToString() :> obj
@@ -928,7 +928,7 @@ module EUHICPFunction =
             try
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -967,7 +967,7 @@ module EUHICPFunction =
 
                 let _EUHICP = Helper.toCell<EUHICP> euhicp "EUHICP"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_EUHICP.cell :?> EUHICPModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((EUHICPModel.Cast _EUHICP.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : EUHICP) (l:string) = o.ToString() :> obj

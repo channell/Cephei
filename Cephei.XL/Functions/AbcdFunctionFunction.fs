@@ -116,7 +116,7 @@ module AbcdFunctionFunction =
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let _T = Helper.toCell<double> T "T" 
                 let _S = Helper.toCell<double> S "S" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).Covariance1
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).Covariance1
                                                             _t1.cell 
                                                             _t2.cell 
                                                             _T.cell 
@@ -173,7 +173,7 @@ module AbcdFunctionFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _T2 = Helper.toCell<double> T2 "T2" 
                 let _S = Helper.toCell<double> S "S" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).Covariance
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).Covariance
                                                             _t.cell 
                                                             _T2.cell 
                                                             _S.cell 
@@ -227,7 +227,7 @@ module AbcdFunctionFunction =
                 let _u = Helper.toCell<double> u "u" 
                 let _T = Helper.toCell<double> T "T" 
                 let _S = Helper.toCell<double> S "S" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).InstantaneousCovariance
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).InstantaneousCovariance
                                                             _u.cell 
                                                             _T.cell 
                                                             _S.cell 
@@ -278,7 +278,7 @@ module AbcdFunctionFunction =
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _u = Helper.toCell<double> u "u" 
                 let _T = Helper.toCell<double> T "T" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).InstantaneousVariance
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).InstantaneousVariance
                                                             _u.cell 
                                                             _T.cell 
                                                        ) :> ICell
@@ -326,7 +326,7 @@ module AbcdFunctionFunction =
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _u = Helper.toCell<double> u "u" 
                 let _T = Helper.toCell<double> T "T" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).InstantaneousVolatility
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).InstantaneousVolatility
                                                             _u.cell 
                                                             _T.cell 
                                                        ) :> ICell
@@ -368,7 +368,7 @@ module AbcdFunctionFunction =
             try
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).LongTermVolatility
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).LongTermVolatility
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -404,7 +404,7 @@ module AbcdFunctionFunction =
             try
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).MaximumVolatility
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).MaximumVolatility
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -449,7 +449,7 @@ module AbcdFunctionFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _T2 = Helper.toCell<double> T2 "T2" 
                 let _S = Helper.toCell<double> S "S" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).Primitive
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).Primitive
                                                             _t.cell 
                                                             _T2.cell 
                                                             _S.cell 
@@ -494,7 +494,7 @@ module AbcdFunctionFunction =
             try
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).ShortTermVolatility
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).ShortTermVolatility
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -539,7 +539,7 @@ module AbcdFunctionFunction =
                 let _tMin = Helper.toCell<double> tMin "tMin" 
                 let _tMax = Helper.toCell<double> tMax "tMax" 
                 let _T = Helper.toCell<double> T "T" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).Variance
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).Variance
                                                             _tMin.cell 
                                                             _tMax.cell 
                                                             _T.cell 
@@ -593,7 +593,7 @@ module AbcdFunctionFunction =
                 let _tMin = Helper.toCell<double> tMin "tMin" 
                 let _tMax = Helper.toCell<double> tMax "tMax" 
                 let _T = Helper.toCell<double> T "T" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).Volatility
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).Volatility
                                                             _tMin.cell 
                                                             _tMax.cell 
                                                             _T.cell 
@@ -638,7 +638,7 @@ module AbcdFunctionFunction =
             try
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).A
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).A
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -674,7 +674,7 @@ module AbcdFunctionFunction =
             try
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).B
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).B
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -710,7 +710,7 @@ module AbcdFunctionFunction =
             try
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).C
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).C
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -746,7 +746,7 @@ module AbcdFunctionFunction =
             try
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).Coefficients
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).Coefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -782,7 +782,7 @@ module AbcdFunctionFunction =
             try
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).D
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).D
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -824,7 +824,7 @@ module AbcdFunctionFunction =
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).DefiniteDerivativeCoefficients
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).DefiniteDerivativeCoefficients
                                                             _t.cell 
                                                             _t2.cell 
                                                        ) :> ICell
@@ -872,7 +872,7 @@ module AbcdFunctionFunction =
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).DefiniteIntegral
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).DefiniteIntegral
                                                             _t1.cell 
                                                             _t2.cell 
                                                        ) :> ICell
@@ -920,7 +920,7 @@ module AbcdFunctionFunction =
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t = Helper.toCell<double> t "t" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).DefiniteIntegralCoefficients
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).DefiniteIntegralCoefficients
                                                             _t.cell 
                                                             _t2.cell 
                                                        ) :> ICell
@@ -965,7 +965,7 @@ module AbcdFunctionFunction =
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).Derivative
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).Derivative
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1004,7 +1004,7 @@ module AbcdFunctionFunction =
             try
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).DerivativeCoefficients
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).DerivativeCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -1040,7 +1040,7 @@ module AbcdFunctionFunction =
             try
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).LongTermValue
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).LongTermValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1076,7 +1076,7 @@ module AbcdFunctionFunction =
             try
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).MaximumLocation
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).MaximumLocation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1112,7 +1112,7 @@ module AbcdFunctionFunction =
             try
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).MaximumValue
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).MaximumValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1151,7 +1151,7 @@ module AbcdFunctionFunction =
 
                 let _AbcdFunction = Helper.toCell<AbcdFunction> abcdfunction "AbcdFunction"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_AbcdFunction.cell :?> AbcdFunctionModel).Value
+                let builder () = withMnemonic mnemonic ((AbcdFunctionModel.Cast _AbcdFunction.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

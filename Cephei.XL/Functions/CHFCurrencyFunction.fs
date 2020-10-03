@@ -80,7 +80,7 @@ module CHFCurrencyFunction =
             try
 
                 let _CHFCurrency = Helper.toCell<CHFCurrency> chfcurrency "CHFCurrency"  
-                let builder () = withMnemonic mnemonic ((_CHFCurrency.cell :?> CHFCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((CHFCurrencyModel.Cast _CHFCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module CHFCurrencyFunction =
             try
 
                 let _CHFCurrency = Helper.toCell<CHFCurrency> chfcurrency "CHFCurrency"  
-                let builder () = withMnemonic mnemonic ((_CHFCurrency.cell :?> CHFCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((CHFCurrencyModel.Cast _CHFCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module CHFCurrencyFunction =
 
                 let _CHFCurrency = Helper.toCell<CHFCurrency> chfcurrency "CHFCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_CHFCurrency.cell :?> CHFCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((CHFCurrencyModel.Cast _CHFCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module CHFCurrencyFunction =
             try
 
                 let _CHFCurrency = Helper.toCell<CHFCurrency> chfcurrency "CHFCurrency"  
-                let builder () = withMnemonic mnemonic ((_CHFCurrency.cell :?> CHFCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((CHFCurrencyModel.Cast _CHFCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module CHFCurrencyFunction =
             try
 
                 let _CHFCurrency = Helper.toCell<CHFCurrency> chfcurrency "CHFCurrency"  
-                let builder () = withMnemonic mnemonic ((_CHFCurrency.cell :?> CHFCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((CHFCurrencyModel.Cast _CHFCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module CHFCurrencyFunction =
             try
 
                 let _CHFCurrency = Helper.toCell<CHFCurrency> chfcurrency "CHFCurrency"  
-                let builder () = withMnemonic mnemonic ((_CHFCurrency.cell :?> CHFCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((CHFCurrencyModel.Cast _CHFCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module CHFCurrencyFunction =
             try
 
                 let _CHFCurrency = Helper.toCell<CHFCurrency> chfcurrency "CHFCurrency"  
-                let builder () = withMnemonic mnemonic ((_CHFCurrency.cell :?> CHFCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((CHFCurrencyModel.Cast _CHFCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module CHFCurrencyFunction =
             try
 
                 let _CHFCurrency = Helper.toCell<CHFCurrency> chfcurrency "CHFCurrency"  
-                let builder () = withMnemonic mnemonic ((_CHFCurrency.cell :?> CHFCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((CHFCurrencyModel.Cast _CHFCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module CHFCurrencyFunction =
             try
 
                 let _CHFCurrency = Helper.toCell<CHFCurrency> chfcurrency "CHFCurrency"  
-                let builder () = withMnemonic mnemonic ((_CHFCurrency.cell :?> CHFCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((CHFCurrencyModel.Cast _CHFCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module CHFCurrencyFunction =
             try
 
                 let _CHFCurrency = Helper.toCell<CHFCurrency> chfcurrency "CHFCurrency"  
-                let builder () = withMnemonic mnemonic ((_CHFCurrency.cell :?> CHFCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((CHFCurrencyModel.Cast _CHFCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module CHFCurrencyFunction =
             try
 
                 let _CHFCurrency = Helper.toCell<CHFCurrency> chfcurrency "CHFCurrency"  
-                let builder () = withMnemonic mnemonic ((_CHFCurrency.cell :?> CHFCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((CHFCurrencyModel.Cast _CHFCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module CHFCurrencyFunction =
             try
 
                 let _CHFCurrency = Helper.toCell<CHFCurrency> chfcurrency "CHFCurrency"  
-                let builder () = withMnemonic mnemonic ((_CHFCurrency.cell :?> CHFCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((CHFCurrencyModel.Cast _CHFCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

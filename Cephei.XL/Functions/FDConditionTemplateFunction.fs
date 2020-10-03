@@ -139,7 +139,7 @@ module FDConditionTemplateFunction =
 
                 let _FDConditionTemplate = Helper.toCell<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
-                let builder () = withMnemonic mnemonic ((_FDConditionTemplate.cell :?> FDConditionTemplateModel).SetStepCondition
+                let builder () = withMnemonic mnemonic ((FDConditionTemplateModel.Cast _FDConditionTemplate.cell).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (o : FDConditionTemplate) (l:string) = o.ToString() :> obj
@@ -178,7 +178,7 @@ module FDConditionTemplateFunction =
             try
 
                 let _FDConditionTemplate = Helper.toCell<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
-                let builder () = withMnemonic mnemonic ((_FDConditionTemplate.cell :?> FDConditionTemplateModel).EnsureStrikeInGrid
+                let builder () = withMnemonic mnemonic ((FDConditionTemplateModel.Cast _FDConditionTemplate.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDConditionTemplate) (l:string) = o.ToString() :> obj
 
@@ -226,7 +226,7 @@ module FDConditionTemplateFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((_FDConditionTemplate.cell :?> FDConditionTemplateModel).Factory
+                let builder () = withMnemonic mnemonic ((FDConditionTemplateModel.Cast _FDConditionTemplate.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -274,7 +274,7 @@ module FDConditionTemplateFunction =
             try
 
                 let _FDConditionTemplate = Helper.toCell<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
-                let builder () = withMnemonic mnemonic ((_FDConditionTemplate.cell :?> FDConditionTemplateModel).GetResidualTime
+                let builder () = withMnemonic mnemonic ((FDConditionTemplateModel.Cast _FDConditionTemplate.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -310,7 +310,7 @@ module FDConditionTemplateFunction =
             try
 
                 let _FDConditionTemplate = Helper.toCell<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
-                let builder () = withMnemonic mnemonic ((_FDConditionTemplate.cell :?> FDConditionTemplateModel).Grid
+                let builder () = withMnemonic mnemonic ((FDConditionTemplateModel.Cast _FDConditionTemplate.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -346,7 +346,7 @@ module FDConditionTemplateFunction =
             try
 
                 let _FDConditionTemplate = Helper.toCell<FDConditionTemplate> fdconditiontemplate "FDConditionTemplate"  
-                let builder () = withMnemonic mnemonic ((_FDConditionTemplate.cell :?> FDConditionTemplateModel).IntrinsicValues_
+                let builder () = withMnemonic mnemonic ((FDConditionTemplateModel.Cast _FDConditionTemplate.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 

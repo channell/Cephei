@@ -116,7 +116,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).Derivative
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -158,7 +158,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
             try
 
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).Empty
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -200,7 +200,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).Primitive
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -248,7 +248,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).SecondDerivative
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -290,7 +290,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
             try
 
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).Update
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).Update
                                                        ) :> ICell
                 let format (o : MixedLinearMonotonicCubicNaturalSpline) (l:string) = o.ToString() :> obj
 
@@ -332,7 +332,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).Value1
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -377,7 +377,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
 
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).Value
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -416,7 +416,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
             try
 
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).XMax
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -452,7 +452,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
             try
 
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).XMin
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -488,7 +488,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
             try
 
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -527,7 +527,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
 
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : MixedLinearMonotonicCubicNaturalSpline) (l:string) = o.ToString() :> obj
@@ -569,7 +569,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
 
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : MixedLinearMonotonicCubicNaturalSpline) (l:string) = o.ToString() :> obj
@@ -608,7 +608,7 @@ module MixedLinearMonotonicCubicNaturalSplineFunction =
             try
 
                 let _MixedLinearMonotonicCubicNaturalSpline = Helper.toCell<MixedLinearMonotonicCubicNaturalSpline> mixedlinearmonotoniccubicnaturalspline "MixedLinearMonotonicCubicNaturalSpline"  
-                let builder () = withMnemonic mnemonic ((_MixedLinearMonotonicCubicNaturalSpline.cell :?> MixedLinearMonotonicCubicNaturalSplineModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((MixedLinearMonotonicCubicNaturalSplineModel.Cast _MixedLinearMonotonicCubicNaturalSpline.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

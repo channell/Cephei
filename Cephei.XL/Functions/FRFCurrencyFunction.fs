@@ -80,7 +80,7 @@ module FRFCurrencyFunction =
             try
 
                 let _FRFCurrency = Helper.toCell<FRFCurrency> frfcurrency "FRFCurrency"  
-                let builder () = withMnemonic mnemonic ((_FRFCurrency.cell :?> FRFCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((FRFCurrencyModel.Cast _FRFCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module FRFCurrencyFunction =
             try
 
                 let _FRFCurrency = Helper.toCell<FRFCurrency> frfcurrency "FRFCurrency"  
-                let builder () = withMnemonic mnemonic ((_FRFCurrency.cell :?> FRFCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((FRFCurrencyModel.Cast _FRFCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module FRFCurrencyFunction =
 
                 let _FRFCurrency = Helper.toCell<FRFCurrency> frfcurrency "FRFCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_FRFCurrency.cell :?> FRFCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((FRFCurrencyModel.Cast _FRFCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module FRFCurrencyFunction =
             try
 
                 let _FRFCurrency = Helper.toCell<FRFCurrency> frfcurrency "FRFCurrency"  
-                let builder () = withMnemonic mnemonic ((_FRFCurrency.cell :?> FRFCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((FRFCurrencyModel.Cast _FRFCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module FRFCurrencyFunction =
             try
 
                 let _FRFCurrency = Helper.toCell<FRFCurrency> frfcurrency "FRFCurrency"  
-                let builder () = withMnemonic mnemonic ((_FRFCurrency.cell :?> FRFCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((FRFCurrencyModel.Cast _FRFCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module FRFCurrencyFunction =
             try
 
                 let _FRFCurrency = Helper.toCell<FRFCurrency> frfcurrency "FRFCurrency"  
-                let builder () = withMnemonic mnemonic ((_FRFCurrency.cell :?> FRFCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((FRFCurrencyModel.Cast _FRFCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module FRFCurrencyFunction =
             try
 
                 let _FRFCurrency = Helper.toCell<FRFCurrency> frfcurrency "FRFCurrency"  
-                let builder () = withMnemonic mnemonic ((_FRFCurrency.cell :?> FRFCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((FRFCurrencyModel.Cast _FRFCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module FRFCurrencyFunction =
             try
 
                 let _FRFCurrency = Helper.toCell<FRFCurrency> frfcurrency "FRFCurrency"  
-                let builder () = withMnemonic mnemonic ((_FRFCurrency.cell :?> FRFCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((FRFCurrencyModel.Cast _FRFCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module FRFCurrencyFunction =
             try
 
                 let _FRFCurrency = Helper.toCell<FRFCurrency> frfcurrency "FRFCurrency"  
-                let builder () = withMnemonic mnemonic ((_FRFCurrency.cell :?> FRFCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((FRFCurrencyModel.Cast _FRFCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module FRFCurrencyFunction =
             try
 
                 let _FRFCurrency = Helper.toCell<FRFCurrency> frfcurrency "FRFCurrency"  
-                let builder () = withMnemonic mnemonic ((_FRFCurrency.cell :?> FRFCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((FRFCurrencyModel.Cast _FRFCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module FRFCurrencyFunction =
             try
 
                 let _FRFCurrency = Helper.toCell<FRFCurrency> frfcurrency "FRFCurrency"  
-                let builder () = withMnemonic mnemonic ((_FRFCurrency.cell :?> FRFCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((FRFCurrencyModel.Cast _FRFCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module FRFCurrencyFunction =
             try
 
                 let _FRFCurrency = Helper.toCell<FRFCurrency> frfcurrency "FRFCurrency"  
-                let builder () = withMnemonic mnemonic ((_FRFCurrency.cell :?> FRFCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((FRFCurrencyModel.Cast _FRFCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

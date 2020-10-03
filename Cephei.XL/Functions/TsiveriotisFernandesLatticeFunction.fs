@@ -55,7 +55,7 @@ module TsiveriotisFernandesLatticeFunction =
                 let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((_TsiveriotisFernandesLattice.cell :?> TsiveriotisFernandesLatticeModel).PartialRollback
+                let builder () = withMnemonic mnemonic ((TsiveriotisFernandesLatticeModel.Cast _TsiveriotisFernandesLattice.cell).PartialRollback
                                                             _asset.cell 
                                                             _To.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module TsiveriotisFernandesLatticeFunction =
                 let _TsiveriotisFernandesLattice = Helper.toCell<TsiveriotisFernandesLattice> tsiveriotisfernandeslattice "TsiveriotisFernandesLattice"  
                 let _asset = Helper.toCell<DiscretizedAsset> asset "asset" 
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((_TsiveriotisFernandesLattice.cell :?> TsiveriotisFernandesLatticeModel).Rollback
+                let builder () = withMnemonic mnemonic ((TsiveriotisFernandesLatticeModel.Cast _TsiveriotisFernandesLattice.cell).Rollback
                                                             _asset.cell 
                                                             _To.cell 
                                                        ) :> ICell
@@ -166,7 +166,7 @@ module TsiveriotisFernandesLatticeFunction =
                 let _newValues = Helper.toCell<Vector> newValues "newValues" 
                 let _newConversionProbability = Helper.toCell<Vector> newConversionProbability "newConversionProbability" 
                 let _newSpreadAdjustedRate = Helper.toCell<Vector> newSpreadAdjustedRate "newSpreadAdjustedRate" 
-                let builder () = withMnemonic mnemonic ((_TsiveriotisFernandesLattice.cell :?> TsiveriotisFernandesLatticeModel).Stepback
+                let builder () = withMnemonic mnemonic ((TsiveriotisFernandesLatticeModel.Cast _TsiveriotisFernandesLattice.cell).Stepback
                                                             _i.cell 
                                                             _values.cell 
                                                             _conversionProbability.cell 

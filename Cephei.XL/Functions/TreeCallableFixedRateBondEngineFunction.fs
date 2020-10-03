@@ -148,7 +148,7 @@ module TreeCallableFixedRateBondEngineFunction =
             try
 
                 let _TreeCallableFixedRateBondEngine = Helper.toCell<TreeCallableFixedRateBondEngine> treecallablefixedratebondengine "TreeCallableFixedRateBondEngine"  
-                let builder () = withMnemonic mnemonic ((_TreeCallableFixedRateBondEngine.cell :?> TreeCallableFixedRateBondEngineModel).Update
+                let builder () = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).Update
                                                        ) :> ICell
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
 
@@ -188,7 +188,7 @@ module TreeCallableFixedRateBondEngineFunction =
 
                 let _TreeCallableFixedRateBondEngine = Helper.toCell<TreeCallableFixedRateBondEngine> treecallablefixedratebondengine "TreeCallableFixedRateBondEngine"  
                 let _model = Helper.toHandle<'ModelType>> model "model" 
-                let builder () = withMnemonic mnemonic ((_TreeCallableFixedRateBondEngine.cell :?> TreeCallableFixedRateBondEngineModel).SetModel
+                let builder () = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
@@ -231,7 +231,7 @@ module TreeCallableFixedRateBondEngineFunction =
 
                 let _TreeCallableFixedRateBondEngine = Helper.toCell<TreeCallableFixedRateBondEngine> treecallablefixedratebondengine "TreeCallableFixedRateBondEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_TreeCallableFixedRateBondEngine.cell :?> TreeCallableFixedRateBondEngineModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
@@ -270,7 +270,7 @@ module TreeCallableFixedRateBondEngineFunction =
             try
 
                 let _TreeCallableFixedRateBondEngine = Helper.toCell<TreeCallableFixedRateBondEngine> treecallablefixedratebondengine "TreeCallableFixedRateBondEngine"  
-                let builder () = withMnemonic mnemonic ((_TreeCallableFixedRateBondEngine.cell :?> TreeCallableFixedRateBondEngineModel).Reset
+                let builder () = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
 
@@ -309,7 +309,7 @@ module TreeCallableFixedRateBondEngineFunction =
 
                 let _TreeCallableFixedRateBondEngine = Helper.toCell<TreeCallableFixedRateBondEngine> treecallablefixedratebondengine "TreeCallableFixedRateBondEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_TreeCallableFixedRateBondEngine.cell :?> TreeCallableFixedRateBondEngineModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((TreeCallableFixedRateBondEngineModel.Cast _TreeCallableFixedRateBondEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj

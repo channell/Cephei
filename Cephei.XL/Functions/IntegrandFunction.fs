@@ -107,7 +107,7 @@ module IntegrandFunction =
 
                 let _Integrand = Helper.toCell<Integrand> integrand "Integrand"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_Integrand.cell :?> IntegrandModel).Value
+                let builder () = withMnemonic mnemonic ((IntegrandModel.Cast _Integrand.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

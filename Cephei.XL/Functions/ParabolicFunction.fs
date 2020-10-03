@@ -98,7 +98,7 @@ module ParabolicFunction =
             try
 
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).ACoefficients
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -134,7 +134,7 @@ module ParabolicFunction =
             try
 
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).BCoefficients
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -170,7 +170,7 @@ module ParabolicFunction =
             try
 
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).CCoefficients
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -212,7 +212,7 @@ module ParabolicFunction =
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).Derivative
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -254,7 +254,7 @@ module ParabolicFunction =
             try
 
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).Empty
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -296,7 +296,7 @@ module ParabolicFunction =
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).Primitive
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -344,7 +344,7 @@ module ParabolicFunction =
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).SecondDerivative
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -386,7 +386,7 @@ module ParabolicFunction =
             try
 
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).Update
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).Update
                                                        ) :> ICell
                 let format (o : Parabolic) (l:string) = o.ToString() :> obj
 
@@ -428,7 +428,7 @@ module ParabolicFunction =
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).Value1
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -473,7 +473,7 @@ module ParabolicFunction =
 
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).Value
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -512,7 +512,7 @@ module ParabolicFunction =
             try
 
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).XMax
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -548,7 +548,7 @@ module ParabolicFunction =
             try
 
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).XMin
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -584,7 +584,7 @@ module ParabolicFunction =
             try
 
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -623,7 +623,7 @@ module ParabolicFunction =
 
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : Parabolic) (l:string) = o.ToString() :> obj
@@ -665,7 +665,7 @@ module ParabolicFunction =
 
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : Parabolic) (l:string) = o.ToString() :> obj
@@ -704,7 +704,7 @@ module ParabolicFunction =
             try
 
                 let _Parabolic = Helper.toCell<Parabolic> parabolic "Parabolic"  
-                let builder () = withMnemonic mnemonic ((_Parabolic.cell :?> ParabolicModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((ParabolicModel.Cast _Parabolic.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

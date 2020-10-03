@@ -98,7 +98,7 @@ module GenericTimeSetterFunction =
                 let _GenericTimeSetter = Helper.toCell<GenericTimeSetter> generictimesetter "GenericTimeSetter"  
                 let _t = Helper.toCell<double> t "t" 
                 let _L = Helper.toCell<IOperator> L "L" 
-                let builder () = withMnemonic mnemonic ((_GenericTimeSetter.cell :?> GenericTimeSetterModel).SetTime
+                let builder () = withMnemonic mnemonic ((GenericTimeSetterModel.Cast _GenericTimeSetter.cell).SetTime
                                                             _t.cell 
                                                             _L.cell 
                                                        ) :> ICell

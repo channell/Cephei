@@ -52,7 +52,7 @@ module FixedRateCouponFunction =
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).AccruedAmount
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -91,7 +91,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).Amount
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -127,7 +127,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).DayCounter
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -333,7 +333,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).InterestRate
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).InterestRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
@@ -369,7 +369,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).Rate
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -405,7 +405,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).AccrualDays
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -441,7 +441,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).AccrualEndDate
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -477,7 +477,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).AccrualPeriod
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -513,7 +513,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).AccrualStartDate
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -552,7 +552,7 @@ module FixedRateCouponFunction =
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).AccruedDays
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -594,7 +594,7 @@ module FixedRateCouponFunction =
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).AccruedPeriod
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -633,7 +633,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).Date
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -669,7 +669,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).ExCouponDate
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -705,7 +705,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).Nominal
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -741,7 +741,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).ReferencePeriodEnd
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -777,7 +777,7 @@ module FixedRateCouponFunction =
             try
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).ReferencePeriodStart
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -816,7 +816,7 @@ module FixedRateCouponFunction =
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).CompareTo
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -858,7 +858,7 @@ module FixedRateCouponFunction =
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).Equals
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -903,7 +903,7 @@ module FixedRateCouponFunction =
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).HasOccurred
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -948,7 +948,7 @@ module FixedRateCouponFunction =
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).TradingExCoupon
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -990,7 +990,7 @@ module FixedRateCouponFunction =
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).Accept
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : FixedRateCoupon) (l:string) = o.ToString() :> obj
@@ -1032,7 +1032,7 @@ module FixedRateCouponFunction =
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FixedRateCoupon) (l:string) = o.ToString() :> obj
@@ -1074,7 +1074,7 @@ module FixedRateCouponFunction =
 
                 let _FixedRateCoupon = Helper.toCell<FixedRateCoupon> fixedratecoupon "FixedRateCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FixedRateCoupon.cell :?> FixedRateCouponModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((FixedRateCouponModel.Cast _FixedRateCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FixedRateCoupon) (l:string) = o.ToString() :> obj

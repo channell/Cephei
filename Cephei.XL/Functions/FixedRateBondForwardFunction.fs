@@ -50,7 +50,7 @@ module FixedRateBondForwardFunction =
             try
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).CleanForwardPrice
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).CleanForwardPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -195,7 +195,7 @@ module FixedRateBondForwardFunction =
             try
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).ForwardPrice
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).ForwardPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -234,7 +234,7 @@ module FixedRateBondForwardFunction =
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
                 let _incomeDiscountCurve = Helper.toHandle<YieldTermStructure> incomeDiscountCurve "incomeDiscountCurve" 
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).SpotIncome
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).SpotIncome
                                                             _incomeDiscountCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -273,7 +273,7 @@ module FixedRateBondForwardFunction =
             try
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).SpotValue
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).SpotValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -309,7 +309,7 @@ module FixedRateBondForwardFunction =
             try
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).ForwardValue
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).ForwardValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -360,7 +360,7 @@ module FixedRateBondForwardFunction =
                 let _settlementDate = Helper.toCell<Date> settlementDate "settlementDate" 
                 let _compoundingConvention = Helper.toCell<Compounding> compoundingConvention "compoundingConvention" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).ImpliedYield
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).ImpliedYield
                                                             _underlyingSpotValue.cell 
                                                             _forwardValue.cell 
                                                             _settlementDate.cell 
@@ -411,7 +411,7 @@ module FixedRateBondForwardFunction =
             try
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).IsExpired
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -447,7 +447,7 @@ module FixedRateBondForwardFunction =
             try
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).SettlementDate
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).SettlementDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -483,7 +483,7 @@ module FixedRateBondForwardFunction =
             try
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).CASH
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -519,7 +519,7 @@ module FixedRateBondForwardFunction =
             try
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -555,7 +555,7 @@ module FixedRateBondForwardFunction =
             try
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).NPV
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -594,7 +594,7 @@ module FixedRateBondForwardFunction =
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).Result
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -636,7 +636,7 @@ module FixedRateBondForwardFunction =
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : FixedRateBondForward) (l:string) = o.ToString() :> obj
@@ -675,7 +675,7 @@ module FixedRateBondForwardFunction =
             try
 
                 let _FixedRateBondForward = Helper.toCell<FixedRateBondForward> fixedratebondforward "FixedRateBondForward"  
-                let builder () = withMnemonic mnemonic ((_FixedRateBondForward.cell :?> FixedRateBondForwardModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((FixedRateBondForwardModel.Cast _FixedRateBondForward.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

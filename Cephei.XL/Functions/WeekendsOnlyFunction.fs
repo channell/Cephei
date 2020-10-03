@@ -80,7 +80,7 @@ module WeekendsOnlyFunction =
             try
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).AddedHolidays
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -119,7 +119,7 @@ module WeekendsOnlyFunction =
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).AddHoliday
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : WeekendsOnly) (l:string) = o.ToString() :> obj
@@ -164,7 +164,7 @@ module WeekendsOnlyFunction =
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).Adjust
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -221,7 +221,7 @@ module WeekendsOnlyFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).Advance1
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -284,7 +284,7 @@ module WeekendsOnlyFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).Advance
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -344,7 +344,7 @@ module WeekendsOnlyFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).BusinessDaysBetween
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -392,7 +392,7 @@ module WeekendsOnlyFunction =
             try
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).Calendar
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -428,7 +428,7 @@ module WeekendsOnlyFunction =
             try
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).Empty
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -467,7 +467,7 @@ module WeekendsOnlyFunction =
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -509,7 +509,7 @@ module WeekendsOnlyFunction =
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).Equals
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -551,7 +551,7 @@ module WeekendsOnlyFunction =
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).IsBusinessDay
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -593,7 +593,7 @@ module WeekendsOnlyFunction =
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).IsEndOfMonth
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -635,7 +635,7 @@ module WeekendsOnlyFunction =
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).IsHoliday
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -677,7 +677,7 @@ module WeekendsOnlyFunction =
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).IsWeekend
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -718,7 +718,7 @@ module WeekendsOnlyFunction =
             try
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).Name
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -754,7 +754,7 @@ module WeekendsOnlyFunction =
             try
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).RemovedHolidays
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -793,7 +793,7 @@ module WeekendsOnlyFunction =
 
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_WeekendsOnly.cell :?> WeekendsOnlyModel).RemoveHoliday
+                let builder () = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : WeekendsOnly) (l:string) = o.ToString() :> obj

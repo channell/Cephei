@@ -150,7 +150,7 @@ module CrankNicolsonSchemeFunction =
                 let _L = Helper.toCell<Object> L "L" 
                 let _bcs = Helper.toCell<Object> bcs "bcs" 
                 let _additionalInputs = Helper.toDefault<Object[]> additionalInputs "additionalInputs" null
-                let builder () = withMnemonic mnemonic ((_CrankNicolsonScheme.cell :?> CrankNicolsonSchemeModel).Factory
+                let builder () = withMnemonic mnemonic ((CrankNicolsonSchemeModel.Cast _CrankNicolsonScheme.cell).Factory
                                                             _L.cell 
                                                             _bcs.cell 
                                                             _additionalInputs.cell 
@@ -195,7 +195,7 @@ module CrankNicolsonSchemeFunction =
             try
 
                 let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme"  
-                let builder () = withMnemonic mnemonic ((_CrankNicolsonScheme.cell :?> CrankNicolsonSchemeModel).NumberOfIterations
+                let builder () = withMnemonic mnemonic ((CrankNicolsonSchemeModel.Cast _CrankNicolsonScheme.cell).NumberOfIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -234,7 +234,7 @@ module CrankNicolsonSchemeFunction =
 
                 let _CrankNicolsonScheme = Helper.toCell<CrankNicolsonScheme> cranknicolsonscheme "CrankNicolsonScheme"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_CrankNicolsonScheme.cell :?> CrankNicolsonSchemeModel).SetStep
+                let builder () = withMnemonic mnemonic ((CrankNicolsonSchemeModel.Cast _CrankNicolsonScheme.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : CrankNicolsonScheme) (l:string) = o.ToString() :> obj
@@ -282,7 +282,7 @@ module CrankNicolsonSchemeFunction =
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toDefault<double> theta "theta" 1.0
-                let builder () = withMnemonic mnemonic ((_CrankNicolsonScheme.cell :?> CrankNicolsonSchemeModel).Step
+                let builder () = withMnemonic mnemonic ((CrankNicolsonSchemeModel.Cast _CrankNicolsonScheme.cell).Step
                                                             _a.cell 
                                                             _t.cell 
                                                             _theta.cell 

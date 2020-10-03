@@ -131,7 +131,7 @@ module BarrierPathPricerFunction =
 
                 let _BarrierPathPricer = Helper.toCell<BarrierPathPricer> barrierpathpricer "BarrierPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder () = withMnemonic mnemonic ((_BarrierPathPricer.cell :?> BarrierPathPricerModel).Value
+                let builder () = withMnemonic mnemonic ((BarrierPathPricerModel.Cast _BarrierPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

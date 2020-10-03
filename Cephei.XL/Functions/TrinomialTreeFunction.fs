@@ -58,7 +58,7 @@ module TrinomialTreeFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((_TrinomialTree.cell :?> TrinomialTreeModel).Descendant
+                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Descendant
                                                             _i.cell 
                                                             _index.cell 
                                                             _branch.cell 
@@ -106,7 +106,7 @@ module TrinomialTreeFunction =
 
                 let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_TrinomialTree.cell :?> TrinomialTreeModel).Dx
+                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Dx
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -154,7 +154,7 @@ module TrinomialTreeFunction =
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
                 let _branch = Helper.toCell<int> branch "branch" 
-                let builder () = withMnemonic mnemonic ((_TrinomialTree.cell :?> TrinomialTreeModel).Probability
+                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Probability
                                                             _i.cell 
                                                             _index.cell 
                                                             _branch.cell 
@@ -202,7 +202,7 @@ module TrinomialTreeFunction =
 
                 let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_TrinomialTree.cell :?> TrinomialTreeModel).Size
+                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Size
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -241,7 +241,7 @@ module TrinomialTreeFunction =
             try
 
                 let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
-                let builder () = withMnemonic mnemonic ((_TrinomialTree.cell :?> TrinomialTreeModel).TimeGrid
+                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).TimeGrid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
 
@@ -375,7 +375,7 @@ module TrinomialTreeFunction =
                 let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
                 let _i = Helper.toCell<int> i "i" 
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_TrinomialTree.cell :?> TrinomialTreeModel).Underlying
+                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Underlying
                                                             _i.cell 
                                                             _index.cell 
                                                        ) :> ICell
@@ -417,7 +417,7 @@ module TrinomialTreeFunction =
             try
 
                 let _TrinomialTree = Helper.toCell<TrinomialTree> trinomialtree "TrinomialTree"  
-                let builder () = withMnemonic mnemonic ((_TrinomialTree.cell :?> TrinomialTreeModel).Columns
+                let builder () = withMnemonic mnemonic ((TrinomialTreeModel.Cast _TrinomialTree.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

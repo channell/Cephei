@@ -52,7 +52,7 @@ module ImpliedVolTermStructureFunction =
 
                 let _ImpliedVolTermStructure = Helper.toCell<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_ImpliedVolTermStructure.cell :?> ImpliedVolTermStructureModel).Accept
+                let builder () = withMnemonic mnemonic ((ImpliedVolTermStructureModel.Cast _ImpliedVolTermStructure.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : ImpliedVolTermStructure) (l:string) = o.ToString() :> obj
@@ -91,7 +91,7 @@ module ImpliedVolTermStructureFunction =
             try
 
                 let _ImpliedVolTermStructure = Helper.toCell<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
-                let builder () = withMnemonic mnemonic ((_ImpliedVolTermStructure.cell :?> ImpliedVolTermStructureModel).DayCounter
+                let builder () = withMnemonic mnemonic ((ImpliedVolTermStructureModel.Cast _ImpliedVolTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -170,7 +170,7 @@ module ImpliedVolTermStructureFunction =
             try
 
                 let _ImpliedVolTermStructure = Helper.toCell<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
-                let builder () = withMnemonic mnemonic ((_ImpliedVolTermStructure.cell :?> ImpliedVolTermStructureModel).MaxDate
+                let builder () = withMnemonic mnemonic ((ImpliedVolTermStructureModel.Cast _ImpliedVolTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -206,7 +206,7 @@ module ImpliedVolTermStructureFunction =
             try
 
                 let _ImpliedVolTermStructure = Helper.toCell<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
-                let builder () = withMnemonic mnemonic ((_ImpliedVolTermStructure.cell :?> ImpliedVolTermStructureModel).MaxStrike
+                let builder () = withMnemonic mnemonic ((ImpliedVolTermStructureModel.Cast _ImpliedVolTermStructure.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -242,7 +242,7 @@ module ImpliedVolTermStructureFunction =
             try
 
                 let _ImpliedVolTermStructure = Helper.toCell<ImpliedVolTermStructure> impliedvoltermstructure "ImpliedVolTermStructure"  
-                let builder () = withMnemonic mnemonic ((_ImpliedVolTermStructure.cell :?> ImpliedVolTermStructureModel).MinStrike
+                let builder () = withMnemonic mnemonic ((ImpliedVolTermStructureModel.Cast _ImpliedVolTermStructure.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

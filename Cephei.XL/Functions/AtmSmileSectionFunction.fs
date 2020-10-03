@@ -49,7 +49,7 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).AtmLevel
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).AtmLevel
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -128,7 +128,7 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).DayCounter
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -164,7 +164,7 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).ExerciseDate
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).ExerciseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -200,7 +200,7 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).ExerciseTime
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).ExerciseTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -236,7 +236,7 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).MaxStrike
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -272,7 +272,7 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).MinStrike
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -308,7 +308,7 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).ReferenceDate
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -344,7 +344,7 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).Shift
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Shift
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -380,7 +380,7 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).VolatilityType
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
@@ -425,7 +425,7 @@ module AtmSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).Density
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Density
                                                             _strike.cell 
                                                             _discount.cell 
                                                             _gap.cell 
@@ -482,7 +482,7 @@ module AtmSmileSectionFunction =
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
                 let _gap = Helper.toCell<double> gap "gap" 
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).DigitalOptionPrice
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).DigitalOptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
@@ -539,7 +539,7 @@ module AtmSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _Type = Helper.toCell<Option.Type> Type "Type" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).OptionPrice
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).OptionPrice
                                                             _strike.cell 
                                                             _Type.cell 
                                                             _discount.cell 
@@ -584,7 +584,7 @@ module AtmSmileSectionFunction =
             try
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).Update
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Update
                                                        ) :> ICell
                 let format (o : AtmSmileSection) (l:string) = o.ToString() :> obj
 
@@ -623,7 +623,7 @@ module AtmSmileSectionFunction =
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).Variance
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Variance
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -668,7 +668,7 @@ module AtmSmileSectionFunction =
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).Vega
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Vega
                                                             _strike.cell 
                                                             _discount.cell 
                                                        ) :> ICell
@@ -719,7 +719,7 @@ module AtmSmileSectionFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _volatilityType = Helper.toCell<VolatilityType> volatilityType "volatilityType" 
                 let _shift = Helper.toCell<double> shift "shift" 
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).Volatility
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Volatility
                                                             _strike.cell 
                                                             _volatilityType.cell 
                                                             _shift.cell 
@@ -767,7 +767,7 @@ module AtmSmileSectionFunction =
 
                 let _AtmSmileSection = Helper.toCell<AtmSmileSection> atmsmilesection "AtmSmileSection"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((_AtmSmileSection.cell :?> AtmSmileSectionModel).Volatility1
+                let builder () = withMnemonic mnemonic ((AtmSmileSectionModel.Cast _AtmSmileSection.cell).Volatility1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

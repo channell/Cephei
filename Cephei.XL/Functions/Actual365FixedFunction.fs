@@ -86,7 +86,7 @@ module Actual365FixedFunction =
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((_Actual365Fixed.cell :?> Actual365FixedModel).DayCount
+                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
@@ -128,7 +128,7 @@ module Actual365FixedFunction =
             try
 
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
-                let builder () = withMnemonic mnemonic ((_Actual365Fixed.cell :?> Actual365FixedModel).DayCounter
+                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -164,7 +164,7 @@ module Actual365FixedFunction =
             try
 
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
-                let builder () = withMnemonic mnemonic ((_Actual365Fixed.cell :?> Actual365FixedModel).Empty
+                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -203,7 +203,7 @@ module Actual365FixedFunction =
 
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Actual365Fixed.cell :?> Actual365FixedModel).Equals
+                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -242,7 +242,7 @@ module Actual365FixedFunction =
             try
 
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
-                let builder () = withMnemonic mnemonic ((_Actual365Fixed.cell :?> Actual365FixedModel).Name
+                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -278,7 +278,7 @@ module Actual365FixedFunction =
             try
 
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
-                let builder () = withMnemonic mnemonic ((_Actual365Fixed.cell :?> Actual365FixedModel).ToString
+                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -326,7 +326,7 @@ module Actual365FixedFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
                 let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let builder () = withMnemonic mnemonic ((_Actual365Fixed.cell :?> Actual365FixedModel).YearFraction
+                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refPeriodStart.cell 
@@ -380,7 +380,7 @@ module Actual365FixedFunction =
                 let _Actual365Fixed = Helper.toCell<Actual365Fixed> actual365fixed "Actual365Fixed"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((_Actual365Fixed.cell :?> Actual365FixedModel).YearFraction1
+                let builder () = withMnemonic mnemonic ((Actual365FixedModel.Cast _Actual365Fixed.cell).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell

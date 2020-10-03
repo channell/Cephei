@@ -52,7 +52,7 @@ module FdmHullWhiteSolverFunction =
 
                 let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((_FdmHullWhiteSolver.cell :?> FdmHullWhiteSolverModel).DeltaAt
+                let builder () = withMnemonic mnemonic ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).DeltaAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -143,7 +143,7 @@ module FdmHullWhiteSolverFunction =
 
                 let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((_FdmHullWhiteSolver.cell :?> FdmHullWhiteSolverModel).GammaAt
+                let builder () = withMnemonic mnemonic ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).GammaAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -185,7 +185,7 @@ module FdmHullWhiteSolverFunction =
 
                 let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((_FdmHullWhiteSolver.cell :?> FdmHullWhiteSolverModel).ThetaAt
+                let builder () = withMnemonic mnemonic ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).ThetaAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -227,7 +227,7 @@ module FdmHullWhiteSolverFunction =
 
                 let _FdmHullWhiteSolver = Helper.toCell<FdmHullWhiteSolver> fdmhullwhitesolver "FdmHullWhiteSolver"  
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((_FdmHullWhiteSolver.cell :?> FdmHullWhiteSolverModel).ValueAt
+                let builder () = withMnemonic mnemonic ((FdmHullWhiteSolverModel.Cast _FdmHullWhiteSolver.cell).ValueAt
                                                             _s.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

@@ -49,7 +49,7 @@ module FiniteDifferenceModelFunction =
             try
 
                 let _FiniteDifferenceModel = Helper.toCell<FiniteDifferenceModel> finitedifferencemodel "FiniteDifferenceModel"  
-                let builder () = withMnemonic mnemonic ((_FiniteDifferenceModel.cell :?> FiniteDifferenceModelModel).Evolver
+                let builder () = withMnemonic mnemonic ((FiniteDifferenceModelModel.Cast _FiniteDifferenceModel.cell).Evolver
                                                        ) :> ICell
                 let format (o : Evolver) (l:string) = o.ToString() :> obj
 
@@ -235,7 +235,7 @@ module FiniteDifferenceModelFunction =
                 let _To = Helper.toCell<double> To "To" 
                 let _steps = Helper.toCell<int> steps "steps" 
                 let _condition = Helper.toCell<IStepCondition<Vector>> condition "condition" 
-                let builder () = withMnemonic mnemonic ((_FiniteDifferenceModel.cell :?> FiniteDifferenceModelModel).Rollback
+                let builder () = withMnemonic mnemonic ((FiniteDifferenceModelModel.Cast _FiniteDifferenceModel.cell).Rollback
                                                             _a.cell 
                                                             _from.cell 
                                                             _To.cell 
@@ -298,7 +298,7 @@ module FiniteDifferenceModelFunction =
                 let _from = Helper.toCell<double> from "from" 
                 let _To = Helper.toCell<double> To "To" 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let builder () = withMnemonic mnemonic ((_FiniteDifferenceModel.cell :?> FiniteDifferenceModelModel).Rollback1
+                let builder () = withMnemonic mnemonic ((FiniteDifferenceModelModel.Cast _FiniteDifferenceModel.cell).Rollback1
                                                             _a.cell 
                                                             _from.cell 
                                                             _To.cell 

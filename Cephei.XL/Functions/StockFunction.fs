@@ -49,7 +49,7 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder () = withMnemonic mnemonic ((_Stock.cell :?> StockModel).IsExpired
+                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -134,7 +134,7 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder () = withMnemonic mnemonic ((_Stock.cell :?> StockModel).CASH
+                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -170,7 +170,7 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder () = withMnemonic mnemonic ((_Stock.cell :?> StockModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -206,7 +206,7 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder () = withMnemonic mnemonic ((_Stock.cell :?> StockModel).NPV
+                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -245,7 +245,7 @@ module StockFunction =
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_Stock.cell :?> StockModel).Result
+                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -287,7 +287,7 @@ module StockFunction =
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_Stock.cell :?> StockModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : Stock) (l:string) = o.ToString() :> obj
@@ -326,7 +326,7 @@ module StockFunction =
             try
 
                 let _Stock = Helper.toCell<Stock> stock "Stock"  
-                let builder () = withMnemonic mnemonic ((_Stock.cell :?> StockModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((StockModel.Cast _Stock.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

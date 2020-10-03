@@ -52,7 +52,7 @@ module NormalDistributionFunction =
 
                 let _NormalDistribution = Helper.toCell<NormalDistribution> normaldistribution "NormalDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_NormalDistribution.cell :?> NormalDistributionModel).Derivative
+                let builder () = withMnemonic mnemonic ((NormalDistributionModel.Cast _NormalDistribution.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -168,7 +168,7 @@ module NormalDistributionFunction =
 
                 let _NormalDistribution = Helper.toCell<NormalDistribution> normaldistribution "NormalDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_NormalDistribution.cell :?> NormalDistributionModel).Value
+                let builder () = withMnemonic mnemonic ((NormalDistributionModel.Cast _NormalDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

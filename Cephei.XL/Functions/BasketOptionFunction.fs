@@ -104,7 +104,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).Delta
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -140,7 +140,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).DividendRho
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -176,7 +176,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).Gamma
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -212,7 +212,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).IsExpired
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -248,7 +248,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).Rho
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -284,7 +284,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).Theta
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -320,7 +320,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).Vega
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -356,7 +356,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).Exercise
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -392,7 +392,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).Payoff
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -428,7 +428,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).CASH
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -464,7 +464,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -500,7 +500,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).NPV
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -539,7 +539,7 @@ module BasketOptionFunction =
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).Result
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -581,7 +581,7 @@ module BasketOptionFunction =
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : BasketOption) (l:string) = o.ToString() :> obj
@@ -620,7 +620,7 @@ module BasketOptionFunction =
             try
 
                 let _BasketOption = Helper.toCell<BasketOption> basketoption "BasketOption"  
-                let builder () = withMnemonic mnemonic ((_BasketOption.cell :?> BasketOptionModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((BasketOptionModel.Cast _BasketOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

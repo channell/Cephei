@@ -199,7 +199,7 @@ module InverseNonCentralChiSquareDistributionFunction =
 
                 let _InverseNonCentralChiSquareDistribution = Helper.toCell<InverseNonCentralChiSquareDistribution> inversenoncentralchisquaredistribution "InverseNonCentralChiSquareDistribution"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_InverseNonCentralChiSquareDistribution.cell :?> InverseNonCentralChiSquareDistributionModel).Value
+                let builder () = withMnemonic mnemonic ((InverseNonCentralChiSquareDistributionModel.Cast _InverseNonCentralChiSquareDistribution.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

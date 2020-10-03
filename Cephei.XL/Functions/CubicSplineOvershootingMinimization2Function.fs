@@ -98,7 +98,7 @@ module CubicSplineOvershootingMinimization2Function =
             try
 
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).ACoefficients
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).ACoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -134,7 +134,7 @@ module CubicSplineOvershootingMinimization2Function =
             try
 
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).BCoefficients
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).BCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -170,7 +170,7 @@ module CubicSplineOvershootingMinimization2Function =
             try
 
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).CCoefficients
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).CCoefficients
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -212,7 +212,7 @@ module CubicSplineOvershootingMinimization2Function =
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).Derivative
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -254,7 +254,7 @@ module CubicSplineOvershootingMinimization2Function =
             try
 
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).Empty
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -296,7 +296,7 @@ module CubicSplineOvershootingMinimization2Function =
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).Primitive
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -344,7 +344,7 @@ module CubicSplineOvershootingMinimization2Function =
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).SecondDerivative
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -386,7 +386,7 @@ module CubicSplineOvershootingMinimization2Function =
             try
 
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).Update
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).Update
                                                        ) :> ICell
                 let format (o : CubicSplineOvershootingMinimization2) (l:string) = o.ToString() :> obj
 
@@ -428,7 +428,7 @@ module CubicSplineOvershootingMinimization2Function =
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).Value1
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -473,7 +473,7 @@ module CubicSplineOvershootingMinimization2Function =
 
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).Value
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -512,7 +512,7 @@ module CubicSplineOvershootingMinimization2Function =
             try
 
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).XMax
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -548,7 +548,7 @@ module CubicSplineOvershootingMinimization2Function =
             try
 
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).XMin
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -584,7 +584,7 @@ module CubicSplineOvershootingMinimization2Function =
             try
 
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -623,7 +623,7 @@ module CubicSplineOvershootingMinimization2Function =
 
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CubicSplineOvershootingMinimization2) (l:string) = o.ToString() :> obj
@@ -665,7 +665,7 @@ module CubicSplineOvershootingMinimization2Function =
 
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CubicSplineOvershootingMinimization2) (l:string) = o.ToString() :> obj
@@ -704,7 +704,7 @@ module CubicSplineOvershootingMinimization2Function =
             try
 
                 let _CubicSplineOvershootingMinimization2 = Helper.toCell<CubicSplineOvershootingMinimization2> cubicsplineovershootingminimization2 "CubicSplineOvershootingMinimization2"  
-                let builder () = withMnemonic mnemonic ((_CubicSplineOvershootingMinimization2.cell :?> CubicSplineOvershootingMinimization2Model).Extrapolate
+                let builder () = withMnemonic mnemonic ((CubicSplineOvershootingMinimization2Model.Cast _CubicSplineOvershootingMinimization2.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

@@ -89,7 +89,7 @@ module MonomialFctFunction =
 
                 let _MonomialFct = Helper.toCell<MonomialFct> monomialfct "MonomialFct"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_MonomialFct.cell :?> MonomialFctModel).Value
+                let builder () = withMnemonic mnemonic ((MonomialFctModel.Cast _MonomialFct.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

@@ -80,7 +80,7 @@ module VEBCurrencyFunction =
             try
 
                 let _VEBCurrency = Helper.toCell<VEBCurrency> vebcurrency "VEBCurrency"  
-                let builder () = withMnemonic mnemonic ((_VEBCurrency.cell :?> VEBCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((VEBCurrencyModel.Cast _VEBCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module VEBCurrencyFunction =
             try
 
                 let _VEBCurrency = Helper.toCell<VEBCurrency> vebcurrency "VEBCurrency"  
-                let builder () = withMnemonic mnemonic ((_VEBCurrency.cell :?> VEBCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((VEBCurrencyModel.Cast _VEBCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module VEBCurrencyFunction =
 
                 let _VEBCurrency = Helper.toCell<VEBCurrency> vebcurrency "VEBCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_VEBCurrency.cell :?> VEBCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((VEBCurrencyModel.Cast _VEBCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module VEBCurrencyFunction =
             try
 
                 let _VEBCurrency = Helper.toCell<VEBCurrency> vebcurrency "VEBCurrency"  
-                let builder () = withMnemonic mnemonic ((_VEBCurrency.cell :?> VEBCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((VEBCurrencyModel.Cast _VEBCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module VEBCurrencyFunction =
             try
 
                 let _VEBCurrency = Helper.toCell<VEBCurrency> vebcurrency "VEBCurrency"  
-                let builder () = withMnemonic mnemonic ((_VEBCurrency.cell :?> VEBCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((VEBCurrencyModel.Cast _VEBCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module VEBCurrencyFunction =
             try
 
                 let _VEBCurrency = Helper.toCell<VEBCurrency> vebcurrency "VEBCurrency"  
-                let builder () = withMnemonic mnemonic ((_VEBCurrency.cell :?> VEBCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((VEBCurrencyModel.Cast _VEBCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module VEBCurrencyFunction =
             try
 
                 let _VEBCurrency = Helper.toCell<VEBCurrency> vebcurrency "VEBCurrency"  
-                let builder () = withMnemonic mnemonic ((_VEBCurrency.cell :?> VEBCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((VEBCurrencyModel.Cast _VEBCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module VEBCurrencyFunction =
             try
 
                 let _VEBCurrency = Helper.toCell<VEBCurrency> vebcurrency "VEBCurrency"  
-                let builder () = withMnemonic mnemonic ((_VEBCurrency.cell :?> VEBCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((VEBCurrencyModel.Cast _VEBCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module VEBCurrencyFunction =
             try
 
                 let _VEBCurrency = Helper.toCell<VEBCurrency> vebcurrency "VEBCurrency"  
-                let builder () = withMnemonic mnemonic ((_VEBCurrency.cell :?> VEBCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((VEBCurrencyModel.Cast _VEBCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module VEBCurrencyFunction =
             try
 
                 let _VEBCurrency = Helper.toCell<VEBCurrency> vebcurrency "VEBCurrency"  
-                let builder () = withMnemonic mnemonic ((_VEBCurrency.cell :?> VEBCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((VEBCurrencyModel.Cast _VEBCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module VEBCurrencyFunction =
             try
 
                 let _VEBCurrency = Helper.toCell<VEBCurrency> vebcurrency "VEBCurrency"  
-                let builder () = withMnemonic mnemonic ((_VEBCurrency.cell :?> VEBCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((VEBCurrencyModel.Cast _VEBCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module VEBCurrencyFunction =
             try
 
                 let _VEBCurrency = Helper.toCell<VEBCurrency> vebcurrency "VEBCurrency"  
-                let builder () = withMnemonic mnemonic ((_VEBCurrency.cell :?> VEBCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((VEBCurrencyModel.Cast _VEBCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

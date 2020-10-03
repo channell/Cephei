@@ -110,7 +110,7 @@ module AmericanPayoffAtHitFunction =
             try
 
                 let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
-                let builder () = withMnemonic mnemonic ((_AmericanPayoffAtHit.cell :?> AmericanPayoffAtHitModel).Delta
+                let builder () = withMnemonic mnemonic ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -146,7 +146,7 @@ module AmericanPayoffAtHitFunction =
             try
 
                 let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
-                let builder () = withMnemonic mnemonic ((_AmericanPayoffAtHit.cell :?> AmericanPayoffAtHitModel).Gamma
+                let builder () = withMnemonic mnemonic ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -185,7 +185,7 @@ module AmericanPayoffAtHitFunction =
 
                 let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
                 let _maturity = Helper.toCell<double> maturity "maturity" 
-                let builder () = withMnemonic mnemonic ((_AmericanPayoffAtHit.cell :?> AmericanPayoffAtHitModel).Rho
+                let builder () = withMnemonic mnemonic ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Rho
                                                             _maturity.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -224,7 +224,7 @@ module AmericanPayoffAtHitFunction =
             try
 
                 let _AmericanPayoffAtHit = Helper.toCell<AmericanPayoffAtHit> americanpayoffathit "AmericanPayoffAtHit"  
-                let builder () = withMnemonic mnemonic ((_AmericanPayoffAtHit.cell :?> AmericanPayoffAtHitModel).Value
+                let builder () = withMnemonic mnemonic ((AmericanPayoffAtHitModel.Cast _AmericanPayoffAtHit.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

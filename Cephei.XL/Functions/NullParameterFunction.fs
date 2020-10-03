@@ -80,7 +80,7 @@ module NullParameterFunction =
             try
 
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
-                let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).Constraint
+                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
@@ -116,7 +116,7 @@ module NullParameterFunction =
             try
 
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
-                let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).Implementation
+                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Implementation
                                                        ) :> ICell
                 let format (o : Impl) (l:string) = o.ToString() :> obj
 
@@ -152,7 +152,7 @@ module NullParameterFunction =
             try
 
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
-                let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).Parameters
+                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -194,7 +194,7 @@ module NullParameterFunction =
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).SetParam
+                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).SetParam
                                                             _i.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -236,7 +236,7 @@ module NullParameterFunction =
             try
 
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
-                let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).Size
+                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -275,7 +275,7 @@ module NullParameterFunction =
 
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).TestParams
+                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).TestParams
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -317,7 +317,7 @@ module NullParameterFunction =
 
                 let _NullParameter = Helper.toCell<NullParameter> nullparameter "NullParameter"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_NullParameter.cell :?> NullParameterModel).Value
+                let builder () = withMnemonic mnemonic ((NullParameterModel.Cast _NullParameter.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

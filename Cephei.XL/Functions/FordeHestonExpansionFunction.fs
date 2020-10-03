@@ -122,7 +122,7 @@ module FordeHestonExpansionFunction =
                 let _FordeHestonExpansion = Helper.toCell<FordeHestonExpansion> fordehestonexpansion "FordeHestonExpansion"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _forward = Helper.toCell<double> forward "forward" 
-                let builder () = withMnemonic mnemonic ((_FordeHestonExpansion.cell :?> FordeHestonExpansionModel).ImpliedVolatility
+                let builder () = withMnemonic mnemonic ((FordeHestonExpansionModel.Cast _FordeHestonExpansion.cell).ImpliedVolatility
                                                             _strike.cell 
                                                             _forward.cell 
                                                        ) :> ICell

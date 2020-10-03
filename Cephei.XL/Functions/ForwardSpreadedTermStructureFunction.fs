@@ -49,7 +49,7 @@ module ForwardSpreadedTermStructureFunction =
             try
 
                 let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((_ForwardSpreadedTermStructure.cell :?> ForwardSpreadedTermStructureModel).Calendar
+                let builder () = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -85,7 +85,7 @@ module ForwardSpreadedTermStructureFunction =
             try
 
                 let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((_ForwardSpreadedTermStructure.cell :?> ForwardSpreadedTermStructureModel).DayCounter
+                let builder () = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -164,7 +164,7 @@ module ForwardSpreadedTermStructureFunction =
             try
 
                 let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((_ForwardSpreadedTermStructure.cell :?> ForwardSpreadedTermStructureModel).MaxDate
+                let builder () = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -200,7 +200,7 @@ module ForwardSpreadedTermStructureFunction =
             try
 
                 let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((_ForwardSpreadedTermStructure.cell :?> ForwardSpreadedTermStructureModel).MaxTime
+                let builder () = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -236,7 +236,7 @@ module ForwardSpreadedTermStructureFunction =
             try
 
                 let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((_ForwardSpreadedTermStructure.cell :?> ForwardSpreadedTermStructureModel).ReferenceDate
+                let builder () = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -272,7 +272,7 @@ module ForwardSpreadedTermStructureFunction =
             try
 
                 let _ForwardSpreadedTermStructure = Helper.toCell<ForwardSpreadedTermStructure> forwardspreadedtermstructure "ForwardSpreadedTermStructure"  
-                let builder () = withMnemonic mnemonic ((_ForwardSpreadedTermStructure.cell :?> ForwardSpreadedTermStructureModel).SettlementDays
+                let builder () = withMnemonic mnemonic ((ForwardSpreadedTermStructureModel.Cast _ForwardSpreadedTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

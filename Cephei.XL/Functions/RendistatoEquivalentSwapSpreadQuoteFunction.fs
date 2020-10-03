@@ -49,7 +49,7 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
             try
 
                 let _RendistatoEquivalentSwapSpreadQuote = Helper.toCell<RendistatoEquivalentSwapSpreadQuote> rendistatoequivalentswapspreadquote "RendistatoEquivalentSwapSpreadQuote"  
-                let builder () = withMnemonic mnemonic ((_RendistatoEquivalentSwapSpreadQuote.cell :?> RendistatoEquivalentSwapSpreadQuoteModel).IsValid
+                let builder () = withMnemonic mnemonic ((RendistatoEquivalentSwapSpreadQuoteModel.Cast _RendistatoEquivalentSwapSpreadQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -122,7 +122,7 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
             try
 
                 let _RendistatoEquivalentSwapSpreadQuote = Helper.toCell<RendistatoEquivalentSwapSpreadQuote> rendistatoequivalentswapspreadquote "RendistatoEquivalentSwapSpreadQuote"  
-                let builder () = withMnemonic mnemonic ((_RendistatoEquivalentSwapSpreadQuote.cell :?> RendistatoEquivalentSwapSpreadQuoteModel).Value
+                let builder () = withMnemonic mnemonic ((RendistatoEquivalentSwapSpreadQuoteModel.Cast _RendistatoEquivalentSwapSpreadQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -161,7 +161,7 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
 
                 let _RendistatoEquivalentSwapSpreadQuote = Helper.toCell<RendistatoEquivalentSwapSpreadQuote> rendistatoequivalentswapspreadquote "RendistatoEquivalentSwapSpreadQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_RendistatoEquivalentSwapSpreadQuote.cell :?> RendistatoEquivalentSwapSpreadQuoteModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((RendistatoEquivalentSwapSpreadQuoteModel.Cast _RendistatoEquivalentSwapSpreadQuote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RendistatoEquivalentSwapSpreadQuote) (l:string) = o.ToString() :> obj
@@ -203,7 +203,7 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
 
                 let _RendistatoEquivalentSwapSpreadQuote = Helper.toCell<RendistatoEquivalentSwapSpreadQuote> rendistatoequivalentswapspreadquote "RendistatoEquivalentSwapSpreadQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_RendistatoEquivalentSwapSpreadQuote.cell :?> RendistatoEquivalentSwapSpreadQuoteModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((RendistatoEquivalentSwapSpreadQuoteModel.Cast _RendistatoEquivalentSwapSpreadQuote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : RendistatoEquivalentSwapSpreadQuote) (l:string) = o.ToString() :> obj

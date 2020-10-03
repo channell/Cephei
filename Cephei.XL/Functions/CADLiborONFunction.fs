@@ -117,7 +117,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -156,7 +156,7 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).Clone
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Clone
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -195,7 +195,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -240,7 +240,7 @@ module CADLiborONFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).ForecastFixing1
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
@@ -288,7 +288,7 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).ForecastFixing
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -327,7 +327,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).ForwardingTermStructure
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -366,7 +366,7 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -405,7 +405,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).Currency
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -441,7 +441,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).DayCounter
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -477,7 +477,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).FamilyName
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -519,7 +519,7 @@ module CADLiborONFunction =
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).Fixing
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -561,7 +561,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -600,7 +600,7 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).FixingDate
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -639,7 +639,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).FixingDays
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -678,7 +678,7 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -717,7 +717,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).Name
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -756,7 +756,7 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).PastFixing
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -795,7 +795,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).Tenor
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -831,7 +831,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).Update
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).Update
                                                        ) :> ICell
                 let format (o : CADLiborON) (l:string) = o.ToString() :> obj
 
@@ -870,7 +870,7 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).ValueDate
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -918,7 +918,7 @@ module CADLiborONFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).AddFixing
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -972,7 +972,7 @@ module CADLiborONFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).AddFixings
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -1023,7 +1023,7 @@ module CADLiborONFunction =
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -1065,7 +1065,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1101,7 +1101,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : CADLiborON) (l:string) = o.ToString() :> obj
 
@@ -1140,7 +1140,7 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CADLiborON) (l:string) = o.ToString() :> obj
@@ -1179,7 +1179,7 @@ module CADLiborONFunction =
             try
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1218,7 +1218,7 @@ module CADLiborONFunction =
 
                 let _CADLiborON = Helper.toCell<CADLiborON> cadliboron "CADLiborON"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_CADLiborON.cell :?> CADLiborONModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((CADLiborONModel.Cast _CADLiborON.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CADLiborON) (l:string) = o.ToString() :> obj

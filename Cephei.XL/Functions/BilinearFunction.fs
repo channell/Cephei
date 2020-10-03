@@ -64,7 +64,7 @@ module BilinearFunction =
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
                 let _ySize = Helper.toCell<int> ySize "ySize" 
                 let _zData = Helper.toCell<Matrix> zData "zData" 
-                let builder () = withMnemonic mnemonic ((_Bilinear.cell :?> BilinearModel).Interpolate
+                let builder () = withMnemonic mnemonic ((BilinearModel.Cast _Bilinear.cell).Interpolate
                                                             _xBegin.cell 
                                                             _xSize.cell 
                                                             _yBegin.cell 

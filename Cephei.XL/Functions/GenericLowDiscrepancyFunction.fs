@@ -49,7 +49,7 @@ module GenericLowDiscrepancyFunction =
             try
 
                 let _GenericLowDiscrepancy = Helper.toCell<GenericLowDiscrepancy> genericlowdiscrepancy "GenericLowDiscrepancy"  
-                let builder () = withMnemonic mnemonic ((_GenericLowDiscrepancy.cell :?> GenericLowDiscrepancyModel).AllowsErrorEstimate
+                let builder () = withMnemonic mnemonic ((GenericLowDiscrepancyModel.Cast _GenericLowDiscrepancy.cell).AllowsErrorEstimate
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -91,7 +91,7 @@ module GenericLowDiscrepancyFunction =
                 let _GenericLowDiscrepancy = Helper.toCell<GenericLowDiscrepancy> genericlowdiscrepancy "GenericLowDiscrepancy"  
                 let _dimension = Helper.toCell<int> dimension "dimension" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic ((_GenericLowDiscrepancy.cell :?> GenericLowDiscrepancyModel).Make_sequence_generator
+                let builder () = withMnemonic mnemonic ((GenericLowDiscrepancyModel.Cast _GenericLowDiscrepancy.cell).Make_sequence_generator
                                                             _dimension.cell 
                                                             _seed.cell 
                                                        ) :> ICell

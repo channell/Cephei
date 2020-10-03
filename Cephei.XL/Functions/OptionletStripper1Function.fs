@@ -49,7 +49,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).CapFloorPrices
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).CapFloorPrices
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
@@ -85,7 +85,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).CapFloorVolatilities
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).CapFloorVolatilities
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
@@ -121,7 +121,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).OptionletPrices
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletPrices
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
@@ -242,7 +242,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).SwitchStrike
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).SwitchStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -278,7 +278,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).AtmOptionletRates
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).AtmOptionletRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -314,7 +314,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -350,7 +350,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).Calendar
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -386,7 +386,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).DayCounter
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -422,7 +422,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).Displacement
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).Displacement
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -458,7 +458,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).IborIndex
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).IborIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
@@ -494,7 +494,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).OptionletAccrualPeriods
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletAccrualPeriods
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -530,7 +530,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).OptionletFixingDates
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletFixingDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -566,7 +566,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).OptionletFixingTenors
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletFixingTenors
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -602,7 +602,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).OptionletFixingTimes
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletFixingTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -638,7 +638,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).OptionletMaturities
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletMaturities
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -674,7 +674,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).OptionletPaymentDates
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletPaymentDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -713,7 +713,7 @@ module OptionletStripper1Function =
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).OptionletStrikes
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletStrikes
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -755,7 +755,7 @@ module OptionletStripper1Function =
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).OptionletVolatilities
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).OptionletVolatilities
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
@@ -794,7 +794,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).SettlementDays
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -830,7 +830,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).TermVolSurface
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).TermVolSurface
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolSurface>) l
 
@@ -866,7 +866,7 @@ module OptionletStripper1Function =
             try
 
                 let _OptionletStripper1 = Helper.toCell<OptionletStripper1> optionletstripper1 "OptionletStripper1"  
-                let builder () = withMnemonic mnemonic ((_OptionletStripper1.cell :?> OptionletStripper1Model).VolatilityType
+                let builder () = withMnemonic mnemonic ((OptionletStripper1Model.Cast _OptionletStripper1.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 

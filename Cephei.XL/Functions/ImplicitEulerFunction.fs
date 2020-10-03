@@ -126,7 +126,7 @@ module ImplicitEulerFunction =
 
                 let _ImplicitEuler = Helper.toCell<ImplicitEuler> impliciteuler "ImplicitEuler"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_ImplicitEuler.cell :?> ImplicitEulerModel).SetStep
+                let builder () = withMnemonic mnemonic ((ImplicitEulerModel.Cast _ImplicitEuler.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : ImplicitEuler) (l:string) = o.ToString() :> obj
@@ -174,7 +174,7 @@ module ImplicitEulerFunction =
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toCell<double> theta "theta" 
-                let builder () = withMnemonic mnemonic ((_ImplicitEuler.cell :?> ImplicitEulerModel).Step
+                let builder () = withMnemonic mnemonic ((ImplicitEulerModel.Cast _ImplicitEuler.cell).Step
                                                             _o.cell 
                                                             _t.cell 
                                                             _theta.cell 

@@ -55,7 +55,7 @@ module NullConditionFunction =
                 let _NullCondition = Helper.toCell<NullCondition> nullcondition "NullCondition"  
                 let _a = Helper.toCell<Object> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_NullCondition.cell :?> NullConditionModel).ApplyTo
+                let builder () = withMnemonic mnemonic ((NullConditionModel.Cast _NullCondition.cell).ApplyTo
                                                             _a.cell 
                                                             _t.cell 
                                                        ) :> ICell

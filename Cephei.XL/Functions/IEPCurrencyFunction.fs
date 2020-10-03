@@ -80,7 +80,7 @@ module IEPCurrencyFunction =
             try
 
                 let _IEPCurrency = Helper.toCell<IEPCurrency> iepcurrency "IEPCurrency"  
-                let builder () = withMnemonic mnemonic ((_IEPCurrency.cell :?> IEPCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((IEPCurrencyModel.Cast _IEPCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module IEPCurrencyFunction =
             try
 
                 let _IEPCurrency = Helper.toCell<IEPCurrency> iepcurrency "IEPCurrency"  
-                let builder () = withMnemonic mnemonic ((_IEPCurrency.cell :?> IEPCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((IEPCurrencyModel.Cast _IEPCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module IEPCurrencyFunction =
 
                 let _IEPCurrency = Helper.toCell<IEPCurrency> iepcurrency "IEPCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_IEPCurrency.cell :?> IEPCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((IEPCurrencyModel.Cast _IEPCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module IEPCurrencyFunction =
             try
 
                 let _IEPCurrency = Helper.toCell<IEPCurrency> iepcurrency "IEPCurrency"  
-                let builder () = withMnemonic mnemonic ((_IEPCurrency.cell :?> IEPCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((IEPCurrencyModel.Cast _IEPCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module IEPCurrencyFunction =
             try
 
                 let _IEPCurrency = Helper.toCell<IEPCurrency> iepcurrency "IEPCurrency"  
-                let builder () = withMnemonic mnemonic ((_IEPCurrency.cell :?> IEPCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((IEPCurrencyModel.Cast _IEPCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module IEPCurrencyFunction =
             try
 
                 let _IEPCurrency = Helper.toCell<IEPCurrency> iepcurrency "IEPCurrency"  
-                let builder () = withMnemonic mnemonic ((_IEPCurrency.cell :?> IEPCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((IEPCurrencyModel.Cast _IEPCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module IEPCurrencyFunction =
             try
 
                 let _IEPCurrency = Helper.toCell<IEPCurrency> iepcurrency "IEPCurrency"  
-                let builder () = withMnemonic mnemonic ((_IEPCurrency.cell :?> IEPCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((IEPCurrencyModel.Cast _IEPCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module IEPCurrencyFunction =
             try
 
                 let _IEPCurrency = Helper.toCell<IEPCurrency> iepcurrency "IEPCurrency"  
-                let builder () = withMnemonic mnemonic ((_IEPCurrency.cell :?> IEPCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((IEPCurrencyModel.Cast _IEPCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module IEPCurrencyFunction =
             try
 
                 let _IEPCurrency = Helper.toCell<IEPCurrency> iepcurrency "IEPCurrency"  
-                let builder () = withMnemonic mnemonic ((_IEPCurrency.cell :?> IEPCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((IEPCurrencyModel.Cast _IEPCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module IEPCurrencyFunction =
             try
 
                 let _IEPCurrency = Helper.toCell<IEPCurrency> iepcurrency "IEPCurrency"  
-                let builder () = withMnemonic mnemonic ((_IEPCurrency.cell :?> IEPCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((IEPCurrencyModel.Cast _IEPCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module IEPCurrencyFunction =
             try
 
                 let _IEPCurrency = Helper.toCell<IEPCurrency> iepcurrency "IEPCurrency"  
-                let builder () = withMnemonic mnemonic ((_IEPCurrency.cell :?> IEPCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((IEPCurrencyModel.Cast _IEPCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module IEPCurrencyFunction =
             try
 
                 let _IEPCurrency = Helper.toCell<IEPCurrency> iepcurrency "IEPCurrency"  
-                let builder () = withMnemonic mnemonic ((_IEPCurrency.cell :?> IEPCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((IEPCurrencyModel.Cast _IEPCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

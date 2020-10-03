@@ -49,7 +49,7 @@ module SparseMatrixFunction =
             try
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
-                let builder () = withMnemonic mnemonic ((_SparseMatrix.cell :?> SparseMatrixModel).Clear
+                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).Clear
                                                        ) :> ICell
                 let format (o : SparseMatrix) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module SparseMatrixFunction =
             try
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
-                let builder () = withMnemonic mnemonic ((_SparseMatrix.cell :?> SparseMatrixModel).Columns
+                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).Columns
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -127,7 +127,7 @@ module SparseMatrixFunction =
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
                 let _col = Helper.toCell<int> col "col" 
-                let builder () = withMnemonic mnemonic ((_SparseMatrix.cell :?> SparseMatrixModel).GetAt
+                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetAt
                                                             _row.cell 
                                                             _col.cell 
                                                        ) :> ICell
@@ -172,7 +172,7 @@ module SparseMatrixFunction =
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _col = Helper.toCell<int> col "col" 
-                let builder () = withMnemonic mnemonic ((_SparseMatrix.cell :?> SparseMatrixModel).GetColumnData
+                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetColumnData
                                                             _col.cell 
                                                        ) :> ICell
                 let format (o : Generic.IEnumerable<double>) (l:string) = o.ToString() :> obj
@@ -214,7 +214,7 @@ module SparseMatrixFunction =
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _col = Helper.toCell<int> col "col" 
-                let builder () = withMnemonic mnemonic ((_SparseMatrix.cell :?> SparseMatrixModel).GetColumnDataCount
+                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetColumnDataCount
                                                             _col.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -256,7 +256,7 @@ module SparseMatrixFunction =
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
-                let builder () = withMnemonic mnemonic ((_SparseMatrix.cell :?> SparseMatrixModel).GetRowData
+                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetRowData
                                                             _row.cell 
                                                        ) :> ICell
                 let format (o : Generic.IEnumerable<double>) (l:string) = o.ToString() :> obj
@@ -298,7 +298,7 @@ module SparseMatrixFunction =
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
-                let builder () = withMnemonic mnemonic ((_SparseMatrix.cell :?> SparseMatrixModel).GetRowDataCount
+                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).GetRowDataCount
                                                             _row.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -343,7 +343,7 @@ module SparseMatrixFunction =
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
                 let _col = Helper.toCell<int> col "col" 
-                let builder () = withMnemonic mnemonic ((_SparseMatrix.cell :?> SparseMatrixModel).RemoveAt
+                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).RemoveAt
                                                             _row.cell 
                                                             _col.cell 
                                                        ) :> ICell
@@ -385,7 +385,7 @@ module SparseMatrixFunction =
             try
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
-                let builder () = withMnemonic mnemonic ((_SparseMatrix.cell :?> SparseMatrixModel).Rows
+                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).Rows
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -430,7 +430,7 @@ module SparseMatrixFunction =
                 let _row = Helper.toCell<int> row "row" 
                 let _col = Helper.toCell<int> col "col" 
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((_SparseMatrix.cell :?> SparseMatrixModel).SetAt
+                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).SetAt
                                                             _row.cell 
                                                             _col.cell 
                                                             _value.cell 
@@ -592,7 +592,7 @@ module SparseMatrixFunction =
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
                 let _row = Helper.toCell<int> row "row" 
                 let _col = Helper.toCell<int> col "col" 
-                let builder () = withMnemonic mnemonic ((_SparseMatrix.cell :?> SparseMatrixModel).This
+                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).This
                                                             _row.cell 
                                                             _col.cell 
                                                        ) :> ICell
@@ -634,7 +634,7 @@ module SparseMatrixFunction =
             try
 
                 let _SparseMatrix = Helper.toCell<SparseMatrix> sparsematrix "SparseMatrix"  
-                let builder () = withMnemonic mnemonic ((_SparseMatrix.cell :?> SparseMatrixModel).Values
+                let builder () = withMnemonic mnemonic ((SparseMatrixModel.Cast _SparseMatrix.cell).Values
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

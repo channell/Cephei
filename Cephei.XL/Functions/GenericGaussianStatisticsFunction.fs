@@ -56,7 +56,7 @@ module GenericGaussianStatisticsFunction =
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _value = Helper.toCell<double> value "value" 
                 let _weight = Helper.toCell<double> weight "weight" 
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).Add
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Add
                                                             _value.cell 
                                                             _weight.cell 
                                                        ) :> ICell
@@ -105,7 +105,7 @@ module GenericGaussianStatisticsFunction =
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _weight = Helper.toCell<Generic.List<double>> weight "weight" 
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).AddSequence
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).AddSequence
                                                             _data.cell 
                                                             _weight.cell 
                                                        ) :> ICell
@@ -147,7 +147,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -189,7 +189,7 @@ module GenericGaussianStatisticsFunction =
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _f = Helper.toCell<Func<Generic.KeyValuePair<double,double>,double>> f "f" 
                 let _inRange = Helper.toCell<Func<Generic.KeyValuePair<double,double>,bool>> inRange "inRange" 
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).ExpectationValue
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).ExpectationValue
                                                             _f.cell 
                                                             _inRange.cell 
                                                        ) :> ICell
@@ -234,7 +234,7 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _target = Helper.toCell<double> target "target" 
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).GaussianAverageShortfall
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianAverageShortfall
                                                             _target.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -273,7 +273,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).GaussianDownsideDeviation
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianDownsideDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -309,7 +309,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).GaussianDownsideVariance
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianDownsideVariance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -348,7 +348,7 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).GaussianExpectedShortfall
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianExpectedShortfall
                                                             _percentile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -390,7 +390,7 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).GaussianPercentile
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianPercentile
                                                             _percentile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -432,7 +432,7 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).GaussianPotentialUpside
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianPotentialUpside
                                                             _percentile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -474,7 +474,7 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _target = Helper.toCell<double> target "target" 
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).GaussianRegret
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianRegret
                                                             _target.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -516,7 +516,7 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _target = Helper.toCell<double> target "target" 
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).GaussianShortfall
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianShortfall
                                                             _target.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -558,7 +558,7 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).GaussianTopPercentile
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianTopPercentile
                                                             _percentile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -600,7 +600,7 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percentile = Helper.toCell<double> percentile "percentile" 
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).GaussianValueAtRisk
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).GaussianValueAtRisk
                                                             _percentile.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -707,7 +707,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).Kurtosis
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Kurtosis
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -743,7 +743,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).Max
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Max
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -779,7 +779,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).Mean
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Mean
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -815,7 +815,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).Min
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Min
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -854,7 +854,7 @@ module GenericGaussianStatisticsFunction =
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
                 let _percent = Helper.toCell<double> percent "percent" 
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).Percentile
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Percentile
                                                             _percent.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -893,7 +893,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).Reset
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Reset
                                                        ) :> ICell
                 let format (o : GenericGaussianStatistics) (l:string) = o.ToString() :> obj
 
@@ -929,7 +929,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).Samples
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Samples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -965,7 +965,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).Skewness
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Skewness
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1001,7 +1001,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).StandardDeviation
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).StandardDeviation
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1037,7 +1037,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).Variance
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).Variance
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1073,7 +1073,7 @@ module GenericGaussianStatisticsFunction =
             try
 
                 let _GenericGaussianStatistics = Helper.toCell<GenericGaussianStatistics> genericgaussianstatistics "GenericGaussianStatistics"  
-                let builder () = withMnemonic mnemonic ((_GenericGaussianStatistics.cell :?> GenericGaussianStatisticsModel).WeightSum
+                let builder () = withMnemonic mnemonic ((GenericGaussianStatisticsModel.Cast _GenericGaussianStatistics.cell).WeightSum
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

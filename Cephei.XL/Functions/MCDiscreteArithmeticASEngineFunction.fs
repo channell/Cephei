@@ -126,7 +126,7 @@ module MCDiscreteArithmeticASEngineFunction =
 
                 let _MCDiscreteArithmeticASEngine = Helper.toCell<MCDiscreteArithmeticASEngine> mcdiscretearithmeticasengine "MCDiscreteArithmeticASEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_MCDiscreteArithmeticASEngine.cell :?> MCDiscreteArithmeticASEngineModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticASEngineModel.Cast _MCDiscreteArithmeticASEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : MCDiscreteArithmeticASEngine) (l:string) = o.ToString() :> obj
@@ -165,7 +165,7 @@ module MCDiscreteArithmeticASEngineFunction =
             try
 
                 let _MCDiscreteArithmeticASEngine = Helper.toCell<MCDiscreteArithmeticASEngine> mcdiscretearithmeticasengine "MCDiscreteArithmeticASEngine"  
-                let builder () = withMnemonic mnemonic ((_MCDiscreteArithmeticASEngine.cell :?> MCDiscreteArithmeticASEngineModel).Reset
+                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticASEngineModel.Cast _MCDiscreteArithmeticASEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : MCDiscreteArithmeticASEngine) (l:string) = o.ToString() :> obj
 
@@ -204,7 +204,7 @@ module MCDiscreteArithmeticASEngineFunction =
 
                 let _MCDiscreteArithmeticASEngine = Helper.toCell<MCDiscreteArithmeticASEngine> mcdiscretearithmeticasengine "MCDiscreteArithmeticASEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_MCDiscreteArithmeticASEngine.cell :?> MCDiscreteArithmeticASEngineModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticASEngineModel.Cast _MCDiscreteArithmeticASEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : MCDiscreteArithmeticASEngine) (l:string) = o.ToString() :> obj
@@ -243,7 +243,7 @@ module MCDiscreteArithmeticASEngineFunction =
             try
 
                 let _MCDiscreteArithmeticASEngine = Helper.toCell<MCDiscreteArithmeticASEngine> mcdiscretearithmeticasengine "MCDiscreteArithmeticASEngine"  
-                let builder () = withMnemonic mnemonic ((_MCDiscreteArithmeticASEngine.cell :?> MCDiscreteArithmeticASEngineModel).Update
+                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticASEngineModel.Cast _MCDiscreteArithmeticASEngine.cell).Update
                                                        ) :> ICell
                 let format (o : MCDiscreteArithmeticASEngine) (l:string) = o.ToString() :> obj
 
@@ -279,7 +279,7 @@ module MCDiscreteArithmeticASEngineFunction =
             try
 
                 let _MCDiscreteArithmeticASEngine = Helper.toCell<MCDiscreteArithmeticASEngine> mcdiscretearithmeticasengine "MCDiscreteArithmeticASEngine"  
-                let builder () = withMnemonic mnemonic ((_MCDiscreteArithmeticASEngine.cell :?> MCDiscreteArithmeticASEngineModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticASEngineModel.Cast _MCDiscreteArithmeticASEngine.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -315,7 +315,7 @@ module MCDiscreteArithmeticASEngineFunction =
             try
 
                 let _MCDiscreteArithmeticASEngine = Helper.toCell<MCDiscreteArithmeticASEngine> mcdiscretearithmeticasengine "MCDiscreteArithmeticASEngine"  
-                let builder () = withMnemonic mnemonic ((_MCDiscreteArithmeticASEngine.cell :?> MCDiscreteArithmeticASEngineModel).SampleAccumulator
+                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticASEngineModel.Cast _MCDiscreteArithmeticASEngine.cell).SampleAccumulator
                                                        ) :> ICell
                 let format (o : S) (l:string) = o.ToString() :> obj
 
@@ -360,7 +360,7 @@ module MCDiscreteArithmeticASEngineFunction =
                 let _tolerance = Helper.toCell<double> tolerance "tolerance" 
                 let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
                 let _minSamples = Helper.toCell<int> minSamples "minSamples" 
-                let builder () = withMnemonic mnemonic ((_MCDiscreteArithmeticASEngine.cell :?> MCDiscreteArithmeticASEngineModel).Value
+                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticASEngineModel.Cast _MCDiscreteArithmeticASEngine.cell).Value
                                                             _tolerance.cell 
                                                             _maxSamples.cell 
                                                             _minSamples.cell 
@@ -408,7 +408,7 @@ module MCDiscreteArithmeticASEngineFunction =
 
                 let _MCDiscreteArithmeticASEngine = Helper.toCell<MCDiscreteArithmeticASEngine> mcdiscretearithmeticasengine "MCDiscreteArithmeticASEngine"  
                 let _samples = Helper.toCell<int> samples "samples" 
-                let builder () = withMnemonic mnemonic ((_MCDiscreteArithmeticASEngine.cell :?> MCDiscreteArithmeticASEngineModel).ValueWithSamples
+                let builder () = withMnemonic mnemonic ((MCDiscreteArithmeticASEngineModel.Cast _MCDiscreteArithmeticASEngine.cell).ValueWithSamples
                                                             _samples.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

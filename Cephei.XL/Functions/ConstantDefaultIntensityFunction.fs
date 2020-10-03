@@ -135,7 +135,7 @@ module ConstantDefaultIntensityFunction =
                 let _ConstantDefaultIntensity = Helper.toCell<ConstantDefaultIntensity> constantdefaultintensity "ConstantDefaultIntensity"  
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((_ConstantDefaultIntensity.cell :?> ConstantDefaultIntensityModel).DefaultRecovery
+                let builder () = withMnemonic mnemonic ((ConstantDefaultIntensityModel.Cast _ConstantDefaultIntensity.cell).DefaultRecovery
                                                             _t.cell 
                                                             _s.cell 
                                                        ) :> ICell
@@ -183,7 +183,7 @@ module ConstantDefaultIntensityFunction =
                 let _ConstantDefaultIntensity = Helper.toCell<ConstantDefaultIntensity> constantdefaultintensity "ConstantDefaultIntensity"  
                 let _t = Helper.toCell<double> t "t" 
                 let _s = Helper.toCell<double> s "s" 
-                let builder () = withMnemonic mnemonic ((_ConstantDefaultIntensity.cell :?> ConstantDefaultIntensityModel).HazardRate
+                let builder () = withMnemonic mnemonic ((ConstantDefaultIntensityModel.Cast _ConstantDefaultIntensity.cell).HazardRate
                                                             _t.cell 
                                                             _s.cell 
                                                        ) :> ICell

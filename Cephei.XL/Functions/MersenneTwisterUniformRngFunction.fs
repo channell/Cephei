@@ -52,7 +52,7 @@ module MersenneTwisterUniformRngFunction =
 
                 let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng"  
                 let _seed = Helper.toCell<uint64> seed "seed" 
-                let builder () = withMnemonic mnemonic ((_MersenneTwisterUniformRng.cell :?> MersenneTwisterUniformRngModel).Factory
+                let builder () = withMnemonic mnemonic ((MersenneTwisterUniformRngModel.Cast _MersenneTwisterUniformRng.cell).Factory
                                                             _seed.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNGTraits>) l
@@ -196,7 +196,7 @@ module MersenneTwisterUniformRngFunction =
             try
 
                 let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng"  
-                let builder () = withMnemonic mnemonic ((_MersenneTwisterUniformRng.cell :?> MersenneTwisterUniformRngModel).Next
+                let builder () = withMnemonic mnemonic ((MersenneTwisterUniformRngModel.Cast _MersenneTwisterUniformRng.cell).Next
                                                        ) :> ICell
                 let format (o : Sample<double>) (l:string) = o.ToString() :> obj
 
@@ -232,7 +232,7 @@ module MersenneTwisterUniformRngFunction =
             try
 
                 let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng"  
-                let builder () = withMnemonic mnemonic ((_MersenneTwisterUniformRng.cell :?> MersenneTwisterUniformRngModel).NextInt32
+                let builder () = withMnemonic mnemonic ((MersenneTwisterUniformRngModel.Cast _MersenneTwisterUniformRng.cell).NextInt32
                                                        ) :> ICell
                 let format (o : uint64) (l:string) = o.ToString() :> obj
 
@@ -268,7 +268,7 @@ module MersenneTwisterUniformRngFunction =
             try
 
                 let _MersenneTwisterUniformRng = Helper.toCell<MersenneTwisterUniformRng> mersennetwisteruniformrng "MersenneTwisterUniformRng"  
-                let builder () = withMnemonic mnemonic ((_MersenneTwisterUniformRng.cell :?> MersenneTwisterUniformRngModel).NextReal
+                let builder () = withMnemonic mnemonic ((MersenneTwisterUniformRngModel.Cast _MersenneTwisterUniformRng.cell).NextReal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

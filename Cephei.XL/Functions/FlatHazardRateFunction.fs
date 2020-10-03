@@ -257,7 +257,7 @@ module FlatHazardRateFunction =
             try
 
                 let _FlatHazardRate = Helper.toCell<FlatHazardRate> flathazardrate "FlatHazardRate"  
-                let builder () = withMnemonic mnemonic ((_FlatHazardRate.cell :?> FlatHazardRateModel).MaxDate
+                let builder () = withMnemonic mnemonic ((FlatHazardRateModel.Cast _FlatHazardRate.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

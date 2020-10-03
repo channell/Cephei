@@ -101,7 +101,7 @@ module HestonHullWhitePathPricerFunction =
 
                 let _HestonHullWhitePathPricer = Helper.toCell<HestonHullWhitePathPricer> hestonhullwhitepathpricer "HestonHullWhitePathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder () = withMnemonic mnemonic ((_HestonHullWhitePathPricer.cell :?> HestonHullWhitePathPricerModel).Value
+                let builder () = withMnemonic mnemonic ((HestonHullWhitePathPricerModel.Cast _HestonHullWhitePathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

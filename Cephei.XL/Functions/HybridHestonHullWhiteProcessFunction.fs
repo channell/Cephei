@@ -55,7 +55,7 @@ module HybridHestonHullWhiteProcessFunction =
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dx = Helper.toCell<Vector> dx "dx" 
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Apply
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Apply
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module HybridHestonHullWhiteProcessFunction =
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Diffusion
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -145,7 +145,7 @@ module HybridHestonHullWhiteProcessFunction =
             try
 
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Discretization
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Discretization
                                                        ) :> ICell
                 let format (o : HestonProcess.Discretization) (l:string) = o.ToString() :> obj
 
@@ -187,7 +187,7 @@ module HybridHestonHullWhiteProcessFunction =
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Drift
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -229,7 +229,7 @@ module HybridHestonHullWhiteProcessFunction =
             try
 
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Eta
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Eta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -277,7 +277,7 @@ module HybridHestonHullWhiteProcessFunction =
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<Vector> dw "dw" 
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Evolve
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -325,7 +325,7 @@ module HybridHestonHullWhiteProcessFunction =
             try
 
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).HestonProcess
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).HestonProcess
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HestonProcess>) l
 
@@ -361,7 +361,7 @@ module HybridHestonHullWhiteProcessFunction =
             try
 
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).HullWhiteProcess
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).HullWhiteProcess
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HullWhiteForwardProcess>) l
 
@@ -452,7 +452,7 @@ module HybridHestonHullWhiteProcessFunction =
             try
 
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).InitialValues
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -494,7 +494,7 @@ module HybridHestonHullWhiteProcessFunction =
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Numeraire
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Numeraire
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -536,7 +536,7 @@ module HybridHestonHullWhiteProcessFunction =
             try
 
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Size
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -575,7 +575,7 @@ module HybridHestonHullWhiteProcessFunction =
 
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Time
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Time
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -614,7 +614,7 @@ module HybridHestonHullWhiteProcessFunction =
             try
 
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Update
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Update
                                                        ) :> ICell
                 let format (o : HybridHestonHullWhiteProcess) (l:string) = o.ToString() :> obj
 
@@ -659,7 +659,7 @@ module HybridHestonHullWhiteProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Covariance
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -713,7 +713,7 @@ module HybridHestonHullWhiteProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Expectation
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -758,7 +758,7 @@ module HybridHestonHullWhiteProcessFunction =
             try
 
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).Factors
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -797,7 +797,7 @@ module HybridHestonHullWhiteProcessFunction =
 
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : HybridHestonHullWhiteProcess) (l:string) = o.ToString() :> obj
@@ -845,7 +845,7 @@ module HybridHestonHullWhiteProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).StdDeviation
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -893,7 +893,7 @@ module HybridHestonHullWhiteProcessFunction =
 
                 let _HybridHestonHullWhiteProcess = Helper.toCell<HybridHestonHullWhiteProcess> hybridhestonhullwhiteprocess "HybridHestonHullWhiteProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_HybridHestonHullWhiteProcess.cell :?> HybridHestonHullWhiteProcessModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((HybridHestonHullWhiteProcessModel.Cast _HybridHestonHullWhiteProcess.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : HybridHestonHullWhiteProcess) (l:string) = o.ToString() :> obj

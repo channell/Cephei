@@ -201,7 +201,7 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).GetExistingHelpers
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).GetExistingHelpers
                                                        ) :> ICell
                 let format (o : System.Collections.Generic.Dictionary<double,ISectionHelper>) (l:string) = o.ToString() :> obj
 
@@ -243,7 +243,7 @@ module ConvexMonotoneInterpolationFunction =
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).Derivative
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -285,7 +285,7 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).Empty
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -327,7 +327,7 @@ module ConvexMonotoneInterpolationFunction =
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).Primitive
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -375,7 +375,7 @@ module ConvexMonotoneInterpolationFunction =
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).SecondDerivative
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -417,7 +417,7 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).Update
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : ConvexMonotoneInterpolation) (l:string) = o.ToString() :> obj
 
@@ -459,7 +459,7 @@ module ConvexMonotoneInterpolationFunction =
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).Value1
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -504,7 +504,7 @@ module ConvexMonotoneInterpolationFunction =
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).Value
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -543,7 +543,7 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).XMax
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -579,7 +579,7 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).XMin
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -615,7 +615,7 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -654,7 +654,7 @@ module ConvexMonotoneInterpolationFunction =
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : ConvexMonotoneInterpolation) (l:string) = o.ToString() :> obj
@@ -696,7 +696,7 @@ module ConvexMonotoneInterpolationFunction =
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : ConvexMonotoneInterpolation) (l:string) = o.ToString() :> obj
@@ -735,7 +735,7 @@ module ConvexMonotoneInterpolationFunction =
             try
 
                 let _ConvexMonotoneInterpolation = Helper.toCell<ConvexMonotoneInterpolation> convexmonotoneinterpolation "ConvexMonotoneInterpolation"  
-                let builder () = withMnemonic mnemonic ((_ConvexMonotoneInterpolation.cell :?> ConvexMonotoneInterpolationModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((ConvexMonotoneInterpolationModel.Cast _ConvexMonotoneInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

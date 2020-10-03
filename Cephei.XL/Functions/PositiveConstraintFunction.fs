@@ -80,7 +80,7 @@ module PositiveConstraintFunction =
             try
 
                 let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
-                let builder () = withMnemonic mnemonic ((_PositiveConstraint.cell :?> PositiveConstraintModel).Empty
+                let builder () = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -119,7 +119,7 @@ module PositiveConstraintFunction =
 
                 let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((_PositiveConstraint.cell :?> PositiveConstraintModel).LowerBound
+                let builder () = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -161,7 +161,7 @@ module PositiveConstraintFunction =
 
                 let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((_PositiveConstraint.cell :?> PositiveConstraintModel).Test
+                let builder () = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).Test
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -209,7 +209,7 @@ module PositiveConstraintFunction =
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder () = withMnemonic mnemonic ((_PositiveConstraint.cell :?> PositiveConstraintModel).Update
+                let builder () = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).Update
                                                             _p.cell 
                                                             _direction.cell 
                                                             _beta.cell 
@@ -257,7 +257,7 @@ module PositiveConstraintFunction =
 
                 let _PositiveConstraint = Helper.toCell<PositiveConstraint> positiveconstraint "PositiveConstraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((_PositiveConstraint.cell :?> PositiveConstraintModel).UpperBound
+                let builder () = withMnemonic mnemonic ((PositiveConstraintModel.Cast _PositiveConstraint.cell).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

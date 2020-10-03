@@ -49,7 +49,7 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).AddParams_
+                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).AddParams_
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -85,7 +85,7 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).Error_
+                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Error_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -121,7 +121,7 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).Forward_
+                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Forward_
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -157,7 +157,7 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).MaxError_
+                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).MaxError_
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -193,7 +193,7 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).Model_
+                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Model_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IModel>) l
 
@@ -229,7 +229,7 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).ModelInstance_
+                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).ModelInstance_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IWrapper>) l
 
@@ -265,7 +265,7 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).ParamIsFixed_
+                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).ParamIsFixed_
                                                        ) :> ICell
                 let format (i : Generic.List<bool>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -301,7 +301,7 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).Params_
+                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Params_
                                                        ) :> ICell
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -337,7 +337,7 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).T_
+                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).T_
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -373,7 +373,7 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).UpdateModelInstance
+                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).UpdateModelInstance
                                                        ) :> ICell
                 let format (o : XABRCoeffHolder) (l:string) = o.ToString() :> obj
 
@@ -409,7 +409,7 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).Weights_
+                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).Weights_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -506,7 +506,7 @@ module XABRCoeffHolderFunction =
             try
 
                 let _XABRCoeffHolder = Helper.toCell<XABRCoeffHolder> xabrcoeffholder "XABRCoeffHolder"  
-                let builder () = withMnemonic mnemonic ((_XABRCoeffHolder.cell :?> XABRCoeffHolderModel).XABREndCriteria_
+                let builder () = withMnemonic mnemonic ((XABRCoeffHolderModel.Cast _XABRCoeffHolder.cell).XABREndCriteria_
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 

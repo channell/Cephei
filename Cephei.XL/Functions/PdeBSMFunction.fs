@@ -55,7 +55,7 @@ module PdeBSMFunction =
                 let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_PdeBSM.cell :?> PdeBSMModel).Diffusion
+                let builder () = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module PdeBSMFunction =
                 let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_PdeBSM.cell :?> PdeBSMModel).Discount
+                let builder () = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).Discount
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -151,7 +151,7 @@ module PdeBSMFunction =
                 let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_PdeBSM.cell :?> PdeBSMModel).Drift
+                let builder () = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -196,7 +196,7 @@ module PdeBSMFunction =
 
                 let _PdeBSM = Helper.toCell<PdeBSM> pdebsm "PdeBSM"  
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
-                let builder () = withMnemonic mnemonic ((_PdeBSM.cell :?> PdeBSMModel).Factory
+                let builder () = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).Factory
                                                             _Process.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PdeSecondOrderParabolic>) l
@@ -312,7 +312,7 @@ module PdeBSMFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _tg = Helper.toCell<TransformedGrid> tg "tg" 
                 let _L = Helper.toCell<TridiagonalOperator> L "L" 
-                let builder () = withMnemonic mnemonic ((_PdeBSM.cell :?> PdeBSMModel).GenerateOperator
+                let builder () = withMnemonic mnemonic ((PdeBSMModel.Cast _PdeBSM.cell).GenerateOperator
                                                             _t.cell 
                                                             _tg.cell 
                                                             _L.cell 

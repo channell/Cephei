@@ -135,7 +135,7 @@ module AmericanConditionFunction =
                 let _AmericanCondition = Helper.toCell<AmericanCondition> americancondition "AmericanCondition"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_AmericanCondition.cell :?> AmericanConditionModel).ApplyTo
+                let builder () = withMnemonic mnemonic ((AmericanConditionModel.Cast _AmericanCondition.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell

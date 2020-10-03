@@ -104,7 +104,7 @@ module ProportionalNotionalRiskFunction =
                 let _ProportionalNotionalRisk = Helper.toCell<ProportionalNotionalRisk> proportionalnotionalrisk "ProportionalNotionalRisk"  
                 let _events = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> events "events" 
                 let _path = Helper.toCell<NotionalPath> path "path" 
-                let builder () = withMnemonic mnemonic ((_ProportionalNotionalRisk.cell :?> ProportionalNotionalRiskModel).UpdatePath
+                let builder () = withMnemonic mnemonic ((ProportionalNotionalRiskModel.Cast _ProportionalNotionalRisk.cell).UpdatePath
                                                             _events.cell 
                                                             _path.cell 
                                                        ) :> ICell

@@ -56,7 +56,7 @@ module SobolBrownianGeneratorFactoryFunction =
                 let _SobolBrownianGeneratorFactory = Helper.toCell<SobolBrownianGeneratorFactory> sobolbrowniangeneratorfactory "SobolBrownianGeneratorFactory"  
                 let _factors = Helper.toCell<int> factors "factors" 
                 let _steps = Helper.toCell<int> steps "steps" 
-                let builder () = withMnemonic mnemonic ((_SobolBrownianGeneratorFactory.cell :?> SobolBrownianGeneratorFactoryModel).Create
+                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorFactoryModel.Cast _SobolBrownianGeneratorFactory.cell).Create
                                                             _factors.cell 
                                                             _steps.cell 
                                                        ) :> ICell

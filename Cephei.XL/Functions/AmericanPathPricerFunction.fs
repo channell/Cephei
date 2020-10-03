@@ -98,7 +98,7 @@ module AmericanPathPricerFunction =
             try
 
                 let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
-                let builder () = withMnemonic mnemonic ((_AmericanPathPricer.cell :?> AmericanPathPricerModel).BasisSystem
+                let builder () = withMnemonic mnemonic ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).BasisSystem
                                                        ) :> ICell
                 let format (i : Generic.List<Func<double,double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -140,7 +140,7 @@ module AmericanPathPricerFunction =
                 let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let _t = Helper.toCell<int> t "t" 
-                let builder () = withMnemonic mnemonic ((_AmericanPathPricer.cell :?> AmericanPathPricerModel).State
+                let builder () = withMnemonic mnemonic ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).State
                                                             _path.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -188,7 +188,7 @@ module AmericanPathPricerFunction =
                 let _AmericanPathPricer = Helper.toCell<AmericanPathPricer> americanpathpricer "AmericanPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
                 let _t = Helper.toCell<int> t "t" 
-                let builder () = withMnemonic mnemonic ((_AmericanPathPricer.cell :?> AmericanPathPricerModel).Value
+                let builder () = withMnemonic mnemonic ((AmericanPathPricerModel.Cast _AmericanPathPricer.cell).Value
                                                             _path.cell 
                                                             _t.cell 
                                                        ) :> ICell

@@ -98,7 +98,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).MandatoryTimes
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -137,7 +137,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).Reset
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Reset
                                                             _size.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
@@ -176,7 +176,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).AdjustValues
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
 
@@ -218,7 +218,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
                 let _Method = Helper.toCell<Lattice> Method "Method" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).Initialize
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Initialize
                                                             _Method.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -260,7 +260,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).Method
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
@@ -299,7 +299,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).PartialRollback
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).PartialRollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
@@ -338,7 +338,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).PostAdjustValues
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
 
@@ -374,7 +374,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).PreAdjustValues
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
 
@@ -410,7 +410,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).PresentValue
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -449,7 +449,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).Rollback
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Rollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
@@ -491,7 +491,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).SetTime
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
@@ -533,7 +533,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).SetValues
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).SetValues
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedDermanKaniBarrierOption) (l:string) = o.ToString() :> obj
@@ -572,7 +572,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).Time
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -608,7 +608,7 @@ module DiscretizedDermanKaniBarrierOptionFunction =
             try
 
                 let _DiscretizedDermanKaniBarrierOption = Helper.toCell<DiscretizedDermanKaniBarrierOption> discretizeddermankanibarrieroption "DiscretizedDermanKaniBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedDermanKaniBarrierOption.cell :?> DiscretizedDermanKaniBarrierOptionModel).Values
+                let builder () = withMnemonic mnemonic ((DiscretizedDermanKaniBarrierOptionModel.Cast _DiscretizedDermanKaniBarrierOption.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

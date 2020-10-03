@@ -52,7 +52,7 @@ module NoOffsetFunction =
 
                 let _NoOffset = Helper.toCell<NoOffset> nooffset "NoOffset"  
                 let _eventDate = Helper.toCell<Date> eventDate "eventDate" 
-                let builder () = withMnemonic mnemonic ((_NoOffset.cell :?> NoOffsetModel).PaymentDate
+                let builder () = withMnemonic mnemonic ((NoOffsetModel.Cast _NoOffset.cell).PaymentDate
                                                             _eventDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj

@@ -55,7 +55,7 @@ module LPP2HestonExpansionFunction =
                 let _LPP2HestonExpansion = Helper.toCell<LPP2HestonExpansion> lpp2hestonexpansion "LPP2HestonExpansion"  
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _forward = Helper.toCell<double> forward "forward" 
-                let builder () = withMnemonic mnemonic ((_LPP2HestonExpansion.cell :?> LPP2HestonExpansionModel).ImpliedVolatility
+                let builder () = withMnemonic mnemonic ((LPP2HestonExpansionModel.Cast _LPP2HestonExpansion.cell).ImpliedVolatility
                                                             _strike.cell 
                                                             _forward.cell 
                                                        ) :> ICell

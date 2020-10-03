@@ -49,7 +49,7 @@ module ForwardTypePayoffFunction =
             try
 
                 let _ForwardTypePayoff = Helper.toCell<ForwardTypePayoff> forwardtypepayoff "ForwardTypePayoff"  
-                let builder () = withMnemonic mnemonic ((_ForwardTypePayoff.cell :?> ForwardTypePayoffModel).Description
+                let builder () = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module ForwardTypePayoffFunction =
             try
 
                 let _ForwardTypePayoff = Helper.toCell<ForwardTypePayoff> forwardtypepayoff "ForwardTypePayoff"  
-                let builder () = withMnemonic mnemonic ((_ForwardTypePayoff.cell :?> ForwardTypePayoffModel).ForwardType
+                let builder () = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).ForwardType
                                                        ) :> ICell
                 let format (o : Position.Type) (l:string) = o.ToString() :> obj
 
@@ -164,7 +164,7 @@ module ForwardTypePayoffFunction =
             try
 
                 let _ForwardTypePayoff = Helper.toCell<ForwardTypePayoff> forwardtypepayoff "ForwardTypePayoff"  
-                let builder () = withMnemonic mnemonic ((_ForwardTypePayoff.cell :?> ForwardTypePayoffModel).Name
+                let builder () = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -200,7 +200,7 @@ module ForwardTypePayoffFunction =
             try
 
                 let _ForwardTypePayoff = Helper.toCell<ForwardTypePayoff> forwardtypepayoff "ForwardTypePayoff"  
-                let builder () = withMnemonic mnemonic ((_ForwardTypePayoff.cell :?> ForwardTypePayoffModel).Strike
+                let builder () = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -239,7 +239,7 @@ module ForwardTypePayoffFunction =
 
                 let _ForwardTypePayoff = Helper.toCell<ForwardTypePayoff> forwardtypepayoff "ForwardTypePayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((_ForwardTypePayoff.cell :?> ForwardTypePayoffModel).Value
+                let builder () = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -281,7 +281,7 @@ module ForwardTypePayoffFunction =
 
                 let _ForwardTypePayoff = Helper.toCell<ForwardTypePayoff> forwardtypepayoff "ForwardTypePayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_ForwardTypePayoff.cell :?> ForwardTypePayoffModel).Accept
+                let builder () = withMnemonic mnemonic ((ForwardTypePayoffModel.Cast _ForwardTypePayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : ForwardTypePayoff) (l:string) = o.ToString() :> obj

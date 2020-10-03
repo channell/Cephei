@@ -136,7 +136,7 @@ module FirstDerivativeOpFunction =
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Add
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Add
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
@@ -182,7 +182,7 @@ module FirstDerivativeOpFunction =
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _u = Helper.toCell<Vector> u "u" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Add1
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Add1
                                                             _u.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
@@ -225,7 +225,7 @@ module FirstDerivativeOpFunction =
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _m = Helper.toCell<TripleBandLinearOp> m "m" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Add2
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Add2
                                                             _m.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
@@ -268,7 +268,7 @@ module FirstDerivativeOpFunction =
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _r = Helper.toCell<Vector> r "r" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Apply
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Apply
                                                             _r.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -310,7 +310,7 @@ module FirstDerivativeOpFunction =
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).ApplyTo
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -361,7 +361,7 @@ module FirstDerivativeOpFunction =
                 let _x = Helper.toCell<TripleBandLinearOp> x "x" 
                 let _y = Helper.toCell<TripleBandLinearOp> y "y" 
                 let _b = Helper.toCell<Vector> b "b" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Axpyb
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Axpyb
                                                             _a.cell 
                                                             _x.cell 
                                                             _y.cell 
@@ -409,7 +409,7 @@ module FirstDerivativeOpFunction =
             try
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Clone
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -448,7 +448,7 @@ module FirstDerivativeOpFunction =
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Identity
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Identity
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
@@ -487,7 +487,7 @@ module FirstDerivativeOpFunction =
             try
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).IsTimeDependent
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -526,7 +526,7 @@ module FirstDerivativeOpFunction =
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _u = Helper.toCell<Vector> u "u" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Mult
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Mult
                                                             _u.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
@@ -571,7 +571,7 @@ module FirstDerivativeOpFunction =
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _a = Helper.toCell<double> a "a" 
                 let _D = Helper.toCell<IOperator> D "D" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Multiply
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Multiply
                                                             _a.cell 
                                                             _D.cell 
                                                        ) :> ICell
@@ -616,7 +616,7 @@ module FirstDerivativeOpFunction =
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _u = Helper.toCell<Vector> u "u" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).MultR
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).MultR
                                                             _u.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TripleBandLinearOp>) l
@@ -658,7 +658,7 @@ module FirstDerivativeOpFunction =
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).SetTime
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : FirstDerivativeOp) (l:string) = o.ToString() :> obj
@@ -697,7 +697,7 @@ module FirstDerivativeOpFunction =
             try
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Size
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -742,7 +742,7 @@ module FirstDerivativeOpFunction =
                 let _r = Helper.toCell<Vector> r "r" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Solve_splitting
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Solve_splitting
                                                             _r.cell 
                                                             _a.cell 
                                                             _b.cell 
@@ -790,7 +790,7 @@ module FirstDerivativeOpFunction =
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).SolveFor
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -835,7 +835,7 @@ module FirstDerivativeOpFunction =
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Subtract
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Subtract
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
@@ -880,7 +880,7 @@ module FirstDerivativeOpFunction =
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
                 let _m = Helper.toCell<TripleBandLinearOp> m "m" 
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).Swap
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).Swap
                                                             _m.cell 
                                                        ) :> ICell
                 let format (o : FirstDerivativeOp) (l:string) = o.ToString() :> obj
@@ -919,7 +919,7 @@ module FirstDerivativeOpFunction =
             try
 
                 let _FirstDerivativeOp = Helper.toCell<FirstDerivativeOp> firstderivativeop "FirstDerivativeOp"  
-                let builder () = withMnemonic mnemonic ((_FirstDerivativeOp.cell :?> FirstDerivativeOpModel).ToMatrix
+                let builder () = withMnemonic mnemonic ((FirstDerivativeOpModel.Cast _FirstDerivativeOp.cell).ToMatrix
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SparseMatrix>) l
 

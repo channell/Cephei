@@ -95,7 +95,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).InArrears1
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).InArrears1
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -134,7 +134,7 @@ module DigitalIborLegFunction =
             try
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).InArrears
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).InArrears
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
@@ -170,7 +170,7 @@ module DigitalIborLegFunction =
             try
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).Value
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -209,7 +209,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithCallATM
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithCallATM
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -248,7 +248,7 @@ module DigitalIborLegFunction =
             try
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithCallATM1
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithCallATM1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
@@ -287,7 +287,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _payoff = Helper.toCell<double> payoff "payoff" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithCallPayoffs1
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithCallPayoffs1
                                                             _payoff.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -329,7 +329,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _payoffs = Helper.toCell<Generic.List<double>> payoffs "payoffs" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithCallPayoffs
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithCallPayoffs
                                                             _payoffs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -371,7 +371,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithCallStrikes1
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithCallStrikes1
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -413,7 +413,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithCallStrikes
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithCallStrikes
                                                             _strikes.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -455,7 +455,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithFixingDays
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithFixingDays
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -497,7 +497,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithFixingDays1
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithFixingDays1
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -539,7 +539,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithGearings
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithGearings
                                                             _gearings.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -581,7 +581,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithGearings1
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithGearings1
                                                             _gearing.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -623,7 +623,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _Type = Helper.toCell<Position.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithLongCallOption
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithLongCallOption
                                                             _Type.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -665,7 +665,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _Type = Helper.toCell<Position.Type> Type "Type" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithLongPutOption
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithLongPutOption
                                                             _Type.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -707,7 +707,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithNotionals
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithNotionals
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -749,7 +749,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithNotionals1
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithNotionals1
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -791,7 +791,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithPaymentAdjustment
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -833,7 +833,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithPaymentDayCounter
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -875,7 +875,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _flag = Helper.toCell<bool> flag "flag" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithPutATM
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithPutATM
                                                             _flag.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -914,7 +914,7 @@ module DigitalIborLegFunction =
             try
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithPutATM1
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithPutATM1
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
@@ -953,7 +953,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _payoffs = Helper.toCell<Generic.List<double>> payoffs "payoffs" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithPutPayoffs
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithPutPayoffs
                                                             _payoffs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -995,7 +995,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _payoff = Helper.toCell<double> payoff "payoff" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithPutPayoffs1
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithPutPayoffs1
                                                             _payoff.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -1037,7 +1037,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _strikes = Helper.toCell<Generic.List<double>> strikes "strikes" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithPutStrikes1
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithPutStrikes1
                                                             _strikes.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -1079,7 +1079,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithPutStrikes
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithPutStrikes
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -1121,7 +1121,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _replication = Helper.toCell<DigitalReplication> replication "replication" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithReplication1
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithReplication1
                                                             _replication.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -1160,7 +1160,7 @@ module DigitalIborLegFunction =
             try
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithReplication
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithReplication
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
@@ -1199,7 +1199,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithSpreads
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithSpreads
                                                             _spreads.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
@@ -1241,7 +1241,7 @@ module DigitalIborLegFunction =
 
                 let _DigitalIborLeg = Helper.toCell<DigitalIborLeg> digitaliborleg "DigitalIborLeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
-                let builder () = withMnemonic mnemonic ((_DigitalIborLeg.cell :?> DigitalIborLegModel).WithSpreads1
+                let builder () = withMnemonic mnemonic ((DigitalIborLegModel.Cast _DigitalIborLeg.cell).WithSpreads1
                                                             _spread.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l

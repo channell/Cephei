@@ -209,7 +209,7 @@ module BlackCapFloorEngineFunction =
             try
 
                 let _BlackCapFloorEngine = Helper.toCell<BlackCapFloorEngine> blackcapfloorengine "BlackCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((_BlackCapFloorEngine.cell :?> BlackCapFloorEngineModel).Displacement
+                let builder () = withMnemonic mnemonic ((BlackCapFloorEngineModel.Cast _BlackCapFloorEngine.cell).Displacement
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -245,7 +245,7 @@ module BlackCapFloorEngineFunction =
             try
 
                 let _BlackCapFloorEngine = Helper.toCell<BlackCapFloorEngine> blackcapfloorengine "BlackCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((_BlackCapFloorEngine.cell :?> BlackCapFloorEngineModel).TermStructure
+                let builder () = withMnemonic mnemonic ((BlackCapFloorEngineModel.Cast _BlackCapFloorEngine.cell).TermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -281,7 +281,7 @@ module BlackCapFloorEngineFunction =
             try
 
                 let _BlackCapFloorEngine = Helper.toCell<BlackCapFloorEngine> blackcapfloorengine "BlackCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((_BlackCapFloorEngine.cell :?> BlackCapFloorEngineModel).Volatility
+                let builder () = withMnemonic mnemonic ((BlackCapFloorEngineModel.Cast _BlackCapFloorEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<OptionletVolatilityStructure>>) l
 

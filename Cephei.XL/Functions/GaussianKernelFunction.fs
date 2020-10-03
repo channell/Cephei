@@ -52,7 +52,7 @@ module GaussianKernelFunction =
 
                 let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_GaussianKernel.cell :?> GaussianKernelModel).Derivative
+                let builder () = withMnemonic mnemonic ((GaussianKernelModel.Cast _GaussianKernel.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -137,7 +137,7 @@ module GaussianKernelFunction =
 
                 let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_GaussianKernel.cell :?> GaussianKernelModel).Primitive
+                let builder () = withMnemonic mnemonic ((GaussianKernelModel.Cast _GaussianKernel.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -179,7 +179,7 @@ module GaussianKernelFunction =
 
                 let _GaussianKernel = Helper.toCell<GaussianKernel> gaussiankernel "GaussianKernel"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_GaussianKernel.cell :?> GaussianKernelModel).Value
+                let builder () = withMnemonic mnemonic ((GaussianKernelModel.Cast _GaussianKernel.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

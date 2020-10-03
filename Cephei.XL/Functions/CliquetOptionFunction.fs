@@ -110,7 +110,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).Delta
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -146,7 +146,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).DeltaForward
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -182,7 +182,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).DividendRho
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -218,7 +218,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).Elasticity
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -254,7 +254,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).Gamma
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -290,7 +290,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).IsExpired
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -326,7 +326,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).ItmCashProbability
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -362,7 +362,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).Rho
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -398,7 +398,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).StrikeSensitivity
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -434,7 +434,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).Theta
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -470,7 +470,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).ThetaPerDay
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -506,7 +506,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).Vega
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -542,7 +542,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).Exercise
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -578,7 +578,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).Payoff
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -614,7 +614,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).CASH
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -650,7 +650,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -686,7 +686,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).NPV
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -725,7 +725,7 @@ module CliquetOptionFunction =
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).Result
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -767,7 +767,7 @@ module CliquetOptionFunction =
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CliquetOption) (l:string) = o.ToString() :> obj
@@ -806,7 +806,7 @@ module CliquetOptionFunction =
             try
 
                 let _CliquetOption = Helper.toCell<CliquetOption> cliquetoption "CliquetOption"  
-                let builder () = withMnemonic mnemonic ((_CliquetOption.cell :?> CliquetOptionModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((CliquetOptionModel.Cast _CliquetOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

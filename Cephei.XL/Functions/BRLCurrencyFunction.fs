@@ -80,7 +80,7 @@ module BRLCurrencyFunction =
             try
 
                 let _BRLCurrency = Helper.toCell<BRLCurrency> brlcurrency "BRLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BRLCurrency.cell :?> BRLCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((BRLCurrencyModel.Cast _BRLCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module BRLCurrencyFunction =
             try
 
                 let _BRLCurrency = Helper.toCell<BRLCurrency> brlcurrency "BRLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BRLCurrency.cell :?> BRLCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((BRLCurrencyModel.Cast _BRLCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module BRLCurrencyFunction =
 
                 let _BRLCurrency = Helper.toCell<BRLCurrency> brlcurrency "BRLCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_BRLCurrency.cell :?> BRLCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((BRLCurrencyModel.Cast _BRLCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module BRLCurrencyFunction =
             try
 
                 let _BRLCurrency = Helper.toCell<BRLCurrency> brlcurrency "BRLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BRLCurrency.cell :?> BRLCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((BRLCurrencyModel.Cast _BRLCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module BRLCurrencyFunction =
             try
 
                 let _BRLCurrency = Helper.toCell<BRLCurrency> brlcurrency "BRLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BRLCurrency.cell :?> BRLCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((BRLCurrencyModel.Cast _BRLCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module BRLCurrencyFunction =
             try
 
                 let _BRLCurrency = Helper.toCell<BRLCurrency> brlcurrency "BRLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BRLCurrency.cell :?> BRLCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((BRLCurrencyModel.Cast _BRLCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module BRLCurrencyFunction =
             try
 
                 let _BRLCurrency = Helper.toCell<BRLCurrency> brlcurrency "BRLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BRLCurrency.cell :?> BRLCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((BRLCurrencyModel.Cast _BRLCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module BRLCurrencyFunction =
             try
 
                 let _BRLCurrency = Helper.toCell<BRLCurrency> brlcurrency "BRLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BRLCurrency.cell :?> BRLCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((BRLCurrencyModel.Cast _BRLCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module BRLCurrencyFunction =
             try
 
                 let _BRLCurrency = Helper.toCell<BRLCurrency> brlcurrency "BRLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BRLCurrency.cell :?> BRLCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((BRLCurrencyModel.Cast _BRLCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module BRLCurrencyFunction =
             try
 
                 let _BRLCurrency = Helper.toCell<BRLCurrency> brlcurrency "BRLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BRLCurrency.cell :?> BRLCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((BRLCurrencyModel.Cast _BRLCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module BRLCurrencyFunction =
             try
 
                 let _BRLCurrency = Helper.toCell<BRLCurrency> brlcurrency "BRLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BRLCurrency.cell :?> BRLCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((BRLCurrencyModel.Cast _BRLCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module BRLCurrencyFunction =
             try
 
                 let _BRLCurrency = Helper.toCell<BRLCurrency> brlcurrency "BRLCurrency"  
-                let builder () = withMnemonic mnemonic ((_BRLCurrency.cell :?> BRLCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((BRLCurrencyModel.Cast _BRLCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

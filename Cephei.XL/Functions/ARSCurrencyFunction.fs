@@ -80,7 +80,7 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ARSCurrency.cell :?> ARSCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ARSCurrency.cell :?> ARSCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module ARSCurrencyFunction =
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_ARSCurrency.cell :?> ARSCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ARSCurrency.cell :?> ARSCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ARSCurrency.cell :?> ARSCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ARSCurrency.cell :?> ARSCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ARSCurrency.cell :?> ARSCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ARSCurrency.cell :?> ARSCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ARSCurrency.cell :?> ARSCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ARSCurrency.cell :?> ARSCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ARSCurrency.cell :?> ARSCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module ARSCurrencyFunction =
             try
 
                 let _ARSCurrency = Helper.toCell<ARSCurrency> arscurrency "ARSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ARSCurrency.cell :?> ARSCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((ARSCurrencyModel.Cast _ARSCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

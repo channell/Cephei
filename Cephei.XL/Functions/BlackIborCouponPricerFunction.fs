@@ -101,7 +101,7 @@ module BlackIborCouponPricerFunction =
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder () = withMnemonic mnemonic ((_BlackIborCouponPricer.cell :?> BlackIborCouponPricerModel).CapletPrice
+                let builder () = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).CapletPrice
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -143,7 +143,7 @@ module BlackIborCouponPricerFunction =
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
                 let _effectiveCap = Helper.toCell<double> effectiveCap "effectiveCap" 
-                let builder () = withMnemonic mnemonic ((_BlackIborCouponPricer.cell :?> BlackIborCouponPricerModel).CapletRate
+                let builder () = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).CapletRate
                                                             _effectiveCap.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -185,7 +185,7 @@ module BlackIborCouponPricerFunction =
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder () = withMnemonic mnemonic ((_BlackIborCouponPricer.cell :?> BlackIborCouponPricerModel).FloorletPrice
+                let builder () = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).FloorletPrice
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -227,7 +227,7 @@ module BlackIborCouponPricerFunction =
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
                 let _effectiveFloor = Helper.toCell<double> effectiveFloor "effectiveFloor" 
-                let builder () = withMnemonic mnemonic ((_BlackIborCouponPricer.cell :?> BlackIborCouponPricerModel).FloorletRate
+                let builder () = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).FloorletRate
                                                             _effectiveFloor.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -269,7 +269,7 @@ module BlackIborCouponPricerFunction =
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
                 let _coupon = Helper.toCell<FloatingRateCoupon> coupon "coupon" 
-                let builder () = withMnemonic mnemonic ((_BlackIborCouponPricer.cell :?> BlackIborCouponPricerModel).Initialize
+                let builder () = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).Initialize
                                                             _coupon.cell 
                                                        ) :> ICell
                 let format (o : BlackIborCouponPricer) (l:string) = o.ToString() :> obj
@@ -308,7 +308,7 @@ module BlackIborCouponPricerFunction =
             try
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
-                let builder () = withMnemonic mnemonic ((_BlackIborCouponPricer.cell :?> BlackIborCouponPricerModel).SwapletPrice
+                let builder () = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).SwapletPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -344,7 +344,7 @@ module BlackIborCouponPricerFunction =
             try
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
-                let builder () = withMnemonic mnemonic ((_BlackIborCouponPricer.cell :?> BlackIborCouponPricerModel).SwapletRate
+                let builder () = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).SwapletRate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -380,7 +380,7 @@ module BlackIborCouponPricerFunction =
             try
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
-                let builder () = withMnemonic mnemonic ((_BlackIborCouponPricer.cell :?> BlackIborCouponPricerModel).CapletVolatility
+                let builder () = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).CapletVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<OptionletVolatilityStructure>>) l
 
@@ -419,7 +419,7 @@ module BlackIborCouponPricerFunction =
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
                 let _v = Helper.toHandle<OptionletVolatilityStructure> v "v" 
-                let builder () = withMnemonic mnemonic ((_BlackIborCouponPricer.cell :?> BlackIborCouponPricerModel).SetCapletVolatility
+                let builder () = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).SetCapletVolatility
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : BlackIborCouponPricer) (l:string) = o.ToString() :> obj
@@ -461,7 +461,7 @@ module BlackIborCouponPricerFunction =
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_BlackIborCouponPricer.cell :?> BlackIborCouponPricerModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BlackIborCouponPricer) (l:string) = o.ToString() :> obj
@@ -503,7 +503,7 @@ module BlackIborCouponPricerFunction =
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_BlackIborCouponPricer.cell :?> BlackIborCouponPricerModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BlackIborCouponPricer) (l:string) = o.ToString() :> obj
@@ -542,7 +542,7 @@ module BlackIborCouponPricerFunction =
             try
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
-                let builder () = withMnemonic mnemonic ((_BlackIborCouponPricer.cell :?> BlackIborCouponPricerModel).Update
+                let builder () = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).Update
                                                        ) :> ICell
                 let format (o : BlackIborCouponPricer) (l:string) = o.ToString() :> obj
 

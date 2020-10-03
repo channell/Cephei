@@ -92,7 +92,7 @@ module RedemptionFunction =
             try
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
-                let builder () = withMnemonic mnemonic ((_Redemption.cell :?> RedemptionModel).Amount
+                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -128,7 +128,7 @@ module RedemptionFunction =
             try
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
-                let builder () = withMnemonic mnemonic ((_Redemption.cell :?> RedemptionModel).Date
+                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -167,7 +167,7 @@ module RedemptionFunction =
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_Redemption.cell :?> RedemptionModel).CompareTo
+                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -209,7 +209,7 @@ module RedemptionFunction =
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_Redemption.cell :?> RedemptionModel).Equals
+                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -248,7 +248,7 @@ module RedemptionFunction =
             try
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
-                let builder () = withMnemonic mnemonic ((_Redemption.cell :?> RedemptionModel).ExCouponDate
+                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -290,7 +290,7 @@ module RedemptionFunction =
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((_Redemption.cell :?> RedemptionModel).HasOccurred
+                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -335,7 +335,7 @@ module RedemptionFunction =
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((_Redemption.cell :?> RedemptionModel).TradingExCoupon
+                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -377,7 +377,7 @@ module RedemptionFunction =
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_Redemption.cell :?> RedemptionModel).Accept
+                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : Redemption) (l:string) = o.ToString() :> obj
@@ -419,7 +419,7 @@ module RedemptionFunction =
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_Redemption.cell :?> RedemptionModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Redemption) (l:string) = o.ToString() :> obj
@@ -461,7 +461,7 @@ module RedemptionFunction =
 
                 let _Redemption = Helper.toCell<Redemption> redemption "Redemption"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_Redemption.cell :?> RedemptionModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((RedemptionModel.Cast _Redemption.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Redemption) (l:string) = o.ToString() :> obj

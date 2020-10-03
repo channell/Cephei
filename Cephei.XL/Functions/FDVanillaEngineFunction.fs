@@ -50,7 +50,7 @@ module FDVanillaEngineFunction =
             try
 
                 let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
-                let builder () = withMnemonic mnemonic ((_FDVanillaEngine.cell :?> FDVanillaEngineModel).EnsureStrikeInGrid
+                let builder () = withMnemonic mnemonic ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDVanillaEngine) (l:string) = o.ToString() :> obj
 
@@ -98,7 +98,7 @@ module FDVanillaEngineFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((_FDVanillaEngine.cell :?> FDVanillaEngineModel).Factory
+                let builder () = withMnemonic mnemonic ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -232,7 +232,7 @@ module FDVanillaEngineFunction =
             try
 
                 let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
-                let builder () = withMnemonic mnemonic ((_FDVanillaEngine.cell :?> FDVanillaEngineModel).GetResidualTime
+                let builder () = withMnemonic mnemonic ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -268,7 +268,7 @@ module FDVanillaEngineFunction =
             try
 
                 let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
-                let builder () = withMnemonic mnemonic ((_FDVanillaEngine.cell :?> FDVanillaEngineModel).Grid
+                let builder () = withMnemonic mnemonic ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -304,7 +304,7 @@ module FDVanillaEngineFunction =
             try
 
                 let _FDVanillaEngine = Helper.toCell<FDVanillaEngine> fdvanillaengine "FDVanillaEngine"  
-                let builder () = withMnemonic mnemonic ((_FDVanillaEngine.cell :?> FDVanillaEngineModel).IntrinsicValues_
+                let builder () = withMnemonic mnemonic ((FDVanillaEngineModel.Cast _FDVanillaEngine.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 

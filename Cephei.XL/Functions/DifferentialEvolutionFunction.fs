@@ -49,7 +49,7 @@ module DifferentialEvolutionFunction =
             try
 
                 let _DifferentialEvolution = Helper.toCell<DifferentialEvolution> differentialevolution "DifferentialEvolution"  
-                let builder () = withMnemonic mnemonic ((_DifferentialEvolution.cell :?> DifferentialEvolutionModel).Configuration
+                let builder () = withMnemonic mnemonic ((DifferentialEvolutionModel.Cast _DifferentialEvolution.cell).Configuration
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DifferentialEvolution.Configuration>) l
 
@@ -128,7 +128,7 @@ module DifferentialEvolutionFunction =
                 let _DifferentialEvolution = Helper.toCell<DifferentialEvolution> differentialevolution "DifferentialEvolution"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((_DifferentialEvolution.cell :?> DifferentialEvolutionModel).Minimize
+                let builder () = withMnemonic mnemonic ((DifferentialEvolutionModel.Cast _DifferentialEvolution.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell

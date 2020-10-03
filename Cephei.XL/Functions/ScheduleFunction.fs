@@ -52,7 +52,7 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).At
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).At
                                                             _i.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -91,7 +91,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -127,7 +127,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).Calendar
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -163,7 +163,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).Count
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Count
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -202,7 +202,7 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).Date
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Date
                                                             _i.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -241,7 +241,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).Dates
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -277,7 +277,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).Empty
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -313,7 +313,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).EndDate
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).EndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -349,7 +349,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -385,7 +385,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).IsRegular
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).IsRegular
                                                        ) :> ICell
                 let format (i : Generic.IList<bool>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -424,7 +424,7 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).IsRegular1
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).IsRegular1
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -466,7 +466,7 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).NextDate
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).NextDate
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -508,7 +508,7 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).PreviousDate
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).PreviousDate
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -547,7 +547,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).Rule
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Rule
                                                        ) :> ICell
                 let format (o : DateGeneration.Rule) (l:string) = o.ToString() :> obj
 
@@ -784,7 +784,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).Size
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -820,7 +820,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).StartDate
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -856,7 +856,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).Tenor
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -892,7 +892,7 @@ module ScheduleFunction =
             try
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).TerminationDateBusinessDayConvention
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).TerminationDateBusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -931,7 +931,7 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).This
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).This
                                                             _i.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -973,7 +973,7 @@ module ScheduleFunction =
 
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let _truncationDate = Helper.toCell<Date> truncationDate "truncationDate" 
-                let builder () = withMnemonic mnemonic ((_Schedule.cell :?> ScheduleModel).Until
+                let builder () = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Until
                                                             _truncationDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l

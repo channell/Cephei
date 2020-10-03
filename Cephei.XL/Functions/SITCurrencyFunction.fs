@@ -80,7 +80,7 @@ module SITCurrencyFunction =
             try
 
                 let _SITCurrency = Helper.toCell<SITCurrency> sitcurrency "SITCurrency"  
-                let builder () = withMnemonic mnemonic ((_SITCurrency.cell :?> SITCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((SITCurrencyModel.Cast _SITCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module SITCurrencyFunction =
             try
 
                 let _SITCurrency = Helper.toCell<SITCurrency> sitcurrency "SITCurrency"  
-                let builder () = withMnemonic mnemonic ((_SITCurrency.cell :?> SITCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((SITCurrencyModel.Cast _SITCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module SITCurrencyFunction =
 
                 let _SITCurrency = Helper.toCell<SITCurrency> sitcurrency "SITCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_SITCurrency.cell :?> SITCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((SITCurrencyModel.Cast _SITCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module SITCurrencyFunction =
             try
 
                 let _SITCurrency = Helper.toCell<SITCurrency> sitcurrency "SITCurrency"  
-                let builder () = withMnemonic mnemonic ((_SITCurrency.cell :?> SITCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((SITCurrencyModel.Cast _SITCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module SITCurrencyFunction =
             try
 
                 let _SITCurrency = Helper.toCell<SITCurrency> sitcurrency "SITCurrency"  
-                let builder () = withMnemonic mnemonic ((_SITCurrency.cell :?> SITCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((SITCurrencyModel.Cast _SITCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module SITCurrencyFunction =
             try
 
                 let _SITCurrency = Helper.toCell<SITCurrency> sitcurrency "SITCurrency"  
-                let builder () = withMnemonic mnemonic ((_SITCurrency.cell :?> SITCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((SITCurrencyModel.Cast _SITCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module SITCurrencyFunction =
             try
 
                 let _SITCurrency = Helper.toCell<SITCurrency> sitcurrency "SITCurrency"  
-                let builder () = withMnemonic mnemonic ((_SITCurrency.cell :?> SITCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((SITCurrencyModel.Cast _SITCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module SITCurrencyFunction =
             try
 
                 let _SITCurrency = Helper.toCell<SITCurrency> sitcurrency "SITCurrency"  
-                let builder () = withMnemonic mnemonic ((_SITCurrency.cell :?> SITCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((SITCurrencyModel.Cast _SITCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module SITCurrencyFunction =
             try
 
                 let _SITCurrency = Helper.toCell<SITCurrency> sitcurrency "SITCurrency"  
-                let builder () = withMnemonic mnemonic ((_SITCurrency.cell :?> SITCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((SITCurrencyModel.Cast _SITCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module SITCurrencyFunction =
             try
 
                 let _SITCurrency = Helper.toCell<SITCurrency> sitcurrency "SITCurrency"  
-                let builder () = withMnemonic mnemonic ((_SITCurrency.cell :?> SITCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((SITCurrencyModel.Cast _SITCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module SITCurrencyFunction =
             try
 
                 let _SITCurrency = Helper.toCell<SITCurrency> sitcurrency "SITCurrency"  
-                let builder () = withMnemonic mnemonic ((_SITCurrency.cell :?> SITCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((SITCurrencyModel.Cast _SITCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module SITCurrencyFunction =
             try
 
                 let _SITCurrency = Helper.toCell<SITCurrency> sitcurrency "SITCurrency"  
-                let builder () = withMnemonic mnemonic ((_SITCurrency.cell :?> SITCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((SITCurrencyModel.Cast _SITCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

@@ -122,7 +122,7 @@ module EuropeanOptionFunction =
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _minVol = Helper.toCell<double> minVol "minVol" 
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).ImpliedVolatility
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _Process.cell 
                                                             _accuracy.cell 
@@ -176,7 +176,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).Delta
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -212,7 +212,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).DeltaForward
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -248,7 +248,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).DividendRho
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -284,7 +284,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).Elasticity
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -320,7 +320,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).Gamma
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -356,7 +356,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).IsExpired
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -392,7 +392,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).ItmCashProbability
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -428,7 +428,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).Rho
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -464,7 +464,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).StrikeSensitivity
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -500,7 +500,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).Theta
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -536,7 +536,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).ThetaPerDay
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -572,7 +572,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).Vega
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -608,7 +608,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).Exercise
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -644,7 +644,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).Payoff
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -680,7 +680,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).CASH
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -716,7 +716,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -752,7 +752,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).NPV
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -791,7 +791,7 @@ module EuropeanOptionFunction =
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).Result
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -833,7 +833,7 @@ module EuropeanOptionFunction =
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : EuropeanOption) (l:string) = o.ToString() :> obj
@@ -872,7 +872,7 @@ module EuropeanOptionFunction =
             try
 
                 let _EuropeanOption = Helper.toCell<EuropeanOption> europeanoption "EuropeanOption"  
-                let builder () = withMnemonic mnemonic ((_EuropeanOption.cell :?> EuropeanOptionModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((EuropeanOptionModel.Cast _EuropeanOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

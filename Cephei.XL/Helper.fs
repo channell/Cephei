@@ -81,6 +81,11 @@ module Helper =
                         { cell = c :?> ICell<'T>
                         ; source = s
                         }
+                elif o.GetType() = typeof<DateTime> then 
+                    let d = c :?> ICell<DateTime>
+                    { cell = withMnemonic c.Mnemonic (triv (fun () -> d.Value.ToOADate() :?> 'T))
+                    ; source = "(" + s + ".ToOADate())"
+                    }
                 else    // upcast
                     { cell = withMnemonic c.Mnemonic (triv (fun () -> (c.Box :?> 'T)))
                     ; source = s

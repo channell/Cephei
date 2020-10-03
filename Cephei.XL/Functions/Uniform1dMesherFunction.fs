@@ -101,7 +101,7 @@ module Uniform1dMesherFunction =
 
                 let _Uniform1dMesher = Helper.toCell<Uniform1dMesher> uniform1dmesher "Uniform1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_Uniform1dMesher.cell :?> Uniform1dMesherModel).Dminus
+                let builder () = withMnemonic mnemonic ((Uniform1dMesherModel.Cast _Uniform1dMesher.cell).Dminus
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -143,7 +143,7 @@ module Uniform1dMesherFunction =
 
                 let _Uniform1dMesher = Helper.toCell<Uniform1dMesher> uniform1dmesher "Uniform1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_Uniform1dMesher.cell :?> Uniform1dMesherModel).Dplus
+                let builder () = withMnemonic mnemonic ((Uniform1dMesherModel.Cast _Uniform1dMesher.cell).Dplus
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -185,7 +185,7 @@ module Uniform1dMesherFunction =
 
                 let _Uniform1dMesher = Helper.toCell<Uniform1dMesher> uniform1dmesher "Uniform1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_Uniform1dMesher.cell :?> Uniform1dMesherModel).Location
+                let builder () = withMnemonic mnemonic ((Uniform1dMesherModel.Cast _Uniform1dMesher.cell).Location
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -224,7 +224,7 @@ module Uniform1dMesherFunction =
             try
 
                 let _Uniform1dMesher = Helper.toCell<Uniform1dMesher> uniform1dmesher "Uniform1dMesher"  
-                let builder () = withMnemonic mnemonic ((_Uniform1dMesher.cell :?> Uniform1dMesherModel).Locations
+                let builder () = withMnemonic mnemonic ((Uniform1dMesherModel.Cast _Uniform1dMesher.cell).Locations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -260,7 +260,7 @@ module Uniform1dMesherFunction =
             try
 
                 let _Uniform1dMesher = Helper.toCell<Uniform1dMesher> uniform1dmesher "Uniform1dMesher"  
-                let builder () = withMnemonic mnemonic ((_Uniform1dMesher.cell :?> Uniform1dMesherModel).Size
+                let builder () = withMnemonic mnemonic ((Uniform1dMesherModel.Cast _Uniform1dMesher.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

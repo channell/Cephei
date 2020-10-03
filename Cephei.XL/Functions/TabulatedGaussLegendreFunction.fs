@@ -49,7 +49,7 @@ module TabulatedGaussLegendreFunction =
             try
 
                 let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
-                let builder () = withMnemonic mnemonic ((_TabulatedGaussLegendre.cell :?> TabulatedGaussLegendreModel).Order
+                let builder () = withMnemonic mnemonic ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -88,7 +88,7 @@ module TabulatedGaussLegendreFunction =
 
                 let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
                 let _order = Helper.toCell<int> order "order" 
-                let builder () = withMnemonic mnemonic ((_TabulatedGaussLegendre.cell :?> TabulatedGaussLegendreModel).Order1
+                let builder () = withMnemonic mnemonic ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Order1
                                                             _order.cell 
                                                        ) :> ICell
                 let format (o : TabulatedGaussLegendre) (l:string) = o.ToString() :> obj
@@ -167,7 +167,7 @@ module TabulatedGaussLegendreFunction =
 
                 let _TabulatedGaussLegendre = Helper.toCell<TabulatedGaussLegendre> tabulatedgausslegendre "TabulatedGaussLegendre"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((_TabulatedGaussLegendre.cell :?> TabulatedGaussLegendreModel).Value
+                let builder () = withMnemonic mnemonic ((TabulatedGaussLegendreModel.Cast _TabulatedGaussLegendre.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

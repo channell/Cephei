@@ -146,7 +146,7 @@ module DoubleBarrierOptionFunction =
                 let _maxEvaluations = Helper.toDefault<int> maxEvaluations "maxEvaluations" 100
                 let _minVol = Helper.toDefault<double> minVol "minVol" 1.0e-7
                 let _maxVol = Helper.toDefault<double> maxVol "maxVol" 4.0
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).ImpliedVolatility
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _Process.cell 
                                                             _accuracy.cell 
@@ -200,7 +200,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).Delta
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -236,7 +236,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).DeltaForward
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -272,7 +272,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).DividendRho
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -308,7 +308,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).Elasticity
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -344,7 +344,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).Gamma
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -380,7 +380,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).IsExpired
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -416,7 +416,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).ItmCashProbability
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -452,7 +452,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).Rho
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -488,7 +488,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).StrikeSensitivity
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -524,7 +524,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).Theta
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -560,7 +560,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).ThetaPerDay
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -596,7 +596,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).Vega
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -632,7 +632,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).Exercise
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -668,7 +668,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).Payoff
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -704,7 +704,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).CASH
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -740,7 +740,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -776,7 +776,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).NPV
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -815,7 +815,7 @@ module DoubleBarrierOptionFunction =
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).Result
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -857,7 +857,7 @@ module DoubleBarrierOptionFunction =
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : DoubleBarrierOption) (l:string) = o.ToString() :> obj
@@ -896,7 +896,7 @@ module DoubleBarrierOptionFunction =
             try
 
                 let _DoubleBarrierOption = Helper.toCell<DoubleBarrierOption> doublebarrieroption "DoubleBarrierOption"  
-                let builder () = withMnemonic mnemonic ((_DoubleBarrierOption.cell :?> DoubleBarrierOptionModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((DoubleBarrierOptionModel.Cast _DoubleBarrierOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

@@ -80,7 +80,7 @@ module THBCurrencyFunction =
             try
 
                 let _THBCurrency = Helper.toCell<THBCurrency> thbcurrency "THBCurrency"  
-                let builder () = withMnemonic mnemonic ((_THBCurrency.cell :?> THBCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((THBCurrencyModel.Cast _THBCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module THBCurrencyFunction =
             try
 
                 let _THBCurrency = Helper.toCell<THBCurrency> thbcurrency "THBCurrency"  
-                let builder () = withMnemonic mnemonic ((_THBCurrency.cell :?> THBCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((THBCurrencyModel.Cast _THBCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module THBCurrencyFunction =
 
                 let _THBCurrency = Helper.toCell<THBCurrency> thbcurrency "THBCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_THBCurrency.cell :?> THBCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((THBCurrencyModel.Cast _THBCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module THBCurrencyFunction =
             try
 
                 let _THBCurrency = Helper.toCell<THBCurrency> thbcurrency "THBCurrency"  
-                let builder () = withMnemonic mnemonic ((_THBCurrency.cell :?> THBCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((THBCurrencyModel.Cast _THBCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module THBCurrencyFunction =
             try
 
                 let _THBCurrency = Helper.toCell<THBCurrency> thbcurrency "THBCurrency"  
-                let builder () = withMnemonic mnemonic ((_THBCurrency.cell :?> THBCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((THBCurrencyModel.Cast _THBCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module THBCurrencyFunction =
             try
 
                 let _THBCurrency = Helper.toCell<THBCurrency> thbcurrency "THBCurrency"  
-                let builder () = withMnemonic mnemonic ((_THBCurrency.cell :?> THBCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((THBCurrencyModel.Cast _THBCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module THBCurrencyFunction =
             try
 
                 let _THBCurrency = Helper.toCell<THBCurrency> thbcurrency "THBCurrency"  
-                let builder () = withMnemonic mnemonic ((_THBCurrency.cell :?> THBCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((THBCurrencyModel.Cast _THBCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module THBCurrencyFunction =
             try
 
                 let _THBCurrency = Helper.toCell<THBCurrency> thbcurrency "THBCurrency"  
-                let builder () = withMnemonic mnemonic ((_THBCurrency.cell :?> THBCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((THBCurrencyModel.Cast _THBCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module THBCurrencyFunction =
             try
 
                 let _THBCurrency = Helper.toCell<THBCurrency> thbcurrency "THBCurrency"  
-                let builder () = withMnemonic mnemonic ((_THBCurrency.cell :?> THBCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((THBCurrencyModel.Cast _THBCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module THBCurrencyFunction =
             try
 
                 let _THBCurrency = Helper.toCell<THBCurrency> thbcurrency "THBCurrency"  
-                let builder () = withMnemonic mnemonic ((_THBCurrency.cell :?> THBCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((THBCurrencyModel.Cast _THBCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module THBCurrencyFunction =
             try
 
                 let _THBCurrency = Helper.toCell<THBCurrency> thbcurrency "THBCurrency"  
-                let builder () = withMnemonic mnemonic ((_THBCurrency.cell :?> THBCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((THBCurrencyModel.Cast _THBCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module THBCurrencyFunction =
             try
 
                 let _THBCurrency = Helper.toCell<THBCurrency> thbcurrency "THBCurrency"  
-                let builder () = withMnemonic mnemonic ((_THBCurrency.cell :?> THBCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((THBCurrencyModel.Cast _THBCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

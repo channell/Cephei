@@ -80,7 +80,7 @@ module HUFCurrencyFunction =
             try
 
                 let _HUFCurrency = Helper.toCell<HUFCurrency> hufcurrency "HUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_HUFCurrency.cell :?> HUFCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((HUFCurrencyModel.Cast _HUFCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module HUFCurrencyFunction =
             try
 
                 let _HUFCurrency = Helper.toCell<HUFCurrency> hufcurrency "HUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_HUFCurrency.cell :?> HUFCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((HUFCurrencyModel.Cast _HUFCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module HUFCurrencyFunction =
 
                 let _HUFCurrency = Helper.toCell<HUFCurrency> hufcurrency "HUFCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_HUFCurrency.cell :?> HUFCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((HUFCurrencyModel.Cast _HUFCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module HUFCurrencyFunction =
             try
 
                 let _HUFCurrency = Helper.toCell<HUFCurrency> hufcurrency "HUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_HUFCurrency.cell :?> HUFCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((HUFCurrencyModel.Cast _HUFCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module HUFCurrencyFunction =
             try
 
                 let _HUFCurrency = Helper.toCell<HUFCurrency> hufcurrency "HUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_HUFCurrency.cell :?> HUFCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((HUFCurrencyModel.Cast _HUFCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module HUFCurrencyFunction =
             try
 
                 let _HUFCurrency = Helper.toCell<HUFCurrency> hufcurrency "HUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_HUFCurrency.cell :?> HUFCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((HUFCurrencyModel.Cast _HUFCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module HUFCurrencyFunction =
             try
 
                 let _HUFCurrency = Helper.toCell<HUFCurrency> hufcurrency "HUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_HUFCurrency.cell :?> HUFCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((HUFCurrencyModel.Cast _HUFCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module HUFCurrencyFunction =
             try
 
                 let _HUFCurrency = Helper.toCell<HUFCurrency> hufcurrency "HUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_HUFCurrency.cell :?> HUFCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((HUFCurrencyModel.Cast _HUFCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module HUFCurrencyFunction =
             try
 
                 let _HUFCurrency = Helper.toCell<HUFCurrency> hufcurrency "HUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_HUFCurrency.cell :?> HUFCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((HUFCurrencyModel.Cast _HUFCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module HUFCurrencyFunction =
             try
 
                 let _HUFCurrency = Helper.toCell<HUFCurrency> hufcurrency "HUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_HUFCurrency.cell :?> HUFCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((HUFCurrencyModel.Cast _HUFCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module HUFCurrencyFunction =
             try
 
                 let _HUFCurrency = Helper.toCell<HUFCurrency> hufcurrency "HUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_HUFCurrency.cell :?> HUFCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((HUFCurrencyModel.Cast _HUFCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module HUFCurrencyFunction =
             try
 
                 let _HUFCurrency = Helper.toCell<HUFCurrency> hufcurrency "HUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_HUFCurrency.cell :?> HUFCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((HUFCurrencyModel.Cast _HUFCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

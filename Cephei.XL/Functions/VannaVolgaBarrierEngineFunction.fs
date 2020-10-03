@@ -132,7 +132,7 @@ module VannaVolgaBarrierEngineFunction =
 
                 let _VannaVolgaBarrierEngine = Helper.toCell<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_VannaVolgaBarrierEngine.cell :?> VannaVolgaBarrierEngineModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
@@ -171,7 +171,7 @@ module VannaVolgaBarrierEngineFunction =
             try
 
                 let _VannaVolgaBarrierEngine = Helper.toCell<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
-                let builder () = withMnemonic mnemonic ((_VannaVolgaBarrierEngine.cell :?> VannaVolgaBarrierEngineModel).Reset
+                let builder () = withMnemonic mnemonic ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
 
@@ -210,7 +210,7 @@ module VannaVolgaBarrierEngineFunction =
 
                 let _VannaVolgaBarrierEngine = Helper.toCell<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_VannaVolgaBarrierEngine.cell :?> VannaVolgaBarrierEngineModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
@@ -249,7 +249,7 @@ module VannaVolgaBarrierEngineFunction =
             try
 
                 let _VannaVolgaBarrierEngine = Helper.toCell<VannaVolgaBarrierEngine> vannavolgabarrierengine "VannaVolgaBarrierEngine"  
-                let builder () = withMnemonic mnemonic ((_VannaVolgaBarrierEngine.cell :?> VannaVolgaBarrierEngineModel).Update
+                let builder () = withMnemonic mnemonic ((VannaVolgaBarrierEngineModel.Cast _VannaVolgaBarrierEngine.cell).Update
                                                        ) :> ICell
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
 

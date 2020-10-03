@@ -93,7 +93,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
             try
 
                 let _YoYInflationBachelierCapFloorEngine = Helper.toCell<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationBachelierCapFloorEngine.cell :?> YoYInflationBachelierCapFloorEngineModel).Index
+                let builder () = withMnemonic mnemonic ((YoYInflationBachelierCapFloorEngineModel.Cast _YoYInflationBachelierCapFloorEngine.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
@@ -132,7 +132,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
 
                 let _YoYInflationBachelierCapFloorEngine = Helper.toCell<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine"  
                 let _vol = Helper.toHandle<YoYOptionletVolatilitySurface> vol "vol" 
-                let builder () = withMnemonic mnemonic ((_YoYInflationBachelierCapFloorEngine.cell :?> YoYInflationBachelierCapFloorEngineModel).SetVolatility
+                let builder () = withMnemonic mnemonic ((YoYInflationBachelierCapFloorEngineModel.Cast _YoYInflationBachelierCapFloorEngine.cell).SetVolatility
                                                             _vol.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationBachelierCapFloorEngine) (l:string) = o.ToString() :> obj
@@ -171,7 +171,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
             try
 
                 let _YoYInflationBachelierCapFloorEngine = Helper.toCell<YoYInflationBachelierCapFloorEngine> yoyinflationbacheliercapfloorengine "YoYInflationBachelierCapFloorEngine"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationBachelierCapFloorEngine.cell :?> YoYInflationBachelierCapFloorEngineModel).Volatility
+                let builder () = withMnemonic mnemonic ((YoYInflationBachelierCapFloorEngineModel.Cast _YoYInflationBachelierCapFloorEngine.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l
 

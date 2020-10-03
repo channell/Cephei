@@ -52,7 +52,7 @@ module HestonModelHelperFunction =
 
                 let _HestonModelHelper = Helper.toCell<HestonModelHelper> hestonmodelhelper "HestonModelHelper"  
                 let _t = Helper.toCell<Generic.List<double>> t "t" 
-                let builder () = withMnemonic mnemonic ((_HestonModelHelper.cell :?> HestonModelHelperModel).AddTimesTo
+                let builder () = withMnemonic mnemonic ((HestonModelHelperModel.Cast _HestonModelHelper.cell).AddTimesTo
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : HestonModelHelper) (l:string) = o.ToString() :> obj
@@ -94,7 +94,7 @@ module HestonModelHelperFunction =
 
                 let _HestonModelHelper = Helper.toCell<HestonModelHelper> hestonmodelhelper "HestonModelHelper"  
                 let _volatility = Helper.toCell<double> volatility "volatility" 
-                let builder () = withMnemonic mnemonic ((_HestonModelHelper.cell :?> HestonModelHelperModel).BlackPrice
+                let builder () = withMnemonic mnemonic ((HestonModelHelperModel.Cast _HestonModelHelper.cell).BlackPrice
                                                             _volatility.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -315,7 +315,7 @@ module HestonModelHelperFunction =
             try
 
                 let _HestonModelHelper = Helper.toCell<HestonModelHelper> hestonmodelhelper "HestonModelHelper"  
-                let builder () = withMnemonic mnemonic ((_HestonModelHelper.cell :?> HestonModelHelperModel).Maturity
+                let builder () = withMnemonic mnemonic ((HestonModelHelperModel.Cast _HestonModelHelper.cell).Maturity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -351,7 +351,7 @@ module HestonModelHelperFunction =
             try
 
                 let _HestonModelHelper = Helper.toCell<HestonModelHelper> hestonmodelhelper "HestonModelHelper"  
-                let builder () = withMnemonic mnemonic ((_HestonModelHelper.cell :?> HestonModelHelperModel).ModelValue
+                let builder () = withMnemonic mnemonic ((HestonModelHelperModel.Cast _HestonModelHelper.cell).ModelValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -387,7 +387,7 @@ module HestonModelHelperFunction =
             try
 
                 let _HestonModelHelper = Helper.toCell<HestonModelHelper> hestonmodelhelper "HestonModelHelper"  
-                let builder () = withMnemonic mnemonic ((_HestonModelHelper.cell :?> HestonModelHelperModel).OptionType
+                let builder () = withMnemonic mnemonic ((HestonModelHelperModel.Cast _HestonModelHelper.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
@@ -423,7 +423,7 @@ module HestonModelHelperFunction =
             try
 
                 let _HestonModelHelper = Helper.toCell<HestonModelHelper> hestonmodelhelper "HestonModelHelper"  
-                let builder () = withMnemonic mnemonic ((_HestonModelHelper.cell :?> HestonModelHelperModel).Strike
+                let builder () = withMnemonic mnemonic ((HestonModelHelperModel.Cast _HestonModelHelper.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -459,7 +459,7 @@ module HestonModelHelperFunction =
             try
 
                 let _HestonModelHelper = Helper.toCell<HestonModelHelper> hestonmodelhelper "HestonModelHelper"  
-                let builder () = withMnemonic mnemonic ((_HestonModelHelper.cell :?> HestonModelHelperModel).CalibrationError
+                let builder () = withMnemonic mnemonic ((HestonModelHelperModel.Cast _HestonModelHelper.cell).CalibrationError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -510,7 +510,7 @@ module HestonModelHelperFunction =
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
                 let _minVol = Helper.toCell<double> minVol "minVol" 
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
-                let builder () = withMnemonic mnemonic ((_HestonModelHelper.cell :?> HestonModelHelperModel).ImpliedVolatility
+                let builder () = withMnemonic mnemonic ((HestonModelHelperModel.Cast _HestonModelHelper.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _accuracy.cell 
                                                             _maxEvaluations.cell 
@@ -561,7 +561,7 @@ module HestonModelHelperFunction =
             try
 
                 let _HestonModelHelper = Helper.toCell<HestonModelHelper> hestonmodelhelper "HestonModelHelper"  
-                let builder () = withMnemonic mnemonic ((_HestonModelHelper.cell :?> HestonModelHelperModel).MarketValue
+                let builder () = withMnemonic mnemonic ((HestonModelHelperModel.Cast _HestonModelHelper.cell).MarketValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -600,7 +600,7 @@ module HestonModelHelperFunction =
 
                 let _HestonModelHelper = Helper.toCell<HestonModelHelper> hestonmodelhelper "HestonModelHelper"  
                 let _engine = Helper.toCell<IPricingEngine> engine "engine" 
-                let builder () = withMnemonic mnemonic ((_HestonModelHelper.cell :?> HestonModelHelperModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((HestonModelHelperModel.Cast _HestonModelHelper.cell).SetPricingEngine
                                                             _engine.cell 
                                                        ) :> ICell
                 let format (o : HestonModelHelper) (l:string) = o.ToString() :> obj
@@ -639,7 +639,7 @@ module HestonModelHelperFunction =
             try
 
                 let _HestonModelHelper = Helper.toCell<HestonModelHelper> hestonmodelhelper "HestonModelHelper"  
-                let builder () = withMnemonic mnemonic ((_HestonModelHelper.cell :?> HestonModelHelperModel).Volatility
+                let builder () = withMnemonic mnemonic ((HestonModelHelperModel.Cast _HestonModelHelper.cell).Volatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -675,7 +675,7 @@ module HestonModelHelperFunction =
             try
 
                 let _HestonModelHelper = Helper.toCell<HestonModelHelper> hestonmodelhelper "HestonModelHelper"  
-                let builder () = withMnemonic mnemonic ((_HestonModelHelper.cell :?> HestonModelHelperModel).VolatilityType
+                let builder () = withMnemonic mnemonic ((HestonModelHelperModel.Cast _HestonModelHelper.cell).VolatilityType
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 

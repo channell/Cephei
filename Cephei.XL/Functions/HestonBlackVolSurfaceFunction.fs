@@ -86,7 +86,7 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).MaxDate
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -122,7 +122,7 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).MaxStrike
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -158,7 +158,7 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).MinStrike
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -206,7 +206,7 @@ module HestonBlackVolSurfaceFunction =
                 let _time2 = Helper.toCell<double> time2 "time2" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).BlackForwardVariance
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackForwardVariance
                                                             _time1.cell 
                                                             _time2.cell 
                                                             _strike.cell 
@@ -266,7 +266,7 @@ module HestonBlackVolSurfaceFunction =
                 let _date2 = Helper.toCell<Date> date2 "date2" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).BlackForwardVariance1
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackForwardVariance1
                                                             _date1.cell 
                                                             _date2.cell 
                                                             _strike.cell 
@@ -326,7 +326,7 @@ module HestonBlackVolSurfaceFunction =
                 let _date2 = Helper.toCell<Date> date2 "date2" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).BlackForwardVol1
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackForwardVol1
                                                             _date1.cell 
                                                             _date2.cell 
                                                             _strike.cell 
@@ -386,7 +386,7 @@ module HestonBlackVolSurfaceFunction =
                 let _time2 = Helper.toCell<double> time2 "time2" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).BlackForwardVol
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackForwardVol
                                                             _time1.cell 
                                                             _time2.cell 
                                                             _strike.cell 
@@ -443,7 +443,7 @@ module HestonBlackVolSurfaceFunction =
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).BlackVariance1
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackVariance1
                                                             _maturity.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -497,7 +497,7 @@ module HestonBlackVolSurfaceFunction =
                 let _maturity = Helper.toCell<Date> maturity "maturity" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).BlackVariance
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackVariance
                                                             _maturity.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -551,7 +551,7 @@ module HestonBlackVolSurfaceFunction =
                 let _maturity = Helper.toCell<Date> maturity "maturity" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).BlackVol
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackVol
                                                             _maturity.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -605,7 +605,7 @@ module HestonBlackVolSurfaceFunction =
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).BlackVol1
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BlackVol1
                                                             _maturity.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -650,7 +650,7 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -689,7 +689,7 @@ module HestonBlackVolSurfaceFunction =
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).OptionDateFromTenor
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -728,7 +728,7 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).Calendar
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -764,7 +764,7 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).DayCounter
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -800,7 +800,7 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).MaxTime
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -836,7 +836,7 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).ReferenceDate
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -872,7 +872,7 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).SettlementDays
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -911,7 +911,7 @@ module HestonBlackVolSurfaceFunction =
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).TimeFromReference
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -950,7 +950,7 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).Update
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).Update
                                                        ) :> ICell
                 let format (o : HestonBlackVolSurface) (l:string) = o.ToString() :> obj
 
@@ -986,7 +986,7 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1025,7 +1025,7 @@ module HestonBlackVolSurfaceFunction =
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : HestonBlackVolSurface) (l:string) = o.ToString() :> obj
@@ -1067,7 +1067,7 @@ module HestonBlackVolSurfaceFunction =
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : HestonBlackVolSurface) (l:string) = o.ToString() :> obj
@@ -1106,7 +1106,7 @@ module HestonBlackVolSurfaceFunction =
             try
 
                 let _HestonBlackVolSurface = Helper.toCell<HestonBlackVolSurface> hestonblackvolsurface "HestonBlackVolSurface"  
-                let builder () = withMnemonic mnemonic ((_HestonBlackVolSurface.cell :?> HestonBlackVolSurfaceModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((HestonBlackVolSurfaceModel.Cast _HestonBlackVolSurface.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

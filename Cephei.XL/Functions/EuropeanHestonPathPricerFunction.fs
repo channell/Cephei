@@ -101,7 +101,7 @@ module EuropeanHestonPathPricerFunction =
 
                 let _EuropeanHestonPathPricer = Helper.toCell<EuropeanHestonPathPricer> europeanhestonpathpricer "EuropeanHestonPathPricer"  
                 let _multiPath = Helper.toCell<IPath> multiPath "multiPath" 
-                let builder () = withMnemonic mnemonic ((_EuropeanHestonPathPricer.cell :?> EuropeanHestonPathPricerModel).Value
+                let builder () = withMnemonic mnemonic ((EuropeanHestonPathPricerModel.Cast _EuropeanHestonPathPricer.cell).Value
                                                             _multiPath.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

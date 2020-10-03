@@ -49,7 +49,7 @@ module FloatingLoanFunction =
             try
 
                 let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
-                let builder () = withMnemonic mnemonic ((_FloatingLoan.cell :?> FloatingLoanModel).FloatingLeg
+                let builder () = withMnemonic mnemonic ((FloatingLoanModel.Cast _FloatingLoan.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -176,7 +176,7 @@ module FloatingLoanFunction =
             try
 
                 let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
-                let builder () = withMnemonic mnemonic ((_FloatingLoan.cell :?> FloatingLoanModel).PrincipalLeg
+                let builder () = withMnemonic mnemonic ((FloatingLoanModel.Cast _FloatingLoan.cell).PrincipalLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -212,7 +212,7 @@ module FloatingLoanFunction =
             try
 
                 let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
-                let builder () = withMnemonic mnemonic ((_FloatingLoan.cell :?> FloatingLoanModel).IsExpired
+                let builder () = withMnemonic mnemonic ((FloatingLoanModel.Cast _FloatingLoan.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -248,7 +248,7 @@ module FloatingLoanFunction =
             try
 
                 let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
-                let builder () = withMnemonic mnemonic ((_FloatingLoan.cell :?> FloatingLoanModel).CASH
+                let builder () = withMnemonic mnemonic ((FloatingLoanModel.Cast _FloatingLoan.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -284,7 +284,7 @@ module FloatingLoanFunction =
             try
 
                 let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
-                let builder () = withMnemonic mnemonic ((_FloatingLoan.cell :?> FloatingLoanModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((FloatingLoanModel.Cast _FloatingLoan.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -320,7 +320,7 @@ module FloatingLoanFunction =
             try
 
                 let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
-                let builder () = withMnemonic mnemonic ((_FloatingLoan.cell :?> FloatingLoanModel).NPV
+                let builder () = withMnemonic mnemonic ((FloatingLoanModel.Cast _FloatingLoan.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -359,7 +359,7 @@ module FloatingLoanFunction =
 
                 let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_FloatingLoan.cell :?> FloatingLoanModel).Result
+                let builder () = withMnemonic mnemonic ((FloatingLoanModel.Cast _FloatingLoan.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -401,7 +401,7 @@ module FloatingLoanFunction =
 
                 let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_FloatingLoan.cell :?> FloatingLoanModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((FloatingLoanModel.Cast _FloatingLoan.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : FloatingLoan) (l:string) = o.ToString() :> obj
@@ -440,7 +440,7 @@ module FloatingLoanFunction =
             try
 
                 let _FloatingLoan = Helper.toCell<FloatingLoan> floatingloan "FloatingLoan"  
-                let builder () = withMnemonic mnemonic ((_FloatingLoan.cell :?> FloatingLoanModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((FloatingLoanModel.Cast _FloatingLoan.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

@@ -80,7 +80,7 @@ module UAHCurrencyFunction =
             try
 
                 let _UAHCurrency = Helper.toCell<UAHCurrency> uahcurrency "UAHCurrency"  
-                let builder () = withMnemonic mnemonic ((_UAHCurrency.cell :?> UAHCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((UAHCurrencyModel.Cast _UAHCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module UAHCurrencyFunction =
             try
 
                 let _UAHCurrency = Helper.toCell<UAHCurrency> uahcurrency "UAHCurrency"  
-                let builder () = withMnemonic mnemonic ((_UAHCurrency.cell :?> UAHCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((UAHCurrencyModel.Cast _UAHCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module UAHCurrencyFunction =
 
                 let _UAHCurrency = Helper.toCell<UAHCurrency> uahcurrency "UAHCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_UAHCurrency.cell :?> UAHCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((UAHCurrencyModel.Cast _UAHCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module UAHCurrencyFunction =
             try
 
                 let _UAHCurrency = Helper.toCell<UAHCurrency> uahcurrency "UAHCurrency"  
-                let builder () = withMnemonic mnemonic ((_UAHCurrency.cell :?> UAHCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((UAHCurrencyModel.Cast _UAHCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module UAHCurrencyFunction =
             try
 
                 let _UAHCurrency = Helper.toCell<UAHCurrency> uahcurrency "UAHCurrency"  
-                let builder () = withMnemonic mnemonic ((_UAHCurrency.cell :?> UAHCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((UAHCurrencyModel.Cast _UAHCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module UAHCurrencyFunction =
             try
 
                 let _UAHCurrency = Helper.toCell<UAHCurrency> uahcurrency "UAHCurrency"  
-                let builder () = withMnemonic mnemonic ((_UAHCurrency.cell :?> UAHCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((UAHCurrencyModel.Cast _UAHCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module UAHCurrencyFunction =
             try
 
                 let _UAHCurrency = Helper.toCell<UAHCurrency> uahcurrency "UAHCurrency"  
-                let builder () = withMnemonic mnemonic ((_UAHCurrency.cell :?> UAHCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((UAHCurrencyModel.Cast _UAHCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module UAHCurrencyFunction =
             try
 
                 let _UAHCurrency = Helper.toCell<UAHCurrency> uahcurrency "UAHCurrency"  
-                let builder () = withMnemonic mnemonic ((_UAHCurrency.cell :?> UAHCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((UAHCurrencyModel.Cast _UAHCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module UAHCurrencyFunction =
             try
 
                 let _UAHCurrency = Helper.toCell<UAHCurrency> uahcurrency "UAHCurrency"  
-                let builder () = withMnemonic mnemonic ((_UAHCurrency.cell :?> UAHCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((UAHCurrencyModel.Cast _UAHCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module UAHCurrencyFunction =
             try
 
                 let _UAHCurrency = Helper.toCell<UAHCurrency> uahcurrency "UAHCurrency"  
-                let builder () = withMnemonic mnemonic ((_UAHCurrency.cell :?> UAHCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((UAHCurrencyModel.Cast _UAHCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module UAHCurrencyFunction =
             try
 
                 let _UAHCurrency = Helper.toCell<UAHCurrency> uahcurrency "UAHCurrency"  
-                let builder () = withMnemonic mnemonic ((_UAHCurrency.cell :?> UAHCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((UAHCurrencyModel.Cast _UAHCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module UAHCurrencyFunction =
             try
 
                 let _UAHCurrency = Helper.toCell<UAHCurrency> uahcurrency "UAHCurrency"  
-                let builder () = withMnemonic mnemonic ((_UAHCurrency.cell :?> UAHCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((UAHCurrencyModel.Cast _UAHCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

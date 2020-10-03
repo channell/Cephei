@@ -132,7 +132,7 @@ module UsdLiborSwapIsdaFixPmFunction =
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _tenor = Helper.toCell<Period> tenor "tenor" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).Clone
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).Clone
                                                             _tenor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
@@ -177,7 +177,7 @@ module UsdLiborSwapIsdaFixPmFunction =
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
                 let _discounting = Helper.toHandle<YieldTermStructure> discounting "discounting" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).Clone1
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).Clone1
                                                             _forwarding.cell 
                                                             _discounting.cell 
                                                        ) :> ICell
@@ -222,7 +222,7 @@ module UsdLiborSwapIsdaFixPmFunction =
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).Clone2
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).Clone2
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
@@ -261,7 +261,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).DiscountingTermStructure
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).DiscountingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -297,7 +297,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).ExogenousDiscount
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).ExogenousDiscount
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -333,7 +333,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).FixedLegConvention
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).FixedLegConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -369,7 +369,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).FixedLegTenor
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).FixedLegTenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -408,7 +408,7 @@ module UsdLiborSwapIsdaFixPmFunction =
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).ForecastFixing
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -447,7 +447,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).ForwardingTermStructure
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -483,7 +483,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).IborIndex
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).IborIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
@@ -522,7 +522,7 @@ module UsdLiborSwapIsdaFixPmFunction =
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -564,7 +564,7 @@ module UsdLiborSwapIsdaFixPmFunction =
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).UnderlyingSwap
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).UnderlyingSwap
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
@@ -603,7 +603,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).Currency
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -639,7 +639,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).DayCounter
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -675,7 +675,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).FamilyName
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -717,7 +717,7 @@ module UsdLiborSwapIsdaFixPmFunction =
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).Fixing
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -759,7 +759,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -798,7 +798,7 @@ module UsdLiborSwapIsdaFixPmFunction =
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).FixingDate
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -837,7 +837,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).FixingDays
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -876,7 +876,7 @@ module UsdLiborSwapIsdaFixPmFunction =
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -915,7 +915,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).Name
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -954,7 +954,7 @@ module UsdLiborSwapIsdaFixPmFunction =
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).PastFixing
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -993,7 +993,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).Tenor
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -1029,7 +1029,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).Update
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).Update
                                                        ) :> ICell
                 let format (o : UsdLiborSwapIsdaFixPm) (l:string) = o.ToString() :> obj
 
@@ -1068,7 +1068,7 @@ module UsdLiborSwapIsdaFixPmFunction =
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).ValueDate
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -1116,7 +1116,7 @@ module UsdLiborSwapIsdaFixPmFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).AddFixing
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -1170,7 +1170,7 @@ module UsdLiborSwapIsdaFixPmFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).AddFixings
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -1221,7 +1221,7 @@ module UsdLiborSwapIsdaFixPmFunction =
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -1263,7 +1263,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1299,7 +1299,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : UsdLiborSwapIsdaFixPm) (l:string) = o.ToString() :> obj
 
@@ -1338,7 +1338,7 @@ module UsdLiborSwapIsdaFixPmFunction =
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : UsdLiborSwapIsdaFixPm) (l:string) = o.ToString() :> obj
@@ -1377,7 +1377,7 @@ module UsdLiborSwapIsdaFixPmFunction =
             try
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1416,7 +1416,7 @@ module UsdLiborSwapIsdaFixPmFunction =
 
                 let _UsdLiborSwapIsdaFixPm = Helper.toCell<UsdLiborSwapIsdaFixPm> usdliborswapisdafixpm "UsdLiborSwapIsdaFixPm"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_UsdLiborSwapIsdaFixPm.cell :?> UsdLiborSwapIsdaFixPmModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((UsdLiborSwapIsdaFixPmModel.Cast _UsdLiborSwapIsdaFixPm.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : UsdLiborSwapIsdaFixPm) (l:string) = o.ToString() :> obj

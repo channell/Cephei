@@ -174,7 +174,7 @@ module Concentrating1dMesherFunction =
 
                 let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_Concentrating1dMesher.cell :?> Concentrating1dMesherModel).Dminus
+                let builder () = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Dminus
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -216,7 +216,7 @@ module Concentrating1dMesherFunction =
 
                 let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_Concentrating1dMesher.cell :?> Concentrating1dMesherModel).Dplus
+                let builder () = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Dplus
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -258,7 +258,7 @@ module Concentrating1dMesherFunction =
 
                 let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
                 let _index = Helper.toCell<int> index "index" 
-                let builder () = withMnemonic mnemonic ((_Concentrating1dMesher.cell :?> Concentrating1dMesherModel).Location
+                let builder () = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Location
                                                             _index.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -297,7 +297,7 @@ module Concentrating1dMesherFunction =
             try
 
                 let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
-                let builder () = withMnemonic mnemonic ((_Concentrating1dMesher.cell :?> Concentrating1dMesherModel).Locations
+                let builder () = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Locations
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -333,7 +333,7 @@ module Concentrating1dMesherFunction =
             try
 
                 let _Concentrating1dMesher = Helper.toCell<Concentrating1dMesher> concentrating1dmesher "Concentrating1dMesher"  
-                let builder () = withMnemonic mnemonic ((_Concentrating1dMesher.cell :?> Concentrating1dMesherModel).Size
+                let builder () = withMnemonic mnemonic ((Concentrating1dMesherModel.Cast _Concentrating1dMesher.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

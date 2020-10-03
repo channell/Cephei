@@ -64,7 +64,7 @@ module SABRSpecsFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _expiryTime = Helper.toCell<double> expiryTime "expiryTime" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).DefaultValues
+                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).DefaultValues
                                                             _param.cell 
                                                             _b.cell 
                                                             _forward.cell 
@@ -115,7 +115,7 @@ module SABRSpecsFunction =
             try
 
                 let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
-                let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).DilationFactor
+                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).DilationFactor
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -151,7 +151,7 @@ module SABRSpecsFunction =
             try
 
                 let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
-                let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Dimension
+                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Dimension
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -199,7 +199,7 @@ module SABRSpecsFunction =
                 let _b = Helper.toCell<Generic.List<bool>> b "b" 
                 let _c = Helper.toCell<Generic.List<Nullable<double>>> c "c" 
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Direct
+                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Direct
                                                             _x.cell 
                                                             _b.cell 
                                                             _c.cell 
@@ -247,7 +247,7 @@ module SABRSpecsFunction =
             try
 
                 let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
-                let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Eps1
+                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Eps1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -283,7 +283,7 @@ module SABRSpecsFunction =
             try
 
                 let _SABRSpecs = Helper.toCell<SABRSpecs> sabrspecs "SABRSpecs"  
-                let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Eps2
+                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Eps2
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -337,7 +337,7 @@ module SABRSpecsFunction =
                 let _expiryTime = Helper.toCell<double> expiryTime "expiryTime" 
                 let _r = Helper.toCell<Generic.List<double>> r "r" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Guess
+                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Guess
                                                             _values.cell 
                                                             _paramIsFixed.cell 
                                                             _forward.cell 
@@ -403,7 +403,7 @@ module SABRSpecsFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Instance
+                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Instance
                                                             _t.cell 
                                                             _forward.cell 
                                                             _param.cell 
@@ -463,7 +463,7 @@ module SABRSpecsFunction =
                 let _b = Helper.toCell<Generic.List<bool>> b "b" 
                 let _c = Helper.toCell<Generic.List<Nullable<double>>> c "c" 
                 let _d = Helper.toCell<double> d "d" 
-                let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Inverse
+                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Inverse
                                                             _y.cell 
                                                             _b.cell 
                                                             _c.cell 
@@ -523,7 +523,7 @@ module SABRSpecsFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
-                let builder () = withMnemonic mnemonic ((_SABRSpecs.cell :?> SABRSpecsModel).Weight
+                let builder () = withMnemonic mnemonic ((SABRSpecsModel.Cast _SABRSpecs.cell).Weight
                                                             _strike.cell 
                                                             _forward.cell 
                                                             _stdDev.cell 

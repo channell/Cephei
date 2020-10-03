@@ -92,7 +92,7 @@ module SampleFunction =
             try
 
                 let _Sample = Helper.toCell<Sample> sample "Sample"  
-                let builder () = withMnemonic mnemonic ((_Sample.cell :?> SampleModel).Value
+                let builder () = withMnemonic mnemonic ((SampleModel.Cast _Sample.cell).Value
                                                        ) :> ICell
                 let format (o : T) (l:string) = o.ToString() :> obj
 
@@ -128,7 +128,7 @@ module SampleFunction =
             try
 
                 let _Sample = Helper.toCell<Sample> sample "Sample"  
-                let builder () = withMnemonic mnemonic ((_Sample.cell :?> SampleModel).Weight
+                let builder () = withMnemonic mnemonic ((SampleModel.Cast _Sample.cell).Weight
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

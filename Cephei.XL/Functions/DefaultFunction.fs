@@ -64,7 +64,7 @@ module DefaultFunction =
                 let _b = Helper.toCell<double> b "b" 
                 let _I = Helper.toCell<double> I "I" 
                 let _N = Helper.toCell<int> N "N" 
-                let builder () = withMnemonic mnemonic ((_Default.cell :?> DefaultModel).Integrate
+                let builder () = withMnemonic mnemonic ((DefaultModel.Cast _Default.cell).Integrate
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 
@@ -115,7 +115,7 @@ module DefaultFunction =
             try
 
                 let _Default = Helper.toCell<Default> defaulT "Default"  
-                let builder () = withMnemonic mnemonic ((_Default.cell :?> DefaultModel).NbEvalutions
+                let builder () = withMnemonic mnemonic ((DefaultModel.Cast _Default.cell).NbEvalutions
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

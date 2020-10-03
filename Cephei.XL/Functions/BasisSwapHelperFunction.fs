@@ -141,7 +141,7 @@ module BasisSwapHelperFunction =
             try
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).ImpliedQuote
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -180,7 +180,7 @@ module BasisSwapHelperFunction =
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).SetTermStructure
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : BasisSwapHelper) (l:string) = o.ToString() :> obj
@@ -220,7 +220,7 @@ module BasisSwapHelperFunction =
             try
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).Swap
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).Swap
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BasisSwap>) l
 
@@ -256,7 +256,7 @@ module BasisSwapHelperFunction =
             try
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).Update
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).Update
                                                        ) :> ICell
                 let format (o : BasisSwapHelper) (l:string) = o.ToString() :> obj
 
@@ -292,7 +292,7 @@ module BasisSwapHelperFunction =
             try
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).EarliestDate
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -328,7 +328,7 @@ module BasisSwapHelperFunction =
             try
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).LatestDate
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -364,7 +364,7 @@ module BasisSwapHelperFunction =
             try
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).LatestRelevantDate
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -400,7 +400,7 @@ module BasisSwapHelperFunction =
             try
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -436,7 +436,7 @@ module BasisSwapHelperFunction =
             try
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).PillarDate
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -472,7 +472,7 @@ module BasisSwapHelperFunction =
             try
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).Quote
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -508,7 +508,7 @@ module BasisSwapHelperFunction =
             try
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).QuoteError
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -544,7 +544,7 @@ module BasisSwapHelperFunction =
             try
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).QuoteIsValid
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -580,7 +580,7 @@ module BasisSwapHelperFunction =
             try
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).QuoteValue
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -619,7 +619,7 @@ module BasisSwapHelperFunction =
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BasisSwapHelper) (l:string) = o.ToString() :> obj
@@ -661,7 +661,7 @@ module BasisSwapHelperFunction =
 
                 let _BasisSwapHelper = Helper.toCell<BasisSwapHelper> basisswaphelper "BasisSwapHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_BasisSwapHelper.cell :?> BasisSwapHelperModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((BasisSwapHelperModel.Cast _BasisSwapHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BasisSwapHelper) (l:string) = o.ToString() :> obj

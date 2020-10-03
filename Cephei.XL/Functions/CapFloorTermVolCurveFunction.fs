@@ -317,7 +317,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).MaxDate
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -353,7 +353,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).MaxStrike
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -389,7 +389,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).MinStrike
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -425,7 +425,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).OptionDates
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).OptionDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -461,7 +461,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).OptionTenors
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).OptionTenors
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -497,7 +497,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).OptionTimes
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).OptionTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -533,7 +533,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).Update
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Update
                                                        ) :> ICell
                 let format (o : CapFloorTermVolCurve) (l:string) = o.ToString() :> obj
 
@@ -578,7 +578,7 @@ module CapFloorTermVolCurveFunction =
                 let _length = Helper.toCell<Period> length "length" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).Volatility
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Volatility
                                                             _length.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -632,7 +632,7 @@ module CapFloorTermVolCurveFunction =
                 let _t = Helper.toCell<double> t "t" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).Volatility1
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Volatility1
                                                             _t.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -686,7 +686,7 @@ module CapFloorTermVolCurveFunction =
                 let _End = Helper.toCell<Date> End "End" 
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).Volatility2
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Volatility2
                                                             _End.cell 
                                                             _strike.cell 
                                                             _extrapolate.cell 
@@ -731,7 +731,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -770,7 +770,7 @@ module CapFloorTermVolCurveFunction =
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
                 let _p = Helper.toCell<Period> p "p" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).OptionDateFromTenor
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).OptionDateFromTenor
                                                             _p.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -809,7 +809,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).Calendar
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -845,7 +845,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).DayCounter
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -881,7 +881,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).MaxTime
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -917,7 +917,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).ReferenceDate
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -953,7 +953,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).SettlementDays
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -992,7 +992,7 @@ module CapFloorTermVolCurveFunction =
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).TimeFromReference
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1031,7 +1031,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1070,7 +1070,7 @@ module CapFloorTermVolCurveFunction =
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CapFloorTermVolCurve) (l:string) = o.ToString() :> obj
@@ -1112,7 +1112,7 @@ module CapFloorTermVolCurveFunction =
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : CapFloorTermVolCurve) (l:string) = o.ToString() :> obj
@@ -1151,7 +1151,7 @@ module CapFloorTermVolCurveFunction =
             try
 
                 let _CapFloorTermVolCurve = Helper.toCell<CapFloorTermVolCurve> capfloortermvolcurve "CapFloorTermVolCurve"  
-                let builder () = withMnemonic mnemonic ((_CapFloorTermVolCurve.cell :?> CapFloorTermVolCurveModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((CapFloorTermVolCurveModel.Cast _CapFloorTermVolCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

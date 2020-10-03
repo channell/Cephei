@@ -98,7 +98,7 @@ module FastFourierTransformFunction =
                 let _inputBeg = Helper.toCell<int> inputBeg "inputBeg" 
                 let _inputEnd = Helper.toCell<int> inputEnd "inputEnd" 
                 let _output = Helper.toCell<Generic.List<System.Numerics.Complex>> output "output" 
-                let builder () = withMnemonic mnemonic ((_FastFourierTransform.cell :?> FastFourierTransformModel).Inverse_transform
+                let builder () = withMnemonic mnemonic ((FastFourierTransformModel.Cast _FastFourierTransform.cell).Inverse_transform
                                                             _input.cell 
                                                             _inputBeg.cell 
                                                             _inputEnd.cell 
@@ -146,7 +146,7 @@ module FastFourierTransformFunction =
             try
 
                 let _FastFourierTransform = Helper.toCell<FastFourierTransform> fastfouriertransform "FastFourierTransform"  
-                let builder () = withMnemonic mnemonic ((_FastFourierTransform.cell :?> FastFourierTransformModel).Output_size
+                let builder () = withMnemonic mnemonic ((FastFourierTransformModel.Cast _FastFourierTransform.cell).Output_size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -194,7 +194,7 @@ module FastFourierTransformFunction =
                 let _inputBeg = Helper.toCell<int> inputBeg "inputBeg" 
                 let _inputEnd = Helper.toCell<int> inputEnd "inputEnd" 
                 let _output = Helper.toCell<Generic.List<System.Numerics.Complex>> output "output" 
-                let builder () = withMnemonic mnemonic ((_FastFourierTransform.cell :?> FastFourierTransformModel).Transform
+                let builder () = withMnemonic mnemonic ((FastFourierTransformModel.Cast _FastFourierTransform.cell).Transform
                                                             _input.cell 
                                                             _inputBeg.cell 
                                                             _inputEnd.cell 

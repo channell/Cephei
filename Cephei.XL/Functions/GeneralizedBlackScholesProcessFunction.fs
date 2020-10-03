@@ -55,7 +55,7 @@ module GeneralizedBlackScholesProcessFunction =
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dx = Helper.toCell<double> dx "dx" 
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).Apply
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).Apply
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
@@ -97,7 +97,7 @@ module GeneralizedBlackScholesProcessFunction =
             try
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).BlackVolatility
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).BlackVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<BlackVolTermStructure>>) l
 
@@ -139,7 +139,7 @@ module GeneralizedBlackScholesProcessFunction =
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).Diffusion
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -181,7 +181,7 @@ module GeneralizedBlackScholesProcessFunction =
             try
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).DividendYield
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).DividendYield
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -223,7 +223,7 @@ module GeneralizedBlackScholesProcessFunction =
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).Drift
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -277,7 +277,7 @@ module GeneralizedBlackScholesProcessFunction =
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<double> dw "dw" 
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).Evolve
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -334,7 +334,7 @@ module GeneralizedBlackScholesProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).Expectation
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -507,7 +507,7 @@ module GeneralizedBlackScholesProcessFunction =
             try
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).LocalVolatility
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).LocalVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<LocalVolTermStructure>>) l
 
@@ -543,7 +543,7 @@ module GeneralizedBlackScholesProcessFunction =
             try
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).RiskFreeRate
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).RiskFreeRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -579,7 +579,7 @@ module GeneralizedBlackScholesProcessFunction =
             try
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).StateVariable
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).StateVariable
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -624,7 +624,7 @@ module GeneralizedBlackScholesProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).StdDeviation
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -672,7 +672,7 @@ module GeneralizedBlackScholesProcessFunction =
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).Time
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).Time
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -711,7 +711,7 @@ module GeneralizedBlackScholesProcessFunction =
             try
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).Update
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).Update
                                                        ) :> ICell
                 let format (o : GeneralizedBlackScholesProcess) (l:string) = o.ToString() :> obj
 
@@ -756,7 +756,7 @@ module GeneralizedBlackScholesProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).Variance
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).Variance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -801,7 +801,7 @@ module GeneralizedBlackScholesProcessFunction =
             try
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).X0
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -837,7 +837,7 @@ module GeneralizedBlackScholesProcessFunction =
             try
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).InitialValues
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -873,7 +873,7 @@ module GeneralizedBlackScholesProcessFunction =
             try
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).Size
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -918,7 +918,7 @@ module GeneralizedBlackScholesProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).Covariance
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -963,7 +963,7 @@ module GeneralizedBlackScholesProcessFunction =
             try
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).Factors
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1002,7 +1002,7 @@ module GeneralizedBlackScholesProcessFunction =
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : GeneralizedBlackScholesProcess) (l:string) = o.ToString() :> obj
@@ -1044,7 +1044,7 @@ module GeneralizedBlackScholesProcessFunction =
 
                 let _GeneralizedBlackScholesProcess = Helper.toCell<GeneralizedBlackScholesProcess> generalizedblackscholesprocess "GeneralizedBlackScholesProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_GeneralizedBlackScholesProcess.cell :?> GeneralizedBlackScholesProcessModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((GeneralizedBlackScholesProcessModel.Cast _GeneralizedBlackScholesProcess.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : GeneralizedBlackScholesProcess) (l:string) = o.ToString() :> obj

@@ -61,7 +61,7 @@ module EulerDiscretizationFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_EulerDiscretization.cell :?> EulerDiscretizationModel).Covariance
+                let builder () = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Covariance
                                                             _Process.cell 
                                                             _t0.cell 
                                                             _x0.cell 
@@ -121,7 +121,7 @@ module EulerDiscretizationFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_EulerDiscretization.cell :?> EulerDiscretizationModel).Diffusion
+                let builder () = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Diffusion
                                                             _Process.cell 
                                                             _t0.cell 
                                                             _x0.cell 
@@ -181,7 +181,7 @@ module EulerDiscretizationFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_EulerDiscretization.cell :?> EulerDiscretizationModel).Diffusion1
+                let builder () = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Diffusion1
                                                             _Process.cell 
                                                             _t0.cell 
                                                             _x0.cell 
@@ -241,7 +241,7 @@ module EulerDiscretizationFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_EulerDiscretization.cell :?> EulerDiscretizationModel).Drift1
+                let builder () = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Drift1
                                                             _Process.cell 
                                                             _t0.cell 
                                                             _x0.cell 
@@ -301,7 +301,7 @@ module EulerDiscretizationFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_EulerDiscretization.cell :?> EulerDiscretizationModel).Drift
+                let builder () = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Drift
                                                             _Process.cell 
                                                             _t0.cell 
                                                             _x0.cell 
@@ -361,7 +361,7 @@ module EulerDiscretizationFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_EulerDiscretization.cell :?> EulerDiscretizationModel).Variance
+                let builder () = withMnemonic mnemonic ((EulerDiscretizationModel.Cast _EulerDiscretization.cell).Variance
                                                             _Process.cell 
                                                             _t0.cell 
                                                             _x0.cell 

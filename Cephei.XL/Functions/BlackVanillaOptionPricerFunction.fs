@@ -113,7 +113,7 @@ module BlackVanillaOptionPricerFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _optionType = Helper.toCell<Option.Type> optionType "optionType" 
                 let _deflator = Helper.toCell<double> deflator "deflator" 
-                let builder () = withMnemonic mnemonic ((_BlackVanillaOptionPricer.cell :?> BlackVanillaOptionPricerModel).Value
+                let builder () = withMnemonic mnemonic ((BlackVanillaOptionPricerModel.Cast _BlackVanillaOptionPricer.cell).Value
                                                             _strike.cell 
                                                             _optionType.cell 
                                                             _deflator.cell 

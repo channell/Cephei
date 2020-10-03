@@ -58,7 +58,7 @@ module FaceValueAccrualClaimFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _notional = Helper.toCell<double> notional "notional" 
                 let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
-                let builder () = withMnemonic mnemonic ((_FaceValueAccrualClaim.cell :?> FaceValueAccrualClaimModel).Amount
+                let builder () = withMnemonic mnemonic ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).Amount
                                                             _d.cell 
                                                             _notional.cell 
                                                             _recoveryRate.cell 
@@ -143,7 +143,7 @@ module FaceValueAccrualClaimFunction =
 
                 let _FaceValueAccrualClaim = Helper.toCell<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FaceValueAccrualClaim.cell :?> FaceValueAccrualClaimModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FaceValueAccrualClaim) (l:string) = o.ToString() :> obj
@@ -185,7 +185,7 @@ module FaceValueAccrualClaimFunction =
 
                 let _FaceValueAccrualClaim = Helper.toCell<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FaceValueAccrualClaim.cell :?> FaceValueAccrualClaimModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FaceValueAccrualClaim) (l:string) = o.ToString() :> obj
@@ -224,7 +224,7 @@ module FaceValueAccrualClaimFunction =
             try
 
                 let _FaceValueAccrualClaim = Helper.toCell<FaceValueAccrualClaim> facevalueaccrualclaim "FaceValueAccrualClaim"  
-                let builder () = withMnemonic mnemonic ((_FaceValueAccrualClaim.cell :?> FaceValueAccrualClaimModel).Update
+                let builder () = withMnemonic mnemonic ((FaceValueAccrualClaimModel.Cast _FaceValueAccrualClaim.cell).Update
                                                        ) :> ICell
                 let format (o : FaceValueAccrualClaim) (l:string) = o.ToString() :> obj
 

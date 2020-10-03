@@ -132,7 +132,7 @@ module YYEUHICPFunction =
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
                 let _h = Helper.toHandle<YoYInflationTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).Clone
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
@@ -177,7 +177,7 @@ module YYEUHICPFunction =
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).Fixing
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -219,7 +219,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).Ratio
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).Ratio
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -255,7 +255,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).YoyInflationTermStructure
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).YoyInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYInflationTermStructure>>) l
 
@@ -300,7 +300,7 @@ module YYEUHICPFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).AddFixing
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
@@ -346,7 +346,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).AvailabilityLag
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -382,7 +382,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).Currency
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -418,7 +418,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).FamilyName
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -454,7 +454,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -490,7 +490,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).Frequency
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
@@ -526,7 +526,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).Interpolated
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -565,7 +565,7 @@ module YYEUHICPFunction =
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -604,7 +604,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).Name
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -640,7 +640,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).Region
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
@@ -676,7 +676,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).Revised
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -712,7 +712,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).Update
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).Update
                                                        ) :> ICell
                 let format (o : YYEUHICP) (l:string) = o.ToString() :> obj
 
@@ -757,7 +757,7 @@ module YYEUHICPFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).AddFixings
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -808,7 +808,7 @@ module YYEUHICPFunction =
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -850,7 +850,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -886,7 +886,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : YYEUHICP) (l:string) = o.ToString() :> obj
 
@@ -925,7 +925,7 @@ module YYEUHICPFunction =
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YYEUHICP) (l:string) = o.ToString() :> obj
@@ -964,7 +964,7 @@ module YYEUHICPFunction =
             try
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1003,7 +1003,7 @@ module YYEUHICPFunction =
 
                 let _YYEUHICP = Helper.toCell<YYEUHICP> yyeuhicp "YYEUHICP"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_YYEUHICP.cell :?> YYEUHICPModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((YYEUHICPModel.Cast _YYEUHICP.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YYEUHICP) (l:string) = o.ToString() :> obj

@@ -52,7 +52,7 @@ module YoYInflationIndexFunction =
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _h = Helper.toHandle<YoYInflationTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).Clone
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
@@ -97,7 +97,7 @@ module YoYInflationIndexFunction =
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toDefault<bool> forecastTodaysFixing "forecastTodaysFixing" false
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).Fixing
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -139,7 +139,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).Ratio
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Ratio
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -260,7 +260,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).YoyInflationTermStructure
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).YoyInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYInflationTermStructure>>) l
 
@@ -305,7 +305,7 @@ module YoYInflationIndexFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).AddFixing
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
@@ -351,7 +351,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).AvailabilityLag
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -387,7 +387,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).Currency
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -423,7 +423,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).FamilyName
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -459,7 +459,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -495,7 +495,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).Frequency
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
@@ -531,7 +531,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).Interpolated
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -570,7 +570,7 @@ module YoYInflationIndexFunction =
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -609,7 +609,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).Name
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -645,7 +645,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).Region
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
@@ -681,7 +681,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).Revised
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -717,7 +717,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).Update
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).Update
                                                        ) :> ICell
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
@@ -762,7 +762,7 @@ module YoYInflationIndexFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).AddFixings
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -813,7 +813,7 @@ module YoYInflationIndexFunction =
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -855,7 +855,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -891,7 +891,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
@@ -930,7 +930,7 @@ module YoYInflationIndexFunction =
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
@@ -969,7 +969,7 @@ module YoYInflationIndexFunction =
             try
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1008,7 +1008,7 @@ module YoYInflationIndexFunction =
 
                 let _YoYInflationIndex = Helper.toCell<YoYInflationIndex> yoyinflationindex "YoYInflationIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_YoYInflationIndex.cell :?> YoYInflationIndexModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((YoYInflationIndexModel.Cast _YoYInflationIndex.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj

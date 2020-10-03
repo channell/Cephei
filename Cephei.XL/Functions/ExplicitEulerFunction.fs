@@ -126,7 +126,7 @@ module ExplicitEulerFunction =
 
                 let _ExplicitEuler = Helper.toCell<ExplicitEuler> expliciteuler "ExplicitEuler"  
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_ExplicitEuler.cell :?> ExplicitEulerModel).SetStep
+                let builder () = withMnemonic mnemonic ((ExplicitEulerModel.Cast _ExplicitEuler.cell).SetStep
                                                             _dt.cell 
                                                        ) :> ICell
                 let format (o : ExplicitEuler) (l:string) = o.ToString() :> obj
@@ -174,7 +174,7 @@ module ExplicitEulerFunction =
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
                 let _theta = Helper.toCell<double> theta "theta" 
-                let builder () = withMnemonic mnemonic ((_ExplicitEuler.cell :?> ExplicitEulerModel).Step
+                let builder () = withMnemonic mnemonic ((ExplicitEulerModel.Cast _ExplicitEuler.cell).Step
                                                             _o.cell 
                                                             _t.cell 
                                                             _theta.cell 

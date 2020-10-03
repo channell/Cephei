@@ -49,7 +49,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).Clone
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).Data
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -121,7 +121,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).Data_
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -157,7 +157,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).Dates
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -193,7 +193,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).Dates_
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -229,7 +229,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).Discounts
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Discounts
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -265,7 +265,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).HazardRates
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).HazardRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -490,7 +490,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).Interpolation_
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
@@ -526,7 +526,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).Interpolator_
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
@@ -562,7 +562,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).MaxDate
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -598,7 +598,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).MaxDate_
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -634,7 +634,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).Nodes
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
@@ -670,7 +670,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).SetupInterpolation
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedHazardRateCurve) (l:string) = o.ToString() :> obj
 
@@ -706,7 +706,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).Times
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -742,7 +742,7 @@ module InterpolatedHazardRateCurveFunction =
             try
 
                 let _InterpolatedHazardRateCurve = Helper.toCell<InterpolatedHazardRateCurve> interpolatedhazardratecurve "InterpolatedHazardRateCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedHazardRateCurve.cell :?> InterpolatedHazardRateCurveModel).Times_
+                let builder () = withMnemonic mnemonic ((InterpolatedHazardRateCurveModel.Cast _InterpolatedHazardRateCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 

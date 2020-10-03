@@ -80,7 +80,7 @@ module ATSCurrencyFunction =
             try
 
                 let _ATSCurrency = Helper.toCell<ATSCurrency> atscurrency "ATSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ATSCurrency.cell :?> ATSCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((ATSCurrencyModel.Cast _ATSCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module ATSCurrencyFunction =
             try
 
                 let _ATSCurrency = Helper.toCell<ATSCurrency> atscurrency "ATSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ATSCurrency.cell :?> ATSCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((ATSCurrencyModel.Cast _ATSCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module ATSCurrencyFunction =
 
                 let _ATSCurrency = Helper.toCell<ATSCurrency> atscurrency "ATSCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_ATSCurrency.cell :?> ATSCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((ATSCurrencyModel.Cast _ATSCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module ATSCurrencyFunction =
             try
 
                 let _ATSCurrency = Helper.toCell<ATSCurrency> atscurrency "ATSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ATSCurrency.cell :?> ATSCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((ATSCurrencyModel.Cast _ATSCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module ATSCurrencyFunction =
             try
 
                 let _ATSCurrency = Helper.toCell<ATSCurrency> atscurrency "ATSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ATSCurrency.cell :?> ATSCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((ATSCurrencyModel.Cast _ATSCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module ATSCurrencyFunction =
             try
 
                 let _ATSCurrency = Helper.toCell<ATSCurrency> atscurrency "ATSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ATSCurrency.cell :?> ATSCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((ATSCurrencyModel.Cast _ATSCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module ATSCurrencyFunction =
             try
 
                 let _ATSCurrency = Helper.toCell<ATSCurrency> atscurrency "ATSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ATSCurrency.cell :?> ATSCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((ATSCurrencyModel.Cast _ATSCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module ATSCurrencyFunction =
             try
 
                 let _ATSCurrency = Helper.toCell<ATSCurrency> atscurrency "ATSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ATSCurrency.cell :?> ATSCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((ATSCurrencyModel.Cast _ATSCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module ATSCurrencyFunction =
             try
 
                 let _ATSCurrency = Helper.toCell<ATSCurrency> atscurrency "ATSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ATSCurrency.cell :?> ATSCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((ATSCurrencyModel.Cast _ATSCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module ATSCurrencyFunction =
             try
 
                 let _ATSCurrency = Helper.toCell<ATSCurrency> atscurrency "ATSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ATSCurrency.cell :?> ATSCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((ATSCurrencyModel.Cast _ATSCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module ATSCurrencyFunction =
             try
 
                 let _ATSCurrency = Helper.toCell<ATSCurrency> atscurrency "ATSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ATSCurrency.cell :?> ATSCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((ATSCurrencyModel.Cast _ATSCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module ATSCurrencyFunction =
             try
 
                 let _ATSCurrency = Helper.toCell<ATSCurrency> atscurrency "ATSCurrency"  
-                let builder () = withMnemonic mnemonic ((_ATSCurrency.cell :?> ATSCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((ATSCurrencyModel.Cast _ATSCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

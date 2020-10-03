@@ -55,7 +55,7 @@ module FdmAffineModelSwapInnerValueFunction =
                 let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_FdmAffineModelSwapInnerValue.cell :?> FdmAffineModelSwapInnerValueModel).AvgInnerValue
+                let builder () = withMnemonic mnemonic ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).AvgInnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -173,7 +173,7 @@ module FdmAffineModelSwapInnerValueFunction =
                 let _model = Helper.toCell<'ModelType> model "model" 
                 let _t = Helper.toCell<double> t "t" 
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
-                let builder () = withMnemonic mnemonic ((_FdmAffineModelSwapInnerValue.cell :?> FdmAffineModelSwapInnerValueModel).GetState
+                let builder () = withMnemonic mnemonic ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).GetState
                                                             _model.cell 
                                                             _t.cell 
                                                             _iter.cell 
@@ -224,7 +224,7 @@ module FdmAffineModelSwapInnerValueFunction =
                 let _FdmAffineModelSwapInnerValue = Helper.toCell<FdmAffineModelSwapInnerValue> fdmaffinemodelswapinnervalue "FdmAffineModelSwapInnerValue"  
                 let _iter = Helper.toCell<FdmLinearOpIterator> iter "iter" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_FdmAffineModelSwapInnerValue.cell :?> FdmAffineModelSwapInnerValueModel).InnerValue
+                let builder () = withMnemonic mnemonic ((FdmAffineModelSwapInnerValueModel.Cast _FdmAffineModelSwapInnerValue.cell).InnerValue
                                                             _iter.cell 
                                                             _t.cell 
                                                        ) :> ICell

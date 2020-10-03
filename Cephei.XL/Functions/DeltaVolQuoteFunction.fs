@@ -49,7 +49,7 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((_DeltaVolQuote.cell :?> DeltaVolQuoteModel).AtmType
+                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).AtmType
                                                        ) :> ICell
                 let format (o : DeltaVolQuote.AtmType) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((_DeltaVolQuote.cell :?> DeltaVolQuoteModel).Delta
+                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -122,7 +122,7 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((_DeltaVolQuote.cell :?> DeltaVolQuoteModel).DeltaType
+                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).DeltaType
                                                        ) :> ICell
                 let format (o : DeltaType) (l:string) = o.ToString() :> obj
 
@@ -269,7 +269,7 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((_DeltaVolQuote.cell :?> DeltaVolQuoteModel).IsValid
+                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -305,7 +305,7 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((_DeltaVolQuote.cell :?> DeltaVolQuoteModel).Maturity
+                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).Maturity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -341,7 +341,7 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((_DeltaVolQuote.cell :?> DeltaVolQuoteModel).Update
+                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).Update
                                                        ) :> ICell
                 let format (o : DeltaVolQuote) (l:string) = o.ToString() :> obj
 
@@ -377,7 +377,7 @@ module DeltaVolQuoteFunction =
             try
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
-                let builder () = withMnemonic mnemonic ((_DeltaVolQuote.cell :?> DeltaVolQuoteModel).Value
+                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -416,7 +416,7 @@ module DeltaVolQuoteFunction =
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_DeltaVolQuote.cell :?> DeltaVolQuoteModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DeltaVolQuote) (l:string) = o.ToString() :> obj
@@ -458,7 +458,7 @@ module DeltaVolQuoteFunction =
 
                 let _DeltaVolQuote = Helper.toCell<DeltaVolQuote> deltavolquote "DeltaVolQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_DeltaVolQuote.cell :?> DeltaVolQuoteModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((DeltaVolQuoteModel.Cast _DeltaVolQuote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DeltaVolQuote) (l:string) = o.ToString() :> obj

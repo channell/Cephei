@@ -92,7 +92,7 @@ module BivariateCumulativeNormalDistributionDr78Function =
                 let _BivariateCumulativeNormalDistributionDr78 = Helper.toCell<BivariateCumulativeNormalDistributionDr78> bivariatecumulativenormaldistributiondr78 "BivariateCumulativeNormalDistributionDr78"  
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic ((_BivariateCumulativeNormalDistributionDr78.cell :?> BivariateCumulativeNormalDistributionDr78Model).Value
+                let builder () = withMnemonic mnemonic ((BivariateCumulativeNormalDistributionDr78Model.Cast _BivariateCumulativeNormalDistributionDr78.cell).Value
                                                             _a.cell 
                                                             _b.cell 
                                                        ) :> ICell

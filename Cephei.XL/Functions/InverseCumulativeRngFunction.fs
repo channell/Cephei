@@ -86,7 +86,7 @@ module InverseCumulativeRngFunction =
             try
 
                 let _InverseCumulativeRng = Helper.toCell<InverseCumulativeRng> inversecumulativerng "InverseCumulativeRng"  
-                let builder () = withMnemonic mnemonic ((_InverseCumulativeRng.cell :?> InverseCumulativeRngModel).Next
+                let builder () = withMnemonic mnemonic ((InverseCumulativeRngModel.Cast _InverseCumulativeRng.cell).Next
                                                        ) :> ICell
                 let format (o : Sample<double>) (l:string) = o.ToString() :> obj
 

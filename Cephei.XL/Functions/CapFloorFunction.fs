@@ -52,7 +52,7 @@ module CapFloorFunction =
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
                 let _discountCurve = Helper.toCell<YieldTermStructure> discountCurve "discountCurve" 
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).AtmRate
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).AtmRate
                                                             _discountCurve.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -219,7 +219,7 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).CapRates
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).CapRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -255,7 +255,7 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).FloatingLeg
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).FloatingLeg
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -291,7 +291,7 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).FloorRates
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).FloorRates
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -327,7 +327,7 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).GetType
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).GetType
                                                        ) :> ICell
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
 
@@ -390,7 +390,7 @@ module CapFloorFunction =
                 let _maxVol = Helper.toCell<double> maxVol "maxVol" 
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _displacement = Helper.toCell<double> displacement "displacement" 
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).ImpliedVolatility
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _guess.cell 
@@ -468,7 +468,7 @@ module CapFloorFunction =
                 let _guess = Helper.toCell<double> guess "guess" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).ImpliedVolatility1
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).ImpliedVolatility1
                                                             _targetValue.cell 
                                                             _discountCurve.cell 
                                                             _guess.cell 
@@ -519,7 +519,7 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).IsExpired
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -555,7 +555,7 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).LastFloatingRateCoupon
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).LastFloatingRateCoupon
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
 
@@ -591,7 +591,7 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -630,7 +630,7 @@ module CapFloorFunction =
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).Optionlet
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).Optionlet
                                                             _i.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloor>) l
@@ -669,7 +669,7 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).StartDate
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -705,7 +705,7 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).CASH
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -741,7 +741,7 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -777,7 +777,7 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).NPV
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -816,7 +816,7 @@ module CapFloorFunction =
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).Result
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -858,7 +858,7 @@ module CapFloorFunction =
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : CapFloor) (l:string) = o.ToString() :> obj
@@ -897,7 +897,7 @@ module CapFloorFunction =
             try
 
                 let _CapFloor = Helper.toCell<CapFloor> capfloor "CapFloor"  
-                let builder () = withMnemonic mnemonic ((_CapFloor.cell :?> CapFloorModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((CapFloorModel.Cast _CapFloor.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

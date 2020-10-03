@@ -86,7 +86,7 @@ module DiscreteSimpsonIntegratorFunction =
             try
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
-                let builder () = withMnemonic mnemonic ((_DiscreteSimpsonIntegrator.cell :?> DiscreteSimpsonIntegratorModel).AbsoluteAccuracy
+                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -122,7 +122,7 @@ module DiscreteSimpsonIntegratorFunction =
             try
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
-                let builder () = withMnemonic mnemonic ((_DiscreteSimpsonIntegrator.cell :?> DiscreteSimpsonIntegratorModel).AbsoluteError
+                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -158,7 +158,7 @@ module DiscreteSimpsonIntegratorFunction =
             try
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
-                let builder () = withMnemonic mnemonic ((_DiscreteSimpsonIntegrator.cell :?> DiscreteSimpsonIntegratorModel).IntegrationSuccess
+                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -194,7 +194,7 @@ module DiscreteSimpsonIntegratorFunction =
             try
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
-                let builder () = withMnemonic mnemonic ((_DiscreteSimpsonIntegrator.cell :?> DiscreteSimpsonIntegratorModel).MaxEvaluations
+                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -230,7 +230,7 @@ module DiscreteSimpsonIntegratorFunction =
             try
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
-                let builder () = withMnemonic mnemonic ((_DiscreteSimpsonIntegrator.cell :?> DiscreteSimpsonIntegratorModel).NumberOfEvaluations
+                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -269,7 +269,7 @@ module DiscreteSimpsonIntegratorFunction =
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder () = withMnemonic mnemonic ((_DiscreteSimpsonIntegrator.cell :?> DiscreteSimpsonIntegratorModel).SetAbsoluteAccuracy
+                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
                                                        ) :> ICell
                 let format (o : DiscreteSimpsonIntegrator) (l:string) = o.ToString() :> obj
@@ -311,7 +311,7 @@ module DiscreteSimpsonIntegratorFunction =
 
                 let _DiscreteSimpsonIntegrator = Helper.toCell<DiscreteSimpsonIntegrator> discretesimpsonintegrator "DiscreteSimpsonIntegrator"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((_DiscreteSimpsonIntegrator.cell :?> DiscreteSimpsonIntegratorModel).SetMaxEvaluations
+                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (o : DiscreteSimpsonIntegrator) (l:string) = o.ToString() :> obj
@@ -359,7 +359,7 @@ module DiscreteSimpsonIntegratorFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic ((_DiscreteSimpsonIntegrator.cell :?> DiscreteSimpsonIntegratorModel).Value
+                let builder () = withMnemonic mnemonic ((DiscreteSimpsonIntegratorModel.Cast _DiscreteSimpsonIntegrator.cell).Value
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 

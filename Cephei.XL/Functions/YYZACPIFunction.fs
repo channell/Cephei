@@ -132,7 +132,7 @@ module YYZACPIFunction =
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
                 let _h = Helper.toHandle<YoYInflationTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).Clone
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
@@ -177,7 +177,7 @@ module YYZACPIFunction =
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).Fixing
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -219,7 +219,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).Ratio
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).Ratio
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -255,7 +255,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).YoyInflationTermStructure
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).YoyInflationTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYInflationTermStructure>>) l
 
@@ -300,7 +300,7 @@ module YYZACPIFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _fixing = Helper.toCell<double> fixing "fixing" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).AddFixing
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).AddFixing
                                                             _fixingDate.cell 
                                                             _fixing.cell 
                                                             _forceOverwrite.cell 
@@ -346,7 +346,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).AvailabilityLag
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).AvailabilityLag
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -382,7 +382,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).Currency
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -418,7 +418,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).FamilyName
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -454,7 +454,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -490,7 +490,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).Frequency
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
@@ -526,7 +526,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).Interpolated
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).Interpolated
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -565,7 +565,7 @@ module YYZACPIFunction =
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -604,7 +604,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).Name
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -640,7 +640,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).Region
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).Region
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
@@ -676,7 +676,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).Revised
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).Revised
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -712,7 +712,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).Update
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).Update
                                                        ) :> ICell
                 let format (o : YYZACPI) (l:string) = o.ToString() :> obj
 
@@ -757,7 +757,7 @@ module YYZACPIFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).AddFixings
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -808,7 +808,7 @@ module YYZACPIFunction =
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -850,7 +850,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -886,7 +886,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : YYZACPI) (l:string) = o.ToString() :> obj
 
@@ -925,7 +925,7 @@ module YYZACPIFunction =
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YYZACPI) (l:string) = o.ToString() :> obj
@@ -964,7 +964,7 @@ module YYZACPIFunction =
             try
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1003,7 +1003,7 @@ module YYZACPIFunction =
 
                 let _YYZACPI = Helper.toCell<YYZACPI> yyzacpi "YYZACPI"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_YYZACPI.cell :?> YYZACPIModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((YYZACPIModel.Cast _YYZACPI.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YYZACPI) (l:string) = o.ToString() :> obj

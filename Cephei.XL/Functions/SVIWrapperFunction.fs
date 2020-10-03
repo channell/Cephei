@@ -107,7 +107,7 @@ module SVIWrapperFunction =
 
                 let _SVIWrapper = Helper.toCell<SVIWrapper> sviwrapper "SVIWrapper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_SVIWrapper.cell :?> SVIWrapperModel).Volatility
+                let builder () = withMnemonic mnemonic ((SVIWrapperModel.Cast _SVIWrapper.cell).Volatility
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

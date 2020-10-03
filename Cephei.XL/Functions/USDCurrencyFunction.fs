@@ -80,7 +80,7 @@ module USDCurrencyFunction =
             try
 
                 let _USDCurrency = Helper.toCell<USDCurrency> usdcurrency "USDCurrency"  
-                let builder () = withMnemonic mnemonic ((_USDCurrency.cell :?> USDCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((USDCurrencyModel.Cast _USDCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module USDCurrencyFunction =
             try
 
                 let _USDCurrency = Helper.toCell<USDCurrency> usdcurrency "USDCurrency"  
-                let builder () = withMnemonic mnemonic ((_USDCurrency.cell :?> USDCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((USDCurrencyModel.Cast _USDCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module USDCurrencyFunction =
 
                 let _USDCurrency = Helper.toCell<USDCurrency> usdcurrency "USDCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_USDCurrency.cell :?> USDCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((USDCurrencyModel.Cast _USDCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module USDCurrencyFunction =
             try
 
                 let _USDCurrency = Helper.toCell<USDCurrency> usdcurrency "USDCurrency"  
-                let builder () = withMnemonic mnemonic ((_USDCurrency.cell :?> USDCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((USDCurrencyModel.Cast _USDCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module USDCurrencyFunction =
             try
 
                 let _USDCurrency = Helper.toCell<USDCurrency> usdcurrency "USDCurrency"  
-                let builder () = withMnemonic mnemonic ((_USDCurrency.cell :?> USDCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((USDCurrencyModel.Cast _USDCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module USDCurrencyFunction =
             try
 
                 let _USDCurrency = Helper.toCell<USDCurrency> usdcurrency "USDCurrency"  
-                let builder () = withMnemonic mnemonic ((_USDCurrency.cell :?> USDCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((USDCurrencyModel.Cast _USDCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module USDCurrencyFunction =
             try
 
                 let _USDCurrency = Helper.toCell<USDCurrency> usdcurrency "USDCurrency"  
-                let builder () = withMnemonic mnemonic ((_USDCurrency.cell :?> USDCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((USDCurrencyModel.Cast _USDCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module USDCurrencyFunction =
             try
 
                 let _USDCurrency = Helper.toCell<USDCurrency> usdcurrency "USDCurrency"  
-                let builder () = withMnemonic mnemonic ((_USDCurrency.cell :?> USDCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((USDCurrencyModel.Cast _USDCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module USDCurrencyFunction =
             try
 
                 let _USDCurrency = Helper.toCell<USDCurrency> usdcurrency "USDCurrency"  
-                let builder () = withMnemonic mnemonic ((_USDCurrency.cell :?> USDCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((USDCurrencyModel.Cast _USDCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module USDCurrencyFunction =
             try
 
                 let _USDCurrency = Helper.toCell<USDCurrency> usdcurrency "USDCurrency"  
-                let builder () = withMnemonic mnemonic ((_USDCurrency.cell :?> USDCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((USDCurrencyModel.Cast _USDCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module USDCurrencyFunction =
             try
 
                 let _USDCurrency = Helper.toCell<USDCurrency> usdcurrency "USDCurrency"  
-                let builder () = withMnemonic mnemonic ((_USDCurrency.cell :?> USDCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((USDCurrencyModel.Cast _USDCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module USDCurrencyFunction =
             try
 
                 let _USDCurrency = Helper.toCell<USDCurrency> usdcurrency "USDCurrency"  
-                let builder () = withMnemonic mnemonic ((_USDCurrency.cell :?> USDCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((USDCurrencyModel.Cast _USDCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

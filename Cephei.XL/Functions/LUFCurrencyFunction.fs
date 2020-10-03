@@ -80,7 +80,7 @@ module LUFCurrencyFunction =
             try
 
                 let _LUFCurrency = Helper.toCell<LUFCurrency> lufcurrency "LUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_LUFCurrency.cell :?> LUFCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((LUFCurrencyModel.Cast _LUFCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module LUFCurrencyFunction =
             try
 
                 let _LUFCurrency = Helper.toCell<LUFCurrency> lufcurrency "LUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_LUFCurrency.cell :?> LUFCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((LUFCurrencyModel.Cast _LUFCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module LUFCurrencyFunction =
 
                 let _LUFCurrency = Helper.toCell<LUFCurrency> lufcurrency "LUFCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_LUFCurrency.cell :?> LUFCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((LUFCurrencyModel.Cast _LUFCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module LUFCurrencyFunction =
             try
 
                 let _LUFCurrency = Helper.toCell<LUFCurrency> lufcurrency "LUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_LUFCurrency.cell :?> LUFCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((LUFCurrencyModel.Cast _LUFCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module LUFCurrencyFunction =
             try
 
                 let _LUFCurrency = Helper.toCell<LUFCurrency> lufcurrency "LUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_LUFCurrency.cell :?> LUFCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((LUFCurrencyModel.Cast _LUFCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module LUFCurrencyFunction =
             try
 
                 let _LUFCurrency = Helper.toCell<LUFCurrency> lufcurrency "LUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_LUFCurrency.cell :?> LUFCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((LUFCurrencyModel.Cast _LUFCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module LUFCurrencyFunction =
             try
 
                 let _LUFCurrency = Helper.toCell<LUFCurrency> lufcurrency "LUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_LUFCurrency.cell :?> LUFCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((LUFCurrencyModel.Cast _LUFCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module LUFCurrencyFunction =
             try
 
                 let _LUFCurrency = Helper.toCell<LUFCurrency> lufcurrency "LUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_LUFCurrency.cell :?> LUFCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((LUFCurrencyModel.Cast _LUFCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module LUFCurrencyFunction =
             try
 
                 let _LUFCurrency = Helper.toCell<LUFCurrency> lufcurrency "LUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_LUFCurrency.cell :?> LUFCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((LUFCurrencyModel.Cast _LUFCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module LUFCurrencyFunction =
             try
 
                 let _LUFCurrency = Helper.toCell<LUFCurrency> lufcurrency "LUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_LUFCurrency.cell :?> LUFCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((LUFCurrencyModel.Cast _LUFCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module LUFCurrencyFunction =
             try
 
                 let _LUFCurrency = Helper.toCell<LUFCurrency> lufcurrency "LUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_LUFCurrency.cell :?> LUFCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((LUFCurrencyModel.Cast _LUFCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module LUFCurrencyFunction =
             try
 
                 let _LUFCurrency = Helper.toCell<LUFCurrency> lufcurrency "LUFCurrency"  
-                let builder () = withMnemonic mnemonic ((_LUFCurrency.cell :?> LUFCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((LUFCurrencyModel.Cast _LUFCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

@@ -49,7 +49,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).Delta
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).DeltaForward
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -121,7 +121,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).DividendRho
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -157,7 +157,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).Elasticity
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -193,7 +193,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).Gamma
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -229,7 +229,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).IsExpired
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -265,7 +265,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).ItmCashProbability
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -356,7 +356,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).Rho
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -392,7 +392,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).StrikeSensitivity
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -428,7 +428,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).Theta
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -464,7 +464,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).ThetaPerDay
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -500,7 +500,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).Vega
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -536,7 +536,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).Exercise
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -572,7 +572,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).Payoff
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -608,7 +608,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).CASH
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -644,7 +644,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -680,7 +680,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).NPV
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -719,7 +719,7 @@ module OneAssetOptionFunction =
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).Result
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -761,7 +761,7 @@ module OneAssetOptionFunction =
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : OneAssetOption) (l:string) = o.ToString() :> obj
@@ -800,7 +800,7 @@ module OneAssetOptionFunction =
             try
 
                 let _OneAssetOption = Helper.toCell<OneAssetOption> oneassetoption "OneAssetOption"  
-                let builder () = withMnemonic mnemonic ((_OneAssetOption.cell :?> OneAssetOptionModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((OneAssetOptionModel.Cast _OneAssetOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

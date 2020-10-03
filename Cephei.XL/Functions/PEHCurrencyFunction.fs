@@ -80,7 +80,7 @@ module PEHCurrencyFunction =
             try
 
                 let _PEHCurrency = Helper.toCell<PEHCurrency> pehcurrency "PEHCurrency"  
-                let builder () = withMnemonic mnemonic ((_PEHCurrency.cell :?> PEHCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((PEHCurrencyModel.Cast _PEHCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module PEHCurrencyFunction =
             try
 
                 let _PEHCurrency = Helper.toCell<PEHCurrency> pehcurrency "PEHCurrency"  
-                let builder () = withMnemonic mnemonic ((_PEHCurrency.cell :?> PEHCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((PEHCurrencyModel.Cast _PEHCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module PEHCurrencyFunction =
 
                 let _PEHCurrency = Helper.toCell<PEHCurrency> pehcurrency "PEHCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_PEHCurrency.cell :?> PEHCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((PEHCurrencyModel.Cast _PEHCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module PEHCurrencyFunction =
             try
 
                 let _PEHCurrency = Helper.toCell<PEHCurrency> pehcurrency "PEHCurrency"  
-                let builder () = withMnemonic mnemonic ((_PEHCurrency.cell :?> PEHCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((PEHCurrencyModel.Cast _PEHCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module PEHCurrencyFunction =
             try
 
                 let _PEHCurrency = Helper.toCell<PEHCurrency> pehcurrency "PEHCurrency"  
-                let builder () = withMnemonic mnemonic ((_PEHCurrency.cell :?> PEHCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((PEHCurrencyModel.Cast _PEHCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module PEHCurrencyFunction =
             try
 
                 let _PEHCurrency = Helper.toCell<PEHCurrency> pehcurrency "PEHCurrency"  
-                let builder () = withMnemonic mnemonic ((_PEHCurrency.cell :?> PEHCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((PEHCurrencyModel.Cast _PEHCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module PEHCurrencyFunction =
             try
 
                 let _PEHCurrency = Helper.toCell<PEHCurrency> pehcurrency "PEHCurrency"  
-                let builder () = withMnemonic mnemonic ((_PEHCurrency.cell :?> PEHCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((PEHCurrencyModel.Cast _PEHCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module PEHCurrencyFunction =
             try
 
                 let _PEHCurrency = Helper.toCell<PEHCurrency> pehcurrency "PEHCurrency"  
-                let builder () = withMnemonic mnemonic ((_PEHCurrency.cell :?> PEHCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((PEHCurrencyModel.Cast _PEHCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module PEHCurrencyFunction =
             try
 
                 let _PEHCurrency = Helper.toCell<PEHCurrency> pehcurrency "PEHCurrency"  
-                let builder () = withMnemonic mnemonic ((_PEHCurrency.cell :?> PEHCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((PEHCurrencyModel.Cast _PEHCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module PEHCurrencyFunction =
             try
 
                 let _PEHCurrency = Helper.toCell<PEHCurrency> pehcurrency "PEHCurrency"  
-                let builder () = withMnemonic mnemonic ((_PEHCurrency.cell :?> PEHCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((PEHCurrencyModel.Cast _PEHCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module PEHCurrencyFunction =
             try
 
                 let _PEHCurrency = Helper.toCell<PEHCurrency> pehcurrency "PEHCurrency"  
-                let builder () = withMnemonic mnemonic ((_PEHCurrency.cell :?> PEHCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((PEHCurrencyModel.Cast _PEHCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module PEHCurrencyFunction =
             try
 
                 let _PEHCurrency = Helper.toCell<PEHCurrency> pehcurrency "PEHCurrency"  
-                let builder () = withMnemonic mnemonic ((_PEHCurrency.cell :?> PEHCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((PEHCurrencyModel.Cast _PEHCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

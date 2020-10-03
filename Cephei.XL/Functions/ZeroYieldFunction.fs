@@ -55,7 +55,7 @@ module ZeroYieldFunction =
                 let _ZeroYield = Helper.toCell<ZeroYield> zeroyield "ZeroYield"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_ZeroYield.cell :?> ZeroYieldModel).DiscountImpl
+                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).DiscountImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -103,7 +103,7 @@ module ZeroYieldFunction =
                 let _ZeroYield = Helper.toCell<ZeroYield> zeroyield "ZeroYield"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_ZeroYield.cell :?> ZeroYieldModel).ForwardImpl
+                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).ForwardImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -157,7 +157,7 @@ module ZeroYieldFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((_ZeroYield.cell :?> ZeroYieldModel).Guess
+                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).Guess
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -208,7 +208,7 @@ module ZeroYieldFunction =
 
                 let _ZeroYield = Helper.toCell<ZeroYield> zeroyield "ZeroYield"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((_ZeroYield.cell :?> ZeroYieldModel).InitialDate
+                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).InitialDate
                                                             _c.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -250,7 +250,7 @@ module ZeroYieldFunction =
 
                 let _ZeroYield = Helper.toCell<ZeroYield> zeroyield "ZeroYield"  
                 let _c = Helper.toCell<YieldTermStructure> c "c" 
-                let builder () = withMnemonic mnemonic ((_ZeroYield.cell :?> ZeroYieldModel).InitialValue
+                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).InitialValue
                                                             _c.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -289,7 +289,7 @@ module ZeroYieldFunction =
             try
 
                 let _ZeroYield = Helper.toCell<ZeroYield> zeroyield "ZeroYield"  
-                let builder () = withMnemonic mnemonic ((_ZeroYield.cell :?> ZeroYieldModel).MaxIterations
+                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).MaxIterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -337,7 +337,7 @@ module ZeroYieldFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((_ZeroYield.cell :?> ZeroYieldModel).MaxValueAfter
+                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).MaxValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -397,7 +397,7 @@ module ZeroYieldFunction =
                 let _c = Helper.toCell<InterpolatedCurve> c "c" 
                 let _validData = Helper.toCell<bool> validData "validData" 
                 let _f = Helper.toCell<int> f "f" 
-                let builder () = withMnemonic mnemonic ((_ZeroYield.cell :?> ZeroYieldModel).MinValueAfter
+                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).MinValueAfter
                                                             _i.cell 
                                                             _c.cell 
                                                             _validData.cell 
@@ -454,7 +454,7 @@ module ZeroYieldFunction =
                 let _data = Helper.toCell<Generic.List<double>> data "data" 
                 let _rate = Helper.toCell<double> rate "rate" 
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_ZeroYield.cell :?> ZeroYieldModel).UpdateGuess
+                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).UpdateGuess
                                                             _data.cell 
                                                             _rate.cell 
                                                             _i.cell 
@@ -505,7 +505,7 @@ module ZeroYieldFunction =
                 let _ZeroYield = Helper.toCell<ZeroYield> zeroyield "ZeroYield"  
                 let _i = Helper.toCell<Interpolation> i "i" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_ZeroYield.cell :?> ZeroYieldModel).ZeroYieldImpl
+                let builder () = withMnemonic mnemonic ((ZeroYieldModel.Cast _ZeroYield.cell).ZeroYieldImpl
                                                             _i.cell 
                                                             _t.cell 
                                                        ) :> ICell

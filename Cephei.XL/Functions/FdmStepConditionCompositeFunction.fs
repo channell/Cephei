@@ -55,7 +55,7 @@ module FdmStepConditionCompositeFunction =
                 let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_FdmStepConditionComposite.cell :?> FdmStepConditionCompositeModel).ApplyTo
+                let builder () = withMnemonic mnemonic ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -97,7 +97,7 @@ module FdmStepConditionCompositeFunction =
             try
 
                 let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
-                let builder () = withMnemonic mnemonic ((_FdmStepConditionComposite.cell :?> FdmStepConditionCompositeModel).Conditions
+                let builder () = withMnemonic mnemonic ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).Conditions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<IStepCondition<Vector>>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -207,7 +207,7 @@ module FdmStepConditionCompositeFunction =
             try
 
                 let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
-                let builder () = withMnemonic mnemonic ((_FdmStepConditionComposite.cell :?> FdmStepConditionCompositeModel).StoppingTimes
+                let builder () = withMnemonic mnemonic ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).StoppingTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 

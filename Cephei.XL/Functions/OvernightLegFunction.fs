@@ -92,7 +92,7 @@ module OvernightLegFunction =
             try
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
-                let builder () = withMnemonic mnemonic ((_OvernightLeg.cell :?> OvernightLegModel).Value
+                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -131,7 +131,7 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
-                let builder () = withMnemonic mnemonic ((_OvernightLeg.cell :?> OvernightLegModel).WithGearings
+                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithGearings
                                                             _gearings.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
@@ -173,7 +173,7 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
-                let builder () = withMnemonic mnemonic ((_OvernightLeg.cell :?> OvernightLegModel).WithGearings1
+                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithGearings1
                                                             _gearing.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
@@ -215,7 +215,7 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder () = withMnemonic mnemonic ((_OvernightLeg.cell :?> OvernightLegModel).WithNotionals
+                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithNotionals
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
@@ -257,7 +257,7 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder () = withMnemonic mnemonic ((_OvernightLeg.cell :?> OvernightLegModel).WithNotionals1
+                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithNotionals1
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
@@ -299,7 +299,7 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder () = withMnemonic mnemonic ((_OvernightLeg.cell :?> OvernightLegModel).WithPaymentAdjustment
+                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
@@ -341,7 +341,7 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((_OvernightLeg.cell :?> OvernightLegModel).WithPaymentDayCounter
+                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
@@ -383,7 +383,7 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
-                let builder () = withMnemonic mnemonic ((_OvernightLeg.cell :?> OvernightLegModel).WithSpreads1
+                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithSpreads1
                                                             _spreads.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
@@ -425,7 +425,7 @@ module OvernightLegFunction =
 
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
-                let builder () = withMnemonic mnemonic ((_OvernightLeg.cell :?> OvernightLegModel).WithSpreads
+                let builder () = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).WithSpreads
                                                             _spread.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l

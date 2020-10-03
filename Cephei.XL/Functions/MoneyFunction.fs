@@ -49,7 +49,7 @@ module MoneyFunction =
             try
 
                 let _Money = Helper.toCell<Money> money "Money"  
-                let builder () = withMnemonic mnemonic ((_Money.cell :?> MoneyModel).Currency
+                let builder () = withMnemonic mnemonic ((MoneyModel.Cast _Money.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -88,7 +88,7 @@ module MoneyFunction =
 
                 let _Money = Helper.toCell<Money> money "Money"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Money.cell :?> MoneyModel).Equals
+                let builder () = withMnemonic mnemonic ((MoneyModel.Cast _Money.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -244,7 +244,7 @@ module MoneyFunction =
             try
 
                 let _Money = Helper.toCell<Money> money "Money"  
-                let builder () = withMnemonic mnemonic ((_Money.cell :?> MoneyModel).Rounded
+                let builder () = withMnemonic mnemonic ((MoneyModel.Cast _Money.cell).Rounded
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Money>) l
 
@@ -280,7 +280,7 @@ module MoneyFunction =
             try
 
                 let _Money = Helper.toCell<Money> money "Money"  
-                let builder () = withMnemonic mnemonic ((_Money.cell :?> MoneyModel).ToString
+                let builder () = withMnemonic mnemonic ((MoneyModel.Cast _Money.cell).ToString
                                                        ) :> ICell
                 let format (o : String) (l:string) = o.ToString() :> obj
 
@@ -316,7 +316,7 @@ module MoneyFunction =
             try
 
                 let _Money = Helper.toCell<Money> money "Money"  
-                let builder () = withMnemonic mnemonic ((_Money.cell :?> MoneyModel).Value
+                let builder () = withMnemonic mnemonic ((MoneyModel.Cast _Money.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

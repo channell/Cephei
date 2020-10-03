@@ -49,7 +49,7 @@ module TqrEigenDecompositionFunction =
             try
 
                 let _TqrEigenDecomposition = Helper.toCell<TqrEigenDecomposition> tqreigendecomposition "TqrEigenDecomposition"  
-                let builder () = withMnemonic mnemonic ((_TqrEigenDecomposition.cell :?> TqrEigenDecompositionModel).Eigenvalues
+                let builder () = withMnemonic mnemonic ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Eigenvalues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -85,7 +85,7 @@ module TqrEigenDecompositionFunction =
             try
 
                 let _TqrEigenDecomposition = Helper.toCell<TqrEigenDecomposition> tqreigendecomposition "TqrEigenDecomposition"  
-                let builder () = withMnemonic mnemonic ((_TqrEigenDecomposition.cell :?> TqrEigenDecompositionModel).Eigenvectors
+                let builder () = withMnemonic mnemonic ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Eigenvectors
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
@@ -121,7 +121,7 @@ module TqrEigenDecompositionFunction =
             try
 
                 let _TqrEigenDecomposition = Helper.toCell<TqrEigenDecomposition> tqreigendecomposition "TqrEigenDecomposition"  
-                let builder () = withMnemonic mnemonic ((_TqrEigenDecomposition.cell :?> TqrEigenDecompositionModel).Iterations
+                let builder () = withMnemonic mnemonic ((TqrEigenDecompositionModel.Cast _TqrEigenDecomposition.cell).Iterations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

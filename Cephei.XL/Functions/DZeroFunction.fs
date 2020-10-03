@@ -99,7 +99,7 @@ module DZeroFunction =
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).Add
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Add
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
@@ -145,7 +145,7 @@ module DZeroFunction =
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).ApplyTo
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).ApplyTo
                                                             _v.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -184,7 +184,7 @@ module DZeroFunction =
             try
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).Clone
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -220,7 +220,7 @@ module DZeroFunction =
             try
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).Diagonal
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Diagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -259,7 +259,7 @@ module DZeroFunction =
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).Identity
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Identity
                                                             _size.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
@@ -298,7 +298,7 @@ module DZeroFunction =
             try
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).IsTimeDependent
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).IsTimeDependent
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -334,7 +334,7 @@ module DZeroFunction =
             try
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).LowerDiagonal
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).LowerDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -376,7 +376,7 @@ module DZeroFunction =
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _a = Helper.toCell<double> a "a" 
                 let _o = Helper.toCell<IOperator> o "o" 
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).Multiply
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Multiply
                                                             _a.cell 
                                                             _o.cell 
                                                        ) :> ICell
@@ -424,7 +424,7 @@ module DZeroFunction =
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).SetFirstRow
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetFirstRow
                                                             _valB.cell 
                                                             _valC.cell 
                                                        ) :> ICell
@@ -472,7 +472,7 @@ module DZeroFunction =
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).SetLastRow
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetLastRow
                                                             _valA.cell 
                                                             _valB.cell 
                                                        ) :> ICell
@@ -526,7 +526,7 @@ module DZeroFunction =
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).SetMidRow
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetMidRow
                                                             _i.cell 
                                                             _valA.cell 
                                                             _valB.cell 
@@ -583,7 +583,7 @@ module DZeroFunction =
                 let _valA = Helper.toCell<double> valA "valA" 
                 let _valB = Helper.toCell<double> valB "valB" 
                 let _valC = Helper.toCell<double> valC "valC" 
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).SetMidRows
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetMidRows
                                                             _valA.cell 
                                                             _valB.cell 
                                                             _valC.cell 
@@ -631,7 +631,7 @@ module DZeroFunction =
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).SetTime
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DZero) (l:string) = o.ToString() :> obj
@@ -670,7 +670,7 @@ module DZeroFunction =
             try
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).Size
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -709,7 +709,7 @@ module DZeroFunction =
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).SolveFor
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SolveFor
                                                             _rhs.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -754,7 +754,7 @@ module DZeroFunction =
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _rhs = Helper.toCell<Vector> rhs "rhs" 
                 let _tol = Helper.toCell<double> tol "tol" 
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).SOR
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).SOR
                                                             _rhs.cell 
                                                             _tol.cell 
                                                        ) :> ICell
@@ -802,7 +802,7 @@ module DZeroFunction =
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
                 let _A = Helper.toCell<IOperator> A "A" 
                 let _B = Helper.toCell<IOperator> B "B" 
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).Subtract
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).Subtract
                                                             _A.cell 
                                                             _B.cell 
                                                        ) :> ICell
@@ -844,7 +844,7 @@ module DZeroFunction =
             try
 
                 let _DZero = Helper.toCell<DZero> dzero "DZero"  
-                let builder () = withMnemonic mnemonic ((_DZero.cell :?> DZeroModel).UpperDiagonal
+                let builder () = withMnemonic mnemonic ((DZeroModel.Cast _DZero.cell).UpperDiagonal
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

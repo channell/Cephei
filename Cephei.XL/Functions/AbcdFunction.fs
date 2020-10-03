@@ -146,7 +146,7 @@ module AbcdFunction =
             try
 
                 let _Abcd = Helper.toCell<Abcd> abcd "Abcd"  
-                let builder () = withMnemonic mnemonic ((_Abcd.cell :?> AbcdModel).Global
+                let builder () = withMnemonic mnemonic ((AbcdModel.Cast _Abcd.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -191,7 +191,7 @@ module AbcdFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((_Abcd.cell :?> AbcdModel).Interpolate
+                let builder () = withMnemonic mnemonic ((AbcdModel.Cast _Abcd.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 

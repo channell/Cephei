@@ -49,7 +49,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Clone
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Data
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -121,7 +121,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Data_
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -157,7 +157,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Dates
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -193,7 +193,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Dates_
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -229,7 +229,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Discounts
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Discounts
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -338,7 +338,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Interpolation_
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
@@ -374,7 +374,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Interpolator_
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
@@ -410,7 +410,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).MaxDate
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -446,7 +446,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).MaxDate_
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -482,7 +482,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Nodes
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
@@ -518,7 +518,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).SetupInterpolation
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedSurvivalProbabilityCurve) (l:string) = o.ToString() :> obj
 
@@ -554,7 +554,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).SurvivalProbabilities
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).SurvivalProbabilities
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -590,7 +590,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Times
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -626,7 +626,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Times_
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -668,7 +668,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).DefaultDensity
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).DefaultDensity
                                                             _t.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -716,7 +716,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).DefaultDensity1
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).DefaultDensity1
                                                             _d.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -767,7 +767,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _t1 = Helper.toCell<double> t1 "t1" 
                 let _t2 = Helper.toCell<double> t2 "t2" 
                 let _extrapo = Helper.toCell<bool> extrapo "extrapo" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).DefaultProbability
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).DefaultProbability
                                                             _t1.cell 
                                                             _t2.cell 
                                                             _extrapo.cell 
@@ -821,7 +821,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).DefaultProbability1
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).DefaultProbability1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _extrapolate.cell 
@@ -872,7 +872,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).DefaultProbability2
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).DefaultProbability2
                                                             _t.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -920,7 +920,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).DefaultProbability3
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).DefaultProbability3
                                                             _d.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -968,7 +968,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).HazardRate
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).HazardRate
                                                             _t.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -1016,7 +1016,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).HazardRate1
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).HazardRate1
                                                             _d.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -1058,7 +1058,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).JumpDates
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -1094,7 +1094,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).JumpTimes
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -1136,7 +1136,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).SurvivalProbability
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).SurvivalProbability
                                                             _t.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -1184,7 +1184,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).SurvivalProbability1
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).SurvivalProbability1
                                                             _d.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -1226,7 +1226,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Update
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Update
                                                        ) :> ICell
                 let format (o : InterpolatedSurvivalProbabilityCurve) (l:string) = o.ToString() :> obj
 
@@ -1262,7 +1262,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Calendar
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -1298,7 +1298,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).DayCounter
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -1334,7 +1334,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).MaxTime
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1370,7 +1370,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).ReferenceDate
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1406,7 +1406,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).SettlementDays
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1445,7 +1445,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).TimeFromReference
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1484,7 +1484,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1523,7 +1523,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedSurvivalProbabilityCurve) (l:string) = o.ToString() :> obj
@@ -1565,7 +1565,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : InterpolatedSurvivalProbabilityCurve) (l:string) = o.ToString() :> obj
@@ -1604,7 +1604,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
             try
 
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedSurvivalProbabilityCurve.cell :?> InterpolatedSurvivalProbabilityCurveModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

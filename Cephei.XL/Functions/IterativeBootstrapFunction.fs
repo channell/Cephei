@@ -83,7 +83,7 @@ module IterativeBootstrapFunction =
 
                 let _IterativeBootstrap = Helper.toCell<IterativeBootstrap> iterativebootstrap "IterativeBootstrap"  
                 let _ts = Helper.toCell<'T> ts "ts" 
-                let builder () = withMnemonic mnemonic ((_IterativeBootstrap.cell :?> IterativeBootstrapModel).Setup
+                let builder () = withMnemonic mnemonic ((IterativeBootstrapModel.Cast _IterativeBootstrap.cell).Setup
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (o : IterativeBootstrap) (l:string) = o.ToString() :> obj

@@ -49,7 +49,7 @@ module ProblemFunction =
             try
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).Constraint
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
@@ -85,7 +85,7 @@ module ProblemFunction =
             try
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).CostFunction
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).CostFunction
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CostFunction>) l
 
@@ -121,7 +121,7 @@ module ProblemFunction =
             try
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).CurrentValue
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).CurrentValue
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -157,7 +157,7 @@ module ProblemFunction =
             try
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).FunctionEvaluation
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).FunctionEvaluation
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -193,7 +193,7 @@ module ProblemFunction =
             try
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).FunctionValue
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).FunctionValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -235,7 +235,7 @@ module ProblemFunction =
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let _grad_f = Helper.toCell<Vector> grad_f "grad_f" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).Gradient
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).Gradient
                                                             _grad_f.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -277,7 +277,7 @@ module ProblemFunction =
             try
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).GradientEvaluation
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).GradientEvaluation
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -313,7 +313,7 @@ module ProblemFunction =
             try
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).GradientNormValue
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).GradientNormValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -398,7 +398,7 @@ module ProblemFunction =
             try
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).Reset
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).Reset
                                                        ) :> ICell
                 let format (o : Problem) (l:string) = o.ToString() :> obj
 
@@ -437,7 +437,7 @@ module ProblemFunction =
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let _currentValue = Helper.toCell<Vector> currentValue "currentValue" 
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).SetCurrentValue
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).SetCurrentValue
                                                             _currentValue.cell 
                                                        ) :> ICell
                 let format (o : Problem) (l:string) = o.ToString() :> obj
@@ -479,7 +479,7 @@ module ProblemFunction =
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let _functionValue = Helper.toCell<double> functionValue "functionValue" 
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).SetFunctionValue
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).SetFunctionValue
                                                             _functionValue.cell 
                                                        ) :> ICell
                 let format (o : Problem) (l:string) = o.ToString() :> obj
@@ -521,7 +521,7 @@ module ProblemFunction =
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let _squaredNorm = Helper.toCell<double> squaredNorm "squaredNorm" 
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).SetGradientNormValue
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).SetGradientNormValue
                                                             _squaredNorm.cell 
                                                        ) :> ICell
                 let format (o : Problem) (l:string) = o.ToString() :> obj
@@ -563,7 +563,7 @@ module ProblemFunction =
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).Value
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -608,7 +608,7 @@ module ProblemFunction =
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let _grad_f = Helper.toCell<Vector> grad_f "grad_f" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).ValueAndGradient
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).ValueAndGradient
                                                             _grad_f.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -653,7 +653,7 @@ module ProblemFunction =
 
                 let _Problem = Helper.toCell<Problem> problem "Problem"  
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_Problem.cell :?> ProblemModel).Values
+                let builder () = withMnemonic mnemonic ((ProblemModel.Cast _Problem.cell).Values
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

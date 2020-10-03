@@ -49,7 +49,7 @@ module MultiPathFunction =
             try
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
-                let builder () = withMnemonic mnemonic ((_MultiPath.cell :?> MultiPathModel).AssetNumber
+                let builder () = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).AssetNumber
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module MultiPathFunction =
             try
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
-                let builder () = withMnemonic mnemonic ((_MultiPath.cell :?> MultiPathModel).Clone
+                let builder () = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -121,7 +121,7 @@ module MultiPathFunction =
             try
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
-                let builder () = withMnemonic mnemonic ((_MultiPath.cell :?> MultiPathModel).Length
+                let builder () = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).Length
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -268,7 +268,7 @@ module MultiPathFunction =
             try
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
-                let builder () = withMnemonic mnemonic ((_MultiPath.cell :?> MultiPathModel).PathSize
+                let builder () = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).PathSize
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -307,7 +307,7 @@ module MultiPathFunction =
 
                 let _MultiPath = Helper.toCell<MultiPath> multipath "MultiPath"  
                 let _j = Helper.toCell<int> j "j" 
-                let builder () = withMnemonic mnemonic ((_MultiPath.cell :?> MultiPathModel).This
+                let builder () = withMnemonic mnemonic ((MultiPathModel.Cast _MultiPath.cell).This
                                                             _j.cell 
                                                        ) :> ICell
                 let format (o : Path) (l:string) = o.ToString() :> obj

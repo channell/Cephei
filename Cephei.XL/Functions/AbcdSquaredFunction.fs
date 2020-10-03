@@ -119,7 +119,7 @@ module AbcdSquaredFunction =
 
                 let _AbcdSquared = Helper.toCell<AbcdSquared> abcdsquared "AbcdSquared"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_AbcdSquared.cell :?> AbcdSquaredModel).Value
+                let builder () = withMnemonic mnemonic ((AbcdSquaredModel.Cast _AbcdSquared.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

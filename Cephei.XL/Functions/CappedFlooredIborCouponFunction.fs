@@ -237,7 +237,7 @@ module CappedFlooredIborCouponFunction =
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
                 let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Factory
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Factory
                                                             _nominal.cell 
                                                             _paymentDate.cell 
                                                             _startDate.cell 
@@ -315,7 +315,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Cap
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Cap
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -351,7 +351,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).ConvexityAdjustment
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -387,7 +387,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).EffectiveCap
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).EffectiveCap
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -423,7 +423,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).EffectiveFloor
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).EffectiveFloor
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -459,7 +459,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Floor
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Floor
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -495,7 +495,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).IsCapped
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).IsCapped
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -531,7 +531,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).IsFloored
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).IsFloored
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -567,7 +567,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Rate
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -606,7 +606,7 @@ module CappedFlooredIborCouponFunction =
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).SetPricer
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredIborCoupon) (l:string) = o.ToString() :> obj
@@ -648,7 +648,7 @@ module CappedFlooredIborCouponFunction =
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).AccruedAmount
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -687,7 +687,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).AdjustedFixing
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -723,7 +723,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Amount
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -759,7 +759,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).DayCounter
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -795,7 +795,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).FixingDate
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -831,7 +831,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).FixingDays
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -867,7 +867,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Gearing
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -903,7 +903,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Index
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
@@ -939,7 +939,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).IndexFixing
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -975,7 +975,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).IsInArrears
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1014,7 +1014,7 @@ module CappedFlooredIborCouponFunction =
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Price
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Price
                                                             _yts.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1053,7 +1053,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Pricer
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
@@ -1089,7 +1089,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Spread
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1125,7 +1125,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Update
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : CappedFlooredIborCoupon) (l:string) = o.ToString() :> obj
 
@@ -1161,7 +1161,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).AccrualDays
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1197,7 +1197,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).AccrualEndDate
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1233,7 +1233,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).AccrualPeriod
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1269,7 +1269,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).AccrualStartDate
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1308,7 +1308,7 @@ module CappedFlooredIborCouponFunction =
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).AccruedDays
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1350,7 +1350,7 @@ module CappedFlooredIborCouponFunction =
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).AccruedPeriod
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1389,7 +1389,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Date
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1425,7 +1425,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).ExCouponDate
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1461,7 +1461,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Nominal
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1497,7 +1497,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).ReferencePeriodEnd
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1533,7 +1533,7 @@ module CappedFlooredIborCouponFunction =
             try
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).ReferencePeriodStart
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1572,7 +1572,7 @@ module CappedFlooredIborCouponFunction =
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).CompareTo
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1614,7 +1614,7 @@ module CappedFlooredIborCouponFunction =
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Equals
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1659,7 +1659,7 @@ module CappedFlooredIborCouponFunction =
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).HasOccurred
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -1704,7 +1704,7 @@ module CappedFlooredIborCouponFunction =
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).TradingExCoupon
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1746,7 +1746,7 @@ module CappedFlooredIborCouponFunction =
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).Accept
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredIborCoupon) (l:string) = o.ToString() :> obj
@@ -1788,7 +1788,7 @@ module CappedFlooredIborCouponFunction =
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredIborCoupon) (l:string) = o.ToString() :> obj
@@ -1830,7 +1830,7 @@ module CappedFlooredIborCouponFunction =
 
                 let _CappedFlooredIborCoupon = Helper.toCell<CappedFlooredIborCoupon> cappedfloorediborcoupon "CappedFlooredIborCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_CappedFlooredIborCoupon.cell :?> CappedFlooredIborCouponModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((CappedFlooredIborCouponModel.Cast _CappedFlooredIborCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CappedFlooredIborCoupon) (l:string) = o.ToString() :> obj

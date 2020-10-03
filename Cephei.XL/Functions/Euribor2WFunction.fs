@@ -117,7 +117,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -156,7 +156,7 @@ module Euribor2WFunction =
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).Clone
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).Clone
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -195,7 +195,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -240,7 +240,7 @@ module Euribor2WFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).ForecastFixing1
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
@@ -288,7 +288,7 @@ module Euribor2WFunction =
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).ForecastFixing
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -327,7 +327,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).ForwardingTermStructure
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -366,7 +366,7 @@ module Euribor2WFunction =
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -405,7 +405,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).Currency
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -441,7 +441,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).DayCounter
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -477,7 +477,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).FamilyName
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -519,7 +519,7 @@ module Euribor2WFunction =
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).Fixing
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -561,7 +561,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -600,7 +600,7 @@ module Euribor2WFunction =
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).FixingDate
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -639,7 +639,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).FixingDays
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -678,7 +678,7 @@ module Euribor2WFunction =
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -717,7 +717,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).Name
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -756,7 +756,7 @@ module Euribor2WFunction =
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).PastFixing
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -795,7 +795,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).Tenor
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -831,7 +831,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).Update
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).Update
                                                        ) :> ICell
                 let format (o : Euribor2W) (l:string) = o.ToString() :> obj
 
@@ -870,7 +870,7 @@ module Euribor2WFunction =
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).ValueDate
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -918,7 +918,7 @@ module Euribor2WFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).AddFixing
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -972,7 +972,7 @@ module Euribor2WFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).AddFixings
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -1023,7 +1023,7 @@ module Euribor2WFunction =
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -1065,7 +1065,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1101,7 +1101,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Euribor2W) (l:string) = o.ToString() :> obj
 
@@ -1140,7 +1140,7 @@ module Euribor2WFunction =
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Euribor2W) (l:string) = o.ToString() :> obj
@@ -1179,7 +1179,7 @@ module Euribor2WFunction =
             try
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1218,7 +1218,7 @@ module Euribor2WFunction =
 
                 let _Euribor2W = Helper.toCell<Euribor2W> euribor2w "Euribor2W"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_Euribor2W.cell :?> Euribor2WModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((Euribor2WModel.Cast _Euribor2W.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Euribor2W) (l:string) = o.ToString() :> obj

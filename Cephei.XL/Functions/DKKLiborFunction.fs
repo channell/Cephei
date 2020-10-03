@@ -132,7 +132,7 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).Clone
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -174,7 +174,7 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -216,7 +216,7 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).ValueDate
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -255,7 +255,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -291,7 +291,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -336,7 +336,7 @@ module DKKLiborFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).ForecastFixing1
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
@@ -384,7 +384,7 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).ForecastFixing
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -423,7 +423,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).ForwardingTermStructure
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -459,7 +459,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).Currency
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -495,7 +495,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).DayCounter
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -531,7 +531,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).FamilyName
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -573,7 +573,7 @@ module DKKLiborFunction =
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).Fixing
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -615,7 +615,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -654,7 +654,7 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).FixingDate
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -693,7 +693,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).FixingDays
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -732,7 +732,7 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -771,7 +771,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).Name
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -810,7 +810,7 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).PastFixing
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -849,7 +849,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).Tenor
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -885,7 +885,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).Update
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).Update
                                                        ) :> ICell
                 let format (o : DKKLibor) (l:string) = o.ToString() :> obj
 
@@ -930,7 +930,7 @@ module DKKLiborFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).AddFixing
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -984,7 +984,7 @@ module DKKLiborFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).AddFixings
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -1035,7 +1035,7 @@ module DKKLiborFunction =
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -1077,7 +1077,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1113,7 +1113,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : DKKLibor) (l:string) = o.ToString() :> obj
 
@@ -1152,7 +1152,7 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DKKLibor) (l:string) = o.ToString() :> obj
@@ -1191,7 +1191,7 @@ module DKKLiborFunction =
             try
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1230,7 +1230,7 @@ module DKKLiborFunction =
 
                 let _DKKLibor = Helper.toCell<DKKLibor> dkklibor "DKKLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_DKKLibor.cell :?> DKKLiborModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((DKKLiborModel.Cast _DKKLibor.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : DKKLibor) (l:string) = o.ToString() :> obj

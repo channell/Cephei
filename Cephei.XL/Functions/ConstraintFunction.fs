@@ -117,7 +117,7 @@ module ConstraintFunction =
             try
 
                 let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
-                let builder () = withMnemonic mnemonic ((_Constraint.cell :?> ConstraintModel).Empty
+                let builder () = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -156,7 +156,7 @@ module ConstraintFunction =
 
                 let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((_Constraint.cell :?> ConstraintModel).LowerBound
+                let builder () = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).LowerBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -198,7 +198,7 @@ module ConstraintFunction =
 
                 let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
                 let _p = Helper.toCell<Vector> p "p" 
-                let builder () = withMnemonic mnemonic ((_Constraint.cell :?> ConstraintModel).Test
+                let builder () = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).Test
                                                             _p.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -246,7 +246,7 @@ module ConstraintFunction =
                 let _p = Helper.toCell<Vector> p "p" 
                 let _direction = Helper.toCell<Vector> direction "direction" 
                 let _beta = Helper.toCell<double> beta "beta" 
-                let builder () = withMnemonic mnemonic ((_Constraint.cell :?> ConstraintModel).Update
+                let builder () = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).Update
                                                             _p.cell 
                                                             _direction.cell 
                                                             _beta.cell 
@@ -294,7 +294,7 @@ module ConstraintFunction =
 
                 let _Constraint = Helper.toCell<Constraint> constrainT "Constraint"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((_Constraint.cell :?> ConstraintModel).UpperBound
+                let builder () = withMnemonic mnemonic ((ConstraintModel.Cast _Constraint.cell).UpperBound
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l

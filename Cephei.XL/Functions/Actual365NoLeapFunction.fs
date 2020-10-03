@@ -86,7 +86,7 @@ module Actual365NoLeapFunction =
                 let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((_Actual365NoLeap.cell :?> Actual365NoLeapModel).DayCount
+                let builder () = withMnemonic mnemonic ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
@@ -128,7 +128,7 @@ module Actual365NoLeapFunction =
             try
 
                 let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
-                let builder () = withMnemonic mnemonic ((_Actual365NoLeap.cell :?> Actual365NoLeapModel).DayCounter
+                let builder () = withMnemonic mnemonic ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -164,7 +164,7 @@ module Actual365NoLeapFunction =
             try
 
                 let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
-                let builder () = withMnemonic mnemonic ((_Actual365NoLeap.cell :?> Actual365NoLeapModel).Empty
+                let builder () = withMnemonic mnemonic ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -203,7 +203,7 @@ module Actual365NoLeapFunction =
 
                 let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Actual365NoLeap.cell :?> Actual365NoLeapModel).Equals
+                let builder () = withMnemonic mnemonic ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -242,7 +242,7 @@ module Actual365NoLeapFunction =
             try
 
                 let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
-                let builder () = withMnemonic mnemonic ((_Actual365NoLeap.cell :?> Actual365NoLeapModel).Name
+                let builder () = withMnemonic mnemonic ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -278,7 +278,7 @@ module Actual365NoLeapFunction =
             try
 
                 let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
-                let builder () = withMnemonic mnemonic ((_Actual365NoLeap.cell :?> Actual365NoLeapModel).ToString
+                let builder () = withMnemonic mnemonic ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -326,7 +326,7 @@ module Actual365NoLeapFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refPeriodStart = Helper.toCell<Date> refPeriodStart "refPeriodStart" 
                 let _refPeriodEnd = Helper.toCell<Date> refPeriodEnd "refPeriodEnd" 
-                let builder () = withMnemonic mnemonic ((_Actual365NoLeap.cell :?> Actual365NoLeapModel).YearFraction
+                let builder () = withMnemonic mnemonic ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refPeriodStart.cell 
@@ -380,7 +380,7 @@ module Actual365NoLeapFunction =
                 let _Actual365NoLeap = Helper.toCell<Actual365NoLeap> actual365noleap "Actual365NoLeap"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((_Actual365NoLeap.cell :?> Actual365NoLeapModel).YearFraction1
+                let builder () = withMnemonic mnemonic ((Actual365NoLeapModel.Cast _Actual365NoLeap.cell).YearFraction1
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell

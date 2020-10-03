@@ -49,7 +49,7 @@ module yoyInflationLegFunction =
             try
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).Value
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -143,7 +143,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _cap = Helper.toCell<double> cap "cap" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithCaps
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithCaps
                                                             _cap.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -185,7 +185,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithCaps1
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithCaps1
                                                             _caps.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -227,7 +227,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithFixingDays1
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithFixingDays1
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -269,7 +269,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _fixingDays = Helper.toCell<Generic.List<int>> fixingDays "fixingDays" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithFixingDays
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithFixingDays
                                                             _fixingDays.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -311,7 +311,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithFloors1
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithFloors1
                                                             _floors.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -353,7 +353,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _floor = Helper.toCell<double> floor "floor" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithFloors
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithFloors
                                                             _floor.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -395,7 +395,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithGearings
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithGearings
                                                             _gearings.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -437,7 +437,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithGearings1
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithGearings1
                                                             _gearing.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -479,7 +479,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithPaymentDayCounter
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -521,7 +521,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithSpreads
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithSpreads
                                                             _spread.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -563,7 +563,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithSpreads1
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithSpreads1
                                                             _spreads.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
@@ -605,7 +605,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithNotionals1
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
@@ -647,7 +647,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithNotionals
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
@@ -689,7 +689,7 @@ module yoyInflationLegFunction =
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder () = withMnemonic mnemonic ((_yoyInflationLeg.cell :?> yoyInflationLegModel).WithPaymentAdjustment
+                let builder () = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l

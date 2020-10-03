@@ -55,7 +55,7 @@ module ShoutConditionFunction =
                 let _ShoutCondition = Helper.toCell<ShoutCondition> shoutcondition "ShoutCondition"  
                 let _a = Helper.toCell<Vector> a "a" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_ShoutCondition.cell :?> ShoutConditionModel).ApplyTo
+                let builder () = withMnemonic mnemonic ((ShoutConditionModel.Cast _ShoutCondition.cell).ApplyTo
                                                             _a.cell 
                                                             _t.cell 
                                                        ) :> ICell

@@ -80,7 +80,7 @@ module AustraliaRegionFunction =
             try
 
                 let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion"  
-                let builder () = withMnemonic mnemonic ((_AustraliaRegion.cell :?> AustraliaRegionModel).Code
+                let builder () = withMnemonic mnemonic ((AustraliaRegionModel.Cast _AustraliaRegion.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -119,7 +119,7 @@ module AustraliaRegionFunction =
 
                 let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_AustraliaRegion.cell :?> AustraliaRegionModel).Equals
+                let builder () = withMnemonic mnemonic ((AustraliaRegionModel.Cast _AustraliaRegion.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -158,7 +158,7 @@ module AustraliaRegionFunction =
             try
 
                 let _AustraliaRegion = Helper.toCell<AustraliaRegion> australiaregion "AustraliaRegion"  
-                let builder () = withMnemonic mnemonic ((_AustraliaRegion.cell :?> AustraliaRegionModel).Name
+                let builder () = withMnemonic mnemonic ((AustraliaRegionModel.Cast _AustraliaRegion.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 

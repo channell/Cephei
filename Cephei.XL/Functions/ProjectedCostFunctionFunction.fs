@@ -52,7 +52,7 @@ module ProjectedCostFunctionFunction =
 
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _projectedParameters = Helper.toCell<Vector> projectedParameters "projectedParameters" 
-                let builder () = withMnemonic mnemonic ((_ProjectedCostFunction.cell :?> ProjectedCostFunctionModel).Include
+                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Include
                                                             _projectedParameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -94,7 +94,7 @@ module ProjectedCostFunctionFunction =
 
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((_ProjectedCostFunction.cell :?> ProjectedCostFunctionModel).Project
+                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Project
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -185,7 +185,7 @@ module ProjectedCostFunctionFunction =
 
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _freeParameters = Helper.toCell<Vector> freeParameters "freeParameters" 
-                let builder () = withMnemonic mnemonic ((_ProjectedCostFunction.cell :?> ProjectedCostFunctionModel).Value
+                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Value
                                                             _freeParameters.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -227,7 +227,7 @@ module ProjectedCostFunctionFunction =
 
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _freeParameters = Helper.toCell<Vector> freeParameters "freeParameters" 
-                let builder () = withMnemonic mnemonic ((_ProjectedCostFunction.cell :?> ProjectedCostFunctionModel).Values
+                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Values
                                                             _freeParameters.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -266,7 +266,7 @@ module ProjectedCostFunctionFunction =
             try
 
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
-                let builder () = withMnemonic mnemonic ((_ProjectedCostFunction.cell :?> ProjectedCostFunctionModel).FiniteDifferenceEpsilon
+                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).FiniteDifferenceEpsilon
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -308,7 +308,7 @@ module ProjectedCostFunctionFunction =
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _grad = Helper.toCell<Vector> grad "grad" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_ProjectedCostFunction.cell :?> ProjectedCostFunctionModel).Gradient
+                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Gradient
                                                             _grad.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -356,7 +356,7 @@ module ProjectedCostFunctionFunction =
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_ProjectedCostFunction.cell :?> ProjectedCostFunctionModel).Jacobian
+                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).Jacobian
                                                             _jac.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -404,7 +404,7 @@ module ProjectedCostFunctionFunction =
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _grad = Helper.toCell<Vector> grad "grad" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_ProjectedCostFunction.cell :?> ProjectedCostFunctionModel).ValueAndGradient
+                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).ValueAndGradient
                                                             _grad.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -452,7 +452,7 @@ module ProjectedCostFunctionFunction =
                 let _ProjectedCostFunction = Helper.toCell<ProjectedCostFunction> projectedcostfunction "ProjectedCostFunction"  
                 let _jac = Helper.toCell<Matrix> jac "jac" 
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_ProjectedCostFunction.cell :?> ProjectedCostFunctionModel).ValuesAndJacobian
+                let builder () = withMnemonic mnemonic ((ProjectedCostFunctionModel.Cast _ProjectedCostFunction.cell).ValuesAndJacobian
                                                             _jac.cell 
                                                             _x.cell 
                                                        ) :> ICell

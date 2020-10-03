@@ -154,7 +154,7 @@ module AnalyticHestonHullWhiteEngineFunction =
             try
 
                 let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
-                let builder () = withMnemonic mnemonic ((_AnalyticHestonHullWhiteEngine.cell :?> AnalyticHestonHullWhiteEngineModel).Update
+                let builder () = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).Update
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
 
@@ -190,7 +190,7 @@ module AnalyticHestonHullWhiteEngineFunction =
             try
 
                 let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
-                let builder () = withMnemonic mnemonic ((_AnalyticHestonHullWhiteEngine.cell :?> AnalyticHestonHullWhiteEngineModel).NumberOfEvaluations
+                let builder () = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -230,7 +230,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
                 let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder () = withMnemonic mnemonic ((_AnalyticHestonHullWhiteEngine.cell :?> AnalyticHestonHullWhiteEngineModel).SetModel
+                let builder () = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
@@ -272,7 +272,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
                 let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_AnalyticHestonHullWhiteEngine.cell :?> AnalyticHestonHullWhiteEngineModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
@@ -311,7 +311,7 @@ module AnalyticHestonHullWhiteEngineFunction =
             try
 
                 let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
-                let builder () = withMnemonic mnemonic ((_AnalyticHestonHullWhiteEngine.cell :?> AnalyticHestonHullWhiteEngineModel).Reset
+                let builder () = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
 
@@ -350,7 +350,7 @@ module AnalyticHestonHullWhiteEngineFunction =
 
                 let _AnalyticHestonHullWhiteEngine = Helper.toCell<AnalyticHestonHullWhiteEngine> analytichestonhullwhiteengine "AnalyticHestonHullWhiteEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_AnalyticHestonHullWhiteEngine.cell :?> AnalyticHestonHullWhiteEngineModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((AnalyticHestonHullWhiteEngineModel.Cast _AnalyticHestonHullWhiteEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj

@@ -52,7 +52,7 @@ module InterestRateFunction =
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).CompoundFactor
+                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).CompoundFactor
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -103,7 +103,7 @@ module InterestRateFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refStart = Helper.toDefault<Date> refStart "refStart" null
                 let _refEnd = Helper.toDefault<Date> refEnd "refEnd" null
-                let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).CompoundFactor1
+                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).CompoundFactor1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refStart.cell 
@@ -151,7 +151,7 @@ module InterestRateFunction =
             try
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
-                let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).Compounding
+                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).Compounding
                                                        ) :> ICell
                 let format (o : Compounding) (l:string) = o.ToString() :> obj
 
@@ -187,7 +187,7 @@ module InterestRateFunction =
             try
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
-                let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).DayCounter
+                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -235,7 +235,7 @@ module InterestRateFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refStart = Helper.toDefault<Date> refStart "refStart" null
                 let _refEnd = Helper.toDefault<Date> refEnd "refEnd" null
-                let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).DiscountFactor
+                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).DiscountFactor
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _refStart.cell 
@@ -286,7 +286,7 @@ module InterestRateFunction =
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).DiscountFactor1
+                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).DiscountFactor1
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -346,7 +346,7 @@ module InterestRateFunction =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _refStart = Helper.toDefault<Date> refStart "refStart" null
                 let _refEnd = Helper.toDefault<Date> refEnd "refEnd" null
-                let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).EquivalentRate
+                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).EquivalentRate
                                                             _resultDC.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -412,7 +412,7 @@ module InterestRateFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).EquivalentRate1
+                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).EquivalentRate1
                                                             _comp.cell 
                                                             _freq.cell 
                                                             _t.cell 
@@ -457,7 +457,7 @@ module InterestRateFunction =
             try
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
-                let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).Frequency
+                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
@@ -579,7 +579,7 @@ module InterestRateFunction =
             try
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
-                let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).Rate
+                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -615,7 +615,7 @@ module InterestRateFunction =
             try
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
-                let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).ToString
+                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -651,7 +651,7 @@ module InterestRateFunction =
             try
 
                 let _InterestRate = Helper.toCell<InterestRate> interestrate "InterestRate"  
-                let builder () = withMnemonic mnemonic ((_InterestRate.cell :?> InterestRateModel).Value
+                let builder () = withMnemonic mnemonic ((InterestRateModel.Cast _InterestRate.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

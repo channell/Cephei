@@ -108,7 +108,7 @@ module BiCGStabFunction =
 
                 let _BiCGStab = Helper.toCell<BiCGStab> bicgstab "BiCGStab"  
                 let _x = Helper.toCell<Vector> x "x" 
-                let builder () = withMnemonic mnemonic ((_BiCGStab.cell :?> BiCGStabModel).MatrixMult
+                let builder () = withMnemonic mnemonic ((BiCGStabModel.Cast _BiCGStab.cell).MatrixMult
                                                             _x.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
@@ -154,7 +154,7 @@ module BiCGStabFunction =
                 let _BiCGStab = Helper.toCell<BiCGStab> bicgstab "BiCGStab"  
                 let _b = Helper.toCell<Vector> b "b" 
                 let _x0 = Helper.toDefault<Vector> x0 "x0" null
-                let builder () = withMnemonic mnemonic ((_BiCGStab.cell :?> BiCGStabModel).Solve
+                let builder () = withMnemonic mnemonic ((BiCGStabModel.Cast _BiCGStab.cell).Solve
                                                             _b.cell 
                                                             _x0.cell 
                                                        ) :> ICell

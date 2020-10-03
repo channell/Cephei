@@ -89,7 +89,7 @@ module ConstantCPRFunction =
 
                 let _ConstantCPR = Helper.toCell<ConstantCPR> constantcpr "ConstantCPR"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
-                let builder () = withMnemonic mnemonic ((_ConstantCPR.cell :?> ConstantCPRModel).GetCPR
+                let builder () = withMnemonic mnemonic ((ConstantCPRModel.Cast _ConstantCPR.cell).GetCPR
                                                             _valDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -131,7 +131,7 @@ module ConstantCPRFunction =
 
                 let _ConstantCPR = Helper.toCell<ConstantCPR> constantcpr "ConstantCPR"  
                 let _valDate = Helper.toCell<Date> valDate "valDate" 
-                let builder () = withMnemonic mnemonic ((_ConstantCPR.cell :?> ConstantCPRModel).GetSMM
+                let builder () = withMnemonic mnemonic ((ConstantCPRModel.Cast _ConstantCPR.cell).GetSMM
                                                             _valDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

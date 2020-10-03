@@ -58,7 +58,7 @@ module MultiplicativePriceSeasonalityFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((_MultiplicativePriceSeasonality.cell :?> MultiplicativePriceSeasonalityModel).CorrectYoYRate
+                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).CorrectYoYRate
                                                             _d.cell 
                                                             _r.cell 
                                                             _iTS.cell 
@@ -112,7 +112,7 @@ module MultiplicativePriceSeasonalityFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _r = Helper.toCell<double> r "r" 
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((_MultiplicativePriceSeasonality.cell :?> MultiplicativePriceSeasonalityModel).CorrectZeroRate
+                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).CorrectZeroRate
                                                             _d.cell 
                                                             _r.cell 
                                                             _iTS.cell 
@@ -157,7 +157,7 @@ module MultiplicativePriceSeasonalityFunction =
             try
 
                 let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
-                let builder () = withMnemonic mnemonic ((_MultiplicativePriceSeasonality.cell :?> MultiplicativePriceSeasonalityModel).Frequency
+                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).Frequency
                                                        ) :> ICell
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
@@ -196,7 +196,7 @@ module MultiplicativePriceSeasonalityFunction =
 
                 let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
                 let _iTS = Helper.toCell<InflationTermStructure> iTS "iTS" 
-                let builder () = withMnemonic mnemonic ((_MultiplicativePriceSeasonality.cell :?> MultiplicativePriceSeasonalityModel).IsConsistent
+                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).IsConsistent
                                                             _iTS.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -315,7 +315,7 @@ module MultiplicativePriceSeasonalityFunction =
             try
 
                 let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
-                let builder () = withMnemonic mnemonic ((_MultiplicativePriceSeasonality.cell :?> MultiplicativePriceSeasonalityModel).SeasonalityBaseDate
+                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).SeasonalityBaseDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -354,7 +354,7 @@ module MultiplicativePriceSeasonalityFunction =
 
                 let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
                 let _To = Helper.toCell<Date> To "To" 
-                let builder () = withMnemonic mnemonic ((_MultiplicativePriceSeasonality.cell :?> MultiplicativePriceSeasonalityModel).SeasonalityFactor
+                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).SeasonalityFactor
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -393,7 +393,7 @@ module MultiplicativePriceSeasonalityFunction =
             try
 
                 let _MultiplicativePriceSeasonality = Helper.toCell<MultiplicativePriceSeasonality> multiplicativepriceseasonality "MultiplicativePriceSeasonality"  
-                let builder () = withMnemonic mnemonic ((_MultiplicativePriceSeasonality.cell :?> MultiplicativePriceSeasonalityModel).SeasonalityFactors
+                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).SeasonalityFactors
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -438,7 +438,7 @@ module MultiplicativePriceSeasonalityFunction =
                 let _seasonalityBaseDate = Helper.toCell<Date> seasonalityBaseDate "seasonalityBaseDate" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _seasonalityFactors = Helper.toCell<Generic.List<double>> seasonalityFactors "seasonalityFactors" 
-                let builder () = withMnemonic mnemonic ((_MultiplicativePriceSeasonality.cell :?> MultiplicativePriceSeasonalityModel).Set
+                let builder () = withMnemonic mnemonic ((MultiplicativePriceSeasonalityModel.Cast _MultiplicativePriceSeasonality.cell).Set
                                                             _seasonalityBaseDate.cell 
                                                             _frequency.cell 
                                                             _seasonalityFactors.cell 

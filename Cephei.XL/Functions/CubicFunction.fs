@@ -147,7 +147,7 @@ module CubicFunction =
             try
 
                 let _Cubic = Helper.toCell<Cubic> cubic "Cubic"  
-                let builder () = withMnemonic mnemonic ((_Cubic.cell :?> CubicModel).Global
+                let builder () = withMnemonic mnemonic ((CubicModel.Cast _Cubic.cell).Global
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -192,7 +192,7 @@ module CubicFunction =
                 let _xBegin = Helper.toCell<Generic.List<double>> xBegin "xBegin" 
                 let _size = Helper.toCell<int> size "size" 
                 let _yBegin = Helper.toCell<Generic.List<double>> yBegin "yBegin" 
-                let builder () = withMnemonic mnemonic ((_Cubic.cell :?> CubicModel).Interpolate
+                let builder () = withMnemonic mnemonic ((CubicModel.Cast _Cubic.cell).Interpolate
                                                             _xBegin.cell 
                                                             _size.cell 
                                                             _yBegin.cell 
@@ -237,7 +237,7 @@ module CubicFunction =
             try
 
                 let _Cubic = Helper.toCell<Cubic> cubic "Cubic"  
-                let builder () = withMnemonic mnemonic ((_Cubic.cell :?> CubicModel).RequiredPoints
+                let builder () = withMnemonic mnemonic ((CubicModel.Cast _Cubic.cell).RequiredPoints
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

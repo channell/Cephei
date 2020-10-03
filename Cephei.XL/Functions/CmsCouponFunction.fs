@@ -219,7 +219,7 @@ module CmsCouponFunction =
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
                 let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Factory
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Factory
                                                             _nominal.cell 
                                                             _paymentDate.cell 
                                                             _startDate.cell 
@@ -291,7 +291,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).SwapIndex
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).SwapIndex
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
@@ -330,7 +330,7 @@ module CmsCouponFunction =
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).AccruedAmount
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -369,7 +369,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).AdjustedFixing
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -405,7 +405,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Amount
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -441,7 +441,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).ConvexityAdjustment
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -477,7 +477,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).DayCounter
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -513,7 +513,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).FixingDate
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -549,7 +549,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).FixingDays
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -585,7 +585,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Gearing
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -621,7 +621,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Index
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
@@ -657,7 +657,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).IndexFixing
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -693,7 +693,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).IsInArrears
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -732,7 +732,7 @@ module CmsCouponFunction =
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Price
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Price
                                                             _yts.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -771,7 +771,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Pricer
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
@@ -807,7 +807,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Rate
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -846,7 +846,7 @@ module CmsCouponFunction =
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).SetPricer
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : CmsCoupon) (l:string) = o.ToString() :> obj
@@ -885,7 +885,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Spread
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -921,7 +921,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Update
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : CmsCoupon) (l:string) = o.ToString() :> obj
 
@@ -957,7 +957,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).AccrualDays
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -993,7 +993,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).AccrualEndDate
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1029,7 +1029,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).AccrualPeriod
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1065,7 +1065,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).AccrualStartDate
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1104,7 +1104,7 @@ module CmsCouponFunction =
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).AccruedDays
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1146,7 +1146,7 @@ module CmsCouponFunction =
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).AccruedPeriod
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1185,7 +1185,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Date
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1221,7 +1221,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).ExCouponDate
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1257,7 +1257,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Nominal
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1293,7 +1293,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).ReferencePeriodEnd
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1329,7 +1329,7 @@ module CmsCouponFunction =
             try
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).ReferencePeriodStart
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1368,7 +1368,7 @@ module CmsCouponFunction =
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).CompareTo
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1410,7 +1410,7 @@ module CmsCouponFunction =
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Equals
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1455,7 +1455,7 @@ module CmsCouponFunction =
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).HasOccurred
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -1500,7 +1500,7 @@ module CmsCouponFunction =
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).TradingExCoupon
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1542,7 +1542,7 @@ module CmsCouponFunction =
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).Accept
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : CmsCoupon) (l:string) = o.ToString() :> obj
@@ -1584,7 +1584,7 @@ module CmsCouponFunction =
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CmsCoupon) (l:string) = o.ToString() :> obj
@@ -1626,7 +1626,7 @@ module CmsCouponFunction =
 
                 let _CmsCoupon = Helper.toCell<CmsCoupon> cmscoupon "CmsCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_CmsCoupon.cell :?> CmsCouponModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((CmsCouponModel.Cast _CmsCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CmsCoupon) (l:string) = o.ToString() :> obj

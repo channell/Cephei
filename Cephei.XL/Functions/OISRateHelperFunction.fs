@@ -49,7 +49,7 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).ImpliedQuote
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -143,7 +143,7 @@ module OISRateHelperFunction =
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
                 let _t = Helper.toCell<YieldTermStructure> t "t" 
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).SetTermStructure
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).SetTermStructure
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : OISRateHelper) (l:string) = o.ToString() :> obj
@@ -182,7 +182,7 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).Swap
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).Swap
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndexedSwap>) l
 
@@ -218,7 +218,7 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).Update
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).Update
                                                        ) :> ICell
                 let format (o : OISRateHelper) (l:string) = o.ToString() :> obj
 
@@ -254,7 +254,7 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).EarliestDate
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -290,7 +290,7 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).LatestDate
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -326,7 +326,7 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).LatestRelevantDate
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -362,7 +362,7 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -398,7 +398,7 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).PillarDate
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -434,7 +434,7 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).Quote
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -470,7 +470,7 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).QuoteError
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -506,7 +506,7 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).QuoteIsValid
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -542,7 +542,7 @@ module OISRateHelperFunction =
             try
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).QuoteValue
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -581,7 +581,7 @@ module OISRateHelperFunction =
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : OISRateHelper) (l:string) = o.ToString() :> obj
@@ -623,7 +623,7 @@ module OISRateHelperFunction =
 
                 let _OISRateHelper = Helper.toCell<OISRateHelper> oisratehelper "OISRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_OISRateHelper.cell :?> OISRateHelperModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((OISRateHelperModel.Cast _OISRateHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : OISRateHelper) (l:string) = o.ToString() :> obj

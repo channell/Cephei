@@ -49,7 +49,7 @@ module LongstaffSchwartzPathPricerFunction =
             try
 
                 let _LongstaffSchwartzPathPricer = Helper.toCell<LongstaffSchwartzPathPricer> longstaffschwartzpathpricer "LongstaffSchwartzPathPricer"  
-                let builder () = withMnemonic mnemonic ((_LongstaffSchwartzPathPricer.cell :?> LongstaffSchwartzPathPricerModel).Calibrate
+                let builder () = withMnemonic mnemonic ((LongstaffSchwartzPathPricerModel.Cast _LongstaffSchwartzPathPricer.cell).Calibrate
                                                        ) :> ICell
                 let format (o : LongstaffSchwartzPathPricer) (l:string) = o.ToString() :> obj
 
@@ -137,7 +137,7 @@ module LongstaffSchwartzPathPricerFunction =
 
                 let _LongstaffSchwartzPathPricer = Helper.toCell<LongstaffSchwartzPathPricer> longstaffschwartzpathpricer "LongstaffSchwartzPathPricer"  
                 let _path = Helper.toCell<'PathType> path "path" 
-                let builder () = withMnemonic mnemonic ((_LongstaffSchwartzPathPricer.cell :?> LongstaffSchwartzPathPricerModel).Value
+                let builder () = withMnemonic mnemonic ((LongstaffSchwartzPathPricerModel.Cast _LongstaffSchwartzPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

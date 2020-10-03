@@ -100,7 +100,7 @@ module BotswanaFunction =
             try
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).AddedHolidays
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -139,7 +139,7 @@ module BotswanaFunction =
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).AddHoliday
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Botswana) (l:string) = o.ToString() :> obj
@@ -184,7 +184,7 @@ module BotswanaFunction =
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).Adjust
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -241,7 +241,7 @@ module BotswanaFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).Advance1
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -304,7 +304,7 @@ module BotswanaFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).Advance
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -364,7 +364,7 @@ module BotswanaFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).BusinessDaysBetween
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -412,7 +412,7 @@ module BotswanaFunction =
             try
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).Calendar
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -448,7 +448,7 @@ module BotswanaFunction =
             try
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).Empty
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -487,7 +487,7 @@ module BotswanaFunction =
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -529,7 +529,7 @@ module BotswanaFunction =
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).Equals
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -571,7 +571,7 @@ module BotswanaFunction =
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).IsBusinessDay
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -613,7 +613,7 @@ module BotswanaFunction =
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).IsEndOfMonth
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -655,7 +655,7 @@ module BotswanaFunction =
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).IsHoliday
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -697,7 +697,7 @@ module BotswanaFunction =
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).IsWeekend
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -738,7 +738,7 @@ module BotswanaFunction =
             try
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).Name
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -774,7 +774,7 @@ module BotswanaFunction =
             try
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).RemovedHolidays
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -813,7 +813,7 @@ module BotswanaFunction =
 
                 let _Botswana = Helper.toCell<Botswana> botswana "Botswana"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Botswana.cell :?> BotswanaModel).RemoveHoliday
+                let builder () = withMnemonic mnemonic ((BotswanaModel.Cast _Botswana.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Botswana) (l:string) = o.ToString() :> obj

@@ -49,7 +49,7 @@ module WeakEventSourceFunction =
             try
 
                 let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
-                let builder () = withMnemonic mnemonic ((_WeakEventSource.cell :?> WeakEventSourceModel).Clear
+                let builder () = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Clear
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module WeakEventSourceFunction =
             try
 
                 let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
-                let builder () = withMnemonic mnemonic ((_WeakEventSource.cell :?> WeakEventSourceModel).Raise
+                let builder () = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Raise
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
 
@@ -124,7 +124,7 @@ module WeakEventSourceFunction =
 
                 let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_WeakEventSource.cell :?> WeakEventSourceModel).Subscribe
+                let builder () = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Subscribe
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
@@ -166,7 +166,7 @@ module WeakEventSourceFunction =
 
                 let _WeakEventSource = Helper.toCell<WeakEventSource> weakeventsource "WeakEventSource"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_WeakEventSource.cell :?> WeakEventSourceModel).Unsubscribe
+                let builder () = withMnemonic mnemonic ((WeakEventSourceModel.Cast _WeakEventSource.cell).Unsubscribe
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj

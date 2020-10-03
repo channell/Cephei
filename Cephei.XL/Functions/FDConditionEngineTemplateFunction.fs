@@ -138,7 +138,7 @@ module FDConditionEngineTemplateFunction =
 
                 let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
                 let _impl = Helper.toCell<Func<IStepCondition<Vector>>> impl "impl" 
-                let builder () = withMnemonic mnemonic ((_FDConditionEngineTemplate.cell :?> FDConditionEngineTemplateModel).SetStepCondition
+                let builder () = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).SetStepCondition
                                                             _impl.cell 
                                                        ) :> ICell
                 let format (o : FDConditionEngineTemplate) (l:string) = o.ToString() :> obj
@@ -178,7 +178,7 @@ module FDConditionEngineTemplateFunction =
             try
 
                 let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
-                let builder () = withMnemonic mnemonic ((_FDConditionEngineTemplate.cell :?> FDConditionEngineTemplateModel).EnsureStrikeInGrid
+                let builder () = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).EnsureStrikeInGrid
                                                        ) :> ICell
                 let format (o : FDConditionEngineTemplate) (l:string) = o.ToString() :> obj
 
@@ -226,7 +226,7 @@ module FDConditionEngineTemplateFunction =
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _gridPoints = Helper.toCell<int> gridPoints "gridPoints" 
                 let _timeDependent = Helper.toCell<bool> timeDependent "timeDependent" 
-                let builder () = withMnemonic mnemonic ((_FDConditionEngineTemplate.cell :?> FDConditionEngineTemplateModel).Factory
+                let builder () = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).Factory
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
@@ -274,7 +274,7 @@ module FDConditionEngineTemplateFunction =
             try
 
                 let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
-                let builder () = withMnemonic mnemonic ((_FDConditionEngineTemplate.cell :?> FDConditionEngineTemplateModel).GetResidualTime
+                let builder () = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).GetResidualTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -310,7 +310,7 @@ module FDConditionEngineTemplateFunction =
             try
 
                 let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
-                let builder () = withMnemonic mnemonic ((_FDConditionEngineTemplate.cell :?> FDConditionEngineTemplateModel).Grid
+                let builder () = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).Grid
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -346,7 +346,7 @@ module FDConditionEngineTemplateFunction =
             try
 
                 let _FDConditionEngineTemplate = Helper.toCell<FDConditionEngineTemplate> fdconditionenginetemplate "FDConditionEngineTemplate"  
-                let builder () = withMnemonic mnemonic ((_FDConditionEngineTemplate.cell :?> FDConditionEngineTemplateModel).IntrinsicValues_
+                let builder () = withMnemonic mnemonic ((FDConditionEngineTemplateModel.Cast _FDConditionEngineTemplate.cell).IntrinsicValues_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 

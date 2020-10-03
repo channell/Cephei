@@ -80,7 +80,7 @@ module DKKCurrencyFunction =
             try
 
                 let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
-                let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((DKKCurrencyModel.Cast _DKKCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module DKKCurrencyFunction =
             try
 
                 let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
-                let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((DKKCurrencyModel.Cast _DKKCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module DKKCurrencyFunction =
 
                 let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((DKKCurrencyModel.Cast _DKKCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module DKKCurrencyFunction =
             try
 
                 let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
-                let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((DKKCurrencyModel.Cast _DKKCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module DKKCurrencyFunction =
             try
 
                 let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
-                let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((DKKCurrencyModel.Cast _DKKCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module DKKCurrencyFunction =
             try
 
                 let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
-                let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((DKKCurrencyModel.Cast _DKKCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module DKKCurrencyFunction =
             try
 
                 let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
-                let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((DKKCurrencyModel.Cast _DKKCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module DKKCurrencyFunction =
             try
 
                 let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
-                let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((DKKCurrencyModel.Cast _DKKCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module DKKCurrencyFunction =
             try
 
                 let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
-                let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((DKKCurrencyModel.Cast _DKKCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module DKKCurrencyFunction =
             try
 
                 let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
-                let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((DKKCurrencyModel.Cast _DKKCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module DKKCurrencyFunction =
             try
 
                 let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
-                let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((DKKCurrencyModel.Cast _DKKCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module DKKCurrencyFunction =
             try
 
                 let _DKKCurrency = Helper.toCell<DKKCurrency> dkkcurrency "DKKCurrency"  
-                let builder () = withMnemonic mnemonic ((_DKKCurrency.cell :?> DKKCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((DKKCurrencyModel.Cast _DKKCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

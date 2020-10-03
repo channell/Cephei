@@ -160,7 +160,7 @@ module BrownianBridgeFunction =
             try
 
                 let _BrownianBridge = Helper.toCell<BrownianBridge> brownianbridge "BrownianBridge"  
-                let builder () = withMnemonic mnemonic ((_BrownianBridge.cell :?> BrownianBridgeModel).Size
+                let builder () = withMnemonic mnemonic ((BrownianBridgeModel.Cast _BrownianBridge.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -196,7 +196,7 @@ module BrownianBridgeFunction =
             try
 
                 let _BrownianBridge = Helper.toCell<BrownianBridge> brownianbridge "BrownianBridge"  
-                let builder () = withMnemonic mnemonic ((_BrownianBridge.cell :?> BrownianBridgeModel).Times
+                let builder () = withMnemonic mnemonic ((BrownianBridgeModel.Cast _BrownianBridge.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -238,7 +238,7 @@ module BrownianBridgeFunction =
                 let _BrownianBridge = Helper.toCell<BrownianBridge> brownianbridge "BrownianBridge"  
                 let _Begin = Helper.toCell<Generic.List<double>> Begin "Begin" 
                 let _output = Helper.toCell<Generic.List<double>> output "output" 
-                let builder () = withMnemonic mnemonic ((_BrownianBridge.cell :?> BrownianBridgeModel).Transform
+                let builder () = withMnemonic mnemonic ((BrownianBridgeModel.Cast _BrownianBridge.cell).Transform
                                                             _Begin.cell 
                                                             _output.cell 
                                                        ) :> ICell

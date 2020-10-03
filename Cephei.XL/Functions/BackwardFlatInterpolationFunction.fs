@@ -104,7 +104,7 @@ module BackwardFlatInterpolationFunction =
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).Derivative
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -146,7 +146,7 @@ module BackwardFlatInterpolationFunction =
             try
 
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).Empty
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -188,7 +188,7 @@ module BackwardFlatInterpolationFunction =
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).Primitive
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -236,7 +236,7 @@ module BackwardFlatInterpolationFunction =
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).SecondDerivative
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -278,7 +278,7 @@ module BackwardFlatInterpolationFunction =
             try
 
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).Update
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : BackwardFlatInterpolation) (l:string) = o.ToString() :> obj
 
@@ -320,7 +320,7 @@ module BackwardFlatInterpolationFunction =
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).Value1
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -365,7 +365,7 @@ module BackwardFlatInterpolationFunction =
 
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).Value
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -404,7 +404,7 @@ module BackwardFlatInterpolationFunction =
             try
 
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).XMax
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -440,7 +440,7 @@ module BackwardFlatInterpolationFunction =
             try
 
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).XMin
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -476,7 +476,7 @@ module BackwardFlatInterpolationFunction =
             try
 
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -515,7 +515,7 @@ module BackwardFlatInterpolationFunction =
 
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : BackwardFlatInterpolation) (l:string) = o.ToString() :> obj
@@ -557,7 +557,7 @@ module BackwardFlatInterpolationFunction =
 
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : BackwardFlatInterpolation) (l:string) = o.ToString() :> obj
@@ -596,7 +596,7 @@ module BackwardFlatInterpolationFunction =
             try
 
                 let _BackwardFlatInterpolation = Helper.toCell<BackwardFlatInterpolation> backwardflatinterpolation "BackwardFlatInterpolation"  
-                let builder () = withMnemonic mnemonic ((_BackwardFlatInterpolation.cell :?> BackwardFlatInterpolationModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((BackwardFlatInterpolationModel.Cast _BackwardFlatInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

@@ -113,7 +113,7 @@ module eqn6Function =
 
                 let _eqn6 = Helper.toCell<eqn6> eqn6 "eqn6"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_eqn6.cell :?> eqn6Model).Value
+                let builder () = withMnemonic mnemonic ((eqn6Model.Cast _eqn6.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

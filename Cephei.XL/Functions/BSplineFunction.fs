@@ -104,7 +104,7 @@ module BSplineFunction =
                 let _BSpline = Helper.toCell<BSpline> bspline "BSpline"  
                 let _i = Helper.toCell<int> i "i" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_BSpline.cell :?> BSplineModel).Value
+                let builder () = withMnemonic mnemonic ((BSplineModel.Cast _BSpline.cell).Value
                                                             _i.cell 
                                                             _x.cell 
                                                        ) :> ICell

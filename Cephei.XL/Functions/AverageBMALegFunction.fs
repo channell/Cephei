@@ -92,7 +92,7 @@ module AverageBMALegFunction =
             try
 
                 let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
-                let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).Value
+                let builder () = withMnemonic mnemonic ((AverageBMALegModel.Cast _AverageBMALeg.cell).Value
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -131,7 +131,7 @@ module AverageBMALegFunction =
 
                 let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
-                let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithGearings
+                let builder () = withMnemonic mnemonic ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithGearings
                                                             _gearings.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AverageBMALeg>) l
@@ -173,7 +173,7 @@ module AverageBMALegFunction =
 
                 let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _gearing = Helper.toCell<double> gearing "gearing" 
-                let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithGearings1
+                let builder () = withMnemonic mnemonic ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithGearings1
                                                             _gearing.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AverageBMALeg>) l
@@ -215,7 +215,7 @@ module AverageBMALegFunction =
 
                 let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
-                let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithPaymentDayCounter
+                let builder () = withMnemonic mnemonic ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithPaymentDayCounter
                                                             _dayCounter.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AverageBMALeg>) l
@@ -257,7 +257,7 @@ module AverageBMALegFunction =
 
                 let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
-                let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithSpreads1
+                let builder () = withMnemonic mnemonic ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithSpreads1
                                                             _spreads.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AverageBMALeg>) l
@@ -299,7 +299,7 @@ module AverageBMALegFunction =
 
                 let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _spread = Helper.toCell<double> spread "spread" 
-                let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithSpreads
+                let builder () = withMnemonic mnemonic ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithSpreads
                                                             _spread.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AverageBMALeg>) l
@@ -341,7 +341,7 @@ module AverageBMALegFunction =
 
                 let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _notionals = Helper.toCell<Generic.List<double>> notionals "notionals" 
-                let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithNotionals1
+                let builder () = withMnemonic mnemonic ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithNotionals1
                                                             _notionals.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
@@ -383,7 +383,7 @@ module AverageBMALegFunction =
 
                 let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _notional = Helper.toCell<double> notional "notional" 
-                let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithNotionals
+                let builder () = withMnemonic mnemonic ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithNotionals
                                                             _notional.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
@@ -425,7 +425,7 @@ module AverageBMALegFunction =
 
                 let _AverageBMALeg = Helper.toCell<AverageBMALeg> averagebmaleg "AverageBMALeg"  
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
-                let builder () = withMnemonic mnemonic ((_AverageBMALeg.cell :?> AverageBMALegModel).WithPaymentAdjustment
+                let builder () = withMnemonic mnemonic ((AverageBMALegModel.Cast _AverageBMALeg.cell).WithPaymentAdjustment
                                                             _convention.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l

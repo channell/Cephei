@@ -104,7 +104,7 @@ module LogLinearInterpolationFunction =
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).Derivative
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Derivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -146,7 +146,7 @@ module LogLinearInterpolationFunction =
             try
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).Empty
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -188,7 +188,7 @@ module LogLinearInterpolationFunction =
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).Primitive
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Primitive
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -236,7 +236,7 @@ module LogLinearInterpolationFunction =
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).SecondDerivative
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).SecondDerivative
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -278,7 +278,7 @@ module LogLinearInterpolationFunction =
             try
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).Update
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Update
                                                        ) :> ICell
                 let format (o : LogLinearInterpolation) (l:string) = o.ToString() :> obj
 
@@ -320,7 +320,7 @@ module LogLinearInterpolationFunction =
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
                 let _allowExtrapolation = Helper.toCell<bool> allowExtrapolation "allowExtrapolation" 
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).Value1
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Value1
                                                             _x.cell 
                                                             _allowExtrapolation.cell 
                                                        ) :> ICell
@@ -365,7 +365,7 @@ module LogLinearInterpolationFunction =
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).Value
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -404,7 +404,7 @@ module LogLinearInterpolationFunction =
             try
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).XMax
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).XMax
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -440,7 +440,7 @@ module LogLinearInterpolationFunction =
             try
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).XMin
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).XMin
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -476,7 +476,7 @@ module LogLinearInterpolationFunction =
             try
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -515,7 +515,7 @@ module LogLinearInterpolationFunction =
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LogLinearInterpolation) (l:string) = o.ToString() :> obj
@@ -557,7 +557,7 @@ module LogLinearInterpolationFunction =
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : LogLinearInterpolation) (l:string) = o.ToString() :> obj
@@ -596,7 +596,7 @@ module LogLinearInterpolationFunction =
             try
 
                 let _LogLinearInterpolation = Helper.toCell<LogLinearInterpolation> loglinearinterpolation "LogLinearInterpolation"  
-                let builder () = withMnemonic mnemonic ((_LogLinearInterpolation.cell :?> LogLinearInterpolationModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((LogLinearInterpolationModel.Cast _LogLinearInterpolation.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

@@ -49,7 +49,7 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).ConvexityAdjustment
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -511,7 +511,7 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).ImpliedQuote
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -547,7 +547,7 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).EarliestDate
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -583,7 +583,7 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).LatestDate
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -619,7 +619,7 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).LatestRelevantDate
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -655,7 +655,7 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -691,7 +691,7 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).PillarDate
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -727,7 +727,7 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).Quote
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -763,7 +763,7 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).QuoteError
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -799,7 +799,7 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).QuoteIsValid
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -835,7 +835,7 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).QuoteValue
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -874,7 +874,7 @@ module FuturesRateHelperFunction =
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FuturesRateHelper) (l:string) = o.ToString() :> obj
@@ -917,7 +917,7 @@ module FuturesRateHelperFunction =
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
                 let _ts = Helper.toCell<'TS> ts "ts" 
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).SetTermStructure
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).SetTermStructure
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (o : FuturesRateHelper) (l:string) = o.ToString() :> obj
@@ -960,7 +960,7 @@ module FuturesRateHelperFunction =
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FuturesRateHelper) (l:string) = o.ToString() :> obj
@@ -999,7 +999,7 @@ module FuturesRateHelperFunction =
             try
 
                 let _FuturesRateHelper = Helper.toCell<FuturesRateHelper> futuresratehelper "FuturesRateHelper"  
-                let builder () = withMnemonic mnemonic ((_FuturesRateHelper.cell :?> FuturesRateHelperModel).Update
+                let builder () = withMnemonic mnemonic ((FuturesRateHelperModel.Cast _FuturesRateHelper.cell).Update
                                                        ) :> ICell
                 let format (o : FuturesRateHelper) (l:string) = o.ToString() :> obj
 

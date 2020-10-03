@@ -103,7 +103,7 @@ module G2SwaptionEngineFunction =
 
                 let _G2SwaptionEngine = Helper.toCell<G2SwaptionEngine> g2swaptionengine "G2SwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder () = withMnemonic mnemonic ((_G2SwaptionEngine.cell :?> G2SwaptionEngineModel).SetModel
+                let builder () = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
@@ -146,7 +146,7 @@ module G2SwaptionEngineFunction =
 
                 let _G2SwaptionEngine = Helper.toCell<G2SwaptionEngine> g2swaptionengine "G2SwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_G2SwaptionEngine.cell :?> G2SwaptionEngineModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
@@ -185,7 +185,7 @@ module G2SwaptionEngineFunction =
             try
 
                 let _G2SwaptionEngine = Helper.toCell<G2SwaptionEngine> g2swaptionengine "G2SwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((_G2SwaptionEngine.cell :?> G2SwaptionEngineModel).Reset
+                let builder () = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
 
@@ -224,7 +224,7 @@ module G2SwaptionEngineFunction =
 
                 let _G2SwaptionEngine = Helper.toCell<G2SwaptionEngine> g2swaptionengine "G2SwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_G2SwaptionEngine.cell :?> G2SwaptionEngineModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
@@ -263,7 +263,7 @@ module G2SwaptionEngineFunction =
             try
 
                 let _G2SwaptionEngine = Helper.toCell<G2SwaptionEngine> g2swaptionengine "G2SwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((_G2SwaptionEngine.cell :?> G2SwaptionEngineModel).Update
+                let builder () = withMnemonic mnemonic ((G2SwaptionEngineModel.Cast _G2SwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
 

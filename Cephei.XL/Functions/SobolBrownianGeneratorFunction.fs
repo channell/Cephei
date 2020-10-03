@@ -49,7 +49,7 @@ module SobolBrownianGeneratorFunction =
             try
 
                 let _SobolBrownianGenerator = Helper.toCell<SobolBrownianGenerator> sobolbrowniangenerator "SobolBrownianGenerator"  
-                let builder () = withMnemonic mnemonic ((_SobolBrownianGenerator.cell :?> SobolBrownianGeneratorModel).NextPath
+                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).NextPath
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -88,7 +88,7 @@ module SobolBrownianGeneratorFunction =
 
                 let _SobolBrownianGenerator = Helper.toCell<SobolBrownianGenerator> sobolbrowniangenerator "SobolBrownianGenerator"  
                 let _output = Helper.toCell<Generic.List<double>> output "output" 
-                let builder () = withMnemonic mnemonic ((_SobolBrownianGenerator.cell :?> SobolBrownianGeneratorModel).NextStep
+                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).NextStep
                                                             _output.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -127,7 +127,7 @@ module SobolBrownianGeneratorFunction =
             try
 
                 let _SobolBrownianGenerator = Helper.toCell<SobolBrownianGenerator> sobolbrowniangenerator "SobolBrownianGenerator"  
-                let builder () = withMnemonic mnemonic ((_SobolBrownianGenerator.cell :?> SobolBrownianGeneratorModel).NumberOfFactors
+                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).NumberOfFactors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -163,7 +163,7 @@ module SobolBrownianGeneratorFunction =
             try
 
                 let _SobolBrownianGenerator = Helper.toCell<SobolBrownianGenerator> sobolbrowniangenerator "SobolBrownianGenerator"  
-                let builder () = withMnemonic mnemonic ((_SobolBrownianGenerator.cell :?> SobolBrownianGeneratorModel).NumberOfSteps
+                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).NumberOfSteps
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -199,7 +199,7 @@ module SobolBrownianGeneratorFunction =
             try
 
                 let _SobolBrownianGenerator = Helper.toCell<SobolBrownianGenerator> sobolbrowniangenerator "SobolBrownianGenerator"  
-                let builder () = withMnemonic mnemonic ((_SobolBrownianGenerator.cell :?> SobolBrownianGeneratorModel).OrderedIndices
+                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).OrderedIndices
                                                        ) :> ICell
                 let format (i : Generic.List<Generic.List<int>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -299,7 +299,7 @@ module SobolBrownianGeneratorFunction =
 
                 let _SobolBrownianGenerator = Helper.toCell<SobolBrownianGenerator> sobolbrowniangenerator "SobolBrownianGenerator"  
                 let _variates = Helper.toCell<Generic.List<Generic.List<double>>> variates "variates" 
-                let builder () = withMnemonic mnemonic ((_SobolBrownianGenerator.cell :?> SobolBrownianGeneratorModel).Transform
+                let builder () = withMnemonic mnemonic ((SobolBrownianGeneratorModel.Cast _SobolBrownianGenerator.cell).Transform
                                                             _variates.cell 
                                                        ) :> ICell
                 let format (i : Generic.List<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)

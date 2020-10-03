@@ -103,7 +103,7 @@ module IsraelFunction =
             try
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).AddedHolidays
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).AddedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -142,7 +142,7 @@ module IsraelFunction =
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).AddHoliday
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).AddHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Israel) (l:string) = o.ToString() :> obj
@@ -187,7 +187,7 @@ module IsraelFunction =
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).Adjust
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).Adjust
                                                             _d.cell 
                                                             _c.cell 
                                                        ) :> ICell
@@ -244,7 +244,7 @@ module IsraelFunction =
                 let _unit = Helper.toCell<TimeUnit> unit "unit" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).Advance1
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).Advance1
                                                             _d.cell 
                                                             _n.cell 
                                                             _unit.cell 
@@ -307,7 +307,7 @@ module IsraelFunction =
                 let _p = Helper.toCell<Period> p "p" 
                 let _c = Helper.toCell<BusinessDayConvention> c "c" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).Advance
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).Advance
                                                             _d.cell 
                                                             _p.cell 
                                                             _c.cell 
@@ -367,7 +367,7 @@ module IsraelFunction =
                 let _To = Helper.toCell<Date> To "To" 
                 let _includeFirst = Helper.toCell<bool> includeFirst "includeFirst" 
                 let _includeLast = Helper.toCell<bool> includeLast "includeLast" 
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).BusinessDaysBetween
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).BusinessDaysBetween
                                                             _from.cell 
                                                             _To.cell 
                                                             _includeFirst.cell 
@@ -415,7 +415,7 @@ module IsraelFunction =
             try
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).Calendar
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -451,7 +451,7 @@ module IsraelFunction =
             try
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).Empty
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -490,7 +490,7 @@ module IsraelFunction =
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).EndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -532,7 +532,7 @@ module IsraelFunction =
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).Equals
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -574,7 +574,7 @@ module IsraelFunction =
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).IsBusinessDay
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).IsBusinessDay
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -616,7 +616,7 @@ module IsraelFunction =
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).IsEndOfMonth
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).IsEndOfMonth
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -658,7 +658,7 @@ module IsraelFunction =
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).IsHoliday
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).IsHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -700,7 +700,7 @@ module IsraelFunction =
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
                 let _w = Helper.toCell<DayOfWeek> w "w" 
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).IsWeekend
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).IsWeekend
                                                             _w.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -741,7 +741,7 @@ module IsraelFunction =
             try
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).Name
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -777,7 +777,7 @@ module IsraelFunction =
             try
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).RemovedHolidays
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).RemovedHolidays
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -816,7 +816,7 @@ module IsraelFunction =
 
                 let _Israel = Helper.toCell<Israel> israel "Israel"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_Israel.cell :?> IsraelModel).RemoveHoliday
+                let builder () = withMnemonic mnemonic ((IsraelModel.Cast _Israel.cell).RemoveHoliday
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : Israel) (l:string) = o.ToString() :> obj

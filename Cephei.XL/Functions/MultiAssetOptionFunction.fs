@@ -49,7 +49,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).Delta
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -85,7 +85,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).DividendRho
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -121,7 +121,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).Gamma
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -157,7 +157,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).IsExpired
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -248,7 +248,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).Rho
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -284,7 +284,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).Theta
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -320,7 +320,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).Vega
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -356,7 +356,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).Exercise
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -392,7 +392,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).Payoff
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -428,7 +428,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).CASH
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -464,7 +464,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -500,7 +500,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).NPV
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -539,7 +539,7 @@ module MultiAssetOptionFunction =
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).Result
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -581,7 +581,7 @@ module MultiAssetOptionFunction =
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : MultiAssetOption) (l:string) = o.ToString() :> obj
@@ -620,7 +620,7 @@ module MultiAssetOptionFunction =
             try
 
                 let _MultiAssetOption = Helper.toCell<MultiAssetOption> multiassetoption "MultiAssetOption"  
-                let builder () = withMnemonic mnemonic ((_MultiAssetOption.cell :?> MultiAssetOptionModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((MultiAssetOptionModel.Cast _MultiAssetOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

@@ -52,7 +52,7 @@ module DateFunction =
 
                 let _Date = Helper.toCell<Date> date "Date"  
                 let _obj = Helper.toCell<Object> obj "obj" 
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).CompareTo
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).CompareTo
                                                             _obj.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -391,7 +391,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Day
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Day
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -427,7 +427,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).DayOfWeek
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).DayOfWeek
                                                        ) :> ICell
                 let format (o : DayOfWeek) (l:string) = o.ToString() :> obj
 
@@ -463,7 +463,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).DayOfYear
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).DayOfYear
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -502,7 +502,7 @@ module DateFunction =
 
                 let _Date = Helper.toCell<Date> date "Date"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Equals
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -541,7 +541,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).FractionOfDay
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).FractionOfDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -577,7 +577,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).FractionOfSecond
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).FractionOfSecond
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -613,7 +613,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Hours
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Hours
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -649,7 +649,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Milliseconds
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Milliseconds
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -685,7 +685,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Minutes
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Minutes
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -721,7 +721,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Month
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Month
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -794,7 +794,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).SerialNumber
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).SerialNumber
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -830,7 +830,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).ToLongDateString
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToLongDateString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -866,7 +866,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).ToShortDateString
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToShortDateString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -908,7 +908,7 @@ module DateFunction =
                 let _Date = Helper.toCell<Date> date "Date"  
                 let _format = Helper.toCell<string> format "format" 
                 let _provider = Helper.toCell<IFormatProvider> provider "provider" 
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).ToString2 
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToString2 
                                                             _format.cell 
                                                             _provider.cell 
                                                        ) :> ICell
@@ -953,7 +953,7 @@ module DateFunction =
 
                 let _Date = Helper.toCell<Date> date "Date"  
                 let _format = Helper.toCell<string> format "format" 
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).ToString3
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToString3
                                                             _format.cell 
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
@@ -995,9 +995,6 @@ module DateFunction =
 
                 let _Date = Helper.toCell<Date> date "Date"  
                 let _provider = Helper.toCell<IFormatProvider> provider "provider" 
-                (*let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).ToString1
-                                                            _provider.cell 
-                                                       ) :> ICell*)
                 let builder () = withMnemonic mnemonic ((DateModel1.Cast _Date.cell).ToString1
                                                             _provider.cell 
                                                        ) :> ICell
@@ -1038,7 +1035,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).ToString
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -1074,7 +1071,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Weekday
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Weekday
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1111,7 +1108,7 @@ module DateFunction =
             try
 
                 let _Date = Helper.toCell<Date> date "Date"  
-                let builder () = withMnemonic mnemonic ((_Date.cell :?> DateModel).Year
+                let builder () = withMnemonic mnemonic ((DateModel.Cast _Date.cell).Year
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

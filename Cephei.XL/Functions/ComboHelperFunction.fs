@@ -98,7 +98,7 @@ module ComboHelperFunction =
             try
 
                 let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper"  
-                let builder () = withMnemonic mnemonic ((_ComboHelper.cell :?> ComboHelperModel).FNext
+                let builder () = withMnemonic mnemonic ((ComboHelperModel.Cast _ComboHelper.cell).FNext
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -137,7 +137,7 @@ module ComboHelperFunction =
 
                 let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_ComboHelper.cell :?> ComboHelperModel).Primitive
+                let builder () = withMnemonic mnemonic ((ComboHelperModel.Cast _ComboHelper.cell).Primitive
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -179,7 +179,7 @@ module ComboHelperFunction =
 
                 let _ComboHelper = Helper.toCell<ComboHelper> combohelper "ComboHelper"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_ComboHelper.cell :?> ComboHelperModel).Value
+                let builder () = withMnemonic mnemonic ((ComboHelperModel.Cast _ComboHelper.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

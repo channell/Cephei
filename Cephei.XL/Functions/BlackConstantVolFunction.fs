@@ -269,7 +269,7 @@ module BlackConstantVolFunction =
             try
 
                 let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
-                let builder () = withMnemonic mnemonic ((_BlackConstantVol.cell :?> BlackConstantVolModel).MaxDate
+                let builder () = withMnemonic mnemonic ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -305,7 +305,7 @@ module BlackConstantVolFunction =
             try
 
                 let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
-                let builder () = withMnemonic mnemonic ((_BlackConstantVol.cell :?> BlackConstantVolModel).MaxStrike
+                let builder () = withMnemonic mnemonic ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MaxStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -341,7 +341,7 @@ module BlackConstantVolFunction =
             try
 
                 let _BlackConstantVol = Helper.toCell<BlackConstantVol> blackconstantvol "BlackConstantVol"  
-                let builder () = withMnemonic mnemonic ((_BlackConstantVol.cell :?> BlackConstantVolModel).MinStrike
+                let builder () = withMnemonic mnemonic ((BlackConstantVolModel.Cast _BlackConstantVol.cell).MinStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

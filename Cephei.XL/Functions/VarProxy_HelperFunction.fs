@@ -49,7 +49,7 @@ module VarProxy_HelperFunction =
             try
 
                 let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
-                let builder () = withMnemonic mnemonic ((_VarProxy_Helper.cell :?> VarProxy_HelperModel).CorrModel_
+                let builder () = withMnemonic mnemonic ((VarProxy_HelperModel.Cast _VarProxy_Helper.cell).CorrModel_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmCorrelationModel>) l
 
@@ -88,7 +88,7 @@ module VarProxy_HelperFunction =
 
                 let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_VarProxy_Helper.cell :?> VarProxy_HelperModel).Value
+                let builder () = withMnemonic mnemonic ((VarProxy_HelperModel.Cast _VarProxy_Helper.cell).Value
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -176,7 +176,7 @@ module VarProxy_HelperFunction =
             try
 
                 let _VarProxy_Helper = Helper.toCell<VarProxy_Helper> varproxy_helper "VarProxy_Helper"  
-                let builder () = withMnemonic mnemonic ((_VarProxy_Helper.cell :?> VarProxy_HelperModel).VolaModel_
+                let builder () = withMnemonic mnemonic ((VarProxy_HelperModel.Cast _VarProxy_Helper.cell).VolaModel_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmVolatilityModel>) l
 

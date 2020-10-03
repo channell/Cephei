@@ -127,7 +127,7 @@ module LocalBootstrapFunction =
 
                 let _LocalBootstrap = Helper.toCell<LocalBootstrap> localbootstrap "LocalBootstrap"  
                 let _ts = Helper.toCell<'T> ts "ts" 
-                let builder () = withMnemonic mnemonic ((_LocalBootstrap.cell :?> LocalBootstrapModel).Setup
+                let builder () = withMnemonic mnemonic ((LocalBootstrapModel.Cast _LocalBootstrap.cell).Setup
                                                             _ts.cell 
                                                        ) :> ICell
                 let format (o : LocalBootstrap) (l:string) = o.ToString() :> obj

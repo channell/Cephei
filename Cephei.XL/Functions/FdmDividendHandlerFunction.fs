@@ -55,7 +55,7 @@ module FdmDividendHandlerFunction =
                 let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
                 let _o = Helper.toCell<Object> o "o" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_FdmDividendHandler.cell :?> FdmDividendHandlerModel).ApplyTo
+                let builder () = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).ApplyTo
                                                             _o.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -97,7 +97,7 @@ module FdmDividendHandlerFunction =
             try
 
                 let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
-                let builder () = withMnemonic mnemonic ((_FdmDividendHandler.cell :?> FdmDividendHandlerModel).DividendDates
+                let builder () = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).DividendDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -133,7 +133,7 @@ module FdmDividendHandlerFunction =
             try
 
                 let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
-                let builder () = withMnemonic mnemonic ((_FdmDividendHandler.cell :?> FdmDividendHandlerModel).Dividends
+                let builder () = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).Dividends
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -169,7 +169,7 @@ module FdmDividendHandlerFunction =
             try
 
                 let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
-                let builder () = withMnemonic mnemonic ((_FdmDividendHandler.cell :?> FdmDividendHandlerModel).DividendTimes
+                let builder () = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).DividendTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 

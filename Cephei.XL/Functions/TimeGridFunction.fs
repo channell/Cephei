@@ -52,7 +52,7 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_TimeGrid.cell :?> TimeGridModel).ClosestIndex
+                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).ClosestIndex
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -94,7 +94,7 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_TimeGrid.cell :?> TimeGridModel).ClosestTime
+                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).ClosestTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -136,7 +136,7 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_TimeGrid.cell :?> TimeGridModel).Dt
+                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Dt
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -175,7 +175,7 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder () = withMnemonic mnemonic ((_TimeGrid.cell :?> TimeGridModel).Empty
+                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -211,7 +211,7 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder () = withMnemonic mnemonic ((_TimeGrid.cell :?> TimeGridModel).First
+                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).First
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -250,7 +250,7 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_TimeGrid.cell :?> TimeGridModel).Index
+                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Index
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -289,7 +289,7 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder () = withMnemonic mnemonic ((_TimeGrid.cell :?> TimeGridModel).Last
+                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Last
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -325,7 +325,7 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder () = withMnemonic mnemonic ((_TimeGrid.cell :?> TimeGridModel).MandatoryTimes
+                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -361,7 +361,7 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder () = withMnemonic mnemonic ((_TimeGrid.cell :?> TimeGridModel).Size
+                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -400,7 +400,7 @@ module TimeGridFunction =
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_TimeGrid.cell :?> TimeGridModel).This
+                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).This
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -611,7 +611,7 @@ module TimeGridFunction =
             try
 
                 let _TimeGrid = Helper.toCell<TimeGrid> timegrid "TimeGrid"  
-                let builder () = withMnemonic mnemonic ((_TimeGrid.cell :?> TimeGridModel).Times
+                let builder () = withMnemonic mnemonic ((TimeGridModel.Cast _TimeGrid.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 

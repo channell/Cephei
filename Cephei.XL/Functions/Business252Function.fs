@@ -92,7 +92,7 @@ module Business252Function =
                 let _Business252 = Helper.toCell<Business252> business252 "Business252"  
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
-                let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).DayCount
+                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).DayCount
                                                             _d1.cell 
                                                             _d2.cell 
                                                        ) :> ICell
@@ -134,7 +134,7 @@ module Business252Function =
             try
 
                 let _Business252 = Helper.toCell<Business252> business252 "Business252"  
-                let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).Name
+                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -182,7 +182,7 @@ module Business252Function =
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _d3 = Helper.toCell<Date> d3 "d3" 
                 let _d4 = Helper.toCell<Date> d4 "d4" 
-                let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).YearFraction
+                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).YearFraction
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _d3.cell 
@@ -230,7 +230,7 @@ module Business252Function =
             try
 
                 let _Business252 = Helper.toCell<Business252> business252 "Business252"  
-                let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).DayCounter
+                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -266,7 +266,7 @@ module Business252Function =
             try
 
                 let _Business252 = Helper.toCell<Business252> business252 "Business252"  
-                let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).Empty
+                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -305,7 +305,7 @@ module Business252Function =
 
                 let _Business252 = Helper.toCell<Business252> business252 "Business252"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).Equals
+                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -344,7 +344,7 @@ module Business252Function =
             try
 
                 let _Business252 = Helper.toCell<Business252> business252 "Business252"  
-                let builder () = withMnemonic mnemonic ((_Business252.cell :?> Business252Model).ToString
+                let builder () = withMnemonic mnemonic ((Business252Model.Cast _Business252.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 

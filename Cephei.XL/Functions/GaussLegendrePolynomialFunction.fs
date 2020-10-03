@@ -83,7 +83,7 @@ module GaussLegendrePolynomialFunction =
 
                 let _GaussLegendrePolynomial = Helper.toCell<GaussLegendrePolynomial> gausslegendrepolynomial "GaussLegendrePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_GaussLegendrePolynomial.cell :?> GaussLegendrePolynomialModel).Alpha
+                let builder () = withMnemonic mnemonic ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).Alpha
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -125,7 +125,7 @@ module GaussLegendrePolynomialFunction =
 
                 let _GaussLegendrePolynomial = Helper.toCell<GaussLegendrePolynomial> gausslegendrepolynomial "GaussLegendrePolynomial"  
                 let _i = Helper.toCell<int> i "i" 
-                let builder () = withMnemonic mnemonic ((_GaussLegendrePolynomial.cell :?> GaussLegendrePolynomialModel).Beta
+                let builder () = withMnemonic mnemonic ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).Beta
                                                             _i.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module GaussLegendrePolynomialFunction =
             try
 
                 let _GaussLegendrePolynomial = Helper.toCell<GaussLegendrePolynomial> gausslegendrepolynomial "GaussLegendrePolynomial"  
-                let builder () = withMnemonic mnemonic ((_GaussLegendrePolynomial.cell :?> GaussLegendrePolynomialModel).Mu_0
+                let builder () = withMnemonic mnemonic ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).Mu_0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -203,7 +203,7 @@ module GaussLegendrePolynomialFunction =
 
                 let _GaussLegendrePolynomial = Helper.toCell<GaussLegendrePolynomial> gausslegendrepolynomial "GaussLegendrePolynomial"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_GaussLegendrePolynomial.cell :?> GaussLegendrePolynomialModel).W
+                let builder () = withMnemonic mnemonic ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).W
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -248,7 +248,7 @@ module GaussLegendrePolynomialFunction =
                 let _GaussLegendrePolynomial = Helper.toCell<GaussLegendrePolynomial> gausslegendrepolynomial "GaussLegendrePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_GaussLegendrePolynomial.cell :?> GaussLegendrePolynomialModel).Value
+                let builder () = withMnemonic mnemonic ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).Value
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -296,7 +296,7 @@ module GaussLegendrePolynomialFunction =
                 let _GaussLegendrePolynomial = Helper.toCell<GaussLegendrePolynomial> gausslegendrepolynomial "GaussLegendrePolynomial"  
                 let _n = Helper.toCell<int> n "n" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_GaussLegendrePolynomial.cell :?> GaussLegendrePolynomialModel).WeightedValue
+                let builder () = withMnemonic mnemonic ((GaussLegendrePolynomialModel.Cast _GaussLegendrePolynomial.cell).WeightedValue
                                                             _n.cell 
                                                             _x.cell 
                                                        ) :> ICell

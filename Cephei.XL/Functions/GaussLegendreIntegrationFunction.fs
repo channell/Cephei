@@ -86,7 +86,7 @@ module GaussLegendreIntegrationFunction =
             try
 
                 let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration"  
-                let builder () = withMnemonic mnemonic ((_GaussLegendreIntegration.cell :?> GaussLegendreIntegrationModel).Order
+                let builder () = withMnemonic mnemonic ((GaussLegendreIntegrationModel.Cast _GaussLegendreIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -125,7 +125,7 @@ module GaussLegendreIntegrationFunction =
 
                 let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((_GaussLegendreIntegration.cell :?> GaussLegendreIntegrationModel).Value
+                let builder () = withMnemonic mnemonic ((GaussLegendreIntegrationModel.Cast _GaussLegendreIntegration.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module GaussLegendreIntegrationFunction =
             try
 
                 let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration"  
-                let builder () = withMnemonic mnemonic ((_GaussLegendreIntegration.cell :?> GaussLegendreIntegrationModel).Weights
+                let builder () = withMnemonic mnemonic ((GaussLegendreIntegrationModel.Cast _GaussLegendreIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -200,7 +200,7 @@ module GaussLegendreIntegrationFunction =
             try
 
                 let _GaussLegendreIntegration = Helper.toCell<GaussLegendreIntegration> gausslegendreintegration "GaussLegendreIntegration"  
-                let builder () = withMnemonic mnemonic ((_GaussLegendreIntegration.cell :?> GaussLegendreIntegrationModel).X
+                let builder () = withMnemonic mnemonic ((GaussLegendreIntegrationModel.Cast _GaussLegendreIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

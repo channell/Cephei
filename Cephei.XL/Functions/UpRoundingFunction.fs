@@ -129,7 +129,7 @@ module UpRoundingFunction =
             try
 
                 let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
-                let builder () = withMnemonic mnemonic ((_UpRounding.cell :?> UpRoundingModel).Digit
+                let builder () = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).Digit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -165,7 +165,7 @@ module UpRoundingFunction =
             try
 
                 let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
-                let builder () = withMnemonic mnemonic ((_UpRounding.cell :?> UpRoundingModel).GetType
+                let builder () = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).GetType
                                                        ) :> ICell
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
@@ -201,7 +201,7 @@ module UpRoundingFunction =
             try
 
                 let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
-                let builder () = withMnemonic mnemonic ((_UpRounding.cell :?> UpRoundingModel).Precision
+                let builder () = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).Precision
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -240,7 +240,7 @@ module UpRoundingFunction =
 
                 let _UpRounding = Helper.toCell<UpRounding> uprounding "UpRounding"  
                 let _value = Helper.toCell<double> value "value" 
-                let builder () = withMnemonic mnemonic ((_UpRounding.cell :?> UpRoundingModel).Round
+                let builder () = withMnemonic mnemonic ((UpRoundingModel.Cast _UpRounding.cell).Round
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

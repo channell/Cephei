@@ -49,7 +49,7 @@ module SimpleQuoteFunction =
             try
 
                 let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
-                let builder () = withMnemonic mnemonic ((_SimpleQuote.cell :?> SimpleQuoteModel).IsValid
+                let builder () = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).IsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -85,7 +85,7 @@ module SimpleQuoteFunction =
             try
 
                 let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
-                let builder () = withMnemonic mnemonic ((_SimpleQuote.cell :?> SimpleQuoteModel).Reset
+                let builder () = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).Reset
                                                        ) :> ICell
                 let format (o : SimpleQuote) (l:string) = o.ToString() :> obj
 
@@ -124,7 +124,7 @@ module SimpleQuoteFunction =
 
                 let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
                 let _value = Helper.toNullable<double> value "value"
-                let builder () = withMnemonic mnemonic ((_SimpleQuote.cell :?> SimpleQuoteModel).SetValue
+                let builder () = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).SetValue
                                                             _value.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -231,7 +231,7 @@ module SimpleQuoteFunction =
             try
 
                 let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
-                let builder () = withMnemonic mnemonic ((_SimpleQuote.cell :?> SimpleQuoteModel).Value
+                let builder () = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -270,7 +270,7 @@ module SimpleQuoteFunction =
 
                 let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_SimpleQuote.cell :?> SimpleQuoteModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SimpleQuote) (l:string) = o.ToString() :> obj
@@ -312,7 +312,7 @@ module SimpleQuoteFunction =
 
                 let _SimpleQuote = Helper.toCell<SimpleQuote> simplequote "SimpleQuote"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_SimpleQuote.cell :?> SimpleQuoteModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((SimpleQuoteModel.Cast _SimpleQuote.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : SimpleQuote) (l:string) = o.ToString() :> obj

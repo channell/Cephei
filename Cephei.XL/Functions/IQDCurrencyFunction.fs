@@ -80,7 +80,7 @@ module IQDCurrencyFunction =
             try
 
                 let _IQDCurrency = Helper.toCell<IQDCurrency> iqdcurrency "IQDCurrency"  
-                let builder () = withMnemonic mnemonic ((_IQDCurrency.cell :?> IQDCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((IQDCurrencyModel.Cast _IQDCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module IQDCurrencyFunction =
             try
 
                 let _IQDCurrency = Helper.toCell<IQDCurrency> iqdcurrency "IQDCurrency"  
-                let builder () = withMnemonic mnemonic ((_IQDCurrency.cell :?> IQDCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((IQDCurrencyModel.Cast _IQDCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module IQDCurrencyFunction =
 
                 let _IQDCurrency = Helper.toCell<IQDCurrency> iqdcurrency "IQDCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_IQDCurrency.cell :?> IQDCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((IQDCurrencyModel.Cast _IQDCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module IQDCurrencyFunction =
             try
 
                 let _IQDCurrency = Helper.toCell<IQDCurrency> iqdcurrency "IQDCurrency"  
-                let builder () = withMnemonic mnemonic ((_IQDCurrency.cell :?> IQDCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((IQDCurrencyModel.Cast _IQDCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module IQDCurrencyFunction =
             try
 
                 let _IQDCurrency = Helper.toCell<IQDCurrency> iqdcurrency "IQDCurrency"  
-                let builder () = withMnemonic mnemonic ((_IQDCurrency.cell :?> IQDCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((IQDCurrencyModel.Cast _IQDCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module IQDCurrencyFunction =
             try
 
                 let _IQDCurrency = Helper.toCell<IQDCurrency> iqdcurrency "IQDCurrency"  
-                let builder () = withMnemonic mnemonic ((_IQDCurrency.cell :?> IQDCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((IQDCurrencyModel.Cast _IQDCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module IQDCurrencyFunction =
             try
 
                 let _IQDCurrency = Helper.toCell<IQDCurrency> iqdcurrency "IQDCurrency"  
-                let builder () = withMnemonic mnemonic ((_IQDCurrency.cell :?> IQDCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((IQDCurrencyModel.Cast _IQDCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module IQDCurrencyFunction =
             try
 
                 let _IQDCurrency = Helper.toCell<IQDCurrency> iqdcurrency "IQDCurrency"  
-                let builder () = withMnemonic mnemonic ((_IQDCurrency.cell :?> IQDCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((IQDCurrencyModel.Cast _IQDCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module IQDCurrencyFunction =
             try
 
                 let _IQDCurrency = Helper.toCell<IQDCurrency> iqdcurrency "IQDCurrency"  
-                let builder () = withMnemonic mnemonic ((_IQDCurrency.cell :?> IQDCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((IQDCurrencyModel.Cast _IQDCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module IQDCurrencyFunction =
             try
 
                 let _IQDCurrency = Helper.toCell<IQDCurrency> iqdcurrency "IQDCurrency"  
-                let builder () = withMnemonic mnemonic ((_IQDCurrency.cell :?> IQDCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((IQDCurrencyModel.Cast _IQDCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module IQDCurrencyFunction =
             try
 
                 let _IQDCurrency = Helper.toCell<IQDCurrency> iqdcurrency "IQDCurrency"  
-                let builder () = withMnemonic mnemonic ((_IQDCurrency.cell :?> IQDCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((IQDCurrencyModel.Cast _IQDCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module IQDCurrencyFunction =
             try
 
                 let _IQDCurrency = Helper.toCell<IQDCurrency> iqdcurrency "IQDCurrency"  
-                let builder () = withMnemonic mnemonic ((_IQDCurrency.cell :?> IQDCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((IQDCurrencyModel.Cast _IQDCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

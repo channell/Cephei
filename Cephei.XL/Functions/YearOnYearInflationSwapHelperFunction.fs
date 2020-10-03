@@ -49,7 +49,7 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).ImpliedQuote
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).ImpliedQuote
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -88,7 +88,7 @@ module YearOnYearInflationSwapHelperFunction =
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
                 let _y = Helper.toCell<YoYInflationTermStructure> y "y" 
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).SetTermStructure
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).SetTermStructure
                                                             _y.cell 
                                                        ) :> ICell
                 let format (o : YearOnYearInflationSwapHelper) (l:string) = o.ToString() :> obj
@@ -200,7 +200,7 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).EarliestDate
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).EarliestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -236,7 +236,7 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).LatestDate
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).LatestDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -272,7 +272,7 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).LatestRelevantDate
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).LatestRelevantDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -308,7 +308,7 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -344,7 +344,7 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).PillarDate
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).PillarDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -380,7 +380,7 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).Quote
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).Quote
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -416,7 +416,7 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).QuoteError
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).QuoteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -452,7 +452,7 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).QuoteIsValid
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).QuoteIsValid
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -488,7 +488,7 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).QuoteValue
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).QuoteValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -527,7 +527,7 @@ module YearOnYearInflationSwapHelperFunction =
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YearOnYearInflationSwapHelper) (l:string) = o.ToString() :> obj
@@ -569,7 +569,7 @@ module YearOnYearInflationSwapHelperFunction =
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : YearOnYearInflationSwapHelper) (l:string) = o.ToString() :> obj
@@ -608,7 +608,7 @@ module YearOnYearInflationSwapHelperFunction =
             try
 
                 let _YearOnYearInflationSwapHelper = Helper.toCell<YearOnYearInflationSwapHelper> yearonyearinflationswaphelper "YearOnYearInflationSwapHelper"  
-                let builder () = withMnemonic mnemonic ((_YearOnYearInflationSwapHelper.cell :?> YearOnYearInflationSwapHelperModel).Update
+                let builder () = withMnemonic mnemonic ((YearOnYearInflationSwapHelperModel.Cast _YearOnYearInflationSwapHelper.cell).Update
                                                        ) :> ICell
                 let format (o : YearOnYearInflationSwapHelper) (l:string) = o.ToString() :> obj
 

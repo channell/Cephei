@@ -80,7 +80,7 @@ module JPYCurrencyFunction =
             try
 
                 let _JPYCurrency = Helper.toCell<JPYCurrency> jpycurrency "JPYCurrency"  
-                let builder () = withMnemonic mnemonic ((_JPYCurrency.cell :?> JPYCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((JPYCurrencyModel.Cast _JPYCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module JPYCurrencyFunction =
             try
 
                 let _JPYCurrency = Helper.toCell<JPYCurrency> jpycurrency "JPYCurrency"  
-                let builder () = withMnemonic mnemonic ((_JPYCurrency.cell :?> JPYCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((JPYCurrencyModel.Cast _JPYCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module JPYCurrencyFunction =
 
                 let _JPYCurrency = Helper.toCell<JPYCurrency> jpycurrency "JPYCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_JPYCurrency.cell :?> JPYCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((JPYCurrencyModel.Cast _JPYCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module JPYCurrencyFunction =
             try
 
                 let _JPYCurrency = Helper.toCell<JPYCurrency> jpycurrency "JPYCurrency"  
-                let builder () = withMnemonic mnemonic ((_JPYCurrency.cell :?> JPYCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((JPYCurrencyModel.Cast _JPYCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module JPYCurrencyFunction =
             try
 
                 let _JPYCurrency = Helper.toCell<JPYCurrency> jpycurrency "JPYCurrency"  
-                let builder () = withMnemonic mnemonic ((_JPYCurrency.cell :?> JPYCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((JPYCurrencyModel.Cast _JPYCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module JPYCurrencyFunction =
             try
 
                 let _JPYCurrency = Helper.toCell<JPYCurrency> jpycurrency "JPYCurrency"  
-                let builder () = withMnemonic mnemonic ((_JPYCurrency.cell :?> JPYCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((JPYCurrencyModel.Cast _JPYCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module JPYCurrencyFunction =
             try
 
                 let _JPYCurrency = Helper.toCell<JPYCurrency> jpycurrency "JPYCurrency"  
-                let builder () = withMnemonic mnemonic ((_JPYCurrency.cell :?> JPYCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((JPYCurrencyModel.Cast _JPYCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module JPYCurrencyFunction =
             try
 
                 let _JPYCurrency = Helper.toCell<JPYCurrency> jpycurrency "JPYCurrency"  
-                let builder () = withMnemonic mnemonic ((_JPYCurrency.cell :?> JPYCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((JPYCurrencyModel.Cast _JPYCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module JPYCurrencyFunction =
             try
 
                 let _JPYCurrency = Helper.toCell<JPYCurrency> jpycurrency "JPYCurrency"  
-                let builder () = withMnemonic mnemonic ((_JPYCurrency.cell :?> JPYCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((JPYCurrencyModel.Cast _JPYCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module JPYCurrencyFunction =
             try
 
                 let _JPYCurrency = Helper.toCell<JPYCurrency> jpycurrency "JPYCurrency"  
-                let builder () = withMnemonic mnemonic ((_JPYCurrency.cell :?> JPYCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((JPYCurrencyModel.Cast _JPYCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module JPYCurrencyFunction =
             try
 
                 let _JPYCurrency = Helper.toCell<JPYCurrency> jpycurrency "JPYCurrency"  
-                let builder () = withMnemonic mnemonic ((_JPYCurrency.cell :?> JPYCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((JPYCurrencyModel.Cast _JPYCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module JPYCurrencyFunction =
             try
 
                 let _JPYCurrency = Helper.toCell<JPYCurrency> jpycurrency "JPYCurrency"  
-                let builder () = withMnemonic mnemonic ((_JPYCurrency.cell :?> JPYCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((JPYCurrencyModel.Cast _JPYCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

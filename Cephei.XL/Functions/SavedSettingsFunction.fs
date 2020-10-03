@@ -49,7 +49,7 @@ module SavedSettingsFunction =
             try
 
                 let _SavedSettings = Helper.toCell<SavedSettings> savedsettings "SavedSettings"  
-                let builder () = withMnemonic mnemonic ((_SavedSettings.cell :?> SavedSettingsModel).Dispose
+                let builder () = withMnemonic mnemonic ((SavedSettingsModel.Cast _SavedSettings.cell).Dispose
                                                        ) :> ICell
                 let format (o : SavedSettings) (l:string) = o.ToString() :> obj
 

@@ -80,7 +80,7 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((_KRWCurrency.cell :?> KRWCurrencyModel).Code
+                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Code
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -116,7 +116,7 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((_KRWCurrency.cell :?> KRWCurrencyModel).Empty
+                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Empty
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -155,7 +155,7 @@ module KRWCurrencyFunction =
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
                 let _o = Helper.toCell<Object> o "o" 
-                let builder () = withMnemonic mnemonic ((_KRWCurrency.cell :?> KRWCurrencyModel).Equals
+                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Equals
                                                             _o.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -194,7 +194,7 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((_KRWCurrency.cell :?> KRWCurrencyModel).Format
+                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Format
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -230,7 +230,7 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((_KRWCurrency.cell :?> KRWCurrencyModel).FractionsPerUnit
+                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).FractionsPerUnit
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -266,7 +266,7 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((_KRWCurrency.cell :?> KRWCurrencyModel).FractionSymbol
+                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).FractionSymbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -302,7 +302,7 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((_KRWCurrency.cell :?> KRWCurrencyModel).Name
+                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -338,7 +338,7 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((_KRWCurrency.cell :?> KRWCurrencyModel).NumericCode
+                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).NumericCode
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -374,7 +374,7 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((_KRWCurrency.cell :?> KRWCurrencyModel).Rounding
+                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Rounding
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
@@ -410,7 +410,7 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((_KRWCurrency.cell :?> KRWCurrencyModel).Symbol
+                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).Symbol
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -446,7 +446,7 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((_KRWCurrency.cell :?> KRWCurrencyModel).ToString
+                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).ToString
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -482,7 +482,7 @@ module KRWCurrencyFunction =
             try
 
                 let _KRWCurrency = Helper.toCell<KRWCurrency> krwcurrency "KRWCurrency"  
-                let builder () = withMnemonic mnemonic ((_KRWCurrency.cell :?> KRWCurrencyModel).TriangulationCurrency
+                let builder () = withMnemonic mnemonic ((KRWCurrencyModel.Cast _KRWCurrency.cell).TriangulationCurrency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 

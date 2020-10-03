@@ -101,7 +101,7 @@ module EuropeanPathPricerFunction =
 
                 let _EuropeanPathPricer = Helper.toCell<EuropeanPathPricer> europeanpathpricer "EuropeanPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder () = withMnemonic mnemonic ((_EuropeanPathPricer.cell :?> EuropeanPathPricerModel).Value
+                let builder () = withMnemonic mnemonic ((EuropeanPathPricerModel.Cast _EuropeanPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

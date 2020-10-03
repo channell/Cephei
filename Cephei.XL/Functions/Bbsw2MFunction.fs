@@ -86,7 +86,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -125,7 +125,7 @@ module Bbsw2MFunction =
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
                 let _forwarding = Helper.toHandle<YieldTermStructure> forwarding "forwarding" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).Clone
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).Clone
                                                             _forwarding.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -164,7 +164,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -209,7 +209,7 @@ module Bbsw2MFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).ForecastFixing1
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
@@ -257,7 +257,7 @@ module Bbsw2MFunction =
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).ForecastFixing
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -296,7 +296,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).ForwardingTermStructure
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -335,7 +335,7 @@ module Bbsw2MFunction =
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -374,7 +374,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).Currency
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -410,7 +410,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).DayCounter
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -446,7 +446,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).FamilyName
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -488,7 +488,7 @@ module Bbsw2MFunction =
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).Fixing
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -530,7 +530,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -569,7 +569,7 @@ module Bbsw2MFunction =
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).FixingDate
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -608,7 +608,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).FixingDays
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -647,7 +647,7 @@ module Bbsw2MFunction =
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -686,7 +686,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).Name
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -725,7 +725,7 @@ module Bbsw2MFunction =
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).PastFixing
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -764,7 +764,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).Tenor
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -800,7 +800,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).Update
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).Update
                                                        ) :> ICell
                 let format (o : Bbsw2M) (l:string) = o.ToString() :> obj
 
@@ -839,7 +839,7 @@ module Bbsw2MFunction =
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).ValueDate
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -887,7 +887,7 @@ module Bbsw2MFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).AddFixing
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -941,7 +941,7 @@ module Bbsw2MFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).AddFixings
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -992,7 +992,7 @@ module Bbsw2MFunction =
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -1034,7 +1034,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1070,7 +1070,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : Bbsw2M) (l:string) = o.ToString() :> obj
 
@@ -1109,7 +1109,7 @@ module Bbsw2MFunction =
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Bbsw2M) (l:string) = o.ToString() :> obj
@@ -1148,7 +1148,7 @@ module Bbsw2MFunction =
             try
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1187,7 +1187,7 @@ module Bbsw2MFunction =
 
                 let _Bbsw2M = Helper.toCell<Bbsw2M> bbsw2m "Bbsw2M"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_Bbsw2M.cell :?> Bbsw2MModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((Bbsw2MModel.Cast _Bbsw2M.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : Bbsw2M) (l:string) = o.ToString() :> obj

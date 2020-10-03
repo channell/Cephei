@@ -104,7 +104,7 @@ module GaussLobattoIntegralFunction =
             try
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
-                let builder () = withMnemonic mnemonic ((_GaussLobattoIntegral.cell :?> GaussLobattoIntegralModel).AbsoluteAccuracy
+                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).AbsoluteAccuracy
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
@@ -140,7 +140,7 @@ module GaussLobattoIntegralFunction =
             try
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
-                let builder () = withMnemonic mnemonic ((_GaussLobattoIntegral.cell :?> GaussLobattoIntegralModel).AbsoluteError
+                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).AbsoluteError
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -176,7 +176,7 @@ module GaussLobattoIntegralFunction =
             try
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
-                let builder () = withMnemonic mnemonic ((_GaussLobattoIntegral.cell :?> GaussLobattoIntegralModel).IntegrationSuccess
+                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).IntegrationSuccess
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -212,7 +212,7 @@ module GaussLobattoIntegralFunction =
             try
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
-                let builder () = withMnemonic mnemonic ((_GaussLobattoIntegral.cell :?> GaussLobattoIntegralModel).MaxEvaluations
+                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).MaxEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -248,7 +248,7 @@ module GaussLobattoIntegralFunction =
             try
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
-                let builder () = withMnemonic mnemonic ((_GaussLobattoIntegral.cell :?> GaussLobattoIntegralModel).NumberOfEvaluations
+                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).NumberOfEvaluations
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -287,7 +287,7 @@ module GaussLobattoIntegralFunction =
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
-                let builder () = withMnemonic mnemonic ((_GaussLobattoIntegral.cell :?> GaussLobattoIntegralModel).SetAbsoluteAccuracy
+                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).SetAbsoluteAccuracy
                                                             _accuracy.cell 
                                                        ) :> ICell
                 let format (o : GaussLobattoIntegral) (l:string) = o.ToString() :> obj
@@ -329,7 +329,7 @@ module GaussLobattoIntegralFunction =
 
                 let _GaussLobattoIntegral = Helper.toCell<GaussLobattoIntegral> gausslobattointegral "GaussLobattoIntegral"  
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((_GaussLobattoIntegral.cell :?> GaussLobattoIntegralModel).SetMaxEvaluations
+                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).SetMaxEvaluations
                                                             _maxEvaluations.cell 
                                                        ) :> ICell
                 let format (o : GaussLobattoIntegral) (l:string) = o.ToString() :> obj
@@ -377,7 +377,7 @@ module GaussLobattoIntegralFunction =
                 let _f = Helper.toCell<Func<double,double>> f "f" 
                 let _a = Helper.toCell<double> a "a" 
                 let _b = Helper.toCell<double> b "b" 
-                let builder () = withMnemonic mnemonic ((_GaussLobattoIntegral.cell :?> GaussLobattoIntegralModel).Value
+                let builder () = withMnemonic mnemonic ((GaussLobattoIntegralModel.Cast _GaussLobattoIntegral.cell).Value
                                                             _f.cell 
                                                             _a.cell 
                                                             _b.cell 

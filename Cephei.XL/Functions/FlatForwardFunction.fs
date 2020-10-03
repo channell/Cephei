@@ -745,7 +745,7 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).MaxDate
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -787,7 +787,7 @@ module FlatForwardFunction =
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let _t = Helper.toCell<double> t "t" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).Discount
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Discount
                                                             _t.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -835,7 +835,7 @@ module FlatForwardFunction =
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let _d = Helper.toCell<Date> d "d" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).Discount1
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Discount1
                                                             _d.cell 
                                                             _extrapolate.cell 
                                                        ) :> ICell
@@ -895,7 +895,7 @@ module FlatForwardFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).ForwardRate
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ForwardRate
                                                             _d.cell 
                                                             _p.cell 
                                                             _dayCounter.cell 
@@ -967,7 +967,7 @@ module FlatForwardFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).ForwardRate1
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ForwardRate1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _dayCounter.cell 
@@ -1036,7 +1036,7 @@ module FlatForwardFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).ForwardRate2
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ForwardRate2
                                                             _t1.cell 
                                                             _t2.cell 
                                                             _comp.cell 
@@ -1087,7 +1087,7 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).JumpDates
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).JumpDates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -1123,7 +1123,7 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).JumpTimes
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).JumpTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -1159,7 +1159,7 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).Update
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Update
                                                        ) :> ICell
                 let format (o : FlatForward) (l:string) = o.ToString() :> obj
 
@@ -1210,7 +1210,7 @@ module FlatForwardFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).ZeroRate1
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ZeroRate1
                                                             _d.cell 
                                                             _dayCounter.cell 
                                                             _comp.cell 
@@ -1273,7 +1273,7 @@ module FlatForwardFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _extrapolate = Helper.toCell<bool> extrapolate "extrapolate" 
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).ZeroRate
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ZeroRate
                                                             _t.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1321,7 +1321,7 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).Calendar
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -1357,7 +1357,7 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).DayCounter
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -1393,7 +1393,7 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).MaxTime
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).MaxTime
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1429,7 +1429,7 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).ReferenceDate
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1465,7 +1465,7 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).SettlementDays
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1504,7 +1504,7 @@ module FlatForwardFunction =
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).TimeFromReference
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).TimeFromReference
                                                             _date.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1543,7 +1543,7 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).AllowsExtrapolation
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).AllowsExtrapolation
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1582,7 +1582,7 @@ module FlatForwardFunction =
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).DisableExtrapolation
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).DisableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : FlatForward) (l:string) = o.ToString() :> obj
@@ -1624,7 +1624,7 @@ module FlatForwardFunction =
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
                 let _b = Helper.toCell<bool> b "b" 
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).EnableExtrapolation
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).EnableExtrapolation
                                                             _b.cell 
                                                        ) :> ICell
                 let format (o : FlatForward) (l:string) = o.ToString() :> obj
@@ -1663,7 +1663,7 @@ module FlatForwardFunction =
             try
 
                 let _FlatForward = Helper.toCell<FlatForward> flatforward "FlatForward"  
-                let builder () = withMnemonic mnemonic ((_FlatForward.cell :?> FlatForwardModel).Extrapolate
+                let builder () = withMnemonic mnemonic ((FlatForwardModel.Cast _FlatForward.cell).Extrapolate
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

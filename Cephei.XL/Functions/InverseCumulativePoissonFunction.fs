@@ -120,7 +120,7 @@ module InverseCumulativePoissonFunction =
 
                 let _InverseCumulativePoisson = Helper.toCell<InverseCumulativePoisson> inversecumulativepoisson "InverseCumulativePoisson"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_InverseCumulativePoisson.cell :?> InverseCumulativePoissonModel).Value
+                let builder () = withMnemonic mnemonic ((InverseCumulativePoissonModel.Cast _InverseCumulativePoisson.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

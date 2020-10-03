@@ -80,7 +80,7 @@ module Black76SpecFunction =
             try
 
                 let _Black76Spec = Helper.toCell<Black76Spec> black76spec "Black76Spec"  
-                let builder () = withMnemonic mnemonic ((_Black76Spec.cell :?> Black76SpecModel).Type
+                let builder () = withMnemonic mnemonic ((Black76SpecModel.Cast _Black76Spec.cell).Type
                                                        ) :> ICell
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
@@ -134,7 +134,7 @@ module Black76SpecFunction =
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
                 let _annuity = Helper.toCell<double> annuity "annuity" 
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder () = withMnemonic mnemonic ((_Black76Spec.cell :?> Black76SpecModel).Value
+                let builder () = withMnemonic mnemonic ((Black76SpecModel.Cast _Black76Spec.cell).Value
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _atmForward.cell 
@@ -206,7 +206,7 @@ module Black76SpecFunction =
                 let _exerciseTime = Helper.toCell<double> exerciseTime "exerciseTime" 
                 let _annuity = Helper.toCell<double> annuity "annuity" 
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
-                let builder () = withMnemonic mnemonic ((_Black76Spec.cell :?> Black76SpecModel).Vega
+                let builder () = withMnemonic mnemonic ((Black76SpecModel.Cast _Black76Spec.cell).Vega
                                                             _strike.cell 
                                                             _atmForward.cell 
                                                             _stdDev.cell 

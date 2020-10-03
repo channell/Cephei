@@ -132,7 +132,7 @@ module AUDLiborFunction =
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).Clone
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
@@ -174,7 +174,7 @@ module AUDLiborFunction =
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -216,7 +216,7 @@ module AUDLiborFunction =
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).ValueDate
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -255,7 +255,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -291,7 +291,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -336,7 +336,7 @@ module AUDLiborFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).ForecastFixing1
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
@@ -385,7 +385,7 @@ module AUDLiborFunction =
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).ForecastFixing
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -425,7 +425,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).ForwardingTermStructure
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -461,7 +461,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).Currency
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -497,7 +497,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).DayCounter
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -533,7 +533,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).FamilyName
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -575,7 +575,7 @@ module AUDLiborFunction =
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).Fixing
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -617,7 +617,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -656,7 +656,7 @@ module AUDLiborFunction =
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).FixingDate
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -695,7 +695,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).FixingDays
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -734,7 +734,7 @@ module AUDLiborFunction =
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -773,7 +773,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).Name
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -812,7 +812,7 @@ module AUDLiborFunction =
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).PastFixing
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -851,7 +851,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).Tenor
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -887,7 +887,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).Update
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).Update
                                                        ) :> ICell
                 let format (o : AUDLibor) (l:string) = o.ToString() :> obj
 
@@ -932,7 +932,7 @@ module AUDLiborFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).AddFixing
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -986,7 +986,7 @@ module AUDLiborFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).AddFixings
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -1037,7 +1037,7 @@ module AUDLiborFunction =
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -1079,7 +1079,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1115,7 +1115,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : AUDLibor) (l:string) = o.ToString() :> obj
 
@@ -1154,7 +1154,7 @@ module AUDLiborFunction =
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AUDLibor) (l:string) = o.ToString() :> obj
@@ -1193,7 +1193,7 @@ module AUDLiborFunction =
             try
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1232,7 +1232,7 @@ module AUDLiborFunction =
 
                 let _AUDLibor = Helper.toCell<AUDLibor> audlibor "AUDLibor"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_AUDLibor.cell :?> AUDLiborModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((AUDLiborModel.Cast _AUDLibor.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : AUDLibor) (l:string) = o.ToString() :> obj

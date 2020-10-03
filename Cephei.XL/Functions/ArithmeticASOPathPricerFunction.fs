@@ -199,7 +199,7 @@ module ArithmeticASOPathPricerFunction =
 
                 let _ArithmeticASOPathPricer = Helper.toCell<ArithmeticASOPathPricer> arithmeticasopathpricer "ArithmeticASOPathPricer"  
                 let _path = Helper.toCell<Path> path "path" 
-                let builder () = withMnemonic mnemonic ((_ArithmeticASOPathPricer.cell :?> ArithmeticASOPathPricerModel).Value
+                let builder () = withMnemonic mnemonic ((ArithmeticASOPathPricerModel.Cast _ArithmeticASOPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

@@ -98,7 +98,7 @@ module DiscretizedVanillaOptionFunction =
             try
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).MandatoryTimes
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).MandatoryTimes
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -137,7 +137,7 @@ module DiscretizedVanillaOptionFunction =
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
                 let _size = Helper.toCell<int> size "size" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).Reset
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).Reset
                                                             _size.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
@@ -176,7 +176,7 @@ module DiscretizedVanillaOptionFunction =
             try
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).AdjustValues
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).AdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
 
@@ -218,7 +218,7 @@ module DiscretizedVanillaOptionFunction =
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
                 let _Method = Helper.toCell<Lattice> Method "Method" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).Initialize
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).Initialize
                                                             _Method.cell 
                                                             _t.cell 
                                                        ) :> ICell
@@ -260,7 +260,7 @@ module DiscretizedVanillaOptionFunction =
             try
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).Method
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).Method
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
@@ -299,7 +299,7 @@ module DiscretizedVanillaOptionFunction =
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).PartialRollback
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).PartialRollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
@@ -338,7 +338,7 @@ module DiscretizedVanillaOptionFunction =
             try
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).PostAdjustValues
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).PostAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
 
@@ -374,7 +374,7 @@ module DiscretizedVanillaOptionFunction =
             try
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).PreAdjustValues
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).PreAdjustValues
                                                        ) :> ICell
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
 
@@ -410,7 +410,7 @@ module DiscretizedVanillaOptionFunction =
             try
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).PresentValue
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).PresentValue
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -449,7 +449,7 @@ module DiscretizedVanillaOptionFunction =
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
                 let _To = Helper.toCell<double> To "To" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).Rollback
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).Rollback
                                                             _To.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
@@ -491,7 +491,7 @@ module DiscretizedVanillaOptionFunction =
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).SetTime
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).SetTime
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
@@ -533,7 +533,7 @@ module DiscretizedVanillaOptionFunction =
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
                 let _v = Helper.toCell<Vector> v "v" 
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).SetValues
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).SetValues
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
@@ -572,7 +572,7 @@ module DiscretizedVanillaOptionFunction =
             try
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).Time
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).Time
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -608,7 +608,7 @@ module DiscretizedVanillaOptionFunction =
             try
 
                 let _DiscretizedVanillaOption = Helper.toCell<DiscretizedVanillaOption> discretizedvanillaoption "DiscretizedVanillaOption"  
-                let builder () = withMnemonic mnemonic ((_DiscretizedVanillaOption.cell :?> DiscretizedVanillaOptionModel).Values
+                let builder () = withMnemonic mnemonic ((DiscretizedVanillaOptionModel.Cast _DiscretizedVanillaOption.cell).Values
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

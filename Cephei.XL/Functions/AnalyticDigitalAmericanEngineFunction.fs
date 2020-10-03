@@ -87,7 +87,7 @@ module AnalyticDigitalAmericanEngineFunction =
             try
 
                 let _AnalyticDigitalAmericanEngine = Helper.toCell<AnalyticDigitalAmericanEngine> analyticdigitalamericanengine "AnalyticDigitalAmericanEngine"  
-                let builder () = withMnemonic mnemonic ((_AnalyticDigitalAmericanEngine.cell :?> AnalyticDigitalAmericanEngineModel).Knock_in
+                let builder () = withMnemonic mnemonic ((AnalyticDigitalAmericanEngineModel.Cast _AnalyticDigitalAmericanEngine.cell).Knock_in
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 

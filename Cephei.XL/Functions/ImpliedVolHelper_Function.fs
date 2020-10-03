@@ -52,7 +52,7 @@ module ImpliedVolHelper_Function =
 
                 let _ImpliedVolHelper_ = Helper.toCell<ImpliedVolHelper_> impliedvolhelper_ "ImpliedVolHelper_"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_ImpliedVolHelper_.cell :?> ImpliedVolHelper_Model).Derivative
+                let builder () = withMnemonic mnemonic ((ImpliedVolHelper_Model.Cast _ImpliedVolHelper_.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -155,7 +155,7 @@ module ImpliedVolHelper_Function =
 
                 let _ImpliedVolHelper_ = Helper.toCell<ImpliedVolHelper_> impliedvolhelper_ "ImpliedVolHelper_"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_ImpliedVolHelper_.cell :?> ImpliedVolHelper_Model).Value
+                let builder () = withMnemonic mnemonic ((ImpliedVolHelper_Model.Cast _ImpliedVolHelper_.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

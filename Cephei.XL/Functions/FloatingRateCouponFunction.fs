@@ -52,7 +52,7 @@ module FloatingRateCouponFunction =
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).AccruedAmount
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccruedAmount
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -91,7 +91,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).AdjustedFixing
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AdjustedFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -127,7 +127,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Amount
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Amount
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -163,7 +163,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).ConvexityAdjustment
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).ConvexityAdjustment
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -199,7 +199,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).DayCounter
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -271,7 +271,7 @@ module FloatingRateCouponFunction =
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
                 let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Factory
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Factory
                                                             _nominal.cell 
                                                             _paymentDate.cell 
                                                             _startDate.cell 
@@ -343,7 +343,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).FixingDate
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).FixingDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -379,7 +379,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).FixingDays
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -549,7 +549,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Gearing
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Gearing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -585,7 +585,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Index
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Index
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
@@ -621,7 +621,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).IndexFixing
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).IndexFixing
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -657,7 +657,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).IsInArrears
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).IsInArrears
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -696,7 +696,7 @@ module FloatingRateCouponFunction =
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _yts = Helper.toCell<YieldTermStructure> yts "yts" 
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Price
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Price
                                                             _yts.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -735,7 +735,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Pricer
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Pricer
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
@@ -771,7 +771,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Rate
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Rate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -810,7 +810,7 @@ module FloatingRateCouponFunction =
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "pricer" 
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).SetPricer
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).SetPricer
                                                             _pricer.cell 
                                                        ) :> ICell
                 let format (o : FloatingRateCoupon) (l:string) = o.ToString() :> obj
@@ -849,7 +849,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Spread
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Spread
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -885,7 +885,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Update
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Update
                                                        ) :> ICell
                 let format (o : FloatingRateCoupon) (l:string) = o.ToString() :> obj
 
@@ -921,7 +921,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).AccrualDays
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccrualDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -957,7 +957,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).AccrualEndDate
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccrualEndDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -993,7 +993,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).AccrualPeriod
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccrualPeriod
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1029,7 +1029,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).AccrualStartDate
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccrualStartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1068,7 +1068,7 @@ module FloatingRateCouponFunction =
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).AccruedDays
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccruedDays
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1110,7 +1110,7 @@ module FloatingRateCouponFunction =
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).AccruedPeriod
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).AccruedPeriod
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1149,7 +1149,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Date
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Date
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1185,7 +1185,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).ExCouponDate
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).ExCouponDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1221,7 +1221,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Nominal
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Nominal
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1257,7 +1257,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).ReferencePeriodEnd
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).ReferencePeriodEnd
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1293,7 +1293,7 @@ module FloatingRateCouponFunction =
             try
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).ReferencePeriodStart
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).ReferencePeriodStart
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1332,7 +1332,7 @@ module FloatingRateCouponFunction =
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _cf = Helper.toCell<CashFlow> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).CompareTo
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).CompareTo
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
@@ -1374,7 +1374,7 @@ module FloatingRateCouponFunction =
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _cf = Helper.toCell<Object> cf "cf" 
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Equals
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Equals
                                                             _cf.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1419,7 +1419,7 @@ module FloatingRateCouponFunction =
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
                 let _includeRefDate = Helper.toNullable<bool> includeRefDate "includeRefDate"
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).HasOccurred
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).HasOccurred
                                                             _refDate.cell 
                                                             _includeRefDate.cell 
                                                        ) :> ICell
@@ -1464,7 +1464,7 @@ module FloatingRateCouponFunction =
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _refDate = Helper.toCell<Date> refDate "refDate" 
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).TradingExCoupon
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).TradingExCoupon
                                                             _refDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -1506,7 +1506,7 @@ module FloatingRateCouponFunction =
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).Accept
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : FloatingRateCoupon) (l:string) = o.ToString() :> obj
@@ -1548,7 +1548,7 @@ module FloatingRateCouponFunction =
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FloatingRateCoupon) (l:string) = o.ToString() :> obj
@@ -1590,7 +1590,7 @@ module FloatingRateCouponFunction =
 
                 let _FloatingRateCoupon = Helper.toCell<FloatingRateCoupon> floatingratecoupon "FloatingRateCoupon"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_FloatingRateCoupon.cell :?> FloatingRateCouponModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((FloatingRateCouponModel.Cast _FloatingRateCoupon.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : FloatingRateCoupon) (l:string) = o.ToString() :> obj

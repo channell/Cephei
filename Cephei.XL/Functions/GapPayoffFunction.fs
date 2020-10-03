@@ -49,7 +49,7 @@ module GapPayoffFunction =
             try
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
-                let builder () = withMnemonic mnemonic ((_GapPayoff.cell :?> GapPayoffModel).Description
+                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Description
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -134,7 +134,7 @@ module GapPayoffFunction =
             try
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
-                let builder () = withMnemonic mnemonic ((_GapPayoff.cell :?> GapPayoffModel).Name
+                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -170,7 +170,7 @@ module GapPayoffFunction =
             try
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
-                let builder () = withMnemonic mnemonic ((_GapPayoff.cell :?> GapPayoffModel).SecondStrike
+                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).SecondStrike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -209,7 +209,7 @@ module GapPayoffFunction =
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
                 let _price = Helper.toCell<double> price "price" 
-                let builder () = withMnemonic mnemonic ((_GapPayoff.cell :?> GapPayoffModel).Value
+                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Value
                                                             _price.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -248,7 +248,7 @@ module GapPayoffFunction =
             try
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
-                let builder () = withMnemonic mnemonic ((_GapPayoff.cell :?> GapPayoffModel).Strike
+                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Strike
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -284,7 +284,7 @@ module GapPayoffFunction =
             try
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
-                let builder () = withMnemonic mnemonic ((_GapPayoff.cell :?> GapPayoffModel).OptionType
+                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).OptionType
                                                        ) :> ICell
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
@@ -323,7 +323,7 @@ module GapPayoffFunction =
 
                 let _GapPayoff = Helper.toCell<GapPayoff> gappayoff "GapPayoff"  
                 let _v = Helper.toCell<IAcyclicVisitor> v "v" 
-                let builder () = withMnemonic mnemonic ((_GapPayoff.cell :?> GapPayoffModel).Accept
+                let builder () = withMnemonic mnemonic ((GapPayoffModel.Cast _GapPayoff.cell).Accept
                                                             _v.cell 
                                                        ) :> ICell
                 let format (o : GapPayoff) (l:string) = o.ToString() :> obj

@@ -113,7 +113,7 @@ module EventSetSimulationFunction =
 
                 let _EventSetSimulation = Helper.toCell<EventSetSimulation> eventsetsimulation "EventSetSimulation"  
                 let _path = Helper.toCell<Generic.List<Generic.KeyValuePair<Date,double>>> path "path" 
-                let builder () = withMnemonic mnemonic ((_EventSetSimulation.cell :?> EventSetSimulationModel).NextPath
+                let builder () = withMnemonic mnemonic ((EventSetSimulationModel.Cast _EventSetSimulation.cell).NextPath
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj

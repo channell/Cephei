@@ -159,7 +159,7 @@ module BlackScholesProcessFunction =
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dx = Helper.toCell<double> dx "dx" 
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).Apply
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).Apply
                                                             _x0.cell 
                                                             _dx.cell 
                                                        ) :> ICell
@@ -201,7 +201,7 @@ module BlackScholesProcessFunction =
             try
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).BlackVolatility
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).BlackVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<BlackVolTermStructure>>) l
 
@@ -243,7 +243,7 @@ module BlackScholesProcessFunction =
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).Diffusion
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).Diffusion
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -285,7 +285,7 @@ module BlackScholesProcessFunction =
             try
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).DividendYield
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).DividendYield
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -327,7 +327,7 @@ module BlackScholesProcessFunction =
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
                 let _t = Helper.toCell<double> t "t" 
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).Drift
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).Drift
                                                             _t.cell 
                                                             _x.cell 
                                                        ) :> ICell
@@ -381,7 +381,7 @@ module BlackScholesProcessFunction =
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
                 let _dw = Helper.toCell<double> dw "dw" 
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).Evolve
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).Evolve
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -438,7 +438,7 @@ module BlackScholesProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).Expectation
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).Expectation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -483,7 +483,7 @@ module BlackScholesProcessFunction =
             try
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).LocalVolatility
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).LocalVolatility
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<LocalVolTermStructure>>) l
 
@@ -519,7 +519,7 @@ module BlackScholesProcessFunction =
             try
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).RiskFreeRate
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).RiskFreeRate
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -555,7 +555,7 @@ module BlackScholesProcessFunction =
             try
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).StateVariable
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).StateVariable
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
@@ -600,7 +600,7 @@ module BlackScholesProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).StdDeviation
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).StdDeviation
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -648,7 +648,7 @@ module BlackScholesProcessFunction =
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).Time
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).Time
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -687,7 +687,7 @@ module BlackScholesProcessFunction =
             try
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).Update
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).Update
                                                        ) :> ICell
                 let format (o : BlackScholesProcess) (l:string) = o.ToString() :> obj
 
@@ -732,7 +732,7 @@ module BlackScholesProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<double> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).Variance
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).Variance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -777,7 +777,7 @@ module BlackScholesProcessFunction =
             try
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).X0
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).X0
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -813,7 +813,7 @@ module BlackScholesProcessFunction =
             try
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).InitialValues
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).InitialValues
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -849,7 +849,7 @@ module BlackScholesProcessFunction =
             try
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).Size
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).Size
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -894,7 +894,7 @@ module BlackScholesProcessFunction =
                 let _t0 = Helper.toCell<double> t0 "t0" 
                 let _x0 = Helper.toCell<Vector> x0 "x0" 
                 let _dt = Helper.toCell<double> dt "dt" 
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).Covariance
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).Covariance
                                                             _t0.cell 
                                                             _x0.cell 
                                                             _dt.cell 
@@ -939,7 +939,7 @@ module BlackScholesProcessFunction =
             try
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).Factors
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).Factors
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -978,7 +978,7 @@ module BlackScholesProcessFunction =
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BlackScholesProcess) (l:string) = o.ToString() :> obj
@@ -1020,7 +1020,7 @@ module BlackScholesProcessFunction =
 
                 let _BlackScholesProcess = Helper.toCell<BlackScholesProcess> blackscholesprocess "BlackScholesProcess"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_BlackScholesProcess.cell :?> BlackScholesProcessModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((BlackScholesProcessModel.Cast _BlackScholesProcess.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : BlackScholesProcess) (l:string) = o.ToString() :> obj

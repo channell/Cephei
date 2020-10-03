@@ -67,7 +67,7 @@ module VanillaOptionFunction =
                 let _maxEvaluations = Helper.toDefault<int> maxEvaluations "maxEvaluations" 100
                 let _minVol = Helper.toDefault<double> minVol "minVol" 1.0e-7
                 let _maxVol = Helper.toDefault<double> maxVol "maxVol" 4.0
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).ImpliedVolatility
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ImpliedVolatility
                                                             _targetValue.cell 
                                                             _Process.cell 
                                                             _accuracy.cell 
@@ -176,7 +176,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).Delta
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -212,7 +212,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).DeltaForward
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -248,7 +248,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).DividendRho
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -284,7 +284,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).Elasticity
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -320,7 +320,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).Gamma
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -356,7 +356,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).IsExpired
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -392,7 +392,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).ItmCashProbability
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -428,7 +428,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).Rho
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -464,7 +464,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).StrikeSensitivity
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -500,7 +500,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).Theta
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -536,7 +536,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).ThetaPerDay
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -572,7 +572,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).Vega
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -608,7 +608,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).Exercise
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -644,7 +644,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).Payoff
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -680,7 +680,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).CASH
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -716,7 +716,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -752,7 +752,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).NPV
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -791,7 +791,7 @@ module VanillaOptionFunction =
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).Result
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -833,7 +833,7 @@ module VanillaOptionFunction =
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : VanillaOption) (l:string) = o.ToString() :> obj
@@ -872,7 +872,7 @@ module VanillaOptionFunction =
             try
 
                 let _VanillaOption = Helper.toCell<VanillaOption> vanillaoption "VanillaOption"  
-                let builder () = withMnemonic mnemonic ((_VanillaOption.cell :?> VanillaOptionModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((VanillaOptionModel.Cast _VanillaOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

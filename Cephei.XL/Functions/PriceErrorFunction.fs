@@ -101,7 +101,7 @@ module PriceErrorFunction =
 
                 let _PriceError = Helper.toCell<PriceError> priceerror "PriceError"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_PriceError.cell :?> PriceErrorModel).Value
+                let builder () = withMnemonic mnemonic ((PriceErrorModel.Cast _PriceError.cell).Value
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -143,7 +143,7 @@ module PriceErrorFunction =
 
                 let _PriceError = Helper.toCell<PriceError> priceerror "PriceError"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_PriceError.cell :?> PriceErrorModel).Derivative
+                let builder () = withMnemonic mnemonic ((PriceErrorModel.Cast _PriceError.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

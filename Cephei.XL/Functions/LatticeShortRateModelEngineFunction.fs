@@ -135,7 +135,7 @@ module LatticeShortRateModelEngineFunction =
             try
 
                 let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
-                let builder () = withMnemonic mnemonic ((_LatticeShortRateModelEngine.cell :?> LatticeShortRateModelEngineModel).Update
+                let builder () = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).Update
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
 
@@ -174,7 +174,7 @@ module LatticeShortRateModelEngineFunction =
 
                 let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let _model = Helper.toHandle<'ModelType>> model "model" 
-                let builder () = withMnemonic mnemonic ((_LatticeShortRateModelEngine.cell :?> LatticeShortRateModelEngineModel).SetModel
+                let builder () = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
@@ -217,7 +217,7 @@ module LatticeShortRateModelEngineFunction =
 
                 let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_LatticeShortRateModelEngine.cell :?> LatticeShortRateModelEngineModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
@@ -256,7 +256,7 @@ module LatticeShortRateModelEngineFunction =
             try
 
                 let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
-                let builder () = withMnemonic mnemonic ((_LatticeShortRateModelEngine.cell :?> LatticeShortRateModelEngineModel).Reset
+                let builder () = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
 
@@ -295,7 +295,7 @@ module LatticeShortRateModelEngineFunction =
 
                 let _LatticeShortRateModelEngine = Helper.toCell<LatticeShortRateModelEngine> latticeshortratemodelengine "LatticeShortRateModelEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_LatticeShortRateModelEngine.cell :?> LatticeShortRateModelEngineModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((LatticeShortRateModelEngineModel.Cast _LatticeShortRateModelEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj

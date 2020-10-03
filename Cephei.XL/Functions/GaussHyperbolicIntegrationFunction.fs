@@ -86,7 +86,7 @@ module GaussHyperbolicIntegrationFunction =
             try
 
                 let _GaussHyperbolicIntegration = Helper.toCell<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
-                let builder () = withMnemonic mnemonic ((_GaussHyperbolicIntegration.cell :?> GaussHyperbolicIntegrationModel).Order
+                let builder () = withMnemonic mnemonic ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -125,7 +125,7 @@ module GaussHyperbolicIntegrationFunction =
 
                 let _GaussHyperbolicIntegration = Helper.toCell<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((_GaussHyperbolicIntegration.cell :?> GaussHyperbolicIntegrationModel).Value
+                let builder () = withMnemonic mnemonic ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -164,7 +164,7 @@ module GaussHyperbolicIntegrationFunction =
             try
 
                 let _GaussHyperbolicIntegration = Helper.toCell<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
-                let builder () = withMnemonic mnemonic ((_GaussHyperbolicIntegration.cell :?> GaussHyperbolicIntegrationModel).Weights
+                let builder () = withMnemonic mnemonic ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -200,7 +200,7 @@ module GaussHyperbolicIntegrationFunction =
             try
 
                 let _GaussHyperbolicIntegration = Helper.toCell<GaussHyperbolicIntegration> gausshyperbolicintegration "GaussHyperbolicIntegration"  
-                let builder () = withMnemonic mnemonic ((_GaussHyperbolicIntegration.cell :?> GaussHyperbolicIntegrationModel).X
+                let builder () = withMnemonic mnemonic ((GaussHyperbolicIntegrationModel.Cast _GaussHyperbolicIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

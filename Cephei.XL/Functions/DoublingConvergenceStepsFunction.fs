@@ -49,7 +49,7 @@ module DoublingConvergenceStepsFunction =
             try
 
                 let _DoublingConvergenceSteps = Helper.toCell<DoublingConvergenceSteps> doublingconvergencesteps "DoublingConvergenceSteps"  
-                let builder () = withMnemonic mnemonic ((_DoublingConvergenceSteps.cell :?> DoublingConvergenceStepsModel).InitialSamples
+                let builder () = withMnemonic mnemonic ((DoublingConvergenceStepsModel.Cast _DoublingConvergenceSteps.cell).InitialSamples
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -88,7 +88,7 @@ module DoublingConvergenceStepsFunction =
 
                 let _DoublingConvergenceSteps = Helper.toCell<DoublingConvergenceSteps> doublingconvergencesteps "DoublingConvergenceSteps"  
                 let _current = Helper.toCell<int> current "current" 
-                let builder () = withMnemonic mnemonic ((_DoublingConvergenceSteps.cell :?> DoublingConvergenceStepsModel).NextSamples
+                let builder () = withMnemonic mnemonic ((DoublingConvergenceStepsModel.Cast _DoublingConvergenceSteps.cell).NextSamples
                                                             _current.cell 
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj

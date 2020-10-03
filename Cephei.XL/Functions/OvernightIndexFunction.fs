@@ -52,7 +52,7 @@ module OvernightIndexFunction =
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).Clone
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).Clone
                                                             _h.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndex>) l
@@ -158,7 +158,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).BusinessDayConvention
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).BusinessDayConvention
                                                        ) :> ICell
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
@@ -194,7 +194,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).EndOfMonth
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).EndOfMonth
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -239,7 +239,7 @@ module OvernightIndexFunction =
                 let _d1 = Helper.toCell<Date> d1 "d1" 
                 let _d2 = Helper.toCell<Date> d2 "d2" 
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).ForecastFixing1
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).ForecastFixing1
                                                             _d1.cell 
                                                             _d2.cell 
                                                             _t.cell 
@@ -287,7 +287,7 @@ module OvernightIndexFunction =
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).ForecastFixing
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).ForecastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -326,7 +326,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).ForwardingTermStructure
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).ForwardingTermStructure
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
@@ -365,7 +365,7 @@ module OvernightIndexFunction =
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).MaturityDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -404,7 +404,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).Currency
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).Currency
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
@@ -440,7 +440,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).DayCounter
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -476,7 +476,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).FamilyName
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).FamilyName
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -518,7 +518,7 @@ module OvernightIndexFunction =
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _forecastTodaysFixing = Helper.toCell<bool> forecastTodaysFixing "forecastTodaysFixing" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).Fixing
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).Fixing
                                                             _fixingDate.cell 
                                                             _forecastTodaysFixing.cell 
                                                        ) :> ICell
@@ -560,7 +560,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).FixingCalendar
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).FixingCalendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -599,7 +599,7 @@ module OvernightIndexFunction =
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
                 let _valueDate = Helper.toCell<Date> valueDate "valueDate" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).FixingDate
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).FixingDate
                                                             _valueDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -638,7 +638,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).FixingDays
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).FixingDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -677,7 +677,7 @@ module OvernightIndexFunction =
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).IsValidFixingDate
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).IsValidFixingDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -716,7 +716,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).Name
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).Name
                                                        ) :> ICell
                 let format (o : string) (l:string) = o.ToString() :> obj
 
@@ -755,7 +755,7 @@ module OvernightIndexFunction =
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).PastFixing
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).PastFixing
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
@@ -794,7 +794,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).Tenor
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).Tenor
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
@@ -830,7 +830,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).Update
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).Update
                                                        ) :> ICell
                 let format (o : OvernightIndex) (l:string) = o.ToString() :> obj
 
@@ -869,7 +869,7 @@ module OvernightIndexFunction =
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).ValueDate
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).ValueDate
                                                             _fixingDate.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -917,7 +917,7 @@ module OvernightIndexFunction =
                 let _d = Helper.toCell<Date> d "d" 
                 let _v = Helper.toCell<double> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).AddFixing
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).AddFixing
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -971,7 +971,7 @@ module OvernightIndexFunction =
                 let _d = Helper.toCell<Generic.List<Date>> d "d" 
                 let _v = Helper.toCell<Generic.List<double>> v "v" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).AddFixings
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).AddFixings
                                                             _d.cell 
                                                             _v.cell 
                                                             _forceOverwrite.cell 
@@ -1022,7 +1022,7 @@ module OvernightIndexFunction =
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
                 let _source = Helper.toCell<TimeSeries<Nullable<double>>> source "source" 
                 let _forceOverwrite = Helper.toCell<bool> forceOverwrite "forceOverwrite" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).AddFixings1
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).AddFixings1
                                                             _source.cell 
                                                             _forceOverwrite.cell 
                                                        ) :> ICell
@@ -1064,7 +1064,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).AllowsNativeFixings
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).AllowsNativeFixings
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -1100,7 +1100,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).ClearFixings
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).ClearFixings
                                                        ) :> ICell
                 let format (o : OvernightIndex) (l:string) = o.ToString() :> obj
 
@@ -1139,7 +1139,7 @@ module OvernightIndexFunction =
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : OvernightIndex) (l:string) = o.ToString() :> obj
@@ -1178,7 +1178,7 @@ module OvernightIndexFunction =
             try
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).TimeSeries
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).TimeSeries
                                                        ) :> ICell
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
@@ -1217,7 +1217,7 @@ module OvernightIndexFunction =
 
                 let _OvernightIndex = Helper.toCell<OvernightIndex> overnightindex "OvernightIndex"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_OvernightIndex.cell :?> OvernightIndexModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((OvernightIndexModel.Cast _OvernightIndex.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : OvernightIndex) (l:string) = o.ToString() :> obj

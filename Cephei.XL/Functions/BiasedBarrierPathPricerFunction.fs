@@ -119,7 +119,7 @@ module BiasedBarrierPathPricerFunction =
 
                 let _BiasedBarrierPathPricer = Helper.toCell<BiasedBarrierPathPricer> biasedbarrierpathpricer "BiasedBarrierPathPricer"  
                 let _path = Helper.toCell<IPath> path "path" 
-                let builder () = withMnemonic mnemonic ((_BiasedBarrierPathPricer.cell :?> BiasedBarrierPathPricerModel).Value
+                let builder () = withMnemonic mnemonic ((BiasedBarrierPathPricerModel.Cast _BiasedBarrierPathPricer.cell).Value
                                                             _path.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

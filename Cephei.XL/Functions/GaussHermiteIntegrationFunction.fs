@@ -92,7 +92,7 @@ module GaussHermiteIntegrationFunction =
             try
 
                 let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
-                let builder () = withMnemonic mnemonic ((_GaussHermiteIntegration.cell :?> GaussHermiteIntegrationModel).Order
+                let builder () = withMnemonic mnemonic ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).Order
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -131,7 +131,7 @@ module GaussHermiteIntegrationFunction =
 
                 let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
                 let _f = Helper.toCell<Func<double,double>> f "f" 
-                let builder () = withMnemonic mnemonic ((_GaussHermiteIntegration.cell :?> GaussHermiteIntegrationModel).Value
+                let builder () = withMnemonic mnemonic ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).Value
                                                             _f.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -170,7 +170,7 @@ module GaussHermiteIntegrationFunction =
             try
 
                 let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
-                let builder () = withMnemonic mnemonic ((_GaussHermiteIntegration.cell :?> GaussHermiteIntegrationModel).Weights
+                let builder () = withMnemonic mnemonic ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).Weights
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -206,7 +206,7 @@ module GaussHermiteIntegrationFunction =
             try
 
                 let _GaussHermiteIntegration = Helper.toCell<GaussHermiteIntegration> gausshermiteintegration "GaussHermiteIntegration"  
-                let builder () = withMnemonic mnemonic ((_GaussHermiteIntegration.cell :?> GaussHermiteIntegrationModel).X
+                let builder () = withMnemonic mnemonic ((GaussHermiteIntegrationModel.Cast _GaussHermiteIntegration.cell).X
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 

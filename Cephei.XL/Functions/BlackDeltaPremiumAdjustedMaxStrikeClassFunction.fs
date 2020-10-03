@@ -119,7 +119,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
 
                 let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((_BlackDeltaPremiumAdjustedMaxStrikeClass.cell :?> BlackDeltaPremiumAdjustedMaxStrikeClassModel).Value
+                let builder () = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedMaxStrikeClassModel.Cast _BlackDeltaPremiumAdjustedMaxStrikeClass.cell).Value
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -161,7 +161,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
 
                 let _BlackDeltaPremiumAdjustedMaxStrikeClass = Helper.toCell<BlackDeltaPremiumAdjustedMaxStrikeClass> blackdeltapremiumadjustedmaxstrikeclass "BlackDeltaPremiumAdjustedMaxStrikeClass"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_BlackDeltaPremiumAdjustedMaxStrikeClass.cell :?> BlackDeltaPremiumAdjustedMaxStrikeClassModel).Derivative
+                let builder () = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedMaxStrikeClassModel.Cast _BlackDeltaPremiumAdjustedMaxStrikeClass.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

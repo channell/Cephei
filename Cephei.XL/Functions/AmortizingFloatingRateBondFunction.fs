@@ -173,7 +173,7 @@ module AmortizingFloatingRateBondFunction =
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).AccruedAmount
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).AccruedAmount
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -212,7 +212,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).Calendar
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -248,7 +248,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).Cashflows
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).Cashflows
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -284,7 +284,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).CleanPrice
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).CleanPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -335,7 +335,7 @@ module AmortizingFloatingRateBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).CleanPrice1
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).CleanPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -401,7 +401,7 @@ module AmortizingFloatingRateBondFunction =
                 let _comp = Helper.toCell<Compounding> comp "comp" 
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).DirtyPrice1
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).DirtyPrice1
                                                             _Yield.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -452,7 +452,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).DirtyPrice
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).DirtyPrice
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -488,7 +488,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).IsExpired
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -524,7 +524,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).IssueDate
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).IssueDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -563,7 +563,7 @@ module AmortizingFloatingRateBondFunction =
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).IsTradable
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).IsTradable
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
@@ -602,7 +602,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).MaturityDate
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).MaturityDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -641,7 +641,7 @@ module AmortizingFloatingRateBondFunction =
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).NextCashFlowDate
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).NextCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -683,7 +683,7 @@ module AmortizingFloatingRateBondFunction =
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).NextCouponRate
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).NextCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -725,7 +725,7 @@ module AmortizingFloatingRateBondFunction =
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
                 let _d = Helper.toCell<Date> d "d" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).Notional
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).Notional
                                                             _d.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -764,7 +764,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).Notionals
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).Notionals
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -803,7 +803,7 @@ module AmortizingFloatingRateBondFunction =
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).PreviousCashFlowDate
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).PreviousCashFlowDate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -845,7 +845,7 @@ module AmortizingFloatingRateBondFunction =
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).PreviousCouponRate
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).PreviousCouponRate
                                                             _settlement.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -884,7 +884,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).Redemption
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).Redemption
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
@@ -920,7 +920,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).Redemptions
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).Redemptions
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -959,7 +959,7 @@ module AmortizingFloatingRateBondFunction =
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
                 let _date = Helper.toCell<Date> date "date" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).SettlementDate
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).SettlementDate
                                                             _date.cell 
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
@@ -998,7 +998,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).SettlementDays
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 
@@ -1037,7 +1037,7 @@ module AmortizingFloatingRateBondFunction =
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
                 let _cleanPrice = Helper.toCell<double> cleanPrice "cleanPrice" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).SettlementValue
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).SettlementValue
                                                             _cleanPrice.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -1076,7 +1076,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).SettlementValue1
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).SettlementValue1
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1112,7 +1112,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).StartDate
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).StartDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -1169,7 +1169,7 @@ module AmortizingFloatingRateBondFunction =
                 let _settlement = Helper.toCell<Date> settlement "settlement" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).Yield1
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).Yield1
                                                             _cleanPrice.cell 
                                                             _dc.cell 
                                                             _comp.cell 
@@ -1241,7 +1241,7 @@ module AmortizingFloatingRateBondFunction =
                 let _freq = Helper.toCell<Frequency> freq "freq" 
                 let _accuracy = Helper.toCell<double> accuracy "accuracy" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).Yield
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).Yield
                                                             _dc.cell 
                                                             _comp.cell 
                                                             _freq.cell 
@@ -1292,7 +1292,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).CASH
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1328,7 +1328,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1364,7 +1364,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).NPV
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -1403,7 +1403,7 @@ module AmortizingFloatingRateBondFunction =
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).Result
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -1445,7 +1445,7 @@ module AmortizingFloatingRateBondFunction =
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : AmortizingFloatingRateBond) (l:string) = o.ToString() :> obj
@@ -1484,7 +1484,7 @@ module AmortizingFloatingRateBondFunction =
             try
 
                 let _AmortizingFloatingRateBond = Helper.toCell<AmortizingFloatingRateBond> amortizingfloatingratebond "AmortizingFloatingRateBond"  
-                let builder () = withMnemonic mnemonic ((_AmortizingFloatingRateBond.cell :?> AmortizingFloatingRateBondModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((AmortizingFloatingRateBondModel.Cast _AmortizingFloatingRateBond.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

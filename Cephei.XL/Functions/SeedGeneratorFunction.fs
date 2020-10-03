@@ -49,7 +49,7 @@ module SeedGeneratorFunction =
             try
 
                 let _SeedGenerator = Helper.toCell<SeedGenerator> seedgenerator "SeedGenerator"  
-                let builder () = withMnemonic mnemonic ((_SeedGenerator.cell :?> SeedGeneratorModel).Get
+                let builder () = withMnemonic mnemonic ((SeedGeneratorModel.Cast _SeedGenerator.cell).Get
                                                        ) :> ICell
                 let format (o : ulong) (l:string) = o.ToString() :> obj
 

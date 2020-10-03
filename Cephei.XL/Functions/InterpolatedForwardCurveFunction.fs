@@ -50,7 +50,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Clone
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Clone
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
@@ -86,7 +86,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Data
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Data
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -122,7 +122,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Data_
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Data_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -158,7 +158,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Dates
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Dates
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -194,7 +194,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Dates_
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Dates_
                                                        ) :> ICell
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
@@ -230,7 +230,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Forwards
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Forwards
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -705,7 +705,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Interpolation_
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Interpolation_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
@@ -741,7 +741,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Interpolator_
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Interpolator_
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
@@ -777,7 +777,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).MaxDate
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -813,7 +813,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).MaxDate_
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).MaxDate_
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -849,7 +849,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Nodes
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Nodes
                                                        ) :> ICell
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
@@ -885,7 +885,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).SetupInterpolation
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).SetupInterpolation
                                                        ) :> ICell
                 let format (o : InterpolatedForwardCurve) (l:string) = o.ToString() :> obj
 
@@ -921,7 +921,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Times
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Times
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
@@ -957,7 +957,7 @@ module InterpolatedForwardCurveFunction =
             try
 
                 let _InterpolatedForwardCurve = Helper.toCell<InterpolatedForwardCurve> interpolatedforwardcurve "InterpolatedForwardCurve"  
-                let builder () = withMnemonic mnemonic ((_InterpolatedForwardCurve.cell :?> InterpolatedForwardCurveModel).Times_
+                let builder () = withMnemonic mnemonic ((InterpolatedForwardCurveModel.Cast _InterpolatedForwardCurve.cell).Times_
                                                        ) :> ICell
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 

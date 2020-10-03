@@ -125,7 +125,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
 
                 let _BlackDeltaPremiumAdjustedSolverClass = Helper.toCell<BlackDeltaPremiumAdjustedSolverClass> blackdeltapremiumadjustedsolverclass "BlackDeltaPremiumAdjustedSolverClass"  
                 let _strike = Helper.toCell<double> strike "strike" 
-                let builder () = withMnemonic mnemonic ((_BlackDeltaPremiumAdjustedSolverClass.cell :?> BlackDeltaPremiumAdjustedSolverClassModel).Value
+                let builder () = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedSolverClassModel.Cast _BlackDeltaPremiumAdjustedSolverClass.cell).Value
                                                             _strike.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -167,7 +167,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
 
                 let _BlackDeltaPremiumAdjustedSolverClass = Helper.toCell<BlackDeltaPremiumAdjustedSolverClass> blackdeltapremiumadjustedsolverclass "BlackDeltaPremiumAdjustedSolverClass"  
                 let _x = Helper.toCell<double> x "x" 
-                let builder () = withMnemonic mnemonic ((_BlackDeltaPremiumAdjustedSolverClass.cell :?> BlackDeltaPremiumAdjustedSolverClassModel).Derivative
+                let builder () = withMnemonic mnemonic ((BlackDeltaPremiumAdjustedSolverClassModel.Cast _BlackDeltaPremiumAdjustedSolverClass.cell).Derivative
                                                             _x.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj

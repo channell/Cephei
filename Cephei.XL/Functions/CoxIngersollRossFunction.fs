@@ -116,7 +116,7 @@ module CoxIngersollRossFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _bondMaturity = Helper.toCell<double> bondMaturity "bondMaturity" 
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).DiscountBondOption
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).DiscountBondOption
                                                             _Type.cell 
                                                             _strike.cell 
                                                             _maturity.cell 
@@ -164,7 +164,7 @@ module CoxIngersollRossFunction =
             try
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).Dynamics
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Dynamics
                                                        ) :> ICell
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
 
@@ -203,7 +203,7 @@ module CoxIngersollRossFunction =
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _grid = Helper.toCell<TimeGrid> grid "grid" 
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).Tree
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Tree
                                                             _grid.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
@@ -245,7 +245,7 @@ module CoxIngersollRossFunction =
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _t = Helper.toCell<double> t "t" 
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).Discount
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Discount
                                                             _t.cell 
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
@@ -293,7 +293,7 @@ module CoxIngersollRossFunction =
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _rate = Helper.toCell<double> rate "rate" 
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).DiscountBond1
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).DiscountBond1
                                                             _now.cell 
                                                             _maturity.cell 
                                                             _rate.cell 
@@ -347,7 +347,7 @@ module CoxIngersollRossFunction =
                 let _now = Helper.toCell<double> now "now" 
                 let _maturity = Helper.toCell<double> maturity "maturity" 
                 let _factors = Helper.toCell<Vector> factors "factors" 
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).DiscountBond
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).DiscountBond
                                                             _now.cell 
                                                             _maturity.cell 
                                                             _factors.cell 
@@ -410,7 +410,7 @@ module CoxIngersollRossFunction =
                 let _additionalConstraint = Helper.toCell<Constraint> additionalConstraint "additionalConstraint" 
                 let _weights = Helper.toCell<Generic.List<double>> weights "weights" 
                 let _fixParameters = Helper.toCell<Generic.List<bool>> fixParameters "fixParameters" 
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).Calibrate
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Calibrate
                                                             _instruments.cell 
                                                             _Method.cell 
                                                             _endCriteria.cell 
@@ -464,7 +464,7 @@ module CoxIngersollRossFunction =
             try
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).Constraint
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Constraint
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
@@ -500,7 +500,7 @@ module CoxIngersollRossFunction =
             try
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).EndCriteria
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).EndCriteria
                                                        ) :> ICell
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
@@ -536,7 +536,7 @@ module CoxIngersollRossFunction =
             try
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).NotifyObservers
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).NotifyObservers
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
@@ -572,7 +572,7 @@ module CoxIngersollRossFunction =
             try
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).Parameters
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Parameters
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
@@ -611,7 +611,7 @@ module CoxIngersollRossFunction =
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
@@ -653,7 +653,7 @@ module CoxIngersollRossFunction =
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).SetParams
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).SetParams
                                                             _parameters.cell 
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
@@ -695,7 +695,7 @@ module CoxIngersollRossFunction =
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
@@ -734,7 +734,7 @@ module CoxIngersollRossFunction =
             try
 
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).Update
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Update
                                                        ) :> ICell
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
@@ -776,7 +776,7 @@ module CoxIngersollRossFunction =
                 let _CoxIngersollRoss = Helper.toCell<CoxIngersollRoss> coxingersollross "CoxIngersollRoss"  
                 let _parameters = Helper.toCell<Vector> parameters "parameters" 
                 let _instruments = Helper.toCell<Generic.List<CalibrationHelper>> instruments "instruments" 
-                let builder () = withMnemonic mnemonic ((_CoxIngersollRoss.cell :?> CoxIngersollRossModel).Value
+                let builder () = withMnemonic mnemonic ((CoxIngersollRossModel.Cast _CoxIngersollRoss.cell).Value
                                                             _parameters.cell 
                                                             _instruments.cell 
                                                        ) :> ICell

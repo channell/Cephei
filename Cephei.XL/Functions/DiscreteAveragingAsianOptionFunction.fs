@@ -128,7 +128,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).Delta
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Delta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -164,7 +164,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).DeltaForward
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).DeltaForward
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -200,7 +200,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).DividendRho
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).DividendRho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -236,7 +236,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).Elasticity
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Elasticity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -272,7 +272,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).Gamma
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Gamma
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -308,7 +308,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).IsExpired
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).IsExpired
                                                        ) :> ICell
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
@@ -344,7 +344,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).ItmCashProbability
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).ItmCashProbability
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -380,7 +380,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).Rho
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Rho
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -416,7 +416,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).StrikeSensitivity
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).StrikeSensitivity
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -452,7 +452,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).Theta
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Theta
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -488,7 +488,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).ThetaPerDay
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).ThetaPerDay
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -524,7 +524,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).Vega
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Vega
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -560,7 +560,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).Exercise
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Exercise
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
@@ -596,7 +596,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).Payoff
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Payoff
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
@@ -632,7 +632,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).CASH
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).CASH
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -668,7 +668,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).ErrorEstimate
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).ErrorEstimate
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -704,7 +704,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).NPV
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).NPV
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 
@@ -743,7 +743,7 @@ module DiscreteAveragingAsianOptionFunction =
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
                 let _tag = Helper.toCell<string> tag "tag" 
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).Result
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).Result
                                                             _tag.cell 
                                                        ) :> ICell
                 let format (o : obj) (l:string) = o.ToString() :> obj
@@ -785,7 +785,7 @@ module DiscreteAveragingAsianOptionFunction =
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
                 let _e = Helper.toCell<IPricingEngine> e "e" 
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).SetPricingEngine
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).SetPricingEngine
                                                             _e.cell 
                                                        ) :> ICell
                 let format (o : DiscreteAveragingAsianOption) (l:string) = o.ToString() :> obj
@@ -824,7 +824,7 @@ module DiscreteAveragingAsianOptionFunction =
             try
 
                 let _DiscreteAveragingAsianOption = Helper.toCell<DiscreteAveragingAsianOption> discreteaveragingasianoption "DiscreteAveragingAsianOption"  
-                let builder () = withMnemonic mnemonic ((_DiscreteAveragingAsianOption.cell :?> DiscreteAveragingAsianOptionModel).ValuationDate
+                let builder () = withMnemonic mnemonic ((DiscreteAveragingAsianOptionModel.Cast _DiscreteAveragingAsianOption.cell).ValuationDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 

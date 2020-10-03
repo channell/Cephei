@@ -113,7 +113,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
                 let _spot = Helper.toCell<double> spot "spot" 
                 let _variance = Helper.toCell<double> variance "variance" 
                 let _discount = Helper.toCell<double> discount "discount" 
-                let builder () = withMnemonic mnemonic ((_AnalyticBinaryBarrierEngine_helper.cell :?> AnalyticBinaryBarrierEngine_helperModel).PayoffAtExpiry
+                let builder () = withMnemonic mnemonic ((AnalyticBinaryBarrierEngine_helperModel.Cast _AnalyticBinaryBarrierEngine_helper.cell).PayoffAtExpiry
                                                             _spot.cell 
                                                             _variance.cell 
                                                             _discount.cell 

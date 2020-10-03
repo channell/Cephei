@@ -92,7 +92,7 @@ module SteepestDescentFunction =
                 let _SteepestDescent = Helper.toCell<SteepestDescent> steepestdescent "SteepestDescent"  
                 let _P = Helper.toCell<Problem> P "P" 
                 let _endCriteria = Helper.toCell<EndCriteria> endCriteria "endCriteria" 
-                let builder () = withMnemonic mnemonic ((_SteepestDescent.cell :?> SteepestDescentModel).Minimize
+                let builder () = withMnemonic mnemonic ((SteepestDescentModel.Cast _SteepestDescent.cell).Minimize
                                                             _P.cell 
                                                             _endCriteria.cell 
                                                        ) :> ICell

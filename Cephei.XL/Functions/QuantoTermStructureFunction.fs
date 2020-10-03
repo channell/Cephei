@@ -49,7 +49,7 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder () = withMnemonic mnemonic ((_QuantoTermStructure.cell :?> QuantoTermStructureModel).Calendar
+                let builder () = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).Calendar
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
@@ -85,7 +85,7 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder () = withMnemonic mnemonic ((_QuantoTermStructure.cell :?> QuantoTermStructureModel).DayCounter
+                let builder () = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).DayCounter
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
@@ -121,7 +121,7 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder () = withMnemonic mnemonic ((_QuantoTermStructure.cell :?> QuantoTermStructureModel).MaxDate
+                let builder () = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).MaxDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -236,7 +236,7 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder () = withMnemonic mnemonic ((_QuantoTermStructure.cell :?> QuantoTermStructureModel).ReferenceDate
+                let builder () = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).ReferenceDate
                                                        ) :> ICell
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
@@ -272,7 +272,7 @@ module QuantoTermStructureFunction =
             try
 
                 let _QuantoTermStructure = Helper.toCell<QuantoTermStructure> quantotermstructure "QuantoTermStructure"  
-                let builder () = withMnemonic mnemonic ((_QuantoTermStructure.cell :?> QuantoTermStructureModel).SettlementDays
+                let builder () = withMnemonic mnemonic ((QuantoTermStructureModel.Cast _QuantoTermStructure.cell).SettlementDays
                                                        ) :> ICell
                 let format (o : int) (l:string) = o :> obj
 

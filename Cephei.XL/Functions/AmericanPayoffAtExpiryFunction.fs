@@ -116,7 +116,7 @@ module AmericanPayoffAtExpiryFunction =
             try
 
                 let _AmericanPayoffAtExpiry = Helper.toCell<AmericanPayoffAtExpiry> americanpayoffatexpiry "AmericanPayoffAtExpiry"  
-                let builder () = withMnemonic mnemonic ((_AmericanPayoffAtExpiry.cell :?> AmericanPayoffAtExpiryModel).Value
+                let builder () = withMnemonic mnemonic ((AmericanPayoffAtExpiryModel.Cast _AmericanPayoffAtExpiry.cell).Value
                                                        ) :> ICell
                 let format (o : double) (l:string) = o :> obj
 

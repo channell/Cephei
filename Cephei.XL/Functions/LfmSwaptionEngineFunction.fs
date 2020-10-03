@@ -97,7 +97,7 @@ module LfmSwaptionEngineFunction =
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
                 let _model = Helper.toHandle<'ModelType> model "model" 
-                let builder () = withMnemonic mnemonic ((_LfmSwaptionEngine.cell :?> LfmSwaptionEngineModel).SetModel
+                let builder () = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).SetModel
                                                             _model.cell 
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -139,7 +139,7 @@ module LfmSwaptionEngineFunction =
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_LfmSwaptionEngine.cell :?> LfmSwaptionEngineModel).RegisterWith
+                let builder () = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).RegisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -178,7 +178,7 @@ module LfmSwaptionEngineFunction =
             try
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((_LfmSwaptionEngine.cell :?> LfmSwaptionEngineModel).Reset
+                let builder () = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).Reset
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
@@ -217,7 +217,7 @@ module LfmSwaptionEngineFunction =
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
                 let _handler = Helper.toCell<Callback> handler "handler" 
-                let builder () = withMnemonic mnemonic ((_LfmSwaptionEngine.cell :?> LfmSwaptionEngineModel).UnregisterWith
+                let builder () = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).UnregisterWith
                                                             _handler.cell 
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
@@ -256,7 +256,7 @@ module LfmSwaptionEngineFunction =
             try
 
                 let _LfmSwaptionEngine = Helper.toCell<LfmSwaptionEngine> lfmswaptionengine "LfmSwaptionEngine"  
-                let builder () = withMnemonic mnemonic ((_LfmSwaptionEngine.cell :?> LfmSwaptionEngineModel).Update
+                let builder () = withMnemonic mnemonic ((LfmSwaptionEngineModel.Cast _LfmSwaptionEngine.cell).Update
                                                        ) :> ICell
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
