@@ -38,7 +38,7 @@ module FdBlackScholesBarrierEngineFunction =
     (*
         Constructor
     *)
-    [<ExcelFunction(Name="_FdBlackScholesBarrierEngine", Description="Create a FdBlackScholesBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdBlackScholesBarrierEngine", Description="Create a FdBlackScholesBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesBarrierEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -108,7 +108,7 @@ module FdBlackScholesBarrierEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdBlackScholesBarrierEngine_Range", Description="Create a range of FdBlackScholesBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdBlackScholesBarrierEngine_Range", Description="Create a range of FdBlackScholesBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesBarrierEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module CapletVarianceCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module CapletVarianceCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_dayCounter", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_dayCounter", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module CapletVarianceCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_maxDate", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_maxDate", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module CapletVarianceCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_maxStrike", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_maxStrike", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module CapletVarianceCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_minStrike", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_minStrike", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module CapletVarianceCurveFunction =
     (*
         ! returns the Black variance for a given option time and strike rate
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_blackVariance", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_blackVariance", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_blackVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module CapletVarianceCurveFunction =
     (*
         ! returns the Black variance for a given option tenor and strike rate
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_blackVariance2", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_blackVariance2", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_blackVariance2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module CapletVarianceCurveFunction =
     (*
         ! returns the Black variance for a given option date and strike rate
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_blackVariance1", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_blackVariance1", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_blackVariance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module CapletVarianceCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_displacement", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_displacement", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_displacement
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module CapletVarianceCurveFunction =
     (*
         ! returns the smile for a given option time
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_smileSection", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_smileSection", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_smileSection
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -482,7 +482,7 @@ module CapletVarianceCurveFunction =
     (*
         ! returns the smile for a given option date
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_smileSection2", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_smileSection2", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_smileSection2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -530,7 +530,7 @@ module CapletVarianceCurveFunction =
     (*
         ! returns the smile for a given option tenor
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_smileSection1", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_smileSection1", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_smileSection1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -578,7 +578,7 @@ module CapletVarianceCurveFunction =
     (*
         ! returns the volatility for a given option time and strike rate
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_volatility2", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_volatility2", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_volatility2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module CapletVarianceCurveFunction =
     (*
         ! returns the volatility for a given option date and strike rate
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_volatility1", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_volatility1", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_volatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -686,7 +686,7 @@ module CapletVarianceCurveFunction =
     (*
         ! returns the volatility for a given option tenor and strike rate
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_volatility", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_volatility", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -740,7 +740,7 @@ module CapletVarianceCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_volatilityType", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_volatilityType", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_volatilityType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -776,7 +776,7 @@ module CapletVarianceCurveFunction =
     (*
         ! the business day convention used in tenor to date conversion
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_businessDayConvention", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_businessDayConvention", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -812,7 +812,7 @@ module CapletVarianceCurveFunction =
     (*
         ! period/date conversion
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_optionDateFromTenor", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_optionDateFromTenor", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_optionDateFromTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -854,7 +854,7 @@ module CapletVarianceCurveFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_calendar", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_calendar", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -890,7 +890,7 @@ module CapletVarianceCurveFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_maxTime", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_maxTime", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -926,7 +926,7 @@ module CapletVarianceCurveFunction =
     (*
         ! the date at which discount = 1.0 and/or variance = 0.0
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_referenceDate", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_referenceDate", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -962,7 +962,7 @@ module CapletVarianceCurveFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_settlementDays", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_settlementDays", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -998,7 +998,7 @@ module CapletVarianceCurveFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_timeFromReference", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_timeFromReference", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1040,7 +1040,7 @@ module CapletVarianceCurveFunction =
     (*
         observer interface
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_update", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_update", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1076,7 +1076,7 @@ module CapletVarianceCurveFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_allowsExtrapolation", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_allowsExtrapolation", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1112,7 +1112,7 @@ module CapletVarianceCurveFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_disableExtrapolation", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_disableExtrapolation", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1154,7 +1154,7 @@ module CapletVarianceCurveFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_enableExtrapolation", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_enableExtrapolation", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1196,7 +1196,7 @@ module CapletVarianceCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapletVarianceCurve_extrapolate", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_extrapolate", Description="Create a CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1229,7 +1229,7 @@ module CapletVarianceCurveFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CapletVarianceCurve_Range", Description="Create a range of CapletVarianceCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapletVarianceCurve_Range", Description="Create a range of CapletVarianceCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapletVarianceCurve_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

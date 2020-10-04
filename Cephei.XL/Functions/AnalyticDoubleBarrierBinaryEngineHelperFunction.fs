@@ -37,7 +37,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper", Description="Create a AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper", Description="Create a AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngineHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
     (*
         helper obj methods
     *)
-    [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper_payoffAtExpiry", Description="Create a AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper_payoffAtExpiry", Description="Create a AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngineHelper_payoffAtExpiry
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
     (*
         helper obj methods
     *)
-    [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper_payoffKIKO", Description="Create a AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper_payoffKIKO", Description="Create a AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngineHelper_payoffKIKO
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -215,7 +215,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper_Range", Description="Create a range of AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper_Range", Description="Create a range of AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngineHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

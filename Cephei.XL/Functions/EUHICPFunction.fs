@@ -37,7 +37,7 @@ module EUHICPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EUHICP1", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP1", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module EUHICPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EUHICP", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module EUHICPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EUHICP_clone", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_clone", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module EUHICPFunction =
     (*
         ! \warning the forecastTodaysFixing parameter (required by the Index interface) is currently ignored.
     *)
-    [<ExcelFunction(Name="_EUHICP_fixing", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_fixing", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module EUHICPFunction =
     (*
         Other methods
     *)
-    [<ExcelFunction(Name="_EUHICP_zeroInflationTermStructure", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_zeroInflationTermStructure", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_zeroInflationTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -243,7 +243,7 @@ module EUHICPFunction =
     (*
         ! this method creates all the "fixings" for the relevant period of the index.  E.g. for monthly indices it will put the same value in every calendar day in the month.
     *)
-    [<ExcelFunction(Name="_EUHICP_addFixing", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_addFixing", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -298,7 +298,7 @@ module EUHICPFunction =
         ! The availability lag describes when the index is
 <i>available</i>, not how it is used.  Specifically the fixing for, say, January, may only be available in April but the index will always return the index value applicable for January as its January fixing (independent of the lag in availability).
     *)
-    [<ExcelFunction(Name="_EUHICP_availabilityLag", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_availabilityLag", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_availabilityLag
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -334,7 +334,7 @@ module EUHICPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EUHICP_currency", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_currency", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -370,7 +370,7 @@ module EUHICPFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_EUHICP_familyName", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_familyName", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -406,7 +406,7 @@ module EUHICPFunction =
     (*
         ! Inflation indices do not have fixing calendars.  An inflation index value is valid for every day (including weekends) of a calendar period.  I.e. it uses the NullCalendar as its fixing calendar.
     *)
-    [<ExcelFunction(Name="_EUHICP_fixingCalendar", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_fixingCalendar", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -442,7 +442,7 @@ module EUHICPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EUHICP_frequency", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_frequency", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_frequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -478,7 +478,7 @@ module EUHICPFunction =
     (*
         ! Forecasting index values using an inflation term structure uses the interpolation of the inflation term structure unless interpolation is set to false.  In this case the extrapolated values are constant within each period taking the mid-period extrapolated value.
     *)
-    [<ExcelFunction(Name="_EUHICP_interpolated", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_interpolated", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_interpolated
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -514,7 +514,7 @@ module EUHICPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EUHICP_isValidFixingDate", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_isValidFixingDate", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -556,7 +556,7 @@ module EUHICPFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_EUHICP_name", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_name", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -592,7 +592,7 @@ module EUHICPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EUHICP_region", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_region", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_region
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -628,7 +628,7 @@ module EUHICPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EUHICP_revised", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_revised", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_revised
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -664,7 +664,7 @@ module EUHICPFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_EUHICP_update", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_update", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -700,7 +700,7 @@ module EUHICPFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_EUHICP_addFixings", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_addFixings", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -754,7 +754,7 @@ module EUHICPFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_EUHICP_addFixings1", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_addFixings1", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -802,7 +802,7 @@ module EUHICPFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_EUHICP_allowsNativeFixings", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_allowsNativeFixings", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -838,7 +838,7 @@ module EUHICPFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_EUHICP_clearFixings", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_clearFixings", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -874,7 +874,7 @@ module EUHICPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EUHICP_registerWith", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_registerWith", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -916,7 +916,7 @@ module EUHICPFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_EUHICP_timeSeries", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_timeSeries", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -952,7 +952,7 @@ module EUHICPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EUHICP_unregisterWith", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_unregisterWith", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -991,7 +991,7 @@ module EUHICPFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_EUHICP_Range", Description="Create a range of EUHICP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EUHICP_Range", Description="Create a range of EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

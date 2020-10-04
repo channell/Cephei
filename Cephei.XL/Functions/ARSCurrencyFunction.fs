@@ -37,7 +37,7 @@ module ARSCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ARSCurrency", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module ARSCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_ARSCurrency_code", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_code", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module ARSCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_ARSCurrency_empty", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_empty", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module ARSCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ARSCurrency_Equals", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_Equals", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module ARSCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_ARSCurrency_format", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_format", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module ARSCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_ARSCurrency_fractionsPerUnit", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_fractionsPerUnit", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module ARSCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_ARSCurrency_fractionSymbol", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_fractionSymbol", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module ARSCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_ARSCurrency_name", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_name", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module ARSCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_ARSCurrency_numericCode", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_numericCode", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module ARSCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_ARSCurrency_rounding", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_rounding", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module ARSCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_ARSCurrency_symbol", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_symbol", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module ARSCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ARSCurrency_ToString", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_ToString", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module ARSCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_ARSCurrency_triangulationCurrency", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_triangulationCurrency", Description="Create a ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module ARSCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ARSCurrency_Range", Description="Create a range of ARSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ARSCurrency_Range", Description="Create a range of ARSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ARSCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

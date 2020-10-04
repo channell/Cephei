@@ -38,7 +38,7 @@ module FDVanillaEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDVanillaEngine_ensureStrikeInGrid", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDVanillaEngine_ensureStrikeInGrid", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_ensureStrikeInGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module FDVanillaEngineFunction =
     (*
         this should be defined as new in each deriving class which use template iheritance in order to return a proper class to wrap
     *)
-    [<ExcelFunction(Name="_FDVanillaEngine_factory", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDVanillaEngine_factory", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module FDVanillaEngineFunction =
     (*
         required for generics and template iheritance
     *)
-    [<ExcelFunction(Name="_FDVanillaEngine1", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDVanillaEngine1", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -165,7 +165,7 @@ module FDVanillaEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDVanillaEngine", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDVanillaEngine", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -220,7 +220,7 @@ module FDVanillaEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDVanillaEngine_getResidualTime", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDVanillaEngine_getResidualTime", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_getResidualTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -256,7 +256,7 @@ module FDVanillaEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDVanillaEngine_grid", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDVanillaEngine_grid", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -292,7 +292,7 @@ module FDVanillaEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDVanillaEngine_intrinsicValues_", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDVanillaEngine_intrinsicValues_", Description="Create a FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_intrinsicValues_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -325,7 +325,7 @@ module FDVanillaEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FDVanillaEngine_Range", Description="Create a range of FDVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDVanillaEngine_Range", Description="Create a range of FDVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDVanillaEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

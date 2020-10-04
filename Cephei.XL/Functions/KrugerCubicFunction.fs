@@ -37,7 +37,7 @@ module KrugerCubicFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_KrugerCubic", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module KrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KrugerCubic_aCoefficients", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_aCoefficients", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_aCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module KrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KrugerCubic_bCoefficients", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_bCoefficients", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_bCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module KrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KrugerCubic_cCoefficients", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_cCoefficients", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_cCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module KrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KrugerCubic_derivative", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_derivative", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module KrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KrugerCubic_empty", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_empty", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module KrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KrugerCubic_primitive", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_primitive", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module KrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KrugerCubic_secondDerivative", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_secondDerivative", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module KrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KrugerCubic_update", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_update", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module KrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KrugerCubic_value1", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_value1", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -458,7 +458,7 @@ module KrugerCubicFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_KrugerCubic_value", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_value", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module KrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KrugerCubic_xMax", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_xMax", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -536,7 +536,7 @@ module KrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KrugerCubic_xMin", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_xMin", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -572,7 +572,7 @@ module KrugerCubicFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_KrugerCubic_allowsExtrapolation", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_allowsExtrapolation", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module KrugerCubicFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_KrugerCubic_disableExtrapolation", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_disableExtrapolation", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module KrugerCubicFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_KrugerCubic_enableExtrapolation", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_enableExtrapolation", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module KrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KrugerCubic_extrapolate", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_extrapolate", Description="Create a KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -725,7 +725,7 @@ module KrugerCubicFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_KrugerCubic_Range", Description="Create a range of KrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KrugerCubic_Range", Description="Create a range of KrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KrugerCubic_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

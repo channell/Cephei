@@ -37,7 +37,7 @@ module ImpliedVolTermStructureFunction =
     (*
         Visitability
     *)
-    [<ExcelFunction(Name="_ImpliedVolTermStructure_accept", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImpliedVolTermStructure_accept", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module ImpliedVolTermStructureFunction =
     (*
         TermStructure interface
     *)
-    [<ExcelFunction(Name="_ImpliedVolTermStructure_dayCounter", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImpliedVolTermStructure_dayCounter", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module ImpliedVolTermStructureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ImpliedVolTermStructure", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImpliedVolTermStructure", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module ImpliedVolTermStructureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ImpliedVolTermStructure_maxDate", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImpliedVolTermStructure_maxDate", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module ImpliedVolTermStructureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ImpliedVolTermStructure_maxStrike", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImpliedVolTermStructure_maxStrike", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module ImpliedVolTermStructureFunction =
     (*
         VolatilityTermStructure interface
     *)
-    [<ExcelFunction(Name="_ImpliedVolTermStructure_minStrike", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImpliedVolTermStructure_minStrike", Description="Create a ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -263,7 +263,7 @@ module ImpliedVolTermStructureFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ImpliedVolTermStructure_Range", Description="Create a range of ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImpliedVolTermStructure_Range", Description="Create a range of ImpliedVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolTermStructure_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

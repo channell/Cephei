@@ -37,7 +37,7 @@ module CumulativeNormalDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CumulativeNormalDistribution1", Description="Create a CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CumulativeNormalDistribution1", Description="Create a CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeNormalDistribution_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module CumulativeNormalDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CumulativeNormalDistribution", Description="Create a CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CumulativeNormalDistribution", Description="Create a CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeNormalDistribution_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module CumulativeNormalDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CumulativeNormalDistribution_derivative", Description="Create a CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CumulativeNormalDistribution_derivative", Description="Create a CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeNormalDistribution_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module CumulativeNormalDistributionFunction =
     (*
         function
     *)
-    [<ExcelFunction(Name="_CumulativeNormalDistribution_value", Description="Create a CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CumulativeNormalDistribution_value", Description="Create a CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeNormalDistribution_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -192,7 +192,7 @@ module CumulativeNormalDistributionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CumulativeNormalDistribution_Range", Description="Create a range of CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CumulativeNormalDistribution_Range", Description="Create a range of CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeNormalDistribution_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

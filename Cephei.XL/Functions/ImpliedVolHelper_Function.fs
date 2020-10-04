@@ -37,7 +37,7 @@ module ImpliedVolHelper_Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_ImpliedVolHelper__derivative", Description="Create a ImpliedVolHelper_",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImpliedVolHelper__derivative", Description="Create a ImpliedVolHelper_",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolHelper__derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module ImpliedVolHelper_Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_ImpliedVolHelper_", Description="Create a ImpliedVolHelper_",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImpliedVolHelper_", Description="Create a ImpliedVolHelper_",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolHelper__create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module ImpliedVolHelper_Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_ImpliedVolHelper__value", Description="Create a ImpliedVolHelper_",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImpliedVolHelper__value", Description="Create a ImpliedVolHelper_",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolHelper__value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -179,7 +179,7 @@ module ImpliedVolHelper_Function =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ImpliedVolHelper__Range", Description="Create a range of ImpliedVolHelper_",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImpliedVolHelper__Range", Description="Create a range of ImpliedVolHelper_",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolHelper__Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

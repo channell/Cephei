@@ -37,7 +37,7 @@ module THBCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_THBCurrency", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module THBCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_THBCurrency_code", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_code", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module THBCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_THBCurrency_empty", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_empty", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module THBCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_THBCurrency_Equals", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_Equals", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module THBCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_THBCurrency_format", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_format", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module THBCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_THBCurrency_fractionsPerUnit", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_fractionsPerUnit", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module THBCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_THBCurrency_fractionSymbol", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_fractionSymbol", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module THBCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_THBCurrency_name", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_name", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module THBCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_THBCurrency_numericCode", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_numericCode", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module THBCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_THBCurrency_rounding", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_rounding", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module THBCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_THBCurrency_symbol", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_symbol", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module THBCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_THBCurrency_ToString", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_ToString", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module THBCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_THBCurrency_triangulationCurrency", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_triangulationCurrency", Description="Create a THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module THBCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_THBCurrency_Range", Description="Create a range of THBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_THBCurrency_Range", Description="Create a range of THBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let THBCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module BootstrapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BootstrapHelper", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module BootstrapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BootstrapHelper1", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper1", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -105,7 +105,7 @@ module BootstrapHelperFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_BootstrapHelper2", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper2", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -142,7 +142,7 @@ module BootstrapHelperFunction =
     (*
         earliest relevant date The earliest date at which discounts are needed by the helper in order to provide a quote.
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_earliestDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_earliestDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_earliestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -178,7 +178,7 @@ module BootstrapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_impliedQuote", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_impliedQuote", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_impliedQuote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -214,7 +214,7 @@ module BootstrapHelperFunction =
     (*
         The latest date at which discounts are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_latestDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_latestDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_latestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -250,7 +250,7 @@ module BootstrapHelperFunction =
     (*
         ! The latest date at which data are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_latestRelevantDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_latestRelevantDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_latestRelevantDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -286,7 +286,7 @@ module BootstrapHelperFunction =
     (*
         ! instrument's maturity date
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_maturityDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_maturityDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -322,7 +322,7 @@ module BootstrapHelperFunction =
     (*
         ! pillar date
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_pillarDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_pillarDate", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_pillarDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -358,7 +358,7 @@ module BootstrapHelperFunction =
     (*
         ! BootstrapHelper interface
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_quote", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_quote", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_quote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -394,7 +394,7 @@ module BootstrapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_quoteError", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_quoteError", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_quoteError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -430,7 +430,7 @@ module BootstrapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_quoteIsValid", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_quoteIsValid", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_quoteIsValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -466,7 +466,7 @@ module BootstrapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_quoteValue", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_quoteValue", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_quoteValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -502,7 +502,7 @@ module BootstrapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_registerWith", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_registerWith", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -544,7 +544,7 @@ module BootstrapHelperFunction =
     (*
         ! \warning Being a pointer and not a shared_ptr, the term structure is not guaranteed to remain allocated for the whole life of the rate helper. It is responsibility of the programmer to ensure that the pointer remains valid. It is advised that this method is called only inside the term structure being bootstrapped, setting the pointer to <b>this</b>, i.e., the term structure itself.
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_setTermStructure", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_setTermStructure", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_setTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -586,7 +586,7 @@ module BootstrapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_unregisterWith", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_unregisterWith", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -628,7 +628,7 @@ module BootstrapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BootstrapHelper_update", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_update", Description="Create a BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -661,7 +661,7 @@ module BootstrapHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BootstrapHelper_Range", Description="Create a range of BootstrapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BootstrapHelper_Range", Description="Create a range of BootstrapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

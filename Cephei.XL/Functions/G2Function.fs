@@ -37,7 +37,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_discount", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_discount", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_discountBond1", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_discountBond1", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_discountBond1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -139,7 +139,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_discountBond", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_discountBond", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_discountBond
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -193,7 +193,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_discountBondOption", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_discountBondOption", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_discountBondOption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_dynamics", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_dynamics", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_dynamics
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -289,7 +289,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G25", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G25", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_create5
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -332,7 +332,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G23", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G23", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -393,7 +393,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G22", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G22", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -442,7 +442,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -497,7 +497,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G24", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G24", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_create4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -564,7 +564,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G21", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G21", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -601,7 +601,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_swaption", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_swaption", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_swaption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -661,7 +661,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_termStructure", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_termStructure", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_termStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -697,7 +697,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_termStructure_", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_termStructure_", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_termStructure_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -733,7 +733,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_tree", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_tree", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_tree
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -775,7 +775,7 @@ module G2Function =
     (*
         ! An additional constraint can be passed which must be satisfied in addition to the constraints of the model.
     *)
-    [<ExcelFunction(Name="_G2_calibrate", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_calibrate", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_calibrate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -847,7 +847,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_constraint", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_constraint", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_constraint
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -883,7 +883,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_endCriteria", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_endCriteria", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_endCriteria
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -919,7 +919,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_notifyObservers", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_notifyObservers", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_notifyObservers
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -955,7 +955,7 @@ module G2Function =
     (*
         ! Returns array of arguments on which calibration is done
     *)
-    [<ExcelFunction(Name="_G2_parameters", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_parameters", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_parameters
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -991,7 +991,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_registerWith", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_registerWith", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1033,7 +1033,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_setParams", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_setParams", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_setParams
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1075,7 +1075,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_unregisterWith", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_unregisterWith", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1117,7 +1117,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_update", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_update", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1153,7 +1153,7 @@ module G2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2_value", Description="Create a G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_value", Description="Create a G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1198,7 +1198,7 @@ module G2Function =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_G2_Range", Description="Create a range of G2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2_Range", Description="Create a range of G2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

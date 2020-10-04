@@ -38,7 +38,7 @@ module IsdaCdsEngineFunction =
     (*
         ! Constructor where the client code is responsible for providing a default curve and an interest rate curve compliant with the ISDA specifications.  To be precisely consistent with the ISDA specification QL_USE_INDEXED_COUPON must not be defined. This is not checked in order not to kill the engine completely in this case.  Furthermore, the ibor index in the swap rate helpers should not provide the evaluation date's fixing.
     *)
-    [<ExcelFunction(Name="_IsdaCdsEngine", Description="Create a IsdaCdsEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IsdaCdsEngine", Description="Create a IsdaCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IsdaCdsEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module IsdaCdsEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IsdaCdsEngine_isdaCreditCurve", Description="Create a IsdaCdsEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IsdaCdsEngine_isdaCreditCurve", Description="Create a IsdaCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IsdaCdsEngine_isdaCreditCurve
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -147,7 +147,7 @@ module IsdaCdsEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IsdaCdsEngine_isdaRateCurve", Description="Create a IsdaCdsEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IsdaCdsEngine_isdaRateCurve", Description="Create a IsdaCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IsdaCdsEngine_isdaRateCurve
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -180,7 +180,7 @@ module IsdaCdsEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_IsdaCdsEngine_Range", Description="Create a range of IsdaCdsEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IsdaCdsEngine_Range", Description="Create a range of IsdaCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IsdaCdsEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

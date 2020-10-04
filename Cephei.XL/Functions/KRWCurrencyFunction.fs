@@ -37,7 +37,7 @@ module KRWCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KRWCurrency", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module KRWCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_KRWCurrency_code", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_code", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module KRWCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_KRWCurrency_empty", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_empty", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module KRWCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KRWCurrency_Equals", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_Equals", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module KRWCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_KRWCurrency_format", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_format", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module KRWCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_KRWCurrency_fractionsPerUnit", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_fractionsPerUnit", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module KRWCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_KRWCurrency_fractionSymbol", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_fractionSymbol", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module KRWCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_KRWCurrency_name", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_name", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module KRWCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_KRWCurrency_numericCode", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_numericCode", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module KRWCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_KRWCurrency_rounding", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_rounding", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module KRWCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_KRWCurrency_symbol", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_symbol", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module KRWCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KRWCurrency_ToString", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_ToString", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module KRWCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_KRWCurrency_triangulationCurrency", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_triangulationCurrency", Description="Create a KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module KRWCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_KRWCurrency_Range", Description="Create a range of KRWCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KRWCurrency_Range", Description="Create a range of KRWCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KRWCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module HundsdorferSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HundsdorferScheme_factory", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HundsdorferScheme_factory", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HundsdorferScheme_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module HundsdorferSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HundsdorferScheme", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HundsdorferScheme", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HundsdorferScheme_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module HundsdorferSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HundsdorferScheme1", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HundsdorferScheme1", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HundsdorferScheme_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -177,7 +177,7 @@ module HundsdorferSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HundsdorferScheme_setStep", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HundsdorferScheme_setStep", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HundsdorferScheme_setStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module HundsdorferSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HundsdorferScheme_step", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HundsdorferScheme_step", Description="Create a HundsdorferScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HundsdorferScheme_step
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -270,7 +270,7 @@ module HundsdorferSchemeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_HundsdorferScheme_Range", Description="Create a range of HundsdorferScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HundsdorferScheme_Range", Description="Create a range of HundsdorferScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HundsdorferScheme_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

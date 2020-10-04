@@ -37,7 +37,7 @@ module FdmBlackScholesMesherFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBlackScholesMesher", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesMesher", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module FdmBlackScholesMesherFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBlackScholesMesher_dminus", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesMesher_dminus", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_dminus
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module FdmBlackScholesMesherFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBlackScholesMesher_dplus", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesMesher_dplus", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_dplus
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -224,7 +224,7 @@ module FdmBlackScholesMesherFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBlackScholesMesher_location", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesMesher_location", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_location
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module FdmBlackScholesMesherFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBlackScholesMesher_locations", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesMesher_locations", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_locations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -302,7 +302,7 @@ module FdmBlackScholesMesherFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBlackScholesMesher_size", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesMesher_size", Description="Create a FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -335,7 +335,7 @@ module FdmBlackScholesMesherFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmBlackScholesMesher_Range", Description="Create a range of FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesMesher_Range", Description="Create a range of FdmBlackScholesMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesMesher_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module DoublingConvergenceStepsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DoublingConvergenceSteps_initialSamples", Description="Create a DoublingConvergenceSteps",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DoublingConvergenceSteps_initialSamples", Description="Create a DoublingConvergenceSteps",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoublingConvergenceSteps_initialSamples
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module DoublingConvergenceStepsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DoublingConvergenceSteps_nextSamples", Description="Create a DoublingConvergenceSteps",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DoublingConvergenceSteps_nextSamples", Description="Create a DoublingConvergenceSteps",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoublingConvergenceSteps_nextSamples
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -112,7 +112,7 @@ module DoublingConvergenceStepsFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DoublingConvergenceSteps_Range", Description="Create a range of DoublingConvergenceSteps",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DoublingConvergenceSteps_Range", Description="Create a range of DoublingConvergenceSteps",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoublingConvergenceSteps_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

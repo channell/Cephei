@@ -37,7 +37,7 @@ module CurveDependentStepConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CurveDependentStepCondition_applyTo", Description="Create a CurveDependentStepCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CurveDependentStepCondition_applyTo", Description="Create a CurveDependentStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CurveDependentStepCondition_applyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -82,7 +82,7 @@ module CurveDependentStepConditionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CurveDependentStepCondition_Range", Description="Create a range of CurveDependentStepCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CurveDependentStepCondition_Range", Description="Create a range of CurveDependentStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CurveDependentStepCondition_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

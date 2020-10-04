@@ -37,7 +37,7 @@ module PricipalLegFunction =
     (*
         constructor
     *)
-    [<ExcelFunction(Name="_PricipalLeg", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricipalLeg", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module PricipalLegFunction =
     (*
         creator
     *)
-    [<ExcelFunction(Name="_PricipalLeg_value", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricipalLeg_value", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module PricipalLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricipalLeg_withNotionals", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricipalLeg_withNotionals", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_withNotionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module PricipalLegFunction =
     (*
         initializers
     *)
-    [<ExcelFunction(Name="_PricipalLeg_withNotionals1", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricipalLeg_withNotionals1", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_withNotionals1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module PricipalLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricipalLeg_withPaymentAdjustment", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricipalLeg_withPaymentAdjustment", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_withPaymentAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module PricipalLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricipalLeg_withPaymentDayCounter", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricipalLeg_withPaymentDayCounter", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_withPaymentDayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module PricipalLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricipalLeg_withSign", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricipalLeg_withSign", Description="Create a PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_withSign
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -323,7 +323,7 @@ module PricipalLegFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PricipalLeg_Range", Description="Create a range of PricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricipalLeg_Range", Description="Create a range of PricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricipalLeg_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

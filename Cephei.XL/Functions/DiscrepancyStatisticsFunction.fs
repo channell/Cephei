@@ -38,7 +38,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_add", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_add", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -87,7 +87,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_add", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_add", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -129,7 +129,7 @@ module DiscrepancyStatisticsFunction =
     (*
         !  1-dimensional inspectors
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_discrepancy", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_discrepancy", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_discrepancy
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -165,7 +165,7 @@ module DiscrepancyStatisticsFunction =
     (*
         constructor
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -202,7 +202,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_reset", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_reset", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -244,7 +244,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_averageShortfall", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_averageShortfall", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_averageShortfall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -286,7 +286,7 @@ module DiscrepancyStatisticsFunction =
     (*
         ! returns the correlation Matrix
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_correlation", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_correlation", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_correlation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -322,7 +322,7 @@ module DiscrepancyStatisticsFunction =
     (*
         ! returns the covariance Matrix
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_covariance", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_covariance", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_covariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -358,7 +358,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_downsideDeviation", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_downsideDeviation", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_downsideDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -394,7 +394,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_downsideVariance", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_downsideVariance", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_downsideVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -430,7 +430,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_errorEstimate", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_errorEstimate", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -466,7 +466,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_expectedShortfall", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_expectedShortfall", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_expectedShortfall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -508,7 +508,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_gaussianAverageShortfall", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_gaussianAverageShortfall", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_gaussianAverageShortfall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -550,7 +550,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_gaussianExpectedShortfall", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_gaussianExpectedShortfall", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_gaussianExpectedShortfall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -592,7 +592,7 @@ module DiscrepancyStatisticsFunction =
     (*
         single argument list
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_gaussianPercentile", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_gaussianPercentile", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_gaussianPercentile
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -634,7 +634,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_gaussianPotentialUpside", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_gaussianPotentialUpside", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_gaussianPotentialUpside
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -676,7 +676,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_gaussianShortfall", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_gaussianShortfall", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_gaussianShortfall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -718,7 +718,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_gaussianValueAtRisk", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_gaussianValueAtRisk", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_gaussianValueAtRisk
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -760,7 +760,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_kurtosis", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_kurtosis", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_kurtosis
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -796,7 +796,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_max", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_max", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_max
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -832,7 +832,7 @@ module DiscrepancyStatisticsFunction =
     (*
         void argument list
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_mean", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_mean", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_mean
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -868,7 +868,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_min", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_min", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_min
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -904,7 +904,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_percentile", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_percentile", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_percentile
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -946,7 +946,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_potentialUpside", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_potentialUpside", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_potentialUpside
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -988,7 +988,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_regret", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_regret", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_regret
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1030,7 +1030,7 @@ module DiscrepancyStatisticsFunction =
     (*
         1-D inspectors lifted from underlying statistics class
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_samples", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_samples", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_samples
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1066,7 +1066,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_semiDeviation", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_semiDeviation", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_semiDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1102,7 +1102,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_semiVariance", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_semiVariance", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_semiVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1138,7 +1138,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_shortfall", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_shortfall", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_shortfall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1180,7 +1180,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_size", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_size", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1216,7 +1216,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_skewness", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_skewness", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_skewness
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1252,7 +1252,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_standardDeviation", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_standardDeviation", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_standardDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1288,7 +1288,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_valueAtRisk", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_valueAtRisk", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_valueAtRisk
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1330,7 +1330,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_variance", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_variance", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1366,7 +1366,7 @@ module DiscrepancyStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscrepancyStatistics_weightSum", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_weightSum", Description="Create a DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_weightSum
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1399,7 +1399,7 @@ module DiscrepancyStatisticsFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DiscrepancyStatistics_Range", Description="Create a range of DiscrepancyStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscrepancyStatistics_Range", Description="Create a range of DiscrepancyStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscrepancyStatistics_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

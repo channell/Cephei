@@ -37,7 +37,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_accrualRebateNPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_accrualRebateNPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_accrualRebateNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_conventionalSpread", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_conventionalSpread", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_conventionalSpread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module CreditDefaultSwapFunction =
     (*
         ! Returns the variation of the fixed-leg value given a one-basis-point change in the running spread.
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_couponLegBPS", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_couponLegBPS", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_couponLegBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -169,7 +169,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_couponLegNPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_couponLegNPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_couponLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -205,7 +205,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_coupons", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_coupons", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_coupons
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -241,7 +241,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap1", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap1", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -483,7 +483,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_defaultLegNPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_defaultLegNPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_defaultLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -519,7 +519,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_fairSpread", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_fairSpread", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_fairSpread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -557,7 +557,7 @@ module CreditDefaultSwapFunction =
 
 @returns 
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_fairUpfront", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_fairUpfront", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_fairUpfront
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -593,7 +593,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_impliedHazardRate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_impliedHazardRate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_impliedHazardRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -665,7 +665,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_isExpired", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_isExpired", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -701,7 +701,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_notional", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_notional", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_notional
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -737,7 +737,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_paysAtDefaultTime", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_paysAtDefaultTime", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_paysAtDefaultTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -773,7 +773,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_protectionEndDate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_protectionEndDate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_protectionEndDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -809,7 +809,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_protectionStartDate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_protectionStartDate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_protectionStartDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -845,7 +845,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_rebatesAccrual", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_rebatesAccrual", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_rebatesAccrual
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -881,7 +881,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_runningSpread", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_runningSpread", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_runningSpread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -917,7 +917,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_settlesAccrual", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_settlesAccrual", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_settlesAccrual
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -953,7 +953,7 @@ module CreditDefaultSwapFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_side", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_side", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_side
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -989,7 +989,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_upfront", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_upfront", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_upfront
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1025,7 +1025,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_upfrontBPS", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_upfrontBPS", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_upfrontBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1061,7 +1061,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_upfrontNPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_upfrontNPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_upfrontNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1097,7 +1097,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_CASH", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_CASH", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1133,7 +1133,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_errorEstimate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_errorEstimate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1169,7 +1169,7 @@ module CreditDefaultSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_NPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_NPV", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1205,7 +1205,7 @@ module CreditDefaultSwapFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_result", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_result", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1247,7 +1247,7 @@ module CreditDefaultSwapFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_setPricingEngine", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_setPricingEngine", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1289,7 +1289,7 @@ module CreditDefaultSwapFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_CreditDefaultSwap_valuationDate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_valuationDate", Description="Create a CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1322,7 +1322,7 @@ module CreditDefaultSwapFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CreditDefaultSwap_Range", Description="Create a range of CreditDefaultSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CreditDefaultSwap_Range", Description="Create a range of CreditDefaultSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CreditDefaultSwap_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

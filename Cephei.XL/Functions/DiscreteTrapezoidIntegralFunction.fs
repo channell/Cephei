@@ -37,7 +37,7 @@ module DiscreteTrapezoidIntegralFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscreteTrapezoidIntegral_value", Description="Create a DiscreteTrapezoidIntegral",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscreteTrapezoidIntegral_value", Description="Create a DiscreteTrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegral_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -82,7 +82,7 @@ module DiscreteTrapezoidIntegralFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DiscreteTrapezoidIntegral_Range", Description="Create a range of DiscreteTrapezoidIntegral",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscreteTrapezoidIntegral_Range", Description="Create a range of DiscreteTrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegral_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

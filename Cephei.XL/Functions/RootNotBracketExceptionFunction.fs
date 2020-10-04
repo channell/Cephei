@@ -37,7 +37,7 @@ module RootNotBracketExceptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RootNotBracketException", Description="Create a RootNotBracketException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RootNotBracketException", Description="Create a RootNotBracketException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RootNotBracketException_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module RootNotBracketExceptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RootNotBracketException1", Description="Create a RootNotBracketException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RootNotBracketException1", Description="Create a RootNotBracketException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RootNotBracketException_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module RootNotBracketExceptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RootNotBracketException2", Description="Create a RootNotBracketException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RootNotBracketException2", Description="Create a RootNotBracketException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RootNotBracketException_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module RootNotBracketExceptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_RootNotBracketException_Range", Description="Create a range of RootNotBracketException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RootNotBracketException_Range", Description="Create a range of RootNotBracketException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RootNotBracketException_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

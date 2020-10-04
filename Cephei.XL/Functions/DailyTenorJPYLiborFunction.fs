@@ -37,7 +37,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor1", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor1", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module DailyTenorJPYLiborFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_businessDayConvention", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_businessDayConvention", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module DailyTenorJPYLiborFunction =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_clone", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_clone", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -195,7 +195,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_endOfMonth", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_endOfMonth", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -231,7 +231,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_forecastFixing1", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_forecastFixing1", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_forecastFixing", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_forecastFixing", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -327,7 +327,7 @@ module DailyTenorJPYLiborFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_forwardingTermStructure", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_forwardingTermStructure", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -363,7 +363,7 @@ module DailyTenorJPYLiborFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_maturityDate", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_maturityDate", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -405,7 +405,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_currency", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_currency", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -441,7 +441,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_dayCounter", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_dayCounter", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -477,7 +477,7 @@ module DailyTenorJPYLiborFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_familyName", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_familyName", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -513,7 +513,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_fixing", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_fixing", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -561,7 +561,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_fixingCalendar", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_fixingCalendar", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -597,7 +597,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_fixingDate", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_fixingDate", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -639,7 +639,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_fixingDays", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_fixingDays", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -675,7 +675,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_isValidFixingDate", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_isValidFixingDate", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -717,7 +717,7 @@ module DailyTenorJPYLiborFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_name", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_name", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -753,7 +753,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_pastFixing", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_pastFixing", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -795,7 +795,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_tenor", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_tenor", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -831,7 +831,7 @@ module DailyTenorJPYLiborFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_update", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_update", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -867,7 +867,7 @@ module DailyTenorJPYLiborFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_valueDate", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_valueDate", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -909,7 +909,7 @@ module DailyTenorJPYLiborFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_addFixing", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_addFixing", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -963,7 +963,7 @@ module DailyTenorJPYLiborFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_addFixings", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_addFixings", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1017,7 +1017,7 @@ module DailyTenorJPYLiborFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_addFixings1", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_addFixings1", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1065,7 +1065,7 @@ module DailyTenorJPYLiborFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_allowsNativeFixings", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_allowsNativeFixings", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1101,7 +1101,7 @@ module DailyTenorJPYLiborFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_clearFixings", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_clearFixings", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1137,7 +1137,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_registerWith", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_registerWith", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1179,7 +1179,7 @@ module DailyTenorJPYLiborFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_timeSeries", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_timeSeries", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1215,7 +1215,7 @@ module DailyTenorJPYLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_unregisterWith", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_unregisterWith", Description="Create a DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1254,7 +1254,7 @@ module DailyTenorJPYLiborFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DailyTenorJPYLibor_Range", Description="Create a range of DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorJPYLibor_Range", Description="Create a range of DailyTenorJPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorJPYLibor_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

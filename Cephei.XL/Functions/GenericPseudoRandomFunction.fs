@@ -37,7 +37,7 @@ module GenericPseudoRandomFunction =
     (*
         more traits
     *)
-    [<ExcelFunction(Name="_GenericPseudoRandom_allowsErrorEstimate", Description="Create a GenericPseudoRandom",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericPseudoRandom_allowsErrorEstimate", Description="Create a GenericPseudoRandom",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericPseudoRandom_allowsErrorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module GenericPseudoRandomFunction =
     (*
         factory
     *)
-    [<ExcelFunction(Name="_GenericPseudoRandom_make_sequence_generator", Description="Create a GenericPseudoRandom",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericPseudoRandom_make_sequence_generator", Description="Create a GenericPseudoRandom",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericPseudoRandom_make_sequence_generator
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -118,7 +118,7 @@ module GenericPseudoRandomFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GenericPseudoRandom_Range", Description="Create a range of GenericPseudoRandom",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericPseudoRandom_Range", Description="Create a range of GenericPseudoRandom",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericPseudoRandom_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module AbcdMathFunctionFunction =
     (*
         ! Inspectors
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_a", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_a", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_a
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module AbcdMathFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module AbcdMathFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction1", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction1", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -165,7 +165,7 @@ module AbcdMathFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_b", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_b", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_b
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -201,7 +201,7 @@ module AbcdMathFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_c", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_c", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_c
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -237,7 +237,7 @@ module AbcdMathFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_coefficients", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_coefficients", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_coefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -273,7 +273,7 @@ module AbcdMathFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_d", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_d", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_d
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -309,7 +309,7 @@ module AbcdMathFunctionFunction =
     (*
         ! coefficients of a AbcdMathFunction defined as definite derivative on a rolling window of length tau, with tau = t2-t
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_definiteDerivativeCoefficients", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_definiteDerivativeCoefficients", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_definiteDerivativeCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -357,7 +357,7 @@ module AbcdMathFunctionFunction =
     (*
         ! definite integral of the function between t1 and t2 \f[ \int_{t1}^{t2} f(t)dt \f]
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_definiteIntegral", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_definiteIntegral", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_definiteIntegral
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -405,7 +405,7 @@ module AbcdMathFunctionFunction =
     (*
         ! coefficients of a AbcdMathFunction defined as definite integral on a rolling window of length tau, with tau = t2-t
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_definiteIntegralCoefficients", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_definiteIntegralCoefficients", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_definiteIntegralCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -453,7 +453,7 @@ module AbcdMathFunctionFunction =
     (*
         ! first derivative of the function at time t \f[ f'(t) = [ (b-c*a) + (-c*b)*t) ] e^{-c*t} \f]
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_derivative", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_derivative", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -495,7 +495,7 @@ module AbcdMathFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_derivativeCoefficients", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_derivativeCoefficients", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_derivativeCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -531,7 +531,7 @@ module AbcdMathFunctionFunction =
     (*
         ! function value at time +inf: \f[ f(\inf) \f]
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_longTermValue", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_longTermValue", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_longTermValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -567,7 +567,7 @@ module AbcdMathFunctionFunction =
     (*
         ! time at which the function reaches maximum (if any)
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_maximumLocation", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_maximumLocation", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_maximumLocation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -603,7 +603,7 @@ module AbcdMathFunctionFunction =
     (*
         ! maximum value of the function
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_maximumValue", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_maximumValue", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_maximumValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -639,7 +639,7 @@ module AbcdMathFunctionFunction =
     (*
         ! indefinite integral of the function at time t \f[ \int f(t)dt = [ (-a/c-b/c^2) + (-b/c)*t ] e^{-c*t} + d*t \f]
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_primitive", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_primitive", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -681,7 +681,7 @@ module AbcdMathFunctionFunction =
     (*
         ! function value at time t: \f[ f(t) \f]
     *)
-    [<ExcelFunction(Name="_AbcdMathFunction_value", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_value", Description="Create a AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -720,7 +720,7 @@ module AbcdMathFunctionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AbcdMathFunction_Range", Description="Create a range of AbcdMathFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdMathFunction_Range", Description="Create a range of AbcdMathFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdMathFunction_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

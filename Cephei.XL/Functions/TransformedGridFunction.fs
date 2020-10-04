@@ -37,7 +37,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid_dx", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid_dx", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_dx
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid_dxArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid_dxArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_dxArray
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid_dxm", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid_dxm", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_dxm
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -157,7 +157,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid_dxmArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid_dxmArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_dxmArray
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -193,7 +193,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid_dxp", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid_dxp", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_dxp
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -235,7 +235,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid_dxpArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid_dxpArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_dxpArray
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -271,7 +271,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid_grid", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid_grid", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid_gridArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid_gridArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_gridArray
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -349,7 +349,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid_size", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid_size", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -385,7 +385,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid_transformedGrid", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid_transformedGrid", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_transformedGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -427,7 +427,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid1", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid1", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -507,7 +507,7 @@ module TransformedGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TransformedGrid_transformedGridArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid_transformedGridArray", Description="Create a TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_transformedGridArray
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -540,7 +540,7 @@ module TransformedGridFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TransformedGrid_Range", Description="Create a range of TransformedGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TransformedGrid_Range", Description="Create a range of TransformedGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TransformedGrid_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

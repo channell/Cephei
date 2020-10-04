@@ -37,7 +37,7 @@ module XABRCoeffHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder_addParams_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_addParams_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_addParams_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module XABRCoeffHolderFunction =
     (*
         ! Interpolation results
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder_error_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_error_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_error_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module XABRCoeffHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder_forward_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_forward_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_forward_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module XABRCoeffHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder_maxError_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_maxError_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_maxError_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module XABRCoeffHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder_model_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_model_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_model_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module XABRCoeffHolderFunction =
     (*
         ! Model instance (if required)
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder_modelInstance_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_modelInstance_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_modelInstance_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module XABRCoeffHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder_paramIsFixed_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_paramIsFixed_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_paramIsFixed_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -289,7 +289,7 @@ module XABRCoeffHolderFunction =
     (*
         ! Parameters
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder_params_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_params_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_params_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -325,7 +325,7 @@ module XABRCoeffHolderFunction =
     (*
         ! Expiry, Forward
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder_t_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_t_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_t_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -361,7 +361,7 @@ module XABRCoeffHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder_updateModelInstance", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_updateModelInstance", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_updateModelInstance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -397,7 +397,7 @@ module XABRCoeffHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder_weights_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_weights_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_weights_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -433,7 +433,7 @@ module XABRCoeffHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -494,7 +494,7 @@ module XABRCoeffHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRCoeffHolder_XABREndCriteria_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_XABREndCriteria_", Description="Create a XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_XABREndCriteria_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -527,7 +527,7 @@ module XABRCoeffHolderFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_XABRCoeffHolder_Range", Description="Create a range of XABRCoeffHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRCoeffHolder_Range", Description="Create a range of XABRCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRCoeffHolder_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

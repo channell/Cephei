@@ -37,7 +37,7 @@ module StockFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Stock_isExpired", Description="Create a Stock",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Stock_isExpired", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module StockFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Stock", Description="Create a Stock",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Stock", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module StockFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Stock_CASH", Description="Create a Stock",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Stock_CASH", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module StockFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Stock_errorEstimate", Description="Create a Stock",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Stock_errorEstimate", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module StockFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Stock_NPV", Description="Create a Stock",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Stock_NPV", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module StockFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_Stock_result", Description="Create a Stock",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Stock_result", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module StockFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_Stock_setPricingEngine", Description="Create a Stock",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Stock_setPricingEngine", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module StockFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_Stock_valuationDate", Description="Create a Stock",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Stock_valuationDate", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -347,7 +347,7 @@ module StockFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Stock_Range", Description="Create a range of Stock",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Stock_Range", Description="Create a range of Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

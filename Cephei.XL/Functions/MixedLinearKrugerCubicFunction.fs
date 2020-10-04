@@ -37,7 +37,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_derivative", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_derivative", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_empty", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_empty", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_primitive", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_primitive", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_secondDerivative", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_secondDerivative", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_update", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_update", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_value1", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_value1", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_value", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_value", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_xMax", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_xMax", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_xMin", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_xMin", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_allowsExtrapolation", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_allowsExtrapolation", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_disableExtrapolation", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_disableExtrapolation", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_enableExtrapolation", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_enableExtrapolation", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module MixedLinearKrugerCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_extrapolate", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_extrapolate", Description="Create a MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -629,7 +629,7 @@ module MixedLinearKrugerCubicFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MixedLinearKrugerCubic_Range", Description="Create a range of MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearKrugerCubic_Range", Description="Create a range of MixedLinearKrugerCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearKrugerCubic_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_atmRate", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_atmRate", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_atmRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_capRates", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_capRates", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_capRates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -176,7 +176,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_floatingLeg", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_floatingLeg", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_floatingLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -212,7 +212,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_floorRates", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_floorRates", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_floorRates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -248,7 +248,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_getType", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_getType", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_getType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_impliedVolatility", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_impliedVolatility", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_impliedVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_impliedVolatility1", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_impliedVolatility1", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_impliedVolatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_isExpired", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_isExpired", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_lastFloatingRateCoupon", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_lastFloatingRateCoupon", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_lastFloatingRateCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_maturityDate", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_maturityDate", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -548,7 +548,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_optionlet", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_optionlet", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_optionlet
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -590,7 +590,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_startDate", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_startDate", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -626,7 +626,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_CASH", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_CASH", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -662,7 +662,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_errorEstimate", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_errorEstimate", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -698,7 +698,7 @@ module CollarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Collar_NPV", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_NPV", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -734,7 +734,7 @@ module CollarFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_Collar_result", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_result", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -776,7 +776,7 @@ module CollarFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_Collar_setPricingEngine", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_setPricingEngine", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -818,7 +818,7 @@ module CollarFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_Collar_valuationDate", Description="Create a Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_valuationDate", Description="Create a Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -851,7 +851,7 @@ module CollarFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Collar_Range", Description="Create a range of Collar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Collar_Range", Description="Create a range of Collar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Collar_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

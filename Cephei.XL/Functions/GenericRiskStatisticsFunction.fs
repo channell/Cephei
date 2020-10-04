@@ -37,7 +37,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_add", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_add", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_addSequence", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_addSequence", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_addSequence
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module GenericRiskStatisticsFunction =
     (*
         averaged shortfallness
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_averageShortfall", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_averageShortfall", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_averageShortfall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -175,7 +175,7 @@ module GenericRiskStatisticsFunction =
     (*
         ! returns the downside deviation, defined as the square root of the downside variance.
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_downsideDeviation", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_downsideDeviation", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_downsideDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -211,7 +211,7 @@ module GenericRiskStatisticsFunction =
     (*
         returns the variance of observations below 0.0,
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_downsideVariance", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_downsideVariance", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_downsideVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -247,7 +247,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_errorEstimate", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_errorEstimate", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -283,7 +283,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_expectationValue", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_expectationValue", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_expectationValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -331,7 +331,7 @@ module GenericRiskStatisticsFunction =
     (*
         ! returns the expected loss in case that the loss exceeded a VaR threshold,  that is the average of observations below the given percentile \f$ p \f$. Also know as conditional value-at-risk.  See Artzner, Delbaen, Eber and Heath, "Coherent measures of risk", Mathematical Finance 9 (1999)
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_expectedShortfall", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_expectedShortfall", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_expectedShortfall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -373,7 +373,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_kurtosis", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_kurtosis", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_kurtosis
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -409,7 +409,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_max", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_max", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_max
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -445,7 +445,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_mean", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_mean", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_mean
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -481,7 +481,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_min", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_min", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_min
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -517,7 +517,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_percentile", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_percentile", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_percentile
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -559,7 +559,7 @@ module GenericRiskStatisticsFunction =
     (*
         ! potential upside (the reciprocal of VAR) at a given percentile
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_potentialUpside", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_potentialUpside", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_potentialUpside
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -601,7 +601,7 @@ module GenericRiskStatisticsFunction =
     (*
         ! returns the variance of observations below target, See Dembo and Freeman, "The Rules Of Risk", Wiley (2001).
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_regret", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_regret", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_regret
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -643,7 +643,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_reset", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_reset", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -679,7 +679,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_samples", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_samples", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_samples
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -715,7 +715,7 @@ module GenericRiskStatisticsFunction =
     (*
         ! returns the semi deviation, defined as the square root of the semi variance.
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_semiDeviation", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_semiDeviation", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_semiDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -751,7 +751,7 @@ module GenericRiskStatisticsFunction =
     (*
         ! returns the variance of observations below the mean, See Markowitz (1959).
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_semiVariance", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_semiVariance", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_semiVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -787,7 +787,7 @@ module GenericRiskStatisticsFunction =
     (*
         probability of missing the given target
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_shortfall", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_shortfall", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_shortfall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -829,7 +829,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_skewness", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_skewness", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_skewness
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -865,7 +865,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_standardDeviation", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_standardDeviation", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_standardDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -901,7 +901,7 @@ module GenericRiskStatisticsFunction =
     (*
         ! value-at-risk at a given percentile
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_valueAtRisk", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_valueAtRisk", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_valueAtRisk
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -943,7 +943,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_variance", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_variance", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -979,7 +979,7 @@ module GenericRiskStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericRiskStatistics_weightSum", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_weightSum", Description="Create a GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_weightSum
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1012,7 +1012,7 @@ module GenericRiskStatisticsFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GenericRiskStatistics_Range", Description="Create a range of GenericRiskStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericRiskStatistics_Range", Description="Create a range of GenericRiskStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericRiskStatistics_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

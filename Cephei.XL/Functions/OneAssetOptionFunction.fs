@@ -37,7 +37,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_delta", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_delta", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_delta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_deltaForward", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_deltaForward", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_deltaForward
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_dividendRho", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_dividendRho", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_dividendRho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_elasticity", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_elasticity", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_elasticity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_gamma", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_gamma", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_gamma
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_isExpired", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_isExpired", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_itmCashProbability", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_itmCashProbability", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_itmCashProbability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -289,7 +289,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_rho", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_rho", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_rho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_strikeSensitivity", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_strikeSensitivity", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_strikeSensitivity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_theta", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_theta", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_theta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_thetaPerDay", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_thetaPerDay", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_thetaPerDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -488,7 +488,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_vega", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_vega", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_vega
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_exercise", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_exercise", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_exercise
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -560,7 +560,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_payoff", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_payoff", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_payoff
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_CASH", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_CASH", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_errorEstimate", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_errorEstimate", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -668,7 +668,7 @@ module OneAssetOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OneAssetOption_NPV", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_NPV", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -704,7 +704,7 @@ module OneAssetOptionFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_OneAssetOption_result", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_result", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -746,7 +746,7 @@ module OneAssetOptionFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_OneAssetOption_setPricingEngine", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_setPricingEngine", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -788,7 +788,7 @@ module OneAssetOptionFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_OneAssetOption_valuationDate", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_valuationDate", Description="Create a OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -821,7 +821,7 @@ module OneAssetOptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_OneAssetOption_Range", Description="Create a range of OneAssetOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OneAssetOption_Range", Description="Create a range of OneAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OneAssetOption_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

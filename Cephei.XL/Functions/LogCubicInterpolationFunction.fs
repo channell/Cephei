@@ -37,7 +37,7 @@ module LogCubicInterpolationFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module LogCubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_derivative", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_derivative", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module LogCubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_empty", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_empty", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module LogCubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_primitive", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_primitive", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module LogCubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_secondDerivative", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_secondDerivative", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -302,7 +302,7 @@ module LogCubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_update", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_update", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -338,7 +338,7 @@ module LogCubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_value1", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_value1", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module LogCubicInterpolationFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_value", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_value", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module LogCubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_xMax", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_xMax", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -464,7 +464,7 @@ module LogCubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_xMin", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_xMin", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module LogCubicInterpolationFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_allowsExtrapolation", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_allowsExtrapolation", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -536,7 +536,7 @@ module LogCubicInterpolationFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_disableExtrapolation", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_disableExtrapolation", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -578,7 +578,7 @@ module LogCubicInterpolationFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_enableExtrapolation", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_enableExtrapolation", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -620,7 +620,7 @@ module LogCubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubicInterpolation_extrapolate", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_extrapolate", Description="Create a LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -653,7 +653,7 @@ module LogCubicInterpolationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LogCubicInterpolation_Range", Description="Create a range of LogCubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubicInterpolation_Range", Description="Create a range of LogCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubicInterpolation_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

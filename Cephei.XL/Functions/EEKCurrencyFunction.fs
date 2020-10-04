@@ -37,7 +37,7 @@ module EEKCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EEKCurrency", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module EEKCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_EEKCurrency_code", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_code", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module EEKCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_EEKCurrency_empty", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_empty", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module EEKCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EEKCurrency_Equals", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_Equals", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module EEKCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_EEKCurrency_format", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_format", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module EEKCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_EEKCurrency_fractionsPerUnit", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_fractionsPerUnit", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module EEKCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_EEKCurrency_fractionSymbol", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_fractionSymbol", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module EEKCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_EEKCurrency_name", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_name", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module EEKCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_EEKCurrency_numericCode", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_numericCode", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module EEKCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_EEKCurrency_rounding", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_rounding", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module EEKCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_EEKCurrency_symbol", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_symbol", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module EEKCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EEKCurrency_ToString", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_ToString", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module EEKCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_EEKCurrency_triangulationCurrency", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_triangulationCurrency", Description="Create a EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module EEKCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_EEKCurrency_Range", Description="Create a range of EEKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EEKCurrency_Range", Description="Create a range of EEKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EEKCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

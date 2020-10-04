@@ -37,7 +37,7 @@ module DigitalReplicationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalReplication", Description="Create a DigitalReplication",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalReplication", Description="Create a DigitalReplication",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalReplication_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module DigitalReplicationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalReplication_gap", Description="Create a DigitalReplication",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalReplication_gap", Description="Create a DigitalReplication",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalReplication_gap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module DigitalReplicationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalReplication_replicationType", Description="Create a DigitalReplication",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalReplication_replicationType", Description="Create a DigitalReplication",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalReplication_replicationType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -149,7 +149,7 @@ module DigitalReplicationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DigitalReplication_Range", Description="Create a range of DigitalReplication",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalReplication_Range", Description="Create a range of DigitalReplication",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalReplication_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

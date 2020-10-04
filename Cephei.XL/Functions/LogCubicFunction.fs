@@ -37,7 +37,7 @@ module LogCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubic_global", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubic_global", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_global
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module LogCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubic_interpolate", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubic_interpolate", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_interpolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -127,7 +127,7 @@ module LogCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubic", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubic", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module LogCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubic1", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubic1", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -225,7 +225,7 @@ module LogCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogCubic_requiredPoints", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubic_requiredPoints", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_requiredPoints
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -258,7 +258,7 @@ module LogCubicFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LogCubic_Range", Description="Create a range of LogCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogCubic_Range", Description="Create a range of LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

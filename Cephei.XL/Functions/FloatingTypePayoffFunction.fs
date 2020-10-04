@@ -37,7 +37,7 @@ module FloatingTypePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingTypePayoff", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingTypePayoff", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module FloatingTypePayoffFunction =
     (*
         Payoff interface
     *)
-    [<ExcelFunction(Name="_FloatingTypePayoff_name", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingTypePayoff_name", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module FloatingTypePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingTypePayoff_value", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingTypePayoff_value", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module FloatingTypePayoffFunction =
     (*
         Payoff interface
     *)
-    [<ExcelFunction(Name="_FloatingTypePayoff_description", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingTypePayoff_description", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_description
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module FloatingTypePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingTypePayoff_optionType", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingTypePayoff_optionType", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_optionType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -224,7 +224,7 @@ module FloatingTypePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingTypePayoff_accept", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingTypePayoff_accept", Description="Create a FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -263,7 +263,7 @@ module FloatingTypePayoffFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FloatingTypePayoff_Range", Description="Create a range of FloatingTypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingTypePayoff_Range", Description="Create a range of FloatingTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingTypePayoff_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -38,7 +38,7 @@ module TridiagonalOperatorFunction =
         
     *)
     (*!! duplicate add function)
-    [<ExcelFunction(Name="_TridiagonalOperator_add", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_add", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -87,7 +87,7 @@ module TridiagonalOperatorFunction =
     (*
         ! apply operator to a given array
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_applyTo", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_applyTo", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_applyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -129,7 +129,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_Clone", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_Clone", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_Clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -165,7 +165,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_diagonal", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_diagonal", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_diagonal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -201,7 +201,7 @@ module TridiagonalOperatorFunction =
     (*
         ! identity instance
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_identity", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_identity", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_identity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -243,7 +243,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_isTimeDependent", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_isTimeDependent", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_isTimeDependent
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -279,7 +279,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_lowerDiagonal", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_lowerDiagonal", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_lowerDiagonal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -315,7 +315,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_multiply", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_multiply", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_multiply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -363,7 +363,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_setFirstRow", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_setFirstRow", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_setFirstRow
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -411,7 +411,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_setLastRow", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_setLastRow", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_setLastRow
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -459,7 +459,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_setMidRow", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_setMidRow", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_setMidRow
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -519,7 +519,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_setMidRows", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_setMidRows", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_setMidRows
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -573,7 +573,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_setTime", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_setTime", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_setTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -615,7 +615,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_size", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_size", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -651,7 +651,7 @@ module TridiagonalOperatorFunction =
     (*
         ! solve linear system for a given right-hand side
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_solveFor", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_solveFor", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_solveFor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -693,7 +693,7 @@ module TridiagonalOperatorFunction =
     (*
         ! solve linear system with SOR approach
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_SOR", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_SOR", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_SOR
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -741,7 +741,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_subtract", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_subtract", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_subtract
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -789,7 +789,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator1", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator1", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -838,7 +838,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator2", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator2", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -875,7 +875,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -906,7 +906,7 @@ module TridiagonalOperatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TridiagonalOperator_upperDiagonal", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_upperDiagonal", Description="Create a TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_upperDiagonal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -939,7 +939,7 @@ module TridiagonalOperatorFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TridiagonalOperator_Range", Description="Create a range of TridiagonalOperator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TridiagonalOperator_Range", Description="Create a range of TridiagonalOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TridiagonalOperator_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

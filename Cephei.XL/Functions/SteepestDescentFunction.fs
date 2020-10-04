@@ -37,7 +37,7 @@ module SteepestDescentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SteepestDescent", Description="Create a SteepestDescent",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SteepestDescent", Description="Create a SteepestDescent",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SteepestDescent_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module SteepestDescentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SteepestDescent_minimize", Description="Create a SteepestDescent",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SteepestDescent_minimize", Description="Create a SteepestDescent",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SteepestDescent_minimize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module SteepestDescentFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SteepestDescent_Range", Description="Create a range of SteepestDescent",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SteepestDescent_Range", Description="Create a range of SteepestDescent",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SteepestDescent_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

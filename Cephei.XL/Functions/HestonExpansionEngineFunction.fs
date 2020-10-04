@@ -38,7 +38,7 @@ module HestonExpansionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonExpansionEngine", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonExpansionEngine", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -82,7 +82,7 @@ module HestonExpansionEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_HestonExpansionEngine_setModel", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonExpansionEngine_setModel", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_setModel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -124,7 +124,7 @@ module HestonExpansionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonExpansionEngine_registerWith", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonExpansionEngine_registerWith", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -166,7 +166,7 @@ module HestonExpansionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonExpansionEngine_reset", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonExpansionEngine_reset", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -202,7 +202,7 @@ module HestonExpansionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonExpansionEngine_unregisterWith", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonExpansionEngine_unregisterWith", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -244,7 +244,7 @@ module HestonExpansionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonExpansionEngine_update", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonExpansionEngine_update", Description="Create a HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module HestonExpansionEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_HestonExpansionEngine_Range", Description="Create a range of HestonExpansionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonExpansionEngine_Range", Description="Create a range of HestonExpansionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonExpansionEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

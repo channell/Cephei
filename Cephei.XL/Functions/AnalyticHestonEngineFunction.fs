@@ -37,7 +37,7 @@ module AnalyticHestonEngineFunction =
     (*
         Constructor giving full control over the Fourier integration algorithm
     *)
-    [<ExcelFunction(Name="_AnalyticHestonEngine", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticHestonEngine", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module AnalyticHestonEngineFunction =
     (*
         Constructor using Laguerre integration and Gatheral's version of complex log.
     *)
-    [<ExcelFunction(Name="_AnalyticHestonEngine1", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticHestonEngine1", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -129,7 +129,7 @@ module AnalyticHestonEngineFunction =
     (*
         Simple to use constructor: Using adaptive Gauss-Lobatto integration and Gatheral's version of complex log. Be aware: using a too large number for maxEvaluations might result in a stack overflow as the Lobatto integration is a recursive algorithm.
     *)
-    [<ExcelFunction(Name="_AnalyticHestonEngine", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticHestonEngine", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -178,7 +178,7 @@ module AnalyticHestonEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticHestonEngine_numberOfEvaluations", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticHestonEngine_numberOfEvaluations", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_numberOfEvaluations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -215,7 +215,7 @@ module AnalyticHestonEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_AnalyticHestonEngine_setModel", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticHestonEngine_setModel", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_setModel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -258,7 +258,7 @@ module AnalyticHestonEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticHestonEngine_registerWith", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticHestonEngine_registerWith", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -300,7 +300,7 @@ module AnalyticHestonEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticHestonEngine_reset", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticHestonEngine_reset", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -336,7 +336,7 @@ module AnalyticHestonEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticHestonEngine_unregisterWith", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticHestonEngine_unregisterWith", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -378,7 +378,7 @@ module AnalyticHestonEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticHestonEngine_update", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticHestonEngine_update", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -411,7 +411,7 @@ module AnalyticHestonEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AnalyticHestonEngine_Range", Description="Create a range of AnalyticHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticHestonEngine_Range", Description="Create a range of AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

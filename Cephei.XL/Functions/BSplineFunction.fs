@@ -37,7 +37,7 @@ module BSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BSpline", Description="Create a BSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BSpline", Description="Create a BSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSpline_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module BSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BSpline_value", Description="Create a BSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BSpline_value", Description="Create a BSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSpline_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -131,7 +131,7 @@ module BSplineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BSpline_Range", Description="Create a range of BSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BSpline_Range", Description="Create a range of BSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSpline_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

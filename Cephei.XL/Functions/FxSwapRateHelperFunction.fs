@@ -37,7 +37,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_businessDayConvention", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_businessDayConvention", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_calendar", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_calendar", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_endOfMonth", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_endOfMonth", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_fixingDays", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_fixingDays", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module FxSwapRateHelperFunction =
     (*
         RateHelper interface
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_impliedQuote", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_impliedQuote", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_impliedQuote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -302,7 +302,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_isFxBaseCurrencyCollateralCurrency", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_isFxBaseCurrencyCollateralCurrency", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_isFxBaseCurrencyCollateralCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -338,7 +338,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_setTermStructure", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_setTermStructure", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_setTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module FxSwapRateHelperFunction =
     (*
         FxSwapRateHelper inspectors
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_spot", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_spot", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_spot
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_tenor", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_tenor", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module FxSwapRateHelperFunction =
     (*
         ! Observer interface
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_update", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_update", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -488,7 +488,7 @@ module FxSwapRateHelperFunction =
     (*
         earliest relevant date The earliest date at which discounts are needed by the helper in order to provide a quote.
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_earliestDate", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_earliestDate", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_earliestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module FxSwapRateHelperFunction =
     (*
         The latest date at which discounts are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_latestDate", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_latestDate", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_latestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -560,7 +560,7 @@ module FxSwapRateHelperFunction =
     (*
         ! The latest date at which data are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_latestRelevantDate", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_latestRelevantDate", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_latestRelevantDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module FxSwapRateHelperFunction =
     (*
         ! instrument's maturity date
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_maturityDate", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_maturityDate", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module FxSwapRateHelperFunction =
     (*
         ! pillar date
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_pillarDate", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_pillarDate", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_pillarDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -668,7 +668,7 @@ module FxSwapRateHelperFunction =
     (*
         ! BootstrapHelper interface
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_quote", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_quote", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_quote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -704,7 +704,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_quoteError", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_quoteError", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_quoteError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -740,7 +740,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_quoteIsValid", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_quoteIsValid", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_quoteIsValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -776,7 +776,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_quoteValue", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_quoteValue", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_quoteValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -812,7 +812,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_registerWith", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_registerWith", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -854,7 +854,7 @@ module FxSwapRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FxSwapRateHelper_unregisterWith", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_unregisterWith", Description="Create a FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -893,7 +893,7 @@ module FxSwapRateHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FxSwapRateHelper_Range", Description="Create a range of FxSwapRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FxSwapRateHelper_Range", Description="Create a range of FxSwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FxSwapRateHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

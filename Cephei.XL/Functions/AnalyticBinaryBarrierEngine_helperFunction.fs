@@ -37,7 +37,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticBinaryBarrierEngine_helper", Description="Create a AnalyticBinaryBarrierEngine_helper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticBinaryBarrierEngine_helper", Description="Create a AnalyticBinaryBarrierEngine_helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBinaryBarrierEngine_helper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticBinaryBarrierEngine_helper_payoffAtExpiry", Description="Create a AnalyticBinaryBarrierEngine_helper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticBinaryBarrierEngine_helper_payoffAtExpiry", Description="Create a AnalyticBinaryBarrierEngine_helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBinaryBarrierEngine_helper_payoffAtExpiry
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -143,7 +143,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AnalyticBinaryBarrierEngine_helper_Range", Description="Create a range of AnalyticBinaryBarrierEngine_helper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticBinaryBarrierEngine_helper_Range", Description="Create a range of AnalyticBinaryBarrierEngine_helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBinaryBarrierEngine_helper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

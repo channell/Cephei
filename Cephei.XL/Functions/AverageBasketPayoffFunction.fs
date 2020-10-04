@@ -37,7 +37,7 @@ module AverageBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBasketPayoff_accumulate", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBasketPayoff_accumulate", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_accumulate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module AverageBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBasketPayoff1", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBasketPayoff1", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module AverageBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBasketPayoff", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBasketPayoff", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -165,7 +165,7 @@ module AverageBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBasketPayoff_basePayoff", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBasketPayoff_basePayoff", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_basePayoff
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -201,7 +201,7 @@ module AverageBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBasketPayoff_description", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBasketPayoff_description", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_description
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -237,7 +237,7 @@ module AverageBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBasketPayoff_name", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBasketPayoff_name", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -273,7 +273,7 @@ module AverageBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBasketPayoff_value1", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBasketPayoff_value1", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -315,7 +315,7 @@ module AverageBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBasketPayoff_value", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBasketPayoff_value", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -357,7 +357,7 @@ module AverageBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBasketPayoff_accept", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBasketPayoff_accept", Description="Create a AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -396,7 +396,7 @@ module AverageBasketPayoffFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AverageBasketPayoff_Range", Description="Create a range of AverageBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBasketPayoff_Range", Description="Create a range of AverageBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBasketPayoff_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

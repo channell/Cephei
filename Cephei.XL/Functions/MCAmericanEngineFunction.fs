@@ -38,7 +38,7 @@ module MCAmericanEngineFunction =
     (*
         int nCalibrationSamples = Null<Size>())
     *)
-    [<ExcelFunction(Name="_MCAmericanEngine", Description="Create a MCAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCAmericanEngine", Description="Create a MCAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCAmericanEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -138,7 +138,7 @@ module MCAmericanEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MCAmericanEngine_Range", Description="Create a range of MCAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCAmericanEngine_Range", Description="Create a range of MCAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCAmericanEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

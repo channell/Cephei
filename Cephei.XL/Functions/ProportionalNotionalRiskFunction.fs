@@ -37,7 +37,7 @@ module ProportionalNotionalRiskFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ProportionalNotionalRisk", Description="Create a ProportionalNotionalRisk",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ProportionalNotionalRisk", Description="Create a ProportionalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProportionalNotionalRisk_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module ProportionalNotionalRiskFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ProportionalNotionalRisk_updatePath", Description="Create a ProportionalNotionalRisk",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ProportionalNotionalRisk_updatePath", Description="Create a ProportionalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProportionalNotionalRisk_updatePath
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -131,7 +131,7 @@ module ProportionalNotionalRiskFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ProportionalNotionalRisk_Range", Description="Create a range of ProportionalNotionalRisk",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ProportionalNotionalRisk_Range", Description="Create a range of ProportionalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProportionalNotionalRisk_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

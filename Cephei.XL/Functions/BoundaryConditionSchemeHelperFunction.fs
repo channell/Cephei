@@ -37,7 +37,7 @@ module BoundaryConditionSchemeHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper_applyAfterApplying", Description="Create a BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper_applyAfterApplying", Description="Create a BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConditionSchemeHelper_applyAfterApplying
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module BoundaryConditionSchemeHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper_applyAfterSolving", Description="Create a BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper_applyAfterSolving", Description="Create a BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConditionSchemeHelper_applyAfterSolving
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module BoundaryConditionSchemeHelperFunction =
     (*
         BoundaryCondition inheritance
     *)
-    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper_applyBeforeApplying", Description="Create a BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper_applyBeforeApplying", Description="Create a BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConditionSchemeHelper_applyBeforeApplying
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -163,7 +163,7 @@ module BoundaryConditionSchemeHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper_applyBeforeSolving", Description="Create a BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper_applyBeforeSolving", Description="Create a BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConditionSchemeHelper_applyBeforeSolving
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -211,7 +211,7 @@ module BoundaryConditionSchemeHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper", Description="Create a BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper", Description="Create a BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConditionSchemeHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -248,7 +248,7 @@ module BoundaryConditionSchemeHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper_setTime", Description="Create a BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper_setTime", Description="Create a BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConditionSchemeHelper_setTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -287,7 +287,7 @@ module BoundaryConditionSchemeHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper_Range", Description="Create a range of BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConditionSchemeHelper_Range", Description="Create a range of BoundaryConditionSchemeHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConditionSchemeHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

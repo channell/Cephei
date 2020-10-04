@@ -37,7 +37,7 @@ module FloatingLoanFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingLoan_floatingLeg", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingLoan_floatingLeg", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_floatingLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module FloatingLoanFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingLoan", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingLoan", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module FloatingLoanFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingLoan_principalLeg", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingLoan_principalLeg", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_principalLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module FloatingLoanFunction =
     (*
         Instrument interface
     *)
-    [<ExcelFunction(Name="_FloatingLoan_isExpired", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingLoan_isExpired", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module FloatingLoanFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingLoan_CASH", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingLoan_CASH", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module FloatingLoanFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingLoan_errorEstimate", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingLoan_errorEstimate", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module FloatingLoanFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingLoan_NPV", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingLoan_NPV", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module FloatingLoanFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_FloatingLoan_result", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingLoan_result", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module FloatingLoanFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_FloatingLoan_setPricingEngine", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingLoan_setPricingEngine", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module FloatingLoanFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_FloatingLoan_valuationDate", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingLoan_valuationDate", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -461,7 +461,7 @@ module FloatingLoanFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FloatingLoan_Range", Description="Create a range of FloatingLoan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingLoan_Range", Description="Create a range of FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

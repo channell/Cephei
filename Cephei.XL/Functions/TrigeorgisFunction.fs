@@ -37,7 +37,7 @@ module TrigeorgisFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Trigeorgis_factory", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trigeorgis_factory", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -97,7 +97,7 @@ module TrigeorgisFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Trigeorgis1", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trigeorgis1", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module TrigeorgisFunction =
     (*
         parameterless constructor is requried for generics
     *)
-    [<ExcelFunction(Name="_Trigeorgis", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trigeorgis", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module TrigeorgisFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Trigeorgis_probability", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trigeorgis_probability", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_probability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -237,7 +237,7 @@ module TrigeorgisFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Trigeorgis_underlying", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trigeorgis_underlying", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_underlying
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module TrigeorgisFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Trigeorgis_descendant", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trigeorgis_descendant", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_descendant
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -339,7 +339,7 @@ module TrigeorgisFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Trigeorgis_size", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trigeorgis_size", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -381,7 +381,7 @@ module TrigeorgisFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Trigeorgis_columns", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trigeorgis_columns", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_columns
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -414,7 +414,7 @@ module TrigeorgisFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Trigeorgis_Range", Description="Create a range of Trigeorgis",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trigeorgis_Range", Description="Create a range of Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

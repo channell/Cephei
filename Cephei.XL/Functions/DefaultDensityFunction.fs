@@ -37,7 +37,7 @@ module DefaultDensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DefaultDensity_discountImpl", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DefaultDensity_discountImpl", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_discountImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module DefaultDensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DefaultDensity_forwardImpl", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DefaultDensity_forwardImpl", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_forwardImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module DefaultDensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DefaultDensity_guess", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DefaultDensity_guess", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_guess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -193,7 +193,7 @@ module DefaultDensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DefaultDensity_initialDate", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DefaultDensity_initialDate", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_initialDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -235,7 +235,7 @@ module DefaultDensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DefaultDensity_initialValue", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DefaultDensity_initialValue", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_initialValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module DefaultDensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DefaultDensity_maxIterations", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DefaultDensity_maxIterations", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_maxIterations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module DefaultDensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DefaultDensity_maxValueAfter", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DefaultDensity_maxValueAfter", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_maxValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -373,7 +373,7 @@ module DefaultDensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DefaultDensity_minValueAfter", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DefaultDensity_minValueAfter", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_minValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -433,7 +433,7 @@ module DefaultDensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DefaultDensity_updateGuess", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DefaultDensity_updateGuess", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_updateGuess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -487,7 +487,7 @@ module DefaultDensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DefaultDensity_zeroYieldImpl", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DefaultDensity_zeroYieldImpl", Description="Create a DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_zeroYieldImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -532,7 +532,7 @@ module DefaultDensityFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DefaultDensity_Range", Description="Create a range of DefaultDensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DefaultDensity_Range", Description="Create a range of DefaultDensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DefaultDensity_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

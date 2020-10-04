@@ -37,7 +37,7 @@ module FdmHullWhiteSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmHullWhiteSolver_deltaAt", Description="Create a FdmHullWhiteSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmHullWhiteSolver_deltaAt", Description="Create a FdmHullWhiteSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteSolver_deltaAt
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module FdmHullWhiteSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmHullWhiteSolver", Description="Create a FdmHullWhiteSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmHullWhiteSolver", Description="Create a FdmHullWhiteSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteSolver_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module FdmHullWhiteSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmHullWhiteSolver_gammaAt", Description="Create a FdmHullWhiteSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmHullWhiteSolver_gammaAt", Description="Create a FdmHullWhiteSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteSolver_gammaAt
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module FdmHullWhiteSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmHullWhiteSolver_thetaAt", Description="Create a FdmHullWhiteSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmHullWhiteSolver_thetaAt", Description="Create a FdmHullWhiteSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteSolver_thetaAt
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -212,7 +212,7 @@ module FdmHullWhiteSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmHullWhiteSolver_valueAt", Description="Create a FdmHullWhiteSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmHullWhiteSolver_valueAt", Description="Create a FdmHullWhiteSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteSolver_valueAt
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -251,7 +251,7 @@ module FdmHullWhiteSolverFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmHullWhiteSolver_Range", Description="Create a range of FdmHullWhiteSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmHullWhiteSolver_Range", Description="Create a range of FdmHullWhiteSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmHullWhiteSolver_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

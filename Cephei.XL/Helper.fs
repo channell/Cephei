@@ -45,6 +45,7 @@ module Helper =
     let subscriberModelRange<'t> (format : Generic.List<ICell<'t>> -> string -> obj[,]) (rtd : IValueRTD) (models : ICell) (layout : string) =
         (new RTDModelRangeObserver<'t> (rtd, (models :?> ICell<Generic.List<ICell<'t>>>), format, layout)) :> IDisposable
 
+
     // Summary: Convert the excel value orreference to a cell
     let toCell<'T> (o : obj) (attribute : string) : CellSource<'T> = 
 
@@ -55,8 +56,9 @@ module Helper =
             }
         elif not (o = null) && o :? string then
             let s = o :?> string
-            if  Model.contains (s) then 
-                let c = Model.cell s
+            let c = Model.cell s
+            if c.IsSome then 
+                let c = c.Value
                 if c :? ICell<'T> then
                     { cell = c :?> ICell<'T>
                     ; source = s
@@ -81,10 +83,20 @@ module Helper =
                         { cell = c :?> ICell<'T>
                         ; source = s
                         }
-                elif o.GetType() = typeof<DateTime> then 
+                elif c :? ICell<DateTime> then 
                     let d = c :?> ICell<DateTime>
-                    { cell = withMnemonic c.Mnemonic (triv (fun () -> d.Value.ToOADate() :?> 'T))
-                    ; source = "(" + s + ".ToOADate())"
+                    if typeof<'T> = typeof<int> then
+                        { cell = withMnemonic c.Mnemonic (triv (fun () -> (Convert.ToInt32(d.Value.ToOADate()) :> obj) :?> 'T))
+                        ; source = "(triv (fun () -> " + s + ".ToOADate()))"
+                        }
+                    else
+                        { cell = withMnemonic c.Mnemonic (triv (fun () -> ((d.Value.ToOADate()) :> obj) :?> 'T))
+                        ; source = "(triv (fun () -> " + s + ".ToOADate()))"
+                        }
+                elif typeof<'T>.IsEnum then
+                    let en = Enum.Parse(typeof<'T>, o.ToString()) :?> 'T
+                    { cell = (value en)
+                    ; source =  "(value " + typeof<'T>.Name + "." + en.ToString() + ")"
                     }
                 else    // upcast
                     { cell = withMnemonic c.Mnemonic (triv (fun () -> (c.Box :?> 'T)))
@@ -114,12 +126,35 @@ module Helper =
                 ; source = "(triv (fun () -> " + o.ToString() + " :?> 'T))"
                 }
         else
-             invalidArg (o.ToString()) ("Invalid " + attribute)
+            try
+                if typeof<'T> = typeof<int> then 
+                    { cell = triv (fun () -> Convert.ToInt32(o) :> obj :?> 'T)
+                    ; source = "(triv (fun () -> Convert.ToInt32(" + o.ToString() + ")))"
+                    }
+                elif typeof<'T> = typeof<double> then 
+                    { cell = triv (fun () -> Convert.ToDouble(o) :> obj :?> 'T)
+                    ; source = "(triv (fun () -> Convert.ToDouble(" + o.ToString() + ")))"
+                    }
+                elif typeof<'T> = typeof<int64> then 
+                    { cell = triv (fun () -> Convert.ToInt64(o) :> obj :?> 'T)
+                    ; source = "(triv (fun () -> Convert.ToInt64(" + o.ToString() + ")))"
+                    }
+                elif typeof<'T> = typeof<uint64> then 
+                    { cell = triv (fun () -> Convert.ToUInt64(o) :> obj :?> 'T)
+                    ; source = "(triv (fun () -> Convert.ToInt64(" + o.ToString() + ")))"
+                    }
+                elif typeof<'T> = typeof<string> then 
+                    { cell = triv (fun () -> o.ToString() :> obj :?> 'T)
+                    ; source = "(triv (fun () -> \"" + o.ToString() + "\")))"
+                    }
+                else 
+                    invalidArg (o.ToString()) ("Invalid " + attribute)
+            with | _ -> invalidArg (o.ToString()) ("Invalid " + attribute)
 
     // Summary: convert value or use default
     let toDefault<'T> (o : obj) (attribute : string) (defaultValue : 'T) : CellSource<'T> = 
         if o = null || o :? ExcelDna.Integration.ExcelMissing then 
-            { cell = value defaultValue 
+            { cell = value defaultValue
             ; source = "(value " + defaultValue.ToString() + ")"
             }
         else
@@ -129,17 +164,18 @@ module Helper =
     let toHandle<'T when 'T :> IObservable> (o : obj) (attribute : string) : CellSource<Handle<'T>> = 
         if o :? string then
             let s = o :?> string
-            if typeof<'T> = typeof<string> && Model.contains ((o :?> string)) then
-                let c = Model.cell s :?> ICell<'T>
-                { cell = withMnemonic c.Mnemonic (triv (fun () -> toHandle (c.Value)))
+            let c = Model.cell s
+            if c.IsSome then
+                let c = c.Value :?> ICell<'T>
+                { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle (c.Value)))
                 ; source = "(triv (fun () -> toHandle (" + c.Mnemonic + ")))"
                 }
             else
-                { cell = withMnemonic (formatMnemonic (o.ToString())) (triv (fun () -> toHandle (o :?> 'T)))
-                ; source = "(triv (fun () -> toHandle (" + o.ToString() + ")))"
+                { cell = withMnemonic s (triv (fun () -> Util.toHandle (o :?> 'T)))
+                ; source = "(triv (fun () -> toHandle (" + s + ")))"
                 }
         elif o :? 'T then 
-            { cell =  withMnemonic (formatMnemonic (o.ToString())) (triv (fun () -> toHandle (o :?> 'T)))
+            { cell =  withMnemonic (formatMnemonic (o.ToString())) (triv (fun () -> Util.toHandle (o :?> 'T)))
             ; source = "(triv (fun () -> toHandle (" + o.ToString() + ")))"
             }
         else 
@@ -149,18 +185,19 @@ module Helper =
     let toNullable<'T when 'T :struct and 'T :> ValueType and 'T : (new : unit -> 'T)> (o : obj) (attribute : string) : CellSource<Nullable<'T>> = 
         if o :? string then
             let s = o :?> string
-            if typeof<'T> = typeof<string> && Model.contains ((o :?> string)) then
-                let c = Model.cell s :?> ICell<'T>
-                { cell = triv (fun () -> toNullable (c.Value))
+            let c = Model.cell s
+            if  c.IsSome then
+                let c = c.Value :?> ICell<'T>
+                { cell = triv (fun () -> Util.toNullable (c.Value))
                 ; source ="(triv (fun () -> toNullable (" + c.Mnemonic + ".Value))"
                 }
             else
-                { cell = triv (fun () -> nullableNull<'T> ())
+                { cell = triv (fun () -> Util.nullableNull<'T> ())
                 ; source = "(triv (fun () -> nullableNull<" + typeof<'T>.Name + "> ()))"
                 }
 
         elif o :? 'T then 
-            { cell = triv (fun () -> toNullable (o :?> 'T))
+            { cell = triv (fun () -> Util.toNullable (o :?> 'T))
             ; source = "(triv (fun () -> toNullable (" + o.ToString() + "))"
             }
         else 

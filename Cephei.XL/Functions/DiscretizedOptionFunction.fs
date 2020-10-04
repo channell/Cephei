@@ -37,7 +37,7 @@ module DiscretizedOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedOption", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module DiscretizedOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_mandatoryTimes", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_mandatoryTimes", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_mandatoryTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module DiscretizedOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_reset", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_reset", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module DiscretizedOptionFunction =
     (*
         ! This method performs both pre- and post-adjustment
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_adjustValues", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_adjustValues", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_adjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module DiscretizedOptionFunction =
     (*
         High-level interface  Users of discretized assets should use these methods in order to initialize, evolve and take the present value of the assets.  They call the corresponding methods in the Lattice interface, to which we refer for documentation.
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_initialize", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_initialize", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_initialize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -248,7 +248,7 @@ module DiscretizedOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_method", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_method", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_method
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module DiscretizedOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_partialRollback", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_partialRollback", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_partialRollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module DiscretizedOptionFunction =
     (*
         ! This method will be invoked after rollback and after any other asset had their chance to look at the values. For instance, payments happening at the present time (and therefore not included in an option to be exercised at this time) will be added here.  This method is not virtual; derived classes must override the protected postAdjustValuesImpl() method instead.
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_postAdjustValues", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_postAdjustValues", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_postAdjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module DiscretizedOptionFunction =
     (*
         ! This method will be invoked after rollback and before any other asset (i.e., an option on this one) has any chance to look at the values. For instance, payments happening at times already spanned by the rollback will be added here.  This method is not virtual; derived classes must override the protected preAdjustValuesImpl() method instead.
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_preAdjustValues", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_preAdjustValues", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_preAdjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module DiscretizedOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_presentValue", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_presentValue", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_presentValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module DiscretizedOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_rollback", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_rollback", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_rollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module DiscretizedOptionFunction =
     (*
         safe version of QL double* time()
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_setTime", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_setTime", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_setTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module DiscretizedOptionFunction =
     (*
         safe version of QL Vector* values()
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_setValues", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_setValues", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_setValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -560,7 +560,7 @@ module DiscretizedOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_time", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_time", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_time
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module DiscretizedOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedOption_values", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_values", Description="Create a DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_values
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -629,7 +629,7 @@ module DiscretizedOptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DiscretizedOption_Range", Description="Create a range of DiscretizedOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedOption_Range", Description="Create a range of DiscretizedOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedOption_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

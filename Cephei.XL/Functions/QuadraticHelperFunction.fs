@@ -37,7 +37,7 @@ module QuadraticHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_QuadraticHelper_fNext", Description="Create a QuadraticHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_QuadraticHelper_fNext", Description="Create a QuadraticHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticHelper_fNext
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module QuadraticHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_QuadraticHelper_primitive", Description="Create a QuadraticHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_QuadraticHelper_primitive", Description="Create a QuadraticHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticHelper_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module QuadraticHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_QuadraticHelper", Description="Create a QuadraticHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_QuadraticHelper", Description="Create a QuadraticHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module QuadraticHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_QuadraticHelper_value", Description="Create a QuadraticHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_QuadraticHelper_value", Description="Create a QuadraticHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticHelper_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -221,7 +221,7 @@ module QuadraticHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_QuadraticHelper_Range", Description="Create a range of QuadraticHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_QuadraticHelper_Range", Description="Create a range of QuadraticHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module MonthlyYieldFinderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonthlyYieldFinder", Description="Create a MonthlyYieldFinder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonthlyYieldFinder", Description="Create a MonthlyYieldFinder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonthlyYieldFinder_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module MonthlyYieldFinderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonthlyYieldFinder_value", Description="Create a MonthlyYieldFinder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonthlyYieldFinder_value", Description="Create a MonthlyYieldFinder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonthlyYieldFinder_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module MonthlyYieldFinderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonthlyYieldFinder_derivative", Description="Create a MonthlyYieldFinder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonthlyYieldFinder_derivative", Description="Create a MonthlyYieldFinder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonthlyYieldFinder_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -167,7 +167,7 @@ module MonthlyYieldFinderFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MonthlyYieldFinder_Range", Description="Create a range of MonthlyYieldFinder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonthlyYieldFinder_Range", Description="Create a range of MonthlyYieldFinder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonthlyYieldFinder_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

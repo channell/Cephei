@@ -37,7 +37,7 @@ module BinomialBarrierEngineFunction =
     (*
         ! \param maxTimeSteps is used to limit timeSteps when using Boyle-Lau optimization. If zero (the default) the maximum number of steps is calculated by an heuristic: anything when < 1000, otherwise no more than 5*timeSteps. If maxTimeSteps is equal to timeSteps Boyle-Lau is disabled. Likewise if the lattice is not CoxRossRubinstein Boyle-Lau is disabled and maxTimeSteps ignored.
     *)
-    [<ExcelFunction(Name="_BinomialBarrierEngine", Description="Create a BinomialBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BinomialBarrierEngine", Description="Create a BinomialBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialBarrierEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -100,7 +100,7 @@ module BinomialBarrierEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_BinomialBarrierEngine_getAsset", Description="Create a BinomialBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BinomialBarrierEngine_getAsset", Description="Create a BinomialBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialBarrierEngine_getAsset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -156,7 +156,7 @@ module BinomialBarrierEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_BinomialBarrierEngine_GetTree", Description="Create a BinomialBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BinomialBarrierEngine_GetTree", Description="Create a BinomialBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialBarrierEngine_GetTree
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -214,7 +214,7 @@ module BinomialBarrierEngineFunction =
         else
             "<WIZ>"
             *)
-    [<ExcelFunction(Name="_BinomialBarrierEngine_Range", Description="Create a range of BinomialBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BinomialBarrierEngine_Range", Description="Create a range of BinomialBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialBarrierEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

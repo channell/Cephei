@@ -37,7 +37,7 @@ module GenericTimeSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericTimeSetter", Description="Create a GenericTimeSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericTimeSetter", Description="Create a GenericTimeSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericTimeSetter_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module GenericTimeSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericTimeSetter_setTime", Description="Create a GenericTimeSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericTimeSetter_setTime", Description="Create a GenericTimeSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericTimeSetter_setTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -125,7 +125,7 @@ module GenericTimeSetterFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GenericTimeSetter_Range", Description="Create a range of GenericTimeSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericTimeSetter_Range", Description="Create a range of GenericTimeSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericTimeSetter_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

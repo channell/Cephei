@@ -37,7 +37,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_mandatoryTimes", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_mandatoryTimes", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_mandatoryTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_reset", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_reset", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         ! This method performs both pre- and post-adjustment
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_adjustValues", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_adjustValues", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_adjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         High-level interface  Users of discretized assets should use these methods in order to initialize, evolve and take the present value of the assets.  They call the corresponding methods in the Lattice interface, to which we refer for documentation.
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_initialize", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_initialize", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_initialize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -248,7 +248,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_method", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_method", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_method
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_partialRollback", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_partialRollback", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_partialRollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         ! This method will be invoked after rollback and after any other asset had their chance to look at the values. For instance, payments happening at the present time (and therefore not included in an option to be exercised at this time) will be added here.  This method is not virtual; derived classes must override the protected postAdjustValuesImpl() method instead.
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_postAdjustValues", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_postAdjustValues", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_postAdjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         ! This method will be invoked after rollback and before any other asset (i.e., an option on this one) has any chance to look at the values. For instance, payments happening at times already spanned by the rollback will be added here.  This method is not virtual; derived classes must override the protected preAdjustValuesImpl() method instead.
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_preAdjustValues", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_preAdjustValues", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_preAdjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_presentValue", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_presentValue", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_presentValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_rollback", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_rollback", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_rollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         safe version of QL double* time()
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_setTime", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_setTime", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_setTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         safe version of QL Vector* values()
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_setValues", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_setValues", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_setValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -560,7 +560,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_time", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_time", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_time
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module DiscretizedCallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_values", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_values", Description="Create a DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_values
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -629,7 +629,7 @@ module DiscretizedCallableFixedRateBondFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_Range", Description="Create a range of DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedCallableFixedRateBond_Range", Description="Create a range of DiscretizedCallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedCallableFixedRateBond_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

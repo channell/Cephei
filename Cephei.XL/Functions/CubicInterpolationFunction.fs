@@ -37,7 +37,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_aCoefficients", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_aCoefficients", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_aCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_bCoefficients", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_bCoefficients", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_bCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_cCoefficients", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_cCoefficients", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_cCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_derivative", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_derivative", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_empty", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_empty", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_primitive", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_primitive", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_secondDerivative", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_secondDerivative", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_update", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_update", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -446,7 +446,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_value1", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_value1", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -494,7 +494,7 @@ module CubicInterpolationFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_value", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_value", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -536,7 +536,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_xMax", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_xMax", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -572,7 +572,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_xMin", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_xMin", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module CubicInterpolationFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_allowsExtrapolation", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_allowsExtrapolation", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -644,7 +644,7 @@ module CubicInterpolationFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_disableExtrapolation", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_disableExtrapolation", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -686,7 +686,7 @@ module CubicInterpolationFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_enableExtrapolation", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_enableExtrapolation", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -728,7 +728,7 @@ module CubicInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicInterpolation_extrapolate", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_extrapolate", Description="Create a CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -761,7 +761,7 @@ module CubicInterpolationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CubicInterpolation_Range", Description="Create a range of CubicInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicInterpolation_Range", Description="Create a range of CubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicInterpolation_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

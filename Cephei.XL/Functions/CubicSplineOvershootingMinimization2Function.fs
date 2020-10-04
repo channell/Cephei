@@ -37,7 +37,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_aCoefficients", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_aCoefficients", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_aCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_bCoefficients", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_bCoefficients", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_bCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_cCoefficients", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_cCoefficients", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_cCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_derivative", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_derivative", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_empty", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_empty", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_primitive", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_primitive", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_secondDerivative", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_secondDerivative", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_update", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_update", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_value1", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_value1", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -458,7 +458,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_value", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_value", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_xMax", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_xMax", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -536,7 +536,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_xMin", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_xMin", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -572,7 +572,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_allowsExtrapolation", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_allowsExtrapolation", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_disableExtrapolation", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_disableExtrapolation", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_enableExtrapolation", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_enableExtrapolation", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module CubicSplineOvershootingMinimization2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_extrapolate", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_extrapolate", Description="Create a CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -725,7 +725,7 @@ module CubicSplineOvershootingMinimization2Function =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_Range", Description="Create a range of CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicSplineOvershootingMinimization2_Range", Description="Create a range of CubicSplineOvershootingMinimization2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicSplineOvershootingMinimization2_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

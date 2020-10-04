@@ -37,7 +37,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_derivative", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_derivative", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_empty", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_empty", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_primitive", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_primitive", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_secondDerivative", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_secondDerivative", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_update", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_update", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_value1", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_value1", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_value", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_value", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_xMax", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_xMax", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_xMin", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_xMin", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_allowsExtrapolation", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_allowsExtrapolation", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_disableExtrapolation", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_disableExtrapolation", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_enableExtrapolation", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_enableExtrapolation", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module MixedLinearMonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_extrapolate", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_extrapolate", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -629,7 +629,7 @@ module MixedLinearMonotonicParabolicFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_Range", Description="Create a range of MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_Range", Description="Create a range of MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

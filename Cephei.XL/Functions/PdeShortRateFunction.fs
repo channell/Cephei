@@ -37,7 +37,7 @@ module PdeShortRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeShortRate_diffusion", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeShortRate_diffusion", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_diffusion
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module PdeShortRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeShortRate_discount", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeShortRate_discount", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module PdeShortRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeShortRate_drift", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeShortRate_drift", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_drift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module PdeShortRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeShortRate_factory", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeShortRate_factory", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module PdeShortRateFunction =
     (*
         required for geerics
     *)
-    [<ExcelFunction(Name="_PdeShortRate", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeShortRate", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module PdeShortRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeShortRate1", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeShortRate1", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -291,7 +291,7 @@ module PdeShortRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeShortRate_generateOperator", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeShortRate_generateOperator", Description="Create a PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_generateOperator
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -342,7 +342,7 @@ module PdeShortRateFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PdeShortRate_Range", Description="Create a range of PdeShortRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeShortRate_Range", Description="Create a range of PdeShortRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeShortRate_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

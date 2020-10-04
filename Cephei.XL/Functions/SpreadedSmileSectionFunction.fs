@@ -37,7 +37,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_atmLevel", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_atmLevel", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_atmLevel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_dayCounter", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_dayCounter", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_exerciseDate", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_exerciseDate", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_exerciseDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_exerciseTime", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_exerciseTime", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_exerciseTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_maxStrike", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_maxStrike", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module SpreadedSmileSectionFunction =
     (*
         SmileSection interface
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_minStrike", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_minStrike", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_referenceDate", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_referenceDate", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -289,7 +289,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_shift", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_shift", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_shift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -325,7 +325,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module SpreadedSmileSectionFunction =
     (*
         LazyObject interface
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_update", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_update", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_volatilityType", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_volatilityType", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_volatilityType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_density", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_density", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_density
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -494,7 +494,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_digitalOptionPrice", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_digitalOptionPrice", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_digitalOptionPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_optionPrice", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_optionPrice", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_optionPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_variance", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_variance", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_vega", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_vega", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_vega
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -698,7 +698,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_volatility", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_volatility", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -752,7 +752,7 @@ module SpreadedSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadedSmileSection_volatility1", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_volatility1", Description="Create a SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_volatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -791,7 +791,7 @@ module SpreadedSmileSectionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SpreadedSmileSection_Range", Description="Create a range of SpreadedSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadedSmileSection_Range", Description="Create a range of SpreadedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedSmileSection_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

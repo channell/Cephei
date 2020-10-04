@@ -37,7 +37,7 @@ module Fdm1DimSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Fdm1DimSolver_derivativeX", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Fdm1DimSolver_derivativeX", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Fdm1DimSolver_derivativeX
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module Fdm1DimSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Fdm1DimSolver_derivativeXX", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Fdm1DimSolver_derivativeXX", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Fdm1DimSolver_derivativeXX
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module Fdm1DimSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Fdm1DimSolver", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Fdm1DimSolver", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Fdm1DimSolver_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module Fdm1DimSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Fdm1DimSolver_interpolateAt", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Fdm1DimSolver_interpolateAt", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Fdm1DimSolver_interpolateAt
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -212,7 +212,7 @@ module Fdm1DimSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Fdm1DimSolver_thetaAt", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Fdm1DimSolver_thetaAt", Description="Create a Fdm1DimSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Fdm1DimSolver_thetaAt
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -251,7 +251,7 @@ module Fdm1DimSolverFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Fdm1DimSolver_Range", Description="Create a range of Fdm1DimSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Fdm1DimSolver_Range", Description="Create a range of Fdm1DimSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Fdm1DimSolver_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

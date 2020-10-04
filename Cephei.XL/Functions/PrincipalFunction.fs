@@ -37,7 +37,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_accrualEndDate", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_accrualEndDate", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_accrualEndDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_accrualStartDate", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_accrualStartDate", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_accrualStartDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_amount", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_amount", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_date", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_date", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_dayCounter", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_dayCounter", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module PrincipalFunction =
     (*
         access to properties
     *)
-    [<ExcelFunction(Name="_Principal_nominal", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_nominal", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module PrincipalFunction =
     (*
         Constructors
     *)
-    [<ExcelFunction(Name="_Principal", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module PrincipalFunction =
     (*
         default constructor
     *)
-    [<ExcelFunction(Name="_Principal1", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal1", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -363,7 +363,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_refPeriodEnd", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_refPeriodEnd", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_refPeriodEnd
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -399,7 +399,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_refPeriodStart", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_refPeriodStart", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_refPeriodStart
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -435,7 +435,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_setAmount", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_setAmount", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_setAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -477,7 +477,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_CompareTo", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_CompareTo", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -519,7 +519,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_Equals", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_Equals", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -561,7 +561,7 @@ module PrincipalFunction =
     (*
         ! returns the date that the cash flow trades exCoupon
     *)
-    [<ExcelFunction(Name="_Principal_exCouponDate", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_exCouponDate", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -597,7 +597,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_hasOccurred", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_hasOccurred", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -645,7 +645,7 @@ module PrincipalFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_Principal_tradingExCoupon", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_tradingExCoupon", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -687,7 +687,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_accept", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_accept", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -729,7 +729,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_registerWith", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_registerWith", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -771,7 +771,7 @@ module PrincipalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Principal_unregisterWith", Description="Create a Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_unregisterWith", Description="Create a Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -810,7 +810,7 @@ module PrincipalFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Principal_Range", Description="Create a range of Principal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Principal_Range", Description="Create a range of Principal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Principal_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

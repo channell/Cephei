@@ -37,7 +37,7 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionWe04DP", Description="Create a BivariateCumulativeNormalDistributionWe04DP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionWe04DP", Description="Create a BivariateCumulativeNormalDistributionWe04DP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BivariateCumulativeNormalDistributionWe04DP_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
     (*
         function
     *)
-    [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionWe04DP_value", Description="Create a BivariateCumulativeNormalDistributionWe04DP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionWe04DP_value", Description="Create a BivariateCumulativeNormalDistributionWe04DP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BivariateCumulativeNormalDistributionWe04DP_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionWe04DP_Range", Description="Create a range of BivariateCumulativeNormalDistributionWe04DP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionWe04DP_Range", Description="Create a range of BivariateCumulativeNormalDistributionWe04DP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BivariateCumulativeNormalDistributionWe04DP_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

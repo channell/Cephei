@@ -37,7 +37,7 @@ module BasketOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasketOption", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module BasketOptionFunction =
     (*
         greeks
     *)
-    [<ExcelFunction(Name="_BasketOption_delta", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_delta", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_delta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module BasketOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasketOption_dividendRho", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_dividendRho", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_dividendRho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module BasketOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasketOption_gamma", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_gamma", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_gamma
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module BasketOptionFunction =
     (*
         Instrument interface
     *)
-    [<ExcelFunction(Name="_BasketOption_isExpired", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_isExpired", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module BasketOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasketOption_rho", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_rho", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_rho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module BasketOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasketOption_theta", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_theta", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_theta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module BasketOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasketOption_vega", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_vega", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_vega
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module BasketOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasketOption_exercise", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_exercise", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_exercise
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module BasketOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasketOption_payoff", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_payoff", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_payoff
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module BasketOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasketOption_CASH", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_CASH", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module BasketOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasketOption_errorEstimate", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_errorEstimate", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -488,7 +488,7 @@ module BasketOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasketOption_NPV", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_NPV", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module BasketOptionFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_BasketOption_result", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_result", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -566,7 +566,7 @@ module BasketOptionFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_BasketOption_setPricingEngine", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_setPricingEngine", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module BasketOptionFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_BasketOption_valuationDate", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_valuationDate", Description="Create a BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -641,7 +641,7 @@ module BasketOptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BasketOption_Range", Description="Create a range of BasketOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasketOption_Range", Description="Create a range of BasketOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasketOption_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

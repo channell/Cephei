@@ -38,7 +38,7 @@ module NinePointLinearOpFunction =
         
     *)
     (*!! duplicate Add function 
-    [<ExcelFunction(Name="_NinePointLinearOp_add", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_add", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -87,7 +87,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_apply", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_apply", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_apply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -129,7 +129,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_applyTo", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_applyTo", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_applyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -171,7 +171,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_Clone", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_Clone", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_Clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_identity", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_identity", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_identity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -249,7 +249,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_isTimeDependent", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_isTimeDependent", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_isTimeDependent
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_mult", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_mult", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_mult
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -327,7 +327,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_multiply", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_multiply", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_multiply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -375,7 +375,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -412,7 +412,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp1", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp1", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -461,7 +461,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_setTime", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_setTime", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_setTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_size", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_size", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -539,7 +539,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_solveFor", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_solveFor", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_solveFor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -581,7 +581,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_subtract", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_subtract", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_subtract
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -629,7 +629,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_swap", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_swap", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_swap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -671,7 +671,7 @@ module NinePointLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NinePointLinearOp_toMatrix", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_toMatrix", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_toMatrix
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -704,7 +704,7 @@ module NinePointLinearOpFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NinePointLinearOp_Range", Description="Create a range of NinePointLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NinePointLinearOp_Range", Description="Create a range of NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

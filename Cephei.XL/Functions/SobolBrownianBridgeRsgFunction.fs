@@ -37,7 +37,7 @@ module SobolBrownianBridgeRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolBrownianBridgeRsg_dimension", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianBridgeRsg_dimension", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianBridgeRsg_dimension
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module SobolBrownianBridgeRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolBrownianBridgeRsg_factory", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianBridgeRsg_factory", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianBridgeRsg_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module SobolBrownianBridgeRsgFunction =
         
     *)
     (*!! sample not suppoorted bh helper
-    [<ExcelFunction(Name="_SobolBrownianBridgeRsg_lastSequence", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianBridgeRsg_lastSequence", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianBridgeRsg_lastSequence
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -160,7 +160,7 @@ module SobolBrownianBridgeRsgFunction =
         
     *)
     (*!! Sample not supported by Helper
-    [<ExcelFunction(Name="_SobolBrownianBridgeRsg_nextSequence", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianBridgeRsg_nextSequence", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianBridgeRsg_nextSequence
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -197,7 +197,7 @@ module SobolBrownianBridgeRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolBrownianBridgeRsg", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianBridgeRsg", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianBridgeRsg_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -255,7 +255,7 @@ module SobolBrownianBridgeRsgFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SobolBrownianBridgeRsg_Range", Description="Create a range of SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianBridgeRsg_Range", Description="Create a range of SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianBridgeRsg_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

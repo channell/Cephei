@@ -37,7 +37,7 @@ module NonCentralCumulativeChiSquareDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NonCentralCumulativeChiSquareDistribution", Description="Create a NonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NonCentralCumulativeChiSquareDistribution", Description="Create a NonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonCentralCumulativeChiSquareDistribution_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module NonCentralCumulativeChiSquareDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NonCentralCumulativeChiSquareDistribution_value", Description="Create a NonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NonCentralCumulativeChiSquareDistribution_value", Description="Create a NonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonCentralCumulativeChiSquareDistribution_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module NonCentralCumulativeChiSquareDistributionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NonCentralCumulativeChiSquareDistribution_Range", Description="Create a range of NonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NonCentralCumulativeChiSquareDistribution_Range", Description="Create a range of NonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonCentralCumulativeChiSquareDistribution_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

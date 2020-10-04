@@ -38,7 +38,7 @@ module GeneralStatisticsFunction =
         
     *)
     (*!! duplicate add function
-    [<ExcelFunction(Name="_GeneralStatistics_add", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_add", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -88,7 +88,7 @@ module GeneralStatisticsFunction =
         ! adds a datum to the set, possibly with a weight
     *)
     (*!! duplicate add function
-    [<ExcelFunction(Name="_GeneralStatistics_add", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_add", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -131,7 +131,7 @@ module GeneralStatisticsFunction =
     (*
         ! adds a sequence of data to the set, with default weight
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_addSequence", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_addSequence", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_addSequence
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -173,7 +173,7 @@ module GeneralStatisticsFunction =
     (*
         ! adds a sequence of data to the set, each with its weight
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_addSequence1", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_addSequence1", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_addSequence1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -221,7 +221,7 @@ module GeneralStatisticsFunction =
     (*
         ! collected data
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_data", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_data", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_data
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -257,7 +257,7 @@ module GeneralStatisticsFunction =
     (*
         ! returns the error estimate on the mean value, defined as \f$ \epsilon = \sigma/\sqrt{N}. \f$
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_errorEstimate", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_errorEstimate", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -294,7 +294,7 @@ module GeneralStatisticsFunction =
         ! Expectation value of a function \f$ f \f$ on a given range \f$ \mathcal{R} \f$, i.e.,  The range is passed as a boolean function returning
 <tt>true</tt> if the argument belongs to the range or <tt>false</tt> otherwise.  The function returns a pair made of the result and the number of observations in the given range.
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_expectationValue", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_expectationValue", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_expectationValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -342,7 +342,7 @@ module GeneralStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GeneralStatistics", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -373,7 +373,7 @@ module GeneralStatisticsFunction =
     (*
         ! returns the excess kurtosis The above evaluates to 0 for a Gaussian distribution.
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_kurtosis", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_kurtosis", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_kurtosis
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -409,7 +409,7 @@ module GeneralStatisticsFunction =
     (*
         ! returns the maximum sample value
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_max", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_max", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_max
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -445,7 +445,7 @@ module GeneralStatisticsFunction =
     (*
         ! returns the mean, defined as \f[ \langle x \rangle = \frac{\sum w_i x_i}{\sum w_i}. \f]
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_mean", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_mean", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_mean
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -481,7 +481,7 @@ module GeneralStatisticsFunction =
     (*
         ! returns the minimum sample value
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_min", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_min", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_min
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -517,7 +517,7 @@ module GeneralStatisticsFunction =
     (*
         ! \f$ y \f$-th percentile, defined as the value \f$ \bar{x} \f$ \pre \f$ y \f$ must be in the range \f$ (0-1]. \f$
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_percentile", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_percentile", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_percentile
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -559,7 +559,7 @@ module GeneralStatisticsFunction =
     (*
         ! resets the data to a null set
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_reset", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_reset", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -595,7 +595,7 @@ module GeneralStatisticsFunction =
     (*
         ! number of samples collected
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_samples", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_samples", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_samples
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -631,7 +631,7 @@ module GeneralStatisticsFunction =
     (*
         ! returns the skewness, defined as \f[ \frac{N^2}{(N-1)(N-2)} \frac{\left\langle \left( x-\langle x \rangle \right)^3 \right\rangle}{\sigma^3}. \f] The above evaluates to 0 for a Gaussian distribution.
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_skewness", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_skewness", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_skewness
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -667,7 +667,7 @@ module GeneralStatisticsFunction =
     (*
         ! sort the data set in increasing order
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_sort", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_sort", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_sort
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -703,7 +703,7 @@ module GeneralStatisticsFunction =
     (*
         ! returns the standard deviation \f$ \sigma \f$, defined as the square root of the variance.
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_standardDeviation", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_standardDeviation", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_standardDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -739,7 +739,7 @@ module GeneralStatisticsFunction =
     (*
         ! \f$ y \f$-th top percentile, defined as the value \pre \f$ y \f$ must be in the range \f$ (0-1]. \f$
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_topPercentile", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_topPercentile", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_topPercentile
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -781,7 +781,7 @@ module GeneralStatisticsFunction =
     (*
         ! returns the variance, defined as \f[ \sigma^2 = \frac{N}{N-1} \left\langle \left( x-\langle x \rangle \right)^2 \right\rangle. \f]
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_variance", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_variance", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -817,7 +817,7 @@ module GeneralStatisticsFunction =
     (*
         ! sum of data weights
     *)
-    [<ExcelFunction(Name="_GeneralStatistics_weightSum", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_weightSum", Description="Create a GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_weightSum
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -850,7 +850,7 @@ module GeneralStatisticsFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GeneralStatistics_Range", Description="Create a range of GeneralStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GeneralStatistics_Range", Description="Create a range of GeneralStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralStatistics_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

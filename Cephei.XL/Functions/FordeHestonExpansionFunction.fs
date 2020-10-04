@@ -37,7 +37,7 @@ module FordeHestonExpansionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FordeHestonExpansion", Description="Create a FordeHestonExpansion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FordeHestonExpansion", Description="Create a FordeHestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FordeHestonExpansion_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module FordeHestonExpansionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FordeHestonExpansion_impliedVolatility", Description="Create a FordeHestonExpansion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FordeHestonExpansion_impliedVolatility", Description="Create a FordeHestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FordeHestonExpansion_impliedVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -149,7 +149,7 @@ module FordeHestonExpansionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FordeHestonExpansion_Range", Description="Create a range of FordeHestonExpansion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FordeHestonExpansion_Range", Description="Create a range of FordeHestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FordeHestonExpansion_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

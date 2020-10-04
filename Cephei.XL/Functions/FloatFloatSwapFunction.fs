@@ -37,7 +37,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_cappedRate1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_cappedRate1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_cappedRate1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_cappedRate2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_cappedRate2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_cappedRate2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_dayCount1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_dayCount1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_dayCount1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_dayCount2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_dayCount2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_dayCount2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -350,7 +350,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -519,7 +519,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_flooredRate1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_flooredRate1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_flooredRate1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -555,7 +555,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_flooredRate2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_flooredRate2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_flooredRate2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -591,7 +591,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_gearing1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_gearing1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_gearing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -627,7 +627,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_gearing2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_gearing2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_gearing2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -663,7 +663,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_index1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_index1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_index1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -699,7 +699,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_index2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_index2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_index2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -735,7 +735,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_leg1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_leg1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_leg1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -771,7 +771,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_leg2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_leg2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_leg2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -807,7 +807,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_nominal1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_nominal1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_nominal1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -843,7 +843,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_nominal2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_nominal2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_nominal2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -879,7 +879,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_paymentConvention1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_paymentConvention1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_paymentConvention1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -915,7 +915,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_paymentConvention2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_paymentConvention2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_paymentConvention2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -951,7 +951,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_schedule1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_schedule1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_schedule1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -987,7 +987,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_schedule2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_schedule2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_schedule2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1023,7 +1023,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_spread1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_spread1", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_spread1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1059,7 +1059,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_spread2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_spread2", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_spread2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1095,7 +1095,7 @@ module FloatFloatSwapFunction =
     (*
         ! \name Inspectors
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_type", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_type", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1131,7 +1131,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_endDiscounts", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_endDiscounts", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_endDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1174,7 +1174,7 @@ module FloatFloatSwapFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_FloatFloatSwap_engine", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_engine", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_engine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1211,7 +1211,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_isExpired", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_isExpired", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1247,7 +1247,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_leg", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_leg", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_leg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1289,7 +1289,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_legBPS", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_legBPS", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_legBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1331,7 +1331,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_legNPV", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_legNPV", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_legNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1373,7 +1373,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_maturityDate", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_maturityDate", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1409,7 +1409,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_npvDateDiscount", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_npvDateDiscount", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_npvDateDiscount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1445,7 +1445,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_payer", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_payer", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_payer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1487,7 +1487,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_startDate", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_startDate", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1523,7 +1523,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_startDiscounts", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_startDiscounts", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_startDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1565,7 +1565,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_CASH", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_CASH", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1601,7 +1601,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_errorEstimate", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_errorEstimate", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1637,7 +1637,7 @@ module FloatFloatSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_NPV", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_NPV", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1673,7 +1673,7 @@ module FloatFloatSwapFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_result", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_result", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1715,7 +1715,7 @@ module FloatFloatSwapFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_setPricingEngine", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_setPricingEngine", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1757,7 +1757,7 @@ module FloatFloatSwapFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_FloatFloatSwap_valuationDate", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_valuationDate", Description="Create a FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1790,7 +1790,7 @@ module FloatFloatSwapFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FloatFloatSwap_Range", Description="Create a range of FloatFloatSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatFloatSwap_Range", Description="Create a range of FloatFloatSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatFloatSwap_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module FdmBermudanStepConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBermudanStepCondition_applyTo", Description="Create a FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBermudanStepCondition_applyTo", Description="Create a FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBermudanStepCondition_applyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module FdmBermudanStepConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBermudanStepCondition_exerciseTimes", Description="Create a FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBermudanStepCondition_exerciseTimes", Description="Create a FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBermudanStepCondition_exerciseTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module FdmBermudanStepConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBermudanStepCondition", Description="Create a FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBermudanStepCondition", Description="Create a FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBermudanStepCondition_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -179,7 +179,7 @@ module FdmBermudanStepConditionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmBermudanStepCondition_Range", Description="Create a range of FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBermudanStepCondition_Range", Description="Create a range of FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBermudanStepCondition_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module MethodOfLinesSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MethodOfLinesScheme_factory", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MethodOfLinesScheme_factory", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MethodOfLinesScheme_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module MethodOfLinesSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MethodOfLinesScheme", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MethodOfLinesScheme", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MethodOfLinesScheme_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module MethodOfLinesSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MethodOfLinesScheme1", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MethodOfLinesScheme1", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MethodOfLinesScheme_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -177,7 +177,7 @@ module MethodOfLinesSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MethodOfLinesScheme_setStep", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MethodOfLinesScheme_setStep", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MethodOfLinesScheme_setStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module MethodOfLinesSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MethodOfLinesScheme_step", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MethodOfLinesScheme_step", Description="Create a MethodOfLinesScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MethodOfLinesScheme_step
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -270,7 +270,7 @@ module MethodOfLinesSchemeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MethodOfLinesScheme_Range", Description="Create a range of MethodOfLinesScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MethodOfLinesScheme_Range", Description="Create a range of MethodOfLinesScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MethodOfLinesScheme_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

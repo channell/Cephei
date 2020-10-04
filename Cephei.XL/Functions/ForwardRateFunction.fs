@@ -37,7 +37,7 @@ module ForwardRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardRate_discountImpl", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRate_discountImpl", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_discountImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module ForwardRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardRate_forwardImpl", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRate_forwardImpl", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_forwardImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module ForwardRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardRate_guess", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRate_guess", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_guess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -193,7 +193,7 @@ module ForwardRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardRate_initialDate", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRate_initialDate", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_initialDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -235,7 +235,7 @@ module ForwardRateFunction =
     (*
         start of curve data
     *)
-    [<ExcelFunction(Name="_ForwardRate_initialValue", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRate_initialValue", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_initialValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module ForwardRateFunction =
     (*
         upper bound for convergence loop
     *)
-    [<ExcelFunction(Name="_ForwardRate_maxIterations", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRate_maxIterations", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_maxIterations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module ForwardRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardRate_maxValueAfter", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRate_maxValueAfter", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_maxValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -373,7 +373,7 @@ module ForwardRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardRate_minValueAfter", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRate_minValueAfter", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_minValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -433,7 +433,7 @@ module ForwardRateFunction =
     (*
         dummy value at reference date update with new guess
     *)
-    [<ExcelFunction(Name="_ForwardRate_updateGuess", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRate_updateGuess", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_updateGuess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -487,7 +487,7 @@ module ForwardRateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardRate_zeroYieldImpl", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRate_zeroYieldImpl", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_zeroYieldImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -532,7 +532,7 @@ module ForwardRateFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ForwardRate_Range", Description="Create a range of ForwardRate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRate_Range", Description="Create a range of ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

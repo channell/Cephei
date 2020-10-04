@@ -37,7 +37,7 @@ module MoneyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Money_currency", Description="Create a Money",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Money_currency", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module MoneyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Money_Equals", Description="Create a Money",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Money_Equals", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module MoneyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Money1", Description="Create a Money",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Money1", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module MoneyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Money", Description="Create a Money",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Money", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -189,7 +189,7 @@ module MoneyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Money2", Description="Create a Money",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Money2", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -232,7 +232,7 @@ module MoneyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Money_rounded", Description="Create a Money",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Money_rounded", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_rounded
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -268,7 +268,7 @@ module MoneyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Money_ToString", Description="Create a Money",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Money_ToString", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -304,7 +304,7 @@ module MoneyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Money_value", Description="Create a Money",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Money_value", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -337,7 +337,7 @@ module MoneyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Money_Range", Description="Create a range of Money",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Money_Range", Description="Create a range of Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

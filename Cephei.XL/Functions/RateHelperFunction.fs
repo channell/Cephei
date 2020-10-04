@@ -37,7 +37,7 @@ module RateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RateHelper", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module RateHelperFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_RateHelper1", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper1", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module RateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RateHelper2", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper2", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -142,7 +142,7 @@ module RateHelperFunction =
     (*
         earliest relevant date The earliest date at which discounts are needed by the helper in order to provide a quote.
     *)
-    [<ExcelFunction(Name="_RateHelper_earliestDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_earliestDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_earliestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -178,7 +178,7 @@ module RateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RateHelper_impliedQuote", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_impliedQuote", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_impliedQuote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -214,7 +214,7 @@ module RateHelperFunction =
     (*
         The latest date at which discounts are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_RateHelper_latestDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_latestDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_latestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -250,7 +250,7 @@ module RateHelperFunction =
     (*
         ! The latest date at which data are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_RateHelper_latestRelevantDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_latestRelevantDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_latestRelevantDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -286,7 +286,7 @@ module RateHelperFunction =
     (*
         ! instrument's maturity date
     *)
-    [<ExcelFunction(Name="_RateHelper_maturityDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_maturityDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -322,7 +322,7 @@ module RateHelperFunction =
     (*
         ! pillar date
     *)
-    [<ExcelFunction(Name="_RateHelper_pillarDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_pillarDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_pillarDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -358,7 +358,7 @@ module RateHelperFunction =
     (*
         ! BootstrapHelper interface
     *)
-    [<ExcelFunction(Name="_RateHelper_quote", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_quote", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_quote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -394,7 +394,7 @@ module RateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RateHelper_quoteError", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_quoteError", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_quoteError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -430,7 +430,7 @@ module RateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RateHelper_quoteIsValid", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_quoteIsValid", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_quoteIsValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -466,7 +466,7 @@ module RateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RateHelper_quoteValue", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_quoteValue", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_quoteValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -502,7 +502,7 @@ module RateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RateHelper_registerWith", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_registerWith", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -544,7 +544,7 @@ module RateHelperFunction =
     (*
         ! \warning Being a pointer and not a shared_ptr, the term structure is not guaranteed to remain allocated for the whole life of the rate helper. It is responsibility of the programmer to ensure that the pointer remains valid. It is advised that this method is called only inside the term structure being bootstrapped, setting the pointer to <b>this</b>, i.e., the term structure itself.
     *)
-    [<ExcelFunction(Name="_RateHelper_setTermStructure", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_setTermStructure", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_setTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -586,7 +586,7 @@ module RateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RateHelper_unregisterWith", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_unregisterWith", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -628,7 +628,7 @@ module RateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RateHelper_update", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_update", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -661,7 +661,7 @@ module RateHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_RateHelper_Range", Description="Create a range of RateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RateHelper_Range", Description="Create a range of RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

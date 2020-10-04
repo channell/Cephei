@@ -37,7 +37,7 @@ module CPICouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICouponPricer_capletPrice", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_capletPrice", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_capletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module CPICouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICouponPricer_capletRate", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_capletRate", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_capletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module CPICouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICouponPricer_capletVolatility", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_capletVolatility", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_capletVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -157,7 +157,7 @@ module CPICouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICouponPricer", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module CPICouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICouponPricer_floorletPrice", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_floorletPrice", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_floorletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module CPICouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICouponPricer_floorletRate", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_floorletRate", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_floorletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module CPICouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICouponPricer_initialize", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_initialize", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_initialize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module CPICouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICouponPricer_setCapletVolatility", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_setCapletVolatility", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_setCapletVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module CPICouponPricerFunction =
     (*
         InflationCouponPricer interface
     *)
-    [<ExcelFunction(Name="_CPICouponPricer_swapletPrice", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_swapletPrice", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_swapletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module CPICouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICouponPricer_swapletRate", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_swapletRate", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_swapletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module CPICouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICouponPricer_registerWith", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_registerWith", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module CPICouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICouponPricer_unregisterWith", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_unregisterWith", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module CPICouponPricerFunction =
     (*
         observer interface
     *)
-    [<ExcelFunction(Name="_CPICouponPricer_update", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_update", Description="Create a CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -551,7 +551,7 @@ module CPICouponPricerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CPICouponPricer_Range", Description="Create a range of CPICouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICouponPricer_Range", Description="Create a range of CPICouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICouponPricer_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

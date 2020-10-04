@@ -37,7 +37,7 @@ module SVIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVI_interpolate", Description="Create a SVI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVI_interpolate", Description="Create a SVI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVI_interpolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module SVIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVI", Description="Create a SVI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVI", Description="Create a SVI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVI_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -233,7 +233,7 @@ module SVIFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SVI_Range", Description="Create a range of SVI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVI_Range", Description="Create a range of SVI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVI_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

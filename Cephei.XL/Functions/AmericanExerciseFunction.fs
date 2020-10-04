@@ -37,7 +37,7 @@ module AmericanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanExercise", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanExercise", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module AmericanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanExercise1", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanExercise1", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -129,7 +129,7 @@ module AmericanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanExercise_payoffAtExpiry", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanExercise_payoffAtExpiry", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_payoffAtExpiry
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -165,7 +165,7 @@ module AmericanExerciseFunction =
     (*
         inspectors
     *)
-    [<ExcelFunction(Name="_AmericanExercise_date", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanExercise_date", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module AmericanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanExercise_dates", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanExercise_dates", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_dates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -243,7 +243,7 @@ module AmericanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanExercise_lastDate", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanExercise_lastDate", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_lastDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -279,7 +279,7 @@ module AmericanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanExercise_type", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanExercise_type", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -312,7 +312,7 @@ module AmericanExerciseFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AmericanExercise_Range", Description="Create a range of AmericanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanExercise_Range", Description="Create a range of AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

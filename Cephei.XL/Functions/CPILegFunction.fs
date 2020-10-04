@@ -37,7 +37,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_value", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_value", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withCaps1", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withCaps1", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withCaps1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withCaps", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withCaps", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withCaps
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -212,7 +212,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withExCouponPeriod", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withExCouponPeriod", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withExCouponPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withFixedRates1", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withFixedRates1", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withFixedRates1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withFixedRates", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withFixedRates", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withFixedRates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -356,7 +356,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withFixingDays", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withFixingDays", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withFixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withFixingDays1", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withFixingDays1", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withFixingDays1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withFloors", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withFloors", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withFloors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -482,7 +482,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withFloors1", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withFloors1", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withFloors1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withObservationInterpolation", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withObservationInterpolation", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withObservationInterpolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -566,7 +566,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withPaymentCalendar", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withPaymentCalendar", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withPaymentCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withPaymentDayCounter", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withPaymentDayCounter", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withPaymentDayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withSpreads", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withSpreads", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withSpreads
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withSpreads1", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withSpreads1", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withSpreads1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -734,7 +734,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withSubtractInflationNominal", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withSubtractInflationNominal", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withSubtractInflationNominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -776,7 +776,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withNotionals1", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withNotionals1", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withNotionals1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -818,7 +818,7 @@ module CPILegFunction =
     (*
         initializers
     *)
-    [<ExcelFunction(Name="_CPILeg_withNotionals", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withNotionals", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withNotionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -860,7 +860,7 @@ module CPILegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPILeg_withPaymentAdjustment", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_withPaymentAdjustment", Description="Create a CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_withPaymentAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -899,7 +899,7 @@ module CPILegFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CPILeg_Range", Description="Create a range of CPILeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPILeg_Range", Description="Create a range of CPILeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPILeg_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

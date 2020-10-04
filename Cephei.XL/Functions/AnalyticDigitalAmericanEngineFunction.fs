@@ -37,7 +37,7 @@ module AnalyticDigitalAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticDigitalAmericanEngine", Description="Create a AnalyticDigitalAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDigitalAmericanEngine", Description="Create a AnalyticDigitalAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDigitalAmericanEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -75,7 +75,7 @@ module AnalyticDigitalAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticDigitalAmericanEngine_knock_in", Description="Create a AnalyticDigitalAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDigitalAmericanEngine_knock_in", Description="Create a AnalyticDigitalAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDigitalAmericanEngine_knock_in
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -108,7 +108,7 @@ module AnalyticDigitalAmericanEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AnalyticDigitalAmericanEngine_Range", Description="Create a range of AnalyticDigitalAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDigitalAmericanEngine_Range", Description="Create a range of AnalyticDigitalAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDigitalAmericanEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

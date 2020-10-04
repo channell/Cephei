@@ -38,7 +38,7 @@ module ForwardVanillaEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardVanillaEngine", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardVanillaEngine", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -94,7 +94,7 @@ module ForwardVanillaEngineFunction =
         
     *)
     (*!!omitted 
-    [<ExcelFunction(Name="_ForwardVanillaEngine_GetOriginalEngine", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardVanillaEngine_GetOriginalEngine", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_GetOriginalEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -137,7 +137,7 @@ module ForwardVanillaEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardVanillaEngine_registerWith", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardVanillaEngine_registerWith", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -179,7 +179,7 @@ module ForwardVanillaEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardVanillaEngine_reset", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardVanillaEngine_reset", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -215,7 +215,7 @@ module ForwardVanillaEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardVanillaEngine_unregisterWith", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardVanillaEngine_unregisterWith", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -257,7 +257,7 @@ module ForwardVanillaEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardVanillaEngine_update", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardVanillaEngine_update", Description="Create a ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module ForwardVanillaEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ForwardVanillaEngine_Range", Description="Create a range of ForwardVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardVanillaEngine_Range", Description="Create a range of ForwardVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

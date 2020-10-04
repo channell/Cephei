@@ -37,7 +37,7 @@ module AverageBMALegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMALeg", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMALeg", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMALeg_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module AverageBMALegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMALeg_value", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMALeg_value", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMALeg_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module AverageBMALegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMALeg_withGearings", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMALeg_withGearings", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMALeg_withGearings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module AverageBMALegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMALeg_withGearings1", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMALeg_withGearings1", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMALeg_withGearings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module AverageBMALegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMALeg_withPaymentDayCounter", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMALeg_withPaymentDayCounter", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMALeg_withPaymentDayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module AverageBMALegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMALeg_withSpreads1", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMALeg_withSpreads1", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMALeg_withSpreads1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module AverageBMALegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMALeg_withSpreads", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMALeg_withSpreads", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMALeg_withSpreads
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module AverageBMALegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMALeg_withNotionals1", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMALeg_withNotionals1", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMALeg_withNotionals1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module AverageBMALegFunction =
     (*
         initializers
     *)
-    [<ExcelFunction(Name="_AverageBMALeg_withNotionals", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMALeg_withNotionals", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMALeg_withNotionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module AverageBMALegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMALeg_withPaymentAdjustment", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMALeg_withPaymentAdjustment", Description="Create a AverageBMALeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMALeg_withPaymentAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -449,7 +449,7 @@ module AverageBMALegFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AverageBMALeg_Range", Description="Create a range of AverageBMALeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMALeg_Range", Description="Create a range of AverageBMALeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMALeg_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

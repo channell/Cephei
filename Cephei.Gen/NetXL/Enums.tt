@@ -26,7 +26,7 @@ module ENumFunctions =
         var name = (e.Value == null ? e.Key : e.Value + "_" + e.Key);
         var ename = (e.Value == null ? e.Key : e.Value + "." + e.Key);
 #>
-    [<ExcelFunction(Name="_<#= name #>", Description="",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_<#= name #>", Description="",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let <#= name #>
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

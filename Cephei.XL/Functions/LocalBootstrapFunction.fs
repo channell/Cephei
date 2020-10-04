@@ -38,7 +38,7 @@ module LocalBootstrapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LocalBootstrap", Description="Create a LocalBootstrap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalBootstrap", Description="Create a LocalBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalBootstrap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -81,7 +81,7 @@ module LocalBootstrapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LocalBootstrap1", Description="Create a LocalBootstrap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalBootstrap1", Description="Create a LocalBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalBootstrap_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -112,7 +112,7 @@ module LocalBootstrapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LocalBootstrap_setup", Description="Create a LocalBootstrap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalBootstrap_setup", Description="Create a LocalBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalBootstrap_setup
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -151,7 +151,7 @@ module LocalBootstrapFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LocalBootstrap_Range", Description="Create a range of LocalBootstrap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalBootstrap_Range", Description="Create a range of LocalBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalBootstrap_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

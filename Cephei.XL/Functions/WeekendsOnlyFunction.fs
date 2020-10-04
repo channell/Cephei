@@ -37,7 +37,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_addedHolidays", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_addedHolidays", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_addedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_addHoliday", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_addHoliday", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_addHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_adjust", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_adjust", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_adjust
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_advance1", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_advance1", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_advance", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_advance", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_advance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_businessDaysBetween", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_businessDaysBetween", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_businessDaysBetween
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_calendar", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_calendar", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module WeekendsOnlyFunction =
     (*
         Returns whether or not the calendar is initialized
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_empty", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_empty", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_endOfMonth", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_endOfMonth", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -494,7 +494,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_Equals", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_Equals", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -536,7 +536,7 @@ module WeekendsOnlyFunction =
     (*
         @returns Returns <tt>true</tt> iff the date is a business day for the given market.
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_isBusinessDay", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_isBusinessDay", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_isBusinessDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -578,7 +578,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_isEndOfMonth", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_isEndOfMonth", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_isEndOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -620,7 +620,7 @@ module WeekendsOnlyFunction =
     (*
         Returns <tt>true</tt> iff the date is a holiday for the given market.
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_isHoliday", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_isHoliday", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_isHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -662,7 +662,7 @@ module WeekendsOnlyFunction =
     (*
         Returns <tt>true</tt> iff the weekday is part of the weekend for the given market.
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_isWeekend", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_isWeekend", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_isWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -706,7 +706,7 @@ module WeekendsOnlyFunction =
 
 @returns The name of the calendar.
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_name", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_name", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -742,7 +742,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_removedHolidays", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_removedHolidays", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_removedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -778,7 +778,7 @@ module WeekendsOnlyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_WeekendsOnly_removeHoliday", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_removeHoliday", Description="Create a WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_removeHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -817,7 +817,7 @@ module WeekendsOnlyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_WeekendsOnly_Range", Description="Create a range of WeekendsOnly",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_WeekendsOnly_Range", Description="Create a range of WeekendsOnly",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeekendsOnly_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module NOKCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NOKCurrency", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module NOKCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_NOKCurrency_code", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_code", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module NOKCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_NOKCurrency_empty", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_empty", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module NOKCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NOKCurrency_Equals", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_Equals", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module NOKCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_NOKCurrency_format", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_format", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module NOKCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_NOKCurrency_fractionsPerUnit", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_fractionsPerUnit", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module NOKCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_NOKCurrency_fractionSymbol", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_fractionSymbol", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module NOKCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_NOKCurrency_name", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_name", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module NOKCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_NOKCurrency_numericCode", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_numericCode", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module NOKCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_NOKCurrency_rounding", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_rounding", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module NOKCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_NOKCurrency_symbol", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_symbol", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module NOKCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NOKCurrency_ToString", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_ToString", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module NOKCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_NOKCurrency_triangulationCurrency", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_triangulationCurrency", Description="Create a NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module NOKCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NOKCurrency_Range", Description="Create a range of NOKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NOKCurrency_Range", Description="Create a range of NOKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NOKCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

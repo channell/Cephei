@@ -37,7 +37,7 @@ module ParallelEvolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ParallelEvolver_factory", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ParallelEvolver_factory", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module ParallelEvolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ParallelEvolver", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ParallelEvolver", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module ParallelEvolverFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_ParallelEvolver1", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ParallelEvolver1", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -165,7 +165,7 @@ module ParallelEvolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ParallelEvolver_setStep", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ParallelEvolver_setStep", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_setStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module ParallelEvolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ParallelEvolver_step", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ParallelEvolver_step", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_step
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -258,7 +258,7 @@ module ParallelEvolverFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ParallelEvolver_Range", Description="Create a range of ParallelEvolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ParallelEvolver_Range", Description="Create a range of ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

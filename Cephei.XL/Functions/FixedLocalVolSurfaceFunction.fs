@@ -37,7 +37,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface2", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface2", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface1", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface1", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -256,7 +256,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_maxDate", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_maxDate", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -292,7 +292,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_maxStrike", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_maxStrike", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -328,7 +328,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_maxTime", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_maxTime", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -364,7 +364,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_minStrike", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_minStrike", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -401,7 +401,7 @@ module FixedLocalVolSurfaceFunction =
         
     *)
     (*!!generic 
-    [<ExcelFunction(Name="_FixedLocalVolSurface_setInterpolation", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_setInterpolation", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_setInterpolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -444,7 +444,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_localVol", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_localVol", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_localVol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -498,7 +498,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_localVol1", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_localVol1", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_localVol1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -552,7 +552,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         ! the business day convention used in tenor to date conversion
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_businessDayConvention", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_businessDayConvention", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -588,7 +588,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         ! period/date conversion
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_optionDateFromTenor", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_optionDateFromTenor", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_optionDateFromTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -630,7 +630,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_calendar", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_calendar", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -666,7 +666,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         ! the day counter used for date/time conversion
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_dayCounter", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_dayCounter", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -702,7 +702,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         ! the date at which discount = 1.0 and/or variance = 0.0
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_referenceDate", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_referenceDate", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -738,7 +738,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_settlementDays", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_settlementDays", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -774,7 +774,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_timeFromReference", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_timeFromReference", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -816,7 +816,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         observer interface
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_update", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_update", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -852,7 +852,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_allowsExtrapolation", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_allowsExtrapolation", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -888,7 +888,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_disableExtrapolation", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_disableExtrapolation", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -930,7 +930,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_enableExtrapolation", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_enableExtrapolation", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -972,7 +972,7 @@ module FixedLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedLocalVolSurface_extrapolate", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_extrapolate", Description="Create a FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1005,7 +1005,7 @@ module FixedLocalVolSurfaceFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FixedLocalVolSurface_Range", Description="Create a range of FixedLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedLocalVolSurface_Range", Description="Create a range of FixedLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLocalVolSurface_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

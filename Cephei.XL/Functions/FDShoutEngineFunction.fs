@@ -37,7 +37,7 @@ module FDShoutEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutEngine_factory", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutEngine_factory", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutEngine_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module FDShoutEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutEngine", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutEngine", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module FDShoutEngineFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_FDShoutEngine1", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutEngine1", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -178,7 +178,7 @@ module FDShoutEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutEngine_registerWith", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutEngine_registerWith", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -220,7 +220,7 @@ module FDShoutEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutEngine_reset", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutEngine_reset", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -256,7 +256,7 @@ module FDShoutEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutEngine_unregisterWith", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutEngine_unregisterWith", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -298,7 +298,7 @@ module FDShoutEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutEngine_update", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutEngine_update", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -334,7 +334,7 @@ module FDShoutEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutEngine_ensureStrikeInGrid", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutEngine_ensureStrikeInGrid", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutEngine_ensureStrikeInGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -370,7 +370,7 @@ module FDShoutEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutEngine_getResidualTime", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutEngine_getResidualTime", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutEngine_getResidualTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -406,7 +406,7 @@ module FDShoutEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutEngine_grid", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutEngine_grid", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutEngine_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -442,7 +442,7 @@ module FDShoutEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutEngine_intrinsicValues_", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutEngine_intrinsicValues_", Description="Create a FDShoutEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutEngine_intrinsicValues_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -475,7 +475,7 @@ module FDShoutEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FDShoutEngine_Range", Description="Create a range of FDShoutEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutEngine_Range", Description="Create a range of FDShoutEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

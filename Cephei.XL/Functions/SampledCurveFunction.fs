@@ -37,7 +37,7 @@ module SampledCurveFunction =
     (*
         instead of "=" overload
     *)
-    [<ExcelFunction(Name="_SampledCurve_Clone", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_Clone", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_Clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_empty", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_empty", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module SampledCurveFunction =
     (*
         ! \todo replace or complement with a more general function firstDerivativeAt(spot)
     *)
-    [<ExcelFunction(Name="_SampledCurve_firstDerivativeAtCenter", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_firstDerivativeAtCenter", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_firstDerivativeAtCenter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_grid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_grid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_gridValue", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_gridValue", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_gridValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_regrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_regrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_regrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -271,7 +271,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_regrid1", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_regrid1", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_regrid1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_regridLogGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_regridLogGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_regridLogGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -361,7 +361,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_sample", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_sample", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_sample
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -403,7 +403,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve1", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve1", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -477,7 +477,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_scaleGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_scaleGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_scaleGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -519,7 +519,7 @@ module SampledCurveFunction =
     (*
         ! \todo replace or complement with a more general function secondDerivativeAt(spot)
     *)
-    [<ExcelFunction(Name="_SampledCurve_secondDerivativeAtCenter", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_secondDerivativeAtCenter", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_secondDerivativeAtCenter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -555,7 +555,7 @@ module SampledCurveFunction =
     (*
         modifiers
     *)
-    [<ExcelFunction(Name="_SampledCurve_setGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_setGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_setGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -597,7 +597,7 @@ module SampledCurveFunction =
     (*
         utilities
     *)
-    [<ExcelFunction(Name="_SampledCurve_setLogGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_setLogGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_setLogGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -645,7 +645,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_setValue", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_setValue", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_setValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -693,7 +693,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_setValues", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_setValues", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_setValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -735,7 +735,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_shiftGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_shiftGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_shiftGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -777,7 +777,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_size", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_size", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -813,7 +813,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_transform", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_transform", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_transform
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -855,7 +855,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_transformGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_transformGrid", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_transformGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -897,7 +897,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_value", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_value", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -939,7 +939,7 @@ module SampledCurveFunction =
     (*
         ! \todo replace or complement with a more general function valueAt(spot)
     *)
-    [<ExcelFunction(Name="_SampledCurve_valueAtCenter", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_valueAtCenter", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_valueAtCenter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -975,7 +975,7 @@ module SampledCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SampledCurve_values", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_values", Description="Create a SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_values
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1008,7 +1008,7 @@ module SampledCurveFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SampledCurve_Range", Description="Create a range of SampledCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SampledCurve_Range", Description="Create a range of SampledCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SampledCurve_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

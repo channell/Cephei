@@ -37,7 +37,7 @@ module SeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Seasonality_correctYoYRate", Description="Create a Seasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Seasonality_correctYoYRate", Description="Create a Seasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Seasonality_correctYoYRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module SeasonalityFunction =
     (*
         Seasonality interface
     *)
-    [<ExcelFunction(Name="_Seasonality_correctZeroRate", Description="Create a Seasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Seasonality_correctZeroRate", Description="Create a Seasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Seasonality_correctZeroRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module SeasonalityFunction =
     (*
         ! It is possible for multi-year seasonalities to be inconsistent with the inflation term structure they are given to.  This method enables testing - but programmers are not required to implement it.  E.g. for price seasonality the corrections at whole years after the inflation curve base date should be the same or else there can be an inconsistency with quoted instruments. Alternatively, the seasonality can be set _before_ the inflation curve is bootstrapped.
     *)
-    [<ExcelFunction(Name="_Seasonality_isConsistent", Description="Create a Seasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Seasonality_isConsistent", Description="Create a Seasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Seasonality_isConsistent
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -184,7 +184,7 @@ module SeasonalityFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Seasonality_Range", Description="Create a range of Seasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Seasonality_Range", Description="Create a range of Seasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Seasonality_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

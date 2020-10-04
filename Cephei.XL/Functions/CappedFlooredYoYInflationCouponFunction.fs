@@ -37,7 +37,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! cap
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_cap", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_cap", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_cap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ... or not
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         we may watch an underlying coupon ...
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon1", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon1", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -237,7 +237,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! effective cap of fixing
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_effectiveCap", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_effectiveCap", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_effectiveCap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -273,7 +273,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! effective floor of fixing
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_effectiveFloor", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_effectiveFloor", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_effectiveFloor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -309,7 +309,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! floor
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_floor", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_floor", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_floor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -345,7 +345,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_isCapped", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_isCapped", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_isCapped
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -381,7 +381,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_isFloored", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_isFloored", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_isFloored
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -417,7 +417,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         augmented Coupon interface swap(let) rate
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_rate", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_rate", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_rate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -453,7 +453,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_setPricer", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_setPricer", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_setPricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -495,7 +495,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_adjustedFixing", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_adjustedFixing", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_adjustedFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -531,7 +531,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         Inspectors index gearing, i.e. multiplicative coefficient for the index
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_gearing", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_gearing", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_gearing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -567,7 +567,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! spread paid over the fixing of the underlying index
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_spread", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_spread", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_spread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -603,7 +603,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_yoyIndex", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_yoyIndex", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_yoyIndex
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -639,7 +639,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accruedAmount", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accruedAmount", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -681,7 +681,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_amount", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_amount", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -717,7 +717,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_dayCounter", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_dayCounter", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -753,7 +753,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! fixing date
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_fixingDate", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_fixingDate", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -789,7 +789,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! fixing days
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_fixingDays", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_fixingDays", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -825,7 +825,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         Inspectors ! yoy inflation index
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_index", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_index", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_index
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -861,7 +861,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! fixing of the underlying index, as observed by the coupon
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_indexFixing", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_indexFixing", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_indexFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -897,7 +897,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! how the coupon observes the index
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_observationLag", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_observationLag", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_observationLag
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -933,7 +933,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         Coupon interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_price", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_price", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_price
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -975,7 +975,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_pricer", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_pricer", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_pricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1011,7 +1011,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_update", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_update", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1047,7 +1047,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! accrual period in days
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accrualDays", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accrualDays", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_accrualDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1083,7 +1083,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! end of the accrual period
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accrualEndDate", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accrualEndDate", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_accrualEndDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1119,7 +1119,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! accrual period as fraction of year
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accrualPeriod", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accrualPeriod", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_accrualPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1155,7 +1155,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! start of the accrual period
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accrualStartDate", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accrualStartDate", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_accrualStartDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1191,7 +1191,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! accrued days at the given date
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accruedDays", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accruedDays", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_accruedDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1233,7 +1233,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! accrued period as fraction of year at the given date
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accruedPeriod", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accruedPeriod", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_accruedPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1275,7 +1275,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         Event interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_date", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_date", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1311,7 +1311,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_exCouponDate", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_exCouponDate", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1347,7 +1347,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_nominal", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_nominal", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1383,7 +1383,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! end date of the reference period
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_referencePeriodEnd", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_referencePeriodEnd", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_referencePeriodEnd
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1419,7 +1419,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! start date of the reference period
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_referencePeriodStart", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_referencePeriodStart", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_referencePeriodStart
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1455,7 +1455,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_CompareTo", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_CompareTo", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1497,7 +1497,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_Equals", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_Equals", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1539,7 +1539,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_hasOccurred", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_hasOccurred", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1587,7 +1587,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_tradingExCoupon", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_tradingExCoupon", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1629,7 +1629,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accept", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_accept", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1671,7 +1671,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_registerWith", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_registerWith", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1713,7 +1713,7 @@ module CappedFlooredYoYInflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_unregisterWith", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_unregisterWith", Description="Create a CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1752,7 +1752,7 @@ module CappedFlooredYoYInflationCouponFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_Range", Description="Create a range of CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredYoYInflationCoupon_Range", Description="Create a range of CappedFlooredYoYInflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredYoYInflationCoupon_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

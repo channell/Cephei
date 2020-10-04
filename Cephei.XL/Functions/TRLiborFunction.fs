@@ -37,7 +37,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor1", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor1", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module TRLiborFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_TRLibor_businessDayConvention", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_businessDayConvention", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module TRLiborFunction =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_TRLibor_clone", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_clone", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -195,7 +195,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_endOfMonth", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_endOfMonth", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -231,7 +231,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_forecastFixing1", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_forecastFixing1", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_forecastFixing", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_forecastFixing", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -327,7 +327,7 @@ module TRLiborFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_TRLibor_forwardingTermStructure", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_forwardingTermStructure", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -363,7 +363,7 @@ module TRLiborFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_TRLibor_maturityDate", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_maturityDate", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -405,7 +405,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_currency", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_currency", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -441,7 +441,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_dayCounter", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_dayCounter", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -477,7 +477,7 @@ module TRLiborFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_TRLibor_familyName", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_familyName", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -513,7 +513,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_fixing", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_fixing", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -561,7 +561,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_fixingCalendar", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_fixingCalendar", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -597,7 +597,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_fixingDate", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_fixingDate", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -639,7 +639,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_fixingDays", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_fixingDays", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -675,7 +675,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_isValidFixingDate", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_isValidFixingDate", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -717,7 +717,7 @@ module TRLiborFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_TRLibor_name", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_name", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -753,7 +753,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_pastFixing", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_pastFixing", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -795,7 +795,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_tenor", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_tenor", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -831,7 +831,7 @@ module TRLiborFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_TRLibor_update", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_update", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -867,7 +867,7 @@ module TRLiborFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_TRLibor_valueDate", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_valueDate", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -909,7 +909,7 @@ module TRLiborFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_TRLibor_addFixing", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_addFixing", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -963,7 +963,7 @@ module TRLiborFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_TRLibor_addFixings", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_addFixings", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1017,7 +1017,7 @@ module TRLiborFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_TRLibor_addFixings1", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_addFixings1", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1065,7 +1065,7 @@ module TRLiborFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_TRLibor_allowsNativeFixings", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_allowsNativeFixings", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1101,7 +1101,7 @@ module TRLiborFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_TRLibor_clearFixings", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_clearFixings", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1137,7 +1137,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_registerWith", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_registerWith", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1179,7 +1179,7 @@ module TRLiborFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_TRLibor_timeSeries", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_timeSeries", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1215,7 +1215,7 @@ module TRLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TRLibor_unregisterWith", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_unregisterWith", Description="Create a TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1254,7 +1254,7 @@ module TRLiborFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TRLibor_Range", Description="Create a range of TRLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TRLibor_Range", Description="Create a range of TRLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TRLibor_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

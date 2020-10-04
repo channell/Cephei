@@ -65,7 +65,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -96,7 +96,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India_addedHolidays", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_addedHolidays", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_addedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -132,7 +132,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India_addHoliday", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_addHoliday", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_addHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -174,7 +174,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India_adjust", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_adjust", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_adjust
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -222,7 +222,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India_advance1", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_advance1", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -288,7 +288,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India_advance", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_advance", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_advance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -348,7 +348,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India_businessDaysBetween", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_businessDaysBetween", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_businessDaysBetween
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -408,7 +408,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India_calendar", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_calendar", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -444,7 +444,7 @@ module IndiaFunction =
     (*
         Returns whether or not the calendar is initialized
     *)
-    [<ExcelFunction(Name="_India_empty", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_empty", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -480,7 +480,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India_endOfMonth", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_endOfMonth", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -522,7 +522,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India_Equals", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_Equals", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -564,7 +564,7 @@ module IndiaFunction =
     (*
         @returns Returns <tt>true</tt> iff the date is a business day for the given market.
     *)
-    [<ExcelFunction(Name="_India_isBusinessDay", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_isBusinessDay", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_isBusinessDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -606,7 +606,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India_isEndOfMonth", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_isEndOfMonth", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_isEndOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -648,7 +648,7 @@ module IndiaFunction =
     (*
         Returns <tt>true</tt> iff the date is a holiday for the given market.
     *)
-    [<ExcelFunction(Name="_India_isHoliday", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_isHoliday", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_isHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -690,7 +690,7 @@ module IndiaFunction =
     (*
         Returns <tt>true</tt> iff the weekday is part of the weekend for the given market.
     *)
-    [<ExcelFunction(Name="_India_isWeekend", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_isWeekend", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_isWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -734,7 +734,7 @@ module IndiaFunction =
 
 @returns The name of the calendar.
     *)
-    [<ExcelFunction(Name="_India_name", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_name", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -770,7 +770,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India_removedHolidays", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_removedHolidays", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_removedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -806,7 +806,7 @@ module IndiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_India_removeHoliday", Description="Create a India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_removeHoliday", Description="Create a India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_removeHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -845,7 +845,7 @@ module IndiaFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_India_Range", Description="Create a range of India",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_India_Range", Description="Create a range of India",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let India_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

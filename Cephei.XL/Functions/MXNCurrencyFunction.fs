@@ -37,7 +37,7 @@ module MXNCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MXNCurrency", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module MXNCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_MXNCurrency_code", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_code", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module MXNCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_MXNCurrency_empty", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_empty", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module MXNCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MXNCurrency_Equals", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_Equals", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module MXNCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_MXNCurrency_format", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_format", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module MXNCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_MXNCurrency_fractionsPerUnit", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_fractionsPerUnit", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module MXNCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_MXNCurrency_fractionSymbol", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_fractionSymbol", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module MXNCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_MXNCurrency_name", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_name", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module MXNCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_MXNCurrency_numericCode", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_numericCode", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module MXNCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_MXNCurrency_rounding", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_rounding", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module MXNCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_MXNCurrency_symbol", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_symbol", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module MXNCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MXNCurrency_ToString", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_ToString", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module MXNCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_MXNCurrency_triangulationCurrency", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_triangulationCurrency", Description="Create a MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module MXNCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MXNCurrency_Range", Description="Create a range of MXNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MXNCurrency_Range", Description="Create a range of MXNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MXNCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

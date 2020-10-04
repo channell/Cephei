@@ -37,7 +37,7 @@ module MaxNumberFuncEvalExceededFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MaxNumberFuncEvalExceeded", Description="Create a MaxNumberFuncEvalExceeded",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MaxNumberFuncEvalExceeded", Description="Create a MaxNumberFuncEvalExceeded",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxNumberFuncEvalExceeded_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module MaxNumberFuncEvalExceededFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MaxNumberFuncEvalExceeded1", Description="Create a MaxNumberFuncEvalExceeded",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MaxNumberFuncEvalExceeded1", Description="Create a MaxNumberFuncEvalExceeded",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxNumberFuncEvalExceeded_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module MaxNumberFuncEvalExceededFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MaxNumberFuncEvalExceeded2", Description="Create a MaxNumberFuncEvalExceeded",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MaxNumberFuncEvalExceeded2", Description="Create a MaxNumberFuncEvalExceeded",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxNumberFuncEvalExceeded_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module MaxNumberFuncEvalExceededFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MaxNumberFuncEvalExceeded_Range", Description="Create a range of MaxNumberFuncEvalExceeded",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MaxNumberFuncEvalExceeded_Range", Description="Create a range of MaxNumberFuncEvalExceeded",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxNumberFuncEvalExceeded_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

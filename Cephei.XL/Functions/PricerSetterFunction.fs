@@ -37,7 +37,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter_visit8", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_visit8", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit8
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter_visit3", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_visit3", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter_visit4", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_visit4", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter_visit", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_visit", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter_visit7", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_visit7", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit7
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter_visit9", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_visit9", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit9
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter_visit10", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_visit10", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit10
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter_visit2", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_visit2", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter_visit5", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_visit5", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit5
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter_visit11", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_visit11", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit11
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -494,7 +494,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter_visit1", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_visit1", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -536,7 +536,7 @@ module PricerSetterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PricerSetter_visit6", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_visit6", Description="Create a PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_visit6
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -575,7 +575,7 @@ module PricerSetterFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PricerSetter_Range", Description="Create a range of PricerSetter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PricerSetter_Range", Description="Create a range of PricerSetter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PricerSetter_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

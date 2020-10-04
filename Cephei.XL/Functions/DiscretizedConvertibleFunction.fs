@@ -37,7 +37,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_addCoupon", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_addCoupon", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_addCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_adjustedGrid", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_adjustedGrid", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_adjustedGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_applyCallability", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_applyCallability", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_applyCallability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -163,7 +163,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_applyConvertibility", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_applyConvertibility", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_applyConvertibility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -199,7 +199,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_conversionProbability", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_conversionProbability", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_conversionProbability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -235,7 +235,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_dividendValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_dividendValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_dividendValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_mandatoryTimes", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_mandatoryTimes", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_mandatoryTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -356,7 +356,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_process", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_process", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_process
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -392,7 +392,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_reset", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_reset", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_spreadAdjustedRate", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_spreadAdjustedRate", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_spreadAdjustedRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module DiscretizedConvertibleFunction =
     (*
         ! This method performs both pre- and post-adjustment
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_adjustValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_adjustValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_adjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -506,7 +506,7 @@ module DiscretizedConvertibleFunction =
     (*
         High-level interface  Users of discretized assets should use these methods in order to initialize, evolve and take the present value of the assets.  They call the corresponding methods in the Lattice interface, to which we refer for documentation.
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_initialize", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_initialize", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_initialize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_method", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_method", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_method
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -590,7 +590,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_partialRollback", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_partialRollback", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_partialRollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module DiscretizedConvertibleFunction =
     (*
         ! This method will be invoked after rollback and after any other asset had their chance to look at the values. For instance, payments happening at the present time (and therefore not included in an option to be exercised at this time) will be added here.  This method is not virtual; derived classes must override the protected postAdjustValuesImpl() method instead.
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_postAdjustValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_postAdjustValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_postAdjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -668,7 +668,7 @@ module DiscretizedConvertibleFunction =
     (*
         ! This method will be invoked after rollback and before any other asset (i.e., an option on this one) has any chance to look at the values. For instance, payments happening at times already spanned by the rollback will be added here.  This method is not virtual; derived classes must override the protected preAdjustValuesImpl() method instead.
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_preAdjustValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_preAdjustValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_preAdjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -704,7 +704,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_presentValue", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_presentValue", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_presentValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -740,7 +740,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_rollback", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_rollback", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_rollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -782,7 +782,7 @@ module DiscretizedConvertibleFunction =
     (*
         safe version of QL double* time()
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_setTime", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_setTime", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_setTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -824,7 +824,7 @@ module DiscretizedConvertibleFunction =
     (*
         safe version of QL Vector* values()
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_setValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_setValues", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_setValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -866,7 +866,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_time", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_time", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_time
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -902,7 +902,7 @@ module DiscretizedConvertibleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedConvertible_values", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_values", Description="Create a DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_values
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -935,7 +935,7 @@ module DiscretizedConvertibleFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DiscretizedConvertible_Range", Description="Create a range of DiscretizedConvertible",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedConvertible_Range", Description="Create a range of DiscretizedConvertible",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedConvertible_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

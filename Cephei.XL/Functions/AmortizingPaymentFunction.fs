@@ -37,7 +37,7 @@ module AmortizingPaymentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingPayment", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingPayment", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module AmortizingPaymentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingPayment_amount", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingPayment_amount", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module AmortizingPaymentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingPayment_date", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingPayment_date", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module AmortizingPaymentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingPayment_CompareTo", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingPayment_CompareTo", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module AmortizingPaymentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingPayment_Equals", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingPayment_Equals", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module AmortizingPaymentFunction =
     (*
         ! returns the date that the cash flow trades exCoupon
     *)
-    [<ExcelFunction(Name="_AmortizingPayment_exCouponDate", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingPayment_exCouponDate", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module AmortizingPaymentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingPayment_hasOccurred", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingPayment_hasOccurred", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module AmortizingPaymentFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_AmortizingPayment_tradingExCoupon", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingPayment_tradingExCoupon", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module AmortizingPaymentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingPayment_accept", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingPayment_accept", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module AmortizingPaymentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingPayment_registerWith", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingPayment_registerWith", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -446,7 +446,7 @@ module AmortizingPaymentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingPayment_unregisterWith", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingPayment_unregisterWith", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -485,7 +485,7 @@ module AmortizingPaymentFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AmortizingPayment_Range", Description="Create a range of AmortizingPayment",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingPayment_Range", Description="Create a range of AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

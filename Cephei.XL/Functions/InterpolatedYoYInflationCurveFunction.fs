@@ -39,7 +39,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_baseDate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_baseDate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_baseDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -75,7 +75,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_Clone", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_Clone", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_Clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_data", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_data", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_data
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -147,7 +147,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_data_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_data_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_data_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_dates", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_dates", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_dates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_dates_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_dates_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_dates_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -255,7 +255,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_forwards", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_forwards", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_forwards
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -291,7 +291,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -382,7 +382,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve1", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve1", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -467,7 +467,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_interpolation_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_interpolation_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_interpolation_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_interpolator_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_interpolator_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_interpolator_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -539,7 +539,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_maxDate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_maxDate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -575,7 +575,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_maxDate_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_maxDate_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_maxDate_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -611,7 +611,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_nodes", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_nodes", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_nodes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -647,7 +647,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_rates", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_rates", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_rates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -683,7 +683,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_setupInterpolation", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_setupInterpolation", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_setupInterpolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -719,7 +719,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_times", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_times", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_times
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -755,7 +755,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_times_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_times_", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_times_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -791,7 +791,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_yoyRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_yoyRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_yoyRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -851,7 +851,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_yoyRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_yoyRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_yoyRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -905,7 +905,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_yoyRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_yoyRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_yoyRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -953,7 +953,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         ! \note this is not the year-on-year swap (YYIIS) rate.
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_yoyRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_yoyRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_yoyRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -995,7 +995,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_baseRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_baseRate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_baseRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1031,7 +1031,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_frequency", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_frequency", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_frequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1067,7 +1067,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_hasSeasonality", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_hasSeasonality", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_hasSeasonality
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1103,7 +1103,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_indexIsInterpolated", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_indexIsInterpolated", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_indexIsInterpolated
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1139,7 +1139,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_nominalTermStructure", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_nominalTermStructure", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_nominalTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1175,7 +1175,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         Inflation interface ! The TS observes with a lag that is usually different from the ! availability lag of the index.  An inflation rate is given, ! by default, for the maturity requested assuming this lag.
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_observationLag", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_observationLag", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_observationLag
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1211,7 +1211,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_seasonality", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_seasonality", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_seasonality
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1247,7 +1247,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         ! Calling setSeasonality with no arguments means unsetting as the default is used to choose unsetting.
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_setSeasonality", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_setSeasonality", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_setSeasonality
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1289,7 +1289,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_calendar", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_calendar", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1325,7 +1325,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         ! the day counter used for date/time conversion
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_dayCounter", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_dayCounter", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1361,7 +1361,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_maxTime", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_maxTime", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1397,7 +1397,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         ! the date at which discount = 1.0 and/or variance = 0.0
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_referenceDate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_referenceDate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1433,7 +1433,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_settlementDays", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_settlementDays", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1469,7 +1469,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_timeFromReference", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_timeFromReference", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1511,7 +1511,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         observer interface
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_update", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_update", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1547,7 +1547,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_allowsExtrapolation", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_allowsExtrapolation", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1583,7 +1583,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_disableExtrapolation", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_disableExtrapolation", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1625,7 +1625,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_enableExtrapolation", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_enableExtrapolation", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1667,7 +1667,7 @@ module InterpolatedYoYInflationCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_extrapolate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_extrapolate", Description="Create a InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1700,7 +1700,7 @@ module InterpolatedYoYInflationCurveFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_Range", Description="Create a range of InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedYoYInflationCurve_Range", Description="Create a range of InterpolatedYoYInflationCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedYoYInflationCurve_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

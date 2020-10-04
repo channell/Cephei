@@ -37,7 +37,7 @@ module ForwardMeasureProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_diffusion", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_diffusion", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_diffusion
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module ForwardMeasureProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_drift", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_drift", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_drift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module ForwardMeasureProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_getForwardMeasureTime", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_getForwardMeasureTime", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_getForwardMeasureTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -169,7 +169,7 @@ module ForwardMeasureProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_initialValues", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_initialValues", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_initialValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -205,7 +205,7 @@ module ForwardMeasureProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_setForwardMeasureTime", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_setForwardMeasureTime", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_setForwardMeasureTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -247,7 +247,7 @@ module ForwardMeasureProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_size", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_size", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -283,7 +283,7 @@ module ForwardMeasureProcessFunction =
     (*
         applies a change to the asset value.
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_apply", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_apply", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_apply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -331,7 +331,7 @@ module ForwardMeasureProcessFunction =
     (*
         ! returns the covariance. This method can be overridden in derived classes which want to hard-code a particular discretization.
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_covariance", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_covariance", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_covariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -385,7 +385,7 @@ module ForwardMeasureProcessFunction =
     (*
         returns the asset value after a time interval
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_evolve", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_evolve", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_evolve
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -445,7 +445,7 @@ module ForwardMeasureProcessFunction =
     (*
         ! This method can be overridden in derived classes which want to hard-code a particular discretization.
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_expectation", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_expectation", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_expectation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -499,7 +499,7 @@ module ForwardMeasureProcessFunction =
     (*
         ! returns the number of independent factors of the process
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_factors", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_factors", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_factors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -535,7 +535,7 @@ module ForwardMeasureProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_registerWith", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_registerWith", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -577,7 +577,7 @@ module ForwardMeasureProcessFunction =
     (*
         ! returns the standard deviation. This method can be overridden in derived classes which want to hard-code a particular discretization.
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_stdDeviation", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_stdDeviation", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_stdDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -631,7 +631,7 @@ module ForwardMeasureProcessFunction =
     (*
         ! returns the time value corresponding to the given date in the reference system of the stochastic process.  \note As a number of processes might not need this functionality, a default implementation is given which raises an exception.
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_time", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_time", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_time
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -673,7 +673,7 @@ module ForwardMeasureProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_unregisterWith", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_unregisterWith", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -715,7 +715,7 @@ module ForwardMeasureProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardMeasureProcess_update", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_update", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -748,7 +748,7 @@ module ForwardMeasureProcessFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ForwardMeasureProcess_Range", Description="Create a range of ForwardMeasureProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardMeasureProcess_Range", Description="Create a range of ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

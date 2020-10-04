@@ -38,7 +38,7 @@ module FdHullWhiteSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -106,7 +106,7 @@ module FdHullWhiteSwaptionEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_setModel", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_setModel", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_setModel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -148,7 +148,7 @@ module FdHullWhiteSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_registerWith", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_registerWith", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -190,7 +190,7 @@ module FdHullWhiteSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_reset", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_reset", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -226,7 +226,7 @@ module FdHullWhiteSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_unregisterWith", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_unregisterWith", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -268,7 +268,7 @@ module FdHullWhiteSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_update", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_update", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -301,7 +301,7 @@ module FdHullWhiteSwaptionEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_Range", Description="Create a range of FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_Range", Description="Create a range of FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -50,8 +50,8 @@ namespace Cephei.Gen
             
             #line default
             #line hidden
-            this.Write("\", Description=\"\",Category=\"Cephei\", IsThreadSafe = true, IsExceptionSafe=true)>]" +
-                    "\r\n    let ");
+            this.Write("\", Description=\"\",Category=\"Cephei\", IsThreadSafe = false, IsExceptionSafe=true)>" +
+                    "]\r\n    let ");
             
             #line 30 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));

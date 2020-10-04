@@ -37,7 +37,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_callDigitalPayoff", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_callDigitalPayoff", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_callDigitalPayoff
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module DigitalCouponFunction =
     (*
         ! Returns the call option rate (multiplied by: nominal*accrualperiod*discount is the NPV of the option)
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_callOptionRate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_callOptionRate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_callOptionRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module DigitalCouponFunction =
     (*
         Digital inspectors
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_callStrike", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_callStrike", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_callStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_convexityAdjustment", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_convexityAdjustment", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_convexityAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module DigitalCouponFunction =
     (*
         ! Constructors ! general constructor
     *)
-    [<ExcelFunction(Name="_DigitalCoupon", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module DigitalCouponFunction =
     (*
         need by CashFlowVectors
     *)
-    [<ExcelFunction(Name="_DigitalCoupon1", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon1", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -303,7 +303,7 @@ module DigitalCouponFunction =
     (*
         Factory - for Leg generators
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_factory", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_factory", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -399,7 +399,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_hasCall", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_hasCall", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_hasCall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -435,7 +435,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_hasCollar", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_hasCollar", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_hasCollar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -471,7 +471,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_hasPut", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_hasPut", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_hasPut
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -507,7 +507,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_isLongCall", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_isLongCall", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_isLongCall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -543,7 +543,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_isLongPut", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_isLongPut", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_isLongPut
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -579,7 +579,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_putDigitalPayoff", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_putDigitalPayoff", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_putDigitalPayoff
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -615,7 +615,7 @@ module DigitalCouponFunction =
     (*
         ! Returns the put option rate (multiplied by: nominal*accrualperiod*discount is the NPV of the option)
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_putOptionRate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_putOptionRate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_putOptionRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -651,7 +651,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_putStrike", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_putStrike", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_putStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -687,7 +687,7 @@ module DigitalCouponFunction =
     (*
         Coupon interface
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_rate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_rate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_rate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -723,7 +723,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_setPricer", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_setPricer", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_setPricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -765,7 +765,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_underlying", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_underlying", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_underlying
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -801,7 +801,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_accruedAmount", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_accruedAmount", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -843,7 +843,7 @@ module DigitalCouponFunction =
     (*
         ! convexity-adjusted fixing
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_adjustedFixing", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_adjustedFixing", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_adjustedFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -879,7 +879,7 @@ module DigitalCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_amount", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_amount", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -915,7 +915,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_dayCounter", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_dayCounter", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -951,7 +951,7 @@ module DigitalCouponFunction =
     (*
         ! fixing days
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_fixingDate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_fixingDate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -987,7 +987,7 @@ module DigitalCouponFunction =
     (*
         ! floating index
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_fixingDays", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_fixingDays", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1023,7 +1023,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_gearing", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_gearing", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_gearing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1059,7 +1059,7 @@ module DigitalCouponFunction =
     (*
         properties
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_index", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_index", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_index
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1095,7 +1095,7 @@ module DigitalCouponFunction =
     (*
         ! spread paid over the fixing of the underlying index ! fixing of the underlying index
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_indexFixing", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_indexFixing", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_indexFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1131,7 +1131,7 @@ module DigitalCouponFunction =
     (*
         ! whether or not the coupon fixes in arrears
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_isInArrears", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_isInArrears", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_isInArrears
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1167,7 +1167,7 @@ module DigitalCouponFunction =
     (*
         methods
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_price", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_price", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_price
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1209,7 +1209,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_pricer", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_pricer", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_pricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1245,7 +1245,7 @@ module DigitalCouponFunction =
     (*
         ! index gearing, i.e. multiplicative coefficient for the index
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_spread", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_spread", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_spread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1281,7 +1281,7 @@ module DigitalCouponFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_update", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_update", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1317,7 +1317,7 @@ module DigitalCouponFunction =
     (*
         ! accrual period in days
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_accrualDays", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_accrualDays", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accrualDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1353,7 +1353,7 @@ module DigitalCouponFunction =
     (*
         ! end of the accrual period
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_accrualEndDate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_accrualEndDate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accrualEndDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1389,7 +1389,7 @@ module DigitalCouponFunction =
     (*
         ! accrual period as fraction of year
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_accrualPeriod", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_accrualPeriod", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accrualPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1425,7 +1425,7 @@ module DigitalCouponFunction =
     (*
         ! start of the accrual period
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_accrualStartDate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_accrualStartDate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accrualStartDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1461,7 +1461,7 @@ module DigitalCouponFunction =
     (*
         ! accrued days at the given date
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_accruedDays", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_accruedDays", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accruedDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1503,7 +1503,7 @@ module DigitalCouponFunction =
     (*
         ! accrued period as fraction of year at the given date
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_accruedPeriod", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_accruedPeriod", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accruedPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1545,7 +1545,7 @@ module DigitalCouponFunction =
     (*
         Event interface
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_date", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_date", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1581,7 +1581,7 @@ module DigitalCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_exCouponDate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_exCouponDate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1617,7 +1617,7 @@ module DigitalCouponFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_nominal", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_nominal", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1653,7 +1653,7 @@ module DigitalCouponFunction =
     (*
         ! end date of the reference period
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_referencePeriodEnd", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_referencePeriodEnd", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_referencePeriodEnd
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1689,7 +1689,7 @@ module DigitalCouponFunction =
     (*
         ! start date of the reference period
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_referencePeriodStart", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_referencePeriodStart", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_referencePeriodStart
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1725,7 +1725,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_CompareTo", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_CompareTo", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1767,7 +1767,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_Equals", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_Equals", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1809,7 +1809,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_hasOccurred", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_hasOccurred", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1857,7 +1857,7 @@ module DigitalCouponFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_tradingExCoupon", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_tradingExCoupon", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1899,7 +1899,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_accept", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_accept", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1941,7 +1941,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_registerWith", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_registerWith", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1983,7 +1983,7 @@ module DigitalCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalCoupon_unregisterWith", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_unregisterWith", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2022,7 +2022,7 @@ module DigitalCouponFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DigitalCoupon_Range", Description="Create a range of DigitalCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalCoupon_Range", Description="Create a range of DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

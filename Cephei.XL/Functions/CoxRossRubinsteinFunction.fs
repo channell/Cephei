@@ -37,7 +37,7 @@ module CoxRossRubinsteinFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxRossRubinstein1", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxRossRubinstein1", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module CoxRossRubinsteinFunction =
     (*
         parameterless constructor is requried for generics
     *)
-    [<ExcelFunction(Name="_CoxRossRubinstein", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxRossRubinstein", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -123,7 +123,7 @@ module CoxRossRubinsteinFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxRossRubinstein_factory", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxRossRubinstein_factory", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module CoxRossRubinsteinFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxRossRubinstein_probability", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxRossRubinstein_probability", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_probability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -237,7 +237,7 @@ module CoxRossRubinsteinFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxRossRubinstein_underlying", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxRossRubinstein_underlying", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_underlying
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module CoxRossRubinsteinFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxRossRubinstein_descendant", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxRossRubinstein_descendant", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_descendant
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -339,7 +339,7 @@ module CoxRossRubinsteinFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxRossRubinstein_size", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxRossRubinstein_size", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -381,7 +381,7 @@ module CoxRossRubinsteinFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxRossRubinstein_columns", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxRossRubinstein_columns", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_columns
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -414,7 +414,7 @@ module CoxRossRubinsteinFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CoxRossRubinstein_Range", Description="Create a range of CoxRossRubinstein",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxRossRubinstein_Range", Description="Create a range of CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

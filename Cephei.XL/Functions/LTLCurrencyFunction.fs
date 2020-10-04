@@ -37,7 +37,7 @@ module LTLCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LTLCurrency", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module LTLCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_LTLCurrency_code", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_code", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module LTLCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_LTLCurrency_empty", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_empty", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module LTLCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LTLCurrency_Equals", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_Equals", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module LTLCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_LTLCurrency_format", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_format", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module LTLCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_LTLCurrency_fractionsPerUnit", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_fractionsPerUnit", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module LTLCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_LTLCurrency_fractionSymbol", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_fractionSymbol", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module LTLCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_LTLCurrency_name", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_name", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module LTLCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_LTLCurrency_numericCode", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_numericCode", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module LTLCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_LTLCurrency_rounding", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_rounding", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module LTLCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_LTLCurrency_symbol", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_symbol", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module LTLCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LTLCurrency_ToString", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_ToString", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module LTLCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_LTLCurrency_triangulationCurrency", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_triangulationCurrency", Description="Create a LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module LTLCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LTLCurrency_Range", Description="Create a range of LTLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LTLCurrency_Range", Description="Create a range of LTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LTLCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

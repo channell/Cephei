@@ -37,7 +37,7 @@ module AnalyticCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticCapFloorEngine1", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticCapFloorEngine1", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module AnalyticCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticCapFloorEngine", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticCapFloorEngine", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -120,7 +120,7 @@ module AnalyticCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticCapFloorEngine_setModel", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticCapFloorEngine_setModel", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_setModel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -162,7 +162,7 @@ module AnalyticCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticCapFloorEngine_registerWith", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticCapFloorEngine_registerWith", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -204,7 +204,7 @@ module AnalyticCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticCapFloorEngine_reset", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticCapFloorEngine_reset", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -240,7 +240,7 @@ module AnalyticCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticCapFloorEngine_unregisterWith", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticCapFloorEngine_unregisterWith", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -282,7 +282,7 @@ module AnalyticCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticCapFloorEngine_update", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticCapFloorEngine_update", Description="Create a AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -315,7 +315,7 @@ module AnalyticCapFloorEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AnalyticCapFloorEngine_Range", Description="Create a range of AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticCapFloorEngine_Range", Description="Create a range of AnalyticCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCapFloorEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

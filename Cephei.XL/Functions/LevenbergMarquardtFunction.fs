@@ -38,7 +38,7 @@ module LevenbergMarquardtFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LevenbergMarquardt_fcn", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LevenbergMarquardt_fcn", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_fcn
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module LevenbergMarquardtFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LevenbergMarquardt_getInfo", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LevenbergMarquardt_getInfo", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_getInfo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module LevenbergMarquardtFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LevenbergMarquardt_jacFcn", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LevenbergMarquardt_jacFcn", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_jacFcn
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module LevenbergMarquardtFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LevenbergMarquardt", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LevenbergMarquardt", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -225,7 +225,7 @@ module LevenbergMarquardtFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LevenbergMarquardt1", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LevenbergMarquardt1", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -280,7 +280,7 @@ module LevenbergMarquardtFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LevenbergMarquardt_minimize", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LevenbergMarquardt_minimize", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_minimize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -325,7 +325,7 @@ module LevenbergMarquardtFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LevenbergMarquardt_Range", Description="Create a range of LevenbergMarquardt",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LevenbergMarquardt_Range", Description="Create a range of LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

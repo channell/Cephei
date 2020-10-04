@@ -37,7 +37,7 @@ module ShoutConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ShoutCondition_applyTo", Description="Create a ShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ShoutCondition_applyTo", Description="Create a ShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShoutCondition_applyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module ShoutConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ShoutCondition", Description="Create a ShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ShoutCondition", Description="Create a ShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShoutCondition_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module ShoutConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ShoutCondition1", Description="Create a ShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ShoutCondition1", Description="Create a ShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShoutCondition_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -186,7 +186,7 @@ module ShoutConditionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ShoutCondition_Range", Description="Create a range of ShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ShoutCondition_Range", Description="Create a range of ShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShoutCondition_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

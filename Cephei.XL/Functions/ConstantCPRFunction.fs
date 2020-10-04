@@ -37,7 +37,7 @@ module ConstantCPRFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConstantCPR", Description="Create a ConstantCPR",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCPR", Description="Create a ConstantCPR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCPR_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module ConstantCPRFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConstantCPR_getCPR", Description="Create a ConstantCPR",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCPR_getCPR", Description="Create a ConstantCPR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCPR_getCPR
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module ConstantCPRFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConstantCPR_getSMM", Description="Create a ConstantCPR",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCPR_getSMM", Description="Create a ConstantCPR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCPR_getSMM
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -155,7 +155,7 @@ module ConstantCPRFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ConstantCPR_Range", Description="Create a range of ConstantCPR",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCPR_Range", Description="Create a range of ConstantCPR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCPR_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

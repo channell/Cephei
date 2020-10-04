@@ -38,7 +38,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! curve reference date fixed for life of curve
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve1", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve1", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -123,7 +123,7 @@ module FittedBondDiscountCurveFunction =
     (*
         Constructors ! reference date based on current evaluation date
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -214,7 +214,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! the latest date for which the curve can return values
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_maxDate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_maxDate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -250,7 +250,7 @@ module FittedBondDiscountCurveFunction =
     (*
         Inspectors ! total number of bonds used to fit the yield curve
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_numberOfBonds", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_numberOfBonds", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_numberOfBonds
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -286,7 +286,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! The same day-counting rule used by the term structure should be used for calculating the passed time t.
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_discount", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_discount", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -334,7 +334,7 @@ module FittedBondDiscountCurveFunction =
     (*
         These methods return the discount factor from a given date or time to the reference date.  In the latter case, the time is calculated as a fraction of year from the reference date.
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_discount1", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_discount1", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_discount1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -382,7 +382,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! The resulting interest rate has the required day-counting rule. \warning dates are not adjusted for holidays
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_forwardRate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_forwardRate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_forwardRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -454,7 +454,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! The resulting interest rate has the required day-counting rule.
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_forwardRate1", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_forwardRate1", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_forwardRate1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -526,7 +526,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! The resulting interest rate has the same day-counting rule used by the term structure. The same rule should be used for calculating the passed times t1 and t2.
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_forwardRate2", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_forwardRate2", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_forwardRate2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -592,7 +592,7 @@ module FittedBondDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_jumpDates", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_jumpDates", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_jumpDates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -628,7 +628,7 @@ module FittedBondDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_jumpTimes", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_jumpTimes", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_jumpTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -664,7 +664,7 @@ module FittedBondDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_update", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_update", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -700,7 +700,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! The resulting interest rate has the required daycounting rule.
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_zeroRate1", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_zeroRate1", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_zeroRate1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -766,7 +766,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! The resulting interest rate has the same day-counting rule used by the term structure. The same rule should be used for calculating the passed time t.
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_zeroRate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_zeroRate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_zeroRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -826,7 +826,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_calendar", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_calendar", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -862,7 +862,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! the day counter used for date/time conversion
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_dayCounter", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_dayCounter", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -898,7 +898,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_maxTime", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_maxTime", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -934,7 +934,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! the date at which discount = 1.0 and/or variance = 0.0
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_referenceDate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_referenceDate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -970,7 +970,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_settlementDays", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_settlementDays", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1006,7 +1006,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_timeFromReference", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_timeFromReference", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1048,7 +1048,7 @@ module FittedBondDiscountCurveFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_allowsExtrapolation", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_allowsExtrapolation", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1084,7 +1084,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_disableExtrapolation", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_disableExtrapolation", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1126,7 +1126,7 @@ module FittedBondDiscountCurveFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_enableExtrapolation", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_enableExtrapolation", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1168,7 +1168,7 @@ module FittedBondDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_extrapolate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_extrapolate", Description="Create a FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1201,7 +1201,7 @@ module FittedBondDiscountCurveFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FittedBondDiscountCurve_Range", Description="Create a range of FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FittedBondDiscountCurve_Range", Description="Create a range of FittedBondDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FittedBondDiscountCurve_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

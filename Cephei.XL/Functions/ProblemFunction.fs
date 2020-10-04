@@ -37,7 +37,7 @@ module ProblemFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Problem_constraint", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_constraint", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_constraint
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module ProblemFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Problem_costFunction", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_costFunction", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_costFunction
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module ProblemFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Problem_currentValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_currentValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_currentValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module ProblemFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Problem_functionEvaluation", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_functionEvaluation", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_functionEvaluation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module ProblemFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Problem_functionValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_functionValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_functionValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module ProblemFunction =
     (*
         ! call cost function gradient computation and increment evaluation counter
     *)
-    [<ExcelFunction(Name="_Problem_gradient", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_gradient", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_gradient
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -265,7 +265,7 @@ module ProblemFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Problem_gradientEvaluation", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_gradientEvaluation", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_gradientEvaluation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -301,7 +301,7 @@ module ProblemFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Problem_gradientNormValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_gradientNormValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_gradientNormValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -337,7 +337,7 @@ module ProblemFunction =
     (*
         ! default constructor public Problem(CostFunction costFunction, Constraint constraint, Vector initialValue = Array())
     *)
-    [<ExcelFunction(Name="_Problem", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module ProblemFunction =
     (*
         ! \warning it does not reset the current minumum to any initial value
     *)
-    [<ExcelFunction(Name="_Problem_reset", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_reset", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -422,7 +422,7 @@ module ProblemFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Problem_setCurrentValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_setCurrentValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_setCurrentValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -464,7 +464,7 @@ module ProblemFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Problem_setFunctionValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_setFunctionValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_setFunctionValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -506,7 +506,7 @@ module ProblemFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Problem_setGradientNormValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_setGradientNormValue", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_setGradientNormValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -548,7 +548,7 @@ module ProblemFunction =
     (*
         ! call cost function computation and increment evaluation counter
     *)
-    [<ExcelFunction(Name="_Problem_value", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_value", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -590,7 +590,7 @@ module ProblemFunction =
     (*
         ! call cost function computation and it gradient
     *)
-    [<ExcelFunction(Name="_Problem_valueAndGradient", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_valueAndGradient", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_valueAndGradient
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -638,7 +638,7 @@ module ProblemFunction =
     (*
         ! call cost values computation and increment evaluation counter
     *)
-    [<ExcelFunction(Name="_Problem_values", Description="Create a Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_values", Description="Create a Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_values
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -677,7 +677,7 @@ module ProblemFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Problem_Range", Description="Create a range of Problem",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Problem_Range", Description="Create a range of Problem",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Problem_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module BachelierSpecFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierSpec", Description="Create a BachelierSpec",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierSpec", Description="Create a BachelierSpec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSpec_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module BachelierSpecFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierSpec_type", Description="Create a BachelierSpec",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierSpec_type", Description="Create a BachelierSpec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSpec_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module BachelierSpecFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierSpec_value", Description="Create a BachelierSpec",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierSpec_value", Description="Create a BachelierSpec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSpec_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -176,7 +176,7 @@ module BachelierSpecFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierSpec_vega", Description="Create a BachelierSpec",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierSpec_vega", Description="Create a BachelierSpec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSpec_vega
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -245,7 +245,7 @@ module BachelierSpecFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BachelierSpec_Range", Description="Create a range of BachelierSpec",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierSpec_Range", Description="Create a range of BachelierSpec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSpec_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

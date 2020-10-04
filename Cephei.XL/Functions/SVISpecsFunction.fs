@@ -37,7 +37,7 @@ module SVISpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVISpecs_defaultValues", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVISpecs_defaultValues", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_defaultValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -103,7 +103,7 @@ module SVISpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVISpecs_dilationFactor", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVISpecs_dilationFactor", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_dilationFactor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -139,7 +139,7 @@ module SVISpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVISpecs_dimension", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVISpecs_dimension", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_dimension
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -175,7 +175,7 @@ module SVISpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVISpecs_direct", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVISpecs_direct", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_direct
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -235,7 +235,7 @@ module SVISpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVISpecs_eps1", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVISpecs_eps1", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_eps1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -271,7 +271,7 @@ module SVISpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVISpecs_eps2", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVISpecs_eps2", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_eps2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -307,7 +307,7 @@ module SVISpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVISpecs_guess", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVISpecs_guess", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_guess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -379,7 +379,7 @@ module SVISpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVISpecs_instance", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVISpecs_instance", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_instance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -439,7 +439,7 @@ module SVISpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVISpecs_inverse", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVISpecs_inverse", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_inverse
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -499,7 +499,7 @@ module SVISpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVISpecs_modelInstance_", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVISpecs_modelInstance_", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_modelInstance_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -535,7 +535,7 @@ module SVISpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVISpecs_weight", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVISpecs_weight", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_weight
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -592,7 +592,7 @@ module SVISpecsFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SVISpecs_Range", Description="Create a range of SVISpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVISpecs_Range", Description="Create a range of SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

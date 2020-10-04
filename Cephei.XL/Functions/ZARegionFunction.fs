@@ -37,7 +37,7 @@ module ZARegionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZARegion", Description="Create a ZARegion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZARegion", Description="Create a ZARegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARegion_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module ZARegionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZARegion_code", Description="Create a ZARegion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZARegion_code", Description="Create a ZARegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARegion_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module ZARegionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZARegion_Equals", Description="Create a ZARegion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZARegion_Equals", Description="Create a ZARegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARegion_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module ZARegionFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_ZARegion_name", Description="Create a ZARegion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZARegion_name", Description="Create a ZARegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARegion_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -179,7 +179,7 @@ module ZARegionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ZARegion_Range", Description="Create a range of ZARegion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZARegion_Range", Description="Create a range of ZARegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARegion_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

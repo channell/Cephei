@@ -37,7 +37,7 @@ module SeedGeneratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SeedGenerator_get", Description="Create a SeedGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SeedGenerator_get", Description="Create a SeedGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SeedGenerator_get
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -70,7 +70,7 @@ module SeedGeneratorFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SeedGenerator_Range", Description="Create a range of SeedGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SeedGenerator_Range", Description="Create a range of SeedGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SeedGenerator_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

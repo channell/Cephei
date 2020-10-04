@@ -37,7 +37,7 @@ module PeriodFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Period_CompareTo", Description="Create a Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period_CompareTo", Description="Create a Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module PeriodFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Period_Equals", Description="Create a Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period_Equals", Description="Create a Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module PeriodFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Period_frequency", Description="Create a Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period_frequency", Description="Create a Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_frequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -157,7 +157,7 @@ module PeriodFunction =
     (*
         properties
     *)
-    [<ExcelFunction(Name="_Period_length", Description="Create a Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period_length", Description="Create a Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_length
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -193,7 +193,7 @@ module PeriodFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Period_normalize", Description="Create a Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period_normalize", Description="Create a Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_normalize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -229,7 +229,7 @@ module PeriodFunction =
     (*
         Create from a string like "1M", "2Y"...
     *)
-    [<ExcelFunction(Name="_Period3", Description="Create a Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period3", Description="Create a Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module PeriodFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Period2", Description="Create a Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period2", Description="Create a Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -303,7 +303,7 @@ module PeriodFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Period", Description="Create a Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period", Description="Create a Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -346,7 +346,7 @@ module PeriodFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Period1", Description="Create a Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period1", Description="Create a Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -377,7 +377,7 @@ module PeriodFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Period_ToShortString", Description="Create a Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period_ToShortString", Description="Create a Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -413,7 +413,7 @@ module PeriodFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Period_ToString", Description="Create a Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period_ToString", Description="Create a Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -449,7 +449,7 @@ module PeriodFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Period_units", Description="Create a Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period_units", Description="Create a Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_units
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -482,7 +482,7 @@ module PeriodFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Period_Range", Description="Create a range of Period",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Period_Range", Description="Create a range of Period",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

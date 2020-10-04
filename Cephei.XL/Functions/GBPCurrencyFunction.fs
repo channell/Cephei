@@ -37,7 +37,7 @@ module GBPCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPCurrency", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module GBPCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_GBPCurrency_code", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_code", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module GBPCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_GBPCurrency_empty", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_empty", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module GBPCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPCurrency_Equals", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_Equals", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module GBPCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_GBPCurrency_format", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_format", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module GBPCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_GBPCurrency_fractionsPerUnit", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_fractionsPerUnit", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module GBPCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_GBPCurrency_fractionSymbol", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_fractionSymbol", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module GBPCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_GBPCurrency_name", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_name", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module GBPCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_GBPCurrency_numericCode", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_numericCode", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module GBPCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_GBPCurrency_rounding", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_rounding", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module GBPCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_GBPCurrency_symbol", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_symbol", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module GBPCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPCurrency_ToString", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_ToString", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module GBPCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_GBPCurrency_triangulationCurrency", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_triangulationCurrency", Description="Create a GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module GBPCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GBPCurrency_Range", Description="Create a range of GBPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPCurrency_Range", Description="Create a range of GBPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

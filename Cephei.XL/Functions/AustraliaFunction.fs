@@ -51,7 +51,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -82,7 +82,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia_addedHolidays", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_addedHolidays", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_addedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -118,7 +118,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia_addHoliday", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_addHoliday", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_addHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -160,7 +160,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia_adjust", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_adjust", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_adjust
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -208,7 +208,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia_advance1", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_advance1", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -274,7 +274,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia_advance", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_advance", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_advance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -334,7 +334,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia_businessDaysBetween", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_businessDaysBetween", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_businessDaysBetween
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -394,7 +394,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia_calendar", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_calendar", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -430,7 +430,7 @@ module AustraliaFunction =
     (*
         Returns whether or not the calendar is initialized
     *)
-    [<ExcelFunction(Name="_Australia_empty", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_empty", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -466,7 +466,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia_endOfMonth", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_endOfMonth", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -508,7 +508,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia_Equals", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_Equals", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -550,7 +550,7 @@ module AustraliaFunction =
     (*
         @returns Returns <tt>true</tt> iff the date is a business day for the given market.
     *)
-    [<ExcelFunction(Name="_Australia_isBusinessDay", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_isBusinessDay", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_isBusinessDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -592,7 +592,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia_isEndOfMonth", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_isEndOfMonth", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_isEndOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -634,7 +634,7 @@ module AustraliaFunction =
     (*
         Returns <tt>true</tt> iff the date is a holiday for the given market.
     *)
-    [<ExcelFunction(Name="_Australia_isHoliday", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_isHoliday", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_isHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -676,7 +676,7 @@ module AustraliaFunction =
     (*
         Returns <tt>true</tt> iff the weekday is part of the weekend for the given market.
     *)
-    [<ExcelFunction(Name="_Australia_isWeekend", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_isWeekend", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_isWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -720,7 +720,7 @@ module AustraliaFunction =
 
 @returns The name of the calendar.
     *)
-    [<ExcelFunction(Name="_Australia_name", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_name", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -756,7 +756,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia_removedHolidays", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_removedHolidays", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_removedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -792,7 +792,7 @@ module AustraliaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Australia_removeHoliday", Description="Create a Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_removeHoliday", Description="Create a Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_removeHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -831,7 +831,7 @@ module AustraliaFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Australia_Range", Description="Create a range of Australia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Australia_Range", Description="Create a range of Australia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Australia_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

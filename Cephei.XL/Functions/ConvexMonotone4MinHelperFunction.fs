@@ -37,7 +37,7 @@ module ConvexMonotone4MinHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvexMonotone4MinHelper", Description="Create a ConvexMonotone4MinHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvexMonotone4MinHelper", Description="Create a ConvexMonotone4MinHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone4MinHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module ConvexMonotone4MinHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvexMonotone4MinHelper_primitive", Description="Create a ConvexMonotone4MinHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvexMonotone4MinHelper_primitive", Description="Create a ConvexMonotone4MinHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone4MinHelper_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module ConvexMonotone4MinHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvexMonotone4MinHelper_value", Description="Create a ConvexMonotone4MinHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvexMonotone4MinHelper_value", Description="Create a ConvexMonotone4MinHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone4MinHelper_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module ConvexMonotone4MinHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvexMonotone4MinHelper_fNext", Description="Create a ConvexMonotone4MinHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvexMonotone4MinHelper_fNext", Description="Create a ConvexMonotone4MinHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone4MinHelper_fNext
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -227,7 +227,7 @@ module ConvexMonotone4MinHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ConvexMonotone4MinHelper_Range", Description="Create a range of ConvexMonotone4MinHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvexMonotone4MinHelper_Range", Description="Create a range of ConvexMonotone4MinHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone4MinHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

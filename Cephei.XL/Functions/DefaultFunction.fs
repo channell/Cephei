@@ -37,7 +37,7 @@ module DefaultFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Default_integrate", Description="Create a Default",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Default_integrate", Description="Create a Default",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Default_integrate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -103,7 +103,7 @@ module DefaultFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Default_nbEvalutions", Description="Create a Default",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Default_nbEvalutions", Description="Create a Default",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Default_nbEvalutions
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -136,7 +136,7 @@ module DefaultFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Default_Range", Description="Create a range of Default",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Default_Range", Description="Create a range of Default",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Default_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

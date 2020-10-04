@@ -37,7 +37,7 @@ module InvalidPriceSignExceptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InvalidPriceSignException", Description="Create a InvalidPriceSignException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InvalidPriceSignException", Description="Create a InvalidPriceSignException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InvalidPriceSignException_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module InvalidPriceSignExceptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InvalidPriceSignException1", Description="Create a InvalidPriceSignException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InvalidPriceSignException1", Description="Create a InvalidPriceSignException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InvalidPriceSignException_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module InvalidPriceSignExceptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InvalidPriceSignException2", Description="Create a InvalidPriceSignException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InvalidPriceSignException2", Description="Create a InvalidPriceSignException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InvalidPriceSignException_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module InvalidPriceSignExceptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_InvalidPriceSignException_Range", Description="Create a range of InvalidPriceSignException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InvalidPriceSignException_Range", Description="Create a range of InvalidPriceSignException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InvalidPriceSignException_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

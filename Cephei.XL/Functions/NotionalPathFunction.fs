@@ -37,7 +37,7 @@ module NotionalPathFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NotionalPath_addReduction", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NotionalPath_addReduction", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_addReduction
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module NotionalPathFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NotionalPath_loss", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NotionalPath_loss", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_loss
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module NotionalPathFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NotionalPath", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NotionalPath", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module NotionalPathFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NotionalPath_notionalRate", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NotionalPath_notionalRate", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_notionalRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module NotionalPathFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NotionalPath_reset", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NotionalPath_reset", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -227,7 +227,7 @@ module NotionalPathFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NotionalPath_Range", Description="Create a range of NotionalPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NotionalPath_Range", Description="Create a range of NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

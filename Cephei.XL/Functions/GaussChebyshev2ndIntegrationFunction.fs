@@ -37,7 +37,7 @@ module GaussChebyshev2ndIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussChebyshev2ndIntegration", Description="Create a GaussChebyshev2ndIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshev2ndIntegration", Description="Create a GaussChebyshev2ndIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndIntegration_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module GaussChebyshev2ndIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussChebyshev2ndIntegration_order", Description="Create a GaussChebyshev2ndIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshev2ndIntegration_order", Description="Create a GaussChebyshev2ndIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndIntegration_order
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module GaussChebyshev2ndIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussChebyshev2ndIntegration_value", Description="Create a GaussChebyshev2ndIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshev2ndIntegration_value", Description="Create a GaussChebyshev2ndIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndIntegration_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module GaussChebyshev2ndIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussChebyshev2ndIntegration_weights", Description="Create a GaussChebyshev2ndIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshev2ndIntegration_weights", Description="Create a GaussChebyshev2ndIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndIntegration_weights
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module GaussChebyshev2ndIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussChebyshev2ndIntegration_x", Description="Create a GaussChebyshev2ndIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshev2ndIntegration_x", Description="Create a GaussChebyshev2ndIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndIntegration_x
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -221,7 +221,7 @@ module GaussChebyshev2ndIntegrationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GaussChebyshev2ndIntegration_Range", Description="Create a range of GaussChebyshev2ndIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshev2ndIntegration_Range", Description="Create a range of GaussChebyshev2ndIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndIntegration_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

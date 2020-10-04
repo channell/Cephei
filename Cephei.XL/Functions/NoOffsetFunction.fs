@@ -37,7 +37,7 @@ module NoOffsetFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoOffset_paymentDate", Description="Create a NoOffset",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoOffset_paymentDate", Description="Create a NoOffset",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoOffset_paymentDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -76,7 +76,7 @@ module NoOffsetFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NoOffset_Range", Description="Create a range of NoOffset",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoOffset_Range", Description="Create a range of NoOffset",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoOffset_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module LinearRegressionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearRegression_coefficients", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearRegression_coefficients", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearRegression_coefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module LinearRegressionFunction =
     (*
         ! one dimensional linear regression
     *)
-    [<ExcelFunction(Name="_LinearRegression1", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearRegression1", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearRegression_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module LinearRegressionFunction =
     (*
         ! multi dimensional linear regression
     *)
-    [<ExcelFunction(Name="_LinearRegression", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearRegression", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearRegression_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module LinearRegressionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearRegression_residuals", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearRegression_residuals", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearRegression_residuals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -195,7 +195,7 @@ module LinearRegressionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearRegression_standardErrors", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearRegression_standardErrors", Description="Create a LinearRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearRegression_standardErrors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -228,7 +228,7 @@ module LinearRegressionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LinearRegression_Range", Description="Create a range of LinearRegression",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearRegression_Range", Description="Create a range of LinearRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearRegression_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

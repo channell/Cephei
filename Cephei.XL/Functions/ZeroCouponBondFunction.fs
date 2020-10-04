@@ -37,7 +37,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module ZeroCouponBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_accruedAmount", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_accruedAmount", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_calendar", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_calendar", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module ZeroCouponBondFunction =
     (*
         \note returns all the cashflows, including the redemptions.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_cashflows", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_cashflows", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_cashflows
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module ZeroCouponBondFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_cleanPrice", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_cleanPrice", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_cleanPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module ZeroCouponBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_cleanPrice1", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_cleanPrice1", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_cleanPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -338,7 +338,7 @@ module ZeroCouponBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_dirtyPrice1", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_dirtyPrice1", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_dirtyPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module ZeroCouponBondFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_dirtyPrice", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_dirtyPrice", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_dirtyPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_isExpired", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_isExpired", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_issueDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_issueDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_issueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_isTradable", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_isTradable", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_isTradable
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_maturityDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_maturityDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -590,7 +590,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_nextCashFlowDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_nextCashFlowDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_nextCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module ZeroCouponBondFunction =
     (*
         ! Expected next coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the already-fixed not-yet-paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_nextCouponRate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_nextCouponRate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_nextCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -674,7 +674,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_notional", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_notional", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_notional
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -716,7 +716,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_notionals", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_notionals", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_notionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -752,7 +752,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_previousCashFlowDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_previousCashFlowDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_previousCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -794,7 +794,7 @@ module ZeroCouponBondFunction =
     (*
         ! Expected previous coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the last paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_previousCouponRate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_previousCouponRate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_previousCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -836,7 +836,7 @@ module ZeroCouponBondFunction =
     (*
         returns the redemption, if only one is defined
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_redemption", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_redemption", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_redemption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -872,7 +872,7 @@ module ZeroCouponBondFunction =
     (*
         ! returns just the redemption flows (not interest payments)
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_redemptions", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_redemptions", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_redemptions
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -908,7 +908,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_settlementDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_settlementDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_settlementDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -950,7 +950,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_settlementDays", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_settlementDays", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -986,7 +986,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_settlementValue", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_settlementValue", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_settlementValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1028,7 +1028,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_settlementValue1", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_settlementValue1", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_settlementValue1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1064,7 +1064,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_startDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_startDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1100,7 +1100,7 @@ module ZeroCouponBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_yield1", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_yield1", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_yield1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1178,7 +1178,7 @@ module ZeroCouponBondFunction =
     (*
         ! The default bond settlement and theoretical price are used for calculation.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_yield", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_yield", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_yield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1244,7 +1244,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_CASH", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_CASH", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1280,7 +1280,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_errorEstimate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_errorEstimate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1316,7 +1316,7 @@ module ZeroCouponBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_NPV", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_NPV", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1352,7 +1352,7 @@ module ZeroCouponBondFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_result", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_result", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1394,7 +1394,7 @@ module ZeroCouponBondFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_setPricingEngine", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_setPricingEngine", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1436,7 +1436,7 @@ module ZeroCouponBondFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_ZeroCouponBond_valuationDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_valuationDate", Description="Create a ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1469,7 +1469,7 @@ module ZeroCouponBondFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ZeroCouponBond_Range", Description="Create a range of ZeroCouponBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponBond_Range", Description="Create a range of ZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponBond_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

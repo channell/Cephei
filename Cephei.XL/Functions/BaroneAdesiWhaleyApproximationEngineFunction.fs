@@ -37,7 +37,7 @@ module BaroneAdesiWhaleyApproximationEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BaroneAdesiWhaleyApproximationEngine", Description="Create a BaroneAdesiWhaleyApproximationEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BaroneAdesiWhaleyApproximationEngine", Description="Create a BaroneAdesiWhaleyApproximationEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BaroneAdesiWhaleyApproximationEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -72,7 +72,7 @@ module BaroneAdesiWhaleyApproximationEngineFunction =
         else
             "<WIZ>"
 
-    [<ExcelFunction(Name="_BaroneAdesiWhaleyApproximationEngine_Range", Description="Create a range of BaroneAdesiWhaleyApproximationEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BaroneAdesiWhaleyApproximationEngine_Range", Description="Create a range of BaroneAdesiWhaleyApproximationEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BaroneAdesiWhaleyApproximationEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -38,7 +38,7 @@ module StatsHolderFunction =
         
     *)
     (*!! duplicate add function
-    [<ExcelFunction(Name="_StatsHolder_add", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_add", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -87,7 +87,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_addSequence", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_addSequence", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_addSequence
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -135,7 +135,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_errorEstimate", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_errorEstimate", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -171,7 +171,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_expectationValue", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_expectationValue", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_expectationValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_kurtosis", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_kurtosis", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_kurtosis
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -255,7 +255,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_max", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_max", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_max
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -291,7 +291,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_mean", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_mean", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_mean
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -327,7 +327,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_min", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_min", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_min
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -363,7 +363,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_percentile", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_percentile", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_percentile
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -405,7 +405,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_reset", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_reset", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -441,7 +441,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_samples", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_samples", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_samples
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -477,7 +477,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_skewness", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_skewness", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_skewness
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -513,7 +513,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_standardDeviation", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_standardDeviation", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_standardDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -549,7 +549,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder1", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder1", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -580,7 +580,7 @@ module StatsHolderFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_StatsHolder", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -623,7 +623,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_variance", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_variance", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -659,7 +659,7 @@ module StatsHolderFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StatsHolder_weightSum", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_weightSum", Description="Create a StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_weightSum
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module StatsHolderFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_StatsHolder_Range", Description="Create a range of StatsHolder",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StatsHolder_Range", Description="Create a range of StatsHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StatsHolder_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

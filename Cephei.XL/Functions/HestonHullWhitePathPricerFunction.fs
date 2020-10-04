@@ -37,7 +37,7 @@ module HestonHullWhitePathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonHullWhitePathPricer", Description="Create a HestonHullWhitePathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonHullWhitePathPricer", Description="Create a HestonHullWhitePathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonHullWhitePathPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module HestonHullWhitePathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonHullWhitePathPricer_value", Description="Create a HestonHullWhitePathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonHullWhitePathPricer_value", Description="Create a HestonHullWhitePathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonHullWhitePathPricer_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -125,7 +125,7 @@ module HestonHullWhitePathPricerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_HestonHullWhitePathPricer_Range", Description="Create a range of HestonHullWhitePathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonHullWhitePathPricer_Range", Description="Create a range of HestonHullWhitePathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonHullWhitePathPricer_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

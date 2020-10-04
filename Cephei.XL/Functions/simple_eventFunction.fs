@@ -37,7 +37,7 @@ module simple_eventFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_simple_event_date", Description="Create a simple_event",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_simple_event_date", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module simple_eventFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_simple_event", Description="Create a simple_event",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_simple_event", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module simple_eventFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_simple_event_accept", Description="Create a simple_event",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_simple_event_accept", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module simple_eventFunction =
     (*
         ! If includeRefDate is true, then an event has not occurred if its date is the same as the refDate, i.e. this method returns false if the event date is the same as the refDate.
     *)
-    [<ExcelFunction(Name="_simple_event_hasOccurred", Description="Create a simple_event",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_simple_event_hasOccurred", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module simple_eventFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_simple_event_registerWith", Description="Create a simple_event",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_simple_event_registerWith", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module simple_eventFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_simple_event_unregisterWith", Description="Create a simple_event",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_simple_event_unregisterWith", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -281,7 +281,7 @@ module simple_eventFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_simple_event_Range", Description="Create a range of simple_event",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_simple_event_Range", Description="Create a range of simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

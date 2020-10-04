@@ -37,7 +37,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_atmRate", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_atmRate", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_atmRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_capRates", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_capRates", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_capRates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_floatingLeg", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_floatingLeg", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_floatingLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_floorRates", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_floorRates", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_floorRates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_getType", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_getType", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_getType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_impliedVolatility", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_impliedVolatility", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_impliedVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_impliedVolatility1", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_impliedVolatility1", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_impliedVolatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_isExpired", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_isExpired", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_lastFloatingRateCoupon", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_lastFloatingRateCoupon", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_lastFloatingRateCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -506,7 +506,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_maturityDate", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_maturityDate", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_optionlet", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_optionlet", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_optionlet
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -584,7 +584,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_startDate", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_startDate", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -620,7 +620,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_CASH", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_CASH", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -656,7 +656,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_errorEstimate", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_errorEstimate", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module CapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cap_NPV", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_NPV", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -728,7 +728,7 @@ module CapFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_Cap_result", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_result", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -770,7 +770,7 @@ module CapFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_Cap_setPricingEngine", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_setPricingEngine", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -812,7 +812,7 @@ module CapFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_Cap_valuationDate", Description="Create a Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_valuationDate", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -845,7 +845,7 @@ module CapFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Cap_Range", Description="Create a range of Cap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cap_Range", Description="Create a range of Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

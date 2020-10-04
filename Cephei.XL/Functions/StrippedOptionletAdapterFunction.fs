@@ -37,7 +37,7 @@ module StrippedOptionletAdapterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_displacement", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_displacement", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_displacement
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module StrippedOptionletAdapterFunction =
     (*
         TermStructure interface
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_maxDate", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_maxDate", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module StrippedOptionletAdapterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_maxStrike", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_maxStrike", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module StrippedOptionletAdapterFunction =
     (*
         VolatilityTermStructure interface
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_minStrike", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_minStrike", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! Adapter class for turning a StrippedOptionletBase obj into an OptionletVolatilityStructure.
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module StrippedOptionletAdapterFunction =
     (*
         LazyObject interface
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_update", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_update", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module StrippedOptionletAdapterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_volatilityType", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_volatilityType", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_volatilityType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! returns the Black variance for a given option time and strike rate
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_blackVariance", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_blackVariance", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_blackVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! returns the Black variance for a given option tenor and strike rate
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_blackVariance2", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_blackVariance2", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_blackVariance2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! returns the Black variance for a given option date and strike rate
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_blackVariance1", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_blackVariance1", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_blackVariance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! returns the smile for a given option time
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_smileSection", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_smileSection", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_smileSection
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! returns the smile for a given option date
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_smileSection2", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_smileSection2", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_smileSection2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -548,7 +548,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! returns the smile for a given option tenor
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_smileSection1", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_smileSection1", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_smileSection1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! returns the volatility for a given option time and strike rate
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_volatility2", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_volatility2", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_volatility2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! returns the volatility for a given option date and strike rate
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_volatility1", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_volatility1", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_volatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -704,7 +704,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! returns the volatility for a given option tenor and strike rate
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_volatility", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_volatility", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -758,7 +758,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! the business day convention used in tenor to date conversion
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_businessDayConvention", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_businessDayConvention", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -794,7 +794,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! period/date conversion
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_optionDateFromTenor", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_optionDateFromTenor", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_optionDateFromTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -836,7 +836,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_calendar", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_calendar", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -872,7 +872,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! the day counter used for date/time conversion
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_dayCounter", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_dayCounter", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -908,7 +908,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_maxTime", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_maxTime", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -944,7 +944,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! the date at which discount = 1.0 and/or variance = 0.0
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_referenceDate", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_referenceDate", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -980,7 +980,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_settlementDays", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_settlementDays", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1016,7 +1016,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_timeFromReference", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_timeFromReference", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1058,7 +1058,7 @@ module StrippedOptionletAdapterFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_allowsExtrapolation", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_allowsExtrapolation", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1094,7 +1094,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_disableExtrapolation", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_disableExtrapolation", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1136,7 +1136,7 @@ module StrippedOptionletAdapterFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_enableExtrapolation", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_enableExtrapolation", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1178,7 +1178,7 @@ module StrippedOptionletAdapterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_extrapolate", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_extrapolate", Description="Create a StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1211,7 +1211,7 @@ module StrippedOptionletAdapterFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_StrippedOptionletAdapter_Range", Description="Create a range of StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StrippedOptionletAdapter_Range", Description="Create a range of StrippedOptionletAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrippedOptionletAdapter_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

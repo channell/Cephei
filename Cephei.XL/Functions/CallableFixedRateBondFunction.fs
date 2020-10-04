@@ -37,7 +37,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_callability", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_callability", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_callability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_cleanPriceOAS", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_cleanPriceOAS", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_cleanPriceOAS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_effectiveConvexity", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_effectiveConvexity", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_effectiveConvexity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_effectiveDuration", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_effectiveDuration", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_effectiveDuration
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_impliedVolatility", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_impliedVolatility", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_impliedVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -458,7 +458,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_OAS", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_OAS", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_OAS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -548,7 +548,7 @@ module CallableFixedRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_accruedAmount", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_accruedAmount", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -590,7 +590,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_calendar", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_calendar", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -626,7 +626,7 @@ module CallableFixedRateBondFunction =
     (*
         \note returns all the cashflows, including the redemptions.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_cashflows", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_cashflows", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_cashflows
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -662,7 +662,7 @@ module CallableFixedRateBondFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_cleanPrice", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_cleanPrice", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_cleanPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -698,7 +698,7 @@ module CallableFixedRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_cleanPrice1", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_cleanPrice1", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_cleanPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -764,7 +764,7 @@ module CallableFixedRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_dirtyPrice1", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_dirtyPrice1", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_dirtyPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -830,7 +830,7 @@ module CallableFixedRateBondFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_dirtyPrice", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_dirtyPrice", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_dirtyPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -866,7 +866,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_isExpired", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_isExpired", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -902,7 +902,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_issueDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_issueDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_issueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -938,7 +938,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_isTradable", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_isTradable", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_isTradable
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -980,7 +980,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_maturityDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_maturityDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1016,7 +1016,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_nextCashFlowDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_nextCashFlowDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_nextCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1058,7 +1058,7 @@ module CallableFixedRateBondFunction =
     (*
         ! Expected next coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the already-fixed not-yet-paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_nextCouponRate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_nextCouponRate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_nextCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1100,7 +1100,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_notional", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_notional", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_notional
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1142,7 +1142,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_notionals", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_notionals", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_notionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1178,7 +1178,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_previousCashFlowDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_previousCashFlowDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_previousCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1220,7 +1220,7 @@ module CallableFixedRateBondFunction =
     (*
         ! Expected previous coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the last paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_previousCouponRate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_previousCouponRate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_previousCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1262,7 +1262,7 @@ module CallableFixedRateBondFunction =
     (*
         returns the redemption, if only one is defined
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_redemption", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_redemption", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_redemption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1298,7 +1298,7 @@ module CallableFixedRateBondFunction =
     (*
         ! returns just the redemption flows (not interest payments)
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_redemptions", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_redemptions", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_redemptions
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1334,7 +1334,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_settlementDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_settlementDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_settlementDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1376,7 +1376,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_settlementDays", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_settlementDays", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1412,7 +1412,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_settlementValue", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_settlementValue", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_settlementValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1454,7 +1454,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_settlementValue1", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_settlementValue1", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_settlementValue1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1490,7 +1490,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_startDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_startDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1526,7 +1526,7 @@ module CallableFixedRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_yield1", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_yield1", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_yield1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1604,7 +1604,7 @@ module CallableFixedRateBondFunction =
     (*
         ! The default bond settlement and theoretical price are used for calculation.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_yield", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_yield", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_yield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1670,7 +1670,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_CASH", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_CASH", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1706,7 +1706,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_errorEstimate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_errorEstimate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1742,7 +1742,7 @@ module CallableFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_NPV", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_NPV", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1778,7 +1778,7 @@ module CallableFixedRateBondFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_result", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_result", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1820,7 +1820,7 @@ module CallableFixedRateBondFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_setPricingEngine", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_setPricingEngine", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1862,7 +1862,7 @@ module CallableFixedRateBondFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_CallableFixedRateBond_valuationDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_valuationDate", Description="Create a CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1895,7 +1895,7 @@ module CallableFixedRateBondFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CallableFixedRateBond_Range", Description="Create a range of CallableFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CallableFixedRateBond_Range", Description="Create a range of CallableFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableFixedRateBond_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

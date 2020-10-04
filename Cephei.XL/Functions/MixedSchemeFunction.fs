@@ -37,7 +37,7 @@ module MixedSchemeFunction =
     (*
         constructors
     *)
-    [<ExcelFunction(Name="_MixedScheme", Description="Create a MixedScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedScheme", Description="Create a MixedScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedScheme_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module MixedSchemeFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_MixedScheme1", Description="Create a MixedScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedScheme1", Description="Create a MixedScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedScheme_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module MixedSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedScheme_setStep", Description="Create a MixedScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedScheme_setStep", Description="Create a MixedScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedScheme_setStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module MixedSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedScheme_step", Description="Create a MixedScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedScheme_step", Description="Create a MixedScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedScheme_step
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -210,7 +210,7 @@ module MixedSchemeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MixedScheme_Range", Description="Create a range of MixedScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedScheme_Range", Description="Create a range of MixedScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedScheme_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module MCEuropeanEngineFunction =
     (*
         constructor
     *)
-    [<ExcelFunction(Name="_MCEuropeanEngine", Description="Create a MCEuropeanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCEuropeanEngine", Description="Create a MCEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCEuropeanEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module MCEuropeanEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MCEuropeanEngine_Range", Description="Create a range of MCEuropeanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCEuropeanEngine_Range", Description="Create a range of MCEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCEuropeanEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

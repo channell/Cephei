@@ -38,7 +38,7 @@ module MCDiscreteAveragingAsianEngineFunction =
     (*
         constructor
     *)
-    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -123,7 +123,7 @@ module MCDiscreteAveragingAsianEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_registerWith", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_registerWith", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -165,7 +165,7 @@ module MCDiscreteAveragingAsianEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_reset", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_reset", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -201,7 +201,7 @@ module MCDiscreteAveragingAsianEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_unregisterWith", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_unregisterWith", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -243,7 +243,7 @@ module MCDiscreteAveragingAsianEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_update", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_update", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -279,7 +279,7 @@ module MCDiscreteAveragingAsianEngineFunction =
     (*
         ! error estimated using the samples simulated so far
     *)
-    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_errorEstimate", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_errorEstimate", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -315,7 +315,7 @@ module MCDiscreteAveragingAsianEngineFunction =
     (*
         ! access to the sample accumulator for richer statistics
     *)
-    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_sampleAccumulator", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_sampleAccumulator", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_sampleAccumulator
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -351,7 +351,7 @@ module MCDiscreteAveragingAsianEngineFunction =
     (*
         ! add samples until the required absolute tolerance is reached
     *)
-    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_value", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_value", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -405,7 +405,7 @@ module MCDiscreteAveragingAsianEngineFunction =
     (*
         ! simulate a fixed number of samples
     *)
-    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_valueWithSamples", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_valueWithSamples", Description="Create a MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_valueWithSamples
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -444,7 +444,7 @@ module MCDiscreteAveragingAsianEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_Range", Description="Create a range of MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteAveragingAsianEngine_Range", Description="Create a range of MCDiscreteAveragingAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteAveragingAsianEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module ConjugateGradientFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConjugateGradient", Description="Create a ConjugateGradient",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConjugateGradient", Description="Create a ConjugateGradient",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConjugateGradient_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module ConjugateGradientFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConjugateGradient_minimize", Description="Create a ConjugateGradient",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConjugateGradient_minimize", Description="Create a ConjugateGradient",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConjugateGradient_minimize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module ConjugateGradientFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ConjugateGradient_Range", Description="Create a range of ConjugateGradient",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConjugateGradient_Range", Description="Create a range of ConjugateGradient",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConjugateGradient_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

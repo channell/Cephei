@@ -37,7 +37,7 @@ module YYAUCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYAUCPI1", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI1", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module YYAUCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYAUCPI", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -141,7 +141,7 @@ module YYAUCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYAUCPI_clone", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_clone", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module YYAUCPIFunction =
     (*
         Index interface The forecastTodaysFixing parameter (required by the Index interface) is currently ignored.
     *)
-    [<ExcelFunction(Name="_YYAUCPI_fixing", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_fixing", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -231,7 +231,7 @@ module YYAUCPIFunction =
     (*
         Other methods
     *)
-    [<ExcelFunction(Name="_YYAUCPI_ratio", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_ratio", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_ratio
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -267,7 +267,7 @@ module YYAUCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYAUCPI_yoyInflationTermStructure", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_yoyInflationTermStructure", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_yoyInflationTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -303,7 +303,7 @@ module YYAUCPIFunction =
     (*
         ! this method creates all the "fixings" for the relevant period of the index.  E.g. for monthly indices it will put the same value in every calendar day in the month.
     *)
-    [<ExcelFunction(Name="_YYAUCPI_addFixing", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_addFixing", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -358,7 +358,7 @@ module YYAUCPIFunction =
         ! The availability lag describes when the index is
 <i>available</i>, not how it is used.  Specifically the fixing for, say, January, may only be available in April but the index will always return the index value applicable for January as its January fixing (independent of the lag in availability).
     *)
-    [<ExcelFunction(Name="_YYAUCPI_availabilityLag", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_availabilityLag", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_availabilityLag
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -394,7 +394,7 @@ module YYAUCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYAUCPI_currency", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_currency", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -430,7 +430,7 @@ module YYAUCPIFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_YYAUCPI_familyName", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_familyName", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -466,7 +466,7 @@ module YYAUCPIFunction =
     (*
         ! Inflation indices do not have fixing calendars.  An inflation index value is valid for every day (including weekends) of a calendar period.  I.e. it uses the NullCalendar as its fixing calendar.
     *)
-    [<ExcelFunction(Name="_YYAUCPI_fixingCalendar", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_fixingCalendar", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -502,7 +502,7 @@ module YYAUCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYAUCPI_frequency", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_frequency", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_frequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -538,7 +538,7 @@ module YYAUCPIFunction =
     (*
         ! Forecasting index values using an inflation term structure uses the interpolation of the inflation term structure unless interpolation is set to false.  In this case the extrapolated values are constant within each period taking the mid-period extrapolated value.
     *)
-    [<ExcelFunction(Name="_YYAUCPI_interpolated", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_interpolated", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_interpolated
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -574,7 +574,7 @@ module YYAUCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYAUCPI_isValidFixingDate", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_isValidFixingDate", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -616,7 +616,7 @@ module YYAUCPIFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_YYAUCPI_name", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_name", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -652,7 +652,7 @@ module YYAUCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYAUCPI_region", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_region", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_region
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -688,7 +688,7 @@ module YYAUCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYAUCPI_revised", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_revised", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_revised
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -724,7 +724,7 @@ module YYAUCPIFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_YYAUCPI_update", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_update", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -760,7 +760,7 @@ module YYAUCPIFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_YYAUCPI_addFixings", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_addFixings", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -814,7 +814,7 @@ module YYAUCPIFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_YYAUCPI_addFixings1", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_addFixings1", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -862,7 +862,7 @@ module YYAUCPIFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_YYAUCPI_allowsNativeFixings", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_allowsNativeFixings", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -898,7 +898,7 @@ module YYAUCPIFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_YYAUCPI_clearFixings", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_clearFixings", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -934,7 +934,7 @@ module YYAUCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYAUCPI_registerWith", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_registerWith", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -976,7 +976,7 @@ module YYAUCPIFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_YYAUCPI_timeSeries", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_timeSeries", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1012,7 +1012,7 @@ module YYAUCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYAUCPI_unregisterWith", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_unregisterWith", Description="Create a YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1051,7 +1051,7 @@ module YYAUCPIFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_YYAUCPI_Range", Description="Create a range of YYAUCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYAUCPI_Range", Description="Create a range of YYAUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPI_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

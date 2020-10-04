@@ -37,7 +37,7 @@ module FdmDividendHandlerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmDividendHandler_applyTo", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmDividendHandler_applyTo", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDividendHandler_applyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module FdmDividendHandlerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmDividendHandler_dividendDates", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmDividendHandler_dividendDates", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDividendHandler_dividendDates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module FdmDividendHandlerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmDividendHandler_dividends", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmDividendHandler_dividends", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDividendHandler_dividends
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -157,7 +157,7 @@ module FdmDividendHandlerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmDividendHandler_dividendTimes", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmDividendHandler_dividendTimes", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDividendHandler_dividendTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -193,7 +193,7 @@ module FdmDividendHandlerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmDividendHandler", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmDividendHandler", Description="Create a FdmDividendHandler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDividendHandler_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -251,7 +251,7 @@ module FdmDividendHandlerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmDividendHandler_Range", Description="Create a range of FdmDividendHandler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmDividendHandler_Range", Description="Create a range of FdmDividendHandler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmDividendHandler_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

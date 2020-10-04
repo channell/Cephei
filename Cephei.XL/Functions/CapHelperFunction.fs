@@ -37,7 +37,7 @@ module CapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapHelper_addTimesTo", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapHelper_addTimesTo", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_addTimesTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module CapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapHelper_blackPrice", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapHelper_blackPrice", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_blackPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module CapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapHelper", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapHelper", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -212,7 +212,7 @@ module CapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapHelper_modelValue", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapHelper_modelValue", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_modelValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -248,7 +248,7 @@ module CapHelperFunction =
     (*
         ! returns the error resulting from the model valuation
     *)
-    [<ExcelFunction(Name="_CapHelper_calibrationError", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapHelper_calibrationError", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_calibrationError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module CapHelperFunction =
     (*
         ! Black volatility implied by the model
     *)
-    [<ExcelFunction(Name="_CapHelper_impliedVolatility", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapHelper_impliedVolatility", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_impliedVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -350,7 +350,7 @@ module CapHelperFunction =
     (*
         ! returns the actual price of the instrument (from volatility)
     *)
-    [<ExcelFunction(Name="_CapHelper_marketValue", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapHelper_marketValue", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_marketValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module CapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapHelper_setPricingEngine", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapHelper_setPricingEngine", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module CapHelperFunction =
     (*
         ! returns the volatility Handle
     *)
-    [<ExcelFunction(Name="_CapHelper_volatility", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapHelper_volatility", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -464,7 +464,7 @@ module CapHelperFunction =
     (*
         ! returns the volatility type
     *)
-    [<ExcelFunction(Name="_CapHelper_volatilityType", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapHelper_volatilityType", Description="Create a CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_volatilityType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -497,7 +497,7 @@ module CapHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CapHelper_Range", Description="Create a range of CapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapHelper_Range", Description="Create a range of CapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

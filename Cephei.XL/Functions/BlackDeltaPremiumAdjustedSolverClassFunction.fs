@@ -37,7 +37,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedSolverClass", Description="Create a BlackDeltaPremiumAdjustedSolverClass",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedSolverClass", Description="Create a BlackDeltaPremiumAdjustedSolverClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedSolverClass_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedSolverClass_value", Description="Create a BlackDeltaPremiumAdjustedSolverClass",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedSolverClass_value", Description="Create a BlackDeltaPremiumAdjustedSolverClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedSolverClass_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedSolverClass_derivative", Description="Create a BlackDeltaPremiumAdjustedSolverClass",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedSolverClass_derivative", Description="Create a BlackDeltaPremiumAdjustedSolverClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedSolverClass_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -191,7 +191,7 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedSolverClass_Range", Description="Create a range of BlackDeltaPremiumAdjustedSolverClass",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedSolverClass_Range", Description="Create a range of BlackDeltaPremiumAdjustedSolverClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedSolverClass_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

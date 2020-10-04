@@ -37,7 +37,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_Clone", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_Clone", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_Clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_data", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_data", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_data
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_data_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_data_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_data_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_dates", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_dates", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_dates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_dates_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_dates_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_dates_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_discounts", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_discounts", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_discounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve1", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve1", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -375,7 +375,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve2", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve2", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -436,7 +436,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve3", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve3", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -509,7 +509,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve4", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve4", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -576,7 +576,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve5", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve5", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create5
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -637,7 +637,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve6", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve6", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_create6
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_interpolation_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_interpolation_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_interpolation_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -728,7 +728,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_interpolator_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_interpolator_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_interpolator_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -764,7 +764,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_maxDate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_maxDate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -800,7 +800,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_maxDate_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_maxDate_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_maxDate_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -836,7 +836,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_nodes", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_nodes", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_nodes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -872,7 +872,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_setupInterpolation", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_setupInterpolation", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_setupInterpolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -908,7 +908,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_times", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_times", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_times
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -944,7 +944,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_times_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_times_", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_times_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -980,7 +980,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! The same day-counting rule used by the term structure should be used for calculating the passed time t.
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_discount", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_discount", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1028,7 +1028,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         These methods return the discount factor from a given date or time to the reference date.  In the latter case, the time is calculated as a fraction of year from the reference date.
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_discount", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_discount", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1076,7 +1076,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! The resulting interest rate has the required day-counting rule. \warning dates are not adjusted for holidays
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_forwardRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_forwardRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_forwardRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1148,7 +1148,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! The resulting interest rate has the required day-counting rule.
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_forwardRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_forwardRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_forwardRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1220,7 +1220,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! The resulting interest rate has the same day-counting rule used by the term structure. The same rule should be used for calculating the passed times t1 and t2.
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_forwardRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_forwardRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_forwardRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1286,7 +1286,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_jumpDates", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_jumpDates", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_jumpDates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1322,7 +1322,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_jumpTimes", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_jumpTimes", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_jumpTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1358,7 +1358,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_update", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_update", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1394,7 +1394,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! The resulting interest rate has the required daycounting rule.
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_zeroRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_zeroRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_zeroRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1460,7 +1460,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! The resulting interest rate has the same day-counting rule used by the term structure. The same rule should be used for calculating the passed time t.
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_zeroRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_zeroRate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_zeroRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1520,7 +1520,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_calendar", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_calendar", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1556,7 +1556,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! the day counter used for date/time conversion
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_dayCounter", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_dayCounter", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1592,7 +1592,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_maxTime", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_maxTime", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1628,7 +1628,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! the date at which discount = 1.0 and/or variance = 0.0
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_referenceDate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_referenceDate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1664,7 +1664,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_settlementDays", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_settlementDays", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1700,7 +1700,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_timeFromReference", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_timeFromReference", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1742,7 +1742,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_allowsExtrapolation", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_allowsExtrapolation", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1778,7 +1778,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_disableExtrapolation", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_disableExtrapolation", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1820,7 +1820,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_enableExtrapolation", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_enableExtrapolation", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1862,7 +1862,7 @@ module InterpolatedDiscountCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_extrapolate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_extrapolate", Description="Create a InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1895,7 +1895,7 @@ module InterpolatedDiscountCurveFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_InterpolatedDiscountCurve_Range", Description="Create a range of InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedDiscountCurve_Range", Description="Create a range of InterpolatedDiscountCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedDiscountCurve_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module TreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Tree_columns", Description="Create a Tree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tree_columns", Description="Create a Tree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tree_columns
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module TreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Tree", Description="Create a Tree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tree", Description="Create a Tree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tree_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module TreeFunction =
     (*
         parameterless constructor is requried for generics
     *)
-    [<ExcelFunction(Name="_Tree1", Description="Create a Tree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tree1", Description="Create a Tree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tree_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -138,7 +138,7 @@ module TreeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Tree_Range", Description="Create a range of Tree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tree_Range", Description="Create a range of Tree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tree_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

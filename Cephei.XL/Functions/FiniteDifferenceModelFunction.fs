@@ -37,7 +37,7 @@ module FiniteDifferenceModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FiniteDifferenceModel_evolver", Description="Create a FiniteDifferenceModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FiniteDifferenceModel_evolver", Description="Create a FiniteDifferenceModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FiniteDifferenceModel_evolver
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module FiniteDifferenceModelFunction =
     (*
         public FiniteDifferenceModel(Evolver evolver, List<double> stoppingTimes = List<double>())
     *)
-    [<ExcelFunction(Name="_FiniteDifferenceModel", Description="Create a FiniteDifferenceModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FiniteDifferenceModel", Description="Create a FiniteDifferenceModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FiniteDifferenceModel_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module FiniteDifferenceModelFunction =
     (*
         constructors
     *)
-    [<ExcelFunction(Name="_FiniteDifferenceModel1", Description="Create a FiniteDifferenceModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FiniteDifferenceModel1", Description="Create a FiniteDifferenceModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FiniteDifferenceModel_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module FiniteDifferenceModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FiniteDifferenceModel2", Description="Create a FiniteDifferenceModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FiniteDifferenceModel2", Description="Create a FiniteDifferenceModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FiniteDifferenceModel_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -208,7 +208,7 @@ module FiniteDifferenceModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FiniteDifferenceModel_rollback", Description="Create a FiniteDifferenceModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FiniteDifferenceModel_rollback", Description="Create a FiniteDifferenceModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FiniteDifferenceModel_rollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -274,7 +274,7 @@ module FiniteDifferenceModelFunction =
     (*
         ! solves the problem between the given times, applying a condition at every step. \warning being this a rollback, <tt>from</tt> must be a later time than <tt>to</tt>.
     *)
-    [<ExcelFunction(Name="_FiniteDifferenceModel_rollback", Description="Create a FiniteDifferenceModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FiniteDifferenceModel_rollback", Description="Create a FiniteDifferenceModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FiniteDifferenceModel_rollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -331,7 +331,7 @@ module FiniteDifferenceModelFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FiniteDifferenceModel_Range", Description="Create a range of FiniteDifferenceModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FiniteDifferenceModel_Range", Description="Create a range of FiniteDifferenceModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FiniteDifferenceModel_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

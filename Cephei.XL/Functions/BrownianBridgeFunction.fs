@@ -37,7 +37,7 @@ module BrownianBridgeFunction =
     (*
         ! generic times
     *)
-    [<ExcelFunction(Name="_BrownianBridge", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BrownianBridge", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module BrownianBridgeFunction =
     (*
         ! \note the starting time of the path is assumed to be 0 and must not be included
     *)
-    [<ExcelFunction(Name="_BrownianBridge1", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BrownianBridge1", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module BrownianBridgeFunction =
     (*
         ! unit-time path
     *)
-    [<ExcelFunction(Name="_BrownianBridge2", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BrownianBridge2", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -148,7 +148,7 @@ module BrownianBridgeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BrownianBridge_size", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BrownianBridge_size", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -184,7 +184,7 @@ module BrownianBridgeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BrownianBridge_times", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BrownianBridge_times", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_times
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -220,7 +220,7 @@ module BrownianBridgeFunction =
     (*
         Brownian-bridge constructor
     *)
-    [<ExcelFunction(Name="_BrownianBridge_transform", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BrownianBridge_transform", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_transform
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -265,7 +265,7 @@ module BrownianBridgeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BrownianBridge_Range", Description="Create a range of BrownianBridge",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BrownianBridge_Range", Description="Create a range of BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

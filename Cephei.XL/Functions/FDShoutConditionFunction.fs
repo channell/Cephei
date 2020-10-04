@@ -37,7 +37,7 @@ module FDShoutConditionFunction =
     (*
         required for template inheritance
     *)
-    [<ExcelFunction(Name="_FDShoutCondition_factory", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutCondition_factory", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -97,7 +97,7 @@ module FDShoutConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutCondition", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutCondition", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module FDShoutConditionFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_FDShoutCondition1", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutCondition1", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -184,7 +184,7 @@ module FDShoutConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutCondition_setStepCondition", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutCondition_setStepCondition", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_setStepCondition
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -226,7 +226,7 @@ module FDShoutConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutCondition_ensureStrikeInGrid", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutCondition_ensureStrikeInGrid", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_ensureStrikeInGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -262,7 +262,7 @@ module FDShoutConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutCondition_getResidualTime", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutCondition_getResidualTime", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_getResidualTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -298,7 +298,7 @@ module FDShoutConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutCondition_grid", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutCondition_grid", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -334,7 +334,7 @@ module FDShoutConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDShoutCondition_intrinsicValues_", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutCondition_intrinsicValues_", Description="Create a FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_intrinsicValues_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -367,7 +367,7 @@ module FDShoutConditionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FDShoutCondition_Range", Description="Create a range of FDShoutCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDShoutCondition_Range", Description="Create a range of FDShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDShoutCondition_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

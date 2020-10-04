@@ -37,7 +37,7 @@ module FloorTruncationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloorTruncation", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloorTruncation", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module FloorTruncationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloorTruncation1", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloorTruncation1", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module FloorTruncationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloorTruncation_Digit", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloorTruncation_Digit", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_Digit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module FloorTruncationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloorTruncation_getType", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloorTruncation_getType", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_getType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -189,7 +189,7 @@ module FloorTruncationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloorTruncation_Precision", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloorTruncation_Precision", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_Precision
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -225,7 +225,7 @@ module FloorTruncationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloorTruncation_Round", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloorTruncation_Round", Description="Create a FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_Round
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -264,7 +264,7 @@ module FloorTruncationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FloorTruncation_Range", Description="Create a range of FloorTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloorTruncation_Range", Description="Create a range of FloorTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloorTruncation_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

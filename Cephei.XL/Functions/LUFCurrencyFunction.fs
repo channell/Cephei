@@ -37,7 +37,7 @@ module LUFCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LUFCurrency", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module LUFCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_LUFCurrency_code", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_code", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module LUFCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_LUFCurrency_empty", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_empty", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module LUFCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LUFCurrency_Equals", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_Equals", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module LUFCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_LUFCurrency_format", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_format", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module LUFCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_LUFCurrency_fractionsPerUnit", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_fractionsPerUnit", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module LUFCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_LUFCurrency_fractionSymbol", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_fractionSymbol", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module LUFCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_LUFCurrency_name", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_name", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module LUFCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_LUFCurrency_numericCode", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_numericCode", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module LUFCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_LUFCurrency_rounding", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_rounding", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module LUFCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_LUFCurrency_symbol", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_symbol", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module LUFCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LUFCurrency_ToString", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_ToString", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module LUFCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_LUFCurrency_triangulationCurrency", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_triangulationCurrency", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module LUFCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LUFCurrency_Range", Description="Create a range of LUFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LUFCurrency_Range", Description="Create a range of LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

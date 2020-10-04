@@ -38,7 +38,7 @@ module FDMultiPeriodEngineFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_FDMultiPeriodEngine", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDMultiPeriodEngine", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -69,7 +69,7 @@ module FDMultiPeriodEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDMultiPeriodEngine_setStepCondition", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDMultiPeriodEngine_setStepCondition", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_setStepCondition
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module FDMultiPeriodEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDMultiPeriodEngine_ensureStrikeInGrid", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDMultiPeriodEngine_ensureStrikeInGrid", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_ensureStrikeInGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -147,7 +147,7 @@ module FDMultiPeriodEngineFunction =
     (*
         this should be defined as new in each deriving class which use template iheritance in order to return a proper class to wrap
     *)
-    [<ExcelFunction(Name="_FDMultiPeriodEngine_factory", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDMultiPeriodEngine_factory", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module FDMultiPeriodEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDMultiPeriodEngine_getResidualTime", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDMultiPeriodEngine_getResidualTime", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_getResidualTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -243,7 +243,7 @@ module FDMultiPeriodEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDMultiPeriodEngine_grid", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDMultiPeriodEngine_grid", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -279,7 +279,7 @@ module FDMultiPeriodEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDMultiPeriodEngine_intrinsicValues_", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDMultiPeriodEngine_intrinsicValues_", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_intrinsicValues_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -312,7 +312,7 @@ module FDMultiPeriodEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FDMultiPeriodEngine_Range", Description="Create a range of FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDMultiPeriodEngine_Range", Description="Create a range of FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

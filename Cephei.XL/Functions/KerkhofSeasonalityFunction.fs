@@ -37,7 +37,7 @@ module KerkhofSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KerkhofSeasonality", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KerkhofSeasonality", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module KerkhofSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KerkhofSeasonality_seasonalityFactor", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KerkhofSeasonality_seasonalityFactor", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_seasonalityFactor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module KerkhofSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KerkhofSeasonality_correctYoYRate", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KerkhofSeasonality_correctYoYRate", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_correctYoYRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -176,7 +176,7 @@ module KerkhofSeasonalityFunction =
     (*
         Seasonality interface
     *)
-    [<ExcelFunction(Name="_KerkhofSeasonality_correctZeroRate", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KerkhofSeasonality_correctZeroRate", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_correctZeroRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module KerkhofSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KerkhofSeasonality_frequency", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KerkhofSeasonality_frequency", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_frequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module KerkhofSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KerkhofSeasonality_isConsistent", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KerkhofSeasonality_isConsistent", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_isConsistent
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module KerkhofSeasonalityFunction =
     (*
         ! inspectors
     *)
-    [<ExcelFunction(Name="_KerkhofSeasonality_seasonalityBaseDate", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KerkhofSeasonality_seasonalityBaseDate", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_seasonalityBaseDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module KerkhofSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KerkhofSeasonality_seasonalityFactors", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KerkhofSeasonality_seasonalityFactors", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_seasonalityFactors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module KerkhofSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KerkhofSeasonality_set", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KerkhofSeasonality_set", Description="Create a KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_set
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -431,7 +431,7 @@ module KerkhofSeasonalityFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_KerkhofSeasonality_Range", Description="Create a range of KerkhofSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KerkhofSeasonality_Range", Description="Create a range of KerkhofSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KerkhofSeasonality_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

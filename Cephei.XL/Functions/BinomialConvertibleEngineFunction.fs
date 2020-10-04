@@ -37,7 +37,7 @@ module BinomialConvertibleEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BinomialConvertibleEngine", Description="Create a BinomialConvertibleEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BinomialConvertibleEngine", Description="Create a BinomialConvertibleEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialConvertibleEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -78,7 +78,7 @@ module BinomialConvertibleEngineFunction =
         else
             "<WIZ>"
 
-    [<ExcelFunction(Name="_BinomialConvertibleEngine_Range", Description="Create a range of BinomialConvertibleEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BinomialConvertibleEngine_Range", Description="Create a range of BinomialConvertibleEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialConvertibleEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module CCTEUFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CCTEU_accruedAmount", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_accruedAmount", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_calendar", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_calendar", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module CCTEUFunction =
     (*
         \note returns all the cashflows, including the redemptions.
     *)
-    [<ExcelFunction(Name="_CCTEU_cashflows", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_cashflows", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_cashflows
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -224,7 +224,7 @@ module CCTEUFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_CCTEU_cleanPrice", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_cleanPrice", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_cleanPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module CCTEUFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CCTEU_cleanPrice1", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_cleanPrice1", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_cleanPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module CCTEUFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CCTEU_dirtyPrice1", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_dirtyPrice1", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_dirtyPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -392,7 +392,7 @@ module CCTEUFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_CCTEU_dirtyPrice", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_dirtyPrice", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_dirtyPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_isExpired", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_isExpired", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -464,7 +464,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_issueDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_issueDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_issueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_isTradable", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_isTradable", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_isTradable
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_maturityDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_maturityDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -578,7 +578,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_nextCashFlowDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_nextCashFlowDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_nextCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -620,7 +620,7 @@ module CCTEUFunction =
     (*
         ! Expected next coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the already-fixed not-yet-paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CCTEU_nextCouponRate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_nextCouponRate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_nextCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -662,7 +662,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_notional", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_notional", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_notional
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -704,7 +704,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_notionals", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_notionals", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_notionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -740,7 +740,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_previousCashFlowDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_previousCashFlowDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_previousCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -782,7 +782,7 @@ module CCTEUFunction =
     (*
         ! Expected previous coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the last paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CCTEU_previousCouponRate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_previousCouponRate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_previousCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -824,7 +824,7 @@ module CCTEUFunction =
     (*
         returns the redemption, if only one is defined
     *)
-    [<ExcelFunction(Name="_CCTEU_redemption", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_redemption", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_redemption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -860,7 +860,7 @@ module CCTEUFunction =
     (*
         ! returns just the redemption flows (not interest payments)
     *)
-    [<ExcelFunction(Name="_CCTEU_redemptions", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_redemptions", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_redemptions
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -896,7 +896,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_settlementDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_settlementDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_settlementDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -938,7 +938,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_settlementDays", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_settlementDays", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -974,7 +974,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_settlementValue", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_settlementValue", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_settlementValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1016,7 +1016,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_settlementValue1", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_settlementValue1", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_settlementValue1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1052,7 +1052,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_startDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_startDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1088,7 +1088,7 @@ module CCTEUFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CCTEU_yield1", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_yield1", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_yield1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1166,7 +1166,7 @@ module CCTEUFunction =
     (*
         ! The default bond settlement and theoretical price are used for calculation.
     *)
-    [<ExcelFunction(Name="_CCTEU_yield", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_yield", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_yield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1232,7 +1232,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_CASH", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_CASH", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1268,7 +1268,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_errorEstimate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_errorEstimate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1304,7 +1304,7 @@ module CCTEUFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CCTEU_NPV", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_NPV", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1340,7 +1340,7 @@ module CCTEUFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_CCTEU_result", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_result", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1382,7 +1382,7 @@ module CCTEUFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_CCTEU_setPricingEngine", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_setPricingEngine", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1424,7 +1424,7 @@ module CCTEUFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_CCTEU_valuationDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_valuationDate", Description="Create a CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1457,7 +1457,7 @@ module CCTEUFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CCTEU_Range", Description="Create a range of CCTEU",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CCTEU_Range", Description="Create a range of CCTEU",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CCTEU_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

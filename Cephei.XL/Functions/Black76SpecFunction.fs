@@ -37,7 +37,7 @@ module Black76SpecFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Black76Spec", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Black76Spec", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module Black76SpecFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Black76Spec_type", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Black76Spec_type", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module Black76SpecFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Black76Spec_value", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Black76Spec_value", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -176,7 +176,7 @@ module Black76SpecFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Black76Spec_vega", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Black76Spec_vega", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_vega
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -245,7 +245,7 @@ module Black76SpecFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Black76Spec_Range", Description="Create a range of Black76Spec",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Black76Spec_Range", Description="Create a range of Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

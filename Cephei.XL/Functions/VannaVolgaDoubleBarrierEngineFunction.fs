@@ -39,7 +39,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_GetOriginalEngine", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_GetOriginalEngine", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_GetOriginalEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -88,7 +88,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -191,7 +191,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_registerWith", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_registerWith", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -233,7 +233,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_reset", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_reset", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -269,7 +269,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_unregisterWith", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_unregisterWith", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -311,7 +311,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_update", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_update", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_Range", Description="Create a range of VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_Range", Description="Create a range of VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

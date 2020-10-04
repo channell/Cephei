@@ -37,7 +37,7 @@ module AnalyticDividendEuropeanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticDividendEuropeanEngine", Description="Create a AnalyticDividendEuropeanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDividendEuropeanEngine", Description="Create a AnalyticDividendEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDividendEuropeanEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -72,7 +72,7 @@ module AnalyticDividendEuropeanEngineFunction =
         else
             "<WIZ>"
 
-    [<ExcelFunction(Name="_AnalyticDividendEuropeanEngine_Range", Description="Create a range of AnalyticDividendEuropeanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDividendEuropeanEngine_Range", Description="Create a range of AnalyticDividendEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDividendEuropeanEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

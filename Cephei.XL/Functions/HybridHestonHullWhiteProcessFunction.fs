@@ -37,7 +37,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_apply", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_apply", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_apply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_diffusion", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_diffusion", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_diffusion
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_discretization", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_discretization", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_discretization
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -169,7 +169,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_drift", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_drift", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_drift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_eta", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_eta", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_eta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_evolve", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_evolve", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_evolve
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_hestonProcess", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_hestonProcess", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_hestonProcess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -349,7 +349,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_hullWhiteProcess", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_hullWhiteProcess", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_hullWhiteProcess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -385,7 +385,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_initialValues", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_initialValues", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_initialValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_numeraire", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_numeraire", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_numeraire
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_size", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_size", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -560,7 +560,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_time", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_time", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_time
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -602,7 +602,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_update", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_update", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -638,7 +638,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         ! returns the covariance. This method can be overridden in derived classes which want to hard-code a particular discretization.
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_covariance", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_covariance", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_covariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         ! This method can be overridden in derived classes which want to hard-code a particular discretization.
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_expectation", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_expectation", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_expectation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -746,7 +746,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         ! returns the number of independent factors of the process
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_factors", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_factors", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_factors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -782,7 +782,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_registerWith", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_registerWith", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -824,7 +824,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         ! returns the standard deviation. This method can be overridden in derived classes which want to hard-code a particular discretization.
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_stdDeviation", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_stdDeviation", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_stdDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -878,7 +878,7 @@ module HybridHestonHullWhiteProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_unregisterWith", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_unregisterWith", Description="Create a HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -917,7 +917,7 @@ module HybridHestonHullWhiteProcessFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_Range", Description="Create a range of HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HybridHestonHullWhiteProcess_Range", Description="Create a range of HybridHestonHullWhiteProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HybridHestonHullWhiteProcess_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

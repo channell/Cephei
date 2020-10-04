@@ -37,7 +37,7 @@ module BachelierCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierCapFloorEngine1", Description="Create a BachelierCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierCapFloorEngine1", Description="Create a BachelierCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierCapFloorEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module BachelierCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierCapFloorEngine2", Description="Create a BachelierCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierCapFloorEngine2", Description="Create a BachelierCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierCapFloorEngine_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -135,7 +135,7 @@ module BachelierCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierCapFloorEngine", Description="Create a BachelierCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierCapFloorEngine", Description="Create a BachelierCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierCapFloorEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -178,7 +178,7 @@ module BachelierCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierCapFloorEngine_termStructure", Description="Create a BachelierCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierCapFloorEngine_termStructure", Description="Create a BachelierCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierCapFloorEngine_termStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -214,7 +214,7 @@ module BachelierCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierCapFloorEngine_volatility", Description="Create a BachelierCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierCapFloorEngine_volatility", Description="Create a BachelierCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierCapFloorEngine_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -247,7 +247,7 @@ module BachelierCapFloorEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BachelierCapFloorEngine_Range", Description="Create a range of BachelierCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierCapFloorEngine_Range", Description="Create a range of BachelierCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierCapFloorEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

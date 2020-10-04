@@ -37,7 +37,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_allowsNativeFixings", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_allowsNativeFixings", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_forecastFixing", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_forecastFixing", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_gearing1", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_gearing1", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_gearing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -151,7 +151,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_gearing2", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_gearing2", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_gearing2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -187,7 +187,7 @@ module SwapSpreadIndexFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_maturityDate", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_maturityDate", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -229,7 +229,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_pastFixing", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_pastFixing", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -271,7 +271,7 @@ module SwapSpreadIndexFunction =
     (*
         ! \name Inspectors
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_swapIndex1", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_swapIndex1", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_swapIndex1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -307,7 +307,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_swapIndex2", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_swapIndex2", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_swapIndex2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -343,7 +343,7 @@ module SwapSpreadIndexFunction =
     (*
         need by CashFlowVectors
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex1", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex1", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -435,7 +435,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_currency", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_currency", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -471,7 +471,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_dayCounter", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_dayCounter", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -507,7 +507,7 @@ module SwapSpreadIndexFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_familyName", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_familyName", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -543,7 +543,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_fixing", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_fixing", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -591,7 +591,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_fixingCalendar", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_fixingCalendar", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -627,7 +627,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_fixingDate", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_fixingDate", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -669,7 +669,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_fixingDays", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_fixingDays", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -705,7 +705,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_isValidFixingDate", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_isValidFixingDate", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -747,7 +747,7 @@ module SwapSpreadIndexFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_name", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_name", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -783,7 +783,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_tenor", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_tenor", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -819,7 +819,7 @@ module SwapSpreadIndexFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_update", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_update", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -855,7 +855,7 @@ module SwapSpreadIndexFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_valueDate", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_valueDate", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -897,7 +897,7 @@ module SwapSpreadIndexFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_addFixing", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_addFixing", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -951,7 +951,7 @@ module SwapSpreadIndexFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_addFixings", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_addFixings", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1005,7 +1005,7 @@ module SwapSpreadIndexFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_addFixings1", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_addFixings1", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1053,7 +1053,7 @@ module SwapSpreadIndexFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_clearFixings", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_clearFixings", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1089,7 +1089,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_registerWith", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_registerWith", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1131,7 +1131,7 @@ module SwapSpreadIndexFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_timeSeries", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_timeSeries", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1167,7 +1167,7 @@ module SwapSpreadIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapSpreadIndex_unregisterWith", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_unregisterWith", Description="Create a SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1206,7 +1206,7 @@ module SwapSpreadIndexFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SwapSpreadIndex_Range", Description="Create a range of SwapSpreadIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapSpreadIndex_Range", Description="Create a range of SwapSpreadIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapSpreadIndex_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

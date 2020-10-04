@@ -37,7 +37,7 @@ module BjerksundStenslandApproximationEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BjerksundStenslandApproximationEngine", Description="Create a BjerksundStenslandApproximationEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BjerksundStenslandApproximationEngine", Description="Create a BjerksundStenslandApproximationEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BjerksundStenslandApproximationEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -72,7 +72,7 @@ module BjerksundStenslandApproximationEngineFunction =
         else
             "<WIZ>"
 
-    [<ExcelFunction(Name="_BjerksundStenslandApproximationEngine_Range", Description="Create a range of BjerksundStenslandApproximationEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BjerksundStenslandApproximationEngine_Range", Description="Create a range of BjerksundStenslandApproximationEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BjerksundStenslandApproximationEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module PriceErrorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PriceError", Description="Create a PriceError",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PriceError", Description="Create a PriceError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PriceError_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module PriceErrorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PriceError_value", Description="Create a PriceError",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PriceError_value", Description="Create a PriceError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PriceError_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module PriceErrorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PriceError_derivative", Description="Create a PriceError",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PriceError_derivative", Description="Create a PriceError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PriceError_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -167,7 +167,7 @@ module PriceErrorFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PriceError_Range", Description="Create a range of PriceError",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PriceError_Range", Description="Create a range of PriceError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PriceError_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

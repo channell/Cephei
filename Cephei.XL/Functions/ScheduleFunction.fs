@@ -37,7 +37,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_at", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_at", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_at
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_businessDayConvention", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_businessDayConvention", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_calendar", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_calendar", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -151,7 +151,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_Count", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_Count", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_Count
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -187,7 +187,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_date", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_date", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -229,7 +229,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_dates", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_dates", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_dates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -265,7 +265,7 @@ module ScheduleFunction =
     (*
         Other inspectors
     *)
-    [<ExcelFunction(Name="_Schedule_empty", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_empty", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -301,7 +301,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_endDate", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_endDate", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_endDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -337,7 +337,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_endOfMonth", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_endOfMonth", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -373,7 +373,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_isRegular", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_isRegular", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_isRegular
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -409,7 +409,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_isRegular1", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_isRegular1", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_isRegular1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -451,7 +451,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_nextDate", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_nextDate", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_nextDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -493,7 +493,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_previousDate", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_previousDate", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_previousDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -535,7 +535,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_rule", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_rule", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_rule
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -571,7 +571,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -662,7 +662,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule2", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule2", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -693,7 +693,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule1", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule1", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -772,7 +772,7 @@ module ScheduleFunction =
     (*
         Date access
     *)
-    [<ExcelFunction(Name="_Schedule_size", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_size", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -808,7 +808,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_startDate", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_startDate", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -844,7 +844,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_tenor", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_tenor", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -880,7 +880,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_terminationDateBusinessDayConvention", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_terminationDateBusinessDayConvention", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_terminationDateBusinessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -916,7 +916,7 @@ module ScheduleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Schedule_this", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_this", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_this
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -958,7 +958,7 @@ module ScheduleFunction =
     (*
         ! truncated schedule
     *)
-    [<ExcelFunction(Name="_Schedule_until", Description="Create a Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_until", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_until
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -997,7 +997,7 @@ module ScheduleFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Schedule_Range", Description="Create a range of Schedule",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Schedule_Range", Description="Create a range of Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

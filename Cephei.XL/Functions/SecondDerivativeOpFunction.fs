@@ -37,7 +37,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp1", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp1", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -118,7 +118,7 @@ module SecondDerivativeOpFunction =
         
     *)
     (*!! duplicate Add function
-    [<ExcelFunction(Name="_SecondDerivativeOp_add", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_add", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -167,7 +167,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_add", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_add", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -210,7 +210,7 @@ module SecondDerivativeOpFunction =
         
     *)
     (*!! duplicate ad functions 
-    [<ExcelFunction(Name="_SecondDerivativeOp_add", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_add", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_apply", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_apply", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_apply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -295,7 +295,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_applyTo", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_applyTo", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_applyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -337,7 +337,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_axpyb", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_axpyb", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_axpyb
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -397,7 +397,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_Clone", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_Clone", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_Clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -433,7 +433,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_identity", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_identity", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_identity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -475,7 +475,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_isTimeDependent", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_isTimeDependent", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_isTimeDependent
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -511,7 +511,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_mult", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_mult", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_mult
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -553,7 +553,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_multiply", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_multiply", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_multiply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -601,7 +601,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_multR", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_multR", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_multR
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -643,7 +643,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_setTime", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_setTime", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_setTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -685,7 +685,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_size", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_size", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -721,7 +721,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_solve_splitting", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_solve_splitting", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_solve_splitting
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -775,7 +775,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_solveFor", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_solveFor", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_solveFor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -817,7 +817,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_subtract", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_subtract", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_subtract
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -865,7 +865,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_swap", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_swap", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_swap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -907,7 +907,7 @@ module SecondDerivativeOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SecondDerivativeOp_toMatrix", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_toMatrix", Description="Create a SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_toMatrix
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -940,7 +940,7 @@ module SecondDerivativeOpFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SecondDerivativeOp_Range", Description="Create a range of SecondDerivativeOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SecondDerivativeOp_Range", Description="Create a range of SecondDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondDerivativeOp_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module YYEUHICPrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYEUHICPr1", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr1", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module YYEUHICPrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYEUHICPr", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module YYEUHICPrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_clone", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_clone", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module YYEUHICPrFunction =
     (*
         Index interface The forecastTodaysFixing parameter (required by the Index interface) is currently ignored.
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_fixing", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_fixing", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module YYEUHICPrFunction =
     (*
         Other methods
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_ratio", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_ratio", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_ratio
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -243,7 +243,7 @@ module YYEUHICPrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_yoyInflationTermStructure", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_yoyInflationTermStructure", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_yoyInflationTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -279,7 +279,7 @@ module YYEUHICPrFunction =
     (*
         ! this method creates all the "fixings" for the relevant period of the index.  E.g. for monthly indices it will put the same value in every calendar day in the month.
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_addFixing", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_addFixing", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -334,7 +334,7 @@ module YYEUHICPrFunction =
         ! The availability lag describes when the index is
 <i>available</i>, not how it is used.  Specifically the fixing for, say, January, may only be available in April but the index will always return the index value applicable for January as its January fixing (independent of the lag in availability).
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_availabilityLag", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_availabilityLag", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_availabilityLag
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -370,7 +370,7 @@ module YYEUHICPrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_currency", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_currency", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -406,7 +406,7 @@ module YYEUHICPrFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_familyName", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_familyName", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -442,7 +442,7 @@ module YYEUHICPrFunction =
     (*
         ! Inflation indices do not have fixing calendars.  An inflation index value is valid for every day (including weekends) of a calendar period.  I.e. it uses the NullCalendar as its fixing calendar.
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_fixingCalendar", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_fixingCalendar", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -478,7 +478,7 @@ module YYEUHICPrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_frequency", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_frequency", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_frequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -514,7 +514,7 @@ module YYEUHICPrFunction =
     (*
         ! Forecasting index values using an inflation term structure uses the interpolation of the inflation term structure unless interpolation is set to false.  In this case the extrapolated values are constant within each period taking the mid-period extrapolated value.
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_interpolated", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_interpolated", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_interpolated
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -550,7 +550,7 @@ module YYEUHICPrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_isValidFixingDate", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_isValidFixingDate", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -592,7 +592,7 @@ module YYEUHICPrFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_name", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_name", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -628,7 +628,7 @@ module YYEUHICPrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_region", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_region", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_region
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -664,7 +664,7 @@ module YYEUHICPrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_revised", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_revised", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_revised
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -700,7 +700,7 @@ module YYEUHICPrFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_update", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_update", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -736,7 +736,7 @@ module YYEUHICPrFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_addFixings", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_addFixings", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -790,7 +790,7 @@ module YYEUHICPrFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_addFixings1", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_addFixings1", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -838,7 +838,7 @@ module YYEUHICPrFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_allowsNativeFixings", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_allowsNativeFixings", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -874,7 +874,7 @@ module YYEUHICPrFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_clearFixings", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_clearFixings", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -910,7 +910,7 @@ module YYEUHICPrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_registerWith", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_registerWith", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -952,7 +952,7 @@ module YYEUHICPrFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_timeSeries", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_timeSeries", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -988,7 +988,7 @@ module YYEUHICPrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYEUHICPr_unregisterWith", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_unregisterWith", Description="Create a YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1027,7 +1027,7 @@ module YYEUHICPrFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_YYEUHICPr_Range", Description="Create a range of YYEUHICPr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYEUHICPr_Range", Description="Create a range of YYEUHICPr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICPr_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module USCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USCPI1", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI1", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module USCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USCPI", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module USCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USCPI_clone", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_clone", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module USCPIFunction =
     (*
         ! \warning the forecastTodaysFixing parameter (required by the Index interface) is currently ignored.
     *)
-    [<ExcelFunction(Name="_USCPI_fixing", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_fixing", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module USCPIFunction =
     (*
         Other methods
     *)
-    [<ExcelFunction(Name="_USCPI_zeroInflationTermStructure", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_zeroInflationTermStructure", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_zeroInflationTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -243,7 +243,7 @@ module USCPIFunction =
     (*
         ! this method creates all the "fixings" for the relevant period of the index.  E.g. for monthly indices it will put the same value in every calendar day in the month.
     *)
-    [<ExcelFunction(Name="_USCPI_addFixing", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_addFixing", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -298,7 +298,7 @@ module USCPIFunction =
         ! The availability lag describes when the index is
 <i>available</i>, not how it is used.  Specifically the fixing for, say, January, may only be available in April but the index will always return the index value applicable for January as its January fixing (independent of the lag in availability).
     *)
-    [<ExcelFunction(Name="_USCPI_availabilityLag", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_availabilityLag", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_availabilityLag
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -334,7 +334,7 @@ module USCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USCPI_currency", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_currency", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -370,7 +370,7 @@ module USCPIFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_USCPI_familyName", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_familyName", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -406,7 +406,7 @@ module USCPIFunction =
     (*
         ! Inflation indices do not have fixing calendars.  An inflation index value is valid for every day (including weekends) of a calendar period.  I.e. it uses the NullCalendar as its fixing calendar.
     *)
-    [<ExcelFunction(Name="_USCPI_fixingCalendar", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_fixingCalendar", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -442,7 +442,7 @@ module USCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USCPI_frequency", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_frequency", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_frequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -478,7 +478,7 @@ module USCPIFunction =
     (*
         ! Forecasting index values using an inflation term structure uses the interpolation of the inflation term structure unless interpolation is set to false.  In this case the extrapolated values are constant within each period taking the mid-period extrapolated value.
     *)
-    [<ExcelFunction(Name="_USCPI_interpolated", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_interpolated", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_interpolated
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -514,7 +514,7 @@ module USCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USCPI_isValidFixingDate", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_isValidFixingDate", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -556,7 +556,7 @@ module USCPIFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_USCPI_name", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_name", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -592,7 +592,7 @@ module USCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USCPI_region", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_region", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_region
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -628,7 +628,7 @@ module USCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USCPI_revised", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_revised", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_revised
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -664,7 +664,7 @@ module USCPIFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_USCPI_update", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_update", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -700,7 +700,7 @@ module USCPIFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_USCPI_addFixings", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_addFixings", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -754,7 +754,7 @@ module USCPIFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_USCPI_addFixings1", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_addFixings1", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -802,7 +802,7 @@ module USCPIFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_USCPI_allowsNativeFixings", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_allowsNativeFixings", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -838,7 +838,7 @@ module USCPIFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_USCPI_clearFixings", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_clearFixings", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -874,7 +874,7 @@ module USCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USCPI_registerWith", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_registerWith", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -916,7 +916,7 @@ module USCPIFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_USCPI_timeSeries", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_timeSeries", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -952,7 +952,7 @@ module USCPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_USCPI_unregisterWith", Description="Create a USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_unregisterWith", Description="Create a USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -991,7 +991,7 @@ module USCPIFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_USCPI_Range", Description="Create a range of USCPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_USCPI_Range", Description="Create a range of USCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let USCPI_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

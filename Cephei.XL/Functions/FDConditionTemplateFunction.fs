@@ -38,7 +38,7 @@ module FDConditionTemplateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDConditionTemplate", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDConditionTemplate", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -93,7 +93,7 @@ module FDConditionTemplateFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_FDConditionTemplate1", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDConditionTemplate1", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -124,7 +124,7 @@ module FDConditionTemplateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDConditionTemplate_setStepCondition", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDConditionTemplate_setStepCondition", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_setStepCondition
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -166,7 +166,7 @@ module FDConditionTemplateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDConditionTemplate_ensureStrikeInGrid", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDConditionTemplate_ensureStrikeInGrid", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_ensureStrikeInGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -202,7 +202,7 @@ module FDConditionTemplateFunction =
     (*
         this should be defined as new in each deriving class which use template iheritance in order to return a proper class to wrap
     *)
-    [<ExcelFunction(Name="_FDConditionTemplate_factory", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDConditionTemplate_factory", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -262,7 +262,7 @@ module FDConditionTemplateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDConditionTemplate_getResidualTime", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDConditionTemplate_getResidualTime", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_getResidualTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -298,7 +298,7 @@ module FDConditionTemplateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDConditionTemplate_grid", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDConditionTemplate_grid", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -334,7 +334,7 @@ module FDConditionTemplateFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDConditionTemplate_intrinsicValues_", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDConditionTemplate_intrinsicValues_", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_intrinsicValues_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -367,7 +367,7 @@ module FDConditionTemplateFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FDConditionTemplate_Range", Description="Create a range of FDConditionTemplate",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDConditionTemplate_Range", Description="Create a range of FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

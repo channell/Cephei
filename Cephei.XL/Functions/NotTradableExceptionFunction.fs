@@ -37,7 +37,7 @@ module NotTradableExceptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NotTradableException", Description="Create a NotTradableException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NotTradableException", Description="Create a NotTradableException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotTradableException_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module NotTradableExceptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NotTradableException1", Description="Create a NotTradableException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NotTradableException1", Description="Create a NotTradableException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotTradableException_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module NotTradableExceptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NotTradableException2", Description="Create a NotTradableException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NotTradableException2", Description="Create a NotTradableException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotTradableException_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module NotTradableExceptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NotTradableException_Range", Description="Create a range of NotTradableException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NotTradableException_Range", Description="Create a range of NotTradableException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotTradableException_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

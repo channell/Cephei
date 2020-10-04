@@ -37,7 +37,7 @@ module FdmSnapshotConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmSnapshotCondition_applyTo", Description="Create a FdmSnapshotCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmSnapshotCondition_applyTo", Description="Create a FdmSnapshotCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSnapshotCondition_applyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module FdmSnapshotConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmSnapshotCondition", Description="Create a FdmSnapshotCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmSnapshotCondition", Description="Create a FdmSnapshotCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSnapshotCondition_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module FdmSnapshotConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmSnapshotCondition_getTime", Description="Create a FdmSnapshotCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmSnapshotCondition_getTime", Description="Create a FdmSnapshotCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSnapshotCondition_getTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module FdmSnapshotConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmSnapshotCondition_getValues", Description="Create a FdmSnapshotCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmSnapshotCondition_getValues", Description="Create a FdmSnapshotCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSnapshotCondition_getValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -191,7 +191,7 @@ module FdmSnapshotConditionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmSnapshotCondition_Range", Description="Create a range of FdmSnapshotCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmSnapshotCondition_Range", Description="Create a range of FdmSnapshotCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSnapshotCondition_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

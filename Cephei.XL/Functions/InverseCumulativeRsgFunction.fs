@@ -37,7 +37,7 @@ module InverseCumulativeRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseCumulativeRsg_dimension", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeRsg_dimension", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_dimension
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module InverseCumulativeRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseCumulativeRsg_factory", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeRsg_factory", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module InverseCumulativeRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseCumulativeRsg", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeRsg", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module InverseCumulativeRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseCumulativeRsg1", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeRsg1", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -201,7 +201,7 @@ module InverseCumulativeRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseCumulativeRsg_lastSequence", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeRsg_lastSequence", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_lastSequence
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -237,7 +237,7 @@ module InverseCumulativeRsgFunction =
     (*
         ! returns next sample from the Gaussian distribution
     *)
-    [<ExcelFunction(Name="_InverseCumulativeRsg_nextSequence", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeRsg_nextSequence", Description="Create a InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_nextSequence
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -270,7 +270,7 @@ module InverseCumulativeRsgFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_InverseCumulativeRsg_Range", Description="Create a range of InverseCumulativeRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeRsg_Range", Description="Create a range of InverseCumulativeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRsg_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

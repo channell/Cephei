@@ -37,7 +37,7 @@ module BachelierSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierSwaptionEngine", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierSwaptionEngine", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSwaptionEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module BachelierSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierSwaptionEngine2", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierSwaptionEngine2", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSwaptionEngine_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -147,7 +147,7 @@ module BachelierSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierSwaptionEngine1", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierSwaptionEngine1", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSwaptionEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -197,7 +197,7 @@ module BachelierSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierSwaptionEngine_termStructure", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierSwaptionEngine_termStructure", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSwaptionEngine_termStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -233,7 +233,7 @@ module BachelierSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BachelierSwaptionEngine_volatility", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierSwaptionEngine_volatility", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSwaptionEngine_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module BachelierSwaptionEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BachelierSwaptionEngine_Range", Description="Create a range of BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BachelierSwaptionEngine_Range", Description="Create a range of BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSwaptionEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

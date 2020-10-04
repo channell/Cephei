@@ -37,7 +37,7 @@ module EuropeanHestonPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EuropeanHestonPathPricer", Description="Create a EuropeanHestonPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EuropeanHestonPathPricer", Description="Create a EuropeanHestonPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanHestonPathPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module EuropeanHestonPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EuropeanHestonPathPricer_value", Description="Create a EuropeanHestonPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EuropeanHestonPathPricer_value", Description="Create a EuropeanHestonPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanHestonPathPricer_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -125,7 +125,7 @@ module EuropeanHestonPathPricerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_EuropeanHestonPathPricer_Range", Description="Create a range of EuropeanHestonPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EuropeanHestonPathPricer_Range", Description="Create a range of EuropeanHestonPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanHestonPathPricer_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

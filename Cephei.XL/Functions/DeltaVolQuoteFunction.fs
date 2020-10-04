@@ -37,7 +37,7 @@ module DeltaVolQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DeltaVolQuote_atmType", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DeltaVolQuote_atmType", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_atmType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module DeltaVolQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DeltaVolQuote_delta", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DeltaVolQuote_delta", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_delta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module DeltaVolQuoteFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_DeltaVolQuote_deltaType", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DeltaVolQuote_deltaType", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_deltaType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -147,7 +147,7 @@ module DeltaVolQuoteFunction =
     (*
         Additional constructor, if special atm quote is used
     *)
-    [<ExcelFunction(Name="_DeltaVolQuote", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DeltaVolQuote", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -202,7 +202,7 @@ module DeltaVolQuoteFunction =
     (*
         Standard constructor delta vs vol.
     *)
-    [<ExcelFunction(Name="_DeltaVolQuote1", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DeltaVolQuote1", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -257,7 +257,7 @@ module DeltaVolQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DeltaVolQuote_isValid", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DeltaVolQuote_isValid", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_isValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -293,7 +293,7 @@ module DeltaVolQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DeltaVolQuote_maturity", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DeltaVolQuote_maturity", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_maturity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -329,7 +329,7 @@ module DeltaVolQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DeltaVolQuote_update", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DeltaVolQuote_update", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -365,7 +365,7 @@ module DeltaVolQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DeltaVolQuote_value", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DeltaVolQuote_value", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -401,7 +401,7 @@ module DeltaVolQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DeltaVolQuote_registerWith", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DeltaVolQuote_registerWith", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -443,7 +443,7 @@ module DeltaVolQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DeltaVolQuote_unregisterWith", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DeltaVolQuote_unregisterWith", Description="Create a DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -482,7 +482,7 @@ module DeltaVolQuoteFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DeltaVolQuote_Range", Description="Create a range of DeltaVolQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DeltaVolQuote_Range", Description="Create a range of DeltaVolQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DeltaVolQuote_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

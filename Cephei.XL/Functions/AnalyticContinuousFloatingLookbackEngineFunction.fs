@@ -37,7 +37,7 @@ module AnalyticContinuousFloatingLookbackEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticContinuousFloatingLookbackEngine", Description="Create a AnalyticContinuousFloatingLookbackEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticContinuousFloatingLookbackEngine", Description="Create a AnalyticContinuousFloatingLookbackEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticContinuousFloatingLookbackEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -72,7 +72,7 @@ module AnalyticContinuousFloatingLookbackEngineFunction =
         else
             "<WIZ>"
 
-    [<ExcelFunction(Name="_AnalyticContinuousFloatingLookbackEngine_Range", Description="Create a range of AnalyticContinuousFloatingLookbackEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticContinuousFloatingLookbackEngine_Range", Description="Create a range of AnalyticContinuousFloatingLookbackEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticContinuousFloatingLookbackEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

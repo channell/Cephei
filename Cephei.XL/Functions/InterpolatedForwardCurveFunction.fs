@@ -38,7 +38,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_Clone", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_Clone", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_Clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_data", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_data", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_data
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_data_", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_data_", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_data_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_dates", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_dates", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_dates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_dates_", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_dates_", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_dates_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_forwards", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_forwards", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_forwards
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -309,7 +309,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve1", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve1", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -370,7 +370,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve2", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve2", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -443,7 +443,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve3", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve3", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -510,7 +510,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve4", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve4", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_create4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -565,7 +565,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve5", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve5", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_create5
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -626,7 +626,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve6", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve6", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_create6
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -693,7 +693,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_interpolation_", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_interpolation_", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_interpolation_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -729,7 +729,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_interpolator_", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_interpolator_", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_interpolator_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -765,7 +765,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_maxDate", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_maxDate", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -801,7 +801,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_maxDate_", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_maxDate_", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_maxDate_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -837,7 +837,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_nodes", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_nodes", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_nodes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -873,7 +873,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_setupInterpolation", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_setupInterpolation", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_setupInterpolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -909,7 +909,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_times", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_times", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_times
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -945,7 +945,7 @@ module InterpolatedForwardCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_times_", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_times_", Description="Create a InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_times_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -978,7 +978,7 @@ module InterpolatedForwardCurveFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_InterpolatedForwardCurve_Range", Description="Create a range of InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InterpolatedForwardCurve_Range", Description="Create a range of InterpolatedForwardCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedForwardCurve_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

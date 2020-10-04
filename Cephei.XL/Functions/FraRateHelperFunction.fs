@@ -37,7 +37,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper7", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper7", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create7
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -189,7 +189,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper1", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper1", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -250,7 +250,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper2", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper2", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -341,7 +341,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper3", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper3", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -432,7 +432,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper4", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper4", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -493,7 +493,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper6", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper6", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create6
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -584,7 +584,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper5", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper5", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_create5
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -645,7 +645,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper_impliedQuote", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_impliedQuote", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_impliedQuote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -681,7 +681,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper_setTermStructure", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_setTermStructure", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_setTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -723,7 +723,7 @@ module FraRateHelperFunction =
     (*
         ! Observer interface
     *)
-    [<ExcelFunction(Name="_FraRateHelper_update", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_update", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -759,7 +759,7 @@ module FraRateHelperFunction =
     (*
         earliest relevant date The earliest date at which discounts are needed by the helper in order to provide a quote.
     *)
-    [<ExcelFunction(Name="_FraRateHelper_earliestDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_earliestDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_earliestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -795,7 +795,7 @@ module FraRateHelperFunction =
     (*
         The latest date at which discounts are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_FraRateHelper_latestDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_latestDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_latestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -831,7 +831,7 @@ module FraRateHelperFunction =
     (*
         ! The latest date at which data are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_FraRateHelper_latestRelevantDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_latestRelevantDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_latestRelevantDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -867,7 +867,7 @@ module FraRateHelperFunction =
     (*
         ! instrument's maturity date
     *)
-    [<ExcelFunction(Name="_FraRateHelper_maturityDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_maturityDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -903,7 +903,7 @@ module FraRateHelperFunction =
     (*
         ! pillar date
     *)
-    [<ExcelFunction(Name="_FraRateHelper_pillarDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_pillarDate", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_pillarDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -939,7 +939,7 @@ module FraRateHelperFunction =
     (*
         ! BootstrapHelper interface
     *)
-    [<ExcelFunction(Name="_FraRateHelper_quote", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_quote", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_quote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -975,7 +975,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper_quoteError", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_quoteError", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_quoteError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1011,7 +1011,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper_quoteIsValid", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_quoteIsValid", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_quoteIsValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1047,7 +1047,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper_quoteValue", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_quoteValue", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_quoteValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1083,7 +1083,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper_registerWith", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_registerWith", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1125,7 +1125,7 @@ module FraRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FraRateHelper_unregisterWith", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_unregisterWith", Description="Create a FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1164,7 +1164,7 @@ module FraRateHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FraRateHelper_Range", Description="Create a range of FraRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FraRateHelper_Range", Description="Create a range of FraRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FraRateHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

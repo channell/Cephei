@@ -37,7 +37,7 @@ module FdmBlackScholesSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBlackScholesSolver_deltaAt", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesSolver_deltaAt", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesSolver_deltaAt
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module FdmBlackScholesSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBlackScholesSolver", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesSolver", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesSolver_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module FdmBlackScholesSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBlackScholesSolver_gammaAt", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesSolver_gammaAt", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesSolver_gammaAt
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module FdmBlackScholesSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBlackScholesSolver_thetaAt", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesSolver_thetaAt", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesSolver_thetaAt
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module FdmBlackScholesSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBlackScholesSolver_valueAt", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesSolver_valueAt", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesSolver_valueAt
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -275,7 +275,7 @@ module FdmBlackScholesSolverFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmBlackScholesSolver_Range", Description="Create a range of FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBlackScholesSolver_Range", Description="Create a range of FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesSolver_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

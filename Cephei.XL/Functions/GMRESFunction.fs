@@ -38,7 +38,7 @@ module GMRESFunction =
         
     *)
     (*!! ommited 
-    [<ExcelFunction(Name="_GMRES", Description="Create a GMRES",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GMRES", Description="Create a GMRES",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRES_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -95,7 +95,7 @@ module GMRESFunction =
         
     *)
     (*!! ommitted
-    [<ExcelFunction(Name="_GMRES_MatrixMult", Description="Create a GMRES",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GMRES_MatrixMult", Description="Create a GMRES",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRES_MatrixMult
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -138,7 +138,7 @@ module GMRESFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GMRES_solve", Description="Create a GMRES",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GMRES_solve", Description="Create a GMRES",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRES_solve
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -186,7 +186,7 @@ module GMRESFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GMRES_solveWithRestart", Description="Create a GMRES",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GMRES_solveWithRestart", Description="Create a GMRES",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRES_solveWithRestart
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -237,7 +237,7 @@ module GMRESFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GMRES_Range", Description="Create a range of GMRES",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GMRES_Range", Description="Create a range of GMRES",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRES_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

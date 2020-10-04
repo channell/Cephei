@@ -37,7 +37,7 @@ module CappedFlooredIborCouponFunction =
     (*
         need by CashFlowVectors
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon1", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon1", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module CappedFlooredIborCouponFunction =
     (*
         Factory - for Leg generators
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_factory", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_factory", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -303,7 +303,7 @@ module CappedFlooredIborCouponFunction =
     (*
         cap
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_cap", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_cap", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_cap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -339,7 +339,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_convexityAdjustment", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_convexityAdjustment", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_convexityAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -375,7 +375,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! effective cap of fixing
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_effectiveCap", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_effectiveCap", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_effectiveCap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -411,7 +411,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! effective floor of fixing
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_effectiveFloor", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_effectiveFloor", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_effectiveFloor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -447,7 +447,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! floor
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_floor", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_floor", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_floor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -483,7 +483,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_isCapped", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_isCapped", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_isCapped
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -519,7 +519,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_isFloored", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_isFloored", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_isFloored
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -555,7 +555,7 @@ module CappedFlooredIborCouponFunction =
     (*
         Coupon interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_rate", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_rate", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_rate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -591,7 +591,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_setPricer", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_setPricer", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_setPricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -633,7 +633,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accruedAmount", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accruedAmount", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -675,7 +675,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! convexity-adjusted fixing
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_adjustedFixing", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_adjustedFixing", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_adjustedFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -711,7 +711,7 @@ module CappedFlooredIborCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_amount", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_amount", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -747,7 +747,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_dayCounter", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_dayCounter", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -783,7 +783,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! fixing days
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_fixingDate", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_fixingDate", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -819,7 +819,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! floating index
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_fixingDays", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_fixingDays", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -855,7 +855,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_gearing", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_gearing", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_gearing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -891,7 +891,7 @@ module CappedFlooredIborCouponFunction =
     (*
         properties
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_index", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_index", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_index
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -927,7 +927,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! spread paid over the fixing of the underlying index ! fixing of the underlying index
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_indexFixing", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_indexFixing", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_indexFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -963,7 +963,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! whether or not the coupon fixes in arrears
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_isInArrears", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_isInArrears", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_isInArrears
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -999,7 +999,7 @@ module CappedFlooredIborCouponFunction =
     (*
         methods
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_price", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_price", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_price
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1041,7 +1041,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_pricer", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_pricer", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_pricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1077,7 +1077,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! index gearing, i.e. multiplicative coefficient for the index
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_spread", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_spread", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_spread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1113,7 +1113,7 @@ module CappedFlooredIborCouponFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_update", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_update", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1149,7 +1149,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! accrual period in days
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accrualDays", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accrualDays", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_accrualDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1185,7 +1185,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! end of the accrual period
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accrualEndDate", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accrualEndDate", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_accrualEndDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1221,7 +1221,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! accrual period as fraction of year
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accrualPeriod", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accrualPeriod", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_accrualPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1257,7 +1257,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! start of the accrual period
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accrualStartDate", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accrualStartDate", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_accrualStartDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1293,7 +1293,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! accrued days at the given date
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accruedDays", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accruedDays", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_accruedDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1335,7 +1335,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! accrued period as fraction of year at the given date
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accruedPeriod", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accruedPeriod", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_accruedPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1377,7 +1377,7 @@ module CappedFlooredIborCouponFunction =
     (*
         Event interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_date", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_date", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1413,7 +1413,7 @@ module CappedFlooredIborCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_exCouponDate", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_exCouponDate", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1449,7 +1449,7 @@ module CappedFlooredIborCouponFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_nominal", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_nominal", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1485,7 +1485,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! end date of the reference period
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_referencePeriodEnd", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_referencePeriodEnd", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_referencePeriodEnd
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1521,7 +1521,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! start date of the reference period
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_referencePeriodStart", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_referencePeriodStart", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_referencePeriodStart
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1557,7 +1557,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_CompareTo", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_CompareTo", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1599,7 +1599,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_Equals", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_Equals", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1641,7 +1641,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_hasOccurred", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_hasOccurred", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1689,7 +1689,7 @@ module CappedFlooredIborCouponFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_tradingExCoupon", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_tradingExCoupon", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1731,7 +1731,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accept", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_accept", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1773,7 +1773,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_registerWith", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_registerWith", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1815,7 +1815,7 @@ module CappedFlooredIborCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_unregisterWith", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_unregisterWith", Description="Create a CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1854,7 +1854,7 @@ module CappedFlooredIborCouponFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CappedFlooredIborCoupon_Range", Description="Create a range of CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredIborCoupon_Range", Description="Create a range of CappedFlooredIborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredIborCoupon_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

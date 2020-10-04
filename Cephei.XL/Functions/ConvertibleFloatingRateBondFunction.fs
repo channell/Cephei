@@ -37,7 +37,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_callability", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_callability", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_callability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_conversionRatio", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_conversionRatio", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_conversionRatio
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_creditSpread", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_creditSpread", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_creditSpread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_dividends", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_dividends", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_dividends
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -302,7 +302,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_accruedAmount", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_accruedAmount", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_calendar", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_calendar", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         \note returns all the cashflows, including the redemptions.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_cashflows", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_cashflows", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_cashflows
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_cleanPrice", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_cleanPrice", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_cleanPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_cleanPrice1", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_cleanPrice1", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_cleanPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_dirtyPrice1", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_dirtyPrice1", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_dirtyPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -584,7 +584,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_dirtyPrice", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_dirtyPrice", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_dirtyPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -620,7 +620,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_isExpired", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_isExpired", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -656,7 +656,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_issueDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_issueDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_issueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_isTradable", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_isTradable", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_isTradable
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -734,7 +734,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_maturityDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_maturityDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -770,7 +770,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_nextCashFlowDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_nextCashFlowDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_nextCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -812,7 +812,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         ! Expected next coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the already-fixed not-yet-paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_nextCouponRate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_nextCouponRate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_nextCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -854,7 +854,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_notional", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_notional", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_notional
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -896,7 +896,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_notionals", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_notionals", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_notionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -932,7 +932,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_previousCashFlowDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_previousCashFlowDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_previousCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -974,7 +974,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         ! Expected previous coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the last paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_previousCouponRate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_previousCouponRate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_previousCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1016,7 +1016,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         returns the redemption, if only one is defined
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_redemption", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_redemption", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_redemption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1052,7 +1052,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         ! returns just the redemption flows (not interest payments)
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_redemptions", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_redemptions", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_redemptions
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1088,7 +1088,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_settlementDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_settlementDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_settlementDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1130,7 +1130,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_settlementDays", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_settlementDays", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1166,7 +1166,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_settlementValue", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_settlementValue", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_settlementValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1208,7 +1208,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_settlementValue1", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_settlementValue1", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_settlementValue1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1244,7 +1244,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_startDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_startDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1280,7 +1280,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_yield1", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_yield1", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_yield1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1358,7 +1358,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         ! The default bond settlement and theoretical price are used for calculation.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_yield", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_yield", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_yield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1424,7 +1424,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_CASH", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_CASH", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1460,7 +1460,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_errorEstimate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_errorEstimate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1496,7 +1496,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_NPV", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_NPV", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1532,7 +1532,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_result", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_result", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1574,7 +1574,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_setPricingEngine", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_setPricingEngine", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1616,7 +1616,7 @@ module ConvertibleFloatingRateBondFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_valuationDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_valuationDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1649,7 +1649,7 @@ module ConvertibleFloatingRateBondFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_Range", Description="Create a range of ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConvertibleFloatingRateBond_Range", Description="Create a range of ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -81,7 +81,7 @@ module DZeroFunction =
         
     *)
     (*!! dupliucate add function
-    [<ExcelFunction(Name="_DZero_add", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_add", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -130,7 +130,7 @@ module DZeroFunction =
     (*
         ! apply operator to a given array
     *)
-    [<ExcelFunction(Name="_DZero_applyTo", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_applyTo", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_applyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -172,7 +172,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_Clone", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_Clone", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_Clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -208,7 +208,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_diagonal", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_diagonal", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_diagonal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -244,7 +244,7 @@ module DZeroFunction =
     (*
         ! identity instance
     *)
-    [<ExcelFunction(Name="_DZero_identity", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_identity", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_identity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -286,7 +286,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_isTimeDependent", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_isTimeDependent", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_isTimeDependent
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -322,7 +322,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_lowerDiagonal", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_lowerDiagonal", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_lowerDiagonal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -358,7 +358,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_multiply", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_multiply", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_multiply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -406,7 +406,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_setFirstRow", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_setFirstRow", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_setFirstRow
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -454,7 +454,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_setLastRow", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_setLastRow", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_setLastRow
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -502,7 +502,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_setMidRow", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_setMidRow", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_setMidRow
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -562,7 +562,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_setMidRows", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_setMidRows", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_setMidRows
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -616,7 +616,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_setTime", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_setTime", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_setTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -658,7 +658,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_size", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_size", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -694,7 +694,7 @@ module DZeroFunction =
     (*
         ! solve linear system for a given right-hand side
     *)
-    [<ExcelFunction(Name="_DZero_solveFor", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_solveFor", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_solveFor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -736,7 +736,7 @@ module DZeroFunction =
     (*
         ! solve linear system with SOR approach
     *)
-    [<ExcelFunction(Name="_DZero_SOR", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_SOR", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_SOR
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -784,7 +784,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_subtract", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_subtract", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_subtract
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -832,7 +832,7 @@ module DZeroFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DZero_upperDiagonal", Description="Create a DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_upperDiagonal", Description="Create a DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_upperDiagonal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -865,7 +865,7 @@ module DZeroFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DZero_Range", Description="Create a range of DZero",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DZero_Range", Description="Create a range of DZero",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DZero_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

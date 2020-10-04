@@ -37,7 +37,7 @@ module BlackCallableFixedRateBondEngineFunction =
     (*
         ! volatility is the quoted fwd yield volatility, not price vol
     *)
-    [<ExcelFunction(Name="_BlackCallableFixedRateBondEngine", Description="Create a BlackCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCallableFixedRateBondEngine", Description="Create a BlackCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCallableFixedRateBondEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module BlackCallableFixedRateBondEngineFunction =
     (*
         ! volatility is the quoted fwd yield volatility, not price vol
     *)
-    [<ExcelFunction(Name="_BlackCallableFixedRateBondEngine1", Description="Create a BlackCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCallableFixedRateBondEngine1", Description="Create a BlackCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCallableFixedRateBondEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module BlackCallableFixedRateBondEngineFunction =
         else
             "<WIZ>"
 
-    [<ExcelFunction(Name="_BlackCallableFixedRateBondEngine_Range", Description="Create a range of BlackCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCallableFixedRateBondEngine_Range", Description="Create a range of BlackCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCallableFixedRateBondEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module FdmIndicesOnBoundaryFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmIndicesOnBoundary", Description="Create a FdmIndicesOnBoundary",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmIndicesOnBoundary", Description="Create a FdmIndicesOnBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmIndicesOnBoundary_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module FdmIndicesOnBoundaryFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmIndicesOnBoundary_getIndices", Description="Create a FdmIndicesOnBoundary",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmIndicesOnBoundary_getIndices", Description="Create a FdmIndicesOnBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmIndicesOnBoundary_getIndices
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module FdmIndicesOnBoundaryFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmIndicesOnBoundary_Range", Description="Create a range of FdmIndicesOnBoundary",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmIndicesOnBoundary_Range", Description="Create a range of FdmIndicesOnBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmIndicesOnBoundary_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

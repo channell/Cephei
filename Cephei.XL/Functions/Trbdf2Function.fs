@@ -37,7 +37,7 @@ module Trbdf2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Trbdf2_setStep", Description="Create a Trbdf2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trbdf2_setStep", Description="Create a Trbdf2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trbdf2_setStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module Trbdf2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Trbdf2_step", Description="Create a Trbdf2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trbdf2_step", Description="Create a Trbdf2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trbdf2_step
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module Trbdf2Function =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_Trbdf2", Description="Create a Trbdf2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trbdf2", Description="Create a Trbdf2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trbdf2_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -176,7 +176,7 @@ module Trbdf2Function =
     (*
         constructors
     *)
-    [<ExcelFunction(Name="_Trbdf21", Description="Create a Trbdf2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trbdf21", Description="Create a Trbdf2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trbdf2_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -204,7 +204,7 @@ module Trbdf2Function =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Trbdf2_Range", Description="Create a range of Trbdf2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Trbdf2_Range", Description="Create a range of Trbdf2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trbdf2_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

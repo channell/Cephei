@@ -38,7 +38,7 @@ module G2SwaptionEngineFunction =
     (*
         range is the number of standard deviations to use in the exponential term of the integral for the european swaption. intervals is the number of intervals to use in the integration.
     *)
-    [<ExcelFunction(Name="_G2SwaptionEngine", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2SwaptionEngine", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -88,7 +88,7 @@ module G2SwaptionEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_G2SwaptionEngine_setModel", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2SwaptionEngine_setModel", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_setModel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -131,7 +131,7 @@ module G2SwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2SwaptionEngine_registerWith", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2SwaptionEngine_registerWith", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -173,7 +173,7 @@ module G2SwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2SwaptionEngine_reset", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2SwaptionEngine_reset", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -209,7 +209,7 @@ module G2SwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2SwaptionEngine_unregisterWith", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2SwaptionEngine_unregisterWith", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -251,7 +251,7 @@ module G2SwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_G2SwaptionEngine_update", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2SwaptionEngine_update", Description="Create a G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module G2SwaptionEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_G2SwaptionEngine_Range", Description="Create a range of G2SwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_G2SwaptionEngine_Range", Description="Create a range of G2SwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let G2SwaptionEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

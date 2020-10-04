@@ -37,7 +37,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_apply", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_apply", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_apply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_diffusion", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_diffusion", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_diffusion
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_dividendYield", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_dividendYield", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_dividendYield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -169,7 +169,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_drift", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_drift", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_drift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_evolve", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_evolve", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_evolve
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_factors", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_factors", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_factors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_initialValues", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_initialValues", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_initialValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_kappa", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_kappa", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_kappa
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_rho", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_rho", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_rho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -506,7 +506,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_riskFreeRate", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_riskFreeRate", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_riskFreeRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_s0", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_s0", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_s0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -578,7 +578,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_sigma", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_sigma", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_sigma
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -614,7 +614,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_size", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_size", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_theta", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_theta", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_theta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -686,7 +686,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_time", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_time", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_time
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -728,7 +728,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_v0", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_v0", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_v0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -764,7 +764,7 @@ module HestonProcessFunction =
     (*
         ! returns the covariance. This method can be overridden in derived classes which want to hard-code a particular discretization.
     *)
-    [<ExcelFunction(Name="_HestonProcess_covariance", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_covariance", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_covariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -818,7 +818,7 @@ module HestonProcessFunction =
     (*
         ! This method can be overridden in derived classes which want to hard-code a particular discretization.
     *)
-    [<ExcelFunction(Name="_HestonProcess_expectation", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_expectation", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_expectation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -872,7 +872,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_registerWith", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_registerWith", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -914,7 +914,7 @@ module HestonProcessFunction =
     (*
         ! returns the standard deviation. This method can be overridden in derived classes which want to hard-code a particular discretization.
     *)
-    [<ExcelFunction(Name="_HestonProcess_stdDeviation", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_stdDeviation", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_stdDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -968,7 +968,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_unregisterWith", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_unregisterWith", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1010,7 +1010,7 @@ module HestonProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonProcess_update", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_update", Description="Create a HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1043,7 +1043,7 @@ module HestonProcessFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_HestonProcess_Range", Description="Create a range of HestonProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonProcess_Range", Description="Create a range of HestonProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonProcess_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module LeastSquareFunctionFunction =
     (*
         ! compute vector of derivatives of the least square function
     *)
-    [<ExcelFunction(Name="_LeastSquareFunction_gradient", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LeastSquareFunction_gradient", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_gradient
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module LeastSquareFunctionFunction =
     (*
         ! Default constructor
     *)
-    [<ExcelFunction(Name="_LeastSquareFunction", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LeastSquareFunction", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module LeastSquareFunctionFunction =
     (*
         ! compute value of the least square function
     *)
-    [<ExcelFunction(Name="_LeastSquareFunction_value", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LeastSquareFunction_value", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module LeastSquareFunctionFunction =
     (*
         ! compute value and gradient of the least square function
     *)
-    [<ExcelFunction(Name="_LeastSquareFunction_valueAndGradient", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LeastSquareFunction_valueAndGradient", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_valueAndGradient
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -212,7 +212,7 @@ module LeastSquareFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LeastSquareFunction_values", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LeastSquareFunction_values", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_values
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module LeastSquareFunctionFunction =
     (*
         ! Default epsilon for finite difference method :
     *)
-    [<ExcelFunction(Name="_LeastSquareFunction_finiteDifferenceEpsilon", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LeastSquareFunction_finiteDifferenceEpsilon", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_finiteDifferenceEpsilon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module LeastSquareFunctionFunction =
     (*
         ! method to overload to compute J_f, the jacobian of the cost function with respect to x
     *)
-    [<ExcelFunction(Name="_LeastSquareFunction_jacobian", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LeastSquareFunction_jacobian", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_jacobian
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -338,7 +338,7 @@ module LeastSquareFunctionFunction =
     (*
         ! method to overload to compute J_f, the jacobian of the cost function with respect to x and also the cost function
     *)
-    [<ExcelFunction(Name="_LeastSquareFunction_valuesAndJacobian", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LeastSquareFunction_valuesAndJacobian", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_valuesAndJacobian
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -383,7 +383,7 @@ module LeastSquareFunctionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LeastSquareFunction_Range", Description="Create a range of LeastSquareFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LeastSquareFunction_Range", Description="Create a range of LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

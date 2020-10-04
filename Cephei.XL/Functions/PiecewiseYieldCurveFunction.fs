@@ -37,7 +37,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_accuracy_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_accuracy_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_accuracy_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_Clone", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_Clone", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_Clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_data", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_data", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_data
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_data_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_data_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_data_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_dates", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_dates", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_dates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_dates_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_dates_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_dates_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module PiecewiseYieldCurveFunction =
     (*
         these are dummy methods (for the sake of ITraits and should not be called directly
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_discountImpl", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_discountImpl", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_discountImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -301,7 +301,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_forwardImpl", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_forwardImpl", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_forwardImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -349,7 +349,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_guess", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_guess", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_guess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -409,7 +409,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_initialDate1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_initialDate1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_initialDate1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -445,7 +445,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_initialDate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_initialDate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_initialDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -487,7 +487,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_initialValue1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_initialValue1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_initialValue1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -529,7 +529,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_initialValue", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_initialValue", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_initialValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -565,7 +565,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_instruments_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_instruments_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_instruments_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -601,7 +601,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_interpolation_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_interpolation_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_interpolation_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -637,7 +637,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_interpolator_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_interpolator_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_interpolator_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -673,7 +673,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_maxDate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_maxDate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -709,7 +709,7 @@ module PiecewiseYieldCurveFunction =
     (*
         here we do not refer to the base curve as in QL because our base curve is YieldTermStructure and not Traits::base_curve
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_maxDate_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_maxDate_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_maxDate_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -745,7 +745,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_maxIterations", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_maxIterations", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_maxIterations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -781,7 +781,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_maxValueAfter", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_maxValueAfter", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_maxValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -841,7 +841,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_minValueAfter", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_minValueAfter", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_minValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -901,7 +901,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_moving_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_moving_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_moving_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -937,7 +937,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_nodes", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_nodes", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_nodes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -973,7 +973,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1004,7 +1004,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1065,7 +1065,7 @@ module PiecewiseYieldCurveFunction =
     (*
         two constructors to forward down the ctor chain
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve2", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve2", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1126,7 +1126,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_registerWith", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_registerWith", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1168,7 +1168,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_setTermStructure", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_setTermStructure", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_setTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1210,7 +1210,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_setupInterpolation", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_setupInterpolation", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_setupInterpolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1246,7 +1246,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_times", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_times", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_times
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1282,7 +1282,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_times_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_times_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_times_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1318,7 +1318,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_traits_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_traits_", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_traits_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1354,7 +1354,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_updateGuess", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_updateGuess", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_updateGuess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1408,7 +1408,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_zeroYieldImpl", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_zeroYieldImpl", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_zeroYieldImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1456,7 +1456,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! The same day-counting rule used by the term structure should be used for calculating the passed time t.
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_discount", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_discount", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1504,7 +1504,7 @@ module PiecewiseYieldCurveFunction =
     (*
         These methods return the discount factor from a given date or time to the reference date.  In the latter case, the time is calculated as a fraction of year from the reference date.
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_discount1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_discount1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_discount1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1552,7 +1552,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! The resulting interest rate has the required day-counting rule. \warning dates are not adjusted for holidays
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_forwardRate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_forwardRate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_forwardRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1624,7 +1624,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! The resulting interest rate has the required day-counting rule.
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_forwardRate1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_forwardRate1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_forwardRate1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1696,7 +1696,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! The resulting interest rate has the same day-counting rule used by the term structure. The same rule should be used for calculating the passed times t1 and t2.
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_forwardRate2", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_forwardRate2", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_forwardRate2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1762,7 +1762,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_jumpDates", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_jumpDates", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_jumpDates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1798,7 +1798,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_jumpTimes", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_jumpTimes", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_jumpTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1834,7 +1834,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_update", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_update", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1870,7 +1870,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! The resulting interest rate has the required daycounting rule.
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_zeroRate1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_zeroRate1", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_zeroRate1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1936,7 +1936,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! The resulting interest rate has the same day-counting rule used by the term structure. The same rule should be used for calculating the passed time t.
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_zeroRate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_zeroRate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_zeroRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1996,7 +1996,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_calendar", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_calendar", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2032,7 +2032,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! the day counter used for date/time conversion
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_dayCounter", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_dayCounter", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2068,7 +2068,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_maxTime", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_maxTime", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2104,7 +2104,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! the date at which discount = 1.0 and/or variance = 0.0
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_referenceDate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_referenceDate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2140,7 +2140,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_settlementDays", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_settlementDays", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2176,7 +2176,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_timeFromReference", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_timeFromReference", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2218,7 +2218,7 @@ module PiecewiseYieldCurveFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_allowsExtrapolation", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_allowsExtrapolation", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2254,7 +2254,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_disableExtrapolation", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_disableExtrapolation", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2296,7 +2296,7 @@ module PiecewiseYieldCurveFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_enableExtrapolation", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_enableExtrapolation", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2338,7 +2338,7 @@ module PiecewiseYieldCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_extrapolate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_extrapolate", Description="Create a PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2371,7 +2371,7 @@ module PiecewiseYieldCurveFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PiecewiseYieldCurve_Range", Description="Create a range of PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseYieldCurve_Range", Description="Create a range of PiecewiseYieldCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseYieldCurve_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

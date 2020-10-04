@@ -37,7 +37,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass", Description="Create a BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass", Description="Create a BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedMaxStrikeClass_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass_value", Description="Create a BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass_value", Description="Create a BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedMaxStrikeClass_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass_derivative", Description="Create a BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass_derivative", Description="Create a BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedMaxStrikeClass_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -185,7 +185,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass_Range", Description="Create a range of BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass_Range", Description="Create a range of BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedMaxStrikeClass_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

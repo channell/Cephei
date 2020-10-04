@@ -37,7 +37,7 @@ module FRFCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FRFCurrency", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module FRFCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_FRFCurrency_code", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_code", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module FRFCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_FRFCurrency_empty", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_empty", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module FRFCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FRFCurrency_Equals", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_Equals", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module FRFCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_FRFCurrency_format", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_format", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module FRFCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_FRFCurrency_fractionsPerUnit", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_fractionsPerUnit", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module FRFCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_FRFCurrency_fractionSymbol", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_fractionSymbol", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module FRFCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_FRFCurrency_name", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_name", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module FRFCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_FRFCurrency_numericCode", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_numericCode", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module FRFCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_FRFCurrency_rounding", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_rounding", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module FRFCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_FRFCurrency_symbol", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_symbol", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module FRFCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FRFCurrency_ToString", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_ToString", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module FRFCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_FRFCurrency_triangulationCurrency", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_triangulationCurrency", Description="Create a FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module FRFCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FRFCurrency_Range", Description="Create a range of FRFCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FRFCurrency_Range", Description="Create a range of FRFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRFCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -38,7 +38,7 @@ module FixedRateBondForwardFunction =
     (*
         ! (dirty) forward bond price minus accrued on bond at delivery
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_cleanForwardPrice", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_cleanForwardPrice", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_cleanForwardPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module FixedRateBondForwardFunction =
     (*
         ! If strike is given in the constructor, can calculate the NPV of the contract via NPV().  If strike/forward price is desired, it can be obtained via forwardPrice(). In this case, the strike variable in the constructor is irrelevant and will be ignored.
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module FixedRateBondForwardFunction =
     (*
         ! (dirty) forward bond price
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_forwardPrice", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_forwardPrice", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_forwardPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module FixedRateBondForwardFunction =
     (*
         ! Here only coupons between max(evaluation date,settlement date) and maturity date of bond forward contract are considered income.
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_spotIncome", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_spotIncome", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_spotIncome
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -261,7 +261,7 @@ module FixedRateBondForwardFunction =
     (*
         !  NPV of underlying bond
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_spotValue", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_spotValue", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_spotValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -297,7 +297,7 @@ module FixedRateBondForwardFunction =
     (*
         ! \note if this is a bond forward price, is must be a dirty forward price.
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_forwardValue", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_forwardValue", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_forwardValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -333,7 +333,7 @@ module FixedRateBondForwardFunction =
     (*
         ! Simple yield calculation based on underlying spot and forward values, taking into account underlying income. When \f$ t>0 \f$, call with: underlyingSpotValue=spotValue(t), forwardValue=strikePrice, to get current yield. For a repo, if \f$ t=0 \f$, impliedYield should reproduce the spot repo rate. For FRA's, this should reproduce the relevant zero rate at the FRA's maturityDate_
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_impliedYield", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_impliedYield", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_impliedYield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -399,7 +399,7 @@ module FixedRateBondForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_isExpired", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_isExpired", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -435,7 +435,7 @@ module FixedRateBondForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_settlementDate", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_settlementDate", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_settlementDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -471,7 +471,7 @@ module FixedRateBondForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_CASH", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_CASH", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -507,7 +507,7 @@ module FixedRateBondForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_errorEstimate", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_errorEstimate", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -543,7 +543,7 @@ module FixedRateBondForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_NPV", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_NPV", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -579,7 +579,7 @@ module FixedRateBondForwardFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_result", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_result", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -621,7 +621,7 @@ module FixedRateBondForwardFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_setPricingEngine", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_setPricingEngine", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -663,7 +663,7 @@ module FixedRateBondForwardFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_FixedRateBondForward_valuationDate", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_valuationDate", Description="Create a FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -696,7 +696,7 @@ module FixedRateBondForwardFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FixedRateBondForward_Range", Description="Create a range of FixedRateBondForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateBondForward_Range", Description="Create a range of FixedRateBondForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondForward_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

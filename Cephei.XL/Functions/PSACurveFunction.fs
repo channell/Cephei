@@ -37,7 +37,7 @@ module PSACurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PSACurve_getCPR", Description="Create a PSACurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PSACurve_getCPR", Description="Create a PSACurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PSACurve_getCPR
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module PSACurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PSACurve_getSMM", Description="Create a PSACurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PSACurve_getSMM", Description="Create a PSACurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PSACurve_getSMM
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module PSACurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PSACurve", Description="Create a PSACurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PSACurve", Description="Create a PSACurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PSACurve_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module PSACurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PSACurve1", Description="Create a PSACurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PSACurve1", Description="Create a PSACurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PSACurve_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -198,7 +198,7 @@ module PSACurveFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PSACurve_Range", Description="Create a range of PSACurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PSACurve_Range", Description="Create a range of PSACurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PSACurve_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

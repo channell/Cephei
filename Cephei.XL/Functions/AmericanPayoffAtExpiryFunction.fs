@@ -37,7 +37,7 @@ module AmericanPayoffAtExpiryFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanPayoffAtExpiry", Description="Create a AmericanPayoffAtExpiry",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPayoffAtExpiry", Description="Create a AmericanPayoffAtExpiry",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtExpiry_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module AmericanPayoffAtExpiryFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanPayoffAtExpiry_value", Description="Create a AmericanPayoffAtExpiry",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPayoffAtExpiry_value", Description="Create a AmericanPayoffAtExpiry",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtExpiry_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -137,7 +137,7 @@ module AmericanPayoffAtExpiryFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AmericanPayoffAtExpiry_Range", Description="Create a range of AmericanPayoffAtExpiry",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPayoffAtExpiry_Range", Description="Create a range of AmericanPayoffAtExpiry",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtExpiry_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

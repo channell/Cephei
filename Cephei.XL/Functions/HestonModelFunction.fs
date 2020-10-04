@@ -37,7 +37,7 @@ module HestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonModel", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module HestonModelFunction =
     (*
         variance mean reversion speed
     *)
-    [<ExcelFunction(Name="_HestonModel_kappa", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_kappa", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_kappa
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module HestonModelFunction =
     (*
         underlying process
     *)
-    [<ExcelFunction(Name="_HestonModel_process", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_process", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_process
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module HestonModelFunction =
     (*
         correlation
     *)
-    [<ExcelFunction(Name="_HestonModel_rho", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_rho", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_rho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module HestonModelFunction =
     (*
         volatility of the volatility
     *)
-    [<ExcelFunction(Name="_HestonModel_sigma", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_sigma", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_sigma
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module HestonModelFunction =
     (*
         variance mean version level
     *)
-    [<ExcelFunction(Name="_HestonModel_theta", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_theta", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_theta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module HestonModelFunction =
     (*
         spot variance
     *)
-    [<ExcelFunction(Name="_HestonModel_v0", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_v0", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_v0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module HestonModelFunction =
     (*
         ! An additional constraint can be passed which must be satisfied in addition to the constraints of the model.
     *)
-    [<ExcelFunction(Name="_HestonModel_calibrate", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_calibrate", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_calibrate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module HestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonModel_constraint", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_constraint", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_constraint
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module HestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonModel_endCriteria", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_endCriteria", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_endCriteria
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module HestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonModel_notifyObservers", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_notifyObservers", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_notifyObservers
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module HestonModelFunction =
     (*
         ! Returns array of arguments on which calibration is done
     *)
-    [<ExcelFunction(Name="_HestonModel_parameters", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_parameters", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_parameters
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -506,7 +506,7 @@ module HestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonModel_registerWith", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_registerWith", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -548,7 +548,7 @@ module HestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonModel_setParams", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_setParams", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_setParams
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -590,7 +590,7 @@ module HestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonModel_unregisterWith", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_unregisterWith", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module HestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonModel_update", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_update", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -668,7 +668,7 @@ module HestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HestonModel_value", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_value", Description="Create a HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -713,7 +713,7 @@ module HestonModelFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_HestonModel_Range", Description="Create a range of HestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HestonModel_Range", Description="Create a range of HestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModel_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

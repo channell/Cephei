@@ -37,7 +37,7 @@ module ImplicitEulerFunction =
     (*
         constructors
     *)
-    [<ExcelFunction(Name="_ImplicitEuler", Description="Create a ImplicitEuler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImplicitEuler", Description="Create a ImplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEuler_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module ImplicitEulerFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_ImplicitEuler1", Description="Create a ImplicitEuler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImplicitEuler1", Description="Create a ImplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEuler_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module ImplicitEulerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ImplicitEuler_setStep", Description="Create a ImplicitEuler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImplicitEuler_setStep", Description="Create a ImplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEuler_setStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module ImplicitEulerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ImplicitEuler_step", Description="Create a ImplicitEuler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImplicitEuler_step", Description="Create a ImplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEuler_step
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -204,7 +204,7 @@ module ImplicitEulerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ImplicitEuler_Range", Description="Create a range of ImplicitEuler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ImplicitEuler_Range", Description="Create a range of ImplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEuler_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

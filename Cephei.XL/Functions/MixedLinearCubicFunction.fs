@@ -37,7 +37,7 @@ module MixedLinearCubicFunction =
     (*
         fix below
     *)
-    [<ExcelFunction(Name="_MixedLinearCubic_global", Description="Create a MixedLinearCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearCubic_global", Description="Create a MixedLinearCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubic_global
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module MixedLinearCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearCubic_interpolate", Description="Create a MixedLinearCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearCubic_interpolate", Description="Create a MixedLinearCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubic_interpolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -127,7 +127,7 @@ module MixedLinearCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearCubic", Description="Create a MixedLinearCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearCubic", Description="Create a MixedLinearCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubic_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module MixedLinearCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearCubic_requiredPoints", Description="Create a MixedLinearCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearCubic_requiredPoints", Description="Create a MixedLinearCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubic_requiredPoints
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -239,7 +239,7 @@ module MixedLinearCubicFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MixedLinearCubic_Range", Description="Create a range of MixedLinearCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearCubic_Range", Description="Create a range of MixedLinearCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubic_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

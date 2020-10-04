@@ -44,7 +44,7 @@ module CounterpartyAdjSwapEngineFunction =
 @param invstDTS Investor (swap holder) default curve.
 @param invstRecoveryRate Investor recovery rate.
     *)
-    [<ExcelFunction(Name="_CounterpartyAdjSwapEngine", Description="Create a CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CounterpartyAdjSwapEngine", Description="Create a CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CounterpartyAdjSwapEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module CounterpartyAdjSwapEngineFunction =
 @param invstDTS Investor (swap holder) default curve.
 @param invstRecoveryRate Investor recovery rate.
     *)
-    [<ExcelFunction(Name="_CounterpartyAdjSwapEngine1", Description="Create a CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CounterpartyAdjSwapEngine1", Description="Create a CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CounterpartyAdjSwapEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -190,7 +190,7 @@ module CounterpartyAdjSwapEngineFunction =
 @param invstDTS Investor (swap holder) default curve.
 @param invstRecoveryRate Investor recovery rate.
     *)
-    [<ExcelFunction(Name="_CounterpartyAdjSwapEngine2", Description="Create a CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CounterpartyAdjSwapEngine2", Description="Create a CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CounterpartyAdjSwapEngine_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module CounterpartyAdjSwapEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CounterpartyAdjSwapEngine_Range", Description="Create a range of CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CounterpartyAdjSwapEngine_Range", Description="Create a range of CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CounterpartyAdjSwapEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

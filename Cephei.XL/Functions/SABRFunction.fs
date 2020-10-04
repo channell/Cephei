@@ -37,7 +37,7 @@ module SABRFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABR_interpolate", Description="Create a SABR",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABR_interpolate", Description="Create a SABR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABR_interpolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module SABRFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABR", Description="Create a SABR",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABR", Description="Create a SABR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABR_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -233,7 +233,7 @@ module SABRFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SABR_Range", Description="Create a range of SABR",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABR_Range", Description="Create a range of SABR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABR_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

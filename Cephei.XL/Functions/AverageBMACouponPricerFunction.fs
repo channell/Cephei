@@ -37,7 +37,7 @@ module AverageBMACouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMACouponPricer_capletPrice", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMACouponPricer_capletPrice", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACouponPricer_capletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module AverageBMACouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMACouponPricer_capletRate", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMACouponPricer_capletRate", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACouponPricer_capletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module AverageBMACouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMACouponPricer_floorletPrice", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMACouponPricer_floorletPrice", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACouponPricer_floorletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -163,7 +163,7 @@ module AverageBMACouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMACouponPricer_floorletRate", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMACouponPricer_floorletRate", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACouponPricer_floorletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -205,7 +205,7 @@ module AverageBMACouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMACouponPricer_initialize", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMACouponPricer_initialize", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACouponPricer_initialize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -247,7 +247,7 @@ module AverageBMACouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMACouponPricer_swapletPrice", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMACouponPricer_swapletPrice", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACouponPricer_swapletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -283,7 +283,7 @@ module AverageBMACouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMACouponPricer_swapletRate", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMACouponPricer_swapletRate", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACouponPricer_swapletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -319,7 +319,7 @@ module AverageBMACouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMACouponPricer_registerWith", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMACouponPricer_registerWith", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACouponPricer_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -361,7 +361,7 @@ module AverageBMACouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AverageBMACouponPricer_unregisterWith", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMACouponPricer_unregisterWith", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACouponPricer_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -403,7 +403,7 @@ module AverageBMACouponPricerFunction =
     (*
         observer interface
     *)
-    [<ExcelFunction(Name="_AverageBMACouponPricer_update", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMACouponPricer_update", Description="Create a AverageBMACouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACouponPricer_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -436,7 +436,7 @@ module AverageBMACouponPricerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AverageBMACouponPricer_Range", Description="Create a range of AverageBMACouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AverageBMACouponPricer_Range", Description="Create a range of AverageBMACouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACouponPricer_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

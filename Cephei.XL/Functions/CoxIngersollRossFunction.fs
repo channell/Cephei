@@ -37,7 +37,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_discountBondOption", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_discountBondOption", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_discountBondOption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_dynamics", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_dynamics", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_dynamics
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_tree", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_tree", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_tree
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_discount", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_discount", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_discountBond1", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_discountBond1", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_discountBond1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_discountBond", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_discountBond", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_discountBond
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module CoxIngersollRossFunction =
     (*
         ! An additional constraint can be passed which must be satisfied in addition to the constraints of the model.
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_calibrate", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_calibrate", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_calibrate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_constraint", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_constraint", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_constraint
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -488,7 +488,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_endCriteria", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_endCriteria", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_endCriteria
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_notifyObservers", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_notifyObservers", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_notifyObservers
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -560,7 +560,7 @@ module CoxIngersollRossFunction =
     (*
         ! Returns array of arguments on which calibration is done
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_parameters", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_parameters", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_parameters
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_registerWith", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_registerWith", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -638,7 +638,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_setParams", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_setParams", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_setParams
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -680,7 +680,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_unregisterWith", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_unregisterWith", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -722,7 +722,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_update", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_update", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -758,7 +758,7 @@ module CoxIngersollRossFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CoxIngersollRoss_value", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_value", Description="Create a CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -803,7 +803,7 @@ module CoxIngersollRossFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CoxIngersollRoss_Range", Description="Create a range of CoxIngersollRoss",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CoxIngersollRoss_Range", Description="Create a range of CoxIngersollRoss",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxIngersollRoss_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

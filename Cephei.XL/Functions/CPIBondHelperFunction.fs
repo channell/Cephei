@@ -37,7 +37,7 @@ module CPIBondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_cpiBond", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_cpiBond", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_cpiBond
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module CPIBondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPIBondHelper", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module CPIBondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_bond", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_bond", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_bond
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module CPIBondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_impliedQuote", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_impliedQuote", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_impliedQuote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module CPIBondHelperFunction =
     (*
         RateHelper interface
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_setTermStructure", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_setTermStructure", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_setTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -332,7 +332,7 @@ module CPIBondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_useCleanPrice", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_useCleanPrice", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_useCleanPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module CPIBondHelperFunction =
     (*
         earliest relevant date The earliest date at which discounts are needed by the helper in order to provide a quote.
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_earliestDate", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_earliestDate", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_earliestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module CPIBondHelperFunction =
     (*
         The latest date at which discounts are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_latestDate", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_latestDate", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_latestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module CPIBondHelperFunction =
     (*
         ! The latest date at which data are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_latestRelevantDate", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_latestRelevantDate", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_latestRelevantDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module CPIBondHelperFunction =
     (*
         ! instrument's maturity date
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_maturityDate", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_maturityDate", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module CPIBondHelperFunction =
     (*
         ! pillar date
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_pillarDate", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_pillarDate", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_pillarDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -548,7 +548,7 @@ module CPIBondHelperFunction =
     (*
         ! BootstrapHelper interface
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_quote", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_quote", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_quote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -584,7 +584,7 @@ module CPIBondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_quoteError", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_quoteError", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_quoteError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -620,7 +620,7 @@ module CPIBondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_quoteIsValid", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_quoteIsValid", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_quoteIsValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -656,7 +656,7 @@ module CPIBondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_quoteValue", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_quoteValue", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_quoteValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module CPIBondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_registerWith", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_registerWith", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -734,7 +734,7 @@ module CPIBondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_unregisterWith", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_unregisterWith", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -776,7 +776,7 @@ module CPIBondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPIBondHelper_update", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_update", Description="Create a CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -809,7 +809,7 @@ module CPIBondHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CPIBondHelper_Range", Description="Create a range of CPIBondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPIBondHelper_Range", Description="Create a range of CPIBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBondHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

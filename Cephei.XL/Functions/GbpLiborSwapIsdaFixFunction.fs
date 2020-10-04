@@ -37,7 +37,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix1", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix1", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         ! returns a copy of itself linked to a different tenor
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_clone", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_clone", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         ! returns a copy of itself linked to a different curves
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_clone1", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_clone1", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_clone1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_clone2", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_clone2", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_clone2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -249,7 +249,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_discountingTermStructure", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_discountingTermStructure", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_discountingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_exogenousDiscount", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_exogenousDiscount", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_exogenousDiscount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -321,7 +321,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_fixedLegConvention", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_fixedLegConvention", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_fixedLegConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -357,7 +357,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_fixedLegTenor", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_fixedLegTenor", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_fixedLegTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -393,7 +393,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_forecastFixing", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_forecastFixing", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -435,7 +435,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_forwardingTermStructure", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_forwardingTermStructure", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -471,7 +471,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_iborIndex", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_iborIndex", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_iborIndex
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -507,7 +507,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_maturityDate", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_maturityDate", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -549,7 +549,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         \warning Relinking the term structure underlying the index will not have effect on the returned swap. recheck
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_underlyingSwap", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_underlyingSwap", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_underlyingSwap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -591,7 +591,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_currency", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_currency", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -627,7 +627,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_dayCounter", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_dayCounter", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -663,7 +663,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_familyName", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_familyName", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -699,7 +699,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_fixing", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_fixing", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -747,7 +747,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_fixingCalendar", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_fixingCalendar", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -783,7 +783,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_fixingDate", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_fixingDate", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -825,7 +825,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_fixingDays", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_fixingDays", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -861,7 +861,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_isValidFixingDate", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_isValidFixingDate", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -903,7 +903,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_name", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_name", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -939,7 +939,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_pastFixing", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_pastFixing", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -981,7 +981,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_tenor", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_tenor", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1017,7 +1017,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_update", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_update", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1053,7 +1053,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_valueDate", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_valueDate", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1095,7 +1095,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_addFixing", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_addFixing", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1149,7 +1149,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_addFixings", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_addFixings", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1203,7 +1203,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_addFixings1", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_addFixings1", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1251,7 +1251,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_allowsNativeFixings", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_allowsNativeFixings", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1287,7 +1287,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_clearFixings", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_clearFixings", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1323,7 +1323,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_registerWith", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_registerWith", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1365,7 +1365,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_timeSeries", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_timeSeries", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1401,7 +1401,7 @@ module GbpLiborSwapIsdaFixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_unregisterWith", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_unregisterWith", Description="Create a GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1440,7 +1440,7 @@ module GbpLiborSwapIsdaFixFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_Range", Description="Create a range of GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GbpLiborSwapIsdaFix_Range", Description="Create a range of GbpLiborSwapIsdaFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GbpLiborSwapIsdaFix_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

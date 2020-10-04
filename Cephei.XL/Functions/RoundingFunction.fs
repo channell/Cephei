@@ -37,7 +37,7 @@ module RoundingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Rounding_Digit", Description="Create a Rounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Rounding_Digit", Description="Create a Rounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Rounding_Digit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module RoundingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Rounding_getType", Description="Create a Rounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Rounding_getType", Description="Create a Rounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Rounding_getType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module RoundingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Rounding_Precision", Description="Create a Rounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Rounding_Precision", Description="Create a Rounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Rounding_Precision
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module RoundingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Rounding_Round", Description="Create a Rounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Rounding_Round", Description="Create a Rounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Rounding_Round
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -187,7 +187,7 @@ module RoundingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Rounding", Description="Create a Rounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Rounding", Description="Create a Rounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Rounding_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module RoundingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Rounding3", Description="Create a Rounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Rounding3", Description="Create a Rounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Rounding_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -273,7 +273,7 @@ module RoundingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Rounding2", Description="Create a Rounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Rounding2", Description="Create a Rounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Rounding_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -316,7 +316,7 @@ module RoundingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Rounding1", Description="Create a Rounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Rounding1", Description="Create a Rounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Rounding_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module RoundingFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Rounding_Range", Description="Create a range of Rounding",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Rounding_Range", Description="Create a range of Rounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Rounding_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

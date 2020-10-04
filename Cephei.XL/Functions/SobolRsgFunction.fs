@@ -37,7 +37,7 @@ module SobolRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolRsg_dimension", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolRsg_dimension", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_dimension
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module SobolRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolRsg_factory", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolRsg_factory", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module SobolRsgFunction =
         
     *)
     (*!! Sample not supported by helper
-    [<ExcelFunction(Name="_SobolRsg_lastSequence", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolRsg_lastSequence", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_lastSequence
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module SobolRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolRsg_nextInt32Sequence", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolRsg_nextInt32Sequence", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_nextInt32Sequence
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -196,7 +196,7 @@ module SobolRsgFunction =
         
     *)
     (*!! Sample not supported by Helper
-    [<ExcelFunction(Name="_SobolRsg_nextSequence", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolRsg_nextSequence", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_nextSequence
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -233,7 +233,7 @@ module SobolRsgFunction =
     (*
         ! skip to the n-th sample in the low-discrepancy sequence
     *)
-    [<ExcelFunction(Name="_SobolRsg_skipTo", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolRsg_skipTo", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_skipTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -275,7 +275,7 @@ module SobolRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolRsg2", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolRsg2", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -324,7 +324,7 @@ module SobolRsgFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolRsg3", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolRsg3", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -367,7 +367,7 @@ module SobolRsgFunction =
     (*
         ! \pre dimensionality must be <= PPMT_MAX_DIM
     *)
-    [<ExcelFunction(Name="_SobolRsg", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolRsg", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module SobolRsgFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_SobolRsg1", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolRsg1", Description="Create a SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -432,7 +432,7 @@ module SobolRsgFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SobolRsg_Range", Description="Create a range of SobolRsg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolRsg_Range", Description="Create a range of SobolRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolRsg_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

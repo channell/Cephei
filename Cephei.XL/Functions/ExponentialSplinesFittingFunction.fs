@@ -37,7 +37,7 @@ module ExponentialSplinesFittingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ExponentialSplinesFitting_clone", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExponentialSplinesFitting_clone", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExponentialSplinesFitting_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module ExponentialSplinesFittingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ExponentialSplinesFitting", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExponentialSplinesFitting", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExponentialSplinesFitting_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module ExponentialSplinesFittingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ExponentialSplinesFitting_size", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExponentialSplinesFitting_size", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExponentialSplinesFitting_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module ExponentialSplinesFittingFunction =
     (*
         ! return whether there is a constraint at zero
     *)
-    [<ExcelFunction(Name="_ExponentialSplinesFitting_constrainAtZero", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExponentialSplinesFitting_constrainAtZero", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExponentialSplinesFitting_constrainAtZero
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module ExponentialSplinesFittingFunction =
     (*
         ! open discountFunction to public
     *)
-    [<ExcelFunction(Name="_ExponentialSplinesFitting_discount", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExponentialSplinesFitting_discount", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExponentialSplinesFitting_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module ExponentialSplinesFittingFunction =
     (*
         ! final value of cost function after optimization
     *)
-    [<ExcelFunction(Name="_ExponentialSplinesFitting_minimumCostValue", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExponentialSplinesFitting_minimumCostValue", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExponentialSplinesFitting_minimumCostValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module ExponentialSplinesFittingFunction =
     (*
         ! final number of iterations used in the optimization problem
     *)
-    [<ExcelFunction(Name="_ExponentialSplinesFitting_numberOfIterations", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExponentialSplinesFitting_numberOfIterations", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExponentialSplinesFitting_numberOfIterations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module ExponentialSplinesFittingFunction =
     (*
         ! return optimization method being used
     *)
-    [<ExcelFunction(Name="_ExponentialSplinesFitting_optimizationMethod", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExponentialSplinesFitting_optimizationMethod", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExponentialSplinesFitting_optimizationMethod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -350,7 +350,7 @@ module ExponentialSplinesFittingFunction =
     (*
         ! output array of results of optimization problem
     *)
-    [<ExcelFunction(Name="_ExponentialSplinesFitting_solution", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExponentialSplinesFitting_solution", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExponentialSplinesFitting_solution
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module ExponentialSplinesFittingFunction =
     (*
         ! return weights being used
     *)
-    [<ExcelFunction(Name="_ExponentialSplinesFitting_weights", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExponentialSplinesFitting_weights", Description="Create a ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExponentialSplinesFitting_weights
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -419,7 +419,7 @@ module ExponentialSplinesFittingFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ExponentialSplinesFitting_Range", Description="Create a range of ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExponentialSplinesFitting_Range", Description="Create a range of ExponentialSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExponentialSplinesFitting_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

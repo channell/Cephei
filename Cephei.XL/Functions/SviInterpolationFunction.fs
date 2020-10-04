@@ -37,7 +37,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_a", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_a", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_a
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_b", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_b", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_b
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_endCriteria", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_endCriteria", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_endCriteria
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_expiry", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_expiry", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_expiry
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_forward", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_forward", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_forward
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_interpolationWeights", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_interpolationWeights", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_interpolationWeights
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_m", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_m", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_m
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -289,7 +289,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_maxError", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_maxError", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_maxError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -325,7 +325,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_rho", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_rho", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_rho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -361,7 +361,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_rmsError", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_rmsError", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_rmsError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -397,7 +397,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_sigma", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_sigma", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_sigma
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -433,7 +433,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_derivative", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_derivative", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -644,7 +644,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_empty", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_empty", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -680,7 +680,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_primitive", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_primitive", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -728,7 +728,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_secondDerivative", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_secondDerivative", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -776,7 +776,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_update", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_update", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -812,7 +812,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_value1", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_value1", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -860,7 +860,7 @@ module SviInterpolationFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_SviInterpolation_value", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_value", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -902,7 +902,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_xMax", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_xMax", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -938,7 +938,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_xMin", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_xMin", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -974,7 +974,7 @@ module SviInterpolationFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_SviInterpolation_allowsExtrapolation", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_allowsExtrapolation", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1010,7 +1010,7 @@ module SviInterpolationFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_SviInterpolation_disableExtrapolation", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_disableExtrapolation", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1052,7 +1052,7 @@ module SviInterpolationFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_SviInterpolation_enableExtrapolation", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_enableExtrapolation", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1094,7 +1094,7 @@ module SviInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviInterpolation_extrapolate", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_extrapolate", Description="Create a SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1127,7 +1127,7 @@ module SviInterpolationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SviInterpolation_Range", Description="Create a range of SviInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviInterpolation_Range", Description="Create a range of SviInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolation_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

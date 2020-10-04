@@ -37,7 +37,7 @@ module AmericanPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanPathPricer", Description="Create a AmericanPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPathPricer", Description="Create a AmericanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPathPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module AmericanPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanPathPricer_basisSystem", Description="Create a AmericanPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPathPricer_basisSystem", Description="Create a AmericanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPathPricer_basisSystem
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module AmericanPathPricerFunction =
     (*
         scale values of the underlying to increase numerical stability
     *)
-    [<ExcelFunction(Name="_AmericanPathPricer_state", Description="Create a AmericanPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPathPricer_state", Description="Create a AmericanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPathPricer_state
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module AmericanPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanPathPricer_value", Description="Create a AmericanPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPathPricer_value", Description="Create a AmericanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPathPricer_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -215,7 +215,7 @@ module AmericanPathPricerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AmericanPathPricer_Range", Description="Create a range of AmericanPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPathPricer_Range", Description="Create a range of AmericanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPathPricer_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

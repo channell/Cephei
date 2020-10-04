@@ -37,7 +37,7 @@ module GaussLegendrePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussLegendrePolynomial", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussLegendrePolynomial", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module GaussLegendrePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussLegendrePolynomial_alpha", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussLegendrePolynomial_alpha", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_alpha
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module GaussLegendrePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussLegendrePolynomial_beta", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussLegendrePolynomial_beta", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_beta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module GaussLegendrePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussLegendrePolynomial_mu_0", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussLegendrePolynomial_mu_0", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_mu_0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module GaussLegendrePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussLegendrePolynomial_w", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussLegendrePolynomial_w", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_w
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module GaussLegendrePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussLegendrePolynomial_value", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussLegendrePolynomial_value", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module GaussLegendrePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussLegendrePolynomial_weightedValue", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussLegendrePolynomial_weightedValue", Description="Create a GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_weightedValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -323,7 +323,7 @@ module GaussLegendrePolynomialFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GaussLegendrePolynomial_Range", Description="Create a range of GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussLegendrePolynomial_Range", Description="Create a range of GaussLegendrePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLegendrePolynomial_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

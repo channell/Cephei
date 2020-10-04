@@ -37,7 +37,7 @@ module MoroInverseCumulativeNormalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MoroInverseCumulativeNormal", Description="Create a MoroInverseCumulativeNormal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MoroInverseCumulativeNormal", Description="Create a MoroInverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MoroInverseCumulativeNormal_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module MoroInverseCumulativeNormalFunction =
     (*
         function
     *)
-    [<ExcelFunction(Name="_MoroInverseCumulativeNormal_value", Description="Create a MoroInverseCumulativeNormal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MoroInverseCumulativeNormal_value", Description="Create a MoroInverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MoroInverseCumulativeNormal_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module MoroInverseCumulativeNormalFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MoroInverseCumulativeNormal_Range", Description="Create a range of MoroInverseCumulativeNormal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MoroInverseCumulativeNormal_Range", Description="Create a range of MoroInverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MoroInverseCumulativeNormal_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

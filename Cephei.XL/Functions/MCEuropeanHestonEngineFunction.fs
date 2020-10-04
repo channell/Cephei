@@ -37,7 +37,7 @@ module MCEuropeanHestonEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MCEuropeanHestonEngine", Description="Create a MCEuropeanHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCEuropeanHestonEngine", Description="Create a MCEuropeanHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCEuropeanHestonEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -113,7 +113,7 @@ module MCEuropeanHestonEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MCEuropeanHestonEngine_Range", Description="Create a range of MCEuropeanHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCEuropeanHestonEngine_Range", Description="Create a range of MCEuropeanHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCEuropeanHestonEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

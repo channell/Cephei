@@ -37,7 +37,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_atmLevel", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_atmLevel", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_atmLevel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_init", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_init", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_init
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_maxStrike", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_maxStrike", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_minStrike", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_minStrike", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection1", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection1", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_dayCounter", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_dayCounter", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -321,7 +321,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_density", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_density", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_density
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -375,7 +375,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_digitalOptionPrice", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_digitalOptionPrice", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_digitalOptionPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -435,7 +435,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_exerciseDate", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_exerciseDate", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_exerciseDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -471,7 +471,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_exerciseTime", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_exerciseTime", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_exerciseTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -507,7 +507,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_optionPrice", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_optionPrice", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_optionPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -561,7 +561,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_referenceDate", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_referenceDate", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -597,7 +597,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_shift", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_shift", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_shift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -633,7 +633,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_update", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_update", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -669,7 +669,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_variance", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_variance", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -711,7 +711,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_vega", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_vega", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_vega
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -759,7 +759,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_volatility", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_volatility", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -813,7 +813,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_volatility1", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_volatility1", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_volatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -855,7 +855,7 @@ module SviSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SviSmileSection_volatilityType", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_volatilityType", Description="Create a SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_volatilityType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -888,7 +888,7 @@ module SviSmileSectionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SviSmileSection_Range", Description="Create a range of SviSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SviSmileSection_Range", Description="Create a range of SviSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviSmileSection_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

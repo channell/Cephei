@@ -37,7 +37,7 @@ module NegativePowerDefaultIntensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NegativePowerDefaultIntensity_defaultRecovery", Description="Create a NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NegativePowerDefaultIntensity_defaultRecovery", Description="Create a NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NegativePowerDefaultIntensity_defaultRecovery
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module NegativePowerDefaultIntensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NegativePowerDefaultIntensity_hazardRate", Description="Create a NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NegativePowerDefaultIntensity_hazardRate", Description="Create a NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NegativePowerDefaultIntensity_hazardRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module NegativePowerDefaultIntensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NegativePowerDefaultIntensity1", Description="Create a NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NegativePowerDefaultIntensity1", Description="Create a NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NegativePowerDefaultIntensity_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module NegativePowerDefaultIntensityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NegativePowerDefaultIntensity", Description="Create a NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NegativePowerDefaultIntensity", Description="Create a NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NegativePowerDefaultIntensity_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -222,7 +222,7 @@ module NegativePowerDefaultIntensityFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NegativePowerDefaultIntensity_Range", Description="Create a range of NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NegativePowerDefaultIntensity_Range", Description="Create a range of NegativePowerDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NegativePowerDefaultIntensity_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

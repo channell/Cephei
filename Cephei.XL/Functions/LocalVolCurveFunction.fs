@@ -37,7 +37,7 @@ module LocalVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_calendar", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_calendar", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module LocalVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_dayCounter", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_dayCounter", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module LocalVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LocalVolCurve", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module LocalVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_maxDate", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_maxDate", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module LocalVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_maxStrike", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_maxStrike", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module LocalVolCurveFunction =
     (*
         VolatilityTermStructure interface
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_minStrike", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_minStrike", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module LocalVolCurveFunction =
     (*
         TermStructure interface
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_referenceDate", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_referenceDate", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module LocalVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_localVol", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_localVol", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_localVol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module LocalVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_localVol1", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_localVol1", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_localVol1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module LocalVolCurveFunction =
     (*
         ! the business day convention used in tenor to date conversion
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_businessDayConvention", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_businessDayConvention", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module LocalVolCurveFunction =
     (*
         ! period/date conversion
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_optionDateFromTenor", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_optionDateFromTenor", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_optionDateFromTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module LocalVolCurveFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_maxTime", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_maxTime", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module LocalVolCurveFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_settlementDays", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_settlementDays", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -548,7 +548,7 @@ module LocalVolCurveFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_timeFromReference", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_timeFromReference", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -590,7 +590,7 @@ module LocalVolCurveFunction =
     (*
         observer interface
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_update", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_update", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -626,7 +626,7 @@ module LocalVolCurveFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_allowsExtrapolation", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_allowsExtrapolation", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -662,7 +662,7 @@ module LocalVolCurveFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_disableExtrapolation", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_disableExtrapolation", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -704,7 +704,7 @@ module LocalVolCurveFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_enableExtrapolation", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_enableExtrapolation", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -746,7 +746,7 @@ module LocalVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LocalVolCurve_extrapolate", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_extrapolate", Description="Create a LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -779,7 +779,7 @@ module LocalVolCurveFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LocalVolCurve_Range", Description="Create a range of LocalVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LocalVolCurve_Range", Description="Create a range of LocalVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LocalVolCurve_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

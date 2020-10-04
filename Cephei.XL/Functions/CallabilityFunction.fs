@@ -37,7 +37,7 @@ module CallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Callability", Description="Create a Callability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Callability", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module CallabilityFunction =
     (*
         Event interface
     *)
-    [<ExcelFunction(Name="_Callability_date", Description="Create a Callability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Callability_date", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module CallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Callability_price", Description="Create a Callability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Callability_price", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_price
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module CallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Callability_type", Description="Create a Callability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Callability_type", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module CallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Callability_accept", Description="Create a Callability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Callability_accept", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module CallabilityFunction =
     (*
         ! If includeRefDate is true, then an event has not occurred if its date is the same as the refDate, i.e. this method returns false if the event date is the same as the refDate.
     *)
-    [<ExcelFunction(Name="_Callability_hasOccurred", Description="Create a Callability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Callability_hasOccurred", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module CallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Callability_registerWith", Description="Create a Callability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Callability_registerWith", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module CallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Callability_unregisterWith", Description="Create a Callability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Callability_unregisterWith", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -365,7 +365,7 @@ module CallabilityFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Callability_Range", Description="Create a range of Callability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Callability_Range", Description="Create a range of Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

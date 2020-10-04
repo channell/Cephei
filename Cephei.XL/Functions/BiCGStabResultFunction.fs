@@ -37,7 +37,7 @@ module BiCGStabResultFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BiCGStabResult", Description="Create a BiCGStabResult",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BiCGStabResult", Description="Create a BiCGStabResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStabResult_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module BiCGStabResultFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BiCGStabResult_Error", Description="Create a BiCGStabResult",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BiCGStabResult_Error", Description="Create a BiCGStabResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStabResult_Error
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module BiCGStabResultFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BiCGStabResult_Iterations", Description="Create a BiCGStabResult",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BiCGStabResult_Iterations", Description="Create a BiCGStabResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStabResult_Iterations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module BiCGStabResultFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BiCGStabResult_X", Description="Create a BiCGStabResult",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BiCGStabResult_X", Description="Create a BiCGStabResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStabResult_X
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -191,7 +191,7 @@ module BiCGStabResultFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BiCGStabResult_Range", Description="Create a range of BiCGStabResult",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BiCGStabResult_Range", Description="Create a range of BiCGStabResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStabResult_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

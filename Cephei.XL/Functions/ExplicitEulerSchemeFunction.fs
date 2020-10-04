@@ -37,7 +37,7 @@ module ExplicitEulerSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ExplicitEulerScheme1", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExplicitEulerScheme1", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEulerScheme_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module ExplicitEulerSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ExplicitEulerScheme", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExplicitEulerScheme", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEulerScheme_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module ExplicitEulerSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ExplicitEulerScheme_factory", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExplicitEulerScheme_factory", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEulerScheme_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -165,7 +165,7 @@ module ExplicitEulerSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ExplicitEulerScheme_setStep", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExplicitEulerScheme_setStep", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEulerScheme_setStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module ExplicitEulerSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ExplicitEulerScheme_step", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExplicitEulerScheme_step", Description="Create a ExplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEulerScheme_step
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -258,7 +258,7 @@ module ExplicitEulerSchemeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ExplicitEulerScheme_Range", Description="Create a range of ExplicitEulerScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExplicitEulerScheme_Range", Description="Create a range of ExplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEulerScheme_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

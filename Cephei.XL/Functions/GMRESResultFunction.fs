@@ -37,7 +37,7 @@ module GMRESResultFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GMRESResult_Errors", Description="Create a GMRESResult",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GMRESResult_Errors", Description="Create a GMRESResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRESResult_Errors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module GMRESResultFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GMRESResult", Description="Create a GMRESResult",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GMRESResult", Description="Create a GMRESResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRESResult_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module GMRESResultFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GMRESResult_X", Description="Create a GMRESResult",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GMRESResult_X", Description="Create a GMRESResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRESResult_X
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -149,7 +149,7 @@ module GMRESResultFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GMRESResult_Range", Description="Create a range of GMRESResult",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GMRESResult_Range", Description="Create a range of GMRESResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRESResult_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

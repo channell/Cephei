@@ -37,7 +37,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_a", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_a", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_a
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_alpha", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_alpha", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_alpha
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_B", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_B", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_B
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -163,7 +163,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_diffusion", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_diffusion", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_diffusion
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -211,7 +211,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_drift", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_drift", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_drift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -259,7 +259,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_expectation", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_expectation", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_expectation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_M_T", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_M_T", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_M_T
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_sigma", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_sigma", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_sigma
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_stdDeviation", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_stdDeviation", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_stdDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -506,7 +506,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_variance", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_variance", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -560,7 +560,7 @@ module HullWhiteForwardProcessFunction =
     (*
         StochasticProcess1D interface
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_x0", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_x0", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_x0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_getForwardMeasureTime", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_getForwardMeasureTime", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_getForwardMeasureTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_setForwardMeasureTime", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_setForwardMeasureTime", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_setForwardMeasureTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -674,7 +674,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_apply1", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_apply1", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_apply1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -722,7 +722,7 @@ module HullWhiteForwardProcessFunction =
     (*
         applies a change to the asset value.
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_apply", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_apply", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_apply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -770,7 +770,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_evolve", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_evolve", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_evolve
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -830,7 +830,7 @@ module HullWhiteForwardProcessFunction =
     (*
         returns the asset value after a time interval.
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_evolve1", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_evolve1", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_evolve1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -890,7 +890,7 @@ module HullWhiteForwardProcessFunction =
     (*
         ! returns the initial values of the state variables
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_initialValues", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_initialValues", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_initialValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -926,7 +926,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_size", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_size", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -962,7 +962,7 @@ module HullWhiteForwardProcessFunction =
     (*
         ! returns the covariance. This method can be overridden in derived classes which want to hard-code a particular discretization.
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_covariance", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_covariance", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_covariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1016,7 +1016,7 @@ module HullWhiteForwardProcessFunction =
     (*
         ! returns the number of independent factors of the process
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_factors", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_factors", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_factors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1052,7 +1052,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_registerWith", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_registerWith", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1094,7 +1094,7 @@ module HullWhiteForwardProcessFunction =
     (*
         ! returns the time value corresponding to the given date in the reference system of the stochastic process.  \note As a number of processes might not need this functionality, a default implementation is given which raises an exception.
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_time", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_time", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_time
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1136,7 +1136,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_unregisterWith", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_unregisterWith", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1178,7 +1178,7 @@ module HullWhiteForwardProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_update", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_update", Description="Create a HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1211,7 +1211,7 @@ module HullWhiteForwardProcessFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_HullWhiteForwardProcess_Range", Description="Create a range of HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HullWhiteForwardProcess_Range", Description="Create a range of HullWhiteForwardProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhiteForwardProcess_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

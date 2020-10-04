@@ -37,7 +37,7 @@ module InverseCumulativePoissonFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseCumulativePoisson1", Description="Create a InverseCumulativePoisson",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativePoisson1", Description="Create a InverseCumulativePoisson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativePoisson_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module InverseCumulativePoissonFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseCumulativePoisson", Description="Create a InverseCumulativePoisson",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativePoisson", Description="Create a InverseCumulativePoisson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativePoisson_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -105,7 +105,7 @@ module InverseCumulativePoissonFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseCumulativePoisson_value", Description="Create a InverseCumulativePoisson",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativePoisson_value", Description="Create a InverseCumulativePoisson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativePoisson_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -144,7 +144,7 @@ module InverseCumulativePoissonFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_InverseCumulativePoisson_Range", Description="Create a range of InverseCumulativePoisson",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativePoisson_Range", Description="Create a range of InverseCumulativePoisson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativePoisson_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

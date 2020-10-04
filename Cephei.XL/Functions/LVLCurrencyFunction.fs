@@ -37,7 +37,7 @@ module LVLCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LVLCurrency", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module LVLCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_LVLCurrency_code", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_code", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module LVLCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_LVLCurrency_empty", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_empty", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module LVLCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LVLCurrency_Equals", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_Equals", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module LVLCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_LVLCurrency_format", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_format", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module LVLCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_LVLCurrency_fractionsPerUnit", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_fractionsPerUnit", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module LVLCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_LVLCurrency_fractionSymbol", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_fractionSymbol", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module LVLCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_LVLCurrency_name", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_name", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module LVLCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_LVLCurrency_numericCode", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_numericCode", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module LVLCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_LVLCurrency_rounding", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_rounding", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module LVLCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_LVLCurrency_symbol", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_symbol", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module LVLCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LVLCurrency_ToString", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_ToString", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module LVLCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_LVLCurrency_triangulationCurrency", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_triangulationCurrency", Description="Create a LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module LVLCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LVLCurrency_Range", Description="Create a range of LVLCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LVLCurrency_Range", Description="Create a range of LVLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LVLCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

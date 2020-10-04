@@ -37,7 +37,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface1", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface1", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_dayCounter", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_dayCounter", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -195,7 +195,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_maxDate", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_maxDate", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -231,7 +231,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_maxStrike", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_maxStrike", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -267,7 +267,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         VolatilityTermStructure interface
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_minStrike", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_minStrike", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -303,7 +303,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         TermStructure interface
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_referenceDate", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_referenceDate", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -339,7 +339,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_localVol", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_localVol", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_localVol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -393,7 +393,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_localVol1", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_localVol1", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_localVol1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -447,7 +447,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         ! the business day convention used in tenor to date conversion
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_businessDayConvention", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_businessDayConvention", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -483,7 +483,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         ! period/date conversion
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_optionDateFromTenor", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_optionDateFromTenor", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_optionDateFromTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -525,7 +525,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_calendar", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_calendar", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -561,7 +561,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_maxTime", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_maxTime", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -597,7 +597,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_settlementDays", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_settlementDays", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -633,7 +633,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_timeFromReference", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_timeFromReference", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -675,7 +675,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         observer interface
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_update", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_update", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -711,7 +711,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_allowsExtrapolation", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_allowsExtrapolation", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -747,7 +747,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_disableExtrapolation", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_disableExtrapolation", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -789,7 +789,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_enableExtrapolation", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_enableExtrapolation", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -831,7 +831,7 @@ module NoExceptLocalVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_extrapolate", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_extrapolate", Description="Create a NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -864,7 +864,7 @@ module NoExceptLocalVolSurfaceFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NoExceptLocalVolSurface_Range", Description="Create a range of NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoExceptLocalVolSurface_Range", Description="Create a range of NoExceptLocalVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoExceptLocalVolSurface_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

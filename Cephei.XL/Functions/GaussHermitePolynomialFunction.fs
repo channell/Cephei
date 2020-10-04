@@ -37,7 +37,7 @@ module GaussHermitePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermitePolynomial_alpha", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermitePolynomial_alpha", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_alpha
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module GaussHermitePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermitePolynomial_beta", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermitePolynomial_beta", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_beta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module GaussHermitePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermitePolynomial", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermitePolynomial", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module GaussHermitePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermitePolynomial1", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermitePolynomial1", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -189,7 +189,7 @@ module GaussHermitePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermitePolynomial_mu_0", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermitePolynomial_mu_0", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_mu_0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -225,7 +225,7 @@ module GaussHermitePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermitePolynomial_w", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermitePolynomial_w", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_w
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -267,7 +267,7 @@ module GaussHermitePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermitePolynomial_value", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermitePolynomial_value", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -315,7 +315,7 @@ module GaussHermitePolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermitePolynomial_weightedValue", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermitePolynomial_weightedValue", Description="Create a GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_weightedValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -360,7 +360,7 @@ module GaussHermitePolynomialFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GaussHermitePolynomial_Range", Description="Create a range of GaussHermitePolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermitePolynomial_Range", Description="Create a range of GaussHermitePolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermitePolynomial_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module BondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BondHelper_bond", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_bond", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_bond
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module BondHelperFunction =
     (*
         ! \warning Setting a pricing engine to the passed bond from external code will cause the bootstrap to fail or to give wrong results. It is advised to discard the bond after creating the helper, so that the helper has sole ownership of it.
     *)
-    [<ExcelFunction(Name="_BondHelper", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module BondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BondHelper_impliedQuote", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_impliedQuote", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_impliedQuote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module BondHelperFunction =
     (*
         RateHelper interface
     *)
-    [<ExcelFunction(Name="_BondHelper_setTermStructure", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_setTermStructure", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_setTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module BondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BondHelper_useCleanPrice", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_useCleanPrice", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_useCleanPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module BondHelperFunction =
     (*
         earliest relevant date The earliest date at which discounts are needed by the helper in order to provide a quote.
     *)
-    [<ExcelFunction(Name="_BondHelper_earliestDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_earliestDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_earliestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module BondHelperFunction =
     (*
         The latest date at which discounts are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_BondHelper_latestDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_latestDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_latestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module BondHelperFunction =
     (*
         ! The latest date at which data are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_BondHelper_latestRelevantDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_latestRelevantDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_latestRelevantDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module BondHelperFunction =
     (*
         ! instrument's maturity date
     *)
-    [<ExcelFunction(Name="_BondHelper_maturityDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_maturityDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module BondHelperFunction =
     (*
         ! pillar date
     *)
-    [<ExcelFunction(Name="_BondHelper_pillarDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_pillarDate", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_pillarDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module BondHelperFunction =
     (*
         ! BootstrapHelper interface
     *)
-    [<ExcelFunction(Name="_BondHelper_quote", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_quote", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_quote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module BondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BondHelper_quoteError", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_quoteError", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_quoteError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -488,7 +488,7 @@ module BondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BondHelper_quoteIsValid", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_quoteIsValid", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_quoteIsValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module BondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BondHelper_quoteValue", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_quoteValue", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_quoteValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -560,7 +560,7 @@ module BondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BondHelper_registerWith", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_registerWith", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -602,7 +602,7 @@ module BondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BondHelper_unregisterWith", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_unregisterWith", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -644,7 +644,7 @@ module BondHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BondHelper_update", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_update", Description="Create a BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -677,7 +677,7 @@ module BondHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BondHelper_Range", Description="Create a range of BondHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BondHelper_Range", Description="Create a range of BondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

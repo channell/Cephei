@@ -37,7 +37,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_baseCPI", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_baseCPI", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_baseCPI
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module CPISwapFunction =
     (*
         legs
     *)
-    [<ExcelFunction(Name="_CPISwap_cpiLeg", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_cpiLeg", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_cpiLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_fairRate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_fairRate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fairRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -296,7 +296,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_fairSpread", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_fairSpread", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fairSpread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -332,7 +332,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_fixedDayCount", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_fixedDayCount", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixedDayCount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_fixedIndex", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_fixedIndex", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixedIndex
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module CPISwapFunction =
     (*
         fixed rate x inflation
     *)
-    [<ExcelFunction(Name="_CPISwap_fixedLegNPV", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_fixedLegNPV", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixedLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_fixedPaymentRoll", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_fixedPaymentRoll", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixedPaymentRoll
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module CPISwapFunction =
     (*
         fixed rate x inflation
     *)
-    [<ExcelFunction(Name="_CPISwap_fixedRate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_fixedRate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixedRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_fixedSchedule", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_fixedSchedule", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixedSchedule
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -548,7 +548,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_fixingDays", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_fixingDays", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -584,7 +584,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_floatDayCount", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_floatDayCount", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_floatDayCount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -620,7 +620,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_floatIndex", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_floatIndex", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_floatIndex
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -656,7 +656,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_floatLeg", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_floatLeg", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_floatLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module CPISwapFunction =
     (*
         results float+spread
     *)
-    [<ExcelFunction(Name="_CPISwap_floatLegNPV", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_floatLegNPV", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_floatLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -728,7 +728,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_floatPaymentRoll", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_floatPaymentRoll", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_floatPaymentRoll
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -764,7 +764,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_floatSchedule", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_floatSchedule", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_floatSchedule
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -800,7 +800,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_inflationNominal", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_inflationNominal", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_inflationNominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -836,7 +836,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_nominal", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_nominal", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -872,7 +872,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_observationInterpolation", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_observationInterpolation", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_observationInterpolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -908,7 +908,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_observationLag", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_observationLag", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_observationLag
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -944,7 +944,7 @@ module CPISwapFunction =
     (*
         float+spread
     *)
-    [<ExcelFunction(Name="_CPISwap_spread", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_spread", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_spread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -980,7 +980,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_subtractInflationNominal", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_subtractInflationNominal", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_subtractInflationNominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1016,7 +1016,7 @@ module CPISwapFunction =
     (*
         inspectors
     *)
-    [<ExcelFunction(Name="_CPISwap_type", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_type", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1052,7 +1052,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_endDiscounts", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_endDiscounts", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_endDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1095,7 +1095,7 @@ module CPISwapFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_CPISwap_engine", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_engine", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_engine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1132,7 +1132,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_isExpired", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_isExpired", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1168,7 +1168,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_leg", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_leg", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_leg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1210,7 +1210,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_legBPS", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_legBPS", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_legBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1252,7 +1252,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_legNPV", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_legNPV", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_legNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1294,7 +1294,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_maturityDate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_maturityDate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1330,7 +1330,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_npvDateDiscount", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_npvDateDiscount", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_npvDateDiscount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1366,7 +1366,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_payer", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_payer", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_payer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1408,7 +1408,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_startDate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_startDate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1444,7 +1444,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_startDiscounts", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_startDiscounts", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_startDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1486,7 +1486,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_CASH", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_CASH", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1522,7 +1522,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_errorEstimate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_errorEstimate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1558,7 +1558,7 @@ module CPISwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPISwap_NPV", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_NPV", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1594,7 +1594,7 @@ module CPISwapFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_CPISwap_result", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_result", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1636,7 +1636,7 @@ module CPISwapFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_CPISwap_setPricingEngine", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_setPricingEngine", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1678,7 +1678,7 @@ module CPISwapFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_CPISwap_valuationDate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_valuationDate", Description="Create a CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1711,7 +1711,7 @@ module CPISwapFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CPISwap_Range", Description="Create a range of CPISwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPISwap_Range", Description="Create a range of CPISwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPISwap_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

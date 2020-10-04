@@ -38,7 +38,7 @@ module ForwardRateAgreementFunction =
     (*
         ! Returns the relevant forward rate associated with the FRA term
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_forwardRate", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_forwardRate", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_forwardRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module ForwardRateAgreementFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module ForwardRateAgreementFunction =
     (*
         ! A FRA expires/settles on the valueDate
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_isExpired", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_isExpired", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -195,7 +195,7 @@ module ForwardRateAgreementFunction =
     (*
         Calculations
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_settlementDate", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_settlementDate", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_settlementDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -231,7 +231,7 @@ module ForwardRateAgreementFunction =
     (*
         !  Income is zero for a FRA
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_spotIncome", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_spotIncome", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_spotIncome
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -273,7 +273,7 @@ module ForwardRateAgreementFunction =
     (*
         ! This has always a positive value (asset), even if short the FRA
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_spotValue", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_spotValue", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_spotValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -309,7 +309,7 @@ module ForwardRateAgreementFunction =
     (*
         ! \note if this is a bond forward price, is must be a dirty forward price.
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_forwardValue", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_forwardValue", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_forwardValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -345,7 +345,7 @@ module ForwardRateAgreementFunction =
     (*
         ! Simple yield calculation based on underlying spot and forward values, taking into account underlying income. When \f$ t>0 \f$, call with: underlyingSpotValue=spotValue(t), forwardValue=strikePrice, to get current yield. For a repo, if \f$ t=0 \f$, impliedYield should reproduce the spot repo rate. For FRA's, this should reproduce the relevant zero rate at the FRA's maturityDate_
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_impliedYield", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_impliedYield", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_impliedYield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -411,7 +411,7 @@ module ForwardRateAgreementFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_CASH", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_CASH", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -447,7 +447,7 @@ module ForwardRateAgreementFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_errorEstimate", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_errorEstimate", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -483,7 +483,7 @@ module ForwardRateAgreementFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_NPV", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_NPV", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -519,7 +519,7 @@ module ForwardRateAgreementFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_result", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_result", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -561,7 +561,7 @@ module ForwardRateAgreementFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_setPricingEngine", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_setPricingEngine", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -603,7 +603,7 @@ module ForwardRateAgreementFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_ForwardRateAgreement_valuationDate", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_valuationDate", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -636,7 +636,7 @@ module ForwardRateAgreementFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ForwardRateAgreement_Range", Description="Create a range of ForwardRateAgreement",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardRateAgreement_Range", Description="Create a range of ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

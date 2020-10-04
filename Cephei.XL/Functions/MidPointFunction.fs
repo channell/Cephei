@@ -37,7 +37,7 @@ module MidPointFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MidPoint_integrate", Description="Create a MidPoint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MidPoint_integrate", Description="Create a MidPoint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MidPoint_integrate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -103,7 +103,7 @@ module MidPointFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MidPoint_nbEvalutions", Description="Create a MidPoint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MidPoint_nbEvalutions", Description="Create a MidPoint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MidPoint_nbEvalutions
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -136,7 +136,7 @@ module MidPointFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MidPoint_Range", Description="Create a range of MidPoint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MidPoint_Range", Description="Create a range of MidPoint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MidPoint_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

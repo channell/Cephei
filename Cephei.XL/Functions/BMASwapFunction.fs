@@ -37,7 +37,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_bmaLeg", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_bmaLeg", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_bmaLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_bmaLegBPS", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_bmaLegBPS", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_bmaLegBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_bmaLegNPV", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_bmaLegNPV", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_bmaLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -248,7 +248,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_fairLiborFraction", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_fairLiborFraction", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_fairLiborFraction
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_fairLiborSpread", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_fairLiborSpread", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_fairLiborSpread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_liborFraction", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_liborFraction", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_liborFraction
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -356,7 +356,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_liborLeg", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_liborLeg", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_liborLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -392,7 +392,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_liborLegBPS", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_liborLegBPS", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_liborLegBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_liborLegNPV", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_liborLegNPV", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_liborLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -464,7 +464,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_liborSpread", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_liborSpread", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_liborSpread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_nominal", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_nominal", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -536,7 +536,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_type", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_type", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -572,7 +572,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_endDiscounts", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_endDiscounts", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_endDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -615,7 +615,7 @@ module BMASwapFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_BMASwap_engine", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_engine", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_engine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -652,7 +652,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_isExpired", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_isExpired", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -688,7 +688,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_leg", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_leg", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_leg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -730,7 +730,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_legBPS", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_legBPS", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_legBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -772,7 +772,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_legNPV", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_legNPV", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_legNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -814,7 +814,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_maturityDate", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_maturityDate", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -850,7 +850,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_npvDateDiscount", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_npvDateDiscount", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_npvDateDiscount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -886,7 +886,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_payer", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_payer", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_payer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -928,7 +928,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_startDate", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_startDate", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -964,7 +964,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_startDiscounts", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_startDiscounts", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_startDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1006,7 +1006,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_CASH", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_CASH", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1042,7 +1042,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_errorEstimate", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_errorEstimate", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1078,7 +1078,7 @@ module BMASwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMASwap_NPV", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_NPV", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1114,7 +1114,7 @@ module BMASwapFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_BMASwap_result", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_result", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1156,7 +1156,7 @@ module BMASwapFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_BMASwap_setPricingEngine", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_setPricingEngine", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1198,7 +1198,7 @@ module BMASwapFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_BMASwap_valuationDate", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_valuationDate", Description="Create a BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1231,7 +1231,7 @@ module BMASwapFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BMASwap_Range", Description="Create a range of BMASwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMASwap_Range", Description="Create a range of BMASwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwap_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

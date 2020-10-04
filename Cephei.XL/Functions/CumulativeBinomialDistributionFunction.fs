@@ -37,7 +37,7 @@ module CumulativeBinomialDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CumulativeBinomialDistribution", Description="Create a CumulativeBinomialDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CumulativeBinomialDistribution", Description="Create a CumulativeBinomialDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeBinomialDistribution_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module CumulativeBinomialDistributionFunction =
     (*
         function
     *)
-    [<ExcelFunction(Name="_CumulativeBinomialDistribution_value", Description="Create a CumulativeBinomialDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CumulativeBinomialDistribution_value", Description="Create a CumulativeBinomialDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeBinomialDistribution_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module CumulativeBinomialDistributionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CumulativeBinomialDistribution_Range", Description="Create a range of CumulativeBinomialDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CumulativeBinomialDistribution_Range", Description="Create a range of CumulativeBinomialDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeBinomialDistribution_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

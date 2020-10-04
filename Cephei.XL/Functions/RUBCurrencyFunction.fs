@@ -37,7 +37,7 @@ module RUBCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RUBCurrency", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module RUBCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_RUBCurrency_code", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_code", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module RUBCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_RUBCurrency_empty", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_empty", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module RUBCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RUBCurrency_Equals", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_Equals", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module RUBCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_RUBCurrency_format", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_format", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module RUBCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_RUBCurrency_fractionsPerUnit", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_fractionsPerUnit", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module RUBCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_RUBCurrency_fractionSymbol", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_fractionSymbol", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module RUBCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_RUBCurrency_name", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_name", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module RUBCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_RUBCurrency_numericCode", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_numericCode", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module RUBCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_RUBCurrency_rounding", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_rounding", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module RUBCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_RUBCurrency_symbol", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_symbol", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module RUBCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RUBCurrency_ToString", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_ToString", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module RUBCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_RUBCurrency_triangulationCurrency", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_triangulationCurrency", Description="Create a RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module RUBCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_RUBCurrency_Range", Description="Create a range of RUBCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RUBCurrency_Range", Description="Create a range of RUBCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RUBCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

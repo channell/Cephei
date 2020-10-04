@@ -38,7 +38,7 @@ module FdBlackScholesRebateEngineFunction =
     (*
         Constructor
     *)
-    [<ExcelFunction(Name="_FdBlackScholesRebateEngine", Description="Create a FdBlackScholesRebateEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdBlackScholesRebateEngine", Description="Create a FdBlackScholesRebateEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesRebateEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -108,7 +108,7 @@ module FdBlackScholesRebateEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdBlackScholesRebateEngine_Range", Description="Create a range of FdBlackScholesRebateEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdBlackScholesRebateEngine_Range", Description="Create a range of FdBlackScholesRebateEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesRebateEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_adjustObservationDates", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_adjustObservationDates", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_adjustObservationDates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_dayCounter", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_dayCounter", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_fairRate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_fairRate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_fairRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedCalendar", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedCalendar", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_fixedCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedConvention", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedConvention", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_fixedConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         ! just one cashflow (that is not a coupon) in each leg
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedLeg", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedLeg", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_fixedLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedLegNPV", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedLegNPV", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_fixedLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -289,7 +289,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         ! \f$ K \f$ in the above formula.
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedRate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_fixedRate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_fixedRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -325,7 +325,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationCalendar", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationCalendar", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_inflationCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -361,7 +361,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationConvention", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationConvention", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_inflationConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -397,7 +397,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationIndex", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationIndex", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_inflationIndex
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -433,7 +433,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         ! just one cashflow (that is not a coupon) in each leg
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationLeg", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationLeg", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_inflationLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -469,7 +469,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationLegNPV", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_inflationLegNPV", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_inflationLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -505,7 +505,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_maturityDate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_maturityDate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -541,7 +541,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_nominal", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_nominal", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -577,7 +577,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_observationLag", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_observationLag", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_observationLag
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -613,7 +613,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_startDate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_startDate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -649,7 +649,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         ! "payer" or "receiver" refer to the inflation-indexed leg
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_type", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_type", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -685,7 +685,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         Generally inflation indices are available with a lag of 1month and then observed with a lag of 2-3 months depending whether they use an interpolated fixing or not.  Here, we make the swap use the interpolation of the index to avoid incompatibilities.
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -806,7 +806,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_endDiscounts", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_endDiscounts", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_endDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -849,7 +849,7 @@ module ZeroCouponInflationSwapFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_engine", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_engine", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_engine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -886,7 +886,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_isExpired", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_isExpired", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -922,7 +922,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_leg", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_leg", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_leg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -964,7 +964,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_legBPS", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_legBPS", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_legBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1006,7 +1006,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_legNPV", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_legNPV", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_legNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1048,7 +1048,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_npvDateDiscount", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_npvDateDiscount", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_npvDateDiscount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1084,7 +1084,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_payer", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_payer", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_payer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1126,7 +1126,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_startDiscounts", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_startDiscounts", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_startDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1168,7 +1168,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_CASH", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_CASH", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1204,7 +1204,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_errorEstimate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_errorEstimate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1240,7 +1240,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_NPV", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_NPV", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1276,7 +1276,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_result", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_result", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1318,7 +1318,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_setPricingEngine", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_setPricingEngine", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1360,7 +1360,7 @@ module ZeroCouponInflationSwapFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_valuationDate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_valuationDate", Description="Create a ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1393,7 +1393,7 @@ module ZeroCouponInflationSwapFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ZeroCouponInflationSwap_Range", Description="Create a range of ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroCouponInflationSwap_Range", Description="Create a range of ZeroCouponInflationSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCouponInflationSwap_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module eqn3Function =
     (*
         Relates to eqn3 Genz 2004
     *)
-    [<ExcelFunction(Name="_eqn3", Description="Create a eqn3",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_eqn3", Description="Create a eqn3",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let eqn3_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module eqn3Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_eqn3_value", Description="Create a eqn3",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_eqn3_value", Description="Create a eqn3",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let eqn3_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -125,7 +125,7 @@ module eqn3Function =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_eqn3_Range", Description="Create a range of eqn3",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_eqn3_Range", Description="Create a range of eqn3",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let eqn3_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

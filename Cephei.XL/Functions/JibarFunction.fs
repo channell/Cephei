@@ -37,7 +37,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar1", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar1", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module JibarFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Jibar_businessDayConvention", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_businessDayConvention", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module JibarFunction =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_Jibar_clone", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_clone", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -195,7 +195,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_endOfMonth", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_endOfMonth", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -231,7 +231,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_forecastFixing1", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_forecastFixing1", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_forecastFixing", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_forecastFixing", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -327,7 +327,7 @@ module JibarFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_Jibar_forwardingTermStructure", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_forwardingTermStructure", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -363,7 +363,7 @@ module JibarFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_Jibar_maturityDate", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_maturityDate", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -405,7 +405,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_currency", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_currency", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -441,7 +441,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_dayCounter", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_dayCounter", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -477,7 +477,7 @@ module JibarFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Jibar_familyName", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_familyName", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -513,7 +513,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_fixing", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_fixing", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -561,7 +561,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_fixingCalendar", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_fixingCalendar", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -597,7 +597,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_fixingDate", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_fixingDate", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -639,7 +639,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_fixingDays", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_fixingDays", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -675,7 +675,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_isValidFixingDate", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_isValidFixingDate", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -717,7 +717,7 @@ module JibarFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_Jibar_name", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_name", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -753,7 +753,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_pastFixing", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_pastFixing", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -795,7 +795,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_tenor", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_tenor", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -831,7 +831,7 @@ module JibarFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_Jibar_update", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_update", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -867,7 +867,7 @@ module JibarFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_Jibar_valueDate", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_valueDate", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -909,7 +909,7 @@ module JibarFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Jibar_addFixing", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_addFixing", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -963,7 +963,7 @@ module JibarFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Jibar_addFixings", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_addFixings", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1017,7 +1017,7 @@ module JibarFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Jibar_addFixings1", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_addFixings1", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1065,7 +1065,7 @@ module JibarFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_Jibar_allowsNativeFixings", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_allowsNativeFixings", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1101,7 +1101,7 @@ module JibarFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_Jibar_clearFixings", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_clearFixings", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1137,7 +1137,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_registerWith", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_registerWith", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1179,7 +1179,7 @@ module JibarFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_Jibar_timeSeries", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_timeSeries", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1215,7 +1215,7 @@ module JibarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Jibar_unregisterWith", Description="Create a Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_unregisterWith", Description="Create a Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1254,7 +1254,7 @@ module JibarFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Jibar_Range", Description="Create a range of Jibar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Jibar_Range", Description="Create a range of Jibar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Jibar_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

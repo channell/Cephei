@@ -37,7 +37,7 @@ module BilinearInterpolationFunction =
     (*
         ! \pre the \f$ x \f$ and \f$ y \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_isInRange", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_isInRange", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_isInRange
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_locateX", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_locateX", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_locateX
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_locateY", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_locateY", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_locateY
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_update", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_update", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module BilinearInterpolationFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_value1", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_value1", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_value", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_value", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_xMax", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_xMax", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_xMin", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_xMin", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_xValues", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_xValues", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_xValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_yMax", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_yMax", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_yMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_yMin", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_yMin", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_yMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -548,7 +548,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_yValues", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_yValues", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_yValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -584,7 +584,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_zData", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_zData", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_zData
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -620,7 +620,7 @@ module BilinearInterpolationFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_allowsExtrapolation", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_allowsExtrapolation", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -656,7 +656,7 @@ module BilinearInterpolationFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_disableExtrapolation", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_disableExtrapolation", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -698,7 +698,7 @@ module BilinearInterpolationFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_enableExtrapolation", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_enableExtrapolation", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -740,7 +740,7 @@ module BilinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BilinearInterpolation_extrapolate", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_extrapolate", Description="Create a BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -773,7 +773,7 @@ module BilinearInterpolationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BilinearInterpolation_Range", Description="Create a range of BilinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BilinearInterpolation_Range", Description="Create a range of BilinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BilinearInterpolation_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

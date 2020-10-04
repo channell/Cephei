@@ -50,7 +50,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -87,7 +87,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia1", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia1", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -118,7 +118,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia_addedHolidays", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_addedHolidays", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_addedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -154,7 +154,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia_addHoliday", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_addHoliday", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_addHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -196,7 +196,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia_adjust", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_adjust", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_adjust
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -244,7 +244,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia_advance1", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_advance1", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -310,7 +310,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia_advance", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_advance", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_advance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -370,7 +370,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia_businessDaysBetween", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_businessDaysBetween", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_businessDaysBetween
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -430,7 +430,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia_calendar", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_calendar", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -466,7 +466,7 @@ module RussiaFunction =
     (*
         Returns whether or not the calendar is initialized
     *)
-    [<ExcelFunction(Name="_Russia_empty", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_empty", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -502,7 +502,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia_endOfMonth", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_endOfMonth", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -544,7 +544,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia_Equals", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_Equals", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -586,7 +586,7 @@ module RussiaFunction =
     (*
         @returns Returns <tt>true</tt> iff the date is a business day for the given market.
     *)
-    [<ExcelFunction(Name="_Russia_isBusinessDay", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_isBusinessDay", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_isBusinessDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -628,7 +628,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia_isEndOfMonth", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_isEndOfMonth", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_isEndOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -670,7 +670,7 @@ module RussiaFunction =
     (*
         Returns <tt>true</tt> iff the date is a holiday for the given market.
     *)
-    [<ExcelFunction(Name="_Russia_isHoliday", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_isHoliday", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_isHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -712,7 +712,7 @@ module RussiaFunction =
     (*
         Returns <tt>true</tt> iff the weekday is part of the weekend for the given market.
     *)
-    [<ExcelFunction(Name="_Russia_isWeekend", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_isWeekend", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_isWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -756,7 +756,7 @@ module RussiaFunction =
 
 @returns The name of the calendar.
     *)
-    [<ExcelFunction(Name="_Russia_name", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_name", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -792,7 +792,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia_removedHolidays", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_removedHolidays", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_removedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -828,7 +828,7 @@ module RussiaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Russia_removeHoliday", Description="Create a Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_removeHoliday", Description="Create a Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_removeHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -867,7 +867,7 @@ module RussiaFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Russia_Range", Description="Create a range of Russia",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Russia_Range", Description="Create a range of Russia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Russia_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

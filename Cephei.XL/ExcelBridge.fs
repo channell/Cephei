@@ -59,7 +59,7 @@ type ValueRTD ()  =
         if _topicIndex.ContainsKey (kv) then 
             _topics.[topic] <- kv
             _topicIndex.[kv] <- [topic] @ _topicIndex.[kv]
-            let cell = Model.cell mnemonic
+            let cell = (Model.cell mnemonic).Value
             if cell.Box :? IEnumerable  && not (cell.Box :? IEnumerable) then 
                 cell.Mnemonic :> obj
             else
@@ -74,7 +74,7 @@ type ValueRTD ()  =
                 if Model.hasRange mnemonic layout then
                     mnemonic :> obj
                 else
-                    cell.Box
+                    cell.Value.Box
             else
                 "#NotValue" :> obj
 

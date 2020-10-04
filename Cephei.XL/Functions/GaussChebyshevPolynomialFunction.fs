@@ -37,7 +37,7 @@ module GaussChebyshevPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussChebyshevPolynomial", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshevPolynomial", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevPolynomial_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module GaussChebyshevPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussChebyshevPolynomial_alpha", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshevPolynomial_alpha", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevPolynomial_alpha
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module GaussChebyshevPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussChebyshevPolynomial_beta", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshevPolynomial_beta", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevPolynomial_beta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module GaussChebyshevPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussChebyshevPolynomial_mu_0", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshevPolynomial_mu_0", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevPolynomial_mu_0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module GaussChebyshevPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussChebyshevPolynomial_w", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshevPolynomial_w", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevPolynomial_w
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module GaussChebyshevPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussChebyshevPolynomial_value", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshevPolynomial_value", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevPolynomial_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module GaussChebyshevPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussChebyshevPolynomial_weightedValue", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshevPolynomial_weightedValue", Description="Create a GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevPolynomial_weightedValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -323,7 +323,7 @@ module GaussChebyshevPolynomialFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GaussChebyshevPolynomial_Range", Description="Create a range of GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussChebyshevPolynomial_Range", Description="Create a range of GaussChebyshevPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshevPolynomial_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

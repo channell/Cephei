@@ -37,7 +37,7 @@ module BiasedBarrierPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BiasedBarrierPathPricer", Description="Create a BiasedBarrierPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BiasedBarrierPathPricer", Description="Create a BiasedBarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiasedBarrierPathPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module BiasedBarrierPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BiasedBarrierPathPricer_value", Description="Create a BiasedBarrierPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BiasedBarrierPathPricer_value", Description="Create a BiasedBarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiasedBarrierPathPricer_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -143,7 +143,7 @@ module BiasedBarrierPathPricerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BiasedBarrierPathPricer_Range", Description="Create a range of BiasedBarrierPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BiasedBarrierPathPricer_Range", Description="Create a range of BiasedBarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiasedBarrierPathPricer_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module LinearFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Linear_global", Description="Create a Linear",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Linear_global", Description="Create a Linear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Linear_global
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module LinearFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Linear_interpolate", Description="Create a Linear",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Linear_interpolate", Description="Create a Linear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Linear_interpolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -127,7 +127,7 @@ module LinearFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Linear_requiredPoints", Description="Create a Linear",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Linear_requiredPoints", Description="Create a Linear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Linear_requiredPoints
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -160,7 +160,7 @@ module LinearFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Linear_Range", Description="Create a range of Linear",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Linear_Range", Description="Create a range of Linear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Linear_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

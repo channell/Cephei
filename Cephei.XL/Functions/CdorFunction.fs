@@ -37,7 +37,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor1", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor1", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module CdorFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Cdor_businessDayConvention", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_businessDayConvention", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module CdorFunction =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_Cdor_clone", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_clone", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -195,7 +195,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_endOfMonth", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_endOfMonth", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -231,7 +231,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_forecastFixing1", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_forecastFixing1", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_forecastFixing", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_forecastFixing", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -327,7 +327,7 @@ module CdorFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_Cdor_forwardingTermStructure", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_forwardingTermStructure", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -363,7 +363,7 @@ module CdorFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_Cdor_maturityDate", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_maturityDate", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -405,7 +405,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_currency", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_currency", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -441,7 +441,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_dayCounter", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_dayCounter", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -477,7 +477,7 @@ module CdorFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Cdor_familyName", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_familyName", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -513,7 +513,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_fixing", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_fixing", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -561,7 +561,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_fixingCalendar", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_fixingCalendar", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -597,7 +597,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_fixingDate", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_fixingDate", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -639,7 +639,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_fixingDays", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_fixingDays", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -675,7 +675,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_isValidFixingDate", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_isValidFixingDate", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -717,7 +717,7 @@ module CdorFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_Cdor_name", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_name", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -753,7 +753,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_pastFixing", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_pastFixing", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -795,7 +795,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_tenor", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_tenor", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -831,7 +831,7 @@ module CdorFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_Cdor_update", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_update", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -867,7 +867,7 @@ module CdorFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_Cdor_valueDate", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_valueDate", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -909,7 +909,7 @@ module CdorFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Cdor_addFixing", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_addFixing", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -963,7 +963,7 @@ module CdorFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Cdor_addFixings", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_addFixings", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1017,7 +1017,7 @@ module CdorFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Cdor_addFixings1", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_addFixings1", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1065,7 +1065,7 @@ module CdorFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_Cdor_allowsNativeFixings", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_allowsNativeFixings", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1101,7 +1101,7 @@ module CdorFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_Cdor_clearFixings", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_clearFixings", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1137,7 +1137,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_registerWith", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_registerWith", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1179,7 +1179,7 @@ module CdorFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_Cdor_timeSeries", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_timeSeries", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1215,7 +1215,7 @@ module CdorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cdor_unregisterWith", Description="Create a Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_unregisterWith", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1254,7 +1254,7 @@ module CdorFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Cdor_Range", Description="Create a range of Cdor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cdor_Range", Description="Create a range of Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

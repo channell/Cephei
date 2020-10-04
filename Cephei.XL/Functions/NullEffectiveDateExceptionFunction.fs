@@ -37,7 +37,7 @@ module NullEffectiveDateExceptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NullEffectiveDateException", Description="Create a NullEffectiveDateException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullEffectiveDateException", Description="Create a NullEffectiveDateException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullEffectiveDateException_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module NullEffectiveDateExceptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NullEffectiveDateException1", Description="Create a NullEffectiveDateException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullEffectiveDateException1", Description="Create a NullEffectiveDateException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullEffectiveDateException_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module NullEffectiveDateExceptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NullEffectiveDateException", Description="Create a NullEffectiveDateException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullEffectiveDateException", Description="Create a NullEffectiveDateException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullEffectiveDateException_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module NullEffectiveDateExceptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NullEffectiveDateException_Range", Description="Create a range of NullEffectiveDateException",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullEffectiveDateException_Range", Description="Create a range of NullEffectiveDateException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullEffectiveDateException_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

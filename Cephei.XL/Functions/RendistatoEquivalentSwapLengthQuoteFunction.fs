@@ -37,7 +37,7 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_isValid", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_isValid", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapLengthQuote_isValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapLengthQuote_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_value", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_value", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapLengthQuote_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_registerWith", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_registerWith", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapLengthQuote_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_unregisterWith", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_unregisterWith", Description="Create a RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapLengthQuote_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -227,7 +227,7 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_Range", Description="Create a range of RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoEquivalentSwapLengthQuote_Range", Description="Create a range of RendistatoEquivalentSwapLengthQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapLengthQuote_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

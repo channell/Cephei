@@ -37,7 +37,7 @@ module EURegionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURegion", Description="Create a EURegion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURegion", Description="Create a EURegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURegion_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module EURegionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURegion_code", Description="Create a EURegion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURegion_code", Description="Create a EURegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURegion_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module EURegionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURegion_Equals", Description="Create a EURegion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURegion_Equals", Description="Create a EURegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURegion_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module EURegionFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_EURegion_name", Description="Create a EURegion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURegion_name", Description="Create a EURegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURegion_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -179,7 +179,7 @@ module EURegionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_EURegion_Range", Description="Create a range of EURegion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURegion_Range", Description="Create a range of EURegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURegion_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

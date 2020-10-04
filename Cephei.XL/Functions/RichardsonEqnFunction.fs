@@ -37,7 +37,7 @@ module RichardsonEqnFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RichardsonEqn", Description="Create a RichardsonEqn",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RichardsonEqn", Description="Create a RichardsonEqn",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RichardsonEqn_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module RichardsonEqnFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RichardsonEqn_value", Description="Create a RichardsonEqn",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RichardsonEqn_value", Description="Create a RichardsonEqn",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RichardsonEqn_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module RichardsonEqnFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RichardsonEqn_derivative", Description="Create a RichardsonEqn",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RichardsonEqn_derivative", Description="Create a RichardsonEqn",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RichardsonEqn_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -179,7 +179,7 @@ module RichardsonEqnFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_RichardsonEqn_Range", Description="Create a range of RichardsonEqn",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RichardsonEqn_Range", Description="Create a range of RichardsonEqn",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RichardsonEqn_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

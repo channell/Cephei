@@ -37,7 +37,7 @@ module GaussianKernelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussianKernel_derivative", Description="Create a GaussianKernel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussianKernel_derivative", Description="Create a GaussianKernel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianKernel_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module GaussianKernelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussianKernel", Description="Create a GaussianKernel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussianKernel", Description="Create a GaussianKernel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianKernel_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module GaussianKernelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussianKernel_primitive", Description="Create a GaussianKernel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussianKernel_primitive", Description="Create a GaussianKernel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianKernel_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module GaussianKernelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussianKernel_value", Description="Create a GaussianKernel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussianKernel_value", Description="Create a GaussianKernel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianKernel_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -203,7 +203,7 @@ module GaussianKernelFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GaussianKernel_Range", Description="Create a range of GaussianKernel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussianKernel_Range", Description="Create a range of GaussianKernel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianKernel_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

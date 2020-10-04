@@ -37,7 +37,7 @@ module EulerDiscretizationFunction =
     (*
         ! Returns an approximation of the covariance defined as \f$ \sigma(t_0, \mathbf{x}_0)^2 \Delta t \f$.
     *)
-    [<ExcelFunction(Name="_EulerDiscretization_covariance", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EulerDiscretization_covariance", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_covariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -97,7 +97,7 @@ module EulerDiscretizationFunction =
     (*
         ! Returns an approximation of the diffusion defined as \f$ \sigma(t_0, x_0) \sqrt{\Delta t} \f$.
     *)
-    [<ExcelFunction(Name="_EulerDiscretization_diffusion", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EulerDiscretization_diffusion", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_diffusion
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -157,7 +157,7 @@ module EulerDiscretizationFunction =
     (*
         ! Returns an approximation of the diffusion defined as \f$ \sigma(t_0, \mathbf{x}_0) \sqrt{\Delta t} \f$.
     *)
-    [<ExcelFunction(Name="_EulerDiscretization_diffusion1", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EulerDiscretization_diffusion1", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_diffusion1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module EulerDiscretizationFunction =
     (*
         ! Returns an approximation of the drift defined as \f$ \mu(t_0, \mathbf{x}_0) \Delta t \f$.
     *)
-    [<ExcelFunction(Name="_EulerDiscretization_drift1", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EulerDiscretization_drift1", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_drift1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module EulerDiscretizationFunction =
     (*
         ! Returns an approximation of the drift defined as \f$ \mu(t_0, x_0) \Delta t \f$.
     *)
-    [<ExcelFunction(Name="_EulerDiscretization_drift", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EulerDiscretization_drift", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_drift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -337,7 +337,7 @@ module EulerDiscretizationFunction =
     (*
         ! Returns an approximation of the variance defined as \f$ \sigma(t_0, x_0)^2 \Delta t \f$.
     *)
-    [<ExcelFunction(Name="_EulerDiscretization_variance", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EulerDiscretization_variance", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -394,7 +394,7 @@ module EulerDiscretizationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_EulerDiscretization_Range", Description="Create a range of EulerDiscretization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EulerDiscretization_Range", Description="Create a range of EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

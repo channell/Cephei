@@ -37,7 +37,7 @@ module FdmZeroInnerValueFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmZeroInnerValue_avgInnerValue", Description="Create a FdmZeroInnerValue",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmZeroInnerValue_avgInnerValue", Description="Create a FdmZeroInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmZeroInnerValue_avgInnerValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module FdmZeroInnerValueFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmZeroInnerValue_innerValue", Description="Create a FdmZeroInnerValue",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmZeroInnerValue_innerValue", Description="Create a FdmZeroInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmZeroInnerValue_innerValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -130,7 +130,7 @@ module FdmZeroInnerValueFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmZeroInnerValue_Range", Description="Create a range of FdmZeroInnerValue",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmZeroInnerValue_Range", Description="Create a range of FdmZeroInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmZeroInnerValue_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

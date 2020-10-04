@@ -38,7 +38,7 @@ module FDBermudanEngineFunction =
     (*
         constructor
     *)
-    [<ExcelFunction(Name="_FDBermudanEngine", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDBermudanEngine", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -93,7 +93,7 @@ module FDBermudanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDBermudanEngine_registerWith", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDBermudanEngine_registerWith", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -135,7 +135,7 @@ module FDBermudanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDBermudanEngine_reset", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDBermudanEngine_reset", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -171,7 +171,7 @@ module FDBermudanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDBermudanEngine_unregisterWith", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDBermudanEngine_unregisterWith", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -213,7 +213,7 @@ module FDBermudanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDBermudanEngine_update", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDBermudanEngine_update", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -249,7 +249,7 @@ module FDBermudanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDBermudanEngine_setStepCondition", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDBermudanEngine_setStepCondition", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_setStepCondition
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -291,7 +291,7 @@ module FDBermudanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDBermudanEngine_ensureStrikeInGrid", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDBermudanEngine_ensureStrikeInGrid", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_ensureStrikeInGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -327,7 +327,7 @@ module FDBermudanEngineFunction =
     (*
         this should be defined as new in each deriving class which use template iheritance in order to return a proper class to wrap
     *)
-    [<ExcelFunction(Name="_FDBermudanEngine_factory", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDBermudanEngine_factory", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -387,7 +387,7 @@ module FDBermudanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDBermudanEngine_getResidualTime", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDBermudanEngine_getResidualTime", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_getResidualTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -423,7 +423,7 @@ module FDBermudanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDBermudanEngine_grid", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDBermudanEngine_grid", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -459,7 +459,7 @@ module FDBermudanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDBermudanEngine_intrinsicValues_", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDBermudanEngine_intrinsicValues_", Description="Create a FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_intrinsicValues_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -492,7 +492,7 @@ module FDBermudanEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FDBermudanEngine_Range", Description="Create a range of FDBermudanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDBermudanEngine_Range", Description="Create a range of FDBermudanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDBermudanEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module COPCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_COPCurrency", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module COPCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_COPCurrency_code", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_code", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module COPCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_COPCurrency_empty", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_empty", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module COPCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_COPCurrency_Equals", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_Equals", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module COPCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_COPCurrency_format", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_format", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module COPCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_COPCurrency_fractionsPerUnit", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_fractionsPerUnit", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module COPCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_COPCurrency_fractionSymbol", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_fractionSymbol", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module COPCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_COPCurrency_name", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_name", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module COPCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_COPCurrency_numericCode", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_numericCode", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module COPCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_COPCurrency_rounding", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_rounding", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module COPCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_COPCurrency_symbol", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_symbol", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module COPCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_COPCurrency_ToString", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_ToString", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module COPCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_COPCurrency_triangulationCurrency", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_triangulationCurrency", Description="Create a COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module COPCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_COPCurrency_Range", Description="Create a range of COPCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_COPCurrency_Range", Description="Create a range of COPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let COPCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

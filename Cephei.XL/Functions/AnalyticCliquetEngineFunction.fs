@@ -37,7 +37,7 @@ module AnalyticCliquetEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticCliquetEngine", Description="Create a AnalyticCliquetEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticCliquetEngine", Description="Create a AnalyticCliquetEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCliquetEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -72,7 +72,7 @@ module AnalyticCliquetEngineFunction =
         else
             "<WIZ>"
 
-    [<ExcelFunction(Name="_AnalyticCliquetEngine_Range", Description="Create a range of AnalyticCliquetEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticCliquetEngine_Range", Description="Create a range of AnalyticCliquetEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCliquetEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

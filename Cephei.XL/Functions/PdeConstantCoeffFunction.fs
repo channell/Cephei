@@ -37,7 +37,7 @@ module PdeConstantCoeffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeConstantCoeff_diffusion", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeConstantCoeff_diffusion", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_diffusion
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module PdeConstantCoeffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeConstantCoeff_discount", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeConstantCoeff_discount", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module PdeConstantCoeffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeConstantCoeff_drift", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeConstantCoeff_drift", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_drift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module PdeConstantCoeffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeConstantCoeff_factory", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeConstantCoeff_factory", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module PdeConstantCoeffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeConstantCoeff", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeConstantCoeff", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module PdeConstantCoeffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeConstantCoeff_generateOperator", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeConstantCoeff_generateOperator", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_generateOperator
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -323,7 +323,7 @@ module PdeConstantCoeffFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PdeConstantCoeff_Range", Description="Create a range of PdeConstantCoeff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeConstantCoeff_Range", Description="Create a range of PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

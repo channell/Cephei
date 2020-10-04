@@ -37,7 +37,7 @@ module QuoteFunction =
     (*
         ! returns true if the Quote holds a valid value, true by default
     *)
-    [<ExcelFunction(Name="_Quote_isValid", Description="Create a Quote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Quote_isValid", Description="Create a Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_isValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module QuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Quote_registerWith", Description="Create a Quote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Quote_registerWith", Description="Create a Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module QuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Quote_unregisterWith", Description="Create a Quote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Quote_unregisterWith", Description="Create a Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -157,7 +157,7 @@ module QuoteFunction =
     (*
         ! returns the current value, 0 by default
     *)
-    [<ExcelFunction(Name="_Quote_value", Description="Create a Quote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Quote_value", Description="Create a Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -190,7 +190,7 @@ module QuoteFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Quote_Range", Description="Create a range of Quote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Quote_Range", Description="Create a range of Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

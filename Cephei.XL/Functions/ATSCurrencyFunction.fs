@@ -37,7 +37,7 @@ module ATSCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ATSCurrency", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module ATSCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_ATSCurrency_code", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_code", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module ATSCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_ATSCurrency_empty", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_empty", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module ATSCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ATSCurrency_Equals", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_Equals", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module ATSCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_ATSCurrency_format", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_format", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module ATSCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_ATSCurrency_fractionsPerUnit", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_fractionsPerUnit", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module ATSCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_ATSCurrency_fractionSymbol", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_fractionSymbol", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module ATSCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_ATSCurrency_name", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_name", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module ATSCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_ATSCurrency_numericCode", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_numericCode", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module ATSCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_ATSCurrency_rounding", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_rounding", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module ATSCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_ATSCurrency_symbol", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_symbol", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module ATSCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ATSCurrency_ToString", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_ToString", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module ATSCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_ATSCurrency_triangulationCurrency", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_triangulationCurrency", Description="Create a ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module ATSCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ATSCurrency_Range", Description="Create a range of ATSCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ATSCurrency_Range", Description="Create a range of ATSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ATSCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

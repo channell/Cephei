@@ -37,7 +37,7 @@ module ISKCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ISKCurrency", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module ISKCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_ISKCurrency_code", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_code", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module ISKCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_ISKCurrency_empty", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_empty", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module ISKCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ISKCurrency_Equals", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_Equals", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module ISKCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_ISKCurrency_format", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_format", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module ISKCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_ISKCurrency_fractionsPerUnit", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_fractionsPerUnit", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module ISKCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_ISKCurrency_fractionSymbol", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_fractionSymbol", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module ISKCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_ISKCurrency_name", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_name", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module ISKCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_ISKCurrency_numericCode", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_numericCode", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module ISKCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_ISKCurrency_rounding", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_rounding", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module ISKCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_ISKCurrency_symbol", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_symbol", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module ISKCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ISKCurrency_ToString", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_ToString", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module ISKCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_ISKCurrency_triangulationCurrency", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_triangulationCurrency", Description="Create a ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module ISKCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ISKCurrency_Range", Description="Create a range of ISKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ISKCurrency_Range", Description="Create a range of ISKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ISKCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

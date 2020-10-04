@@ -37,7 +37,7 @@ module DiscretizedSwaptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module DiscretizedSwaptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_reset", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_reset", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module DiscretizedSwaptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_withinNextWeek", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_withinNextWeek", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_withinNextWeek
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -176,7 +176,7 @@ module DiscretizedSwaptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_withinPreviousWeek", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_withinPreviousWeek", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_withinPreviousWeek
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -224,7 +224,7 @@ module DiscretizedSwaptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_mandatoryTimes", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_mandatoryTimes", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_mandatoryTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module DiscretizedSwaptionFunction =
     (*
         ! This method performs both pre- and post-adjustment
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_adjustValues", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_adjustValues", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_adjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -296,7 +296,7 @@ module DiscretizedSwaptionFunction =
     (*
         High-level interface  Users of discretized assets should use these methods in order to initialize, evolve and take the present value of the assets.  They call the corresponding methods in the Lattice interface, to which we refer for documentation.
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_initialize", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_initialize", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_initialize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module DiscretizedSwaptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_method", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_method", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_method
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module DiscretizedSwaptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_partialRollback", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_partialRollback", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_partialRollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -422,7 +422,7 @@ module DiscretizedSwaptionFunction =
     (*
         ! This method will be invoked after rollback and after any other asset had their chance to look at the values. For instance, payments happening at the present time (and therefore not included in an option to be exercised at this time) will be added here.  This method is not virtual; derived classes must override the protected postAdjustValuesImpl() method instead.
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_postAdjustValues", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_postAdjustValues", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_postAdjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -458,7 +458,7 @@ module DiscretizedSwaptionFunction =
     (*
         ! This method will be invoked after rollback and before any other asset (i.e., an option on this one) has any chance to look at the values. For instance, payments happening at times already spanned by the rollback will be added here.  This method is not virtual; derived classes must override the protected preAdjustValuesImpl() method instead.
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_preAdjustValues", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_preAdjustValues", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_preAdjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -494,7 +494,7 @@ module DiscretizedSwaptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_presentValue", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_presentValue", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_presentValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -530,7 +530,7 @@ module DiscretizedSwaptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_rollback", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_rollback", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_rollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -572,7 +572,7 @@ module DiscretizedSwaptionFunction =
     (*
         safe version of QL double* time()
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_setTime", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_setTime", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_setTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -614,7 +614,7 @@ module DiscretizedSwaptionFunction =
     (*
         safe version of QL Vector* values()
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_setValues", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_setValues", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_setValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -656,7 +656,7 @@ module DiscretizedSwaptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_time", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_time", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_time
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module DiscretizedSwaptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedSwaption_values", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_values", Description="Create a DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_values
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -725,7 +725,7 @@ module DiscretizedSwaptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DiscretizedSwaption_Range", Description="Create a range of DiscretizedSwaption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedSwaption_Range", Description="Create a range of DiscretizedSwaption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedSwaption_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

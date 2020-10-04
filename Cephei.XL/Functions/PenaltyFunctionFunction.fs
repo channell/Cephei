@@ -37,7 +37,7 @@ module PenaltyFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PenaltyFunction", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PenaltyFunction", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module PenaltyFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PenaltyFunction_value", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PenaltyFunction_value", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module PenaltyFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PenaltyFunction_values", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PenaltyFunction_values", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_values
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module PenaltyFunctionFunction =
     (*
         ! Default epsilon for finite difference method :
     *)
-    [<ExcelFunction(Name="_PenaltyFunction_finiteDifferenceEpsilon", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PenaltyFunction_finiteDifferenceEpsilon", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_finiteDifferenceEpsilon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module PenaltyFunctionFunction =
     (*
         ! method to overload to compute grad_f, the first derivative of the cost function with respect to x
     *)
-    [<ExcelFunction(Name="_PenaltyFunction_gradient", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PenaltyFunction_gradient", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_gradient
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module PenaltyFunctionFunction =
     (*
         ! method to overload to compute J_f, the jacobian of the cost function with respect to x
     *)
-    [<ExcelFunction(Name="_PenaltyFunction_jacobian", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PenaltyFunction_jacobian", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_jacobian
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module PenaltyFunctionFunction =
     (*
         ! method to overload to compute grad_f, the first derivative of the cost function with respect to x and also the cost function
     *)
-    [<ExcelFunction(Name="_PenaltyFunction_valueAndGradient", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PenaltyFunction_valueAndGradient", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_valueAndGradient
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module PenaltyFunctionFunction =
     (*
         ! method to overload to compute J_f, the jacobian of the cost function with respect to x and also the cost function
     *)
-    [<ExcelFunction(Name="_PenaltyFunction_valuesAndJacobian", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PenaltyFunction_valuesAndJacobian", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_valuesAndJacobian
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -407,7 +407,7 @@ module PenaltyFunctionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PenaltyFunction_Range", Description="Create a range of PenaltyFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PenaltyFunction_Range", Description="Create a range of PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -54,7 +54,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel_addedHolidays", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_addedHolidays", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_addedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -127,7 +127,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel_addHoliday", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_addHoliday", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_addHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -169,7 +169,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel_adjust", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_adjust", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_adjust
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel_advance1", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_advance1", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -283,7 +283,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel_advance", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_advance", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_advance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -343,7 +343,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel_businessDaysBetween", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_businessDaysBetween", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_businessDaysBetween
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -403,7 +403,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel_calendar", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_calendar", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -439,7 +439,7 @@ module IsraelFunction =
     (*
         Returns whether or not the calendar is initialized
     *)
-    [<ExcelFunction(Name="_Israel_empty", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_empty", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -475,7 +475,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel_endOfMonth", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_endOfMonth", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -517,7 +517,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel_Equals", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_Equals", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -559,7 +559,7 @@ module IsraelFunction =
     (*
         @returns Returns <tt>true</tt> iff the date is a business day for the given market.
     *)
-    [<ExcelFunction(Name="_Israel_isBusinessDay", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_isBusinessDay", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_isBusinessDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -601,7 +601,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel_isEndOfMonth", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_isEndOfMonth", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_isEndOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -643,7 +643,7 @@ module IsraelFunction =
     (*
         Returns <tt>true</tt> iff the date is a holiday for the given market.
     *)
-    [<ExcelFunction(Name="_Israel_isHoliday", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_isHoliday", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_isHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -685,7 +685,7 @@ module IsraelFunction =
     (*
         Returns <tt>true</tt> iff the weekday is part of the weekend for the given market.
     *)
-    [<ExcelFunction(Name="_Israel_isWeekend", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_isWeekend", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_isWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -729,7 +729,7 @@ module IsraelFunction =
 
 @returns The name of the calendar.
     *)
-    [<ExcelFunction(Name="_Israel_name", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_name", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -765,7 +765,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel_removedHolidays", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_removedHolidays", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_removedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -801,7 +801,7 @@ module IsraelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Israel_removeHoliday", Description="Create a Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_removeHoliday", Description="Create a Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_removeHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -840,7 +840,7 @@ module IsraelFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Israel_Range", Description="Create a range of Israel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Israel_Range", Description="Create a range of Israel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Israel_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

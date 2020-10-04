@@ -37,7 +37,7 @@ module SimplePolynomialFittingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SimplePolynomialFitting_clone", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SimplePolynomialFitting_clone", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module SimplePolynomialFittingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SimplePolynomialFitting", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SimplePolynomialFitting", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module SimplePolynomialFittingFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SimplePolynomialFitting_size", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SimplePolynomialFitting_size", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module SimplePolynomialFittingFunction =
     (*
         ! return whether there is a constraint at zero
     *)
-    [<ExcelFunction(Name="_SimplePolynomialFitting_constrainAtZero", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SimplePolynomialFitting_constrainAtZero", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_constrainAtZero
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module SimplePolynomialFittingFunction =
     (*
         ! open discountFunction to public
     *)
-    [<ExcelFunction(Name="_SimplePolynomialFitting_discount", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SimplePolynomialFitting_discount", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -248,7 +248,7 @@ module SimplePolynomialFittingFunction =
     (*
         ! final value of cost function after optimization
     *)
-    [<ExcelFunction(Name="_SimplePolynomialFitting_minimumCostValue", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SimplePolynomialFitting_minimumCostValue", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_minimumCostValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module SimplePolynomialFittingFunction =
     (*
         ! final number of iterations used in the optimization problem
     *)
-    [<ExcelFunction(Name="_SimplePolynomialFitting_numberOfIterations", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SimplePolynomialFitting_numberOfIterations", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_numberOfIterations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module SimplePolynomialFittingFunction =
     (*
         ! return optimization method being used
     *)
-    [<ExcelFunction(Name="_SimplePolynomialFitting_optimizationMethod", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SimplePolynomialFitting_optimizationMethod", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_optimizationMethod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -356,7 +356,7 @@ module SimplePolynomialFittingFunction =
     (*
         ! output array of results of optimization problem
     *)
-    [<ExcelFunction(Name="_SimplePolynomialFitting_solution", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SimplePolynomialFitting_solution", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_solution
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -392,7 +392,7 @@ module SimplePolynomialFittingFunction =
     (*
         ! return weights being used
     *)
-    [<ExcelFunction(Name="_SimplePolynomialFitting_weights", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SimplePolynomialFitting_weights", Description="Create a SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_weights
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -425,7 +425,7 @@ module SimplePolynomialFittingFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SimplePolynomialFitting_Range", Description="Create a range of SimplePolynomialFitting",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SimplePolynomialFitting_Range", Description="Create a range of SimplePolynomialFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimplePolynomialFitting_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

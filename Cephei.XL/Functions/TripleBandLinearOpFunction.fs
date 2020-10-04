@@ -38,7 +38,7 @@ module TripleBandLinearOpFunction =
         
     *)
     (*!! duplicate add function
-    [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -87,7 +87,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -130,7 +130,7 @@ module TripleBandLinearOpFunction =
         
     *)
     (*!! duplicate add function
-    [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_add", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -173,7 +173,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_apply", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_apply", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_apply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -215,7 +215,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_applyTo", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_applyTo", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_applyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -257,7 +257,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_axpyb", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_axpyb", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_axpyb
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -317,7 +317,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_Clone", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_Clone", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_Clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -353,7 +353,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_identity", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_identity", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_identity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -395,7 +395,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_isTimeDependent", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_isTimeDependent", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_isTimeDependent
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -431,7 +431,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_mult", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_mult", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_mult
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -473,7 +473,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_multiply", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_multiply", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_multiply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -521,7 +521,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_multR", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_multR", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_multR
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -563,7 +563,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_setTime", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_setTime", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_setTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -605,7 +605,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_size", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_size", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -641,7 +641,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_solve_splitting", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_solve_splitting", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_solve_splitting
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -695,7 +695,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_solveFor", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_solveFor", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_solveFor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -737,7 +737,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_subtract", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_subtract", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_subtract
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -785,7 +785,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_swap", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_swap", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_swap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -827,7 +827,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp_toMatrix", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_toMatrix", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_toMatrix
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -863,7 +863,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -900,7 +900,7 @@ module TripleBandLinearOpFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TripleBandLinearOp1", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp1", Description="Create a TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -940,7 +940,7 @@ module TripleBandLinearOpFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TripleBandLinearOp_Range", Description="Create a range of TripleBandLinearOp",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TripleBandLinearOp_Range", Description="Create a range of TripleBandLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TripleBandLinearOp_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

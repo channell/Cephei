@@ -37,7 +37,7 @@ module AmericanPayoffAtHitFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanPayoffAtHit", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPayoffAtHit", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module AmericanPayoffAtHitFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanPayoffAtHit_delta", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPayoffAtHit_delta", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_delta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module AmericanPayoffAtHitFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanPayoffAtHit_gamma", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPayoffAtHit_gamma", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_gamma
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module AmericanPayoffAtHitFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanPayoffAtHit_rho", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPayoffAtHit_rho", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_rho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -212,7 +212,7 @@ module AmericanPayoffAtHitFunction =
     (*
         inline definitions
     *)
-    [<ExcelFunction(Name="_AmericanPayoffAtHit_value", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPayoffAtHit_value", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -245,7 +245,7 @@ module AmericanPayoffAtHitFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AmericanPayoffAtHit_Range", Description="Create a range of AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanPayoffAtHit_Range", Description="Create a range of AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module GaussHermiteIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermiteIntegration", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermiteIntegration", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermiteIntegration_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module GaussHermiteIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermiteIntegration_order", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermiteIntegration_order", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermiteIntegration_order
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module GaussHermiteIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermiteIntegration_value", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermiteIntegration_value", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermiteIntegration_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module GaussHermiteIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermiteIntegration_weights", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermiteIntegration_weights", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermiteIntegration_weights
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module GaussHermiteIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussHermiteIntegration_x", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermiteIntegration_x", Description="Create a GaussHermiteIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermiteIntegration_x
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -227,7 +227,7 @@ module GaussHermiteIntegrationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GaussHermiteIntegration_Range", Description="Create a range of GaussHermiteIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussHermiteIntegration_Range", Description="Create a range of GaussHermiteIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHermiteIntegration_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

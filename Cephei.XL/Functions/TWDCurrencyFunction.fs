@@ -37,7 +37,7 @@ module TWDCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TWDCurrency", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module TWDCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_TWDCurrency_code", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_code", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module TWDCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_TWDCurrency_empty", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_empty", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module TWDCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TWDCurrency_Equals", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_Equals", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module TWDCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_TWDCurrency_format", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_format", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module TWDCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_TWDCurrency_fractionsPerUnit", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_fractionsPerUnit", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module TWDCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_TWDCurrency_fractionSymbol", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_fractionSymbol", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module TWDCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_TWDCurrency_name", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_name", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module TWDCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_TWDCurrency_numericCode", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_numericCode", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module TWDCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_TWDCurrency_rounding", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_rounding", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module TWDCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_TWDCurrency_symbol", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_symbol", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module TWDCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TWDCurrency_ToString", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_ToString", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module TWDCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_TWDCurrency_triangulationCurrency", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_triangulationCurrency", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module TWDCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TWDCurrency_Range", Description="Create a range of TWDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TWDCurrency_Range", Description="Create a range of TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

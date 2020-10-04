@@ -37,7 +37,7 @@ module BlackConstantVolFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackConstantVol", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackConstantVol", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module BlackConstantVolFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackConstantVol1", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackConstantVol1", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -147,7 +147,7 @@ module BlackConstantVolFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackConstantVol2", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackConstantVol2", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -202,7 +202,7 @@ module BlackConstantVolFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackConstantVol3", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackConstantVol3", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -257,7 +257,7 @@ module BlackConstantVolFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackConstantVol_maxDate", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackConstantVol_maxDate", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -293,7 +293,7 @@ module BlackConstantVolFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackConstantVol_maxStrike", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackConstantVol_maxStrike", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -329,7 +329,7 @@ module BlackConstantVolFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackConstantVol_minStrike", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackConstantVol_minStrike", Description="Create a BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module BlackConstantVolFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BlackConstantVol_Range", Description="Create a range of BlackConstantVol",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackConstantVol_Range", Description="Create a range of BlackConstantVol",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackConstantVol_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

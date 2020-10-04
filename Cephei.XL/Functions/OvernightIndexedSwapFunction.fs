@@ -37,7 +37,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_fairRate", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_fairRate", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_fairRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_fairSpread", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_fairSpread", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_fairSpread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedDayCount", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedDayCount", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_fixedDayCount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedLeg", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedLeg", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_fixedLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedLegBPS", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedLegBPS", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_fixedLegBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedLegNPV", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedLegNPV", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_fixedLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedNominal", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedNominal", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_fixedNominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -289,7 +289,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedPaymentFrequency", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedPaymentFrequency", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_fixedPaymentFrequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -325,7 +325,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedRate", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_fixedRate", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_fixedRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -361,7 +361,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap1", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap1", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -446,7 +446,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -543,7 +543,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_overnightLeg", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_overnightLeg", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_overnightLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -579,7 +579,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_overnightLegBPS", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_overnightLegBPS", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_overnightLegBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -615,7 +615,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_overnightLegNPV", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_overnightLegNPV", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_overnightLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -651,7 +651,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_overnightNominal", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_overnightNominal", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_overnightNominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -687,7 +687,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_overnightPaymentFrequency", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_overnightPaymentFrequency", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_overnightPaymentFrequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -723,7 +723,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_spread", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_spread", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_spread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -759,7 +759,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_type", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_type", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -795,7 +795,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_endDiscounts", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_endDiscounts", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_endDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -838,7 +838,7 @@ module OvernightIndexedSwapFunction =
         
     *)
     (*!! ommited
-    [<ExcelFunction(Name="_OvernightIndexedSwap_engine", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_engine", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_engine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -875,7 +875,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_isExpired", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_isExpired", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -911,7 +911,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_leg", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_leg", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_leg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -953,7 +953,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_legBPS", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_legBPS", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_legBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -995,7 +995,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_legNPV", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_legNPV", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_legNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1037,7 +1037,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_maturityDate", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_maturityDate", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1073,7 +1073,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_npvDateDiscount", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_npvDateDiscount", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_npvDateDiscount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1109,7 +1109,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_payer", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_payer", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_payer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1151,7 +1151,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_startDate", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_startDate", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1187,7 +1187,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_startDiscounts", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_startDiscounts", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_startDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1229,7 +1229,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_CASH", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_CASH", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1265,7 +1265,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_errorEstimate", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_errorEstimate", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1301,7 +1301,7 @@ module OvernightIndexedSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_NPV", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_NPV", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1337,7 +1337,7 @@ module OvernightIndexedSwapFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_result", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_result", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1379,7 +1379,7 @@ module OvernightIndexedSwapFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_setPricingEngine", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_setPricingEngine", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1421,7 +1421,7 @@ module OvernightIndexedSwapFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_OvernightIndexedSwap_valuationDate", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_valuationDate", Description="Create a OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1454,7 +1454,7 @@ module OvernightIndexedSwapFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_OvernightIndexedSwap_Range", Description="Create a range of OvernightIndexedSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndexedSwap_Range", Description="Create a range of OvernightIndexedSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedSwap_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

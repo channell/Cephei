@@ -37,7 +37,7 @@ module GaussGegenbauerPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussGegenbauerPolynomial", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerPolynomial", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module GaussGegenbauerPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_alpha", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_alpha", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_alpha
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module GaussGegenbauerPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_beta", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_beta", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_beta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module GaussGegenbauerPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_mu_0", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_mu_0", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_mu_0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module GaussGegenbauerPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_w", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_w", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_w
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module GaussGegenbauerPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_value", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_value", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module GaussGegenbauerPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_weightedValue", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_weightedValue", Description="Create a GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_weightedValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -329,7 +329,7 @@ module GaussGegenbauerPolynomialFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_Range", Description="Create a range of GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerPolynomial_Range", Description="Create a range of GaussGegenbauerPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerPolynomial_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

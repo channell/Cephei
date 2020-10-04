@@ -37,7 +37,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_dividendYield", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_dividendYield", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_dividendYield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         variance mean reversion speed
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_kappa", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_kappa", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_kappa
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         correlation
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_rho", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_rho", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_rho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_riskFreeRate", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_riskFreeRate", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_riskFreeRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         spot
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_s0", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_s0", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_s0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         volatility of the volatility
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_sigma", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_sigma", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_sigma
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -356,7 +356,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         variance mean version level
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_theta", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_theta", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_theta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_timeGrid", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_timeGrid", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_timeGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         spot variance
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_v0", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_v0", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_v0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         ! An additional constraint can be passed which must be satisfied in addition to the constraints of the model.
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_calibrate", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_calibrate", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_calibrate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_constraint", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_constraint", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_constraint
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -578,7 +578,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_endCriteria", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_endCriteria", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_endCriteria
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -614,7 +614,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_notifyObservers", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_notifyObservers", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_notifyObservers
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         ! Returns array of arguments on which calibration is done
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_parameters", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_parameters", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_parameters
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -686,7 +686,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_registerWith", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_registerWith", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -728,7 +728,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_setParams", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_setParams", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_setParams
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -770,7 +770,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_unregisterWith", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_unregisterWith", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -812,7 +812,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_update", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_update", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -848,7 +848,7 @@ module PiecewiseTimeDependentHestonModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_value", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_value", Description="Create a PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -893,7 +893,7 @@ module PiecewiseTimeDependentHestonModelFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_Range", Description="Create a range of PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PiecewiseTimeDependentHestonModel_Range", Description="Create a range of PiecewiseTimeDependentHestonModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseTimeDependentHestonModel_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

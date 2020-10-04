@@ -37,7 +37,7 @@ module PLNCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PLNCurrency", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module PLNCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_PLNCurrency_code", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_code", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module PLNCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_PLNCurrency_empty", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_empty", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module PLNCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PLNCurrency_Equals", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_Equals", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module PLNCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_PLNCurrency_format", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_format", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module PLNCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_PLNCurrency_fractionsPerUnit", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_fractionsPerUnit", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module PLNCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_PLNCurrency_fractionSymbol", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_fractionSymbol", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module PLNCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_PLNCurrency_name", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_name", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module PLNCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_PLNCurrency_numericCode", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_numericCode", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module PLNCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_PLNCurrency_rounding", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_rounding", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module PLNCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_PLNCurrency_symbol", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_symbol", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module PLNCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PLNCurrency_ToString", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_ToString", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module PLNCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_PLNCurrency_triangulationCurrency", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_triangulationCurrency", Description="Create a PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module PLNCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PLNCurrency_Range", Description="Create a range of PLNCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PLNCurrency_Range", Description="Create a range of PLNCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PLNCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

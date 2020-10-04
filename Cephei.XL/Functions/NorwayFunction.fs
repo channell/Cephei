@@ -51,7 +51,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -82,7 +82,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway_addedHolidays", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_addedHolidays", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_addedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -118,7 +118,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway_addHoliday", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_addHoliday", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_addHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -160,7 +160,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway_adjust", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_adjust", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_adjust
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -208,7 +208,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway_advance1", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_advance1", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -274,7 +274,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway_advance", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_advance", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_advance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -334,7 +334,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway_businessDaysBetween", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_businessDaysBetween", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_businessDaysBetween
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -394,7 +394,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway_calendar", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_calendar", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -430,7 +430,7 @@ module NorwayFunction =
     (*
         Returns whether or not the calendar is initialized
     *)
-    [<ExcelFunction(Name="_Norway_empty", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_empty", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -466,7 +466,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway_endOfMonth", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_endOfMonth", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -508,7 +508,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway_Equals", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_Equals", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -550,7 +550,7 @@ module NorwayFunction =
     (*
         @returns Returns <tt>true</tt> iff the date is a business day for the given market.
     *)
-    [<ExcelFunction(Name="_Norway_isBusinessDay", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_isBusinessDay", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_isBusinessDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -592,7 +592,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway_isEndOfMonth", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_isEndOfMonth", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_isEndOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -634,7 +634,7 @@ module NorwayFunction =
     (*
         Returns <tt>true</tt> iff the date is a holiday for the given market.
     *)
-    [<ExcelFunction(Name="_Norway_isHoliday", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_isHoliday", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_isHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -676,7 +676,7 @@ module NorwayFunction =
     (*
         Returns <tt>true</tt> iff the weekday is part of the weekend for the given market.
     *)
-    [<ExcelFunction(Name="_Norway_isWeekend", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_isWeekend", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_isWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -720,7 +720,7 @@ module NorwayFunction =
 
 @returns The name of the calendar.
     *)
-    [<ExcelFunction(Name="_Norway_name", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_name", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -756,7 +756,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway_removedHolidays", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_removedHolidays", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_removedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -792,7 +792,7 @@ module NorwayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Norway_removeHoliday", Description="Create a Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_removeHoliday", Description="Create a Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_removeHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -831,7 +831,7 @@ module NorwayFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Norway_Range", Description="Create a range of Norway",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Norway_Range", Description="Create a range of Norway",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Norway_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

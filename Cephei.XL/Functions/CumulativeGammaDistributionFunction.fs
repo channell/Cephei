@@ -37,7 +37,7 @@ module CumulativeGammaDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CumulativeGammaDistribution", Description="Create a CumulativeGammaDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CumulativeGammaDistribution", Description="Create a CumulativeGammaDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeGammaDistribution_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module CumulativeGammaDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CumulativeGammaDistribution_value", Description="Create a CumulativeGammaDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CumulativeGammaDistribution_value", Description="Create a CumulativeGammaDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeGammaDistribution_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -113,7 +113,7 @@ module CumulativeGammaDistributionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CumulativeGammaDistribution_Range", Description="Create a range of CumulativeGammaDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CumulativeGammaDistribution_Range", Description="Create a range of CumulativeGammaDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeGammaDistribution_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

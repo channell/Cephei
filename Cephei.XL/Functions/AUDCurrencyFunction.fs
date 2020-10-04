@@ -37,7 +37,7 @@ module AUDCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AUDCurrency", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module AUDCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_AUDCurrency_code", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_code", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module AUDCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_AUDCurrency_empty", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_empty", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module AUDCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AUDCurrency_Equals", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_Equals", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module AUDCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_AUDCurrency_format", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_format", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module AUDCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_AUDCurrency_fractionsPerUnit", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_fractionsPerUnit", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module AUDCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_AUDCurrency_fractionSymbol", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_fractionSymbol", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module AUDCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_AUDCurrency_name", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_name", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module AUDCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_AUDCurrency_numericCode", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_numericCode", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module AUDCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_AUDCurrency_rounding", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_rounding", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module AUDCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_AUDCurrency_symbol", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_symbol", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module AUDCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AUDCurrency_ToString", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_ToString", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module AUDCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_AUDCurrency_triangulationCurrency", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_triangulationCurrency", Description="Create a AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module AUDCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AUDCurrency_Range", Description="Create a range of AUDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AUDCurrency_Range", Description="Create a range of AUDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUDCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

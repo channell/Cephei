@@ -37,7 +37,7 @@ module SITCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SITCurrency", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module SITCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_SITCurrency_code", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_code", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module SITCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_SITCurrency_empty", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_empty", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module SITCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SITCurrency_Equals", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_Equals", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module SITCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_SITCurrency_format", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_format", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module SITCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_SITCurrency_fractionsPerUnit", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_fractionsPerUnit", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module SITCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_SITCurrency_fractionSymbol", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_fractionSymbol", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module SITCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_SITCurrency_name", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_name", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module SITCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_SITCurrency_numericCode", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_numericCode", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module SITCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_SITCurrency_rounding", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_rounding", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module SITCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_SITCurrency_symbol", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_symbol", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module SITCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SITCurrency_ToString", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_ToString", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module SITCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_SITCurrency_triangulationCurrency", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_triangulationCurrency", Description="Create a SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module SITCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SITCurrency_Range", Description="Create a range of SITCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SITCurrency_Range", Description="Create a range of SITCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SITCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

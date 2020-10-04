@@ -37,7 +37,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_discount", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_discount", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_discountBond", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_discountBond", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_discountBond
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_discountBondOption", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_discountBondOption", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_discountBondOption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -193,7 +193,7 @@ module LiborForwardModelFunction =
     (*
         calculating swaption volatility matrix using Rebonatos approx. formula. Be aware that this matrix is valid only for regular fixings and assumes that the fix and floating leg have the same frequency
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_getSwaptionVolatilityMatrix", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_getSwaptionVolatilityMatrix", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_getSwaptionVolatilityMatrix
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -229,7 +229,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_S_0", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_S_0", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_S_0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_setParams", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_setParams", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_setParams
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_w_0", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_w_0", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_w_0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module LiborForwardModelFunction =
     (*
         ! An additional constraint can be passed which must be satisfied in addition to the constraints of the model.
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_calibrate", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_calibrate", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_calibrate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -488,7 +488,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_constraint", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_constraint", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_constraint
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_endCriteria", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_endCriteria", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_endCriteria
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -560,7 +560,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_notifyObservers", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_notifyObservers", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_notifyObservers
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module LiborForwardModelFunction =
     (*
         ! Returns array of arguments on which calibration is done
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_parameters", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_parameters", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_parameters
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_registerWith", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_registerWith", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -674,7 +674,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_unregisterWith", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_unregisterWith", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -716,7 +716,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_update", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_update", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -752,7 +752,7 @@ module LiborForwardModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LiborForwardModel_value", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_value", Description="Create a LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -797,7 +797,7 @@ module LiborForwardModelFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LiborForwardModel_Range", Description="Create a range of LiborForwardModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LiborForwardModel_Range", Description="Create a range of LiborForwardModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LiborForwardModel_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

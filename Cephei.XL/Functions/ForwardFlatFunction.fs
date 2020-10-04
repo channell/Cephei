@@ -37,7 +37,7 @@ module ForwardFlatFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardFlat_global", Description="Create a ForwardFlat",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardFlat_global", Description="Create a ForwardFlat",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlat_global
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module ForwardFlatFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardFlat_interpolate", Description="Create a ForwardFlat",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardFlat_interpolate", Description="Create a ForwardFlat",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlat_interpolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -127,7 +127,7 @@ module ForwardFlatFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ForwardFlat_requiredPoints", Description="Create a ForwardFlat",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardFlat_requiredPoints", Description="Create a ForwardFlat",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlat_requiredPoints
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -160,7 +160,7 @@ module ForwardFlatFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ForwardFlat_Range", Description="Create a range of ForwardFlat",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ForwardFlat_Range", Description="Create a range of ForwardFlat",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlat_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

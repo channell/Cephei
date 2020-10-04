@@ -37,7 +37,7 @@ module InverseCumulativeRngFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseCumulativeRng", Description="Create a InverseCumulativeRng",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeRng", Description="Create a InverseCumulativeRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRng_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module InverseCumulativeRngFunction =
     (*
         ! returns a sample from a Gaussian distribution
     *)
-    [<ExcelFunction(Name="_InverseCumulativeRng_next", Description="Create a InverseCumulativeRng",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeRng_next", Description="Create a InverseCumulativeRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRng_next
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -107,7 +107,7 @@ module InverseCumulativeRngFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_InverseCumulativeRng_Range", Description="Create a range of InverseCumulativeRng",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeRng_Range", Description="Create a range of InverseCumulativeRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRng_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

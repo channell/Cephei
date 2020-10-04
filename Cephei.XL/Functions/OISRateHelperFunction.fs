@@ -37,7 +37,7 @@ module OISRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OISRateHelper_impliedQuote", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_impliedQuote", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_impliedQuote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module OISRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OISRateHelper", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module OISRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OISRateHelper_setTermStructure", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_setTermStructure", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_setTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module OISRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OISRateHelper_swap", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_swap", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_swap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module OISRateHelperFunction =
     (*
         ! Observer interface
     *)
-    [<ExcelFunction(Name="_OISRateHelper_update", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_update", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module OISRateHelperFunction =
     (*
         earliest relevant date The earliest date at which discounts are needed by the helper in order to provide a quote.
     *)
-    [<ExcelFunction(Name="_OISRateHelper_earliestDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_earliestDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_earliestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module OISRateHelperFunction =
     (*
         The latest date at which discounts are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_OISRateHelper_latestDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_latestDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_latestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module OISRateHelperFunction =
     (*
         ! The latest date at which data are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_OISRateHelper_latestRelevantDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_latestRelevantDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_latestRelevantDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -350,7 +350,7 @@ module OISRateHelperFunction =
     (*
         ! instrument's maturity date
     *)
-    [<ExcelFunction(Name="_OISRateHelper_maturityDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_maturityDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module OISRateHelperFunction =
     (*
         ! pillar date
     *)
-    [<ExcelFunction(Name="_OISRateHelper_pillarDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_pillarDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_pillarDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -422,7 +422,7 @@ module OISRateHelperFunction =
     (*
         ! BootstrapHelper interface
     *)
-    [<ExcelFunction(Name="_OISRateHelper_quote", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_quote", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_quote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -458,7 +458,7 @@ module OISRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OISRateHelper_quoteError", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_quoteError", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_quoteError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -494,7 +494,7 @@ module OISRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OISRateHelper_quoteIsValid", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_quoteIsValid", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_quoteIsValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -530,7 +530,7 @@ module OISRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OISRateHelper_quoteValue", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_quoteValue", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_quoteValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -566,7 +566,7 @@ module OISRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OISRateHelper_registerWith", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_registerWith", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module OISRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OISRateHelper_unregisterWith", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_unregisterWith", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -647,7 +647,7 @@ module OISRateHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_OISRateHelper_Range", Description="Create a range of OISRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OISRateHelper_Range", Description="Create a range of OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

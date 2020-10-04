@@ -37,7 +37,7 @@ module BlackVanillaOptionPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackVanillaOptionPricer", Description="Create a BlackVanillaOptionPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVanillaOptionPricer", Description="Create a BlackVanillaOptionPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVanillaOptionPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module BlackVanillaOptionPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackVanillaOptionPricer_value", Description="Create a BlackVanillaOptionPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVanillaOptionPricer_value", Description="Create a BlackVanillaOptionPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVanillaOptionPricer_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -143,7 +143,7 @@ module BlackVanillaOptionPricerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BlackVanillaOptionPricer_Range", Description="Create a range of BlackVanillaOptionPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVanillaOptionPricer_Range", Description="Create a range of BlackVanillaOptionPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVanillaOptionPricer_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_exhaustionProbability", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_exhaustionProbability", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_exhaustionProbability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_expectedLoss", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_expectedLoss", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_expectedLoss
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -176,7 +176,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_lossProbability", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_lossProbability", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_lossProbability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -212,7 +212,7 @@ module CatBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CatBond_accruedAmount", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_accruedAmount", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_calendar", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_calendar", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module CatBondFunction =
     (*
         \note returns all the cashflows, including the redemptions.
     *)
-    [<ExcelFunction(Name="_CatBond_cashflows", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_cashflows", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_cashflows
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module CatBondFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_CatBond_cleanPrice", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_cleanPrice", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_cleanPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module CatBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CatBond_cleanPrice1", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_cleanPrice1", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_cleanPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module CatBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CatBond_dirtyPrice1", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_dirtyPrice1", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_dirtyPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -494,7 +494,7 @@ module CatBondFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_CatBond_dirtyPrice", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_dirtyPrice", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_dirtyPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -530,7 +530,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_isExpired", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_isExpired", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -566,7 +566,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_issueDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_issueDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_issueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -602,7 +602,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_isTradable", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_isTradable", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_isTradable
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -644,7 +644,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_maturityDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_maturityDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -680,7 +680,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_nextCashFlowDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_nextCashFlowDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_nextCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -722,7 +722,7 @@ module CatBondFunction =
     (*
         ! Expected next coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the already-fixed not-yet-paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CatBond_nextCouponRate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_nextCouponRate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_nextCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -764,7 +764,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_notional", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_notional", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_notional
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -806,7 +806,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_notionals", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_notionals", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_notionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -842,7 +842,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_previousCashFlowDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_previousCashFlowDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_previousCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -884,7 +884,7 @@ module CatBondFunction =
     (*
         ! Expected previous coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the last paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CatBond_previousCouponRate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_previousCouponRate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_previousCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -926,7 +926,7 @@ module CatBondFunction =
     (*
         returns the redemption, if only one is defined
     *)
-    [<ExcelFunction(Name="_CatBond_redemption", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_redemption", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_redemption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -962,7 +962,7 @@ module CatBondFunction =
     (*
         ! returns just the redemption flows (not interest payments)
     *)
-    [<ExcelFunction(Name="_CatBond_redemptions", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_redemptions", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_redemptions
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -998,7 +998,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_settlementDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_settlementDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_settlementDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1040,7 +1040,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_settlementDays", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_settlementDays", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1076,7 +1076,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_settlementValue", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_settlementValue", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_settlementValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1118,7 +1118,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_settlementValue1", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_settlementValue1", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_settlementValue1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1154,7 +1154,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_startDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_startDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1190,7 +1190,7 @@ module CatBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CatBond_yield1", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_yield1", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_yield1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1268,7 +1268,7 @@ module CatBondFunction =
     (*
         ! The default bond settlement and theoretical price are used for calculation.
     *)
-    [<ExcelFunction(Name="_CatBond_yield", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_yield", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_yield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1334,7 +1334,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_CASH", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_CASH", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1370,7 +1370,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_errorEstimate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_errorEstimate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1406,7 +1406,7 @@ module CatBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CatBond_NPV", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_NPV", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1442,7 +1442,7 @@ module CatBondFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_CatBond_result", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_result", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1484,7 +1484,7 @@ module CatBondFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_CatBond_setPricingEngine", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_setPricingEngine", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1526,7 +1526,7 @@ module CatBondFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_CatBond_valuationDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_valuationDate", Description="Create a CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1559,7 +1559,7 @@ module CatBondFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CatBond_Range", Description="Create a range of CatBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CatBond_Range", Description="Create a range of CatBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CatBond_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

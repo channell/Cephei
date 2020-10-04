@@ -38,7 +38,7 @@ module GenericGaussianStatisticsFunction =
         
     *)
     (*!! duplicat add function
-    [<ExcelFunction(Name="_GenericGaussianStatistics_add", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_add", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -87,7 +87,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_addSequence", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_addSequence", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_addSequence
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -135,7 +135,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_errorEstimate", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_errorEstimate", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -171,7 +171,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_expectationValue", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_expectationValue", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_expectationValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module GenericGaussianStatisticsFunction =
     (*
         ! gaussian-assumption Average Shortfall (averaged shortfallness)
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianAverageShortfall", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianAverageShortfall", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_gaussianAverageShortfall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -261,7 +261,7 @@ module GenericGaussianStatisticsFunction =
     (*
         ! returns the downside deviation, defined as the square root of the downside variance.
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianDownsideDeviation", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianDownsideDeviation", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_gaussianDownsideDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -297,7 +297,7 @@ module GenericGaussianStatisticsFunction =
     (*
         ! returns the downside variance
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianDownsideVariance", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianDownsideVariance", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_gaussianDownsideVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -333,7 +333,7 @@ module GenericGaussianStatisticsFunction =
     (*
         ! Assuming a gaussian distribution it returns the expected loss in case that the loss exceeded a VaR threshold,  that is the average of observations below the given percentile \f$ p \f$. Also know as conditional value-at-risk.  See Artzner, Delbaen, Eber and Heath, "Coherent measures of risk", Mathematical Finance 9 (1999)
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianExpectedShortfall", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianExpectedShortfall", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_gaussianExpectedShortfall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -375,7 +375,7 @@ module GenericGaussianStatisticsFunction =
     (*
         ! \pre percentile must be in range (0%-100%) extremes excluded
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianPercentile", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianPercentile", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_gaussianPercentile
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -417,7 +417,7 @@ module GenericGaussianStatisticsFunction =
     (*
         ! gaussian-assumption Potential-Upside at a given percentile
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianPotentialUpside", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianPotentialUpside", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_gaussianPotentialUpside
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -459,7 +459,7 @@ module GenericGaussianStatisticsFunction =
     (*
         ! returns the variance of observations below target See Dembo, Freeman "The Rules Of Risk", Wiley (2001)
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianRegret", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianRegret", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_gaussianRegret
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -501,7 +501,7 @@ module GenericGaussianStatisticsFunction =
     (*
         ! gaussian-assumption Shortfall (observations below target)
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianShortfall", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianShortfall", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_gaussianShortfall
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -543,7 +543,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianTopPercentile", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianTopPercentile", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_gaussianTopPercentile
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -585,7 +585,7 @@ module GenericGaussianStatisticsFunction =
     (*
         ! gaussian-assumption Value-At-Risk at a given percentile
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianValueAtRisk", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_gaussianValueAtRisk", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_gaussianValueAtRisk
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -627,7 +627,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -664,7 +664,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics1", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics1", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -695,7 +695,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_kurtosis", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_kurtosis", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_kurtosis
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -731,7 +731,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_max", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_max", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_max
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -767,7 +767,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_mean", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_mean", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_mean
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -803,7 +803,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_min", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_min", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_min
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -839,7 +839,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_percentile", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_percentile", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_percentile
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -881,7 +881,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_reset", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_reset", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -917,7 +917,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_samples", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_samples", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_samples
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -953,7 +953,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_skewness", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_skewness", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_skewness
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -989,7 +989,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_standardDeviation", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_standardDeviation", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_standardDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1025,7 +1025,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_variance", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_variance", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1061,7 +1061,7 @@ module GenericGaussianStatisticsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericGaussianStatistics_weightSum", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_weightSum", Description="Create a GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_weightSum
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1094,7 +1094,7 @@ module GenericGaussianStatisticsFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GenericGaussianStatistics_Range", Description="Create a range of GenericGaussianStatistics",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericGaussianStatistics_Range", Description="Create a range of GenericGaussianStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericGaussianStatistics_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

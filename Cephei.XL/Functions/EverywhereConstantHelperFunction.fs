@@ -37,7 +37,7 @@ module EverywhereConstantHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EverywhereConstantHelper", Description="Create a EverywhereConstantHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EverywhereConstantHelper", Description="Create a EverywhereConstantHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EverywhereConstantHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module EverywhereConstantHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EverywhereConstantHelper_fNext", Description="Create a EverywhereConstantHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EverywhereConstantHelper_fNext", Description="Create a EverywhereConstantHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EverywhereConstantHelper_fNext
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module EverywhereConstantHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EverywhereConstantHelper_primitive", Description="Create a EverywhereConstantHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EverywhereConstantHelper_primitive", Description="Create a EverywhereConstantHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EverywhereConstantHelper_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module EverywhereConstantHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EverywhereConstantHelper_value", Description="Create a EverywhereConstantHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EverywhereConstantHelper_value", Description="Create a EverywhereConstantHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EverywhereConstantHelper_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -203,7 +203,7 @@ module EverywhereConstantHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_EverywhereConstantHelper_Range", Description="Create a range of EverywhereConstantHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EverywhereConstantHelper_Range", Description="Create a range of EverywhereConstantHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EverywhereConstantHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

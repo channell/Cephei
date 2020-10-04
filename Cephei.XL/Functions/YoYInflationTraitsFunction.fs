@@ -37,7 +37,7 @@ module YoYInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationTraits_discountImpl", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationTraits_discountImpl", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_discountImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module YoYInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationTraits_forwardImpl", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationTraits_forwardImpl", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_forwardImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module YoYInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationTraits_guess", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationTraits_guess", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_guess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -193,7 +193,7 @@ module YoYInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationTraits_initialDate", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationTraits_initialDate", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_initialDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -235,7 +235,7 @@ module YoYInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationTraits_initialValue", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationTraits_initialValue", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_initialValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module YoYInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationTraits_maxIterations", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationTraits_maxIterations", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_maxIterations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module YoYInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationTraits_maxValueAfter", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationTraits_maxValueAfter", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_maxValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -373,7 +373,7 @@ module YoYInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationTraits_minValueAfter", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationTraits_minValueAfter", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_minValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -433,7 +433,7 @@ module YoYInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationTraits_updateGuess", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationTraits_updateGuess", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_updateGuess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -487,7 +487,7 @@ module YoYInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationTraits_zeroYieldImpl", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationTraits_zeroYieldImpl", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_zeroYieldImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -532,7 +532,7 @@ module YoYInflationTraitsFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_YoYInflationTraits_Range", Description="Create a range of YoYInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationTraits_Range", Description="Create a range of YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

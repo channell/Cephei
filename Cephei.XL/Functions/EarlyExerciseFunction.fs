@@ -37,7 +37,7 @@ module EarlyExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EarlyExercise", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EarlyExercise", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module EarlyExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EarlyExercise_payoffAtExpiry", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EarlyExercise_payoffAtExpiry", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_payoffAtExpiry
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module EarlyExerciseFunction =
     (*
         inspectors
     *)
-    [<ExcelFunction(Name="_EarlyExercise_date", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EarlyExercise_date", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module EarlyExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EarlyExercise_dates", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EarlyExercise_dates", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_dates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module EarlyExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EarlyExercise_lastDate", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EarlyExercise_lastDate", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_lastDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module EarlyExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EarlyExercise_type", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EarlyExercise_type", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -263,7 +263,7 @@ module EarlyExerciseFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_EarlyExercise_Range", Description="Create a range of EarlyExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EarlyExercise_Range", Description="Create a range of EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

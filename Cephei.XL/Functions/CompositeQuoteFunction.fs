@@ -37,7 +37,7 @@ module CompositeQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeQuote", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeQuote", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module CompositeQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeQuote_isValid", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeQuote_isValid", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_isValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module CompositeQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeQuote_update", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeQuote_update", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module CompositeQuoteFunction =
     (*
         ! Quote interface
     *)
-    [<ExcelFunction(Name="_CompositeQuote_value", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeQuote_value", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module CompositeQuoteFunction =
     (*
         inspectors
     *)
-    [<ExcelFunction(Name="_CompositeQuote_value1", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeQuote_value1", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module CompositeQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeQuote_value2", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeQuote_value2", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_value2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module CompositeQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeQuote_registerWith", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeQuote_registerWith", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module CompositeQuoteFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeQuote_unregisterWith", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeQuote_unregisterWith", Description="Create a CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -347,7 +347,7 @@ module CompositeQuoteFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CompositeQuote_Range", Description="Create a range of CompositeQuote",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeQuote_Range", Description="Create a range of CompositeQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeQuote_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module CompositeZeroYieldStructureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeZeroYieldStructure_calendar", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeZeroYieldStructure_calendar", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module CompositeZeroYieldStructureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeZeroYieldStructure", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeZeroYieldStructure", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module CompositeZeroYieldStructureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeZeroYieldStructure_dayCounter", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeZeroYieldStructure_dayCounter", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module CompositeZeroYieldStructureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeZeroYieldStructure_maxDate", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeZeroYieldStructure_maxDate", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module CompositeZeroYieldStructureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeZeroYieldStructure_maxTime", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeZeroYieldStructure_maxTime", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module CompositeZeroYieldStructureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeZeroYieldStructure_referenceDate", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeZeroYieldStructure_referenceDate", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module CompositeZeroYieldStructureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeZeroYieldStructure_settlementDays", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeZeroYieldStructure_settlementDays", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module CompositeZeroYieldStructureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeZeroYieldStructure_update", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeZeroYieldStructure_update", Description="Create a CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -347,7 +347,7 @@ module CompositeZeroYieldStructureFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CompositeZeroYieldStructure_Range", Description="Create a range of CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeZeroYieldStructure_Range", Description="Create a range of CompositeZeroYieldStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeZeroYieldStructure_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap1", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap1", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module BasisSwapFunction =
     (*
         constructor
     *)
-    [<ExcelFunction(Name="_BasisSwap", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -249,7 +249,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_fairLongSpread", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_fairLongSpread", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_fairLongSpread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_fairShortSpread", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_fairShortSpread", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_fairShortSpread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -321,7 +321,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_floating1Leg", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_floating1Leg", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating1Leg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -357,7 +357,7 @@ module BasisSwapFunction =
     (*
         results
     *)
-    [<ExcelFunction(Name="_BasisSwap_floating1LegBPS", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_floating1LegBPS", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating1LegBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -393,7 +393,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_floating1LegNPV", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_floating1LegNPV", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating1LegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -429,7 +429,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_floating1Schedule", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_floating1Schedule", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating1Schedule
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -465,7 +465,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_floating2Leg", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_floating2Leg", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating2Leg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -501,7 +501,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_floating2LegBPS", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_floating2LegBPS", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating2LegBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -537,7 +537,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_floating2LegNPV", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_floating2LegNPV", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating2LegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -573,7 +573,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_floating2Schedule", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_floating2Schedule", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_floating2Schedule
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -609,7 +609,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_iborIndex1", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_iborIndex1", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_iborIndex1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -645,7 +645,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_iborIndex2", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_iborIndex2", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_iborIndex2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -681,7 +681,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_nominal", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_nominal", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -717,7 +717,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_spread1", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_spread1", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_spread1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -753,7 +753,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_spread2", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_spread2", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_spread2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -789,7 +789,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_swapType", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_swapType", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_swapType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -825,7 +825,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_endDiscounts", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_endDiscounts", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_endDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -868,7 +868,7 @@ module BasisSwapFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_BasisSwap_engine", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_engine", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_engine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -905,7 +905,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_isExpired", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_isExpired", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -941,7 +941,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_leg", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_leg", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_leg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -983,7 +983,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_legBPS", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_legBPS", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_legBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1025,7 +1025,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_legNPV", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_legNPV", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_legNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1067,7 +1067,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_maturityDate", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_maturityDate", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1103,7 +1103,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_npvDateDiscount", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_npvDateDiscount", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_npvDateDiscount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1139,7 +1139,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_payer", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_payer", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_payer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1181,7 +1181,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_startDate", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_startDate", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1217,7 +1217,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_startDiscounts", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_startDiscounts", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_startDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1259,7 +1259,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_CASH", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_CASH", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1295,7 +1295,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_errorEstimate", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_errorEstimate", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1331,7 +1331,7 @@ module BasisSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BasisSwap_NPV", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_NPV", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1367,7 +1367,7 @@ module BasisSwapFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_BasisSwap_result", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_result", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1409,7 +1409,7 @@ module BasisSwapFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_BasisSwap_setPricingEngine", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_setPricingEngine", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1451,7 +1451,7 @@ module BasisSwapFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_BasisSwap_valuationDate", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_valuationDate", Description="Create a BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1484,7 +1484,7 @@ module BasisSwapFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BasisSwap_Range", Description="Create a range of BasisSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BasisSwap_Range", Description="Create a range of BasisSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwap_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

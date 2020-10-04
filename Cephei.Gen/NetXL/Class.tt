@@ -52,7 +52,7 @@ module <#= NetClass.Name #>Function =
     (*
         <#= (m.Notes != null ? m.Notes : "") #>
     *)
-    [<ExcelFunction(Name="_<#= NetClass.Name #><#= (version > 0 ? version.ToString() : "") #>", Description="Create a <#= NetClass.Name #>",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_<#= NetClass.Name #><#= (version > 0 ? version.ToString() : "") #>", Description="Create a <#= NetClass.Name #>",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let <#= NetClass.Name #>_create<#= (version > 0 ? version.ToString() : "") #>
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -64,7 +64,7 @@ module <#= NetClass.Name #>Function =
     (*
         <#= (m.Notes != null ? m.Notes : "") #>
     *)
-    [<ExcelFunction(Name="_<#= NetClass.Name #>_<#= m.Name #>", Description="Create a <#= NetClass.Name #>",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_<#= NetClass.Name #>_<#= m.Name #>", Description="Create a <#= NetClass.Name #>",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let <#= NetClass.Name #>_<#= m.Name #>
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -328,7 +328,7 @@ module <#= NetClass.Name #>Function =
 <#
     }
 #>
-    [<ExcelFunction(Name="_<#= NetClass.Name #>_Range", Description="Create a range of <#= NetClass.Name #>",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_<#= NetClass.Name #>_Range", Description="Create a range of <#= NetClass.Name #>",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let <#= NetClass.Name #>_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

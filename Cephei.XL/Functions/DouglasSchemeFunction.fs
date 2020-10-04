@@ -37,7 +37,7 @@ module DouglasSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DouglasScheme", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DouglasScheme", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DouglasScheme_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module DouglasSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DouglasScheme1", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DouglasScheme1", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DouglasScheme_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module DouglasSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DouglasScheme_factory", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DouglasScheme_factory", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DouglasScheme_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -171,7 +171,7 @@ module DouglasSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DouglasScheme_setStep", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DouglasScheme_setStep", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DouglasScheme_setStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -213,7 +213,7 @@ module DouglasSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DouglasScheme_step", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DouglasScheme_step", Description="Create a DouglasScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DouglasScheme_step
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -264,7 +264,7 @@ module DouglasSchemeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DouglasScheme_Range", Description="Create a range of DouglasScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DouglasScheme_Range", Description="Create a range of DouglasScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DouglasScheme_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

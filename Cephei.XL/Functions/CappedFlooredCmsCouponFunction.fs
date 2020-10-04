@@ -37,7 +37,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         need by CashFlowVectors
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon1", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon1", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         Factory - for Leg generators
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_factory", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_factory", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -303,7 +303,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         cap
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_cap", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_cap", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_cap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -339,7 +339,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_convexityAdjustment", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_convexityAdjustment", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_convexityAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -375,7 +375,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! effective cap of fixing
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_effectiveCap", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_effectiveCap", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_effectiveCap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -411,7 +411,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! effective floor of fixing
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_effectiveFloor", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_effectiveFloor", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_effectiveFloor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -447,7 +447,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! floor
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_floor", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_floor", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_floor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -483,7 +483,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_isCapped", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_isCapped", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_isCapped
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -519,7 +519,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_isFloored", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_isFloored", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_isFloored
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -555,7 +555,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         Coupon interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_rate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_rate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_rate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -591,7 +591,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_setPricer", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_setPricer", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_setPricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -633,7 +633,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accruedAmount", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accruedAmount", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -675,7 +675,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! convexity-adjusted fixing
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_adjustedFixing", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_adjustedFixing", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_adjustedFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -711,7 +711,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_amount", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_amount", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -747,7 +747,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_dayCounter", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_dayCounter", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -783,7 +783,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! fixing days
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_fixingDate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_fixingDate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -819,7 +819,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! floating index
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_fixingDays", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_fixingDays", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -855,7 +855,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_gearing", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_gearing", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_gearing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -891,7 +891,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         properties
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_index", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_index", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_index
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -927,7 +927,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! spread paid over the fixing of the underlying index ! fixing of the underlying index
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_indexFixing", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_indexFixing", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_indexFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -963,7 +963,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! whether or not the coupon fixes in arrears
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_isInArrears", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_isInArrears", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_isInArrears
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -999,7 +999,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         methods
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_price", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_price", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_price
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1041,7 +1041,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_pricer", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_pricer", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_pricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1077,7 +1077,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! index gearing, i.e. multiplicative coefficient for the index
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_spread", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_spread", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_spread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1113,7 +1113,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_update", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_update", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1149,7 +1149,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! accrual period in days
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accrualDays", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accrualDays", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accrualDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1185,7 +1185,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! end of the accrual period
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accrualEndDate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accrualEndDate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accrualEndDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1221,7 +1221,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! accrual period as fraction of year
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accrualPeriod", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accrualPeriod", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accrualPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1257,7 +1257,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! start of the accrual period
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accrualStartDate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accrualStartDate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accrualStartDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1293,7 +1293,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! accrued days at the given date
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accruedDays", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accruedDays", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accruedDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1335,7 +1335,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! accrued period as fraction of year at the given date
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accruedPeriod", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accruedPeriod", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accruedPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1377,7 +1377,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         Event interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_date", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_date", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1413,7 +1413,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_exCouponDate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_exCouponDate", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1449,7 +1449,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_nominal", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_nominal", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1485,7 +1485,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! end date of the reference period
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_referencePeriodEnd", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_referencePeriodEnd", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_referencePeriodEnd
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1521,7 +1521,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! start date of the reference period
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_referencePeriodStart", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_referencePeriodStart", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_referencePeriodStart
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1557,7 +1557,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_CompareTo", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_CompareTo", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1599,7 +1599,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_Equals", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_Equals", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1641,7 +1641,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_hasOccurred", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_hasOccurred", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1689,7 +1689,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_tradingExCoupon", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_tradingExCoupon", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1731,7 +1731,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accept", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_accept", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1773,7 +1773,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_registerWith", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_registerWith", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1815,7 +1815,7 @@ module CappedFlooredCmsCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_unregisterWith", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_unregisterWith", Description="Create a CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1854,7 +1854,7 @@ module CappedFlooredCmsCouponFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_Range", Description="Create a range of CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CappedFlooredCmsCoupon_Range", Description="Create a range of CappedFlooredCmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CappedFlooredCmsCoupon_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

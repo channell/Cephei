@@ -37,7 +37,7 @@ module RONCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RONCurrency", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module RONCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_RONCurrency_code", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_code", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module RONCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_RONCurrency_empty", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_empty", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module RONCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RONCurrency_Equals", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_Equals", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module RONCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_RONCurrency_format", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_format", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module RONCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_RONCurrency_fractionsPerUnit", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_fractionsPerUnit", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module RONCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_RONCurrency_fractionSymbol", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_fractionSymbol", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module RONCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_RONCurrency_name", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_name", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module RONCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_RONCurrency_numericCode", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_numericCode", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module RONCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_RONCurrency_rounding", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_rounding", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module RONCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_RONCurrency_symbol", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_symbol", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module RONCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RONCurrency_ToString", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_ToString", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module RONCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_RONCurrency_triangulationCurrency", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_triangulationCurrency", Description="Create a RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module RONCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_RONCurrency_Range", Description="Create a range of RONCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RONCurrency_Range", Description="Create a range of RONCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RONCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

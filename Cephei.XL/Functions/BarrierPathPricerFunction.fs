@@ -37,7 +37,7 @@ module BarrierPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierPathPricer", Description="Create a BarrierPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierPathPricer", Description="Create a BarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierPathPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module BarrierPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierPathPricer_value", Description="Create a BarrierPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierPathPricer_value", Description="Create a BarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierPathPricer_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -155,7 +155,7 @@ module BarrierPathPricerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BarrierPathPricer_Range", Description="Create a range of BarrierPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierPathPricer_Range", Description="Create a range of BarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierPathPricer_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

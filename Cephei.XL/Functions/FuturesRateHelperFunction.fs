@@ -37,7 +37,7 @@ module FuturesRateHelperFunction =
     (*
         ! FuturesRateHelper inspectors
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_convexityAdjustment", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_convexityAdjustment", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_convexityAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module FuturesRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper1", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper1", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module FuturesRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper2", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper2", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -195,7 +195,7 @@ module FuturesRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper3", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper3", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -262,7 +262,7 @@ module FuturesRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper4", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper4", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_create4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -329,7 +329,7 @@ module FuturesRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper5", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper5", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_create5
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -414,7 +414,7 @@ module FuturesRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -499,7 +499,7 @@ module FuturesRateHelperFunction =
     (*
         ! RateHelper interface
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_impliedQuote", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_impliedQuote", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_impliedQuote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -535,7 +535,7 @@ module FuturesRateHelperFunction =
     (*
         earliest relevant date The earliest date at which discounts are needed by the helper in order to provide a quote.
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_earliestDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_earliestDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_earliestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -571,7 +571,7 @@ module FuturesRateHelperFunction =
     (*
         The latest date at which discounts are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_latestDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_latestDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_latestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -607,7 +607,7 @@ module FuturesRateHelperFunction =
     (*
         ! The latest date at which data are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_latestRelevantDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_latestRelevantDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_latestRelevantDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -643,7 +643,7 @@ module FuturesRateHelperFunction =
     (*
         ! instrument's maturity date
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_maturityDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_maturityDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -679,7 +679,7 @@ module FuturesRateHelperFunction =
     (*
         ! pillar date
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_pillarDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_pillarDate", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_pillarDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -715,7 +715,7 @@ module FuturesRateHelperFunction =
     (*
         ! BootstrapHelper interface
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_quote", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_quote", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_quote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -751,7 +751,7 @@ module FuturesRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_quoteError", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_quoteError", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_quoteError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -787,7 +787,7 @@ module FuturesRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_quoteIsValid", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_quoteIsValid", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_quoteIsValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -823,7 +823,7 @@ module FuturesRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_quoteValue", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_quoteValue", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_quoteValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -859,7 +859,7 @@ module FuturesRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_registerWith", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_registerWith", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -902,7 +902,7 @@ module FuturesRateHelperFunction =
         ! \warning Being a pointer and not a shared_ptr, the term structure is not guaranteed to remain allocated for the whole life of the rate helper. It is responsibility of the programmer to ensure that the pointer remains valid. It is advised that this method is called only inside the term structure being bootstrapped, setting the pointer to <b>this</b>, i.e., the term structure itself.
     *)
     (*generiuc 
-    [<ExcelFunction(Name="_FuturesRateHelper_setTermStructure", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_setTermStructure", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_setTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -945,7 +945,7 @@ module FuturesRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_unregisterWith", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_unregisterWith", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -987,7 +987,7 @@ module FuturesRateHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FuturesRateHelper_update", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_update", Description="Create a FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1020,7 +1020,7 @@ module FuturesRateHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FuturesRateHelper_Range", Description="Create a range of FuturesRateHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FuturesRateHelper_Range", Description="Create a range of FuturesRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FuturesRateHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

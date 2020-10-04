@@ -37,7 +37,7 @@ module NPRCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NPRCurrency", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module NPRCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_NPRCurrency_code", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_code", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module NPRCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_NPRCurrency_empty", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_empty", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module NPRCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NPRCurrency_Equals", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_Equals", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module NPRCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_NPRCurrency_format", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_format", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module NPRCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_NPRCurrency_fractionsPerUnit", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_fractionsPerUnit", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module NPRCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_NPRCurrency_fractionSymbol", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_fractionSymbol", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module NPRCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_NPRCurrency_name", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_name", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module NPRCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_NPRCurrency_numericCode", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_numericCode", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module NPRCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_NPRCurrency_rounding", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_rounding", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module NPRCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_NPRCurrency_symbol", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_symbol", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module NPRCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NPRCurrency_ToString", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_ToString", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module NPRCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_NPRCurrency_triangulationCurrency", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_triangulationCurrency", Description="Create a NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module NPRCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NPRCurrency_Range", Description="Create a range of NPRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NPRCurrency_Range", Description="Create a range of NPRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NPRCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

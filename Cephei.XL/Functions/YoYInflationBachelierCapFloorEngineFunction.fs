@@ -37,7 +37,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationBachelierCapFloorEngine", Description="Create a YoYInflationBachelierCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationBachelierCapFloorEngine", Description="Create a YoYInflationBachelierCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationBachelierCapFloorEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -81,7 +81,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationBachelierCapFloorEngine_index", Description="Create a YoYInflationBachelierCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationBachelierCapFloorEngine_index", Description="Create a YoYInflationBachelierCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationBachelierCapFloorEngine_index
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationBachelierCapFloorEngine_setVolatility", Description="Create a YoYInflationBachelierCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationBachelierCapFloorEngine_setVolatility", Description="Create a YoYInflationBachelierCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationBachelierCapFloorEngine_setVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationBachelierCapFloorEngine_volatility", Description="Create a YoYInflationBachelierCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationBachelierCapFloorEngine_volatility", Description="Create a YoYInflationBachelierCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationBachelierCapFloorEngine_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -192,7 +192,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_YoYInflationBachelierCapFloorEngine_Range", Description="Create a range of YoYInflationBachelierCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationBachelierCapFloorEngine_Range", Description="Create a range of YoYInflationBachelierCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationBachelierCapFloorEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

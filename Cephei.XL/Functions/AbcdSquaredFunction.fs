@@ -37,7 +37,7 @@ module AbcdSquaredFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdSquared", Description="Create a AbcdSquared",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdSquared", Description="Create a AbcdSquared",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdSquared_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module AbcdSquaredFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdSquared_value", Description="Create a AbcdSquared",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdSquared_value", Description="Create a AbcdSquared",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdSquared_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -143,7 +143,7 @@ module AbcdSquaredFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AbcdSquared_Range", Description="Create a range of AbcdSquared",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdSquared_Range", Description="Create a range of AbcdSquared",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdSquared_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

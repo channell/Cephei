@@ -39,7 +39,7 @@ module GaussKronrodAdaptiveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussKronrodAdaptive", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussKronrodAdaptive", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -82,7 +82,7 @@ module GaussKronrodAdaptiveFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_GaussKronrodAdaptive_absoluteAccuracy", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussKronrodAdaptive_absoluteAccuracy", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_absoluteAccuracy
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -118,7 +118,7 @@ module GaussKronrodAdaptiveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussKronrodAdaptive_absoluteError", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussKronrodAdaptive_absoluteError", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_absoluteError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -154,7 +154,7 @@ module GaussKronrodAdaptiveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussKronrodAdaptive_integrationSuccess", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussKronrodAdaptive_integrationSuccess", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_integrationSuccess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -190,7 +190,7 @@ module GaussKronrodAdaptiveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussKronrodAdaptive_maxEvaluations", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussKronrodAdaptive_maxEvaluations", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_maxEvaluations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -226,7 +226,7 @@ module GaussKronrodAdaptiveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussKronrodAdaptive_numberOfEvaluations", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussKronrodAdaptive_numberOfEvaluations", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_numberOfEvaluations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -262,7 +262,7 @@ module GaussKronrodAdaptiveFunction =
     (*
         Modifiers
     *)
-    [<ExcelFunction(Name="_GaussKronrodAdaptive_setAbsoluteAccuracy", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussKronrodAdaptive_setAbsoluteAccuracy", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_setAbsoluteAccuracy
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -304,7 +304,7 @@ module GaussKronrodAdaptiveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussKronrodAdaptive_setMaxEvaluations", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussKronrodAdaptive_setMaxEvaluations", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_setMaxEvaluations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -346,7 +346,7 @@ module GaussKronrodAdaptiveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussKronrodAdaptive_value", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussKronrodAdaptive_value", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -397,7 +397,7 @@ module GaussKronrodAdaptiveFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GaussKronrodAdaptive_Range", Description="Create a range of GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussKronrodAdaptive_Range", Description="Create a range of GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

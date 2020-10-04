@@ -37,7 +37,7 @@ module BTPFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_BTP_accruedAmount", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_accruedAmount", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module BTPFunction =
     (*
         ! constructor needed for legacy non-par redemption BTPs. As of today the only remaining one is IT123456789012 that will redeem 99.999 on xx-may-2037
     *)
-    [<ExcelFunction(Name="_BTP", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP1", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP1", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module BTPFunction =
     (*
         ! The default BTP conventions are used: Actual/Actual (ISMA), Compounded, Annual. The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_BTP_yield", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_yield", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_yield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -279,7 +279,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_dayCounter", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_dayCounter", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -315,7 +315,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_frequency", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_frequency", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_frequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -351,7 +351,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_calendar", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_calendar", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -387,7 +387,7 @@ module BTPFunction =
     (*
         \note returns all the cashflows, including the redemptions.
     *)
-    [<ExcelFunction(Name="_BTP_cashflows", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_cashflows", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_cashflows
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -423,7 +423,7 @@ module BTPFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_BTP_cleanPrice", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_cleanPrice", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_cleanPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -459,7 +459,7 @@ module BTPFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_BTP_cleanPrice1", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_cleanPrice1", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_cleanPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -525,7 +525,7 @@ module BTPFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_BTP_dirtyPrice1", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_dirtyPrice1", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_dirtyPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -591,7 +591,7 @@ module BTPFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_BTP_dirtyPrice", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_dirtyPrice", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_dirtyPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -627,7 +627,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_isExpired", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_isExpired", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -663,7 +663,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_issueDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_issueDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_issueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -699,7 +699,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_isTradable", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_isTradable", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_isTradable
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -741,7 +741,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_maturityDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_maturityDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -777,7 +777,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_nextCashFlowDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_nextCashFlowDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_nextCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -819,7 +819,7 @@ module BTPFunction =
     (*
         ! Expected next coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the already-fixed not-yet-paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_BTP_nextCouponRate", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_nextCouponRate", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_nextCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -861,7 +861,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_notional", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_notional", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_notional
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -903,7 +903,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_notionals", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_notionals", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_notionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -939,7 +939,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_previousCashFlowDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_previousCashFlowDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_previousCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -981,7 +981,7 @@ module BTPFunction =
     (*
         ! Expected previous coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the last paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_BTP_previousCouponRate", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_previousCouponRate", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_previousCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1023,7 +1023,7 @@ module BTPFunction =
     (*
         returns the redemption, if only one is defined
     *)
-    [<ExcelFunction(Name="_BTP_redemption", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_redemption", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_redemption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1059,7 +1059,7 @@ module BTPFunction =
     (*
         ! returns just the redemption flows (not interest payments)
     *)
-    [<ExcelFunction(Name="_BTP_redemptions", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_redemptions", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_redemptions
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1095,7 +1095,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_settlementDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_settlementDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_settlementDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1137,7 +1137,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_settlementDays", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_settlementDays", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1173,7 +1173,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_settlementValue", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_settlementValue", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_settlementValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1215,7 +1215,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_settlementValue1", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_settlementValue1", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_settlementValue1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1251,7 +1251,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_startDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_startDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1287,7 +1287,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_CASH", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_CASH", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1323,7 +1323,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_errorEstimate", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_errorEstimate", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1359,7 +1359,7 @@ module BTPFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BTP_NPV", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_NPV", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1395,7 +1395,7 @@ module BTPFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_BTP_result", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_result", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1437,7 +1437,7 @@ module BTPFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_BTP_setPricingEngine", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_setPricingEngine", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1479,7 +1479,7 @@ module BTPFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_BTP_valuationDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_valuationDate", Description="Create a BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1512,7 +1512,7 @@ module BTPFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BTP_Range", Description="Create a range of BTP",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BTP_Range", Description="Create a range of BTP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BTP_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

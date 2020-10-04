@@ -37,7 +37,7 @@ module FdmAffineModelSwapInnerValueFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue_avgInnerValue", Description="Create a FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue_avgInnerValue", Description="Create a FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelSwapInnerValue_avgInnerValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module FdmAffineModelSwapInnerValueFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue", Description="Create a FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue", Description="Create a FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelSwapInnerValue_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module FdmAffineModelSwapInnerValueFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue_getState", Description="Create a FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue_getState", Description="Create a FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelSwapInnerValue_getState
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module FdmAffineModelSwapInnerValueFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue_innerValue", Description="Create a FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue_innerValue", Description="Create a FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelSwapInnerValue_innerValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -251,7 +251,7 @@ module FdmAffineModelSwapInnerValueFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue_Range", Description="Create a range of FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmAffineModelSwapInnerValue_Range", Description="Create a range of FdmAffineModelSwapInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAffineModelSwapInnerValue_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

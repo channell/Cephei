@@ -37,7 +37,7 @@ module LfmHullWhiteParameterizationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmHullWhiteParameterization_covariance1", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmHullWhiteParameterization_covariance1", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_covariance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module LfmHullWhiteParameterizationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmHullWhiteParameterization_covariance", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmHullWhiteParameterization_covariance", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_covariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -127,7 +127,7 @@ module LfmHullWhiteParameterizationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmHullWhiteParameterization_diffusion", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmHullWhiteParameterization_diffusion", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_diffusion
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -169,7 +169,7 @@ module LfmHullWhiteParameterizationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmHullWhiteParameterization_diffusion1", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmHullWhiteParameterization_diffusion1", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_diffusion1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module LfmHullWhiteParameterizationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmHullWhiteParameterization_integratedCovariance", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmHullWhiteParameterization_integratedCovariance", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_integratedCovariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -265,7 +265,7 @@ module LfmHullWhiteParameterizationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmHullWhiteParameterization1", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmHullWhiteParameterization1", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module LfmHullWhiteParameterizationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmHullWhiteParameterization", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmHullWhiteParameterization", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -363,7 +363,7 @@ module LfmHullWhiteParameterizationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmHullWhiteParameterization_factors", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmHullWhiteParameterization_factors", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_factors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -399,7 +399,7 @@ module LfmHullWhiteParameterizationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmHullWhiteParameterization_size", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmHullWhiteParameterization_size", Description="Create a LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -432,7 +432,7 @@ module LfmHullWhiteParameterizationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LfmHullWhiteParameterization_Range", Description="Create a range of LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmHullWhiteParameterization_Range", Description="Create a range of LfmHullWhiteParameterization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmHullWhiteParameterization_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

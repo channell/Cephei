@@ -37,7 +37,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON1", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON1", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -105,7 +105,7 @@ module CADLiborONFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_CADLiborON_businessDayConvention", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_businessDayConvention", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -141,7 +141,7 @@ module CADLiborONFunction =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_CADLiborON_clone", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_clone", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_endOfMonth", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_endOfMonth", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_forecastFixing1", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_forecastFixing1", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -273,7 +273,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_forecastFixing", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_forecastFixing", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -315,7 +315,7 @@ module CADLiborONFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_CADLiborON_forwardingTermStructure", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_forwardingTermStructure", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -351,7 +351,7 @@ module CADLiborONFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_CADLiborON_maturityDate", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_maturityDate", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -393,7 +393,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_currency", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_currency", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -429,7 +429,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_dayCounter", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_dayCounter", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -465,7 +465,7 @@ module CADLiborONFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_CADLiborON_familyName", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_familyName", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -501,7 +501,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_fixing", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_fixing", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -549,7 +549,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_fixingCalendar", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_fixingCalendar", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -585,7 +585,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_fixingDate", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_fixingDate", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -627,7 +627,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_fixingDays", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_fixingDays", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -663,7 +663,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_isValidFixingDate", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_isValidFixingDate", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -705,7 +705,7 @@ module CADLiborONFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_CADLiborON_name", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_name", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -741,7 +741,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_pastFixing", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_pastFixing", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -783,7 +783,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_tenor", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_tenor", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -819,7 +819,7 @@ module CADLiborONFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_CADLiborON_update", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_update", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -855,7 +855,7 @@ module CADLiborONFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_CADLiborON_valueDate", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_valueDate", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -897,7 +897,7 @@ module CADLiborONFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_CADLiborON_addFixing", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_addFixing", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -951,7 +951,7 @@ module CADLiborONFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_CADLiborON_addFixings", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_addFixings", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1005,7 +1005,7 @@ module CADLiborONFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_CADLiborON_addFixings1", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_addFixings1", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1053,7 +1053,7 @@ module CADLiborONFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_CADLiborON_allowsNativeFixings", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_allowsNativeFixings", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1089,7 +1089,7 @@ module CADLiborONFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_CADLiborON_clearFixings", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_clearFixings", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1125,7 +1125,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_registerWith", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_registerWith", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1167,7 +1167,7 @@ module CADLiborONFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_CADLiborON_timeSeries", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_timeSeries", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1203,7 +1203,7 @@ module CADLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADLiborON_unregisterWith", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_unregisterWith", Description="Create a CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1242,7 +1242,7 @@ module CADLiborONFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CADLiborON_Range", Description="Create a range of CADLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADLiborON_Range", Description="Create a range of CADLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADLiborON_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

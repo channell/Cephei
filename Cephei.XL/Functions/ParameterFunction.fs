@@ -37,7 +37,7 @@ module ParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parameter_constraint", Description="Create a Parameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parameter_constraint", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_constraint
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module ParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parameter_implementation", Description="Create a Parameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parameter_implementation", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_implementation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module ParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parameter", Description="Create a Parameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parameter", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module ParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parameter_parameters", Description="Create a Parameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parameter_parameters", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_parameters
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -176,7 +176,7 @@ module ParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parameter_setParam", Description="Create a Parameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parameter_setParam", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_setParam
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -224,7 +224,7 @@ module ParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parameter_size", Description="Create a Parameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parameter_size", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module ParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parameter_testParams", Description="Create a Parameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parameter_testParams", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_testParams
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -302,7 +302,7 @@ module ParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parameter_value", Description="Create a Parameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parameter_value", Description="Create a Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -341,7 +341,7 @@ module ParameterFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Parameter_Range", Description="Create a range of Parameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parameter_Range", Description="Create a range of Parameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parameter_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

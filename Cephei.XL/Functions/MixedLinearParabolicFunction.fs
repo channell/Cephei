@@ -37,7 +37,7 @@ module MixedLinearParabolicFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module MixedLinearParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_derivative", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_derivative", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module MixedLinearParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_empty", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_empty", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module MixedLinearParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_primitive", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_primitive", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module MixedLinearParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_secondDerivative", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_secondDerivative", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module MixedLinearParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_update", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_update", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module MixedLinearParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_value1", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_value1", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module MixedLinearParabolicFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_value", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_value", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module MixedLinearParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_xMax", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_xMax", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module MixedLinearParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_xMin", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_xMin", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module MixedLinearParabolicFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_allowsExtrapolation", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_allowsExtrapolation", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module MixedLinearParabolicFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_disableExtrapolation", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_disableExtrapolation", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module MixedLinearParabolicFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_enableExtrapolation", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_enableExtrapolation", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module MixedLinearParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearParabolic_extrapolate", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_extrapolate", Description="Create a MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -629,7 +629,7 @@ module MixedLinearParabolicFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MixedLinearParabolic_Range", Description="Create a range of MixedLinearParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearParabolic_Range", Description="Create a range of MixedLinearParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearParabolic_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

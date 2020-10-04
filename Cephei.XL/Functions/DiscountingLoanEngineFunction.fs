@@ -38,7 +38,7 @@ module DiscountingLoanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscountingLoanEngine_discountCurve", Description="Create a DiscountingLoanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscountingLoanEngine_discountCurve", Description="Create a DiscountingLoanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingLoanEngine_discountCurve
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module DiscountingLoanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscountingLoanEngine", Description="Create a DiscountingLoanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscountingLoanEngine", Description="Create a DiscountingLoanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingLoanEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -114,7 +114,7 @@ module DiscountingLoanEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DiscountingLoanEngine_Range", Description="Create a range of DiscountingLoanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscountingLoanEngine_Range", Description="Create a range of DiscountingLoanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingLoanEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

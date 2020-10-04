@@ -37,7 +37,7 @@ module SpreadOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadOption", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module SpreadOptionFunction =
     (*
         greeks
     *)
-    [<ExcelFunction(Name="_SpreadOption_delta", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_delta", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_delta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module SpreadOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadOption_dividendRho", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_dividendRho", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_dividendRho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module SpreadOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadOption_gamma", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_gamma", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_gamma
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module SpreadOptionFunction =
     (*
         Instrument interface
     *)
-    [<ExcelFunction(Name="_SpreadOption_isExpired", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_isExpired", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module SpreadOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadOption_rho", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_rho", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_rho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module SpreadOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadOption_theta", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_theta", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_theta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module SpreadOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadOption_vega", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_vega", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_vega
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module SpreadOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadOption_exercise", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_exercise", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_exercise
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module SpreadOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadOption_payoff", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_payoff", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_payoff
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module SpreadOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadOption_CASH", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_CASH", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module SpreadOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadOption_errorEstimate", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_errorEstimate", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -488,7 +488,7 @@ module SpreadOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadOption_NPV", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_NPV", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module SpreadOptionFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_SpreadOption_result", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_result", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -566,7 +566,7 @@ module SpreadOptionFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_SpreadOption_setPricingEngine", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_setPricingEngine", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module SpreadOptionFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_SpreadOption_valuationDate", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_valuationDate", Description="Create a SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -641,7 +641,7 @@ module SpreadOptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SpreadOption_Range", Description="Create a range of SpreadOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadOption_Range", Description="Create a range of SpreadOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadOption_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

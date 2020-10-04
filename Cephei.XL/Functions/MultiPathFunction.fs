@@ -37,7 +37,7 @@ module MultiPathFunction =
     (*
         inspectors
     *)
-    [<ExcelFunction(Name="_MultiPath_assetNumber", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPath_assetNumber", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_assetNumber
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module MultiPathFunction =
     (*
         ICloneable interface
     *)
-    [<ExcelFunction(Name="_MultiPath_Clone", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPath_Clone", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_Clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module MultiPathFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiPath_length", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPath_length", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_length
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module MultiPathFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiPath2", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPath2", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module MultiPathFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiPath", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPath", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -225,7 +225,7 @@ module MultiPathFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiPath1", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPath1", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -256,7 +256,7 @@ module MultiPathFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiPath_pathSize", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPath_pathSize", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_pathSize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -292,7 +292,7 @@ module MultiPathFunction =
     (*
         read/write access to components
     *)
-    [<ExcelFunction(Name="_MultiPath_this", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPath_this", Description="Create a MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_this
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -331,7 +331,7 @@ module MultiPathFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MultiPath_Range", Description="Create a range of MultiPath",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPath_Range", Description="Create a range of MultiPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPath_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

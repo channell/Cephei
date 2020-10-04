@@ -37,7 +37,7 @@ module AnalyticPTDHestonEngineFunction =
     (*
         Simple to use constructor: Using adaptive Gauss-Lobatto integration and Gatheral's version of complex log. Be aware: using a too large number for maxEvaluations might result in a stack overflow as the Lobatto integration is a recursive algorithm.
     *)
-    [<ExcelFunction(Name="_AnalyticPTDHestonEngine", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticPTDHestonEngine", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticPTDHestonEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module AnalyticPTDHestonEngineFunction =
     (*
         Constructor using Laguerre integration and Gatheral's version of complex log.
     *)
-    [<ExcelFunction(Name="_AnalyticPTDHestonEngine1", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticPTDHestonEngine1", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticPTDHestonEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -131,7 +131,7 @@ module AnalyticPTDHestonEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_AnalyticPTDHestonEngine_setModel", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticPTDHestonEngine_setModel", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticPTDHestonEngine_setModel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -173,7 +173,7 @@ module AnalyticPTDHestonEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticPTDHestonEngine_registerWith", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticPTDHestonEngine_registerWith", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticPTDHestonEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -215,7 +215,7 @@ module AnalyticPTDHestonEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticPTDHestonEngine_reset", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticPTDHestonEngine_reset", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticPTDHestonEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -251,7 +251,7 @@ module AnalyticPTDHestonEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticPTDHestonEngine_unregisterWith", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticPTDHestonEngine_unregisterWith", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticPTDHestonEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -293,7 +293,7 @@ module AnalyticPTDHestonEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticPTDHestonEngine_update", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticPTDHestonEngine_update", Description="Create a AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticPTDHestonEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module AnalyticPTDHestonEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AnalyticPTDHestonEngine_Range", Description="Create a range of AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticPTDHestonEngine_Range", Description="Create a range of AnalyticPTDHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticPTDHestonEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

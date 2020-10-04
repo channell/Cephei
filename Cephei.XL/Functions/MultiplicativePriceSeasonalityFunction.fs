@@ -37,7 +37,7 @@ module MultiplicativePriceSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_correctYoYRate", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_correctYoYRate", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_correctYoYRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module MultiplicativePriceSeasonalityFunction =
     (*
         Seasonality interface
     *)
-    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_correctZeroRate", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_correctZeroRate", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_correctZeroRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module MultiplicativePriceSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_frequency", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_frequency", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_frequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module MultiplicativePriceSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_isConsistent", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_isConsistent", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_isConsistent
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module MultiplicativePriceSeasonalityFunction =
     (*
         Constructors
     *)
-    [<ExcelFunction(Name="_MultiplicativePriceSeasonality1", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiplicativePriceSeasonality1", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module MultiplicativePriceSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiplicativePriceSeasonality", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiplicativePriceSeasonality", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -303,7 +303,7 @@ module MultiplicativePriceSeasonalityFunction =
     (*
         ! inspectors
     *)
-    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_seasonalityBaseDate", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_seasonalityBaseDate", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_seasonalityBaseDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -339,7 +339,7 @@ module MultiplicativePriceSeasonalityFunction =
     (*
         ! The factor returned is NOT normalized relative to ANYTHING.
     *)
-    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_seasonalityFactor", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_seasonalityFactor", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_seasonalityFactor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -381,7 +381,7 @@ module MultiplicativePriceSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_seasonalityFactors", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_seasonalityFactors", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_seasonalityFactors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -417,7 +417,7 @@ module MultiplicativePriceSeasonalityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_set", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_set", Description="Create a MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_set
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -468,7 +468,7 @@ module MultiplicativePriceSeasonalityFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_Range", Description="Create a range of MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiplicativePriceSeasonality_Range", Description="Create a range of MultiplicativePriceSeasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiplicativePriceSeasonality_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

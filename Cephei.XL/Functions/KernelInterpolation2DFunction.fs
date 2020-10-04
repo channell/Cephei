@@ -37,7 +37,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_isInRange", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_isInRange", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_isInRange
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_locateX", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_locateX", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_locateX
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_locateY", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_locateY", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_locateY
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_update", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_update", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module KernelInterpolation2DFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_value1", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_value1", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_value", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_value", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_xMax", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_xMax", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_xMin", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_xMin", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -446,7 +446,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_xValues", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_xValues", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_xValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -482,7 +482,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_yMax", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_yMax", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_yMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_yMin", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_yMin", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_yMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_yValues", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_yValues", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_yValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -590,7 +590,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_zData", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_zData", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_zData
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -626,7 +626,7 @@ module KernelInterpolation2DFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_allowsExtrapolation", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_allowsExtrapolation", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -662,7 +662,7 @@ module KernelInterpolation2DFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_disableExtrapolation", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_disableExtrapolation", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -704,7 +704,7 @@ module KernelInterpolation2DFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_enableExtrapolation", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_enableExtrapolation", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -746,7 +746,7 @@ module KernelInterpolation2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KernelInterpolation2D_extrapolate", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_extrapolate", Description="Create a KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -779,7 +779,7 @@ module KernelInterpolation2DFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_KernelInterpolation2D_Range", Description="Create a range of KernelInterpolation2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KernelInterpolation2D_Range", Description="Create a range of KernelInterpolation2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KernelInterpolation2D_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

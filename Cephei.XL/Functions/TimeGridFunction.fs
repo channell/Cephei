@@ -37,7 +37,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid_closestIndex", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid_closestIndex", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_closestIndex
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid_closestTime", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid_closestTime", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_closestTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid_dt", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid_dt", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_dt
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -163,7 +163,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid_empty", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid_empty", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -199,7 +199,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid_First", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid_First", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_First
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -235,7 +235,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid_index", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid_index", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_index
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid_Last", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid_Last", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_Last
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid_mandatoryTimes", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid_mandatoryTimes", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_mandatoryTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -349,7 +349,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid_size", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid_size", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -385,7 +385,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid_this", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid_this", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_this
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -427,7 +427,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid3", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid3", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid2", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid2", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -519,7 +519,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid1", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid1", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -556,7 +556,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -599,7 +599,7 @@ module TimeGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeGrid_Times", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid_Times", Description="Create a TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_Times
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module TimeGridFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TimeGrid_Range", Description="Create a range of TimeGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeGrid_Range", Description="Create a range of TimeGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeGrid_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

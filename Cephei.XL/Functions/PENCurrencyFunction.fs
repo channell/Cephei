@@ -37,7 +37,7 @@ module PENCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PENCurrency", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module PENCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_PENCurrency_code", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_code", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module PENCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_PENCurrency_empty", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_empty", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module PENCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PENCurrency_Equals", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_Equals", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module PENCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_PENCurrency_format", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_format", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module PENCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_PENCurrency_fractionsPerUnit", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_fractionsPerUnit", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module PENCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_PENCurrency_fractionSymbol", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_fractionSymbol", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module PENCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_PENCurrency_name", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_name", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module PENCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_PENCurrency_numericCode", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_numericCode", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module PENCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_PENCurrency_rounding", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_rounding", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module PENCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_PENCurrency_symbol", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_symbol", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module PENCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PENCurrency_ToString", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_ToString", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module PENCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_PENCurrency_triangulationCurrency", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_triangulationCurrency", Description="Create a PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module PENCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PENCurrency_Range", Description="Create a range of PENCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PENCurrency_Range", Description="Create a range of PENCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PENCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

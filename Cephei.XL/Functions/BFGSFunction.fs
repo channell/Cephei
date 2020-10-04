@@ -37,7 +37,7 @@ module BFGSFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BFGS", Description="Create a BFGS",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BFGS", Description="Create a BFGS",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BFGS_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module BFGSFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BFGS_minimize", Description="Create a BFGS",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BFGS_minimize", Description="Create a BFGS",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BFGS_minimize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module BFGSFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BFGS_Range", Description="Create a range of BFGS",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BFGS_Range", Description="Create a range of BFGS",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BFGS_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

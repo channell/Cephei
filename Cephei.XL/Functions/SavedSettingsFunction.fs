@@ -37,7 +37,7 @@ module SavedSettingsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SavedSettings_Dispose", Description="Create a SavedSettings",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SavedSettings_Dispose", Description="Create a SavedSettings",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SavedSettings_Dispose
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module SavedSettingsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SavedSettings", Description="Create a SavedSettings",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SavedSettings", Description="Create a SavedSettings",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SavedSettings_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -101,7 +101,7 @@ module SavedSettingsFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SavedSettings_Range", Description="Create a range of SavedSettings",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SavedSettings_Range", Description="Create a range of SavedSettings",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SavedSettings_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

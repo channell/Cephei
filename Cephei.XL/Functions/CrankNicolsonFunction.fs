@@ -37,7 +37,7 @@ module CrankNicolsonFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_CrankNicolson", Description="Create a CrankNicolson",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolson", Description="Create a CrankNicolson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolson_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module CrankNicolsonFunction =
     (*
         constructors
     *)
-    [<ExcelFunction(Name="_CrankNicolson1", Description="Create a CrankNicolson",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolson1", Description="Create a CrankNicolson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolson_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module CrankNicolsonFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CrankNicolson_factory", Description="Create a CrankNicolson",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolson_factory", Description="Create a CrankNicolson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolson_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -165,7 +165,7 @@ module CrankNicolsonFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CrankNicolson_setStep", Description="Create a CrankNicolson",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolson_setStep", Description="Create a CrankNicolson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolson_setStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module CrankNicolsonFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CrankNicolson_step", Description="Create a CrankNicolson",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolson_step", Description="Create a CrankNicolson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolson_step
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -258,7 +258,7 @@ module CrankNicolsonFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CrankNicolson_Range", Description="Create a range of CrankNicolson",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolson_Range", Description="Create a range of CrankNicolson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolson_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

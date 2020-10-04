@@ -38,7 +38,7 @@ module equal_on_firstFunction =
         
     *)
     (*!! duplicate equals function
-    [<ExcelFunction(Name="_equal_on_first_Equals", Description="Create a equal_on_first",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_equal_on_first_Equals", Description="Create a equal_on_first",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let equal_on_first_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -84,7 +84,7 @@ module equal_on_firstFunction =
         else
             "<WIZ>"
             *)
-    [<ExcelFunction(Name="_equal_on_first_Range", Description="Create a range of equal_on_first",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_equal_on_first_Range", Description="Create a range of equal_on_first",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let equal_on_first_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module LineSearchBasedMethodFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LineSearchBasedMethod", Description="Create a LineSearchBasedMethod",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LineSearchBasedMethod", Description="Create a LineSearchBasedMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LineSearchBasedMethod_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module LineSearchBasedMethodFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LineSearchBasedMethod_minimize", Description="Create a LineSearchBasedMethod",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LineSearchBasedMethod_minimize", Description="Create a LineSearchBasedMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LineSearchBasedMethod_minimize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module LineSearchBasedMethodFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LineSearchBasedMethod_Range", Description="Create a range of LineSearchBasedMethod",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LineSearchBasedMethod_Range", Description="Create a range of LineSearchBasedMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LineSearchBasedMethod_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

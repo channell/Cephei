@@ -37,7 +37,7 @@ module CubicNaturalSplineFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module CubicNaturalSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_aCoefficients", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_aCoefficients", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_aCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module CubicNaturalSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_bCoefficients", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_bCoefficients", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_bCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module CubicNaturalSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_cCoefficients", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_cCoefficients", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_cCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module CubicNaturalSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_derivative", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_derivative", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module CubicNaturalSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_empty", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_empty", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module CubicNaturalSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_primitive", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_primitive", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module CubicNaturalSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_secondDerivative", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_secondDerivative", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module CubicNaturalSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_update", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_update", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module CubicNaturalSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_value1", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_value1", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -458,7 +458,7 @@ module CubicNaturalSplineFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_value", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_value", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module CubicNaturalSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_xMax", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_xMax", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -536,7 +536,7 @@ module CubicNaturalSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_xMin", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_xMin", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -572,7 +572,7 @@ module CubicNaturalSplineFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_allowsExtrapolation", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_allowsExtrapolation", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module CubicNaturalSplineFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_disableExtrapolation", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_disableExtrapolation", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module CubicNaturalSplineFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_enableExtrapolation", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_enableExtrapolation", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module CubicNaturalSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CubicNaturalSpline_extrapolate", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_extrapolate", Description="Create a CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -725,7 +725,7 @@ module CubicNaturalSplineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CubicNaturalSpline_Range", Description="Create a range of CubicNaturalSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CubicNaturalSpline_Range", Description="Create a range of CubicNaturalSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicNaturalSpline_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module PositiveConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PositiveConstraint", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PositiveConstraint", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module PositiveConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PositiveConstraint_empty", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PositiveConstraint_empty", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module PositiveConstraintFunction =
     (*
         ! Returns lower bound for given parameters
     *)
-    [<ExcelFunction(Name="_PositiveConstraint_lowerBound", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PositiveConstraint_lowerBound", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_lowerBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module PositiveConstraintFunction =
     (*
         ! Tests if params satisfy the constraint
     *)
-    [<ExcelFunction(Name="_PositiveConstraint_test", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PositiveConstraint_test", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_test
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module PositiveConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PositiveConstraint_update", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PositiveConstraint_update", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module PositiveConstraintFunction =
     (*
         ! Returns upper bound for given parameters
     *)
-    [<ExcelFunction(Name="_PositiveConstraint_upperBound", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PositiveConstraint_upperBound", Description="Create a PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_upperBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -281,7 +281,7 @@ module PositiveConstraintFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PositiveConstraint_Range", Description="Create a range of PositiveConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PositiveConstraint_Range", Description="Create a range of PositiveConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PositiveConstraint_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

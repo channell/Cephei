@@ -38,7 +38,7 @@ module ExchangeRateManagerFunction =
         
     *)
     (*!! duplicate add function 
-    [<ExcelFunction(Name="_ExchangeRateManager_add", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExchangeRateManager_add", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -88,7 +88,7 @@ module ExchangeRateManagerFunction =
         
     *)
     (*!! duplicate add function
-    [<ExcelFunction(Name="_ExchangeRateManager_add", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExchangeRateManager_add", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -131,7 +131,7 @@ module ExchangeRateManagerFunction =
     (*
         remove the added exchange rates
     *)
-    [<ExcelFunction(Name="_ExchangeRateManager_clear", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExchangeRateManager_clear", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_clear
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -167,7 +167,7 @@ module ExchangeRateManagerFunction =
     (*
         Lookup the exchange rate between two currencies at a given date.  If the given type is Direct, only direct exchange rates will be returned if available; if Derived, direct rates are still preferred but derived rates are allowed. if two or more exchange-rate chains are possible which allow to specify a requested rate, it is unspecified which one is returned.
     *)
-    [<ExcelFunction(Name="_ExchangeRateManager_lookup", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExchangeRateManager_lookup", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_lookup
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -227,7 +227,7 @@ module ExchangeRateManagerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ExchangeRateManager_lookup", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExchangeRateManager_lookup", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_lookup
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -281,7 +281,7 @@ module ExchangeRateManagerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ExchangeRateManager_lookup", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExchangeRateManager_lookup", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_lookup
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module ExchangeRateManagerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ExchangeRateManager_Range", Description="Create a range of ExchangeRateManager",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExchangeRateManager_Range", Description="Create a range of ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module ArmijoLineSearchFunction =
     (*
         ! Default constructor
     *)
-    [<ExcelFunction(Name="_ArmijoLineSearch1", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch1", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module ArmijoLineSearchFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ArmijoLineSearch", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module ArmijoLineSearchFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ArmijoLineSearch3", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch3", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -148,7 +148,7 @@ module ArmijoLineSearchFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ArmijoLineSearch2", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch2", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -197,7 +197,7 @@ module ArmijoLineSearchFunction =
     (*
         ! Perform line search
     *)
-    [<ExcelFunction(Name="_ArmijoLineSearch_value", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch_value", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -257,7 +257,7 @@ module ArmijoLineSearchFunction =
     (*
         ! return last cost function value
     *)
-    [<ExcelFunction(Name="_ArmijoLineSearch_lastFunctionValue", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch_lastFunctionValue", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_lastFunctionValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -293,7 +293,7 @@ module ArmijoLineSearchFunction =
     (*
         ! return last gradient
     *)
-    [<ExcelFunction(Name="_ArmijoLineSearch_lastGradient", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch_lastGradient", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_lastGradient
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -329,7 +329,7 @@ module ArmijoLineSearchFunction =
     (*
         ! return square norm of last gradient
     *)
-    [<ExcelFunction(Name="_ArmijoLineSearch_lastGradientNorm2", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch_lastGradientNorm2", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_lastGradientNorm2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -365,7 +365,7 @@ module ArmijoLineSearchFunction =
     (*
         ! return last x value
     *)
-    [<ExcelFunction(Name="_ArmijoLineSearch_lastX", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch_lastX", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_lastX
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -401,7 +401,7 @@ module ArmijoLineSearchFunction =
     (*
         ! current value of the search direction
     *)
-    [<ExcelFunction(Name="_ArmijoLineSearch_searchDirection", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch_searchDirection", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_searchDirection
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -437,7 +437,7 @@ module ArmijoLineSearchFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ArmijoLineSearch_succeed", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch_succeed", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_succeed
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -473,7 +473,7 @@ module ArmijoLineSearchFunction =
     (*
         initial value of line-search step
     *)
-    [<ExcelFunction(Name="_ArmijoLineSearch_update", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch_update", Description="Create a ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -530,7 +530,7 @@ module ArmijoLineSearchFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ArmijoLineSearch_Range", Description="Create a range of ArmijoLineSearch",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArmijoLineSearch_Range", Description="Create a range of ArmijoLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArmijoLineSearch_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

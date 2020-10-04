@@ -38,7 +38,7 @@ module LinearLeastSquaresRegressionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearLeastSquaresRegression_coefficients", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearLeastSquaresRegression_coefficients", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_coefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -76,7 +76,7 @@ module LinearLeastSquaresRegressionFunction =
         ! modeling uncertainty as definied in Numerical Recipes
     *)
     (*!! ommited 
-    [<ExcelFunction(Name="_LinearLeastSquaresRegression_error", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearLeastSquaresRegression_error", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_error
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -113,7 +113,7 @@ module LinearLeastSquaresRegressionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearLeastSquaresRegression", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearLeastSquaresRegression", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -163,7 +163,7 @@ module LinearLeastSquaresRegressionFunction =
         
     *)
     (*!! ommited 
-    [<ExcelFunction(Name="_LinearLeastSquaresRegression_residuals", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearLeastSquaresRegression_residuals", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_residuals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -201,7 +201,7 @@ module LinearLeastSquaresRegressionFunction =
         ! standard parameter errors as given by Excel, R etc.
     *)
     (*!! omitted
-    [<ExcelFunction(Name="_LinearLeastSquaresRegression_standardErrors", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearLeastSquaresRegression_standardErrors", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_standardErrors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -235,7 +235,7 @@ module LinearLeastSquaresRegressionFunction =
         else
             "<WIZ>"
             *)
-    [<ExcelFunction(Name="_LinearLeastSquaresRegression_Range", Description="Create a range of LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearLeastSquaresRegression_Range", Description="Create a range of LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

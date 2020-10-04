@@ -37,7 +37,7 @@ module CrankNicolsonSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CrankNicolsonScheme", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolsonScheme", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module CrankNicolsonSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CrankNicolsonScheme1", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolsonScheme1", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -129,7 +129,7 @@ module CrankNicolsonSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CrankNicolsonScheme_factory", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolsonScheme_factory", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module CrankNicolsonSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CrankNicolsonScheme_numberOfIterations", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolsonScheme_numberOfIterations", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_numberOfIterations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module CrankNicolsonSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CrankNicolsonScheme_setStep", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolsonScheme_setStep", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_setStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -261,7 +261,7 @@ module CrankNicolsonSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CrankNicolsonScheme_step", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolsonScheme_step", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_step
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -312,7 +312,7 @@ module CrankNicolsonSchemeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CrankNicolsonScheme_Range", Description="Create a range of CrankNicolsonScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CrankNicolsonScheme_Range", Description="Create a range of CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

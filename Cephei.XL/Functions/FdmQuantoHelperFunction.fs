@@ -37,7 +37,7 @@ module FdmQuantoHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmQuantoHelper_equityFxCorrelation", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmQuantoHelper_equityFxCorrelation", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmQuantoHelper_equityFxCorrelation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module FdmQuantoHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmQuantoHelper_exchRateATMlevel", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmQuantoHelper_exchRateATMlevel", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmQuantoHelper_exchRateATMlevel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module FdmQuantoHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmQuantoHelper", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmQuantoHelper", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmQuantoHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module FdmQuantoHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmQuantoHelper_foreignTermStructure", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmQuantoHelper_foreignTermStructure", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmQuantoHelper_foreignTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module FdmQuantoHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmQuantoHelper_fxVolatilityTermStructure", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmQuantoHelper_fxVolatilityTermStructure", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmQuantoHelper_fxVolatilityTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module FdmQuantoHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmQuantoHelper_quantoAdjustment1", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmQuantoHelper_quantoAdjustment1", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmQuantoHelper_quantoAdjustment1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -296,7 +296,7 @@ module FdmQuantoHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmQuantoHelper_quantoAdjustment", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmQuantoHelper_quantoAdjustment", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmQuantoHelper_quantoAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -350,7 +350,7 @@ module FdmQuantoHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmQuantoHelper_registerWith", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmQuantoHelper_registerWith", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmQuantoHelper_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -392,7 +392,7 @@ module FdmQuantoHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmQuantoHelper_riskFreeTermStructure", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmQuantoHelper_riskFreeTermStructure", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmQuantoHelper_riskFreeTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module FdmQuantoHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmQuantoHelper_unregisterWith", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmQuantoHelper_unregisterWith", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmQuantoHelper_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module FdmQuantoHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmQuantoHelper_update", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmQuantoHelper_update", Description="Create a FdmQuantoHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmQuantoHelper_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module FdmQuantoHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmQuantoHelper_Range", Description="Create a range of FdmQuantoHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmQuantoHelper_Range", Description="Create a range of FdmQuantoHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmQuantoHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

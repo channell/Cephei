@@ -37,7 +37,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_logGrid", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_logGrid", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_logGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_logGridArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_logGridArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_logGridArray
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_dx", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_dx", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_dx
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_dxArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_dxArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_dxArray
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_dxm", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_dxm", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_dxm
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_dxmArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_dxmArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_dxmArray
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_dxp", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_dxp", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_dxp
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -350,7 +350,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_dxpArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_dxpArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_dxpArray
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_grid", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_grid", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_gridArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_gridArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_gridArray
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -464,7 +464,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_size", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_size", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_transformedGrid", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_transformedGrid", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_transformedGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module LogGridFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LogGrid_transformedGridArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_transformedGridArray", Description="Create a LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_transformedGridArray
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -575,7 +575,7 @@ module LogGridFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LogGrid_Range", Description="Create a range of LogGrid",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LogGrid_Range", Description="Create a range of LogGrid",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogGrid_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

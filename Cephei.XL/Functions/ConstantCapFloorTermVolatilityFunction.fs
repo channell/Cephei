@@ -37,7 +37,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         fixed reference date, fixed market data
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility1", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility1", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! floating reference date, fixed market data
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility2", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility2", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! fixed reference date, floating market data
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility3", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility3", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -220,7 +220,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! floating reference date, floating market data
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -281,7 +281,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_maxDate", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_maxDate", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -317,7 +317,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_maxStrike", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_maxStrike", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -353,7 +353,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_minStrike", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_minStrike", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -389,7 +389,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! returns the volatility for a given cap/floor length and strike rate
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_volatility", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_volatility", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -443,7 +443,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! returns the volatility for a given end time and strike rate
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_volatility1", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_volatility1", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_volatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -497,7 +497,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_volatility2", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_volatility2", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_volatility2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -551,7 +551,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! the business day convention used in tenor to date conversion
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_businessDayConvention", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_businessDayConvention", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -587,7 +587,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! period/date conversion
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_optionDateFromTenor", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_optionDateFromTenor", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_optionDateFromTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -629,7 +629,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_calendar", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_calendar", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -665,7 +665,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! the day counter used for date/time conversion
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_dayCounter", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_dayCounter", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -701,7 +701,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_maxTime", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_maxTime", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -737,7 +737,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! the date at which discount = 1.0 and/or variance = 0.0
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_referenceDate", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_referenceDate", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -773,7 +773,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_settlementDays", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_settlementDays", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -809,7 +809,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_timeFromReference", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_timeFromReference", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -851,7 +851,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         observer interface
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_update", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_update", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -887,7 +887,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_allowsExtrapolation", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_allowsExtrapolation", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -923,7 +923,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_disableExtrapolation", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_disableExtrapolation", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -965,7 +965,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_enableExtrapolation", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_enableExtrapolation", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1007,7 +1007,7 @@ module ConstantCapFloorTermVolatilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_extrapolate", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_extrapolate", Description="Create a ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1040,7 +1040,7 @@ module ConstantCapFloorTermVolatilityFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_Range", Description="Create a range of ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantCapFloorTermVolatility_Range", Description="Create a range of ConstantCapFloorTermVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCapFloorTermVolatility_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

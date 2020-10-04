@@ -37,7 +37,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor3651", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor3651", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module Euribor365Function =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Euribor365_businessDayConvention", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_businessDayConvention", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module Euribor365Function =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_Euribor365_clone", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_clone", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -195,7 +195,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_endOfMonth", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_endOfMonth", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -231,7 +231,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_forecastFixing1", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_forecastFixing1", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_forecastFixing", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_forecastFixing", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -327,7 +327,7 @@ module Euribor365Function =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_Euribor365_forwardingTermStructure", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_forwardingTermStructure", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -363,7 +363,7 @@ module Euribor365Function =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_Euribor365_maturityDate", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_maturityDate", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -405,7 +405,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_currency", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_currency", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -441,7 +441,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_dayCounter", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_dayCounter", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -477,7 +477,7 @@ module Euribor365Function =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Euribor365_familyName", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_familyName", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -513,7 +513,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_fixing", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_fixing", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -561,7 +561,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_fixingCalendar", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_fixingCalendar", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -597,7 +597,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_fixingDate", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_fixingDate", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -639,7 +639,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_fixingDays", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_fixingDays", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -675,7 +675,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_isValidFixingDate", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_isValidFixingDate", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -717,7 +717,7 @@ module Euribor365Function =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_Euribor365_name", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_name", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -753,7 +753,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_pastFixing", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_pastFixing", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -795,7 +795,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_tenor", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_tenor", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -831,7 +831,7 @@ module Euribor365Function =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_Euribor365_update", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_update", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -867,7 +867,7 @@ module Euribor365Function =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_Euribor365_valueDate", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_valueDate", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -909,7 +909,7 @@ module Euribor365Function =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Euribor365_addFixing", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_addFixing", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -963,7 +963,7 @@ module Euribor365Function =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Euribor365_addFixings", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_addFixings", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1017,7 +1017,7 @@ module Euribor365Function =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Euribor365_addFixings1", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_addFixings1", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1065,7 +1065,7 @@ module Euribor365Function =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_Euribor365_allowsNativeFixings", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_allowsNativeFixings", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1101,7 +1101,7 @@ module Euribor365Function =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_Euribor365_clearFixings", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_clearFixings", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1137,7 +1137,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_registerWith", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_registerWith", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1179,7 +1179,7 @@ module Euribor365Function =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_Euribor365_timeSeries", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_timeSeries", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1215,7 +1215,7 @@ module Euribor365Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Euribor365_unregisterWith", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_unregisterWith", Description="Create a Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1254,7 +1254,7 @@ module Euribor365Function =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Euribor365_Range", Description="Create a range of Euribor365",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Euribor365_Range", Description="Create a range of Euribor365",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor365_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module CPICapFloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICapFloor", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module CPICapFloorFunction =
     (*
         ! when you fix - but remember that there is an observation interpolation factor as well
     *)
-    [<ExcelFunction(Name="_CPICapFloor_fixingDate", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_fixingDate", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module CPICapFloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICapFloor_inflationIndex", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_inflationIndex", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_inflationIndex
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module CPICapFloorFunction =
     (*
         Instrument interface
     *)
-    [<ExcelFunction(Name="_CPICapFloor_isExpired", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_isExpired", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module CPICapFloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICapFloor_nominal", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_nominal", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -302,7 +302,7 @@ module CPICapFloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICapFloor_observationLag", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_observationLag", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_observationLag
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -338,7 +338,7 @@ module CPICapFloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICapFloor_payDate", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_payDate", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_payDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module CPICapFloorFunction =
     (*
         ! \f$ K \f$ in the above formula.
     *)
-    [<ExcelFunction(Name="_CPICapFloor_strike", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_strike", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_strike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module CPICapFloorFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_CPICapFloor_type", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_type", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -446,7 +446,7 @@ module CPICapFloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICapFloor_CASH", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_CASH", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -482,7 +482,7 @@ module CPICapFloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICapFloor_errorEstimate", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_errorEstimate", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module CPICapFloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CPICapFloor_NPV", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_NPV", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module CPICapFloorFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_CPICapFloor_result", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_result", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module CPICapFloorFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_CPICapFloor_setPricingEngine", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_setPricingEngine", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -638,7 +638,7 @@ module CPICapFloorFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_CPICapFloor_valuationDate", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_valuationDate", Description="Create a CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -671,7 +671,7 @@ module CPICapFloorFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CPICapFloor_Range", Description="Create a range of CPICapFloor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CPICapFloor_Range", Description="Create a range of CPICapFloor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICapFloor_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

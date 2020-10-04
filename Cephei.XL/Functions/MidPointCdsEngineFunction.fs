@@ -38,7 +38,7 @@ module MidPointCdsEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MidPointCdsEngine", Description="Create a MidPointCdsEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MidPointCdsEngine", Description="Create a MidPointCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MidPointCdsEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -90,7 +90,7 @@ module MidPointCdsEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MidPointCdsEngine_Range", Description="Create a range of MidPointCdsEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MidPointCdsEngine_Range", Description="Create a range of MidPointCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MidPointCdsEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

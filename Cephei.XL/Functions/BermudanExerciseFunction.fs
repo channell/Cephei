@@ -37,7 +37,7 @@ module BermudanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BermudanExercise", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BermudanExercise", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module BermudanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BermudanExercise1", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BermudanExercise1", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module BermudanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BermudanExercise_payoffAtExpiry", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BermudanExercise_payoffAtExpiry", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_payoffAtExpiry
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module BermudanExerciseFunction =
     (*
         inspectors
     *)
-    [<ExcelFunction(Name="_BermudanExercise_date", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BermudanExercise_date", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -195,7 +195,7 @@ module BermudanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BermudanExercise_dates", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BermudanExercise_dates", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_dates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -231,7 +231,7 @@ module BermudanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BermudanExercise_lastDate", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BermudanExercise_lastDate", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_lastDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -267,7 +267,7 @@ module BermudanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BermudanExercise_type", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BermudanExercise_type", Description="Create a BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -300,7 +300,7 @@ module BermudanExerciseFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BermudanExercise_Range", Description="Create a range of BermudanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BermudanExercise_Range", Description="Create a range of BermudanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BermudanExercise_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

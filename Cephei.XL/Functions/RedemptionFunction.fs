@@ -37,7 +37,7 @@ module RedemptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Redemption", Description="Create a Redemption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Redemption", Description="Create a Redemption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Redemption_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module RedemptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Redemption_amount", Description="Create a Redemption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Redemption_amount", Description="Create a Redemption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Redemption_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module RedemptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Redemption_date", Description="Create a Redemption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Redemption_date", Description="Create a Redemption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Redemption_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module RedemptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Redemption_CompareTo", Description="Create a Redemption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Redemption_CompareTo", Description="Create a Redemption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Redemption_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module RedemptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Redemption_Equals", Description="Create a Redemption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Redemption_Equals", Description="Create a Redemption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Redemption_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module RedemptionFunction =
     (*
         ! returns the date that the cash flow trades exCoupon
     *)
-    [<ExcelFunction(Name="_Redemption_exCouponDate", Description="Create a Redemption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Redemption_exCouponDate", Description="Create a Redemption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Redemption_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module RedemptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Redemption_hasOccurred", Description="Create a Redemption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Redemption_hasOccurred", Description="Create a Redemption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Redemption_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module RedemptionFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_Redemption_tradingExCoupon", Description="Create a Redemption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Redemption_tradingExCoupon", Description="Create a Redemption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Redemption_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module RedemptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Redemption_accept", Description="Create a Redemption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Redemption_accept", Description="Create a Redemption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Redemption_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module RedemptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Redemption_registerWith", Description="Create a Redemption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Redemption_registerWith", Description="Create a Redemption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Redemption_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -446,7 +446,7 @@ module RedemptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Redemption_unregisterWith", Description="Create a Redemption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Redemption_unregisterWith", Description="Create a Redemption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Redemption_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -485,7 +485,7 @@ module RedemptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Redemption_Range", Description="Create a range of Redemption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Redemption_Range", Description="Create a range of Redemption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Redemption_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

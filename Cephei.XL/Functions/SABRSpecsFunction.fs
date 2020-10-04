@@ -37,7 +37,7 @@ module SABRSpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABRSpecs_defaultValues", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRSpecs_defaultValues", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_defaultValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -103,7 +103,7 @@ module SABRSpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABRSpecs_dilationFactor", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRSpecs_dilationFactor", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_dilationFactor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -139,7 +139,7 @@ module SABRSpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABRSpecs_dimension", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRSpecs_dimension", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_dimension
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -175,7 +175,7 @@ module SABRSpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABRSpecs_direct", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRSpecs_direct", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_direct
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -235,7 +235,7 @@ module SABRSpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABRSpecs_eps1", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRSpecs_eps1", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_eps1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -271,7 +271,7 @@ module SABRSpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABRSpecs_eps2", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRSpecs_eps2", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_eps2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -307,7 +307,7 @@ module SABRSpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABRSpecs_guess", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRSpecs_guess", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_guess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -379,7 +379,7 @@ module SABRSpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABRSpecs_instance", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRSpecs_instance", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_instance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -439,7 +439,7 @@ module SABRSpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABRSpecs_inverse", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRSpecs_inverse", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_inverse
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -499,7 +499,7 @@ module SABRSpecsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABRSpecs_weight", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRSpecs_weight", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_weight
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -556,7 +556,7 @@ module SABRSpecsFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SABRSpecs_Range", Description="Create a range of SABRSpecs",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRSpecs_Range", Description="Create a range of SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

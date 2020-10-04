@@ -37,7 +37,7 @@ module BinomialVanillaEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BinomialVanillaEngine", Description="Create a BinomialVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BinomialVanillaEngine", Description="Create a BinomialVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialVanillaEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -78,7 +78,7 @@ module BinomialVanillaEngineFunction =
         else
             "<WIZ>"
 
-    [<ExcelFunction(Name="_BinomialVanillaEngine_Range", Description="Create a range of BinomialVanillaEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BinomialVanillaEngine_Range", Description="Create a range of BinomialVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialVanillaEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

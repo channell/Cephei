@@ -38,7 +38,7 @@ module FDEngineAdapterFunction =
     (*
         public FDEngineAdapter(GeneralizedBlackScholesProcess process, Size timeSteps=100, Size gridPoints=100, bool timeDependent = false)
     *)
-    [<ExcelFunction(Name="_FDEngineAdapter", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDEngineAdapter", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEngineAdapter_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -93,7 +93,7 @@ module FDEngineAdapterFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_FDEngineAdapter1", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDEngineAdapter1", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEngineAdapter_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -124,7 +124,7 @@ module FDEngineAdapterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDEngineAdapter_registerWith", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDEngineAdapter_registerWith", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEngineAdapter_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -166,7 +166,7 @@ module FDEngineAdapterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDEngineAdapter_reset", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDEngineAdapter_reset", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEngineAdapter_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -202,7 +202,7 @@ module FDEngineAdapterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDEngineAdapter_unregisterWith", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDEngineAdapter_unregisterWith", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEngineAdapter_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -244,7 +244,7 @@ module FDEngineAdapterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDEngineAdapter_update", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDEngineAdapter_update", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEngineAdapter_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -280,7 +280,7 @@ module FDEngineAdapterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDEngineAdapter_ensureStrikeInGrid", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDEngineAdapter_ensureStrikeInGrid", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEngineAdapter_ensureStrikeInGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -316,7 +316,7 @@ module FDEngineAdapterFunction =
     (*
         this should be defined as new in each deriving class which use template iheritance in order to return a proper class to wrap
     *)
-    [<ExcelFunction(Name="_FDEngineAdapter_factory", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDEngineAdapter_factory", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEngineAdapter_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -376,7 +376,7 @@ module FDEngineAdapterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDEngineAdapter_getResidualTime", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDEngineAdapter_getResidualTime", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEngineAdapter_getResidualTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -412,7 +412,7 @@ module FDEngineAdapterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDEngineAdapter_grid", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDEngineAdapter_grid", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEngineAdapter_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -448,7 +448,7 @@ module FDEngineAdapterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDEngineAdapter_intrinsicValues_", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDEngineAdapter_intrinsicValues_", Description="Create a FDEngineAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEngineAdapter_intrinsicValues_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -481,7 +481,7 @@ module FDEngineAdapterFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FDEngineAdapter_Range", Description="Create a range of FDEngineAdapter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDEngineAdapter_Range", Description="Create a range of FDEngineAdapter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEngineAdapter_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

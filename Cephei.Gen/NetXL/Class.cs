@@ -115,7 +115,7 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("\",Category=\"Cephei\", IsThreadSafe = true, IsExceptionSafe=true)>]\r\n    let ");
+            this.Write("\",Category=\"Cephei\", IsThreadSafe = false, IsExceptionSafe=true)>]\r\n    let ");
             
             #line 56 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
@@ -169,7 +169,7 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("\",Category=\"Cephei\", IsThreadSafe = true, IsExceptionSafe=true)>]\r\n    let ");
+            this.Write("\",Category=\"Cephei\", IsThreadSafe = false, IsExceptionSafe=true)>]\r\n    let ");
             
             #line 68 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
@@ -983,7 +983,7 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("\",Category=\"Cephei\", IsThreadSafe = true, IsExceptionSafe=true)>]\r\n    let ");
+            this.Write("\",Category=\"Cephei\", IsThreadSafe = false, IsExceptionSafe=true)>]\r\n    let ");
             
             #line 332 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));

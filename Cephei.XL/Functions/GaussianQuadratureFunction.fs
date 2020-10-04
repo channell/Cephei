@@ -37,7 +37,7 @@ module GaussianQuadratureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussianQuadrature", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussianQuadrature", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianQuadrature_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module GaussianQuadratureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussianQuadrature_order", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussianQuadrature_order", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianQuadrature_order
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module GaussianQuadratureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussianQuadrature_value", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussianQuadrature_value", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianQuadrature_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module GaussianQuadratureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussianQuadrature_weights", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussianQuadrature_weights", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianQuadrature_weights
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module GaussianQuadratureFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussianQuadrature_x", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussianQuadrature_x", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianQuadrature_x
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -227,7 +227,7 @@ module GaussianQuadratureFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GaussianQuadrature_Range", Description="Create a range of GaussianQuadrature",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussianQuadrature_Range", Description="Create a range of GaussianQuadrature",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianQuadrature_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

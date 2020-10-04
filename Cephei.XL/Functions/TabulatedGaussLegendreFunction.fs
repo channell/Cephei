@@ -37,7 +37,7 @@ module TabulatedGaussLegendreFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TabulatedGaussLegendre_order", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TabulatedGaussLegendre_order", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TabulatedGaussLegendre_order
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module TabulatedGaussLegendreFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TabulatedGaussLegendre_order1", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TabulatedGaussLegendre_order1", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TabulatedGaussLegendre_order1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module TabulatedGaussLegendreFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TabulatedGaussLegendre", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TabulatedGaussLegendre", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TabulatedGaussLegendre_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module TabulatedGaussLegendreFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TabulatedGaussLegendre_value", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TabulatedGaussLegendre_value", Description="Create a TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TabulatedGaussLegendre_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -191,7 +191,7 @@ module TabulatedGaussLegendreFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TabulatedGaussLegendre_Range", Description="Create a range of TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TabulatedGaussLegendre_Range", Description="Create a range of TabulatedGaussLegendre",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TabulatedGaussLegendre_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

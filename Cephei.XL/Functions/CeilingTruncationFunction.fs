@@ -39,7 +39,7 @@ module CeilingTruncationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CeilingTruncation", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CeilingTruncation", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -82,7 +82,7 @@ module CeilingTruncationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CeilingTruncation1", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CeilingTruncation1", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module CeilingTruncationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CeilingTruncation_Digit", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CeilingTruncation_Digit", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_Digit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -155,7 +155,7 @@ module CeilingTruncationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CeilingTruncation_getType", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CeilingTruncation_getType", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_getType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -191,7 +191,7 @@ module CeilingTruncationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CeilingTruncation_Precision", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CeilingTruncation_Precision", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_Precision
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -227,7 +227,7 @@ module CeilingTruncationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CeilingTruncation_Round", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CeilingTruncation_Round", Description="Create a CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_Round
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module CeilingTruncationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CeilingTruncation_Range", Description="Create a range of CeilingTruncation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CeilingTruncation_Range", Description="Create a range of CeilingTruncation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CeilingTruncation_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

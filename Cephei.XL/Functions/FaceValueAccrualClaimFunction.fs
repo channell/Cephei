@@ -37,7 +37,7 @@ module FaceValueAccrualClaimFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FaceValueAccrualClaim_amount", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FaceValueAccrualClaim_amount", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueAccrualClaim_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module FaceValueAccrualClaimFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FaceValueAccrualClaim", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FaceValueAccrualClaim", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueAccrualClaim_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module FaceValueAccrualClaimFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FaceValueAccrualClaim_registerWith", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FaceValueAccrualClaim_registerWith", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueAccrualClaim_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module FaceValueAccrualClaimFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FaceValueAccrualClaim_unregisterWith", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FaceValueAccrualClaim_unregisterWith", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueAccrualClaim_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -212,7 +212,7 @@ module FaceValueAccrualClaimFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FaceValueAccrualClaim_update", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FaceValueAccrualClaim_update", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueAccrualClaim_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -245,7 +245,7 @@ module FaceValueAccrualClaimFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FaceValueAccrualClaim_Range", Description="Create a range of FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FaceValueAccrualClaim_Range", Description="Create a range of FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueAccrualClaim_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

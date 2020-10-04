@@ -37,7 +37,7 @@ module SABRWrapperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABRWrapper", Description="Create a SABRWrapper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRWrapper", Description="Create a SABRWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRWrapper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module SABRWrapperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SABRWrapper_volatility", Description="Create a SABRWrapper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRWrapper_volatility", Description="Create a SABRWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRWrapper_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -131,7 +131,7 @@ module SABRWrapperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SABRWrapper_Range", Description="Create a range of SABRWrapper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SABRWrapper_Range", Description="Create a range of SABRWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRWrapper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

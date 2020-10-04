@@ -37,7 +37,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module FedFundsFunction =
     (*
         ! returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_FedFunds_clone", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_clone", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module FedFundsFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_FedFunds_businessDayConvention", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_businessDayConvention", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_endOfMonth", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_endOfMonth", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_forecastFixing1", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_forecastFixing1", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_forecastFixing", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_forecastFixing", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module FedFundsFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_FedFunds_forwardingTermStructure", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_forwardingTermStructure", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module FedFundsFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_FedFunds_maturityDate", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_maturityDate", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_currency", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_currency", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_dayCounter", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_dayCounter", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module FedFundsFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_FedFunds_familyName", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_familyName", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_fixing", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_fixing", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_fixingCalendar", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_fixingCalendar", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_fixingDate", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_fixingDate", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_fixingDays", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_fixingDays", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_isValidFixingDate", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_isValidFixingDate", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -674,7 +674,7 @@ module FedFundsFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_FedFunds_name", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_name", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -710,7 +710,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_pastFixing", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_pastFixing", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -752,7 +752,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_tenor", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_tenor", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -788,7 +788,7 @@ module FedFundsFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_FedFunds_update", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_update", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -824,7 +824,7 @@ module FedFundsFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_FedFunds_valueDate", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_valueDate", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -866,7 +866,7 @@ module FedFundsFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_FedFunds_addFixing", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_addFixing", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -920,7 +920,7 @@ module FedFundsFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_FedFunds_addFixings", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_addFixings", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -974,7 +974,7 @@ module FedFundsFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_FedFunds_addFixings1", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_addFixings1", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1022,7 +1022,7 @@ module FedFundsFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_FedFunds_allowsNativeFixings", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_allowsNativeFixings", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1058,7 +1058,7 @@ module FedFundsFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_FedFunds_clearFixings", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_clearFixings", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1094,7 +1094,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_registerWith", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_registerWith", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1136,7 +1136,7 @@ module FedFundsFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_FedFunds_timeSeries", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_timeSeries", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1172,7 +1172,7 @@ module FedFundsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FedFunds_unregisterWith", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_unregisterWith", Description="Create a FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1211,7 +1211,7 @@ module FedFundsFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FedFunds_Range", Description="Create a range of FedFunds",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FedFunds_Range", Description="Create a range of FedFunds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FedFunds_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

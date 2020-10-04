@@ -37,7 +37,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_derivative", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_derivative", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_empty", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_empty", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_primitive", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_primitive", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_secondDerivative", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_secondDerivative", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_update", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_update", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_value1", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_value1", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_value", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_value", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_xMax", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_xMax", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_xMin", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_xMin", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_allowsExtrapolation", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_allowsExtrapolation", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_disableExtrapolation", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_disableExtrapolation", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_enableExtrapolation", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_enableExtrapolation", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module MixedLinearFritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_extrapolate", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_extrapolate", Description="Create a MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -629,7 +629,7 @@ module MixedLinearFritschButlandCubicFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_Range", Description="Create a range of MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MixedLinearFritschButlandCubic_Range", Description="Create a range of MixedLinearFritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearFritschButlandCubic_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

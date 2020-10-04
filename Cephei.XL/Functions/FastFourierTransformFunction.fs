@@ -37,7 +37,7 @@ module FastFourierTransformFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FastFourierTransform", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FastFourierTransform", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module FastFourierTransformFunction =
     (*
         The output sequence must be allocated by the user.
     *)
-    [<ExcelFunction(Name="_FastFourierTransform_inverse_transform", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FastFourierTransform_inverse_transform", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_inverse_transform
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module FastFourierTransformFunction =
     (*
         The required size for the output vector
     *)
-    [<ExcelFunction(Name="_FastFourierTransform_output_size", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FastFourierTransform_output_size", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_output_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module FastFourierTransformFunction =
     (*
         The output sequence must be allocated by the user
     *)
-    [<ExcelFunction(Name="_FastFourierTransform_transform", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FastFourierTransform_transform", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_transform
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -227,7 +227,7 @@ module FastFourierTransformFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FastFourierTransform_Range", Description="Create a range of FastFourierTransform",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FastFourierTransform_Range", Description="Create a range of FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

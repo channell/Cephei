@@ -37,7 +37,7 @@ module NonCentralChiSquareDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NonCentralChiSquareDistribution", Description="Create a NonCentralChiSquareDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NonCentralChiSquareDistribution", Description="Create a NonCentralChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonCentralChiSquareDistribution_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module NonCentralChiSquareDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NonCentralChiSquareDistribution_value", Description="Create a NonCentralChiSquareDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NonCentralChiSquareDistribution_value", Description="Create a NonCentralChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonCentralChiSquareDistribution_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module NonCentralChiSquareDistributionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NonCentralChiSquareDistribution_Range", Description="Create a range of NonCentralChiSquareDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NonCentralChiSquareDistribution_Range", Description="Create a range of NonCentralChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonCentralChiSquareDistribution_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module SwapIndexFunction =
     (*
         ! returns a copy of itself linked to a different tenor
     *)
-    [<ExcelFunction(Name="_SwapIndex_clone", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_clone", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module SwapIndexFunction =
     (*
         ! returns a copy of itself linked to a different curves
     *)
-    [<ExcelFunction(Name="_SwapIndex_clone1", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_clone1", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_clone1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -127,7 +127,7 @@ module SwapIndexFunction =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_SwapIndex_clone2", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_clone2", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_clone2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -169,7 +169,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_discountingTermStructure", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_discountingTermStructure", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_discountingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -205,7 +205,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_exogenousDiscount", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_exogenousDiscount", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_exogenousDiscount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -241,7 +241,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_fixedLegConvention", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_fixedLegConvention", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_fixedLegConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module SwapIndexFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_SwapIndex_fixedLegTenor", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_fixedLegTenor", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_fixedLegTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_forecastFixing", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_forecastFixing", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -355,7 +355,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_forwardingTermStructure", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_forwardingTermStructure", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -391,7 +391,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_iborIndex", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_iborIndex", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_iborIndex
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -427,7 +427,7 @@ module SwapIndexFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_SwapIndex_maturityDate", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_maturityDate", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -469,7 +469,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex1", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex1", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module SwapIndexFunction =
     (*
         need by CashFlowVectors
     *)
-    [<ExcelFunction(Name="_SwapIndex2", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex2", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -585,7 +585,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -676,7 +676,7 @@ module SwapIndexFunction =
     (*
         \warning Relinking the term structure underlying the index will not have effect on the returned swap. recheck
     *)
-    [<ExcelFunction(Name="_SwapIndex_underlyingSwap", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_underlyingSwap", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_underlyingSwap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -718,7 +718,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_currency", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_currency", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -754,7 +754,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_dayCounter", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_dayCounter", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -790,7 +790,7 @@ module SwapIndexFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_SwapIndex_familyName", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_familyName", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -826,7 +826,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_fixing", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_fixing", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -874,7 +874,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_fixingCalendar", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_fixingCalendar", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -910,7 +910,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_fixingDate", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_fixingDate", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -952,7 +952,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_fixingDays", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_fixingDays", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -988,7 +988,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_isValidFixingDate", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_isValidFixingDate", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1030,7 +1030,7 @@ module SwapIndexFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_SwapIndex_name", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_name", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1066,7 +1066,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_pastFixing", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_pastFixing", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1108,7 +1108,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_tenor", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_tenor", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1144,7 +1144,7 @@ module SwapIndexFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_SwapIndex_update", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_update", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1180,7 +1180,7 @@ module SwapIndexFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_SwapIndex_valueDate", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_valueDate", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1222,7 +1222,7 @@ module SwapIndexFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_SwapIndex_addFixing", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_addFixing", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1276,7 +1276,7 @@ module SwapIndexFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_SwapIndex_addFixings", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_addFixings", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1330,7 +1330,7 @@ module SwapIndexFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_SwapIndex_addFixings1", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_addFixings1", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1378,7 +1378,7 @@ module SwapIndexFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_SwapIndex_allowsNativeFixings", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_allowsNativeFixings", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1414,7 +1414,7 @@ module SwapIndexFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_SwapIndex_clearFixings", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_clearFixings", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1450,7 +1450,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_registerWith", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_registerWith", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1492,7 +1492,7 @@ module SwapIndexFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_SwapIndex_timeSeries", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_timeSeries", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1528,7 +1528,7 @@ module SwapIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwapIndex_unregisterWith", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_unregisterWith", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1567,7 +1567,7 @@ module SwapIndexFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SwapIndex_Range", Description="Create a range of SwapIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwapIndex_Range", Description="Create a range of SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

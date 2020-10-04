@@ -37,7 +37,7 @@ module TrapezoidIntegralFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrapezoidIntegral", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrapezoidIntegral", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module TrapezoidIntegralFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_TrapezoidIntegral_absoluteAccuracy", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrapezoidIntegral_absoluteAccuracy", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_absoluteAccuracy
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module TrapezoidIntegralFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrapezoidIntegral_absoluteError", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrapezoidIntegral_absoluteError", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_absoluteError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module TrapezoidIntegralFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrapezoidIntegral_integrationSuccess", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrapezoidIntegral_integrationSuccess", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_integrationSuccess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module TrapezoidIntegralFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrapezoidIntegral_maxEvaluations", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrapezoidIntegral_maxEvaluations", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_maxEvaluations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -224,7 +224,7 @@ module TrapezoidIntegralFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrapezoidIntegral_numberOfEvaluations", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrapezoidIntegral_numberOfEvaluations", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_numberOfEvaluations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module TrapezoidIntegralFunction =
     (*
         Modifiers
     *)
-    [<ExcelFunction(Name="_TrapezoidIntegral_setAbsoluteAccuracy", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrapezoidIntegral_setAbsoluteAccuracy", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_setAbsoluteAccuracy
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -302,7 +302,7 @@ module TrapezoidIntegralFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrapezoidIntegral_setMaxEvaluations", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrapezoidIntegral_setMaxEvaluations", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_setMaxEvaluations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module TrapezoidIntegralFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrapezoidIntegral_value", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrapezoidIntegral_value", Description="Create a TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -395,7 +395,7 @@ module TrapezoidIntegralFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TrapezoidIntegral_Range", Description="Create a range of TrapezoidIntegral",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrapezoidIntegral_Range", Description="Create a range of TrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrapezoidIntegral_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

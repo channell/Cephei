@@ -37,7 +37,7 @@ module YYUKRPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYUKRPI", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module YYUKRPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYUKRPI1", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI1", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module YYUKRPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYUKRPI_clone", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_clone", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -159,7 +159,7 @@ module YYUKRPIFunction =
     (*
         Index interface The forecastTodaysFixing parameter (required by the Index interface) is currently ignored.
     *)
-    [<ExcelFunction(Name="_YYUKRPI_fixing", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_fixing", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module YYUKRPIFunction =
     (*
         Other methods
     *)
-    [<ExcelFunction(Name="_YYUKRPI_ratio", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_ratio", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_ratio
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -243,7 +243,7 @@ module YYUKRPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYUKRPI_yoyInflationTermStructure", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_yoyInflationTermStructure", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_yoyInflationTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -279,7 +279,7 @@ module YYUKRPIFunction =
     (*
         ! this method creates all the "fixings" for the relevant period of the index.  E.g. for monthly indices it will put the same value in every calendar day in the month.
     *)
-    [<ExcelFunction(Name="_YYUKRPI_addFixing", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_addFixing", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -334,7 +334,7 @@ module YYUKRPIFunction =
         ! The availability lag describes when the index is
 <i>available</i>, not how it is used.  Specifically the fixing for, say, January, may only be available in April but the index will always return the index value applicable for January as its January fixing (independent of the lag in availability).
     *)
-    [<ExcelFunction(Name="_YYUKRPI_availabilityLag", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_availabilityLag", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_availabilityLag
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -370,7 +370,7 @@ module YYUKRPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYUKRPI_currency", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_currency", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -406,7 +406,7 @@ module YYUKRPIFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_YYUKRPI_familyName", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_familyName", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -442,7 +442,7 @@ module YYUKRPIFunction =
     (*
         ! Inflation indices do not have fixing calendars.  An inflation index value is valid for every day (including weekends) of a calendar period.  I.e. it uses the NullCalendar as its fixing calendar.
     *)
-    [<ExcelFunction(Name="_YYUKRPI_fixingCalendar", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_fixingCalendar", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -478,7 +478,7 @@ module YYUKRPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYUKRPI_frequency", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_frequency", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_frequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -514,7 +514,7 @@ module YYUKRPIFunction =
     (*
         ! Forecasting index values using an inflation term structure uses the interpolation of the inflation term structure unless interpolation is set to false.  In this case the extrapolated values are constant within each period taking the mid-period extrapolated value.
     *)
-    [<ExcelFunction(Name="_YYUKRPI_interpolated", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_interpolated", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_interpolated
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -550,7 +550,7 @@ module YYUKRPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYUKRPI_isValidFixingDate", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_isValidFixingDate", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -592,7 +592,7 @@ module YYUKRPIFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_YYUKRPI_name", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_name", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -628,7 +628,7 @@ module YYUKRPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYUKRPI_region", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_region", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_region
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -664,7 +664,7 @@ module YYUKRPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYUKRPI_revised", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_revised", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_revised
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -700,7 +700,7 @@ module YYUKRPIFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_YYUKRPI_update", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_update", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -736,7 +736,7 @@ module YYUKRPIFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_YYUKRPI_addFixings", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_addFixings", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -790,7 +790,7 @@ module YYUKRPIFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_YYUKRPI_addFixings1", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_addFixings1", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -838,7 +838,7 @@ module YYUKRPIFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_YYUKRPI_allowsNativeFixings", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_allowsNativeFixings", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -874,7 +874,7 @@ module YYUKRPIFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_YYUKRPI_clearFixings", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_clearFixings", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -910,7 +910,7 @@ module YYUKRPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYUKRPI_registerWith", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_registerWith", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -952,7 +952,7 @@ module YYUKRPIFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_YYUKRPI_timeSeries", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_timeSeries", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -988,7 +988,7 @@ module YYUKRPIFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YYUKRPI_unregisterWith", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_unregisterWith", Description="Create a YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1027,7 +1027,7 @@ module YYUKRPIFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_YYUKRPI_Range", Description="Create a range of YYUKRPI",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YYUKRPI_Range", Description="Create a range of YYUKRPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYUKRPI_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

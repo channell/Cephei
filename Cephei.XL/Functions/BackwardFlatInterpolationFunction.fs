@@ -37,7 +37,7 @@ module BackwardFlatInterpolationFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module BackwardFlatInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_derivative", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_derivative", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module BackwardFlatInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_empty", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_empty", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module BackwardFlatInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_primitive", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_primitive", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module BackwardFlatInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_secondDerivative", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_secondDerivative", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module BackwardFlatInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_update", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_update", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -302,7 +302,7 @@ module BackwardFlatInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_value1", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_value1", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -350,7 +350,7 @@ module BackwardFlatInterpolationFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_value", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_value", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -392,7 +392,7 @@ module BackwardFlatInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_xMax", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_xMax", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module BackwardFlatInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_xMin", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_xMin", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -464,7 +464,7 @@ module BackwardFlatInterpolationFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_allowsExtrapolation", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_allowsExtrapolation", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module BackwardFlatInterpolationFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_disableExtrapolation", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_disableExtrapolation", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module BackwardFlatInterpolationFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_enableExtrapolation", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_enableExtrapolation", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -584,7 +584,7 @@ module BackwardFlatInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_extrapolate", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_extrapolate", Description="Create a BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -617,7 +617,7 @@ module BackwardFlatInterpolationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BackwardFlatInterpolation_Range", Description="Create a range of BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BackwardFlatInterpolation_Range", Description="Create a range of BackwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardFlatInterpolation_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module NullParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NullParameter", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullParameter", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module NullParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NullParameter_constraint", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullParameter_constraint", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_constraint
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module NullParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NullParameter_implementation", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullParameter_implementation", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_implementation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module NullParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NullParameter_parameters", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullParameter_parameters", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_parameters
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -176,7 +176,7 @@ module NullParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NullParameter_setParam", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullParameter_setParam", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_setParam
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -224,7 +224,7 @@ module NullParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NullParameter_size", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullParameter_size", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module NullParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NullParameter_testParams", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullParameter_testParams", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_testParams
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -302,7 +302,7 @@ module NullParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NullParameter_value", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullParameter_value", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -341,7 +341,7 @@ module NullParameterFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NullParameter_Range", Description="Create a range of NullParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NullParameter_Range", Description="Create a range of NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

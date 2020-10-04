@@ -37,7 +37,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess1", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess1", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -141,7 +141,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_apply", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_apply", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_apply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -189,7 +189,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_blackVolatility", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_blackVolatility", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_blackVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -225,7 +225,7 @@ module BlackProcessFunction =
     (*
         ! \todo revise extrapolation
     *)
-    [<ExcelFunction(Name="_BlackProcess_diffusion", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_diffusion", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_diffusion
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -273,7 +273,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_dividendYield", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_dividendYield", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_dividendYield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -309,7 +309,7 @@ module BlackProcessFunction =
     (*
         ! \todo revise extrapolation
     *)
-    [<ExcelFunction(Name="_BlackProcess_drift", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_drift", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_drift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -357,7 +357,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_evolve", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_evolve", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_evolve
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -417,7 +417,7 @@ module BlackProcessFunction =
     (*
         ! \warning raises a "not implemented" exception.  It should be rewritten to return the expectation E(S) of the process, not exp(E(log S)).
     *)
-    [<ExcelFunction(Name="_BlackProcess_expectation", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_expectation", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_expectation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -471,7 +471,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_localVolatility", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_localVolatility", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_localVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -507,7 +507,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_riskFreeRate", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_riskFreeRate", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_riskFreeRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -543,7 +543,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_stateVariable", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_stateVariable", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_stateVariable
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -579,7 +579,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_stdDeviation", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_stdDeviation", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_stdDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -633,7 +633,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_time", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_time", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_time
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -675,7 +675,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_update", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_update", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -711,7 +711,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_variance", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_variance", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -765,7 +765,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_x0", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_x0", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_x0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -801,7 +801,7 @@ module BlackProcessFunction =
     (*
         ! returns the initial values of the state variables
     *)
-    [<ExcelFunction(Name="_BlackProcess_initialValues", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_initialValues", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_initialValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -837,7 +837,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_size", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_size", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -873,7 +873,7 @@ module BlackProcessFunction =
     (*
         ! returns the covariance. This method can be overridden in derived classes which want to hard-code a particular discretization.
     *)
-    [<ExcelFunction(Name="_BlackProcess_covariance", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_covariance", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_covariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -927,7 +927,7 @@ module BlackProcessFunction =
     (*
         ! returns the number of independent factors of the process
     *)
-    [<ExcelFunction(Name="_BlackProcess_factors", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_factors", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_factors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -963,7 +963,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_registerWith", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_registerWith", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1005,7 +1005,7 @@ module BlackProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackProcess_unregisterWith", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_unregisterWith", Description="Create a BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1044,7 +1044,7 @@ module BlackProcessFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BlackProcess_Range", Description="Create a range of BlackProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackProcess_Range", Description="Create a range of BlackProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackProcess_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

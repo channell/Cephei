@@ -37,7 +37,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_atmLevel", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_atmLevel", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_atmLevel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection1", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection1", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -213,7 +213,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_maxStrike", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_maxStrike", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -249,7 +249,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_minStrike", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_minStrike", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_dayCounter", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_dayCounter", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -321,7 +321,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_density", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_density", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_density
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -375,7 +375,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_digitalOptionPrice", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_digitalOptionPrice", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_digitalOptionPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -435,7 +435,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_exerciseDate", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_exerciseDate", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_exerciseDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -471,7 +471,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_exerciseTime", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_exerciseTime", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_exerciseTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -507,7 +507,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_optionPrice", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_optionPrice", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_optionPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -561,7 +561,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_referenceDate", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_referenceDate", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -597,7 +597,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_shift", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_shift", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_shift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -633,7 +633,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_update", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_update", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -669,7 +669,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_variance", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_variance", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -711,7 +711,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_vega", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_vega", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_vega
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -759,7 +759,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_volatility", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_volatility", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -813,7 +813,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_volatility1", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_volatility1", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_volatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -855,7 +855,7 @@ module FlatSmileSectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatSmileSection_volatilityType", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_volatilityType", Description="Create a FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_volatilityType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -888,7 +888,7 @@ module FlatSmileSectionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FlatSmileSection_Range", Description="Create a range of FlatSmileSection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatSmileSection_Range", Description="Create a range of FlatSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatSmileSection_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

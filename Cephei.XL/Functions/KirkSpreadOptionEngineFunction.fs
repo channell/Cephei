@@ -38,7 +38,7 @@ module KirkSpreadOptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KirkSpreadOptionEngine", Description="Create a KirkSpreadOptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KirkSpreadOptionEngine", Description="Create a KirkSpreadOptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KirkSpreadOptionEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -84,7 +84,7 @@ module KirkSpreadOptionEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_KirkSpreadOptionEngine_Range", Description="Create a range of KirkSpreadOptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KirkSpreadOptionEngine_Range", Description="Create a range of KirkSpreadOptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KirkSpreadOptionEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module FaceValueClaimFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FaceValueClaim_amount", Description="Create a FaceValueClaim",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FaceValueClaim_amount", Description="Create a FaceValueClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueClaim_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module FaceValueClaimFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FaceValueClaim_registerWith", Description="Create a FaceValueClaim",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FaceValueClaim_registerWith", Description="Create a FaceValueClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueClaim_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module FaceValueClaimFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FaceValueClaim_unregisterWith", Description="Create a FaceValueClaim",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FaceValueClaim_unregisterWith", Description="Create a FaceValueClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueClaim_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -175,7 +175,7 @@ module FaceValueClaimFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FaceValueClaim_update", Description="Create a FaceValueClaim",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FaceValueClaim_update", Description="Create a FaceValueClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueClaim_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -208,7 +208,7 @@ module FaceValueClaimFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FaceValueClaim_Range", Description="Create a range of FaceValueClaim",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FaceValueClaim_Range", Description="Create a range of FaceValueClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueClaim_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

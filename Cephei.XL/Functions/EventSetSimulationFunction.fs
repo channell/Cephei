@@ -37,7 +37,7 @@ module EventSetSimulationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EventSetSimulation", Description="Create a EventSetSimulation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EventSetSimulation", Description="Create a EventSetSimulation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EventSetSimulation_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module EventSetSimulationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EventSetSimulation_nextPath", Description="Create a EventSetSimulation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EventSetSimulation_nextPath", Description="Create a EventSetSimulation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EventSetSimulation_nextPath
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -137,7 +137,7 @@ module EventSetSimulationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_EventSetSimulation_Range", Description="Create a range of EventSetSimulation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EventSetSimulation_Range", Description="Create a range of EventSetSimulation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EventSetSimulation_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module BivariateCumulativeNormalDistributionDr78Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionDr78", Description="Create a BivariateCumulativeNormalDistributionDr78",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionDr78", Description="Create a BivariateCumulativeNormalDistributionDr78",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BivariateCumulativeNormalDistributionDr78_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module BivariateCumulativeNormalDistributionDr78Function =
     (*
         function
     *)
-    [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionDr78_value", Description="Create a BivariateCumulativeNormalDistributionDr78",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionDr78_value", Description="Create a BivariateCumulativeNormalDistributionDr78",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BivariateCumulativeNormalDistributionDr78_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module BivariateCumulativeNormalDistributionDr78Function =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionDr78_Range", Description="Create a range of BivariateCumulativeNormalDistributionDr78",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionDr78_Range", Description="Create a range of BivariateCumulativeNormalDistributionDr78",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BivariateCumulativeNormalDistributionDr78_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

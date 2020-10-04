@@ -37,7 +37,7 @@ module PolynomialFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PolynomialFunction_coefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PolynomialFunction_coefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_coefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module PolynomialFunctionFunction =
     (*
         ! coefficients of a PolynomialFunction defined as definite derivative on a rolling window of length tau, with tau = t2-t
     *)
-    [<ExcelFunction(Name="_PolynomialFunction_definiteDerivativeCoefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PolynomialFunction_definiteDerivativeCoefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_definiteDerivativeCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module PolynomialFunctionFunction =
     (*
         ! definite integral of the function between t1 and t2 \f[ \int_{t1}^{t2} f(t)dt \f]
     *)
-    [<ExcelFunction(Name="_PolynomialFunction_definiteIntegral", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PolynomialFunction_definiteIntegral", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_definiteIntegral
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -169,7 +169,7 @@ module PolynomialFunctionFunction =
     (*
         ! coefficients of a PolynomialFunction defined as definite integral on a rolling window of length tau, with tau = t2-t
     *)
-    [<ExcelFunction(Name="_PolynomialFunction_definiteIntegralCoefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PolynomialFunction_definiteIntegralCoefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_definiteIntegralCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module PolynomialFunctionFunction =
     (*
         ! first derivative of the function at time t \f[ f'(t) = \sum_{i=0}^{n-1}{(i+1) c_{i+1} t^i} \f]
     *)
-    [<ExcelFunction(Name="_PolynomialFunction_derivative", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PolynomialFunction_derivative", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -259,7 +259,7 @@ module PolynomialFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PolynomialFunction_derivativeCoefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PolynomialFunction_derivativeCoefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_derivativeCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -295,7 +295,7 @@ module PolynomialFunctionFunction =
     (*
         ! Inspectors
     *)
-    [<ExcelFunction(Name="_PolynomialFunction_order", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PolynomialFunction_order", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_order
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -331,7 +331,7 @@ module PolynomialFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PolynomialFunction", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PolynomialFunction", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module PolynomialFunctionFunction =
     (*
         ! indefinite integral of the function at time t \f[ \int f(t)dt = \sum_{i=0}^n{c_i t^{i+1} / (i+1)} + K \f]
     *)
-    [<ExcelFunction(Name="_PolynomialFunction_primitive", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PolynomialFunction_primitive", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module PolynomialFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PolynomialFunction_primitiveCoefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PolynomialFunction_primitiveCoefficients", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_primitiveCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -446,7 +446,7 @@ module PolynomialFunctionFunction =
     (*
         ! function value at time t: \f[ f(t) = \sum_{i=0}^n{c_i t^i} \f]
     *)
-    [<ExcelFunction(Name="_PolynomialFunction_value", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PolynomialFunction_value", Description="Create a PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -485,7 +485,7 @@ module PolynomialFunctionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PolynomialFunction_Range", Description="Create a range of PolynomialFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PolynomialFunction_Range", Description="Create a range of PolynomialFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PolynomialFunction_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

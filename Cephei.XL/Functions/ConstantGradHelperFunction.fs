@@ -37,7 +37,7 @@ module ConstantGradHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConstantGradHelper", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantGradHelper", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module ConstantGradHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConstantGradHelper_fNext", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantGradHelper_fNext", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_fNext
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module ConstantGradHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConstantGradHelper_primitive", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantGradHelper_primitive", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -176,7 +176,7 @@ module ConstantGradHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ConstantGradHelper_value", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantGradHelper_value", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -215,7 +215,7 @@ module ConstantGradHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ConstantGradHelper_Range", Description="Create a range of ConstantGradHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ConstantGradHelper_Range", Description="Create a range of ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward4", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward4", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward10", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward10", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create10
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward9", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward9", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create9
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -202,7 +202,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward8", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward8", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create8
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -257,7 +257,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward7", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward7", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create7
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -318,7 +318,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward1", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward1", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -373,7 +373,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward11", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward11", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create11
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward5", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward5", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create5
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -495,7 +495,7 @@ module FlatForwardFunction =
     (*
         constructors
     *)
-    [<ExcelFunction(Name="_FlatForward", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -544,7 +544,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward3", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward3", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -605,7 +605,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward2", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward2", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -672,7 +672,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward6", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward6", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_create6
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -733,7 +733,7 @@ module FlatForwardFunction =
     (*
         TermStructure interface
     *)
-    [<ExcelFunction(Name="_FlatForward_maxDate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_maxDate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -769,7 +769,7 @@ module FlatForwardFunction =
     (*
         ! The same day-counting rule used by the term structure should be used for calculating the passed time t.
     *)
-    [<ExcelFunction(Name="_FlatForward_discount", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_discount", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -817,7 +817,7 @@ module FlatForwardFunction =
     (*
         These methods return the discount factor from a given date or time to the reference date.  In the latter case, the time is calculated as a fraction of year from the reference date.
     *)
-    [<ExcelFunction(Name="_FlatForward_discount1", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_discount1", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_discount1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -865,7 +865,7 @@ module FlatForwardFunction =
     (*
         ! The resulting interest rate has the required day-counting rule. \warning dates are not adjusted for holidays
     *)
-    [<ExcelFunction(Name="_FlatForward_forwardRate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_forwardRate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_forwardRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -937,7 +937,7 @@ module FlatForwardFunction =
     (*
         ! The resulting interest rate has the required day-counting rule.
     *)
-    [<ExcelFunction(Name="_FlatForward_forwardRate1", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_forwardRate1", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_forwardRate1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1009,7 +1009,7 @@ module FlatForwardFunction =
     (*
         ! The resulting interest rate has the same day-counting rule used by the term structure. The same rule should be used for calculating the passed times t1 and t2.
     *)
-    [<ExcelFunction(Name="_FlatForward_forwardRate2", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_forwardRate2", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_forwardRate2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1075,7 +1075,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward_jumpDates", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_jumpDates", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_jumpDates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1111,7 +1111,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward_jumpTimes", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_jumpTimes", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_jumpTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1147,7 +1147,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward_update", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_update", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1183,7 +1183,7 @@ module FlatForwardFunction =
     (*
         ! The resulting interest rate has the required daycounting rule.
     *)
-    [<ExcelFunction(Name="_FlatForward_zeroRate1", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_zeroRate1", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_zeroRate1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1249,7 +1249,7 @@ module FlatForwardFunction =
     (*
         ! The resulting interest rate has the same day-counting rule used by the term structure. The same rule should be used for calculating the passed time t.
     *)
-    [<ExcelFunction(Name="_FlatForward_zeroRate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_zeroRate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_zeroRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1309,7 +1309,7 @@ module FlatForwardFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_FlatForward_calendar", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_calendar", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1345,7 +1345,7 @@ module FlatForwardFunction =
     (*
         ! the day counter used for date/time conversion
     *)
-    [<ExcelFunction(Name="_FlatForward_dayCounter", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_dayCounter", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1381,7 +1381,7 @@ module FlatForwardFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_FlatForward_maxTime", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_maxTime", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1417,7 +1417,7 @@ module FlatForwardFunction =
     (*
         ! the date at which discount = 1.0 and/or variance = 0.0
     *)
-    [<ExcelFunction(Name="_FlatForward_referenceDate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_referenceDate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1453,7 +1453,7 @@ module FlatForwardFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_FlatForward_settlementDays", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_settlementDays", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1489,7 +1489,7 @@ module FlatForwardFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_FlatForward_timeFromReference", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_timeFromReference", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1531,7 +1531,7 @@ module FlatForwardFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_FlatForward_allowsExtrapolation", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_allowsExtrapolation", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1567,7 +1567,7 @@ module FlatForwardFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_FlatForward_disableExtrapolation", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_disableExtrapolation", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1609,7 +1609,7 @@ module FlatForwardFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_FlatForward_enableExtrapolation", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_enableExtrapolation", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1651,7 +1651,7 @@ module FlatForwardFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatForward_extrapolate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_extrapolate", Description="Create a FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1684,7 +1684,7 @@ module FlatForwardFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FlatForward_Range", Description="Create a range of FlatForward",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatForward_Range", Description="Create a range of FlatForward",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatForward_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

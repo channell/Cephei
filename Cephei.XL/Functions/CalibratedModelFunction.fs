@@ -37,7 +37,7 @@ module CalibratedModelFunction =
     (*
         ! An additional constraint can be passed which must be satisfied in addition to the constraints of the model.
     *)
-    [<ExcelFunction(Name="_CalibratedModel_calibrate", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CalibratedModel_calibrate", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_calibrate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module CalibratedModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CalibratedModel", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CalibratedModel", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module CalibratedModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CalibratedModel_constraint", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CalibratedModel_constraint", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_constraint
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module CalibratedModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CalibratedModel_endCriteria", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CalibratedModel_endCriteria", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_endCriteria
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module CalibratedModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CalibratedModel_notifyObservers", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CalibratedModel_notifyObservers", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_notifyObservers
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module CalibratedModelFunction =
     (*
         ! Returns array of arguments on which calibration is done
     *)
-    [<ExcelFunction(Name="_CalibratedModel_parameters", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CalibratedModel_parameters", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_parameters
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module CalibratedModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CalibratedModel_registerWith", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CalibratedModel_registerWith", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -332,7 +332,7 @@ module CalibratedModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CalibratedModel_setParams", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CalibratedModel_setParams", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_setParams
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module CalibratedModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CalibratedModel_unregisterWith", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CalibratedModel_unregisterWith", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module CalibratedModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CalibratedModel_update", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CalibratedModel_update", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module CalibratedModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CalibratedModel_value", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CalibratedModel_value", Description="Create a CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -497,7 +497,7 @@ module CalibratedModelFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CalibratedModel_Range", Description="Create a range of CalibratedModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CalibratedModel_Range", Description="Create a range of CalibratedModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CalibratedModel_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

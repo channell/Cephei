@@ -37,7 +37,7 @@ module ParabolicFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_Parabolic", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module ParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parabolic_aCoefficients", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_aCoefficients", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_aCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module ParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parabolic_bCoefficients", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_bCoefficients", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_bCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module ParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parabolic_cCoefficients", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_cCoefficients", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_cCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module ParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parabolic_derivative", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_derivative", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module ParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parabolic_empty", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_empty", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module ParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parabolic_primitive", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_primitive", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module ParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parabolic_secondDerivative", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_secondDerivative", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module ParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parabolic_update", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_update", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module ParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parabolic_value1", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_value1", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -458,7 +458,7 @@ module ParabolicFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_Parabolic_value", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_value", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module ParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parabolic_xMax", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_xMax", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -536,7 +536,7 @@ module ParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parabolic_xMin", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_xMin", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -572,7 +572,7 @@ module ParabolicFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_Parabolic_allowsExtrapolation", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_allowsExtrapolation", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module ParabolicFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_Parabolic_disableExtrapolation", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_disableExtrapolation", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module ParabolicFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_Parabolic_enableExtrapolation", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_enableExtrapolation", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module ParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Parabolic_extrapolate", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_extrapolate", Description="Create a Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -725,7 +725,7 @@ module ParabolicFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Parabolic_Range", Description="Create a range of Parabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Parabolic_Range", Description="Create a range of Parabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Parabolic_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

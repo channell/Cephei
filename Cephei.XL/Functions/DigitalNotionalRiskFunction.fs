@@ -37,7 +37,7 @@ module DigitalNotionalRiskFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalNotionalRisk", Description="Create a DigitalNotionalRisk",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalNotionalRisk", Description="Create a DigitalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalNotionalRisk_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module DigitalNotionalRiskFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalNotionalRisk_updatePath", Description="Create a DigitalNotionalRisk",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalNotionalRisk_updatePath", Description="Create a DigitalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalNotionalRisk_updatePath
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -125,7 +125,7 @@ module DigitalNotionalRiskFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DigitalNotionalRisk_Range", Description="Create a range of DigitalNotionalRisk",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalNotionalRisk_Range", Description="Create a range of DigitalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalNotionalRisk_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

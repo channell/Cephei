@@ -37,7 +37,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_impliedQuote", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_impliedQuote", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_impliedQuote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_setTermStructure", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_setTermStructure", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_setTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         earliest relevant date The earliest date at which discounts are needed by the helper in order to provide a quote.
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_earliestDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_earliestDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_earliestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -224,7 +224,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         The latest date at which discounts are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_latestDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_latestDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_latestDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         ! The latest date at which data are needed by the helper in order to provide a quote. It does not necessarily equal the maturity of the underlying instrument.
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_latestRelevantDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_latestRelevantDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_latestRelevantDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -296,7 +296,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         ! instrument's maturity date
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_maturityDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_maturityDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -332,7 +332,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         ! pillar date
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_pillarDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_pillarDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_pillarDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         ! BootstrapHelper interface
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_quote", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_quote", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_quote
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_quoteError", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_quoteError", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_quoteError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_quoteIsValid", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_quoteIsValid", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_quoteIsValid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_quoteValue", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_quoteValue", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_quoteValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_registerWith", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_registerWith", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_unregisterWith", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_unregisterWith", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module YearOnYearInflationSwapHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_update", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_update", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -629,7 +629,7 @@ module YearOnYearInflationSwapHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_Range", Description="Create a range of YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_Range", Description="Create a range of YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

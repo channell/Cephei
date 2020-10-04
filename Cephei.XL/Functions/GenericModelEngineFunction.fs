@@ -37,7 +37,7 @@ module GenericModelEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericModelEngine", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericModelEngine", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericModelEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -76,7 +76,7 @@ module GenericModelEngineFunction =
     *)
     (*!!
     
-    [<ExcelFunction(Name="_GenericModelEngine1", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericModelEngine1", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericModelEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -113,7 +113,7 @@ module GenericModelEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericModelEngine2", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericModelEngine2", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericModelEngine_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module GenericModelEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_GenericModelEngine_setModel", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericModelEngine_setModel", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericModelEngine_setModel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module GenericModelEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericModelEngine_registerWith", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericModelEngine_registerWith", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericModelEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module GenericModelEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericModelEngine_reset", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericModelEngine_reset", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericModelEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module GenericModelEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericModelEngine_unregisterWith", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericModelEngine_unregisterWith", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericModelEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module GenericModelEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GenericModelEngine_update", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericModelEngine_update", Description="Create a GenericModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericModelEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -341,7 +341,7 @@ module GenericModelEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GenericModelEngine_Range", Description="Create a range of GenericModelEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericModelEngine_Range", Description="Create a range of GenericModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericModelEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

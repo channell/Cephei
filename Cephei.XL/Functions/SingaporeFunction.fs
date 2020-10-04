@@ -54,7 +54,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore_addedHolidays", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_addedHolidays", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_addedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore_addHoliday", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_addHoliday", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_addHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -163,7 +163,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore_adjust", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_adjust", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_adjust
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -211,7 +211,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore_advance1", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_advance1", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore_advance", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_advance", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_advance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -337,7 +337,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore_businessDaysBetween", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_businessDaysBetween", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_businessDaysBetween
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -397,7 +397,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore_calendar", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_calendar", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -433,7 +433,7 @@ module SingaporeFunction =
     (*
         Returns whether or not the calendar is initialized
     *)
-    [<ExcelFunction(Name="_Singapore_empty", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_empty", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -469,7 +469,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore_endOfMonth", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_endOfMonth", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -511,7 +511,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore_Equals", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_Equals", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -553,7 +553,7 @@ module SingaporeFunction =
     (*
         @returns Returns <tt>true</tt> iff the date is a business day for the given market.
     *)
-    [<ExcelFunction(Name="_Singapore_isBusinessDay", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_isBusinessDay", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_isBusinessDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -595,7 +595,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore_isEndOfMonth", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_isEndOfMonth", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_isEndOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -637,7 +637,7 @@ module SingaporeFunction =
     (*
         Returns <tt>true</tt> iff the date is a holiday for the given market.
     *)
-    [<ExcelFunction(Name="_Singapore_isHoliday", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_isHoliday", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_isHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -679,7 +679,7 @@ module SingaporeFunction =
     (*
         Returns <tt>true</tt> iff the weekday is part of the weekend for the given market.
     *)
-    [<ExcelFunction(Name="_Singapore_isWeekend", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_isWeekend", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_isWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -723,7 +723,7 @@ module SingaporeFunction =
 
 @returns The name of the calendar.
     *)
-    [<ExcelFunction(Name="_Singapore_name", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_name", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -759,7 +759,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore_removedHolidays", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_removedHolidays", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_removedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -795,7 +795,7 @@ module SingaporeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Singapore_removeHoliday", Description="Create a Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_removeHoliday", Description="Create a Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_removeHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -834,7 +834,7 @@ module SingaporeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Singapore_Range", Description="Create a range of Singapore",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Singapore_Range", Description="Create a range of Singapore",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Singapore_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

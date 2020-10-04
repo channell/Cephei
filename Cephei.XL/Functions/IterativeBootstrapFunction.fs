@@ -37,7 +37,7 @@ module IterativeBootstrapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IterativeBootstrap", Description="Create a IterativeBootstrap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IterativeBootstrap", Description="Create a IterativeBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IterativeBootstrap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module IterativeBootstrapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IterativeBootstrap_setup", Description="Create a IterativeBootstrap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IterativeBootstrap_setup", Description="Create a IterativeBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IterativeBootstrap_setup
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -107,7 +107,7 @@ module IterativeBootstrapFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_IterativeBootstrap_Range", Description="Create a range of IterativeBootstrap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IterativeBootstrap_Range", Description="Create a range of IterativeBootstrap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IterativeBootstrap_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

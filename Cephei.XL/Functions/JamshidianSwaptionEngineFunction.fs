@@ -38,7 +38,7 @@ module JamshidianSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JamshidianSwaptionEngine", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JamshidianSwaptionEngine", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -75,7 +75,7 @@ module JamshidianSwaptionEngineFunction =
     (*
         ! \note the term structure is only needed when the short-rate model cannot provide one itself.
     *)
-    [<ExcelFunction(Name="_JamshidianSwaptionEngine1", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JamshidianSwaptionEngine1", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module JamshidianSwaptionEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_JamshidianSwaptionEngine_setModel", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JamshidianSwaptionEngine_setModel", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_setModel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -161,7 +161,7 @@ module JamshidianSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JamshidianSwaptionEngine_registerWith", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JamshidianSwaptionEngine_registerWith", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -203,7 +203,7 @@ module JamshidianSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JamshidianSwaptionEngine_reset", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JamshidianSwaptionEngine_reset", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -239,7 +239,7 @@ module JamshidianSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JamshidianSwaptionEngine_unregisterWith", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JamshidianSwaptionEngine_unregisterWith", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -281,7 +281,7 @@ module JamshidianSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JamshidianSwaptionEngine_update", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JamshidianSwaptionEngine_update", Description="Create a JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module JamshidianSwaptionEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_JamshidianSwaptionEngine_Range", Description="Create a range of JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JamshidianSwaptionEngine_Range", Description="Create a range of JamshidianSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JamshidianSwaptionEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module BespokeCalendarFunction =
     (*
         ! marks the passed day as part of the weekend
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_addWeekend", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_addWeekend", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_addWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module BespokeCalendarFunction =
     (*
         ! \warning different bespoke calendars created with the same name (or different bespoke calendars created with no name) will compare as equal.
     *)
-    [<ExcelFunction(Name="_BespokeCalendar1", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar1", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -147,7 +147,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_name", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_name", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_addedHolidays", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_addedHolidays", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_addedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_addHoliday", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_addHoliday", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_addHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -261,7 +261,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_adjust", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_adjust", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_adjust
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -309,7 +309,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_advance1", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_advance1", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -375,7 +375,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_advance", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_advance", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_advance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -435,7 +435,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_businessDaysBetween", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_businessDaysBetween", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_businessDaysBetween
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -495,7 +495,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_calendar", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_calendar", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -531,7 +531,7 @@ module BespokeCalendarFunction =
     (*
         Returns whether or not the calendar is initialized
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_empty", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_empty", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -567,7 +567,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_endOfMonth", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_endOfMonth", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -609,7 +609,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_Equals", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_Equals", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -651,7 +651,7 @@ module BespokeCalendarFunction =
     (*
         @returns Returns <tt>true</tt> iff the date is a business day for the given market.
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_isBusinessDay", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_isBusinessDay", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_isBusinessDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -693,7 +693,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_isEndOfMonth", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_isEndOfMonth", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_isEndOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -735,7 +735,7 @@ module BespokeCalendarFunction =
     (*
         Returns <tt>true</tt> iff the date is a holiday for the given market.
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_isHoliday", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_isHoliday", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_isHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -777,7 +777,7 @@ module BespokeCalendarFunction =
     (*
         Returns <tt>true</tt> iff the weekday is part of the weekend for the given market.
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_isWeekend", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_isWeekend", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_isWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -819,7 +819,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_removedHolidays", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_removedHolidays", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_removedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -855,7 +855,7 @@ module BespokeCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BespokeCalendar_removeHoliday", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_removeHoliday", Description="Create a BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_removeHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -894,7 +894,7 @@ module BespokeCalendarFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BespokeCalendar_Range", Description="Create a range of BespokeCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BespokeCalendar_Range", Description="Create a range of BespokeCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BespokeCalendar_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

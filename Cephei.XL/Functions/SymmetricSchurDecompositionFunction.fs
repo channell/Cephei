@@ -37,7 +37,7 @@ module SymmetricSchurDecompositionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SymmetricSchurDecomposition_eigenvalues", Description="Create a SymmetricSchurDecomposition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SymmetricSchurDecomposition_eigenvalues", Description="Create a SymmetricSchurDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SymmetricSchurDecomposition_eigenvalues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module SymmetricSchurDecompositionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SymmetricSchurDecomposition_eigenvectors", Description="Create a SymmetricSchurDecomposition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SymmetricSchurDecomposition_eigenvectors", Description="Create a SymmetricSchurDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SymmetricSchurDecomposition_eigenvectors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module SymmetricSchurDecompositionFunction =
     (*
         ! \pre s must be symmetric
     *)
-    [<ExcelFunction(Name="_SymmetricSchurDecomposition", Description="Create a SymmetricSchurDecomposition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SymmetricSchurDecomposition", Description="Create a SymmetricSchurDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SymmetricSchurDecomposition_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -143,7 +143,7 @@ module SymmetricSchurDecompositionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SymmetricSchurDecomposition_Range", Description="Create a range of SymmetricSchurDecomposition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SymmetricSchurDecomposition_Range", Description="Create a range of SymmetricSchurDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SymmetricSchurDecomposition_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

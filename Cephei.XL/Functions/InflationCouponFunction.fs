@@ -37,7 +37,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon_accruedAmount", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_accruedAmount", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module InflationCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_InflationCoupon_amount", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_amount", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon_dayCounter", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_dayCounter", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -151,7 +151,7 @@ module InflationCouponFunction =
     (*
         ! fixing date
     *)
-    [<ExcelFunction(Name="_InflationCoupon_fixingDate", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_fixingDate", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -187,7 +187,7 @@ module InflationCouponFunction =
     (*
         ! fixing days
     *)
-    [<ExcelFunction(Name="_InflationCoupon_fixingDays", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_fixingDays", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module InflationCouponFunction =
     (*
         Inspectors ! yoy inflation index
     *)
-    [<ExcelFunction(Name="_InflationCoupon_index", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_index", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_index
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -259,7 +259,7 @@ module InflationCouponFunction =
     (*
         ! fixing of the underlying index, as observed by the coupon
     *)
-    [<ExcelFunction(Name="_InflationCoupon_indexFixing", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_indexFixing", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_indexFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -295,7 +295,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -392,7 +392,7 @@ module InflationCouponFunction =
     (*
         ! how the coupon observes the index
     *)
-    [<ExcelFunction(Name="_InflationCoupon_observationLag", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_observationLag", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_observationLag
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module InflationCouponFunction =
     (*
         Coupon interface
     *)
-    [<ExcelFunction(Name="_InflationCoupon_price", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_price", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_price
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon_pricer", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_pricer", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_pricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -506,7 +506,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon_rate", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_rate", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_rate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon_setPricer", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_setPricer", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_setPricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -584,7 +584,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon_update", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_update", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -620,7 +620,7 @@ module InflationCouponFunction =
     (*
         ! accrual period in days
     *)
-    [<ExcelFunction(Name="_InflationCoupon_accrualDays", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_accrualDays", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_accrualDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -656,7 +656,7 @@ module InflationCouponFunction =
     (*
         ! end of the accrual period
     *)
-    [<ExcelFunction(Name="_InflationCoupon_accrualEndDate", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_accrualEndDate", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_accrualEndDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module InflationCouponFunction =
     (*
         ! accrual period as fraction of year
     *)
-    [<ExcelFunction(Name="_InflationCoupon_accrualPeriod", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_accrualPeriod", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_accrualPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -728,7 +728,7 @@ module InflationCouponFunction =
     (*
         ! start of the accrual period
     *)
-    [<ExcelFunction(Name="_InflationCoupon_accrualStartDate", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_accrualStartDate", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_accrualStartDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -764,7 +764,7 @@ module InflationCouponFunction =
     (*
         ! accrued days at the given date
     *)
-    [<ExcelFunction(Name="_InflationCoupon_accruedDays", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_accruedDays", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_accruedDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -806,7 +806,7 @@ module InflationCouponFunction =
     (*
         ! accrued period as fraction of year at the given date
     *)
-    [<ExcelFunction(Name="_InflationCoupon_accruedPeriod", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_accruedPeriod", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_accruedPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -848,7 +848,7 @@ module InflationCouponFunction =
     (*
         Event interface
     *)
-    [<ExcelFunction(Name="_InflationCoupon_date", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_date", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -884,7 +884,7 @@ module InflationCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_InflationCoupon_exCouponDate", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_exCouponDate", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -920,7 +920,7 @@ module InflationCouponFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_InflationCoupon_nominal", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_nominal", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -956,7 +956,7 @@ module InflationCouponFunction =
     (*
         ! end date of the reference period
     *)
-    [<ExcelFunction(Name="_InflationCoupon_referencePeriodEnd", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_referencePeriodEnd", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_referencePeriodEnd
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -992,7 +992,7 @@ module InflationCouponFunction =
     (*
         ! start date of the reference period
     *)
-    [<ExcelFunction(Name="_InflationCoupon_referencePeriodStart", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_referencePeriodStart", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_referencePeriodStart
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1028,7 +1028,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon_CompareTo", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_CompareTo", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1070,7 +1070,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon_Equals", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_Equals", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1112,7 +1112,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon_hasOccurred", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_hasOccurred", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1160,7 +1160,7 @@ module InflationCouponFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_InflationCoupon_tradingExCoupon", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_tradingExCoupon", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1202,7 +1202,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon_accept", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_accept", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1244,7 +1244,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon_registerWith", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_registerWith", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1286,7 +1286,7 @@ module InflationCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InflationCoupon_unregisterWith", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_unregisterWith", Description="Create a InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1325,7 +1325,7 @@ module InflationCouponFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_InflationCoupon_Range", Description="Create a range of InflationCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InflationCoupon_Range", Description="Create a range of InflationCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCoupon_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

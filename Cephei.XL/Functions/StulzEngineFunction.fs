@@ -38,7 +38,7 @@ module StulzEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_StulzEngine", Description="Create a StulzEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StulzEngine", Description="Create a StulzEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StulzEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -84,7 +84,7 @@ module StulzEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_StulzEngine_Range", Description="Create a range of StulzEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_StulzEngine_Range", Description="Create a range of StulzEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StulzEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

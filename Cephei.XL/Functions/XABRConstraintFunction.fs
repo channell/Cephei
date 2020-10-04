@@ -38,7 +38,7 @@ module XABRConstraintFunction =
         
     *)
     (*!! generic 
-    [<ExcelFunction(Name="_XABRConstraint_config", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRConstraint_config", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_config
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -93,7 +93,7 @@ module XABRConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRConstraint", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRConstraint", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -130,7 +130,7 @@ module XABRConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRConstraint1", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRConstraint1", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -161,7 +161,7 @@ module XABRConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRConstraint_empty", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRConstraint_empty", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -197,7 +197,7 @@ module XABRConstraintFunction =
     (*
         ! Returns lower bound for given parameters
     *)
-    [<ExcelFunction(Name="_XABRConstraint_lowerBound", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRConstraint_lowerBound", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_lowerBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -239,7 +239,7 @@ module XABRConstraintFunction =
     (*
         ! Tests if params satisfy the constraint
     *)
-    [<ExcelFunction(Name="_XABRConstraint_test", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRConstraint_test", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_test
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -281,7 +281,7 @@ module XABRConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_XABRConstraint_update", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRConstraint_update", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -335,7 +335,7 @@ module XABRConstraintFunction =
     (*
         ! Returns upper bound for given parameters
     *)
-    [<ExcelFunction(Name="_XABRConstraint_upperBound", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRConstraint_upperBound", Description="Create a XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_upperBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module XABRConstraintFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_XABRConstraint_Range", Description="Create a range of XABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_XABRConstraint_Range", Description="Create a range of XABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let XABRConstraint_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

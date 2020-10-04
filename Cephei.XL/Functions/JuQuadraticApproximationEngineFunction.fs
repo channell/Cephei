@@ -38,7 +38,7 @@ module JuQuadraticApproximationEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JuQuadraticApproximationEngine", Description="Create a JuQuadraticApproximationEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JuQuadraticApproximationEngine", Description="Create a JuQuadraticApproximationEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JuQuadraticApproximationEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -72,7 +72,7 @@ module JuQuadraticApproximationEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_JuQuadraticApproximationEngine_Range", Description="Create a range of JuQuadraticApproximationEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JuQuadraticApproximationEngine_Range", Description="Create a range of JuQuadraticApproximationEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JuQuadraticApproximationEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module BiCGStabFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BiCGStab", Description="Create a BiCGStab",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BiCGStab", Description="Create a BiCGStab",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStab_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -93,7 +93,7 @@ module BiCGStabFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_BiCGStab_MatrixMult", Description="Create a BiCGStab",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BiCGStab_MatrixMult", Description="Create a BiCGStab",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStab_MatrixMult
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -136,7 +136,7 @@ module BiCGStabFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BiCGStab_solve", Description="Create a BiCGStab",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BiCGStab_solve", Description="Create a BiCGStab",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStab_solve
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module BiCGStabFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BiCGStab_Range", Description="Create a range of BiCGStab",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BiCGStab_Range", Description="Create a range of BiCGStab",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStab_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

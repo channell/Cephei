@@ -37,7 +37,7 @@ module FloatingRateCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_accruedAmount", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_accruedAmount", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module FloatingRateCouponFunction =
     (*
         ! convexity-adjusted fixing
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_adjustedFixing", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_adjustedFixing", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_adjustedFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module FloatingRateCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_amount", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_amount", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -151,7 +151,7 @@ module FloatingRateCouponFunction =
     (*
         ! convexity adjustment
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_convexityAdjustment", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_convexityAdjustment", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_convexityAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -187,7 +187,7 @@ module FloatingRateCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_dayCounter", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_dayCounter", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module FloatingRateCouponFunction =
     (*
         Factory - for Leg generators
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_factory", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_factory", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -331,7 +331,7 @@ module FloatingRateCouponFunction =
     (*
         ! fixing days
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_fixingDate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_fixingDate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -367,7 +367,7 @@ module FloatingRateCouponFunction =
     (*
         ! floating index
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_fixingDays", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_fixingDays", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -403,7 +403,7 @@ module FloatingRateCouponFunction =
     (*
         need by CashFlowVectors
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon1", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon1", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module FloatingRateCouponFunction =
     (*
         constructors
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -537,7 +537,7 @@ module FloatingRateCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_gearing", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_gearing", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_gearing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -573,7 +573,7 @@ module FloatingRateCouponFunction =
     (*
         properties
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_index", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_index", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_index
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -609,7 +609,7 @@ module FloatingRateCouponFunction =
     (*
         ! spread paid over the fixing of the underlying index ! fixing of the underlying index
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_indexFixing", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_indexFixing", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_indexFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -645,7 +645,7 @@ module FloatingRateCouponFunction =
     (*
         ! whether or not the coupon fixes in arrears
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_isInArrears", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_isInArrears", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_isInArrears
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -681,7 +681,7 @@ module FloatingRateCouponFunction =
     (*
         methods
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_price", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_price", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_price
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -723,7 +723,7 @@ module FloatingRateCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_pricer", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_pricer", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_pricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -759,7 +759,7 @@ module FloatingRateCouponFunction =
     (*
         Coupon interface
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_rate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_rate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_rate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -795,7 +795,7 @@ module FloatingRateCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_setPricer", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_setPricer", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_setPricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -837,7 +837,7 @@ module FloatingRateCouponFunction =
     (*
         ! index gearing, i.e. multiplicative coefficient for the index
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_spread", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_spread", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_spread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -873,7 +873,7 @@ module FloatingRateCouponFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_update", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_update", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -909,7 +909,7 @@ module FloatingRateCouponFunction =
     (*
         ! accrual period in days
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_accrualDays", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_accrualDays", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accrualDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -945,7 +945,7 @@ module FloatingRateCouponFunction =
     (*
         ! end of the accrual period
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_accrualEndDate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_accrualEndDate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accrualEndDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -981,7 +981,7 @@ module FloatingRateCouponFunction =
     (*
         ! accrual period as fraction of year
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_accrualPeriod", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_accrualPeriod", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accrualPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1017,7 +1017,7 @@ module FloatingRateCouponFunction =
     (*
         ! start of the accrual period
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_accrualStartDate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_accrualStartDate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accrualStartDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1053,7 +1053,7 @@ module FloatingRateCouponFunction =
     (*
         ! accrued days at the given date
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_accruedDays", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_accruedDays", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accruedDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1095,7 +1095,7 @@ module FloatingRateCouponFunction =
     (*
         ! accrued period as fraction of year at the given date
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_accruedPeriod", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_accruedPeriod", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accruedPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1137,7 +1137,7 @@ module FloatingRateCouponFunction =
     (*
         Event interface
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_date", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_date", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1173,7 +1173,7 @@ module FloatingRateCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_exCouponDate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_exCouponDate", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1209,7 +1209,7 @@ module FloatingRateCouponFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_nominal", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_nominal", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1245,7 +1245,7 @@ module FloatingRateCouponFunction =
     (*
         ! end date of the reference period
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_referencePeriodEnd", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_referencePeriodEnd", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_referencePeriodEnd
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1281,7 +1281,7 @@ module FloatingRateCouponFunction =
     (*
         ! start date of the reference period
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_referencePeriodStart", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_referencePeriodStart", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_referencePeriodStart
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1317,7 +1317,7 @@ module FloatingRateCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_CompareTo", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_CompareTo", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1359,7 +1359,7 @@ module FloatingRateCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_Equals", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_Equals", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1401,7 +1401,7 @@ module FloatingRateCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_hasOccurred", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_hasOccurred", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1449,7 +1449,7 @@ module FloatingRateCouponFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_tradingExCoupon", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_tradingExCoupon", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1491,7 +1491,7 @@ module FloatingRateCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_accept", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_accept", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1533,7 +1533,7 @@ module FloatingRateCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_registerWith", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_registerWith", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1575,7 +1575,7 @@ module FloatingRateCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FloatingRateCoupon_unregisterWith", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_unregisterWith", Description="Create a FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1614,7 +1614,7 @@ module FloatingRateCouponFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FloatingRateCoupon_Range", Description="Create a range of FloatingRateCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FloatingRateCoupon_Range", Description="Create a range of FloatingRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateCoupon_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

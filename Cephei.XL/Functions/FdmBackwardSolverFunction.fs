@@ -37,7 +37,7 @@ module FdmBackwardSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBackwardSolver", Description="Create a FdmBackwardSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBackwardSolver", Description="Create a FdmBackwardSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBackwardSolver_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module FdmBackwardSolverFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmBackwardSolver_rollback", Description="Create a FdmBackwardSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBackwardSolver_rollback", Description="Create a FdmBackwardSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBackwardSolver_rollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -155,7 +155,7 @@ module FdmBackwardSolverFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmBackwardSolver_Range", Description="Create a range of FdmBackwardSolver",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmBackwardSolver_Range", Description="Create a range of FdmBackwardSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBackwardSolver_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

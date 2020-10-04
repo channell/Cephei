@@ -37,7 +37,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar_addedHolidays", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_addedHolidays", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_addedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar_addHoliday", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_addHoliday", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_addHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar_adjust", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_adjust", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_adjust
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -163,7 +163,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar_advance1", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_advance1", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -229,7 +229,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar_advance", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_advance", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_advance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -289,7 +289,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar_businessDaysBetween", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_businessDaysBetween", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_businessDaysBetween
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -349,7 +349,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar_calendar", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_calendar", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -385,7 +385,7 @@ module CalendarFunction =
     (*
         ! The default constructor returns a calendar with a null implementation, which is therefore unusable except as a placeholder.
     *)
-    [<ExcelFunction(Name="_Calendar", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar1", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar1", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -453,7 +453,7 @@ module CalendarFunction =
     (*
         Returns whether or not the calendar is initialized
     *)
-    [<ExcelFunction(Name="_Calendar_empty", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_empty", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -489,7 +489,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar_endOfMonth", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_endOfMonth", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -531,7 +531,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar_Equals", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_Equals", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -573,7 +573,7 @@ module CalendarFunction =
     (*
         @returns Returns <tt>true</tt> iff the date is a business day for the given market.
     *)
-    [<ExcelFunction(Name="_Calendar_isBusinessDay", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_isBusinessDay", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_isBusinessDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -615,7 +615,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar_isEndOfMonth", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_isEndOfMonth", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_isEndOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -657,7 +657,7 @@ module CalendarFunction =
     (*
         Returns <tt>true</tt> iff the date is a holiday for the given market.
     *)
-    [<ExcelFunction(Name="_Calendar_isHoliday", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_isHoliday", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_isHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -699,7 +699,7 @@ module CalendarFunction =
     (*
         Returns <tt>true</tt> iff the weekday is part of the weekend for the given market.
     *)
-    [<ExcelFunction(Name="_Calendar_isWeekend", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_isWeekend", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_isWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -743,7 +743,7 @@ module CalendarFunction =
 
 @returns The name of the calendar.
     *)
-    [<ExcelFunction(Name="_Calendar_name", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_name", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -779,7 +779,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar_removedHolidays", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_removedHolidays", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_removedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -815,7 +815,7 @@ module CalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Calendar_removeHoliday", Description="Create a Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_removeHoliday", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_removeHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -854,7 +854,7 @@ module CalendarFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Calendar_Range", Description="Create a range of Calendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Calendar_Range", Description="Create a range of Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

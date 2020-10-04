@@ -37,7 +37,7 @@ module NonCentralCumulativeChiSquareSankaranApproxFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NonCentralCumulativeChiSquareSankaranApprox", Description="Create a NonCentralCumulativeChiSquareSankaranApprox",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NonCentralCumulativeChiSquareSankaranApprox", Description="Create a NonCentralCumulativeChiSquareSankaranApprox",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonCentralCumulativeChiSquareSankaranApprox_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -77,7 +77,7 @@ module NonCentralCumulativeChiSquareSankaranApproxFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NonCentralCumulativeChiSquareSankaranApprox_Range", Description="Create a range of NonCentralCumulativeChiSquareSankaranApprox",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NonCentralCumulativeChiSquareSankaranApprox_Range", Description="Create a range of NonCentralCumulativeChiSquareSankaranApprox",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonCentralCumulativeChiSquareSankaranApprox_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

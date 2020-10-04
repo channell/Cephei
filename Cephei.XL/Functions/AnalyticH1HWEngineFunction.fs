@@ -37,7 +37,7 @@ module AnalyticH1HWEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticH1HWEngine", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticH1HWEngine", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module AnalyticH1HWEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticH1HWEngine1", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticH1HWEngine1", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -154,7 +154,7 @@ module AnalyticH1HWEngineFunction =
         
     *)
 
-    [<ExcelFunction(Name="_AnalyticH1HWEngine_update", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticH1HWEngine_update", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -190,7 +190,7 @@ module AnalyticH1HWEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticH1HWEngine_numberOfEvaluations", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticH1HWEngine_numberOfEvaluations", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_numberOfEvaluations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -226,7 +226,7 @@ module AnalyticH1HWEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticH1HWEngine_setModel", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticH1HWEngine_setModel", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_setModel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -268,7 +268,7 @@ module AnalyticH1HWEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticH1HWEngine_registerWith", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticH1HWEngine_registerWith", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -310,7 +310,7 @@ module AnalyticH1HWEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticH1HWEngine_reset", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticH1HWEngine_reset", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -346,7 +346,7 @@ module AnalyticH1HWEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticH1HWEngine_unregisterWith", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticH1HWEngine_unregisterWith", Description="Create a AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -385,7 +385,7 @@ module AnalyticH1HWEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AnalyticH1HWEngine_Range", Description="Create a range of AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticH1HWEngine_Range", Description="Create a range of AnalyticH1HWEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticH1HWEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

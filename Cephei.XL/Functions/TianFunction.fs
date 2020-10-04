@@ -37,7 +37,7 @@ module TianFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Tian_factory", Description="Create a Tian",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tian_factory", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -97,7 +97,7 @@ module TianFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Tian_probability", Description="Create a Tian",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tian_probability", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_probability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -151,7 +151,7 @@ module TianFunction =
     (*
         parameterless constructor is requried for generics
     *)
-    [<ExcelFunction(Name="_Tian1", Description="Create a Tian",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tian1", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module TianFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Tian", Description="Create a Tian",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tian", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -237,7 +237,7 @@ module TianFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Tian_underlying", Description="Create a Tian",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tian_underlying", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_underlying
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module TianFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Tian_descendant", Description="Create a Tian",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tian_descendant", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_descendant
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -339,7 +339,7 @@ module TianFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Tian_size", Description="Create a Tian",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tian_size", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -381,7 +381,7 @@ module TianFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Tian_columns", Description="Create a Tian",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tian_columns", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_columns
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -414,7 +414,7 @@ module TianFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Tian_Range", Description="Create a range of Tian",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Tian_Range", Description="Create a range of Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

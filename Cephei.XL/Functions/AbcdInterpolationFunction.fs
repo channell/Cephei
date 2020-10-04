@@ -37,7 +37,7 @@ module AbcdInterpolationFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_a", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_a", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_a
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module AbcdInterpolationFunction =
     (*
         ! Constructor
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_b", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_b", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_b
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -224,7 +224,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_c", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_c", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_c
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_d", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_d", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_d
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -296,7 +296,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_endCriteria", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_endCriteria", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_endCriteria
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -332,7 +332,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_k", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_k", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_k
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_k1", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_k1", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_k1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -422,7 +422,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_maxError", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_maxError", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_maxError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -458,7 +458,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_rmsError", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_rmsError", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_rmsError
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -494,7 +494,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_derivative", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_derivative", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_empty", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_empty", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -578,7 +578,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_primitive", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_primitive", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -626,7 +626,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_secondDerivative", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_secondDerivative", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -674,7 +674,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_update", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_update", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -711,7 +711,7 @@ module AbcdInterpolationFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_AbcdInterpolation_value", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_value", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -759,7 +759,7 @@ module AbcdInterpolationFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_value", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_value", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -801,7 +801,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_xMax", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_xMax", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -837,7 +837,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_xMin", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_xMin", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -873,7 +873,7 @@ module AbcdInterpolationFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_allowsExtrapolation", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_allowsExtrapolation", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -909,7 +909,7 @@ module AbcdInterpolationFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_disableExtrapolation", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_disableExtrapolation", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -951,7 +951,7 @@ module AbcdInterpolationFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_enableExtrapolation", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_enableExtrapolation", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -993,7 +993,7 @@ module AbcdInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdInterpolation_extrapolate", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_extrapolate", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1026,7 +1026,7 @@ module AbcdInterpolationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AbcdInterpolation_Range", Description="Create a range of AbcdInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdInterpolation_Range", Description="Create a range of AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

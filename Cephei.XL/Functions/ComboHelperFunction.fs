@@ -37,7 +37,7 @@ module ComboHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ComboHelper", Description="Create a ComboHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ComboHelper", Description="Create a ComboHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ComboHelper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module ComboHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ComboHelper_fNext", Description="Create a ComboHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ComboHelper_fNext", Description="Create a ComboHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ComboHelper_fNext
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module ComboHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ComboHelper_primitive", Description="Create a ComboHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ComboHelper_primitive", Description="Create a ComboHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ComboHelper_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module ComboHelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ComboHelper_value", Description="Create a ComboHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ComboHelper_value", Description="Create a ComboHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ComboHelper_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -203,7 +203,7 @@ module ComboHelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ComboHelper_Range", Description="Create a range of ComboHelper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ComboHelper_Range", Description="Create a range of ComboHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ComboHelper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

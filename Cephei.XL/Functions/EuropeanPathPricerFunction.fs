@@ -37,7 +37,7 @@ module EuropeanPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EuropeanPathPricer", Description="Create a EuropeanPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EuropeanPathPricer", Description="Create a EuropeanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanPathPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module EuropeanPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EuropeanPathPricer_value", Description="Create a EuropeanPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EuropeanPathPricer_value", Description="Create a EuropeanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanPathPricer_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -125,7 +125,7 @@ module EuropeanPathPricerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_EuropeanPathPricer_Range", Description="Create a range of EuropeanPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EuropeanPathPricer_Range", Description="Create a range of EuropeanPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanPathPricer_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

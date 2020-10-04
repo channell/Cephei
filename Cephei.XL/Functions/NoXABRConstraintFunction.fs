@@ -37,7 +37,7 @@ module NoXABRConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoXABRConstraint", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoXABRConstraint", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -69,7 +69,7 @@ module NoXABRConstraintFunction =
         
     *)
     (*!! generic
-    [<ExcelFunction(Name="_NoXABRConstraint_config", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoXABRConstraint_config", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_config
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -124,7 +124,7 @@ module NoXABRConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoXABRConstraint_empty", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoXABRConstraint_empty", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -160,7 +160,7 @@ module NoXABRConstraintFunction =
     (*
         ! Returns lower bound for given parameters
     *)
-    [<ExcelFunction(Name="_NoXABRConstraint_lowerBound", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoXABRConstraint_lowerBound", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_lowerBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -202,7 +202,7 @@ module NoXABRConstraintFunction =
     (*
         ! Tests if params satisfy the constraint
     *)
-    [<ExcelFunction(Name="_NoXABRConstraint_test", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoXABRConstraint_test", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_test
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -244,7 +244,7 @@ module NoXABRConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoXABRConstraint_update", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoXABRConstraint_update", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -298,7 +298,7 @@ module NoXABRConstraintFunction =
     (*
         ! Returns upper bound for given parameters
     *)
-    [<ExcelFunction(Name="_NoXABRConstraint_upperBound", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoXABRConstraint_upperBound", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_upperBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -337,7 +337,7 @@ module NoXABRConstraintFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NoXABRConstraint_Range", Description="Create a range of NoXABRConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoXABRConstraint_Range", Description="Create a range of NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module FractionalDividendFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FractionalDividend_amount1", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_amount1", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_amount1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module FractionalDividendFunction =
     (*
         Dividend interface
     *)
-    [<ExcelFunction(Name="_FractionalDividend_amount", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_amount", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module FractionalDividendFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FractionalDividend", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module FractionalDividendFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FractionalDividend1", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend1", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module FractionalDividendFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FractionalDividend_nominal", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_nominal", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -243,7 +243,7 @@ module FractionalDividendFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FractionalDividend_rate", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_rate", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_rate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -279,7 +279,7 @@ module FractionalDividendFunction =
     (*
         Event interface
     *)
-    [<ExcelFunction(Name="_FractionalDividend_date", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_date", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -315,7 +315,7 @@ module FractionalDividendFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FractionalDividend_CompareTo", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_CompareTo", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -357,7 +357,7 @@ module FractionalDividendFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FractionalDividend_Equals", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_Equals", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -399,7 +399,7 @@ module FractionalDividendFunction =
     (*
         ! returns the date that the cash flow trades exCoupon
     *)
-    [<ExcelFunction(Name="_FractionalDividend_exCouponDate", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_exCouponDate", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -435,7 +435,7 @@ module FractionalDividendFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FractionalDividend_hasOccurred", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_hasOccurred", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -483,7 +483,7 @@ module FractionalDividendFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_FractionalDividend_tradingExCoupon", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_tradingExCoupon", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -525,7 +525,7 @@ module FractionalDividendFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FractionalDividend_accept", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_accept", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -567,7 +567,7 @@ module FractionalDividendFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FractionalDividend_registerWith", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_registerWith", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -609,7 +609,7 @@ module FractionalDividendFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FractionalDividend_unregisterWith", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_unregisterWith", Description="Create a FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -648,7 +648,7 @@ module FractionalDividendFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FractionalDividend_Range", Description="Create a range of FractionalDividend",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FractionalDividend_Range", Description="Create a range of FractionalDividend",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FractionalDividend_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

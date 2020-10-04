@@ -37,7 +37,7 @@ module NormalDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NormalDistribution_derivative", Description="Create a NormalDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NormalDistribution_derivative", Description="Create a NormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NormalDistribution_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module NormalDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NormalDistribution1", Description="Create a NormalDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NormalDistribution1", Description="Create a NormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NormalDistribution_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module NormalDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NormalDistribution", Description="Create a NormalDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NormalDistribution", Description="Create a NormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NormalDistribution_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module NormalDistributionFunction =
     (*
         function
     *)
-    [<ExcelFunction(Name="_NormalDistribution_value", Description="Create a NormalDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NormalDistribution_value", Description="Create a NormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NormalDistribution_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -192,7 +192,7 @@ module NormalDistributionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NormalDistribution_Range", Description="Create a range of NormalDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NormalDistribution_Range", Description="Create a range of NormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NormalDistribution_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module DKKCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DKKCurrency", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module DKKCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_DKKCurrency_code", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_code", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module DKKCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_DKKCurrency_empty", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_empty", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module DKKCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DKKCurrency_Equals", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_Equals", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module DKKCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_DKKCurrency_format", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_format", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module DKKCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_DKKCurrency_fractionsPerUnit", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_fractionsPerUnit", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module DKKCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_DKKCurrency_fractionSymbol", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_fractionSymbol", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module DKKCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_DKKCurrency_name", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_name", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module DKKCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_DKKCurrency_numericCode", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_numericCode", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module DKKCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_DKKCurrency_rounding", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_rounding", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module DKKCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_DKKCurrency_symbol", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_symbol", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module DKKCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DKKCurrency_ToString", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_ToString", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module DKKCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_DKKCurrency_triangulationCurrency", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_triangulationCurrency", Description="Create a DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module DKKCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DKKCurrency_Range", Description="Create a range of DKKCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DKKCurrency_Range", Description="Create a range of DKKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

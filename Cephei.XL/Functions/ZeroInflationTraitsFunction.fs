@@ -37,7 +37,7 @@ module ZeroInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroInflationTraits_discountImpl", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroInflationTraits_discountImpl", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_discountImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module ZeroInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroInflationTraits_forwardImpl", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroInflationTraits_forwardImpl", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_forwardImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module ZeroInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroInflationTraits_guess", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroInflationTraits_guess", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_guess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -193,7 +193,7 @@ module ZeroInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroInflationTraits_initialDate", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroInflationTraits_initialDate", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_initialDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -235,7 +235,7 @@ module ZeroInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroInflationTraits_initialValue", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroInflationTraits_initialValue", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_initialValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module ZeroInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroInflationTraits_maxIterations", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroInflationTraits_maxIterations", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_maxIterations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module ZeroInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroInflationTraits_maxValueAfter", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroInflationTraits_maxValueAfter", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_maxValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -373,7 +373,7 @@ module ZeroInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroInflationTraits_minValueAfter", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroInflationTraits_minValueAfter", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_minValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -433,7 +433,7 @@ module ZeroInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroInflationTraits_updateGuess", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroInflationTraits_updateGuess", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_updateGuess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -487,7 +487,7 @@ module ZeroInflationTraitsFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroInflationTraits_zeroYieldImpl", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroInflationTraits_zeroYieldImpl", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_zeroYieldImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -532,7 +532,7 @@ module ZeroInflationTraitsFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ZeroInflationTraits_Range", Description="Create a range of ZeroInflationTraits",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroInflationTraits_Range", Description="Create a range of ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

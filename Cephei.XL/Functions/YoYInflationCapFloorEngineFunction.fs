@@ -38,7 +38,7 @@ module YoYInflationCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCapFloorEngine_index", Description="Create a YoYInflationCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCapFloorEngine_index", Description="Create a YoYInflationCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCapFloorEngine_index
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module YoYInflationCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCapFloorEngine_setVolatility", Description="Create a YoYInflationCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCapFloorEngine_setVolatility", Description="Create a YoYInflationCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCapFloorEngine_setVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module YoYInflationCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCapFloorEngine_volatility", Description="Create a YoYInflationCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCapFloorEngine_volatility", Description="Create a YoYInflationCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCapFloorEngine_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module YoYInflationCapFloorEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCapFloorEngine", Description="Create a YoYInflationCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCapFloorEngine", Description="Create a YoYInflationCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCapFloorEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -192,7 +192,7 @@ module YoYInflationCapFloorEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_YoYInflationCapFloorEngine_Range", Description="Create a range of YoYInflationCapFloorEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCapFloorEngine_Range", Description="Create a range of YoYInflationCapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCapFloorEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

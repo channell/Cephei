@@ -37,7 +37,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar4", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar4", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_create4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -141,7 +141,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar1", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar1", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -190,7 +190,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar2", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar2", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -245,7 +245,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar3", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar3", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -306,7 +306,7 @@ module JointCalendarFunction =
     (*
         ! Depending on the chosen rule, this calendar has a set of business days given by either the union or the intersection of the sets of business days of the given calendars. \test the correctness of the returned results is tested by reproducing the calculations.
     *)
-    [<ExcelFunction(Name="_JointCalendar5", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar5", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_create5
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -349,7 +349,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar_addedHolidays", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_addedHolidays", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_addedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -385,7 +385,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar_addHoliday", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_addHoliday", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_addHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -427,7 +427,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar_adjust", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_adjust", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_adjust
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -475,7 +475,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar_advance1", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_advance1", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -541,7 +541,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar_advance", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_advance", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_advance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -601,7 +601,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar_businessDaysBetween", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_businessDaysBetween", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_businessDaysBetween
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -661,7 +661,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar_calendar", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_calendar", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -697,7 +697,7 @@ module JointCalendarFunction =
     (*
         Returns whether or not the calendar is initialized
     *)
-    [<ExcelFunction(Name="_JointCalendar_empty", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_empty", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -733,7 +733,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar_endOfMonth", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_endOfMonth", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -775,7 +775,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar_Equals", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_Equals", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -817,7 +817,7 @@ module JointCalendarFunction =
     (*
         @returns Returns <tt>true</tt> iff the date is a business day for the given market.
     *)
-    [<ExcelFunction(Name="_JointCalendar_isBusinessDay", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_isBusinessDay", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_isBusinessDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -859,7 +859,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar_isEndOfMonth", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_isEndOfMonth", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_isEndOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -901,7 +901,7 @@ module JointCalendarFunction =
     (*
         Returns <tt>true</tt> iff the date is a holiday for the given market.
     *)
-    [<ExcelFunction(Name="_JointCalendar_isHoliday", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_isHoliday", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_isHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -943,7 +943,7 @@ module JointCalendarFunction =
     (*
         Returns <tt>true</tt> iff the weekday is part of the weekend for the given market.
     *)
-    [<ExcelFunction(Name="_JointCalendar_isWeekend", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_isWeekend", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_isWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -987,7 +987,7 @@ module JointCalendarFunction =
 
 @returns The name of the calendar.
     *)
-    [<ExcelFunction(Name="_JointCalendar_name", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_name", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1023,7 +1023,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar_removedHolidays", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_removedHolidays", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_removedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1059,7 +1059,7 @@ module JointCalendarFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_JointCalendar_removeHoliday", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_removeHoliday", Description="Create a JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_removeHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1098,7 +1098,7 @@ module JointCalendarFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_JointCalendar_Range", Description="Create a range of JointCalendar",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_JointCalendar_Range", Description="Create a range of JointCalendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JointCalendar_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

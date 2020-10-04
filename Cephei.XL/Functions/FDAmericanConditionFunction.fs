@@ -37,7 +37,7 @@ module FDAmericanConditionFunction =
     (*
         required for template inheritance
     *)
-    [<ExcelFunction(Name="_FDAmericanCondition_factory", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDAmericanCondition_factory", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -97,7 +97,7 @@ module FDAmericanConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDAmericanCondition", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDAmericanCondition", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module FDAmericanConditionFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_FDAmericanCondition1", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDAmericanCondition1", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -184,7 +184,7 @@ module FDAmericanConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDAmericanCondition_setStepCondition", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDAmericanCondition_setStepCondition", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_setStepCondition
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -226,7 +226,7 @@ module FDAmericanConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDAmericanCondition_ensureStrikeInGrid", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDAmericanCondition_ensureStrikeInGrid", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_ensureStrikeInGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -262,7 +262,7 @@ module FDAmericanConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDAmericanCondition_getResidualTime", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDAmericanCondition_getResidualTime", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_getResidualTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -298,7 +298,7 @@ module FDAmericanConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDAmericanCondition_grid", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDAmericanCondition_grid", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -334,7 +334,7 @@ module FDAmericanConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDAmericanCondition_intrinsicValues_", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDAmericanCondition_intrinsicValues_", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_intrinsicValues_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -367,7 +367,7 @@ module FDAmericanConditionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FDAmericanCondition_Range", Description="Create a range of FDAmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDAmericanCondition_Range", Description="Create a range of FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

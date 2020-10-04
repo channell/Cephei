@@ -37,7 +37,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_diffusion", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_diffusion", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_diffusion
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_drift", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_drift", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_drift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_expectation", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_expectation", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_expectation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -187,7 +187,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_level", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_level", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_level
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_speed", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_speed", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_speed
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_stdDeviation", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_stdDeviation", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_stdDeviation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_variance", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_variance", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -422,7 +422,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_volatility", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_volatility", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -458,7 +458,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         StochasticProcess interface
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_x0", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_x0", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_x0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -494,7 +494,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_apply1", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_apply1", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_apply1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         applies a change to the asset value.
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_apply", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_apply", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_apply
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -590,7 +590,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_evolve", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_evolve", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_evolve
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         returns the asset value after a time interval.
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_evolve1", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_evolve1", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_evolve1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -710,7 +710,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         ! returns the initial values of the state variables
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_initialValues", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_initialValues", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_initialValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -746,7 +746,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_size", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_size", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -782,7 +782,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         ! returns the covariance. This method can be overridden in derived classes which want to hard-code a particular discretization.
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_covariance", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_covariance", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_covariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -836,7 +836,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         ! returns the number of independent factors of the process
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_factors", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_factors", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_factors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -872,7 +872,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_registerWith", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_registerWith", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -914,7 +914,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         ! returns the time value corresponding to the given date in the reference system of the stochastic process.  \note As a number of processes might not need this functionality, a default implementation is given which raises an exception.
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_time", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_time", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_time
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -956,7 +956,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_unregisterWith", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_unregisterWith", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -998,7 +998,7 @@ module OrnsteinUhlenbeckProcessFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_update", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_update", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1031,7 +1031,7 @@ module OrnsteinUhlenbeckProcessFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_Range", Description="Create a range of OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_Range", Description="Create a range of OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

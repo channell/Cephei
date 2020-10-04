@@ -37,7 +37,7 @@ module CommercialPaperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CommercialPaper", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CommercialPaper", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module CommercialPaperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CommercialPaper_fixedLeg", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CommercialPaper_fixedLeg", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_fixedLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module CommercialPaperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CommercialPaper_principalLeg", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CommercialPaper_principalLeg", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_principalLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module CommercialPaperFunction =
     (*
         Instrument interface
     *)
-    [<ExcelFunction(Name="_CommercialPaper_isExpired", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CommercialPaper_isExpired", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module CommercialPaperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CommercialPaper_CASH", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CommercialPaper_CASH", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module CommercialPaperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CommercialPaper_errorEstimate", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CommercialPaper_errorEstimate", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -302,7 +302,7 @@ module CommercialPaperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CommercialPaper_NPV", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CommercialPaper_NPV", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -338,7 +338,7 @@ module CommercialPaperFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_CommercialPaper_result", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CommercialPaper_result", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module CommercialPaperFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_CommercialPaper_setPricingEngine", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CommercialPaper_setPricingEngine", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -422,7 +422,7 @@ module CommercialPaperFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_CommercialPaper_valuationDate", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CommercialPaper_valuationDate", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -455,7 +455,7 @@ module CommercialPaperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CommercialPaper_Range", Description="Create a range of CommercialPaper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CommercialPaper_Range", Description="Create a range of CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

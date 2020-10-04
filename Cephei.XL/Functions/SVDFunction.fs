@@ -37,7 +37,7 @@ module SVDFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVD_cond", Description="Create a SVD",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVD_cond", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_cond
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module SVDFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVD_norm2", Description="Create a SVD",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVD_norm2", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_norm2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module SVDFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVD_rank", Description="Create a SVD",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVD_rank", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_rank
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module SVDFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVD_S", Description="Create a SVD",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVD_S", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_S
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module SVDFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVD_singularValues", Description="Create a SVD",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVD_singularValues", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_singularValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module SVDFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVD_solveFor", Description="Create a SVD",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVD_solveFor", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_solveFor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -259,7 +259,7 @@ module SVDFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVD", Description="Create a SVD",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVD", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -296,7 +296,7 @@ module SVDFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVD_U", Description="Create a SVD",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVD_U", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_U
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -332,7 +332,7 @@ module SVDFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVD_V", Description="Create a SVD",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVD_V", Description="Create a SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_V
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -365,7 +365,7 @@ module SVDFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SVD_Range", Description="Create a range of SVD",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVD_Range", Description="Create a range of SVD",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVD_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

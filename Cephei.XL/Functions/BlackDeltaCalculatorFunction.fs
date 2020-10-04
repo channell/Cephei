@@ -37,7 +37,7 @@ module BlackDeltaCalculatorFunction =
     (*
         The following function can be calculated without an explicit strike
     *)
-    [<ExcelFunction(Name="_BlackDeltaCalculator_atmStrike", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaCalculator_atmStrike", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_atmStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module BlackDeltaCalculatorFunction =
     (*
         A parsimonious constructor is chosen, which for example doesn't need a strike. The reason for this is, that we'd like this class to calculate deltas for different strikes many times, e.g. in a numerical routine, which will be the case in the smile setup procedure.
     *)
-    [<ExcelFunction(Name="_BlackDeltaCalculator", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaCalculator", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module BlackDeltaCalculatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackDeltaCalculator_cumD1", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaCalculator_cumD1", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_cumD1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module BlackDeltaCalculatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackDeltaCalculator_cumD2", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaCalculator_cumD2", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_cumD2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module BlackDeltaCalculatorFunction =
     (*
         Give strike, receive delta according to specified type
     *)
-    [<ExcelFunction(Name="_BlackDeltaCalculator_deltaFromStrike", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaCalculator_deltaFromStrike", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_deltaFromStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module BlackDeltaCalculatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackDeltaCalculator_nD1", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaCalculator_nD1", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_nD1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module BlackDeltaCalculatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackDeltaCalculator_nD2", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaCalculator_nD2", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_nD2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -356,7 +356,7 @@ module BlackDeltaCalculatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackDeltaCalculator_setDeltaType", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaCalculator_setDeltaType", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_setDeltaType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module BlackDeltaCalculatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackDeltaCalculator_setOptionType", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaCalculator_setOptionType", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_setOptionType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module BlackDeltaCalculatorFunction =
     (*
         Give delta according to specified type, receive strike
     *)
-    [<ExcelFunction(Name="_BlackDeltaCalculator_strikeFromDelta", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaCalculator_strikeFromDelta", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_strikeFromDelta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -479,7 +479,7 @@ module BlackDeltaCalculatorFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BlackDeltaCalculator_Range", Description="Create a range of BlackDeltaCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackDeltaCalculator_Range", Description="Create a range of BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

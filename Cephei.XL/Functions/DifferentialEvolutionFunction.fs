@@ -37,7 +37,7 @@ module DifferentialEvolutionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DifferentialEvolution_configuration", Description="Create a DifferentialEvolution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DifferentialEvolution_configuration", Description="Create a DifferentialEvolution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DifferentialEvolution_configuration
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module DifferentialEvolutionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DifferentialEvolution", Description="Create a DifferentialEvolution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DifferentialEvolution", Description="Create a DifferentialEvolution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DifferentialEvolution_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module DifferentialEvolutionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DifferentialEvolution_minimize", Description="Create a DifferentialEvolution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DifferentialEvolution_minimize", Description="Create a DifferentialEvolution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DifferentialEvolution_minimize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -155,7 +155,7 @@ module DifferentialEvolutionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DifferentialEvolution_Range", Description="Create a range of DifferentialEvolution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DifferentialEvolution_Range", Description="Create a range of DifferentialEvolution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DifferentialEvolution_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

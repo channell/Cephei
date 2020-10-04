@@ -37,7 +37,7 @@ module TqrEigenDecompositionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TqrEigenDecomposition_eigenvalues", Description="Create a TqrEigenDecomposition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TqrEigenDecomposition_eigenvalues", Description="Create a TqrEigenDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TqrEigenDecomposition_eigenvalues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module TqrEigenDecompositionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TqrEigenDecomposition_eigenvectors", Description="Create a TqrEigenDecomposition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TqrEigenDecomposition_eigenvectors", Description="Create a TqrEigenDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TqrEigenDecomposition_eigenvectors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module TqrEigenDecompositionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TqrEigenDecomposition_iterations", Description="Create a TqrEigenDecomposition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TqrEigenDecomposition_iterations", Description="Create a TqrEigenDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TqrEigenDecomposition_iterations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module TqrEigenDecompositionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TqrEigenDecomposition", Description="Create a TqrEigenDecomposition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TqrEigenDecomposition", Description="Create a TqrEigenDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TqrEigenDecomposition_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -197,7 +197,7 @@ module TqrEigenDecompositionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TqrEigenDecomposition_Range", Description="Create a range of TqrEigenDecomposition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TqrEigenDecomposition_Range", Description="Create a range of TqrEigenDecomposition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TqrEigenDecomposition_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

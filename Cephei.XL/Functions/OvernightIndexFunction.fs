@@ -37,7 +37,7 @@ module OvernightIndexFunction =
     (*
         ! returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_OvernightIndex_clone", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_clone", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module OvernightIndexFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_OvernightIndex_businessDayConvention", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_businessDayConvention", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_endOfMonth", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_endOfMonth", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_forecastFixing1", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_forecastFixing1", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_forecastFixing", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_forecastFixing", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module OvernightIndexFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_OvernightIndex_forwardingTermStructure", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_forwardingTermStructure", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -350,7 +350,7 @@ module OvernightIndexFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_OvernightIndex_maturityDate", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_maturityDate", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -392,7 +392,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_currency", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_currency", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_dayCounter", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_dayCounter", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -464,7 +464,7 @@ module OvernightIndexFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_OvernightIndex_familyName", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_familyName", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_fixing", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_fixing", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -548,7 +548,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_fixingCalendar", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_fixingCalendar", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -584,7 +584,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_fixingDate", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_fixingDate", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -626,7 +626,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_fixingDays", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_fixingDays", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -662,7 +662,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_isValidFixingDate", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_isValidFixingDate", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -704,7 +704,7 @@ module OvernightIndexFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_OvernightIndex_name", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_name", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -740,7 +740,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_pastFixing", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_pastFixing", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -782,7 +782,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_tenor", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_tenor", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -818,7 +818,7 @@ module OvernightIndexFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_OvernightIndex_update", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_update", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -854,7 +854,7 @@ module OvernightIndexFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_OvernightIndex_valueDate", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_valueDate", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -896,7 +896,7 @@ module OvernightIndexFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_OvernightIndex_addFixing", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_addFixing", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -950,7 +950,7 @@ module OvernightIndexFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_OvernightIndex_addFixings", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_addFixings", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1004,7 +1004,7 @@ module OvernightIndexFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_OvernightIndex_addFixings1", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_addFixings1", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1052,7 +1052,7 @@ module OvernightIndexFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_OvernightIndex_allowsNativeFixings", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_allowsNativeFixings", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1088,7 +1088,7 @@ module OvernightIndexFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_OvernightIndex_clearFixings", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_clearFixings", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1124,7 +1124,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_registerWith", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_registerWith", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1166,7 +1166,7 @@ module OvernightIndexFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_OvernightIndex_timeSeries", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_timeSeries", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1202,7 +1202,7 @@ module OvernightIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_OvernightIndex_unregisterWith", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_unregisterWith", Description="Create a OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1241,7 +1241,7 @@ module OvernightIndexFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_OvernightIndex_Range", Description="Create a range of OvernightIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_OvernightIndex_Range", Description="Create a range of OvernightIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndex_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module Business252Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Business252", Description="Create a Business252",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Business252", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module Business252Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Business252_dayCount", Description="Create a Business252",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Business252_dayCount", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_dayCount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module Business252Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Business252_name", Description="Create a Business252",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Business252_name", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module Business252Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Business252_yearFraction", Description="Create a Business252",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Business252_yearFraction", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_yearFraction
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module Business252Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Business252_dayCounter", Description="Create a Business252",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Business252_dayCounter", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module Business252Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Business252_empty", Description="Create a Business252",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Business252_empty", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module Business252Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Business252_Equals", Description="Create a Business252",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Business252_Equals", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -332,7 +332,7 @@ module Business252Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_Business252_ToString", Description="Create a Business252",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Business252_ToString", Description="Create a Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -365,7 +365,7 @@ module Business252Function =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Business252_Range", Description="Create a range of Business252",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Business252_Range", Description="Create a range of Business252",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Business252_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

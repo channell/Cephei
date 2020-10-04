@@ -37,7 +37,7 @@ module FritschButlandCubicFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module FritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_aCoefficients", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_aCoefficients", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_aCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module FritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_bCoefficients", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_bCoefficients", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_bCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module FritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_cCoefficients", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_cCoefficients", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_cCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module FritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_derivative", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_derivative", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module FritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_empty", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_empty", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module FritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_primitive", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_primitive", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module FritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_secondDerivative", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_secondDerivative", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module FritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_update", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_update", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module FritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_value1", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_value1", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -458,7 +458,7 @@ module FritschButlandCubicFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_value", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_value", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module FritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_xMax", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_xMax", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -536,7 +536,7 @@ module FritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_xMin", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_xMin", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -572,7 +572,7 @@ module FritschButlandCubicFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_allowsExtrapolation", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_allowsExtrapolation", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module FritschButlandCubicFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_disableExtrapolation", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_disableExtrapolation", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module FritschButlandCubicFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_enableExtrapolation", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_enableExtrapolation", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module FritschButlandCubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FritschButlandCubic_extrapolate", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_extrapolate", Description="Create a FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -725,7 +725,7 @@ module FritschButlandCubicFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FritschButlandCubic_Range", Description="Create a range of FritschButlandCubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FritschButlandCubic_Range", Description="Create a range of FritschButlandCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FritschButlandCubic_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

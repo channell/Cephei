@@ -37,7 +37,7 @@ module ProjectionFunction =
     (*
         ! returns whole set of parameters corresponding to the set of projected parameters
     *)
-    [<ExcelFunction(Name="_Projection_include", Description="Create a Projection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Projection_include", Description="Create a Projection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Projection_include
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module ProjectionFunction =
     (*
         ! returns the subset of free parameters corresponding to set of parameters
     *)
-    [<ExcelFunction(Name="_Projection_project", Description="Create a Projection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Projection_project", Description="Create a Projection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Projection_project
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module ProjectionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Projection", Description="Create a Projection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Projection", Description="Create a Projection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Projection_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -161,7 +161,7 @@ module ProjectionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Projection_Range", Description="Create a range of Projection",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Projection_Range", Description="Create a range of Projection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Projection_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

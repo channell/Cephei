@@ -37,7 +37,7 @@ module PdeBSMFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeBSM_diffusion", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeBSM_diffusion", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_diffusion
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module PdeBSMFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeBSM_discount", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeBSM_discount", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module PdeBSMFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeBSM_drift", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeBSM_drift", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_drift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module PdeBSMFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeBSM_factory", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeBSM_factory", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module PdeBSMFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_PdeBSM1", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeBSM1", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module PdeBSMFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeBSM", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeBSM", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -291,7 +291,7 @@ module PdeBSMFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PdeBSM_generateOperator", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeBSM_generateOperator", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_generateOperator
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -342,7 +342,7 @@ module PdeBSMFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PdeBSM_Range", Description="Create a range of PdeBSM",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PdeBSM_Range", Description="Create a range of PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

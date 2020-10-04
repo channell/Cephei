@@ -37,7 +37,7 @@ module VoluntaryPrepayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VoluntaryPrepay", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VoluntaryPrepay", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module VoluntaryPrepayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VoluntaryPrepay_amount", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VoluntaryPrepay_amount", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module VoluntaryPrepayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VoluntaryPrepay_date", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VoluntaryPrepay_date", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module VoluntaryPrepayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VoluntaryPrepay_CompareTo", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VoluntaryPrepay_CompareTo", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module VoluntaryPrepayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VoluntaryPrepay_Equals", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VoluntaryPrepay_Equals", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module VoluntaryPrepayFunction =
     (*
         ! returns the date that the cash flow trades exCoupon
     *)
-    [<ExcelFunction(Name="_VoluntaryPrepay_exCouponDate", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VoluntaryPrepay_exCouponDate", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module VoluntaryPrepayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VoluntaryPrepay_hasOccurred", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VoluntaryPrepay_hasOccurred", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module VoluntaryPrepayFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_VoluntaryPrepay_tradingExCoupon", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VoluntaryPrepay_tradingExCoupon", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module VoluntaryPrepayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VoluntaryPrepay_accept", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VoluntaryPrepay_accept", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module VoluntaryPrepayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VoluntaryPrepay_registerWith", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VoluntaryPrepay_registerWith", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -446,7 +446,7 @@ module VoluntaryPrepayFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VoluntaryPrepay_unregisterWith", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VoluntaryPrepay_unregisterWith", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -485,7 +485,7 @@ module VoluntaryPrepayFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_VoluntaryPrepay_Range", Description="Create a range of VoluntaryPrepay",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VoluntaryPrepay_Range", Description="Create a range of VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

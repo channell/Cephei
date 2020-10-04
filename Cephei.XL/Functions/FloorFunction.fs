@@ -37,7 +37,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_atmRate", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_atmRate", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_atmRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_capRates", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_capRates", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_capRates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_floatingLeg", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_floatingLeg", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_floatingLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_floorRates", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_floorRates", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_floorRates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_getType", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_getType", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_getType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_impliedVolatility", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_impliedVolatility", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_impliedVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_impliedVolatility1", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_impliedVolatility1", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_impliedVolatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_isExpired", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_isExpired", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_lastFloatingRateCoupon", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_lastFloatingRateCoupon", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_lastFloatingRateCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -506,7 +506,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_maturityDate", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_maturityDate", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_optionlet", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_optionlet", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_optionlet
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -584,7 +584,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_startDate", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_startDate", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -620,7 +620,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_CASH", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_CASH", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -656,7 +656,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_errorEstimate", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_errorEstimate", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module FloorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Floor_NPV", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_NPV", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -728,7 +728,7 @@ module FloorFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_Floor_result", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_result", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -770,7 +770,7 @@ module FloorFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_Floor_setPricingEngine", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_setPricingEngine", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -812,7 +812,7 @@ module FloorFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_Floor_valuationDate", Description="Create a Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_valuationDate", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -845,7 +845,7 @@ module FloorFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Floor_Range", Description="Create a range of Floor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Floor_Range", Description="Create a range of Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

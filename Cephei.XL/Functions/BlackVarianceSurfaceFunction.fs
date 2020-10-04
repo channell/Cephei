@@ -37,7 +37,7 @@ module BlackVarianceSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackVarianceSurface", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module BlackVarianceSurfaceFunction =
     (*
         required for Handle
     *)
-    [<ExcelFunction(Name="_BlackVarianceSurface1", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface1", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -147,7 +147,7 @@ module BlackVarianceSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackVarianceSurface_dates", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface_dates", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_dates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module BlackVarianceSurfaceFunction =
     (*
         TermStructure interface
     *)
-    [<ExcelFunction(Name="_BlackVarianceSurface_dayCounter", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface_dayCounter", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module BlackVarianceSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackVarianceSurface_maxDate", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface_maxDate", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -255,7 +255,7 @@ module BlackVarianceSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackVarianceSurface_maxStrike", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface_maxStrike", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -291,7 +291,7 @@ module BlackVarianceSurfaceFunction =
     (*
         VolatilityTermStructure interface
     *)
-    [<ExcelFunction(Name="_BlackVarianceSurface_minStrike", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface_minStrike", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -328,7 +328,7 @@ module BlackVarianceSurfaceFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_BlackVarianceSurface_setInterpolation", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface_setInterpolation", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_setInterpolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -372,7 +372,7 @@ module BlackVarianceSurfaceFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_BlackVarianceSurface_setInterpolation", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface_setInterpolation", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_setInterpolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -409,7 +409,7 @@ module BlackVarianceSurfaceFunction =
     (*
         public accessors
     *)
-    [<ExcelFunction(Name="_BlackVarianceSurface_strikes", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface_strikes", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_strikes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -445,7 +445,7 @@ module BlackVarianceSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackVarianceSurface_times", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface_times", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_times
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -481,7 +481,7 @@ module BlackVarianceSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackVarianceSurface_variances", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface_variances", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_variances
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -517,7 +517,7 @@ module BlackVarianceSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackVarianceSurface_volatilities", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface_volatilities", Description="Create a BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_volatilities
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -550,7 +550,7 @@ module BlackVarianceSurfaceFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BlackVarianceSurface_Range", Description="Create a range of BlackVarianceSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackVarianceSurface_Range", Description="Create a range of BlackVarianceSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackVarianceSurface_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module FDDividendAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDDividendAmericanEngine_factory", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDDividendAmericanEngine_factory", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module FDDividendAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDDividendAmericanEngine", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDDividendAmericanEngine", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module FDDividendAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDDividendAmericanEngine1", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDDividendAmericanEngine1", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -178,7 +178,7 @@ module FDDividendAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDDividendAmericanEngine_registerWith", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDDividendAmericanEngine_registerWith", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -220,7 +220,7 @@ module FDDividendAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDDividendAmericanEngine_reset", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDDividendAmericanEngine_reset", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -256,7 +256,7 @@ module FDDividendAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDDividendAmericanEngine_unregisterWith", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDDividendAmericanEngine_unregisterWith", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -298,7 +298,7 @@ module FDDividendAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDDividendAmericanEngine_update", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDDividendAmericanEngine_update", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -334,7 +334,7 @@ module FDDividendAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDDividendAmericanEngine_ensureStrikeInGrid", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDDividendAmericanEngine_ensureStrikeInGrid", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_ensureStrikeInGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -370,7 +370,7 @@ module FDDividendAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDDividendAmericanEngine_getResidualTime", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDDividendAmericanEngine_getResidualTime", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_getResidualTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -406,7 +406,7 @@ module FDDividendAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDDividendAmericanEngine_grid", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDDividendAmericanEngine_grid", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -442,7 +442,7 @@ module FDDividendAmericanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FDDividendAmericanEngine_intrinsicValues_", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDDividendAmericanEngine_intrinsicValues_", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_intrinsicValues_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -475,7 +475,7 @@ module FDDividendAmericanEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FDDividendAmericanEngine_Range", Description="Create a range of FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FDDividendAmericanEngine_Range", Description="Create a range of FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

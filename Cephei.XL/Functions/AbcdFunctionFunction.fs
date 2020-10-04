@@ -37,7 +37,7 @@ module AbcdFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdFunction", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module AbcdFunctionFunction =
     (*
         ! integral of the instantaneous covariance function between time t1 and t2 for T-fixing and S-fixing rates \f[ \int_{t1}^{t2} f(T-t)f(S-t)dt \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_covariance1", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_covariance1", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_covariance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module AbcdFunctionFunction =
     (*
         ! instantaneous covariance function at time t between T-fixing and S-fixing rates \f[ f(T-t)f(S-t) \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_covariance", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_covariance", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_covariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module AbcdFunctionFunction =
     (*
         ! instantaneous covariance at time t between T and S fixing rates: \f[ f(T-u)f(S-u) \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_instantaneousCovariance", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_instantaneousCovariance", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_instantaneousCovariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module AbcdFunctionFunction =
     (*
         ! instantaneous variance at time t of T-fixing rate: \f[ f(T-t)f(T-t) \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_instantaneousVariance", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_instantaneousVariance", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_instantaneousVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module AbcdFunctionFunction =
     (*
         ! instantaneous volatility at time t of the T-fixing rate: \f[ f(T-t) \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_instantaneousVolatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_instantaneousVolatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_instantaneousVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -356,7 +356,7 @@ module AbcdFunctionFunction =
     (*
         ! volatility function value at time +inf: \f[ f(\inf) \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_longTermVolatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_longTermVolatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_longTermVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -392,7 +392,7 @@ module AbcdFunctionFunction =
     (*
         ! maximum value of the volatility function
     *)
-    [<ExcelFunction(Name="_AbcdFunction_maximumVolatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_maximumVolatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_maximumVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module AbcdFunctionFunction =
     (*
         ! indefinite integral of the instantaneous covariance function at time t between T-fixing and S-fixing rates \f[ \int f(T-t)f(S-t)dt \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_primitive", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_primitive", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -482,7 +482,7 @@ module AbcdFunctionFunction =
     (*
         ! volatility function value at time 0: \f[ f(0) \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_shortTermVolatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_shortTermVolatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_shortTermVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module AbcdFunctionFunction =
     (*
         ! variance between tMin and tMax of T-fixing rate: \f[ \frac{\int_{tMin}^{tMax} f^2(T-u)du}{tMax-tMin} \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_variance", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_variance", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_variance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -572,7 +572,7 @@ module AbcdFunctionFunction =
     (*
         ! average volatility in [tMin,tMax] of T-fixing rate: \f[ \sqrt{ \frac{\int_{tMin}^{tMax} f^2(T-u)du}{tMax-tMin} } \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_volatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_volatility", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -626,7 +626,7 @@ module AbcdFunctionFunction =
     (*
         ! Inspectors
     *)
-    [<ExcelFunction(Name="_AbcdFunction_a", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_a", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_a
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -662,7 +662,7 @@ module AbcdFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdFunction_b", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_b", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_b
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -698,7 +698,7 @@ module AbcdFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdFunction_c", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_c", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_c
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -734,7 +734,7 @@ module AbcdFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdFunction_coefficients", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_coefficients", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_coefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -770,7 +770,7 @@ module AbcdFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdFunction_d", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_d", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_d
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -806,7 +806,7 @@ module AbcdFunctionFunction =
     (*
         ! coefficients of a AbcdMathFunction defined as definite derivative on a rolling window of length tau, with tau = t2-t
     *)
-    [<ExcelFunction(Name="_AbcdFunction_definiteDerivativeCoefficients", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_definiteDerivativeCoefficients", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_definiteDerivativeCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -854,7 +854,7 @@ module AbcdFunctionFunction =
     (*
         ! definite integral of the function between t1 and t2 \f[ \int_{t1}^{t2} f(t)dt \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_definiteIntegral", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_definiteIntegral", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_definiteIntegral
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -902,7 +902,7 @@ module AbcdFunctionFunction =
     (*
         ! coefficients of a AbcdMathFunction defined as definite integral on a rolling window of length tau, with tau = t2-t
     *)
-    [<ExcelFunction(Name="_AbcdFunction_definiteIntegralCoefficients", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_definiteIntegralCoefficients", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_definiteIntegralCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -950,7 +950,7 @@ module AbcdFunctionFunction =
     (*
         ! first derivative of the function at time t \f[ f'(t) = [ (b-c*a) + (-c*b)*t) ] e^{-c*t} \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_derivative", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_derivative", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -992,7 +992,7 @@ module AbcdFunctionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AbcdFunction_derivativeCoefficients", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_derivativeCoefficients", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_derivativeCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1028,7 +1028,7 @@ module AbcdFunctionFunction =
     (*
         ! function value at time +inf: \f[ f(\inf) \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_longTermValue", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_longTermValue", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_longTermValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1064,7 +1064,7 @@ module AbcdFunctionFunction =
     (*
         ! time at which the function reaches maximum (if any)
     *)
-    [<ExcelFunction(Name="_AbcdFunction_maximumLocation", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_maximumLocation", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_maximumLocation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1100,7 +1100,7 @@ module AbcdFunctionFunction =
     (*
         ! maximum value of the function
     *)
-    [<ExcelFunction(Name="_AbcdFunction_maximumValue", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_maximumValue", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_maximumValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1136,7 +1136,7 @@ module AbcdFunctionFunction =
     (*
         ! function value at time t: \f[ f(t) \f]
     *)
-    [<ExcelFunction(Name="_AbcdFunction_value", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_value", Description="Create a AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1175,7 +1175,7 @@ module AbcdFunctionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AbcdFunction_Range", Description="Create a range of AbcdFunction",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AbcdFunction_Range", Description="Create a range of AbcdFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdFunction_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

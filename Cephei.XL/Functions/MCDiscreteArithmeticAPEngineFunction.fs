@@ -37,7 +37,7 @@ module MCDiscreteArithmeticAPEngineFunction =
     (*
         constructor
     *)
-    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticAPEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -123,7 +123,7 @@ module MCDiscreteArithmeticAPEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_registerWith", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_registerWith", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticAPEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -165,7 +165,7 @@ module MCDiscreteArithmeticAPEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_reset", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_reset", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticAPEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -201,7 +201,7 @@ module MCDiscreteArithmeticAPEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_unregisterWith", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_unregisterWith", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticAPEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -243,7 +243,7 @@ module MCDiscreteArithmeticAPEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_update", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_update", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticAPEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -279,7 +279,7 @@ module MCDiscreteArithmeticAPEngineFunction =
     (*
         ! error estimated using the samples simulated so far
     *)
-    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_errorEstimate", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_errorEstimate", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticAPEngine_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -315,7 +315,7 @@ module MCDiscreteArithmeticAPEngineFunction =
     (*
         ! access to the sample accumulator for richer statistics
     *)
-    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_sampleAccumulator", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_sampleAccumulator", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticAPEngine_sampleAccumulator
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -351,7 +351,7 @@ module MCDiscreteArithmeticAPEngineFunction =
     (*
         ! add samples until the required absolute tolerance is reached
     *)
-    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_value", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_value", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticAPEngine_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -405,7 +405,7 @@ module MCDiscreteArithmeticAPEngineFunction =
     (*
         ! simulate a fixed number of samples
     *)
-    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_valueWithSamples", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_valueWithSamples", Description="Create a MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticAPEngine_valueWithSamples
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -444,7 +444,7 @@ module MCDiscreteArithmeticAPEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_Range", Description="Create a range of MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCDiscreteArithmeticAPEngine_Range", Description="Create a range of MCDiscreteArithmeticAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticAPEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module RelinkableHandleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RelinkableHandle_linkTo", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RelinkableHandle_linkTo", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_linkTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module RelinkableHandleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RelinkableHandle_linkTo", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RelinkableHandle_linkTo", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_linkTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -127,7 +127,7 @@ module RelinkableHandleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RelinkableHandle", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RelinkableHandle", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module RelinkableHandleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RelinkableHandle1", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RelinkableHandle1", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -195,7 +195,7 @@ module RelinkableHandleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RelinkableHandle2", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RelinkableHandle2", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -238,7 +238,7 @@ module RelinkableHandleFunction =
     (*
         ! dereferencing
     *)
-    [<ExcelFunction(Name="_RelinkableHandle_currentLink", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RelinkableHandle_currentLink", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_currentLink
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -274,7 +274,7 @@ module RelinkableHandleFunction =
     (*
         ! checks if the contained shared pointer points to anything
     *)
-    [<ExcelFunction(Name="_RelinkableHandle_empty", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RelinkableHandle_empty", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -310,7 +310,7 @@ module RelinkableHandleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RelinkableHandle_Equals", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RelinkableHandle_Equals", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -352,7 +352,7 @@ module RelinkableHandleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RelinkableHandle_link", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RelinkableHandle_link", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_link
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -388,7 +388,7 @@ module RelinkableHandleFunction =
     (*
         dereferencing of the observable to the Link
     *)
-    [<ExcelFunction(Name="_RelinkableHandle_registerWith", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RelinkableHandle_registerWith", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -430,7 +430,7 @@ module RelinkableHandleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RelinkableHandle_unregisterWith", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RelinkableHandle_unregisterWith", Description="Create a RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -469,7 +469,7 @@ module RelinkableHandleFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_RelinkableHandle_Range", Description="Create a range of RelinkableHandle",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RelinkableHandle_Range", Description="Create a range of RelinkableHandle",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RelinkableHandle_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module AssetOrNothingPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetOrNothingPayoff", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetOrNothingPayoff", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module AssetOrNothingPayoffFunction =
     (*
         Payoff interface
     *)
-    [<ExcelFunction(Name="_AssetOrNothingPayoff_name", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetOrNothingPayoff_name", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module AssetOrNothingPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetOrNothingPayoff_value", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetOrNothingPayoff_value", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module AssetOrNothingPayoffFunction =
     (*
         Payoff interface
     *)
-    [<ExcelFunction(Name="_AssetOrNothingPayoff_description", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetOrNothingPayoff_description", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_description
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module AssetOrNothingPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetOrNothingPayoff_strike", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetOrNothingPayoff_strike", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_strike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module AssetOrNothingPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetOrNothingPayoff_optionType", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetOrNothingPayoff_optionType", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_optionType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module AssetOrNothingPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetOrNothingPayoff_accept", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetOrNothingPayoff_accept", Description="Create a AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -305,7 +305,7 @@ module AssetOrNothingPayoffFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AssetOrNothingPayoff_Range", Description="Create a range of AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetOrNothingPayoff_Range", Description="Create a range of AssetOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetOrNothingPayoff_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

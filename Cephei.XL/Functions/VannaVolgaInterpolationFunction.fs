@@ -37,7 +37,7 @@ module VannaVolgaInterpolationFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module VannaVolgaInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_derivative", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_derivative", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module VannaVolgaInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_empty", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_empty", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module VannaVolgaInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_primitive", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_primitive", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module VannaVolgaInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_secondDerivative", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_secondDerivative", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module VannaVolgaInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_update", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_update", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module VannaVolgaInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_value1", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_value1", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module VannaVolgaInterpolationFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_value", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_value", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module VannaVolgaInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_xMax", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_xMax", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module VannaVolgaInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_xMin", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_xMin", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -488,7 +488,7 @@ module VannaVolgaInterpolationFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_allowsExtrapolation", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_allowsExtrapolation", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module VannaVolgaInterpolationFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_disableExtrapolation", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_disableExtrapolation", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -566,7 +566,7 @@ module VannaVolgaInterpolationFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_enableExtrapolation", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_enableExtrapolation", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module VannaVolgaInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_extrapolate", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_extrapolate", Description="Create a VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -641,7 +641,7 @@ module VannaVolgaInterpolationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_VannaVolgaInterpolation_Range", Description="Create a range of VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolgaInterpolation_Range", Description="Create a range of VannaVolgaInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaInterpolation_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module ChiSquareDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ChiSquareDistribution", Description="Create a ChiSquareDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ChiSquareDistribution", Description="Create a ChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ChiSquareDistribution_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module ChiSquareDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ChiSquareDistribution_value", Description="Create a ChiSquareDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ChiSquareDistribution_value", Description="Create a ChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ChiSquareDistribution_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -113,7 +113,7 @@ module ChiSquareDistributionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ChiSquareDistribution_Range", Description="Create a range of ChiSquareDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ChiSquareDistribution_Range", Description="Create a range of ChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ChiSquareDistribution_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

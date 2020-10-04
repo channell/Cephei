@@ -37,7 +37,7 @@ module BicubicSplineFunction =
     (*
         ! \pre the \f$ x \f$ and \f$ y \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_BicubicSpline", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_derivativeX", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_derivativeX", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_derivativeX
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_derivativeXY", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_derivativeXY", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_derivativeXY
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_derivativeY", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_derivativeY", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_derivativeY
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_secondDerivativeX", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_secondDerivativeX", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_secondDerivativeX
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_secondDerivativeY", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_secondDerivativeY", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_secondDerivativeY
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -338,7 +338,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_isInRange", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_isInRange", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_isInRange
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_locateX", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_locateX", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_locateX
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_locateY", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_locateY", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_locateY
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_update", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_update", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -506,7 +506,7 @@ module BicubicSplineFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_BicubicSpline_value1", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_value1", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_value", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_value", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_xMax", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_xMax", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -644,7 +644,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_xMin", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_xMin", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -680,7 +680,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_xValues", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_xValues", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_xValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -716,7 +716,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_yMax", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_yMax", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_yMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -752,7 +752,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_yMin", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_yMin", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_yMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -788,7 +788,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_yValues", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_yValues", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_yValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -824,7 +824,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_zData", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_zData", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_zData
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -860,7 +860,7 @@ module BicubicSplineFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_BicubicSpline_allowsExtrapolation", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_allowsExtrapolation", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -896,7 +896,7 @@ module BicubicSplineFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_BicubicSpline_disableExtrapolation", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_disableExtrapolation", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -938,7 +938,7 @@ module BicubicSplineFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_BicubicSpline_enableExtrapolation", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_enableExtrapolation", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -980,7 +980,7 @@ module BicubicSplineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BicubicSpline_extrapolate", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_extrapolate", Description="Create a BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1013,7 +1013,7 @@ module BicubicSplineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BicubicSpline_Range", Description="Create a range of BicubicSpline",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BicubicSpline_Range", Description="Create a range of BicubicSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BicubicSpline_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

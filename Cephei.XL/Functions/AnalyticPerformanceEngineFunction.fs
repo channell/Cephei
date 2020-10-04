@@ -37,7 +37,7 @@ module AnalyticPerformanceEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticPerformanceEngine", Description="Create a AnalyticPerformanceEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticPerformanceEngine", Description="Create a AnalyticPerformanceEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticPerformanceEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -72,7 +72,7 @@ module AnalyticPerformanceEngineFunction =
         else
             "<WIZ>"
 
-    [<ExcelFunction(Name="_AnalyticPerformanceEngine_Range", Description="Create a range of AnalyticPerformanceEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticPerformanceEngine_Range", Description="Create a range of AnalyticPerformanceEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticPerformanceEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

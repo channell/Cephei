@@ -37,7 +37,7 @@ module BlackCalculatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackCalculator_alpha", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_alpha", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_alpha
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module BlackCalculatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackCalculator_beta", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_beta", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_beta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module BlackCalculatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackCalculator", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module BlackCalculatorFunction =
     (*
         ! Sensitivity to change in the underlying spot price.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_delta", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_delta", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_delta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module BlackCalculatorFunction =
     (*
         ! Sensitivity to change in the underlying forward price.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_deltaForward", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_deltaForward", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_deltaForward
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module BlackCalculatorFunction =
     (*
         ! Sensitivity to dividend/growth rate.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_dividendRho", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_dividendRho", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_dividendRho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module BlackCalculatorFunction =
     (*
         ! Sensitivity in percent to a percent change in the underlying spot price.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_elasticity", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_elasticity", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_elasticity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module BlackCalculatorFunction =
     (*
         ! Sensitivity in percent to a percent change in the underlying forward price.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_elasticityForward", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_elasticityForward", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_elasticityForward
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module BlackCalculatorFunction =
     (*
         ! Second order derivative with respect to change in the underlying spot price.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_gamma", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_gamma", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_gamma
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module BlackCalculatorFunction =
     (*
         ! Second order derivative with respect to change in the underlying forward price.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_gammaForward", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_gammaForward", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_gammaForward
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module BlackCalculatorFunction =
     (*
         ! Probability of being in the money in the asset martingale measure, i.e. N(d1). It is a risk-neutral probability, not the real world one.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_itmAssetProbability", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_itmAssetProbability", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_itmAssetProbability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module BlackCalculatorFunction =
     (*
         ! Probability of being in the money in the bond martingale measure, i.e. N(d2). It is a risk-neutral probability, not the real world one.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_itmCashProbability", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_itmCashProbability", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_itmCashProbability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module BlackCalculatorFunction =
     (*
         ! Sensitivity to discounting rate.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_rho", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_rho", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_rho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module BlackCalculatorFunction =
     (*
         ! Sensitivity to strike.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_strikeSensitivity", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_strikeSensitivity", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_strikeSensitivity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -590,7 +590,7 @@ module BlackCalculatorFunction =
     (*
         ! Sensitivity to time to maturity.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_theta", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_theta", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_theta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -638,7 +638,7 @@ module BlackCalculatorFunction =
     (*
         ! Sensitivity to time to maturity per day, assuming 365 day per year.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_thetaPerDay", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_thetaPerDay", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_thetaPerDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -686,7 +686,7 @@ module BlackCalculatorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackCalculator_value", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_value", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -722,7 +722,7 @@ module BlackCalculatorFunction =
     (*
         ! Sensitivity to volatility.
     *)
-    [<ExcelFunction(Name="_BlackCalculator_vega", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_vega", Description="Create a BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_vega
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -761,7 +761,7 @@ module BlackCalculatorFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BlackCalculator_Range", Description="Create a range of BlackCalculator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCalculator_Range", Description="Create a range of BlackCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCalculator_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

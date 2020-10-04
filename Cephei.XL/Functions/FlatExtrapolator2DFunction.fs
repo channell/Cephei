@@ -37,7 +37,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_isInRange", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_isInRange", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_isInRange
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_locateX", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_locateX", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_locateX
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_locateY", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_locateY", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_locateY
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_update", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_update", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module FlatExtrapolator2DFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_value1", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_value1", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_value", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_value", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_xMax", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_xMax", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_xMin", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_xMin", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_xValues", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_xValues", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_xValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_yMax", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_yMax", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_yMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -488,7 +488,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_yMin", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_yMin", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_yMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_yValues", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_yValues", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_yValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -560,7 +560,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_zData", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_zData", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_zData
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module FlatExtrapolator2DFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_allowsExtrapolation", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_allowsExtrapolation", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module FlatExtrapolator2DFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_disableExtrapolation", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_disableExtrapolation", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -674,7 +674,7 @@ module FlatExtrapolator2DFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_enableExtrapolation", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_enableExtrapolation", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -716,7 +716,7 @@ module FlatExtrapolator2DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FlatExtrapolator2D_extrapolate", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_extrapolate", Description="Create a FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -749,7 +749,7 @@ module FlatExtrapolator2DFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FlatExtrapolator2D_Range", Description="Create a range of FlatExtrapolator2D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FlatExtrapolator2D_Range", Description="Create a range of FlatExtrapolator2D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatExtrapolator2D_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

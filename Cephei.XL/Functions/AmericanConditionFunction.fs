@@ -37,7 +37,7 @@ module AmericanConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanCondition1", Description="Create a AmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanCondition1", Description="Create a AmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanCondition_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module AmericanConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanCondition", Description="Create a AmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanCondition", Description="Create a AmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanCondition_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module AmericanConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmericanCondition_applyTo", Description="Create a AmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanCondition_applyTo", Description="Create a AmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanCondition_applyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -162,7 +162,7 @@ module AmericanConditionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AmericanCondition_Range", Description="Create a range of AmericanCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmericanCondition_Range", Description="Create a range of AmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanCondition_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

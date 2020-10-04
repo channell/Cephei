@@ -37,7 +37,7 @@ module GenericLowDiscrepancyFunction =
     (*
         more traits
     *)
-    [<ExcelFunction(Name="_GenericLowDiscrepancy_allowsErrorEstimate", Description="Create a GenericLowDiscrepancy",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericLowDiscrepancy_allowsErrorEstimate", Description="Create a GenericLowDiscrepancy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericLowDiscrepancy_allowsErrorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module GenericLowDiscrepancyFunction =
     (*
         factory
     *)
-    [<ExcelFunction(Name="_GenericLowDiscrepancy_make_sequence_generator", Description="Create a GenericLowDiscrepancy",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericLowDiscrepancy_make_sequence_generator", Description="Create a GenericLowDiscrepancy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericLowDiscrepancy_make_sequence_generator
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -118,7 +118,7 @@ module GenericLowDiscrepancyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GenericLowDiscrepancy_Range", Description="Create a range of GenericLowDiscrepancy",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GenericLowDiscrepancy_Range", Description="Create a range of GenericLowDiscrepancy",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericLowDiscrepancy_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

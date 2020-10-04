@@ -37,7 +37,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module NzocrFunction =
     (*
         ! returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_Nzocr_clone", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_clone", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module NzocrFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Nzocr_businessDayConvention", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_businessDayConvention", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_endOfMonth", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_endOfMonth", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_forecastFixing1", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_forecastFixing1", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_forecastFixing", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_forecastFixing", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module NzocrFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_Nzocr_forwardingTermStructure", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_forwardingTermStructure", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module NzocrFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_Nzocr_maturityDate", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_maturityDate", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_currency", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_currency", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_dayCounter", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_dayCounter", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module NzocrFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Nzocr_familyName", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_familyName", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_fixing", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_fixing", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_fixingCalendar", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_fixingCalendar", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_fixingDate", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_fixingDate", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_fixingDays", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_fixingDays", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_isValidFixingDate", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_isValidFixingDate", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -674,7 +674,7 @@ module NzocrFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_Nzocr_name", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_name", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -710,7 +710,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_pastFixing", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_pastFixing", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -752,7 +752,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_tenor", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_tenor", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -788,7 +788,7 @@ module NzocrFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_Nzocr_update", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_update", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -824,7 +824,7 @@ module NzocrFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_Nzocr_valueDate", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_valueDate", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -866,7 +866,7 @@ module NzocrFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Nzocr_addFixing", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_addFixing", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -920,7 +920,7 @@ module NzocrFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Nzocr_addFixings", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_addFixings", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -974,7 +974,7 @@ module NzocrFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Nzocr_addFixings1", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_addFixings1", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1022,7 +1022,7 @@ module NzocrFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_Nzocr_allowsNativeFixings", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_allowsNativeFixings", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1058,7 +1058,7 @@ module NzocrFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_Nzocr_clearFixings", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_clearFixings", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1094,7 +1094,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_registerWith", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_registerWith", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1136,7 +1136,7 @@ module NzocrFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_Nzocr_timeSeries", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_timeSeries", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1172,7 +1172,7 @@ module NzocrFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Nzocr_unregisterWith", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_unregisterWith", Description="Create a Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1211,7 +1211,7 @@ module NzocrFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Nzocr_Range", Description="Create a range of Nzocr",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Nzocr_Range", Description="Create a range of Nzocr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Nzocr_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

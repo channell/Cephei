@@ -37,7 +37,7 @@ module SurvivalProbabilityFunction =
     (*
         upper bound for convergence loop
     *)
-    [<ExcelFunction(Name="_SurvivalProbability_discountImpl", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SurvivalProbability_discountImpl", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SurvivalProbability_discountImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module SurvivalProbabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SurvivalProbability_forwardImpl", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SurvivalProbability_forwardImpl", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SurvivalProbability_forwardImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module SurvivalProbabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SurvivalProbability_guess", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SurvivalProbability_guess", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SurvivalProbability_guess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -193,7 +193,7 @@ module SurvivalProbabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SurvivalProbability_initialDate", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SurvivalProbability_initialDate", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SurvivalProbability_initialDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -235,7 +235,7 @@ module SurvivalProbabilityFunction =
     (*
         start of curve data
     *)
-    [<ExcelFunction(Name="_SurvivalProbability_initialValue", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SurvivalProbability_initialValue", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SurvivalProbability_initialValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module SurvivalProbabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SurvivalProbability_maxIterations", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SurvivalProbability_maxIterations", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SurvivalProbability_maxIterations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module SurvivalProbabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SurvivalProbability_maxValueAfter", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SurvivalProbability_maxValueAfter", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SurvivalProbability_maxValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -373,7 +373,7 @@ module SurvivalProbabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SurvivalProbability_minValueAfter", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SurvivalProbability_minValueAfter", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SurvivalProbability_minValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -433,7 +433,7 @@ module SurvivalProbabilityFunction =
     (*
         value at reference date
     *)
-    [<ExcelFunction(Name="_SurvivalProbability_updateGuess", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SurvivalProbability_updateGuess", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SurvivalProbability_updateGuess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -487,7 +487,7 @@ module SurvivalProbabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SurvivalProbability_zeroYieldImpl", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SurvivalProbability_zeroYieldImpl", Description="Create a SurvivalProbability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SurvivalProbability_zeroYieldImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -532,7 +532,7 @@ module SurvivalProbabilityFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SurvivalProbability_Range", Description="Create a range of SurvivalProbability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SurvivalProbability_Range", Description="Create a range of SurvivalProbability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SurvivalProbability_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

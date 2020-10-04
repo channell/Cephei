@@ -37,7 +37,7 @@ module TTDCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TTDCurrency", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module TTDCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_TTDCurrency_code", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_code", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module TTDCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_TTDCurrency_empty", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_empty", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module TTDCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TTDCurrency_Equals", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_Equals", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module TTDCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_TTDCurrency_format", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_format", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module TTDCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_TTDCurrency_fractionsPerUnit", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_fractionsPerUnit", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module TTDCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_TTDCurrency_fractionSymbol", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_fractionSymbol", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module TTDCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_TTDCurrency_name", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_name", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module TTDCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_TTDCurrency_numericCode", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_numericCode", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module TTDCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_TTDCurrency_rounding", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_rounding", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module TTDCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_TTDCurrency_symbol", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_symbol", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module TTDCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TTDCurrency_ToString", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_ToString", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module TTDCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_TTDCurrency_triangulationCurrency", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_triangulationCurrency", Description="Create a TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module TTDCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TTDCurrency_Range", Description="Create a range of TTDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TTDCurrency_Range", Description="Create a range of TTDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TTDCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

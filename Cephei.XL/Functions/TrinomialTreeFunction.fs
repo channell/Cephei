@@ -37,7 +37,7 @@ module TrinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrinomialTree_descendant", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrinomialTree_descendant", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_descendant
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module TrinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrinomialTree_dx", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrinomialTree_dx", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_dx
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module TrinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrinomialTree_probability", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrinomialTree_probability", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_probability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -187,7 +187,7 @@ module TrinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrinomialTree_size", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrinomialTree_size", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -229,7 +229,7 @@ module TrinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrinomialTree_timeGrid", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrinomialTree_timeGrid", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_timeGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -265,7 +265,7 @@ module TrinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrinomialTree", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrinomialTree", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module TrinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrinomialTree1", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrinomialTree1", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -357,7 +357,7 @@ module TrinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrinomialTree_underlying", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrinomialTree_underlying", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_underlying
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -405,7 +405,7 @@ module TrinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TrinomialTree_columns", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrinomialTree_columns", Description="Create a TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_columns
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -438,7 +438,7 @@ module TrinomialTreeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TrinomialTree_Range", Description="Create a range of TrinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TrinomialTree_Range", Description="Create a range of TrinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TrinomialTree_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

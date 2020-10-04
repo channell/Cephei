@@ -37,7 +37,7 @@ module ArithmeticASOPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ArithmeticASOPathPricer2", Description="Create a ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArithmeticASOPathPricer2", Description="Create a ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticASOPathPricer_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module ArithmeticASOPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ArithmeticASOPathPricer", Description="Create a ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArithmeticASOPathPricer", Description="Create a ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticASOPathPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -129,7 +129,7 @@ module ArithmeticASOPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ArithmeticASOPathPricer1", Description="Create a ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArithmeticASOPathPricer1", Description="Create a ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticASOPathPricer_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -184,7 +184,7 @@ module ArithmeticASOPathPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ArithmeticASOPathPricer_value", Description="Create a ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArithmeticASOPathPricer_value", Description="Create a ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticASOPathPricer_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module ArithmeticASOPathPricerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ArithmeticASOPathPricer_Range", Description="Create a range of ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ArithmeticASOPathPricer_Range", Description="Create a range of ArithmeticASOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ArithmeticASOPathPricer_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_delta", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_delta", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_delta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_deltaForward", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_deltaForward", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_deltaForward
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_dividendRho", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_dividendRho", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_dividendRho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_elasticity", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_elasticity", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_elasticity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_gamma", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_gamma", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_gamma
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_isExpired", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_isExpired", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_itmCashProbability", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_itmCashProbability", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_itmCashProbability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -350,7 +350,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_rho", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_rho", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_rho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_strikeSensitivity", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_strikeSensitivity", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_strikeSensitivity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -422,7 +422,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_theta", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_theta", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_theta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -458,7 +458,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_thetaPerDay", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_thetaPerDay", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_thetaPerDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -494,7 +494,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_vega", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_vega", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_vega
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -530,7 +530,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_exercise", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_exercise", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_exercise
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -566,7 +566,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_payoff", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_payoff", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_payoff
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -602,7 +602,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_CASH", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_CASH", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -638,7 +638,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_errorEstimate", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_errorEstimate", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -674,7 +674,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_NPV", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_NPV", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -710,7 +710,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_result", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_result", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -752,7 +752,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_setPricingEngine", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_setPricingEngine", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -794,7 +794,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_valuationDate", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_valuationDate", Description="Create a ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -827,7 +827,7 @@ module ContinuousPartialFixedLookbackOptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_Range", Description="Create a range of ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ContinuousPartialFixedLookbackOption_Range", Description="Create a range of ContinuousPartialFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousPartialFixedLookbackOption_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

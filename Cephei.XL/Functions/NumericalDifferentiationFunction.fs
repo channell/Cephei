@@ -37,7 +37,7 @@ module NumericalDifferentiationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NumericalDifferentiation", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NumericalDifferentiation", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module NumericalDifferentiationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NumericalDifferentiation1", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NumericalDifferentiation1", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -147,7 +147,7 @@ module NumericalDifferentiationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NumericalDifferentiation_offsets", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NumericalDifferentiation_offsets", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_offsets
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module NumericalDifferentiationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NumericalDifferentiation_value", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NumericalDifferentiation_value", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -225,7 +225,7 @@ module NumericalDifferentiationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NumericalDifferentiation_weights", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NumericalDifferentiation_weights", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_weights
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -258,7 +258,7 @@ module NumericalDifferentiationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NumericalDifferentiation_Range", Description="Create a range of NumericalDifferentiation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NumericalDifferentiation_Range", Description="Create a range of NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

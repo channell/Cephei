@@ -37,7 +37,7 @@ module SampleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Sample", Description="Create a Sample",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Sample", Description="Create a Sample",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sample_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module SampleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Sample_value", Description="Create a Sample",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Sample_value", Description="Create a Sample",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sample_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module SampleFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Sample_weight", Description="Create a Sample",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Sample_weight", Description="Create a Sample",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sample_weight
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -149,7 +149,7 @@ module SampleFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Sample_Range", Description="Create a range of Sample",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Sample_Range", Description="Create a range of Sample",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sample_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

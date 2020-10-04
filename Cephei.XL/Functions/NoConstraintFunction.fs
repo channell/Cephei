@@ -37,7 +37,7 @@ module NoConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoConstraint", Description="Create a NoConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoConstraint", Description="Create a NoConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoConstraint_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module NoConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoConstraint_empty", Description="Create a NoConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoConstraint_empty", Description="Create a NoConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoConstraint_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module NoConstraintFunction =
     (*
         ! Returns lower bound for given parameters
     *)
-    [<ExcelFunction(Name="_NoConstraint_lowerBound", Description="Create a NoConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoConstraint_lowerBound", Description="Create a NoConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoConstraint_lowerBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module NoConstraintFunction =
     (*
         ! Tests if params satisfy the constraint
     *)
-    [<ExcelFunction(Name="_NoConstraint_test", Description="Create a NoConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoConstraint_test", Description="Create a NoConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoConstraint_test
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module NoConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_NoConstraint_update", Description="Create a NoConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoConstraint_update", Description="Create a NoConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoConstraint_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module NoConstraintFunction =
     (*
         ! Returns upper bound for given parameters
     *)
-    [<ExcelFunction(Name="_NoConstraint_upperBound", Description="Create a NoConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoConstraint_upperBound", Description="Create a NoConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoConstraint_upperBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -281,7 +281,7 @@ module NoConstraintFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_NoConstraint_Range", Description="Create a range of NoConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_NoConstraint_Range", Description="Create a range of NoConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoConstraint_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

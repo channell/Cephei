@@ -37,7 +37,7 @@ module GRDCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GRDCurrency", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module GRDCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_GRDCurrency_code", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_code", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module GRDCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_GRDCurrency_empty", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_empty", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module GRDCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GRDCurrency_Equals", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_Equals", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module GRDCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_GRDCurrency_format", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_format", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module GRDCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_GRDCurrency_fractionsPerUnit", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_fractionsPerUnit", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module GRDCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_GRDCurrency_fractionSymbol", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_fractionSymbol", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module GRDCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_GRDCurrency_name", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_name", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module GRDCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_GRDCurrency_numericCode", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_numericCode", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module GRDCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_GRDCurrency_rounding", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_rounding", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module GRDCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_GRDCurrency_symbol", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_symbol", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module GRDCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GRDCurrency_ToString", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_ToString", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module GRDCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_GRDCurrency_triangulationCurrency", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_triangulationCurrency", Description="Create a GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module GRDCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GRDCurrency_Range", Description="Create a range of GRDCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GRDCurrency_Range", Description="Create a range of GRDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GRDCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module InverseNonCentralCumulativeChiSquareDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseNonCentralCumulativeChiSquareDistribution", Description="Create a InverseNonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseNonCentralCumulativeChiSquareDistribution", Description="Create a InverseNonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseNonCentralCumulativeChiSquareDistribution_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module InverseNonCentralCumulativeChiSquareDistributionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseNonCentralCumulativeChiSquareDistribution_value", Description="Create a InverseNonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseNonCentralCumulativeChiSquareDistribution_value", Description="Create a InverseNonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseNonCentralCumulativeChiSquareDistribution_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -131,7 +131,7 @@ module InverseNonCentralCumulativeChiSquareDistributionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_InverseNonCentralCumulativeChiSquareDistribution_Range", Description="Create a range of InverseNonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseNonCentralCumulativeChiSquareDistribution_Range", Description="Create a range of InverseNonCentralCumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseNonCentralCumulativeChiSquareDistribution_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module MonomialFctFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonomialFct", Description="Create a MonomialFct",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonomialFct", Description="Create a MonomialFct",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonomialFct_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module MonomialFctFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonomialFct_value", Description="Create a MonomialFct",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonomialFct_value", Description="Create a MonomialFct",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonomialFct_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -113,7 +113,7 @@ module MonomialFctFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MonomialFct_Range", Description="Create a range of MonomialFct",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonomialFct_Range", Description="Create a range of MonomialFct",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonomialFct_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

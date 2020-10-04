@@ -37,7 +37,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module CmsRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_accruedAmount", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_accruedAmount", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_calendar", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_calendar", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module CmsRateBondFunction =
     (*
         \note returns all the cashflows, including the redemptions.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_cashflows", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_cashflows", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_cashflows
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module CmsRateBondFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_cleanPrice", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_cleanPrice", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_cleanPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module CmsRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_cleanPrice1", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_cleanPrice1", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_cleanPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module CmsRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_dirtyPrice1", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_dirtyPrice1", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_dirtyPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -446,7 +446,7 @@ module CmsRateBondFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_dirtyPrice", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_dirtyPrice", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_dirtyPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -482,7 +482,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_isExpired", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_isExpired", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_issueDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_issueDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_issueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_isTradable", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_isTradable", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_isTradable
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_maturityDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_maturityDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_nextCashFlowDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_nextCashFlowDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_nextCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -674,7 +674,7 @@ module CmsRateBondFunction =
     (*
         ! Expected next coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the already-fixed not-yet-paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_nextCouponRate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_nextCouponRate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_nextCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -716,7 +716,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_notional", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_notional", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_notional
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -758,7 +758,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_notionals", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_notionals", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_notionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -794,7 +794,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_previousCashFlowDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_previousCashFlowDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_previousCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -836,7 +836,7 @@ module CmsRateBondFunction =
     (*
         ! Expected previous coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the last paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_previousCouponRate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_previousCouponRate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_previousCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -878,7 +878,7 @@ module CmsRateBondFunction =
     (*
         returns the redemption, if only one is defined
     *)
-    [<ExcelFunction(Name="_CmsRateBond_redemption", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_redemption", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_redemption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -914,7 +914,7 @@ module CmsRateBondFunction =
     (*
         ! returns just the redemption flows (not interest payments)
     *)
-    [<ExcelFunction(Name="_CmsRateBond_redemptions", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_redemptions", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_redemptions
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -950,7 +950,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_settlementDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_settlementDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_settlementDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -992,7 +992,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_settlementDays", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_settlementDays", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1028,7 +1028,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_settlementValue", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_settlementValue", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_settlementValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1070,7 +1070,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_settlementValue1", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_settlementValue1", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_settlementValue1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1106,7 +1106,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_startDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_startDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1142,7 +1142,7 @@ module CmsRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_yield1", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_yield1", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_yield1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1220,7 +1220,7 @@ module CmsRateBondFunction =
     (*
         ! The default bond settlement and theoretical price are used for calculation.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_yield", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_yield", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_yield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1286,7 +1286,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_CASH", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_CASH", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1322,7 +1322,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_errorEstimate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_errorEstimate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1358,7 +1358,7 @@ module CmsRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsRateBond_NPV", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_NPV", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1394,7 +1394,7 @@ module CmsRateBondFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_result", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_result", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1436,7 +1436,7 @@ module CmsRateBondFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_setPricingEngine", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_setPricingEngine", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1478,7 +1478,7 @@ module CmsRateBondFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_CmsRateBond_valuationDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_valuationDate", Description="Create a CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1511,7 +1511,7 @@ module CmsRateBondFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CmsRateBond_Range", Description="Create a range of CmsRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsRateBond_Range", Description="Create a range of CmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsRateBond_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

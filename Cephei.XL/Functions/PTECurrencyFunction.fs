@@ -37,7 +37,7 @@ module PTECurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PTECurrency", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module PTECurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_PTECurrency_code", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_code", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module PTECurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_PTECurrency_empty", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_empty", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module PTECurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PTECurrency_Equals", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_Equals", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module PTECurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_PTECurrency_format", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_format", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module PTECurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_PTECurrency_fractionsPerUnit", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_fractionsPerUnit", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module PTECurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_PTECurrency_fractionSymbol", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_fractionSymbol", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module PTECurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_PTECurrency_name", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_name", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module PTECurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_PTECurrency_numericCode", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_numericCode", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module PTECurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_PTECurrency_rounding", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_rounding", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module PTECurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_PTECurrency_symbol", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_symbol", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module PTECurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PTECurrency_ToString", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_ToString", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module PTECurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_PTECurrency_triangulationCurrency", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_triangulationCurrency", Description="Create a PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module PTECurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PTECurrency_Range", Description="Create a range of PTECurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PTECurrency_Range", Description="Create a range of PTECurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PTECurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

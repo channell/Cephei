@@ -37,7 +37,7 @@ module CubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cubic", Description="Create a Cubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cubic", Description="Create a Cubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cubic_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module CubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cubic1", Description="Create a Cubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cubic1", Description="Create a Cubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cubic_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -135,7 +135,7 @@ module CubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cubic_global", Description="Create a Cubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cubic_global", Description="Create a Cubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cubic_global
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -171,7 +171,7 @@ module CubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cubic_interpolate", Description="Create a Cubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cubic_interpolate", Description="Create a Cubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cubic_interpolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -225,7 +225,7 @@ module CubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Cubic_requiredPoints", Description="Create a Cubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cubic_requiredPoints", Description="Create a Cubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cubic_requiredPoints
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -258,7 +258,7 @@ module CubicFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Cubic_Range", Description="Create a range of Cubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Cubic_Range", Description="Create a range of Cubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cubic_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module CompositeInstrumentFunction =
     (*
         ! adds an instrument to the composite
     *)
-    [<ExcelFunction(Name="_CompositeInstrument_add", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeInstrument_add", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module CompositeInstrumentFunction =
     (*
         Instrument interface
     *)
-    [<ExcelFunction(Name="_CompositeInstrument_isExpired", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeInstrument_isExpired", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module CompositeInstrumentFunction =
     (*
         ! shorts an instrument from the composite
     *)
-    [<ExcelFunction(Name="_CompositeInstrument_subtract", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeInstrument_subtract", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_subtract
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module CompositeInstrumentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeInstrument_CASH", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeInstrument_CASH", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module CompositeInstrumentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeInstrument_errorEstimate", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeInstrument_errorEstimate", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module CompositeInstrumentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CompositeInstrument_NPV", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeInstrument_NPV", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module CompositeInstrumentFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_CompositeInstrument_result", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeInstrument_result", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module CompositeInstrumentFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_CompositeInstrument_setPricingEngine", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeInstrument_setPricingEngine", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module CompositeInstrumentFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_CompositeInstrument_valuationDate", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeInstrument_valuationDate", Description="Create a CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -395,7 +395,7 @@ module CompositeInstrumentFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CompositeInstrument_Range", Description="Create a range of CompositeInstrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CompositeInstrument_Range", Description="Create a range of CompositeInstrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeInstrument_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

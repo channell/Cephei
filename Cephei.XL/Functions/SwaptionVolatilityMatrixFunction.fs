@@ -37,7 +37,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the lower indexes of surrounding volatility matrix corners
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_locate", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_locate", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_locate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         Other inspectors ! returns the lower indexes of surrounding volatility matrix corners
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_locate1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_locate1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_locate1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         TermStructure interface
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_maxDate", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_maxDate", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -169,7 +169,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_maxStrike", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_maxStrike", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -205,7 +205,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         SwaptionVolatilityStructure interface
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_maxSwapTenor", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_maxSwapTenor", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_maxSwapTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -241,7 +241,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         VolatilityTermStructure interface
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_minStrike", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_minStrike", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! floating reference date, fixed market data
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix2", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix2", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! fixed reference date, floating market data
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix3", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix3", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -453,7 +453,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! fixed reference date, fixed market data
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -544,7 +544,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         fixed reference date and fixed market data, option dates
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -623,7 +623,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! floating reference date, floating market data
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix4", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix4", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_create4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -708,7 +708,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         Volatility type
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatilityType", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatilityType", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_volatilityType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -744,7 +744,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! additional inspectors
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_optionDateFromTime", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_optionDateFromTime", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_optionDateFromTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -786,7 +786,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_optionDates", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_optionDates", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_optionDates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -822,7 +822,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_optionTenors", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_optionTenors", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_optionTenors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -858,7 +858,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_optionTimes", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_optionTimes", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_optionTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -894,7 +894,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_swapLengths", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_swapLengths", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_swapLengths
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -930,7 +930,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_swapTenors", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_swapTenors", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_swapTenors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -966,7 +966,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_update", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_update", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1002,7 +1002,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the Black variance for a given option time and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_blackVariance4", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_blackVariance4", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_blackVariance4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1062,7 +1062,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the Black variance for a given option date and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_blackVariance5", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_blackVariance5", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_blackVariance5
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1122,7 +1122,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the Black variance for a given option tenor and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_blackVariance3", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_blackVariance3", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_blackVariance3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1182,7 +1182,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the Black variance for a given option time and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_blackVariance2", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_blackVariance2", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_blackVariance2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1242,7 +1242,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the Black variance for a given option date and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_blackVariance1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_blackVariance1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_blackVariance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1302,7 +1302,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the Black variance for a given option tenor and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_blackVariance", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_blackVariance", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_blackVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1362,7 +1362,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! the largest swapLength for which the term structure can return vols
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_maxSwapLength", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_maxSwapLength", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_maxSwapLength
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1398,7 +1398,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the shift for a given option time and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_shift4", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_shift4", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_shift4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1452,7 +1452,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the shift for a given option date and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_shift5", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_shift5", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_shift5
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1506,7 +1506,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the shift for a given option date and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_shift1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_shift1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_shift1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1560,7 +1560,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the shift for a given option time and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_shift", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_shift", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_shift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1614,7 +1614,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the shift for a given option tenor and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_shift2", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_shift2", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_shift2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1668,7 +1668,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the shift for a given option tenor and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_shift3", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_shift3", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_shift3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1722,7 +1722,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the smile for a given option tenor and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_smileSection1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_smileSection1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_smileSection1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1776,7 +1776,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the smile for a given option time and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_smileSection2", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_smileSection2", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_smileSection2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1830,7 +1830,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the smile for a given option date and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_smileSection", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_smileSection", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_smileSection
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1884,7 +1884,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! implements the conversion between swap dates and swap (time) length
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_swapLength", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_swapLength", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_swapLength
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1932,7 +1932,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! implements the conversion between swap tenor and swap (time) length
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_swapLength1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_swapLength1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_swapLength1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1974,7 +1974,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the volatility for a given option date and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatility4", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatility4", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_volatility4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2034,7 +2034,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the volatility for a given option date and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatility2", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatility2", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_volatility2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2094,7 +2094,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the volatility for a given option tenor and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatility5", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatility5", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_volatility5
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2154,7 +2154,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the volatility for a given option tenor and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatility1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatility1", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_volatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2214,7 +2214,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the volatility for a given option time and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatility3", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatility3", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_volatility3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2274,7 +2274,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! returns the volatility for a given option time and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatility", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_volatility", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2334,7 +2334,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! the business day convention used in tenor to date conversion
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_businessDayConvention", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_businessDayConvention", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2370,7 +2370,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! period/date conversion
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_optionDateFromTenor", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_optionDateFromTenor", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_optionDateFromTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2412,7 +2412,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_calendar", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_calendar", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2448,7 +2448,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! the day counter used for date/time conversion
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_dayCounter", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_dayCounter", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2484,7 +2484,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_maxTime", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_maxTime", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2520,7 +2520,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! the date at which discount = 1.0 and/or variance = 0.0
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_referenceDate", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_referenceDate", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2556,7 +2556,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_settlementDays", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_settlementDays", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2592,7 +2592,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_timeFromReference", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_timeFromReference", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2634,7 +2634,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_allowsExtrapolation", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_allowsExtrapolation", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2670,7 +2670,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_disableExtrapolation", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_disableExtrapolation", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2712,7 +2712,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_enableExtrapolation", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_enableExtrapolation", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2754,7 +2754,7 @@ module SwaptionVolatilityMatrixFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_extrapolate", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_extrapolate", Description="Create a SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2787,7 +2787,7 @@ module SwaptionVolatilityMatrixFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_Range", Description="Create a range of SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolatilityMatrix_Range", Description="Create a range of SwaptionVolatilityMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolatilityMatrix_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

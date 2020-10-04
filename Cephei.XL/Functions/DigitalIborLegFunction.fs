@@ -37,7 +37,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_inArrears1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_inArrears1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_inArrears1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_inArrears", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_inArrears", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_inArrears
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_value", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_value", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withCallATM", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withCallATM", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withCallATM
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withCallATM1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withCallATM1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withCallATM1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withCallPayoffs1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withCallPayoffs1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withCallPayoffs1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withCallPayoffs", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withCallPayoffs", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withCallPayoffs
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -356,7 +356,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withCallStrikes1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withCallStrikes1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withCallStrikes1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withCallStrikes", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withCallStrikes", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withCallStrikes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withFixingDays", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withFixingDays", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withFixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -482,7 +482,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withFixingDays1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withFixingDays1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withFixingDays1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withGearings", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withGearings", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withGearings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -566,7 +566,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withGearings1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withGearings1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withGearings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withLongCallOption", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withLongCallOption", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withLongCallOption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withLongPutOption", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withLongPutOption", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withLongPutOption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withNotionals", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withNotionals", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withNotionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -734,7 +734,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withNotionals1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withNotionals1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withNotionals1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -776,7 +776,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withPaymentAdjustment", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withPaymentAdjustment", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPaymentAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -818,7 +818,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withPaymentDayCounter", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withPaymentDayCounter", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPaymentDayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -860,7 +860,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withPutATM", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withPutATM", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPutATM
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -902,7 +902,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withPutATM1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withPutATM1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPutATM1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -938,7 +938,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withPutPayoffs", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withPutPayoffs", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPutPayoffs
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -980,7 +980,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withPutPayoffs1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withPutPayoffs1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPutPayoffs1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1022,7 +1022,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withPutStrikes1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withPutStrikes1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPutStrikes1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1064,7 +1064,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withPutStrikes", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withPutStrikes", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withPutStrikes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1106,7 +1106,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withReplication1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withReplication1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withReplication1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1148,7 +1148,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withReplication", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withReplication", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withReplication
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1184,7 +1184,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withSpreads", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withSpreads", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withSpreads
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1226,7 +1226,7 @@ module DigitalIborLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DigitalIborLeg_withSpreads1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_withSpreads1", Description="Create a DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_withSpreads1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1265,7 +1265,7 @@ module DigitalIborLegFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DigitalIborLeg_Range", Description="Create a range of DigitalIborLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DigitalIborLeg_Range", Description="Create a range of DigitalIborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalIborLeg_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

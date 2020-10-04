@@ -37,7 +37,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON1", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON1", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -105,7 +105,7 @@ module EURLiborONFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_EURLiborON_businessDayConvention", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_businessDayConvention", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -141,7 +141,7 @@ module EURLiborONFunction =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_EURLiborON_clone", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_clone", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_endOfMonth", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_endOfMonth", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_forecastFixing1", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_forecastFixing1", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -273,7 +273,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_forecastFixing", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_forecastFixing", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -315,7 +315,7 @@ module EURLiborONFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_EURLiborON_forwardingTermStructure", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_forwardingTermStructure", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -351,7 +351,7 @@ module EURLiborONFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_EURLiborON_maturityDate", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_maturityDate", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -393,7 +393,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_currency", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_currency", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -429,7 +429,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_dayCounter", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_dayCounter", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -465,7 +465,7 @@ module EURLiborONFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_EURLiborON_familyName", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_familyName", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -501,7 +501,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_fixing", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_fixing", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -549,7 +549,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_fixingCalendar", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_fixingCalendar", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -585,7 +585,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_fixingDate", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_fixingDate", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -627,7 +627,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_fixingDays", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_fixingDays", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -663,7 +663,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_isValidFixingDate", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_isValidFixingDate", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -705,7 +705,7 @@ module EURLiborONFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_EURLiborON_name", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_name", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -741,7 +741,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_pastFixing", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_pastFixing", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -783,7 +783,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_tenor", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_tenor", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -819,7 +819,7 @@ module EURLiborONFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_EURLiborON_update", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_update", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -855,7 +855,7 @@ module EURLiborONFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_EURLiborON_valueDate", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_valueDate", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -897,7 +897,7 @@ module EURLiborONFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_EURLiborON_addFixing", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_addFixing", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -951,7 +951,7 @@ module EURLiborONFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_EURLiborON_addFixings", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_addFixings", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1005,7 +1005,7 @@ module EURLiborONFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_EURLiborON_addFixings1", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_addFixings1", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1053,7 +1053,7 @@ module EURLiborONFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_EURLiborON_allowsNativeFixings", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_allowsNativeFixings", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1089,7 +1089,7 @@ module EURLiborONFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_EURLiborON_clearFixings", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_clearFixings", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1125,7 +1125,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_registerWith", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_registerWith", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1167,7 +1167,7 @@ module EURLiborONFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_EURLiborON_timeSeries", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_timeSeries", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1203,7 +1203,7 @@ module EURLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EURLiborON_unregisterWith", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_unregisterWith", Description="Create a EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1242,7 +1242,7 @@ module EURLiborONFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_EURLiborON_Range", Description="Create a range of EURLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EURLiborON_Range", Description="Create a range of EURLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURLiborON_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

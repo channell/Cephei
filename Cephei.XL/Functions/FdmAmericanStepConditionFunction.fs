@@ -37,7 +37,7 @@ module FdmAmericanStepConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmAmericanStepCondition_applyTo", Description="Create a FdmAmericanStepCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmAmericanStepCondition_applyTo", Description="Create a FdmAmericanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAmericanStepCondition_applyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module FdmAmericanStepConditionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmAmericanStepCondition", Description="Create a FdmAmericanStepCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmAmericanStepCondition", Description="Create a FdmAmericanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAmericanStepCondition_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -125,7 +125,7 @@ module FdmAmericanStepConditionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmAmericanStepCondition_Range", Description="Create a range of FdmAmericanStepCondition",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmAmericanStepCondition_Range", Description="Create a range of FdmAmericanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAmericanStepCondition_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -38,7 +38,7 @@ module LfmSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmSwaptionEngine", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmSwaptionEngine", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -82,7 +82,7 @@ module LfmSwaptionEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_LfmSwaptionEngine_setModel", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmSwaptionEngine_setModel", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_setModel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -124,7 +124,7 @@ module LfmSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmSwaptionEngine_registerWith", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmSwaptionEngine_registerWith", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -166,7 +166,7 @@ module LfmSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmSwaptionEngine_reset", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmSwaptionEngine_reset", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -202,7 +202,7 @@ module LfmSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmSwaptionEngine_unregisterWith", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmSwaptionEngine_unregisterWith", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -244,7 +244,7 @@ module LfmSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LfmSwaptionEngine_update", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmSwaptionEngine_update", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module LfmSwaptionEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LfmSwaptionEngine_Range", Description="Create a range of LfmSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LfmSwaptionEngine_Range", Description="Create a range of LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

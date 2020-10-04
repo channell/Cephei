@@ -37,7 +37,7 @@ module VannaVolgaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolga_interpolate", Description="Create a VannaVolga",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolga_interpolate", Description="Create a VannaVolga",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolga_interpolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module VannaVolgaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VannaVolga", Description="Create a VannaVolga",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolga", Description="Create a VannaVolga",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolga_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -143,7 +143,7 @@ module VannaVolgaFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_VannaVolga_Range", Description="Create a range of VannaVolga",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VannaVolga_Range", Description="Create a range of VannaVolga",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolga_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

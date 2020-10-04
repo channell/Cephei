@@ -37,7 +37,7 @@ module ExplicitEulerFunction =
     (*
         required for generics
     *)
-    [<ExcelFunction(Name="_ExplicitEuler", Description="Create a ExplicitEuler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExplicitEuler", Description="Create a ExplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEuler_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module ExplicitEulerFunction =
     (*
         constructors
     *)
-    [<ExcelFunction(Name="_ExplicitEuler1", Description="Create a ExplicitEuler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExplicitEuler1", Description="Create a ExplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEuler_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module ExplicitEulerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ExplicitEuler_setStep", Description="Create a ExplicitEuler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExplicitEuler_setStep", Description="Create a ExplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEuler_setStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module ExplicitEulerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ExplicitEuler_step", Description="Create a ExplicitEuler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExplicitEuler_step", Description="Create a ExplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEuler_step
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -204,7 +204,7 @@ module ExplicitEulerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ExplicitEuler_Range", Description="Create a range of ExplicitEuler",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ExplicitEuler_Range", Description="Create a range of ExplicitEuler",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExplicitEuler_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

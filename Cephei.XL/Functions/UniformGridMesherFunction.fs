@@ -37,7 +37,7 @@ module UniformGridMesherFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UniformGridMesher_dminus", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UniformGridMesher_dminus", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_dminus
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module UniformGridMesherFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UniformGridMesher_dplus", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UniformGridMesher_dplus", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_dplus
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module UniformGridMesherFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UniformGridMesher_location", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UniformGridMesher_location", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_location
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module UniformGridMesherFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UniformGridMesher_locations", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UniformGridMesher_locations", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_locations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module UniformGridMesherFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UniformGridMesher", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UniformGridMesher", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module UniformGridMesherFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UniformGridMesher_layout", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UniformGridMesher_layout", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_layout
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -299,7 +299,7 @@ module UniformGridMesherFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_UniformGridMesher_Range", Description="Create a range of UniformGridMesher",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UniformGridMesher_Range", Description="Create a range of UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

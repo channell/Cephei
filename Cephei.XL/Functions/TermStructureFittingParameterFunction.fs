@@ -37,7 +37,7 @@ module TermStructureFittingParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureFittingParameter", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureFittingParameter", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureFittingParameter_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module TermStructureFittingParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureFittingParameter1", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureFittingParameter1", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureFittingParameter_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module TermStructureFittingParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureFittingParameter_constraint", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureFittingParameter_constraint", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureFittingParameter_constraint
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -147,7 +147,7 @@ module TermStructureFittingParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureFittingParameter_implementation", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureFittingParameter_implementation", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureFittingParameter_implementation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module TermStructureFittingParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureFittingParameter_parameters", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureFittingParameter_parameters", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureFittingParameter_parameters
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module TermStructureFittingParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureFittingParameter_setParam", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureFittingParameter_setParam", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureFittingParameter_setParam
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -267,7 +267,7 @@ module TermStructureFittingParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureFittingParameter_size", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureFittingParameter_size", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureFittingParameter_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -303,7 +303,7 @@ module TermStructureFittingParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureFittingParameter_testParams", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureFittingParameter_testParams", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureFittingParameter_testParams
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -345,7 +345,7 @@ module TermStructureFittingParameterFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureFittingParameter_value", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureFittingParameter_value", Description="Create a TermStructureFittingParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureFittingParameter_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -384,7 +384,7 @@ module TermStructureFittingParameterFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TermStructureFittingParameter_Range", Description="Create a range of TermStructureFittingParameter",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureFittingParameter_Range", Description="Create a range of TermStructureFittingParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureFittingParameter_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

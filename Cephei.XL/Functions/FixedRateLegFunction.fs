@@ -37,7 +37,7 @@ module FixedRateLegFunction =
     (*
         constructor
     *)
-    [<ExcelFunction(Name="_FixedRateLeg", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module FixedRateLegFunction =
     (*
         creator
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_value", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_value", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates3", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates3", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module FixedRateLegFunction =
     (*
         other initializers
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates6", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates6", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates6
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates1", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates1", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -332,7 +332,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates7", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates7", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates7
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates5", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates5", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates5
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates4", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates4", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates4
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates2", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withCouponRates2", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withCouponRates2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withExCouponPeriod", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withExCouponPeriod", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withExCouponPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -578,7 +578,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withFirstPeriodDayCounter", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withFirstPeriodDayCounter", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withFirstPeriodDayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -620,7 +620,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withLastPeriodDayCounter", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withLastPeriodDayCounter", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withLastPeriodDayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -662,7 +662,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withPaymentCalendar", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withPaymentCalendar", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withPaymentCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -704,7 +704,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withNotionals1", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withNotionals1", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withNotionals1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -746,7 +746,7 @@ module FixedRateLegFunction =
     (*
         initializers
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withNotionals", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withNotionals", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withNotionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -788,7 +788,7 @@ module FixedRateLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FixedRateLeg_withPaymentAdjustment", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_withPaymentAdjustment", Description="Create a FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_withPaymentAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -827,7 +827,7 @@ module FixedRateLegFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FixedRateLeg_Range", Description="Create a range of FixedRateLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FixedRateLeg_Range", Description="Create a range of FixedRateLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateLeg_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

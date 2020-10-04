@@ -37,7 +37,7 @@ module VanillaSwapFunction =
     (*
         results
     *)
-    [<ExcelFunction(Name="_VanillaSwap_fairRate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_fairRate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fairRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_fairSpread", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_fairSpread", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fairSpread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_fixedDayCount", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_fixedDayCount", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fixedDayCount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_fixedLeg", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_fixedLeg", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fixedLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_fixedLegBPS", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_fixedLegBPS", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fixedLegBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_fixedLegNPV", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_fixedLegNPV", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fixedLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_fixedRate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_fixedRate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fixedRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -289,7 +289,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_fixedSchedule", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_fixedSchedule", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_fixedSchedule
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -325,7 +325,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_floatingDayCount", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_floatingDayCount", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_floatingDayCount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -361,7 +361,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_floatingLeg", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_floatingLeg", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_floatingLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -397,7 +397,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_floatingLegBPS", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_floatingLegBPS", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_floatingLegBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -433,7 +433,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_floatingLegNPV", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_floatingLegNPV", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_floatingLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -469,7 +469,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_floatingSchedule", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_floatingSchedule", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_floatingSchedule
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -505,7 +505,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_iborIndex", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_iborIndex", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_iborIndex
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -541,7 +541,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_nominal", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_nominal", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -577,7 +577,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_spread", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_spread", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_spread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -613,7 +613,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_swapType", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_swapType", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_swapType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -649,7 +649,7 @@ module VanillaSwapFunction =
     (*
         constructor
     *)
-    [<ExcelFunction(Name="_VanillaSwap", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -752,7 +752,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_endDiscounts", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_endDiscounts", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_endDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -795,7 +795,7 @@ module VanillaSwapFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_VanillaSwap_engine", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_engine", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_engine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -832,7 +832,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_isExpired", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_isExpired", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -868,7 +868,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_leg", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_leg", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_leg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -910,7 +910,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_legBPS", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_legBPS", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_legBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -952,7 +952,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_legNPV", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_legNPV", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_legNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -994,7 +994,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_maturityDate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_maturityDate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1030,7 +1030,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_npvDateDiscount", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_npvDateDiscount", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_npvDateDiscount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1066,7 +1066,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_payer", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_payer", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_payer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1108,7 +1108,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_startDate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_startDate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1144,7 +1144,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_startDiscounts", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_startDiscounts", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_startDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1186,7 +1186,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_CASH", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_CASH", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1222,7 +1222,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_errorEstimate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_errorEstimate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1258,7 +1258,7 @@ module VanillaSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VanillaSwap_NPV", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_NPV", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1294,7 +1294,7 @@ module VanillaSwapFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_VanillaSwap_result", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_result", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1336,7 +1336,7 @@ module VanillaSwapFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_VanillaSwap_setPricingEngine", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_setPricingEngine", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1378,7 +1378,7 @@ module VanillaSwapFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_VanillaSwap_valuationDate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_valuationDate", Description="Create a VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1411,7 +1411,7 @@ module VanillaSwapFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_VanillaSwap_Range", Description="Create a range of VanillaSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VanillaSwap_Range", Description="Create a range of VanillaSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaSwap_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

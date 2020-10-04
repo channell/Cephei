@@ -37,7 +37,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_checkBarrier", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_checkBarrier", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_checkBarrier
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_mandatoryTimes", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_mandatoryTimes", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_mandatoryTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_reset", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_reset", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -212,7 +212,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_vanilla", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_vanilla", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_vanilla
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -248,7 +248,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         ! This method performs both pre- and post-adjustment
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_adjustValues", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_adjustValues", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_adjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         High-level interface  Users of discretized assets should use these methods in order to initialize, evolve and take the present value of the assets.  They call the corresponding methods in the Lattice interface, to which we refer for documentation.
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_initialize", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_initialize", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_initialize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -332,7 +332,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_method", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_method", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_method
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_partialRollback", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_partialRollback", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_partialRollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         ! This method will be invoked after rollback and after any other asset had their chance to look at the values. For instance, payments happening at the present time (and therefore not included in an option to be exercised at this time) will be added here.  This method is not virtual; derived classes must override the protected postAdjustValuesImpl() method instead.
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_postAdjustValues", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_postAdjustValues", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_postAdjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -446,7 +446,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         ! This method will be invoked after rollback and before any other asset (i.e., an option on this one) has any chance to look at the values. For instance, payments happening at times already spanned by the rollback will be added here.  This method is not virtual; derived classes must override the protected preAdjustValuesImpl() method instead.
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_preAdjustValues", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_preAdjustValues", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_preAdjustValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -482,7 +482,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_presentValue", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_presentValue", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_presentValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_rollback", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_rollback", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_rollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -560,7 +560,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         safe version of QL double* time()
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_setTime", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_setTime", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_setTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -602,7 +602,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         safe version of QL Vector* values()
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_setValues", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_setValues", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_setValues
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -644,7 +644,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_time", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_time", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_time
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -680,7 +680,7 @@ module DiscretizedBarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_values", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_values", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_values
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -713,7 +713,7 @@ module DiscretizedBarrierOptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DiscretizedBarrierOption_Range", Description="Create a range of DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscretizedBarrierOption_Range", Description="Create a range of DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

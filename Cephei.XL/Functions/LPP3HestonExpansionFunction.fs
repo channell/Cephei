@@ -37,7 +37,7 @@ module LPP3HestonExpansionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LPP3HestonExpansion_impliedVolatility", Description="Create a LPP3HestonExpansion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LPP3HestonExpansion_impliedVolatility", Description="Create a LPP3HestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LPP3HestonExpansion_impliedVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module LPP3HestonExpansionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LPP3HestonExpansion", Description="Create a LPP3HestonExpansion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LPP3HestonExpansion", Description="Create a LPP3HestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LPP3HestonExpansion_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -149,7 +149,7 @@ module LPP3HestonExpansionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LPP3HestonExpansion_Range", Description="Create a range of LPP3HestonExpansion",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LPP3HestonExpansion_Range", Description="Create a range of LPP3HestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LPP3HestonExpansion_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

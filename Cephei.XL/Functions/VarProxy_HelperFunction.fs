@@ -37,7 +37,7 @@ module VarProxy_HelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VarProxy_Helper_corrModel_", Description="Create a VarProxy_Helper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VarProxy_Helper_corrModel_", Description="Create a VarProxy_Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VarProxy_Helper_corrModel_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module VarProxy_HelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VarProxy_Helper_value", Description="Create a VarProxy_Helper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VarProxy_Helper_value", Description="Create a VarProxy_Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VarProxy_Helper_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module VarProxy_HelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VarProxy_Helper", Description="Create a VarProxy_Helper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VarProxy_Helper", Description="Create a VarProxy_Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VarProxy_Helper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module VarProxy_HelperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_VarProxy_Helper_volaModel_", Description="Create a VarProxy_Helper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VarProxy_Helper_volaModel_", Description="Create a VarProxy_Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VarProxy_Helper_volaModel_
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -197,7 +197,7 @@ module VarProxy_HelperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_VarProxy_Helper_Range", Description="Create a range of VarProxy_Helper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_VarProxy_Helper_Range", Description="Create a range of VarProxy_Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VarProxy_Helper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

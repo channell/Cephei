@@ -37,7 +37,7 @@ module ZeroYieldFunction =
     (*
         upper bound for convergence loop
     *)
-    [<ExcelFunction(Name="_ZeroYield_discountImpl", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroYield_discountImpl", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_discountImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module ZeroYieldFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroYield_forwardImpl", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroYield_forwardImpl", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_forwardImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -133,7 +133,7 @@ module ZeroYieldFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroYield_guess", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroYield_guess", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_guess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -193,7 +193,7 @@ module ZeroYieldFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroYield_initialDate", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroYield_initialDate", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_initialDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -235,7 +235,7 @@ module ZeroYieldFunction =
     (*
         start of curve data
     *)
-    [<ExcelFunction(Name="_ZeroYield_initialValue", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroYield_initialValue", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_initialValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -277,7 +277,7 @@ module ZeroYieldFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroYield_maxIterations", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroYield_maxIterations", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_maxIterations
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -313,7 +313,7 @@ module ZeroYieldFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroYield_maxValueAfter", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroYield_maxValueAfter", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_maxValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -373,7 +373,7 @@ module ZeroYieldFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroYield_minValueAfter", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroYield_minValueAfter", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_minValueAfter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -433,7 +433,7 @@ module ZeroYieldFunction =
     (*
         value at reference date update with new guess
     *)
-    [<ExcelFunction(Name="_ZeroYield_updateGuess", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroYield_updateGuess", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_updateGuess
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -487,7 +487,7 @@ module ZeroYieldFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ZeroYield_zeroYieldImpl", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroYield_zeroYieldImpl", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_zeroYieldImpl
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -532,7 +532,7 @@ module ZeroYieldFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ZeroYield_Range", Description="Create a range of ZeroYield",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ZeroYield_Range", Description="Create a range of ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

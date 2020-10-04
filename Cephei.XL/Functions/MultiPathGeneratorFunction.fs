@@ -37,7 +37,7 @@ module MultiPathGeneratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiPathGenerator_antithetic", Description="Create a MultiPathGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPathGenerator_antithetic", Description="Create a MultiPathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPathGenerator_antithetic
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module MultiPathGeneratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiPathGenerator", Description="Create a MultiPathGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPathGenerator", Description="Create a MultiPathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPathGenerator_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module MultiPathGeneratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MultiPathGenerator_next", Description="Create a MultiPathGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPathGenerator_next", Description="Create a MultiPathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPathGenerator_next
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -161,7 +161,7 @@ module MultiPathGeneratorFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MultiPathGenerator_Range", Description="Create a range of MultiPathGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MultiPathGenerator_Range", Description="Create a range of MultiPathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPathGenerator_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

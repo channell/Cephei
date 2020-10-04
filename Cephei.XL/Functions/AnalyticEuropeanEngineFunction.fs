@@ -37,7 +37,7 @@ module AnalyticEuropeanEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticEuropeanEngine", Description="Create a AnalyticEuropeanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticEuropeanEngine", Description="Create a AnalyticEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticEuropeanEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -75,7 +75,7 @@ module AnalyticEuropeanEngineFunction =
         
     *)
 
-    [<ExcelFunction(Name="_AnalyticEuropeanEngine_Range", Description="Create a range of AnalyticEuropeanEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticEuropeanEngine_Range", Description="Create a range of AnalyticEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticEuropeanEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

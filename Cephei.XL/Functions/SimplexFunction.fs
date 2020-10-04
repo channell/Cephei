@@ -37,7 +37,7 @@ module SimplexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Simplex_minimize", Description="Create a Simplex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Simplex_minimize", Description="Create a Simplex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Simplex_minimize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module SimplexFunction =
     (*
         ! Constructor taking as input the characteristic length
     *)
-    [<ExcelFunction(Name="_Simplex", Description="Create a Simplex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Simplex", Description="Create a Simplex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Simplex_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -119,7 +119,7 @@ module SimplexFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Simplex_Range", Description="Create a range of Simplex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Simplex_Range", Description="Create a range of Simplex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Simplex_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

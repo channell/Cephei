@@ -37,7 +37,7 @@ module BlackCallableZeroCouponBondEngineFunction =
     (*
         ! volatility is the quoted fwd yield volatility, not price vol
     *)
-    [<ExcelFunction(Name="_BlackCallableZeroCouponBondEngine", Description="Create a BlackCallableZeroCouponBondEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCallableZeroCouponBondEngine", Description="Create a BlackCallableZeroCouponBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCallableZeroCouponBondEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module BlackCallableZeroCouponBondEngineFunction =
     (*
         ! volatility is the quoted fwd yield volatility, not price vol
     *)
-    [<ExcelFunction(Name="_BlackCallableZeroCouponBondEngine1", Description="Create a BlackCallableZeroCouponBondEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCallableZeroCouponBondEngine1", Description="Create a BlackCallableZeroCouponBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCallableZeroCouponBondEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module BlackCallableZeroCouponBondEngineFunction =
         else
             "<WIZ>"
 
-    [<ExcelFunction(Name="_BlackCallableZeroCouponBondEngine_Range", Description="Create a range of BlackCallableZeroCouponBondEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackCallableZeroCouponBondEngine_Range", Description="Create a range of BlackCallableZeroCouponBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCallableZeroCouponBondEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

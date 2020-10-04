@@ -37,7 +37,7 @@ module SpreadBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadBasketPayoff_accumulate", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadBasketPayoff_accumulate", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadBasketPayoff_accumulate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module SpreadBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadBasketPayoff", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadBasketPayoff", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadBasketPayoff_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module SpreadBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadBasketPayoff_basePayoff", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadBasketPayoff_basePayoff", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadBasketPayoff_basePayoff
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module SpreadBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadBasketPayoff_description", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadBasketPayoff_description", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadBasketPayoff_description
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module SpreadBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadBasketPayoff_name", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadBasketPayoff_name", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadBasketPayoff_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -224,7 +224,7 @@ module SpreadBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadBasketPayoff_value1", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadBasketPayoff_value1", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadBasketPayoff_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module SpreadBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadBasketPayoff_value", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadBasketPayoff_value", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadBasketPayoff_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module SpreadBasketPayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SpreadBasketPayoff_accept", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadBasketPayoff_accept", Description="Create a SpreadBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadBasketPayoff_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -347,7 +347,7 @@ module SpreadBasketPayoffFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SpreadBasketPayoff_Range", Description="Create a range of SpreadBasketPayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SpreadBasketPayoff_Range", Description="Create a range of SpreadBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadBasketPayoff_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

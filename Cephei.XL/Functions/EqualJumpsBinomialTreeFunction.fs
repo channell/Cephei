@@ -37,7 +37,7 @@ module EqualJumpsBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EqualJumpsBinomialTree", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EqualJumpsBinomialTree", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module EqualJumpsBinomialTreeFunction =
     (*
         parameterless constructor is requried for generics
     *)
-    [<ExcelFunction(Name="_EqualJumpsBinomialTree1", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EqualJumpsBinomialTree1", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module EqualJumpsBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EqualJumpsBinomialTree_probability", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EqualJumpsBinomialTree_probability", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_probability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -171,7 +171,7 @@ module EqualJumpsBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EqualJumpsBinomialTree_underlying", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EqualJumpsBinomialTree_underlying", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_underlying
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module EqualJumpsBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EqualJumpsBinomialTree_descendant", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EqualJumpsBinomialTree_descendant", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_descendant
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -273,7 +273,7 @@ module EqualJumpsBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EqualJumpsBinomialTree_size", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EqualJumpsBinomialTree_size", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -315,7 +315,7 @@ module EqualJumpsBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EqualJumpsBinomialTree_columns", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EqualJumpsBinomialTree_columns", Description="Create a EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_columns
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -348,7 +348,7 @@ module EqualJumpsBinomialTreeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_EqualJumpsBinomialTree_Range", Description="Create a range of EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EqualJumpsBinomialTree_Range", Description="Create a range of EqualJumpsBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualJumpsBinomialTree_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

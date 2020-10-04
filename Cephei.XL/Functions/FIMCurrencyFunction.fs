@@ -37,7 +37,7 @@ module FIMCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FIMCurrency", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module FIMCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_FIMCurrency_code", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_code", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module FIMCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_FIMCurrency_empty", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_empty", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module FIMCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FIMCurrency_Equals", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_Equals", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module FIMCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_FIMCurrency_format", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_format", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module FIMCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_FIMCurrency_fractionsPerUnit", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_fractionsPerUnit", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module FIMCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_FIMCurrency_fractionSymbol", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_fractionSymbol", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module FIMCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_FIMCurrency_name", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_name", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module FIMCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_FIMCurrency_numericCode", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_numericCode", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module FIMCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_FIMCurrency_rounding", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_rounding", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module FIMCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_FIMCurrency_symbol", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_symbol", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module FIMCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FIMCurrency_ToString", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_ToString", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module FIMCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_FIMCurrency_triangulationCurrency", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_triangulationCurrency", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module FIMCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FIMCurrency_Range", Description="Create a range of FIMCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FIMCurrency_Range", Description="Create a range of FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

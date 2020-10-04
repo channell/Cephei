@@ -37,7 +37,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module BiborFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Bibor_businessDayConvention", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_businessDayConvention", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module BiborFunction =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_Bibor_clone", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_clone", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_endOfMonth", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_endOfMonth", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_forecastFixing1", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_forecastFixing1", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -248,7 +248,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_forecastFixing", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_forecastFixing", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module BiborFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_Bibor_forwardingTermStructure", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_forwardingTermStructure", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module BiborFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_Bibor_maturityDate", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_maturityDate", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -368,7 +368,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_currency", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_currency", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_dayCounter", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_dayCounter", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module BiborFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Bibor_familyName", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_familyName", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_fixing", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_fixing", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_fixingCalendar", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_fixingCalendar", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -560,7 +560,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_fixingDate", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_fixingDate", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -602,7 +602,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_fixingDays", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_fixingDays", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -638,7 +638,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_isValidFixingDate", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_isValidFixingDate", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -680,7 +680,7 @@ module BiborFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_Bibor_name", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_name", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -716,7 +716,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_pastFixing", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_pastFixing", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -758,7 +758,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_tenor", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_tenor", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -794,7 +794,7 @@ module BiborFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_Bibor_update", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_update", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -830,7 +830,7 @@ module BiborFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_Bibor_valueDate", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_valueDate", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -872,7 +872,7 @@ module BiborFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Bibor_addFixing", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_addFixing", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -926,7 +926,7 @@ module BiborFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Bibor_addFixings", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_addFixings", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -980,7 +980,7 @@ module BiborFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Bibor_addFixings1", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_addFixings1", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1028,7 +1028,7 @@ module BiborFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_Bibor_allowsNativeFixings", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_allowsNativeFixings", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1064,7 +1064,7 @@ module BiborFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_Bibor_clearFixings", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_clearFixings", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1100,7 +1100,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_registerWith", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_registerWith", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1142,7 +1142,7 @@ module BiborFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_Bibor_timeSeries", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_timeSeries", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1178,7 +1178,7 @@ module BiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bibor_unregisterWith", Description="Create a Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_unregisterWith", Description="Create a Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1217,7 +1217,7 @@ module BiborFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Bibor_Range", Description="Create a range of Bibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bibor_Range", Description="Create a range of Bibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bibor_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

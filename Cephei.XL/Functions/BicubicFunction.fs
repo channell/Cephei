@@ -37,7 +37,7 @@ module BicubicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Bicubic_interpolate", Description="Create a Bicubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bicubic_interpolate", Description="Create a Bicubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bicubic_interpolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -100,7 +100,7 @@ module BicubicFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Bicubic_Range", Description="Create a range of Bicubic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Bicubic_Range", Description="Create a range of Bicubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bicubic_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

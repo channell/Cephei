@@ -38,7 +38,7 @@ module MCHestonHullWhiteEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MCHestonHullWhiteEngine", Description="Create a MCHestonHullWhiteEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCHestonHullWhiteEngine", Description="Create a MCHestonHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCHestonHullWhiteEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -120,7 +120,7 @@ module MCHestonHullWhiteEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MCHestonHullWhiteEngine_Range", Description="Create a range of MCHestonHullWhiteEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MCHestonHullWhiteEngine_Range", Description="Create a range of MCHestonHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCHestonHullWhiteEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module AbcdFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Abcd", Description="Create a Abcd",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Abcd", Description="Create a Abcd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Abcd_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module AbcdFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Abcd_global", Description="Create a Abcd",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Abcd_global", Description="Create a Abcd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Abcd_global
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module AbcdFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Abcd_interpolate", Description="Create a Abcd",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Abcd_interpolate", Description="Create a Abcd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Abcd_interpolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -221,7 +221,7 @@ module AbcdFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Abcd_Range", Description="Create a range of Abcd",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Abcd_Range", Description="Create a range of Abcd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Abcd_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

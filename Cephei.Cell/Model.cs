@@ -373,7 +373,8 @@ namespace Cephei.Cell
                         LinkedList<ICellEvent> dependants = new LinkedList<ICellEvent>(current.Dependants);
                         foreach (var c in dependants)
                         {
-                            value.Change += c.OnChange;
+                            if (c != null )
+                                value.Change += c.OnChange;
                         }
                         foreach (var c in dependants)
                         {

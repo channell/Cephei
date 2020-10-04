@@ -37,7 +37,7 @@ module MonotonicParabolicFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module MonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_aCoefficients", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_aCoefficients", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_aCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module MonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_bCoefficients", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_bCoefficients", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_bCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module MonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_cCoefficients", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_cCoefficients", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_cCoefficients
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module MonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_derivative", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_derivative", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module MonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_empty", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_empty", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module MonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_primitive", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_primitive", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module MonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_secondDerivative", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_secondDerivative", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -374,7 +374,7 @@ module MonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_update", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_update", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -410,7 +410,7 @@ module MonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_value1", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_value1", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -458,7 +458,7 @@ module MonotonicParabolicFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_value", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_value", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module MonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_xMax", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_xMax", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -536,7 +536,7 @@ module MonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_xMin", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_xMin", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -572,7 +572,7 @@ module MonotonicParabolicFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_allowsExtrapolation", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_allowsExtrapolation", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module MonotonicParabolicFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_disableExtrapolation", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_disableExtrapolation", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module MonotonicParabolicFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_enableExtrapolation", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_enableExtrapolation", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module MonotonicParabolicFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonotonicParabolic_extrapolate", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_extrapolate", Description="Create a MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -725,7 +725,7 @@ module MonotonicParabolicFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MonotonicParabolic_Range", Description="Create a range of MonotonicParabolic",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonotonicParabolic_Range", Description="Create a range of MonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonotonicParabolic_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

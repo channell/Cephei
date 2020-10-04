@@ -38,7 +38,7 @@ module TreeVanillaSwapEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeVanillaSwapEngine1", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeVanillaSwapEngine1", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -87,7 +87,7 @@ module TreeVanillaSwapEngineFunction =
     (*
         Constructors \note the term structure is only needed when the short-rate model cannot provide one itself.
     *)
-    [<ExcelFunction(Name="_TreeVanillaSwapEngine", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeVanillaSwapEngine", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -136,7 +136,7 @@ module TreeVanillaSwapEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeVanillaSwapEngine_update", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeVanillaSwapEngine_update", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -173,7 +173,7 @@ module TreeVanillaSwapEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_TreeVanillaSwapEngine_setModel", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeVanillaSwapEngine_setModel", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_setModel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -216,7 +216,7 @@ module TreeVanillaSwapEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeVanillaSwapEngine_registerWith", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeVanillaSwapEngine_registerWith", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -258,7 +258,7 @@ module TreeVanillaSwapEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeVanillaSwapEngine_reset", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeVanillaSwapEngine_reset", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -294,7 +294,7 @@ module TreeVanillaSwapEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeVanillaSwapEngine_unregisterWith", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeVanillaSwapEngine_unregisterWith", Description="Create a TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -333,7 +333,7 @@ module TreeVanillaSwapEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TreeVanillaSwapEngine_Range", Description="Create a range of TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeVanillaSwapEngine_Range", Description="Create a range of TreeVanillaSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeVanillaSwapEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

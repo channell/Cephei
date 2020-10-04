@@ -37,7 +37,7 @@ module MonteCarloModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonteCarloModel_addSamples", Description="Create a MonteCarloModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonteCarloModel_addSamples", Description="Create a MonteCarloModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloModel_addSamples
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module MonteCarloModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonteCarloModel", Description="Create a MonteCarloModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonteCarloModel", Description="Create a MonteCarloModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloModel_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module MonteCarloModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MonteCarloModel_sampleAccumulator", Description="Create a MonteCarloModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonteCarloModel_sampleAccumulator", Description="Create a MonteCarloModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloModel_sampleAccumulator
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -185,7 +185,7 @@ module MonteCarloModelFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MonteCarloModel_Range", Description="Create a range of MonteCarloModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MonteCarloModel_Range", Description="Create a range of MonteCarloModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloModel_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

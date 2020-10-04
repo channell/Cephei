@@ -37,7 +37,7 @@ module LiborFunction =
     (*
         Other methods
     *)
-    [<ExcelFunction(Name="_Libor_clone", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_clone", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_maturityDate", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_maturityDate", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module LiborFunction =
     (*
         Date calculations  See <https://www.theice.com/marketdata/reports/170>.
     *)
-    [<ExcelFunction(Name="_Libor_valueDate", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_valueDate", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module LiborFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Libor_businessDayConvention", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_businessDayConvention", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_endOfMonth", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_endOfMonth", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_forecastFixing1", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_forecastFixing1", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_forecastFixing", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_forecastFixing", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -404,7 +404,7 @@ module LiborFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_Libor_forwardingTermStructure", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_forwardingTermStructure", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_currency", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_currency", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_dayCounter", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_dayCounter", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module LiborFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Libor_familyName", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_familyName", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -548,7 +548,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_fixing", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_fixing", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_fixingCalendar", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_fixingCalendar", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_fixingDate", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_fixingDate", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -674,7 +674,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_fixingDays", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_fixingDays", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -710,7 +710,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_isValidFixingDate", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_isValidFixingDate", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -752,7 +752,7 @@ module LiborFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_Libor_name", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_name", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -788,7 +788,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_pastFixing", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_pastFixing", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -830,7 +830,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_tenor", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_tenor", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -866,7 +866,7 @@ module LiborFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_Libor_update", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_update", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -902,7 +902,7 @@ module LiborFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Libor_addFixing", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_addFixing", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -956,7 +956,7 @@ module LiborFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Libor_addFixings", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_addFixings", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1010,7 +1010,7 @@ module LiborFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_Libor_addFixings1", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_addFixings1", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1058,7 +1058,7 @@ module LiborFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_Libor_allowsNativeFixings", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_allowsNativeFixings", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1094,7 +1094,7 @@ module LiborFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_Libor_clearFixings", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_clearFixings", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1130,7 +1130,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_registerWith", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_registerWith", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1172,7 +1172,7 @@ module LiborFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_Libor_timeSeries", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_timeSeries", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1208,7 +1208,7 @@ module LiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Libor_unregisterWith", Description="Create a Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_unregisterWith", Description="Create a Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1247,7 +1247,7 @@ module LiborFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Libor_Range", Description="Create a range of Libor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Libor_Range", Description="Create a range of Libor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Libor_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

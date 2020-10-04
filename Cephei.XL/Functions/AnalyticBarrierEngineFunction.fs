@@ -37,7 +37,7 @@ module AnalyticBarrierEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticBarrierEngine", Description="Create a AnalyticBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticBarrierEngine", Description="Create a AnalyticBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBarrierEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -75,7 +75,7 @@ module AnalyticBarrierEngineFunction =
         
     *)
 
-    [<ExcelFunction(Name="_AnalyticBarrierEngine_Range", Description="Create a range of AnalyticBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticBarrierEngine_Range", Description="Create a range of AnalyticBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBarrierEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

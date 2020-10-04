@@ -37,7 +37,7 @@ module AnalyticContinuousGeometricAveragePriceAsianEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticContinuousGeometricAveragePriceAsianEngine", Description="Create a AnalyticContinuousGeometricAveragePriceAsianEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticContinuousGeometricAveragePriceAsianEngine", Description="Create a AnalyticContinuousGeometricAveragePriceAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticContinuousGeometricAveragePriceAsianEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -72,7 +72,7 @@ module AnalyticContinuousGeometricAveragePriceAsianEngineFunction =
         else
             "<WIZ>"
 
-    [<ExcelFunction(Name="_AnalyticContinuousGeometricAveragePriceAsianEngine_Range", Description="Create a range of AnalyticContinuousGeometricAveragePriceAsianEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticContinuousGeometricAveragePriceAsianEngine_Range", Description="Create a range of AnalyticContinuousGeometricAveragePriceAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticContinuousGeometricAveragePriceAsianEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

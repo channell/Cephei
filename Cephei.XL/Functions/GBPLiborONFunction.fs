@@ -37,7 +37,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module GBPLiborONFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_GBPLiborON_businessDayConvention", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_businessDayConvention", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module GBPLiborONFunction =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_GBPLiborON_clone", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_clone", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_endOfMonth", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_endOfMonth", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_forecastFixing1", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_forecastFixing1", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_forecastFixing", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_forecastFixing", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module GBPLiborONFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_GBPLiborON_forwardingTermStructure", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_forwardingTermStructure", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module GBPLiborONFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_GBPLiborON_maturityDate", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_maturityDate", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_currency", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_currency", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_dayCounter", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_dayCounter", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module GBPLiborONFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_GBPLiborON_familyName", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_familyName", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_fixing", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_fixing", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_fixingCalendar", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_fixingCalendar", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_fixingDate", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_fixingDate", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -596,7 +596,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_fixingDays", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_fixingDays", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_isValidFixingDate", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_isValidFixingDate", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -674,7 +674,7 @@ module GBPLiborONFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_GBPLiborON_name", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_name", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -710,7 +710,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_pastFixing", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_pastFixing", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -752,7 +752,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_tenor", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_tenor", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -788,7 +788,7 @@ module GBPLiborONFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_GBPLiborON_update", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_update", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -824,7 +824,7 @@ module GBPLiborONFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_GBPLiborON_valueDate", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_valueDate", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -866,7 +866,7 @@ module GBPLiborONFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_GBPLiborON_addFixing", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_addFixing", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -920,7 +920,7 @@ module GBPLiborONFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_GBPLiborON_addFixings", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_addFixings", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -974,7 +974,7 @@ module GBPLiborONFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_GBPLiborON_addFixings1", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_addFixings1", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1022,7 +1022,7 @@ module GBPLiborONFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_GBPLiborON_allowsNativeFixings", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_allowsNativeFixings", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1058,7 +1058,7 @@ module GBPLiborONFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_GBPLiborON_clearFixings", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_clearFixings", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1094,7 +1094,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_registerWith", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_registerWith", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1136,7 +1136,7 @@ module GBPLiborONFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_GBPLiborON_timeSeries", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_timeSeries", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1172,7 +1172,7 @@ module GBPLiborONFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GBPLiborON_unregisterWith", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_unregisterWith", Description="Create a GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1211,7 +1211,7 @@ module GBPLiborONFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GBPLiborON_Range", Description="Create a range of GBPLiborON",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GBPLiborON_Range", Description="Create a range of GBPLiborON",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GBPLiborON_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

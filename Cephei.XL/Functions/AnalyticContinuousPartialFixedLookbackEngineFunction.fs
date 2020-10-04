@@ -37,7 +37,7 @@ module AnalyticContinuousPartialFixedLookbackEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticContinuousPartialFixedLookbackEngine", Description="Create a AnalyticContinuousPartialFixedLookbackEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticContinuousPartialFixedLookbackEngine", Description="Create a AnalyticContinuousPartialFixedLookbackEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticContinuousPartialFixedLookbackEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -75,7 +75,7 @@ module AnalyticContinuousPartialFixedLookbackEngineFunction =
         
     *)
 
-    [<ExcelFunction(Name="_AnalyticContinuousPartialFixedLookbackEngine_Range", Description="Create a range of AnalyticContinuousPartialFixedLookbackEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticContinuousPartialFixedLookbackEngine_Range", Description="Create a range of AnalyticContinuousPartialFixedLookbackEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticContinuousPartialFixedLookbackEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

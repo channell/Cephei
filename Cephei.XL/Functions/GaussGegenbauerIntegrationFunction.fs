@@ -37,7 +37,7 @@ module GaussGegenbauerIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussGegenbauerIntegration", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerIntegration", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerIntegration_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module GaussGegenbauerIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussGegenbauerIntegration_order", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerIntegration_order", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerIntegration_order
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module GaussGegenbauerIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussGegenbauerIntegration_value", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerIntegration_value", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerIntegration_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module GaussGegenbauerIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussGegenbauerIntegration_weights", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerIntegration_weights", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerIntegration_weights
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module GaussGegenbauerIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussGegenbauerIntegration_x", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerIntegration_x", Description="Create a GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerIntegration_x
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -227,7 +227,7 @@ module GaussGegenbauerIntegrationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GaussGegenbauerIntegration_Range", Description="Create a range of GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussGegenbauerIntegration_Range", Description="Create a range of GaussGegenbauerIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussGegenbauerIntegration_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

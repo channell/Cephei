@@ -37,7 +37,7 @@ module LinearInterpolationFunction =
     (*
         ! \pre the \f$ x \f$ values must be sorted.
     *)
-    [<ExcelFunction(Name="_LinearInterpolation", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module LinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_derivative", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_derivative", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_derivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module LinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_empty", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_empty", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module LinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_primitive", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_primitive", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_primitive
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module LinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_secondDerivative", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_secondDerivative", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_secondDerivative
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module LinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_update", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_update", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -302,7 +302,7 @@ module LinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_value1", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_value1", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_value1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -350,7 +350,7 @@ module LinearInterpolationFunction =
     (*
         main method to derive an interpolated point
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_value", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_value", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -392,7 +392,7 @@ module LinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_xMax", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_xMax", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_xMax
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module LinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_xMin", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_xMin", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_xMin
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -464,7 +464,7 @@ module LinearInterpolationFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_allowsExtrapolation", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_allowsExtrapolation", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -500,7 +500,7 @@ module LinearInterpolationFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_disableExtrapolation", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_disableExtrapolation", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module LinearInterpolationFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_enableExtrapolation", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_enableExtrapolation", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -584,7 +584,7 @@ module LinearInterpolationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LinearInterpolation_extrapolate", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_extrapolate", Description="Create a LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -617,7 +617,7 @@ module LinearInterpolationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LinearInterpolation_Range", Description="Create a range of LinearInterpolation",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LinearInterpolation_Range", Description="Create a range of LinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearInterpolation_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

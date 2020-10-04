@@ -37,7 +37,7 @@ module SobolBrownianGeneratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolBrownianGenerator_nextPath", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianGenerator_nextPath", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_nextPath
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module SobolBrownianGeneratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolBrownianGenerator_nextStep", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianGenerator_nextStep", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_nextStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module SobolBrownianGeneratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolBrownianGenerator_numberOfFactors", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianGenerator_numberOfFactors", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_numberOfFactors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -151,7 +151,7 @@ module SobolBrownianGeneratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolBrownianGenerator_numberOfSteps", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianGenerator_numberOfSteps", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_numberOfSteps
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -187,7 +187,7 @@ module SobolBrownianGeneratorFunction =
     (*
         test interface
     *)
-    [<ExcelFunction(Name="_SobolBrownianGenerator_orderedIndices", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianGenerator_orderedIndices", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_orderedIndices
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module SobolBrownianGeneratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolBrownianGenerator", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianGenerator", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module SobolBrownianGeneratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SobolBrownianGenerator_transform", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianGenerator_transform", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_transform
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -323,7 +323,7 @@ module SobolBrownianGeneratorFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SobolBrownianGenerator_Range", Description="Create a range of SobolBrownianGenerator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SobolBrownianGenerator_Range", Description="Create a range of SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

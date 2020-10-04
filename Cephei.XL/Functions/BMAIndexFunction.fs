@@ -37,7 +37,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module BMAIndexFunction =
     (*
         This method returns a schedule of fixing dates between start and end.
     *)
-    [<ExcelFunction(Name="_BMAIndex_fixingSchedule", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_fixingSchedule", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_fixingSchedule
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex_forecastFixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_forecastFixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module BMAIndexFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_BMAIndex_forwardingTermStructure", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_forwardingTermStructure", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex_isValidFixingDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_isValidFixingDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module BMAIndexFunction =
     (*
         Date calculations
     *)
-    [<ExcelFunction(Name="_BMAIndex_maturityDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_maturityDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module BMAIndexFunction =
     (*
         Index interface BMA is fixed weekly on Wednesdays.
     *)
-    [<ExcelFunction(Name="_BMAIndex_name", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_name", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex_currency", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_currency", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -356,7 +356,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex_dayCounter", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_dayCounter", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -392,7 +392,7 @@ module BMAIndexFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_BMAIndex_familyName", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_familyName", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -428,7 +428,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex_fixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_fixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex_fixingCalendar", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_fixingCalendar", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -512,7 +512,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex_fixingDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_fixingDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex_fixingDays", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_fixingDays", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -590,7 +590,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex_pastFixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_pastFixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -632,7 +632,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex_tenor", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_tenor", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -668,7 +668,7 @@ module BMAIndexFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_BMAIndex_update", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_update", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -704,7 +704,7 @@ module BMAIndexFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_BMAIndex_valueDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_valueDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -746,7 +746,7 @@ module BMAIndexFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_BMAIndex_addFixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_addFixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -800,7 +800,7 @@ module BMAIndexFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_BMAIndex_addFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_addFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -854,7 +854,7 @@ module BMAIndexFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_BMAIndex_addFixings1", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_addFixings1", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -902,7 +902,7 @@ module BMAIndexFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_BMAIndex_allowsNativeFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_allowsNativeFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -938,7 +938,7 @@ module BMAIndexFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_BMAIndex_clearFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_clearFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -974,7 +974,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex_registerWith", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_registerWith", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1016,7 +1016,7 @@ module BMAIndexFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_BMAIndex_timeSeries", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_timeSeries", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1052,7 +1052,7 @@ module BMAIndexFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BMAIndex_unregisterWith", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_unregisterWith", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1091,7 +1091,7 @@ module BMAIndexFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BMAIndex_Range", Description="Create a range of BMAIndex",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BMAIndex_Range", Description="Create a range of BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

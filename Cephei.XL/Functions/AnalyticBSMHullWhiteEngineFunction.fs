@@ -37,7 +37,7 @@ module AnalyticBSMHullWhiteEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module AnalyticBSMHullWhiteEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_setModel", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_setModel", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_setModel
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -128,7 +128,7 @@ module AnalyticBSMHullWhiteEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_registerWith", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_registerWith", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module AnalyticBSMHullWhiteEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_reset", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_reset", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_reset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module AnalyticBSMHullWhiteEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_unregisterWith", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_unregisterWith", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -248,7 +248,7 @@ module AnalyticBSMHullWhiteEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_update", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_update", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -281,7 +281,7 @@ module AnalyticBSMHullWhiteEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_Range", Description="Create a range of AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_Range", Description="Create a range of AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

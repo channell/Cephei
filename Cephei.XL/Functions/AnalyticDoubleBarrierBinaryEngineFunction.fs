@@ -37,7 +37,7 @@ module AnalyticDoubleBarrierBinaryEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngine", Description="Create a AnalyticDoubleBarrierBinaryEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngine", Description="Create a AnalyticDoubleBarrierBinaryEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -75,7 +75,7 @@ module AnalyticDoubleBarrierBinaryEngineFunction =
         
     *)
 
-    [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngine_Range", Description="Create a range of AnalyticDoubleBarrierBinaryEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngine_Range", Description="Create a range of AnalyticDoubleBarrierBinaryEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_Add", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_Add", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_Add", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_Add", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Add
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -127,7 +127,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_Clear", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_Clear", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Clear
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -163,7 +163,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_Contains", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_Contains", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Contains
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -205,7 +205,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_ContainsKey", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_ContainsKey", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_ContainsKey
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -247,7 +247,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_CopyTo", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_CopyTo", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_CopyTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -295,7 +295,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_Count", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_Count", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Count
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -331,7 +331,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_GetEnumerator", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_GetEnumerator", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_GetEnumerator
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -367,7 +367,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_IsReadOnly", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_IsReadOnly", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_IsReadOnly
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -403,7 +403,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_Keys", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_Keys", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Keys
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -439,7 +439,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_Remove", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_Remove", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Remove
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -481,7 +481,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_Remove", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_Remove", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Remove
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -523,7 +523,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_this", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_this", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_this
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -565,7 +565,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -602,7 +602,7 @@ module TimeSeriesFunction =
     (*
         constructors
     *)
-    [<ExcelFunction(Name="_TimeSeries1", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries1", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -633,7 +633,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_TryGetValue", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_TryGetValue", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_TryGetValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -681,7 +681,7 @@ module TimeSeriesFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TimeSeries_Values", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_Values", Description="Create a TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Values
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -714,7 +714,7 @@ module TimeSeriesFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TimeSeries_Range", Description="Create a range of TimeSeries",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TimeSeries_Range", Description="Create a range of TimeSeries",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TimeSeries_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

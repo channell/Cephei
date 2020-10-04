@@ -37,7 +37,7 @@ module RangeAccrualPricerByBgmFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RangeAccrualPricerByBgm", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RangeAccrualPricerByBgm", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -98,7 +98,7 @@ module RangeAccrualPricerByBgmFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_swapletPrice", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_swapletPrice", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_swapletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module RangeAccrualPricerByBgmFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_capletPrice", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_capletPrice", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_capletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -176,7 +176,7 @@ module RangeAccrualPricerByBgmFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_capletRate", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_capletRate", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_capletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module RangeAccrualPricerByBgmFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_floorletPrice", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_floorletPrice", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_floorletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -260,7 +260,7 @@ module RangeAccrualPricerByBgmFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_floorletRate", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_floorletRate", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_floorletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -302,7 +302,7 @@ module RangeAccrualPricerByBgmFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_initialize", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_initialize", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_initialize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -344,7 +344,7 @@ module RangeAccrualPricerByBgmFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_swapletRate", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_swapletRate", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_swapletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -380,7 +380,7 @@ module RangeAccrualPricerByBgmFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_registerWith", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_registerWith", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -422,7 +422,7 @@ module RangeAccrualPricerByBgmFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_unregisterWith", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_unregisterWith", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -464,7 +464,7 @@ module RangeAccrualPricerByBgmFunction =
     (*
         observer interface
     *)
-    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_update", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_update", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -497,7 +497,7 @@ module RangeAccrualPricerByBgmFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_Range", Description="Create a range of RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RangeAccrualPricerByBgm_Range", Description="Create a range of RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

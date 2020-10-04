@@ -37,7 +37,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_descendant", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_descendant", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_descendant
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_discount", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_discount", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_discount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_dt", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_dt", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_dt
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_probability", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_probability", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_probability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_riskFreeRate", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_riskFreeRate", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_riskFreeRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_size", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_size", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_stepback", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_stepback", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_stepback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -416,7 +416,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_underlying", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_underlying", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_underlying
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -464,7 +464,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_grid", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_grid", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -506,7 +506,7 @@ module BlackScholesLatticeFunction =
     (*
         Lattice interface
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_initialize", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_initialize", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_initialize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -554,7 +554,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_partialRollback", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_partialRollback", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_partialRollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -602,7 +602,7 @@ module BlackScholesLatticeFunction =
     (*
         ! Computes the present value of an asset using Arrow-Debrew prices
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_presentValue", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_presentValue", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_presentValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -644,7 +644,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_rollback", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_rollback", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_rollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -692,7 +692,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_statePrices", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_statePrices", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_statePrices
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -734,7 +734,7 @@ module BlackScholesLatticeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackScholesLattice_timeGrid", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_timeGrid", Description="Create a BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_timeGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -767,7 +767,7 @@ module BlackScholesLatticeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BlackScholesLattice_Range", Description="Create a range of BlackScholesLattice",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackScholesLattice_Range", Description="Create a range of BlackScholesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesLattice_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

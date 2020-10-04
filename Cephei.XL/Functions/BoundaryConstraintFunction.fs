@@ -37,7 +37,7 @@ module BoundaryConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BoundaryConstraint", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConstraint", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module BoundaryConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BoundaryConstraint_empty", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConstraint_empty", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module BoundaryConstraintFunction =
     (*
         ! Returns lower bound for given parameters
     *)
-    [<ExcelFunction(Name="_BoundaryConstraint_lowerBound", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConstraint_lowerBound", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_lowerBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module BoundaryConstraintFunction =
     (*
         ! Tests if params satisfy the constraint
     *)
-    [<ExcelFunction(Name="_BoundaryConstraint_test", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConstraint_test", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_test
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module BoundaryConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BoundaryConstraint_update", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConstraint_update", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module BoundaryConstraintFunction =
     (*
         ! Returns upper bound for given parameters
     *)
-    [<ExcelFunction(Name="_BoundaryConstraint_upperBound", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConstraint_upperBound", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_upperBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -293,7 +293,7 @@ module BoundaryConstraintFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BoundaryConstraint_Range", Description="Create a range of BoundaryConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BoundaryConstraint_Range", Description="Create a range of BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

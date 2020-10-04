@@ -37,7 +37,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_amount", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_amount", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_baseDate", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_baseDate", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_baseDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_date", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_date", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_fixingDate", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_fixingDate", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_growthOnly", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_growthOnly", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_growthOnly
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -217,7 +217,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_index", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_index", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_index
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -253,7 +253,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_notional", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_notional", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_notional
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -356,7 +356,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_CompareTo", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_CompareTo", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_Equals", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_Equals", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -440,7 +440,7 @@ module IndexedCashFlowFunction =
     (*
         ! returns the date that the cash flow trades exCoupon
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_exCouponDate", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_exCouponDate", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_hasOccurred", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_hasOccurred", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -524,7 +524,7 @@ module IndexedCashFlowFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_tradingExCoupon", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_tradingExCoupon", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -566,7 +566,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_accept", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_accept", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -608,7 +608,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_registerWith", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_registerWith", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module IndexedCashFlowFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IndexedCashFlow_unregisterWith", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_unregisterWith", Description="Create a IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -689,7 +689,7 @@ module IndexedCashFlowFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_IndexedCashFlow_Range", Description="Create a range of IndexedCashFlow",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IndexedCashFlow_Range", Description="Create a range of IndexedCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IndexedCashFlow_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

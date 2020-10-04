@@ -38,7 +38,7 @@ module IntegralCdsEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_IntegralCdsEngine", Description="Create a IntegralCdsEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IntegralCdsEngine", Description="Create a IntegralCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IntegralCdsEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -96,7 +96,7 @@ module IntegralCdsEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_IntegralCdsEngine_Range", Description="Create a range of IntegralCdsEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_IntegralCdsEngine_Range", Description="Create a range of IntegralCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IntegralCdsEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module TermStructureConsistentModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureConsistentModel_registerWith", Description="Create a TermStructureConsistentModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureConsistentModel_registerWith", Description="Create a TermStructureConsistentModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureConsistentModel_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module TermStructureConsistentModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureConsistentModel_termStructure", Description="Create a TermStructureConsistentModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureConsistentModel_termStructure", Description="Create a TermStructureConsistentModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureConsistentModel_termStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module TermStructureConsistentModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureConsistentModel", Description="Create a TermStructureConsistentModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureConsistentModel", Description="Create a TermStructureConsistentModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureConsistentModel_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module TermStructureConsistentModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TermStructureConsistentModel_unregisterWith", Description="Create a TermStructureConsistentModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureConsistentModel_unregisterWith", Description="Create a TermStructureConsistentModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureConsistentModel_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -191,7 +191,7 @@ module TermStructureConsistentModelFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TermStructureConsistentModel_Range", Description="Create a range of TermStructureConsistentModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TermStructureConsistentModel_Range", Description="Create a range of TermStructureConsistentModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TermStructureConsistentModel_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

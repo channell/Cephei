@@ -37,7 +37,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_capletPrice", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_capletPrice", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_capletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_capletRate", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_capletRate", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_capletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_capletVolatility", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_capletVolatility", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_capletVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_floorletPrice", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_floorletPrice", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_floorletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_floorletRate", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_floorletRate", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_floorletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_initialize", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_initialize", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_initialize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_setCapletVolatility", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_setCapletVolatility", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_setCapletVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         InflationCouponPricer interface
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_swapletPrice", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_swapletPrice", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_swapletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_swapletRate", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_swapletRate", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_swapletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_registerWith", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_registerWith", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_unregisterWith", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_unregisterWith", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
     (*
         observer interface
     *)
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_update", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_update", Description="Create a UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -551,7 +551,7 @@ module UnitDisplacedBlackYoYInflationCouponPricerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_Range", Description="Create a range of UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_UnitDisplacedBlackYoYInflationCouponPricer_Range", Description="Create a range of UnitDisplacedBlackYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UnitDisplacedBlackYoYInflationCouponPricer_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

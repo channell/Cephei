@@ -37,7 +37,7 @@ module EuropeanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EuropeanExercise", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EuropeanExercise", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanExercise_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module EuropeanExerciseFunction =
     (*
         inspectors
     *)
-    [<ExcelFunction(Name="_EuropeanExercise_date", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EuropeanExercise_date", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanExercise_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module EuropeanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EuropeanExercise_dates", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EuropeanExercise_dates", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanExercise_dates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module EuropeanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EuropeanExercise_lastDate", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EuropeanExercise_lastDate", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanExercise_lastDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module EuropeanExerciseFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_EuropeanExercise_type", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EuropeanExercise_type", Description="Create a EuropeanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanExercise_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -221,7 +221,7 @@ module EuropeanExerciseFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_EuropeanExercise_Range", Description="Create a range of EuropeanExercise",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_EuropeanExercise_Range", Description="Create a range of EuropeanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanExercise_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

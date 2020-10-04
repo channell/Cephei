@@ -37,7 +37,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond1", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond1", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -225,7 +225,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond2", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond2", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -310,7 +310,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_dayCounter", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_dayCounter", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -346,7 +346,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_frequency", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_frequency", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_frequency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -382,7 +382,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_accruedAmount", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_accruedAmount", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -424,7 +424,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_calendar", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_calendar", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -460,7 +460,7 @@ module AmortizingFixedRateBondFunction =
     (*
         \note returns all the cashflows, including the redemptions.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_cashflows", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_cashflows", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_cashflows
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -496,7 +496,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_cleanPrice", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_cleanPrice", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_cleanPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -532,7 +532,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_cleanPrice1", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_cleanPrice1", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_cleanPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -598,7 +598,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_dirtyPrice1", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_dirtyPrice1", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_dirtyPrice1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -664,7 +664,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! The default bond settlement is used for calculation.  \warning the theoretical price calculated from a flat term structure might differ slightly from the price calculated from the corresponding yield by means of the other overload of this function. If the price from a constant yield is desired, it is advisable to use such other overload.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_dirtyPrice", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_dirtyPrice", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_dirtyPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -700,7 +700,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_isExpired", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_isExpired", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -736,7 +736,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_issueDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_issueDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_issueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -772,7 +772,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_isTradable", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_isTradable", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_isTradable
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -814,7 +814,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_maturityDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_maturityDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -850,7 +850,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_nextCashFlowDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_nextCashFlowDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_nextCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -892,7 +892,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! Expected next coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the already-fixed not-yet-paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_nextCouponRate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_nextCouponRate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_nextCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -934,7 +934,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_notional", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_notional", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_notional
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -976,7 +976,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_notionals", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_notionals", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_notionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1012,7 +1012,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_previousCashFlowDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_previousCashFlowDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_previousCashFlowDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1054,7 +1054,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! Expected previous coupon: depending on (the bond and) the given date the coupon can be historic, deterministic or expected in a stochastic sense. When the bond settlement date is used the coupon is the last paid one.  The current bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_previousCouponRate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_previousCouponRate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_previousCouponRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1096,7 +1096,7 @@ module AmortizingFixedRateBondFunction =
     (*
         returns the redemption, if only one is defined
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_redemption", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_redemption", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_redemption
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1132,7 +1132,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! returns just the redemption flows (not interest payments)
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_redemptions", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_redemptions", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_redemptions
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1168,7 +1168,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_settlementDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_settlementDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_settlementDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1210,7 +1210,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_settlementDays", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_settlementDays", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1246,7 +1246,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_settlementValue", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_settlementValue", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_settlementValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1288,7 +1288,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_settlementValue1", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_settlementValue1", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_settlementValue1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1324,7 +1324,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_startDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_startDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1360,7 +1360,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! The default bond settlement is used if no date is given.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_yield1", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_yield1", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_yield1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1438,7 +1438,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! The default bond settlement and theoretical price are used for calculation.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_yield", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_yield", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_yield
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1504,7 +1504,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_CASH", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_CASH", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1540,7 +1540,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_errorEstimate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_errorEstimate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1576,7 +1576,7 @@ module AmortizingFixedRateBondFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_NPV", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_NPV", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1612,7 +1612,7 @@ module AmortizingFixedRateBondFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_result", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_result", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1654,7 +1654,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_setPricingEngine", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_setPricingEngine", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1696,7 +1696,7 @@ module AmortizingFixedRateBondFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_valuationDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_valuationDate", Description="Create a AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1729,7 +1729,7 @@ module AmortizingFixedRateBondFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AmortizingFixedRateBond_Range", Description="Create a range of AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AmortizingFixedRateBond_Range", Description="Create a range of AmortizingFixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFixedRateBond_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

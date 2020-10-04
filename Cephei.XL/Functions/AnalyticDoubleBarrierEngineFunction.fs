@@ -37,7 +37,7 @@ module AnalyticDoubleBarrierEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AnalyticDoubleBarrierEngine", Description="Create a AnalyticDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDoubleBarrierEngine", Description="Create a AnalyticDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -78,7 +78,7 @@ module AnalyticDoubleBarrierEngineFunction =
         else
             "<WIZ>"
 
-    [<ExcelFunction(Name="_AnalyticDoubleBarrierEngine_Range", Description="Create a range of AnalyticDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AnalyticDoubleBarrierEngine_Range", Description="Create a range of AnalyticDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

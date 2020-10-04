@@ -37,7 +37,7 @@ module DiscountingBasisSwapEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DiscountingBasisSwapEngine", Description="Create a DiscountingBasisSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscountingBasisSwapEngine", Description="Create a DiscountingBasisSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingBasisSwapEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -77,7 +77,7 @@ module DiscountingBasisSwapEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DiscountingBasisSwapEngine_Range", Description="Create a range of DiscountingBasisSwapEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DiscountingBasisSwapEngine_Range", Description="Create a range of DiscountingBasisSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingBasisSwapEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

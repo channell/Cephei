@@ -37,7 +37,7 @@ module ProjectedConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ProjectedConstraint1", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ProjectedConstraint1", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module ProjectedConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ProjectedConstraint", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ProjectedConstraint", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -129,7 +129,7 @@ module ProjectedConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ProjectedConstraint_empty", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ProjectedConstraint_empty", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -165,7 +165,7 @@ module ProjectedConstraintFunction =
     (*
         ! Returns lower bound for given parameters
     *)
-    [<ExcelFunction(Name="_ProjectedConstraint_lowerBound", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ProjectedConstraint_lowerBound", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_lowerBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module ProjectedConstraintFunction =
     (*
         ! Tests if params satisfy the constraint
     *)
-    [<ExcelFunction(Name="_ProjectedConstraint_test", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ProjectedConstraint_test", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_test
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -249,7 +249,7 @@ module ProjectedConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ProjectedConstraint_update", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ProjectedConstraint_update", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -303,7 +303,7 @@ module ProjectedConstraintFunction =
     (*
         ! Returns upper bound for given parameters
     *)
-    [<ExcelFunction(Name="_ProjectedConstraint_upperBound", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ProjectedConstraint_upperBound", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_upperBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -342,7 +342,7 @@ module ProjectedConstraintFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ProjectedConstraint_Range", Description="Create a range of ProjectedConstraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ProjectedConstraint_Range", Description="Create a range of ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module MYRCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MYRCurrency", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module MYRCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_MYRCurrency_code", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_code", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module MYRCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_MYRCurrency_empty", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_empty", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module MYRCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MYRCurrency_Equals", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_Equals", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module MYRCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_MYRCurrency_format", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_format", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module MYRCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_MYRCurrency_fractionsPerUnit", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_fractionsPerUnit", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module MYRCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_MYRCurrency_fractionSymbol", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_fractionSymbol", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module MYRCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_MYRCurrency_name", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_name", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module MYRCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_MYRCurrency_numericCode", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_numericCode", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module MYRCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_MYRCurrency_rounding", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_rounding", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module MYRCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_MYRCurrency_symbol", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_symbol", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module MYRCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_MYRCurrency_ToString", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_ToString", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module MYRCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_MYRCurrency_triangulationCurrency", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_triangulationCurrency", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module MYRCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_MYRCurrency_Range", Description="Create a range of MYRCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_MYRCurrency_Range", Description="Create a range of MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

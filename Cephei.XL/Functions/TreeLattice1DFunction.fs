@@ -37,7 +37,7 @@ module TreeLattice1DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeLattice1D_grid", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeLattice1D_grid", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_grid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module TreeLattice1DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeLattice1D", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeLattice1D", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module TreeLattice1DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeLattice1D_underlying", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeLattice1D_underlying", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_underlying
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -170,7 +170,7 @@ module TreeLattice1DFunction =
     (*
         Lattice interface
     *)
-    [<ExcelFunction(Name="_TreeLattice1D_initialize", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeLattice1D_initialize", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_initialize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module TreeLattice1DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeLattice1D_partialRollback", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeLattice1D_partialRollback", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_partialRollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module TreeLattice1DFunction =
     (*
         ! Computes the present value of an asset using Arrow-Debrew prices
     *)
-    [<ExcelFunction(Name="_TreeLattice1D_presentValue", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeLattice1D_presentValue", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_presentValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module TreeLattice1DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeLattice1D_rollback", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeLattice1D_rollback", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_rollback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -356,7 +356,7 @@ module TreeLattice1DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeLattice1D_statePrices", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeLattice1D_statePrices", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_statePrices
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module TreeLattice1DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeLattice1D_stepback", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeLattice1D_stepback", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_stepback
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -452,7 +452,7 @@ module TreeLattice1DFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TreeLattice1D_timeGrid", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeLattice1D_timeGrid", Description="Create a TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_timeGrid
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -485,7 +485,7 @@ module TreeLattice1DFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TreeLattice1D_Range", Description="Create a range of TreeLattice1D",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TreeLattice1D_Range", Description="Create a range of TreeLattice1D",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TreeLattice1D_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

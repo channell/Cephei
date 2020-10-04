@@ -37,7 +37,7 @@ module InverseCumulativeNormalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseCumulativeNormal1", Description="Create a InverseCumulativeNormal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeNormal1", Description="Create a InverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeNormal_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -80,7 +80,7 @@ module InverseCumulativeNormalFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_InverseCumulativeNormal", Description="Create a InverseCumulativeNormal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeNormal", Description="Create a InverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeNormal_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -111,7 +111,7 @@ module InverseCumulativeNormalFunction =
     (*
         function
     *)
-    [<ExcelFunction(Name="_InverseCumulativeNormal_value", Description="Create a InverseCumulativeNormal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeNormal_value", Description="Create a InverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeNormal_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -150,7 +150,7 @@ module InverseCumulativeNormalFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_InverseCumulativeNormal_Range", Description="Create a range of InverseCumulativeNormal",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_InverseCumulativeNormal_Range", Description="Create a range of InverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeNormal_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

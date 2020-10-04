@@ -37,7 +37,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module SwaptionVolCube2Function =
     (*
         SwaptionVolatilityCube inspectors
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_volSpreads", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_volSpreads", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_volSpreads
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_atmStrike", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_atmStrike", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_atmStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -206,7 +206,7 @@ module SwaptionVolCube2Function =
     (*
         Other inspectors
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_atmStrike", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_atmStrike", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_atmStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_atmVol", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_atmVol", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_atmVol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_calendar", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_calendar", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module SwaptionVolCube2Function =
     (*
         TermStructure interface
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_dayCounter", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_dayCounter", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_maxDate", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_maxDate", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_maxStrike", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_maxStrike", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module SwaptionVolCube2Function =
     (*
         SwaptionVolatilityStructure interface
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_maxSwapTenor", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_maxSwapTenor", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_maxSwapTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_maxTime", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_maxTime", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -506,7 +506,7 @@ module SwaptionVolCube2Function =
     (*
         VolatilityTermStructure interface
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_minStrike", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_minStrike", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_referenceDate", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_referenceDate", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -578,7 +578,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_settlementDays", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_settlementDays", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -614,7 +614,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_shortSwapIndexBase", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_shortSwapIndexBase", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_shortSwapIndexBase
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_strikeSpreads", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_strikeSpreads", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_strikeSpreads
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -686,7 +686,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_swapIndexBase", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_swapIndexBase", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_swapIndexBase
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -722,7 +722,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_vegaWeightedSmileFit", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_vegaWeightedSmileFit", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_vegaWeightedSmileFit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -758,7 +758,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_volatilityType", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_volatilityType", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_volatilityType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -794,7 +794,7 @@ module SwaptionVolCube2Function =
     (*
         ! additional inspectors
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_optionDateFromTime", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_optionDateFromTime", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_optionDateFromTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -836,7 +836,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_optionDates", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_optionDates", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_optionDates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -872,7 +872,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_optionTenors", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_optionTenors", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_optionTenors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -908,7 +908,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_optionTimes", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_optionTimes", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_optionTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -944,7 +944,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_swapLengths", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_swapLengths", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_swapLengths
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -980,7 +980,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_swapTenors", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_swapTenors", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_swapTenors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1016,7 +1016,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_update", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_update", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1052,7 +1052,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the Black variance for a given option time and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_blackVariance", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_blackVariance", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_blackVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1112,7 +1112,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the Black variance for a given option date and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_blackVariance", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_blackVariance", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_blackVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1172,7 +1172,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the Black variance for a given option tenor and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_blackVariance", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_blackVariance", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_blackVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1232,7 +1232,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the Black variance for a given option time and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_blackVariance", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_blackVariance", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_blackVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1292,7 +1292,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the Black variance for a given option date and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_blackVariance", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_blackVariance", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_blackVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1352,7 +1352,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the Black variance for a given option tenor and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_blackVariance", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_blackVariance", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_blackVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1412,7 +1412,7 @@ module SwaptionVolCube2Function =
     (*
         ! the largest swapLength for which the term structure can return vols
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_maxSwapLength", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_maxSwapLength", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_maxSwapLength
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1448,7 +1448,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the shift for a given option time and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_shift", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_shift", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_shift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1502,7 +1502,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the shift for a given option date and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_shift", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_shift", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_shift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1556,7 +1556,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the shift for a given option date and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_shift", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_shift", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_shift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1610,7 +1610,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the shift for a given option time and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_shift", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_shift", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_shift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1664,7 +1664,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the shift for a given option tenor and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_shift", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_shift", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_shift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1718,7 +1718,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the shift for a given option tenor and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_shift", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_shift", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_shift
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1772,7 +1772,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the smile for a given option tenor and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_smileSection", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_smileSection", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_smileSection
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1826,7 +1826,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the smile for a given option time and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_smileSection", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_smileSection", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_smileSection
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1880,7 +1880,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the smile for a given option date and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_smileSection", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_smileSection", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_smileSection
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1934,7 +1934,7 @@ module SwaptionVolCube2Function =
     (*
         ! implements the conversion between swap dates and swap (time) length
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_swapLength", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_swapLength", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_swapLength
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1982,7 +1982,7 @@ module SwaptionVolCube2Function =
     (*
         ! implements the conversion between swap tenor and swap (time) length
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_swapLength", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_swapLength", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_swapLength
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2024,7 +2024,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the volatility for a given option date and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_volatility", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_volatility", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2084,7 +2084,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the volatility for a given option date and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_volatility", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_volatility", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2144,7 +2144,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the volatility for a given option tenor and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_volatility", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_volatility", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2204,7 +2204,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the volatility for a given option tenor and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_volatility", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_volatility", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2264,7 +2264,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the volatility for a given option time and swap length
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_volatility", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_volatility", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2324,7 +2324,7 @@ module SwaptionVolCube2Function =
     (*
         ! returns the volatility for a given option time and swap tenor
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_volatility", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_volatility", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2384,7 +2384,7 @@ module SwaptionVolCube2Function =
     (*
         ! the business day convention used in tenor to date conversion
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_businessDayConvention", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_businessDayConvention", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2420,7 +2420,7 @@ module SwaptionVolCube2Function =
     (*
         ! period/date conversion
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_optionDateFromTenor", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_optionDateFromTenor", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_optionDateFromTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2462,7 +2462,7 @@ module SwaptionVolCube2Function =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_timeFromReference", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_timeFromReference", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2504,7 +2504,7 @@ module SwaptionVolCube2Function =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_allowsExtrapolation", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_allowsExtrapolation", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2540,7 +2540,7 @@ module SwaptionVolCube2Function =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_disableExtrapolation", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_disableExtrapolation", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2582,7 +2582,7 @@ module SwaptionVolCube2Function =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_enableExtrapolation", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_enableExtrapolation", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2624,7 +2624,7 @@ module SwaptionVolCube2Function =
     (*
         
     *)
-    [<ExcelFunction(Name="_SwaptionVolCube2_extrapolate", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_extrapolate", Description="Create a SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -2657,7 +2657,7 @@ module SwaptionVolCube2Function =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SwaptionVolCube2_Range", Description="Create a range of SwaptionVolCube2",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SwaptionVolCube2_Range", Description="Create a range of SwaptionVolCube2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwaptionVolCube2_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

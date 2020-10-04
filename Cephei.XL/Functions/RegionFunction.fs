@@ -37,7 +37,7 @@ module RegionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Region_code", Description="Create a Region",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Region_code", Description="Create a Region",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Region_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module RegionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Region_Equals", Description="Create a Region",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Region_Equals", Description="Create a Region",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Region_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module RegionFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_Region_name", Description="Create a Region",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Region_name", Description="Create a Region",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Region_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -148,7 +148,7 @@ module RegionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Region_Range", Description="Create a range of Region",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Region_Range", Description="Create a range of Region",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Region_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

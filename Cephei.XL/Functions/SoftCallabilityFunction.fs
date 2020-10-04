@@ -37,7 +37,7 @@ module SoftCallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SoftCallability", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SoftCallability", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module SoftCallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SoftCallability_trigger", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SoftCallability_trigger", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_trigger
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module SoftCallabilityFunction =
     (*
         Event interface
     *)
-    [<ExcelFunction(Name="_SoftCallability_date", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SoftCallability_date", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module SoftCallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SoftCallability_price", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SoftCallability_price", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_price
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module SoftCallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SoftCallability_type", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SoftCallability_type", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_type
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module SoftCallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SoftCallability_accept", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SoftCallability_accept", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module SoftCallabilityFunction =
     (*
         ! If includeRefDate is true, then an event has not occurred if its date is the same as the refDate, i.e. this method returns false if the event date is the same as the refDate.
     *)
-    [<ExcelFunction(Name="_SoftCallability_hasOccurred", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SoftCallability_hasOccurred", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -320,7 +320,7 @@ module SoftCallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SoftCallability_registerWith", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SoftCallability_registerWith", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module SoftCallabilityFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SoftCallability_unregisterWith", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SoftCallability_unregisterWith", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -401,7 +401,7 @@ module SoftCallabilityFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SoftCallability_Range", Description="Create a range of SoftCallability",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SoftCallability_Range", Description="Create a range of SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

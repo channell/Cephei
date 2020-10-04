@@ -37,7 +37,7 @@ module PercentageStrikePayoffFunction =
     (*
         Payoff interface
     *)
-    [<ExcelFunction(Name="_PercentageStrikePayoff_name", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PercentageStrikePayoff_name", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PercentageStrikePayoff_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module PercentageStrikePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PercentageStrikePayoff", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PercentageStrikePayoff", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PercentageStrikePayoff_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -116,7 +116,7 @@ module PercentageStrikePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PercentageStrikePayoff_value", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PercentageStrikePayoff_value", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PercentageStrikePayoff_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module PercentageStrikePayoffFunction =
     (*
         Payoff interface
     *)
-    [<ExcelFunction(Name="_PercentageStrikePayoff_description", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PercentageStrikePayoff_description", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PercentageStrikePayoff_description
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module PercentageStrikePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PercentageStrikePayoff_strike", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PercentageStrikePayoff_strike", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PercentageStrikePayoff_strike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module PercentageStrikePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PercentageStrikePayoff_optionType", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PercentageStrikePayoff_optionType", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PercentageStrikePayoff_optionType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -266,7 +266,7 @@ module PercentageStrikePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_PercentageStrikePayoff_accept", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PercentageStrikePayoff_accept", Description="Create a PercentageStrikePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PercentageStrikePayoff_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -305,7 +305,7 @@ module PercentageStrikePayoffFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_PercentageStrikePayoff_Range", Description="Create a range of PercentageStrikePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_PercentageStrikePayoff_Range", Description="Create a range of PercentageStrikePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PercentageStrikePayoff_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

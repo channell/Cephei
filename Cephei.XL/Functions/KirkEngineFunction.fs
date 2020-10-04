@@ -38,7 +38,7 @@ module KirkEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_KirkEngine", Description="Create a KirkEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KirkEngine", Description="Create a KirkEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KirkEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -84,7 +84,7 @@ module KirkEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_KirkEngine_Range", Description="Create a range of KirkEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_KirkEngine_Range", Description="Create a range of KirkEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KirkEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module InstrumentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Instrument_CASH", Description="Create a Instrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Instrument_CASH", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module InstrumentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Instrument_errorEstimate", Description="Create a Instrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Instrument_errorEstimate", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module InstrumentFunction =
     (*
         ! returns whether the instrument is still tradable.
     *)
-    [<ExcelFunction(Name="_Instrument_isExpired", Description="Create a Instrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Instrument_isExpired", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module InstrumentFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Instrument_NPV", Description="Create a Instrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Instrument_NPV", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module InstrumentFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_Instrument_result", Description="Create a Instrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Instrument_result", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module InstrumentFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_Instrument_setPricingEngine", Description="Create a Instrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Instrument_setPricingEngine", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -265,7 +265,7 @@ module InstrumentFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_Instrument_valuationDate", Description="Create a Instrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Instrument_valuationDate", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -298,7 +298,7 @@ module InstrumentFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Instrument_Range", Description="Create a range of Instrument",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Instrument_Range", Description="Create a range of Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

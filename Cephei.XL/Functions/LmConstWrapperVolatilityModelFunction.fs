@@ -37,7 +37,7 @@ module LmConstWrapperVolatilityModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_integratedVariance", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_integratedVariance", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_integratedVariance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -97,7 +97,7 @@ module LmConstWrapperVolatilityModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module LmConstWrapperVolatilityModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_volatility", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_volatility", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module LmConstWrapperVolatilityModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_volatility1", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_volatility1", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_volatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module LmConstWrapperVolatilityModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_parameters", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_parameters", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_parameters
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module LmConstWrapperVolatilityModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_setParams", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_setParams", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_setParams
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module LmConstWrapperVolatilityModelFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_size", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_size", Description="Create a LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -347,7 +347,7 @@ module LmConstWrapperVolatilityModelFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_Range", Description="Create a range of LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_LmConstWrapperVolatilityModel_Range", Description="Create a range of LmConstWrapperVolatilityModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LmConstWrapperVolatilityModel_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

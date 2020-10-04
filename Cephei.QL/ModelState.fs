@@ -5,7 +5,6 @@ open Cephei.Cell
 open Cephei.Cell.Generic
 open System
 
-
 // Summary:  interface that functions will use to foreard events to Excel
 type IValueRTD = 
     abstract UpdateValue : string -> string -> obj -> unit

@@ -37,7 +37,7 @@ module BinomialDoubleBarrierEngineFunction =
     (*
         ! \param maxTimeSteps is used to limit timeSteps when using Boyle-Lau optimization. If zero (the default) the maximum number of steps is calculated by an heuristic: anything when < 1000, otherwise no more than 5*timeSteps. If maxTimeSteps is equal to timeSteps Boyle-Lau is disabled. Likewise if the lattice is not CoxRossRubinstein Boyle-Lau is disabled and maxTimeSteps ignored.
     *)
-    [<ExcelFunction(Name="_BinomialDoubleBarrierEngine", Description="Create a BinomialDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BinomialDoubleBarrierEngine", Description="Create a BinomialDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDoubleBarrierEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -100,7 +100,7 @@ module BinomialDoubleBarrierEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_BinomialDoubleBarrierEngine_getAsset", Description="Create a BinomialDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BinomialDoubleBarrierEngine_getAsset", Description="Create a BinomialDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDoubleBarrierEngine_getAsset
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -156,7 +156,7 @@ module BinomialDoubleBarrierEngineFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_BinomialDoubleBarrierEngine_GetTree", Description="Create a BinomialDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BinomialDoubleBarrierEngine_GetTree", Description="Create a BinomialDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDoubleBarrierEngine_GetTree
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -214,7 +214,7 @@ module BinomialDoubleBarrierEngineFunction =
         else
             "<WIZ>"
             *)
-    [<ExcelFunction(Name="_BinomialDoubleBarrierEngine_Range", Description="Create a range of BinomialDoubleBarrierEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BinomialDoubleBarrierEngine_Range", Description="Create a range of BinomialDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDoubleBarrierEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

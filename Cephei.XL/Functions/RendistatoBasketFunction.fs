@@ -37,7 +37,7 @@ module RendistatoBasketFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoBasket_btps", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoBasket_btps", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_btps
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module RendistatoBasketFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoBasket_cleanPriceQuotes", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoBasket_cleanPriceQuotes", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_cleanPriceQuotes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module RendistatoBasketFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoBasket_outstanding", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoBasket_outstanding", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_outstanding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -145,7 +145,7 @@ module RendistatoBasketFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoBasket_outstandings", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoBasket_outstandings", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_outstandings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -181,7 +181,7 @@ module RendistatoBasketFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoBasket_registerWith", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoBasket_registerWith", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -223,7 +223,7 @@ module RendistatoBasketFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoBasket", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoBasket", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module RendistatoBasketFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoBasket_size", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoBasket_size", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -308,7 +308,7 @@ module RendistatoBasketFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoBasket_unregisterWith", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoBasket_unregisterWith", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -350,7 +350,7 @@ module RendistatoBasketFunction =
     (*
         observer interface
     *)
-    [<ExcelFunction(Name="_RendistatoBasket_update", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoBasket_update", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -386,7 +386,7 @@ module RendistatoBasketFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_RendistatoBasket_weights", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoBasket_weights", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_weights
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -419,7 +419,7 @@ module RendistatoBasketFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_RendistatoBasket_Range", Description="Create a range of RendistatoBasket",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_RendistatoBasket_Range", Description="Create a range of RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

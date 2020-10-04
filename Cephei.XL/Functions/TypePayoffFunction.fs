@@ -37,7 +37,7 @@ module TypePayoffFunction =
     (*
         Payoff interface
     *)
-    [<ExcelFunction(Name="_TypePayoff_description", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TypePayoff_description", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_description
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module TypePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TypePayoff_optionType", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TypePayoff_optionType", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_optionType
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -109,7 +109,7 @@ module TypePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TypePayoff", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TypePayoff", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module TypePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TypePayoff_accept", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TypePayoff_accept", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -188,7 +188,7 @@ module TypePayoffFunction =
     (*
         ! \warning This method is used for output and comparison between payoffs. It is <b>not</b> meant to be used for writing switch-on-type code.
     *)
-    [<ExcelFunction(Name="_TypePayoff_name", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TypePayoff_name", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -224,7 +224,7 @@ module TypePayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_TypePayoff_value", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TypePayoff_value", Description="Create a TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -263,7 +263,7 @@ module TypePayoffFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_TypePayoff_Range", Description="Create a range of TypePayoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_TypePayoff_Range", Description="Create a range of TypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TypePayoff_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

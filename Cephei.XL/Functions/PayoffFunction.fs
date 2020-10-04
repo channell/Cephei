@@ -37,7 +37,7 @@ module PayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Payoff_accept", Description="Create a Payoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Payoff_accept", Description="Create a Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module PayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Payoff_description", Description="Create a Payoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Payoff_description", Description="Create a Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_description
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module PayoffFunction =
     (*
         ! \warning This method is used for output and comparison between payoffs. It is <b>not</b> meant to be used for writing switch-on-type code.
     *)
-    [<ExcelFunction(Name="_Payoff_name", Description="Create a Payoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Payoff_name", Description="Create a Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -151,7 +151,7 @@ module PayoffFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Payoff_value", Description="Create a Payoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Payoff_value", Description="Create a Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -190,7 +190,7 @@ module PayoffFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Payoff_Range", Description="Create a range of Payoff",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Payoff_Range", Description="Create a range of Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

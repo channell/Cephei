@@ -37,7 +37,7 @@ module DailyTenorEURLiborFunction =
     (*
         http://www.bba.org.uk/bba/jsp/polopoly.jsp?d=225&a=1412 : no o/n or s/n fixings (as the case may be) will take place when the principal centre of the currency concerned is closed but London is open on the fixing day.
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor2", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor2", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -117,7 +117,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor1", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor1", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -148,7 +148,7 @@ module DailyTenorEURLiborFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_businessDayConvention", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_businessDayConvention", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -184,7 +184,7 @@ module DailyTenorEURLiborFunction =
     (*
         Other methods returns a copy of itself linked to a different forwarding curve
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_clone", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_clone", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_clone
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -226,7 +226,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_endOfMonth", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_endOfMonth", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -262,7 +262,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_forecastFixing1", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_forecastFixing1", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_forecastFixing1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -316,7 +316,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_forecastFixing", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_forecastFixing", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_forecastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -358,7 +358,7 @@ module DailyTenorEURLiborFunction =
     (*
         the curve used to forecast fixings
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_forwardingTermStructure", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_forwardingTermStructure", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_forwardingTermStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -394,7 +394,7 @@ module DailyTenorEURLiborFunction =
     (*
         InterestRateIndex interface
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_maturityDate", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_maturityDate", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -436,7 +436,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_currency", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_currency", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_currency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -472,7 +472,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_dayCounter", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_dayCounter", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -508,7 +508,7 @@ module DailyTenorEURLiborFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_familyName", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_familyName", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_familyName
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -544,7 +544,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_fixing", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_fixing", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_fixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -592,7 +592,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_fixingCalendar", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_fixingCalendar", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_fixingCalendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -628,7 +628,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_fixingDate", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_fixingDate", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -670,7 +670,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_fixingDays", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_fixingDays", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -706,7 +706,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_isValidFixingDate", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_isValidFixingDate", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_isValidFixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -748,7 +748,7 @@ module DailyTenorEURLiborFunction =
     (*
         Index interface
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_name", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_name", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -784,7 +784,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_pastFixing", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_pastFixing", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_pastFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -826,7 +826,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_tenor", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_tenor", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_tenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -862,7 +862,7 @@ module DailyTenorEURLiborFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_update", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_update", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -898,7 +898,7 @@ module DailyTenorEURLiborFunction =
     (*
         Date calculations These methods can be overridden to implement particular conventions (e.g. EurLibor)
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_valueDate", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_valueDate", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_valueDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -940,7 +940,7 @@ module DailyTenorEURLiborFunction =
     (*
         Stores the historical fixing at the given date The date passed as arguments must be the actual calendar date of the fixing; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_addFixing", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_addFixing", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_addFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -994,7 +994,7 @@ module DailyTenorEURLiborFunction =
     (*
         Stores historical fixings at the given dates The dates passed as arguments must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_addFixings", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_addFixings", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_addFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1048,7 +1048,7 @@ module DailyTenorEURLiborFunction =
     (*
         Stores historical fixings from a TimeSeries The dates in the TimeSeries must be the actual calendar dates of the fixings; no settlement days must be used.
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_addFixings1", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_addFixings1", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_addFixings1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1096,7 +1096,7 @@ module DailyTenorEURLiborFunction =
     (*
         Check if index allows for native fixings. If this returns false, calls to addFixing and similar methods will raise an exception.
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_allowsNativeFixings", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_allowsNativeFixings", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_allowsNativeFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1132,7 +1132,7 @@ module DailyTenorEURLiborFunction =
     (*
         Clears all stored historical fixings
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_clearFixings", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_clearFixings", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_clearFixings
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1168,7 +1168,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_registerWith", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_registerWith", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1210,7 +1210,7 @@ module DailyTenorEURLiborFunction =
     (*
         Returns the fixing TimeSeries
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_timeSeries", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_timeSeries", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_timeSeries
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1246,7 +1246,7 @@ module DailyTenorEURLiborFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_DailyTenorEURLibor_unregisterWith", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_unregisterWith", Description="Create a DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1285,7 +1285,7 @@ module DailyTenorEURLiborFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_DailyTenorEURLibor_Range", Description="Create a range of DailyTenorEURLibor",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_DailyTenorEURLibor_Range", Description="Create a range of DailyTenorEURLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DailyTenorEURLibor_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

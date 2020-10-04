@@ -37,7 +37,7 @@ module GaussJacobiIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussJacobiIntegration", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiIntegration", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiIntegration_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -86,7 +86,7 @@ module GaussJacobiIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussJacobiIntegration_order", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiIntegration_order", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiIntegration_order
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module GaussJacobiIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussJacobiIntegration_value", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiIntegration_value", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiIntegration_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module GaussJacobiIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussJacobiIntegration_weights", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiIntegration_weights", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiIntegration_weights
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module GaussJacobiIntegrationFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussJacobiIntegration_x", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiIntegration_x", Description="Create a GaussJacobiIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiIntegration_x
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -233,7 +233,7 @@ module GaussJacobiIntegrationFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GaussJacobiIntegration_Range", Description="Create a range of GaussJacobiIntegration",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiIntegration_Range", Description="Create a range of GaussJacobiIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiIntegration_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

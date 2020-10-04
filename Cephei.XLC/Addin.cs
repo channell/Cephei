@@ -21,7 +21,7 @@ namespace Cephei.XL
 
         public void AutoOpen()
         {
-
+            Model.getState();
         }
     }
 }

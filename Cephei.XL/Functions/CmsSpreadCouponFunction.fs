@@ -37,7 +37,7 @@ module CmsSpreadCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module CmsSpreadCouponFunction =
     (*
         need by CashFlowVectors
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon1", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon1", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -171,7 +171,7 @@ module CmsSpreadCouponFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_swapSpreadIndex", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_swapSpreadIndex", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_swapSpreadIndex
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -207,7 +207,7 @@ module CmsSpreadCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_accruedAmount", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_accruedAmount", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_accruedAmount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -249,7 +249,7 @@ module CmsSpreadCouponFunction =
     (*
         ! convexity-adjusted fixing
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_adjustedFixing", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_adjustedFixing", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_adjustedFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module CmsSpreadCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_amount", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_amount", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_amount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -321,7 +321,7 @@ module CmsSpreadCouponFunction =
     (*
         ! convexity adjustment
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_convexityAdjustment", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_convexityAdjustment", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_convexityAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -357,7 +357,7 @@ module CmsSpreadCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_dayCounter", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_dayCounter", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -393,7 +393,7 @@ module CmsSpreadCouponFunction =
     (*
         Factory - for Leg generators
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_factory", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_factory", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -501,7 +501,7 @@ module CmsSpreadCouponFunction =
     (*
         ! fixing days
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_fixingDate", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_fixingDate", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_fixingDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -537,7 +537,7 @@ module CmsSpreadCouponFunction =
     (*
         ! floating index
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_fixingDays", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_fixingDays", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_fixingDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -573,7 +573,7 @@ module CmsSpreadCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_gearing", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_gearing", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_gearing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -609,7 +609,7 @@ module CmsSpreadCouponFunction =
     (*
         properties
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_index", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_index", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_index
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -645,7 +645,7 @@ module CmsSpreadCouponFunction =
     (*
         ! spread paid over the fixing of the underlying index ! fixing of the underlying index
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_indexFixing", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_indexFixing", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_indexFixing
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -681,7 +681,7 @@ module CmsSpreadCouponFunction =
     (*
         ! whether or not the coupon fixes in arrears
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_isInArrears", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_isInArrears", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_isInArrears
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -717,7 +717,7 @@ module CmsSpreadCouponFunction =
     (*
         methods
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_price", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_price", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_price
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -759,7 +759,7 @@ module CmsSpreadCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_pricer", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_pricer", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_pricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -795,7 +795,7 @@ module CmsSpreadCouponFunction =
     (*
         Coupon interface
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_rate", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_rate", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_rate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -831,7 +831,7 @@ module CmsSpreadCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_setPricer", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_setPricer", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_setPricer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -873,7 +873,7 @@ module CmsSpreadCouponFunction =
     (*
         ! index gearing, i.e. multiplicative coefficient for the index
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_spread", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_spread", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_spread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -909,7 +909,7 @@ module CmsSpreadCouponFunction =
     (*
         Observer interface
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_update", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_update", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -945,7 +945,7 @@ module CmsSpreadCouponFunction =
     (*
         ! accrual period in days
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_accrualDays", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_accrualDays", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_accrualDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -981,7 +981,7 @@ module CmsSpreadCouponFunction =
     (*
         ! end of the accrual period
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_accrualEndDate", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_accrualEndDate", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_accrualEndDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1017,7 +1017,7 @@ module CmsSpreadCouponFunction =
     (*
         ! accrual period as fraction of year
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_accrualPeriod", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_accrualPeriod", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_accrualPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1053,7 +1053,7 @@ module CmsSpreadCouponFunction =
     (*
         ! start of the accrual period
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_accrualStartDate", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_accrualStartDate", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_accrualStartDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1089,7 +1089,7 @@ module CmsSpreadCouponFunction =
     (*
         ! accrued days at the given date
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_accruedDays", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_accruedDays", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_accruedDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1131,7 +1131,7 @@ module CmsSpreadCouponFunction =
     (*
         ! accrued period as fraction of year at the given date
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_accruedPeriod", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_accruedPeriod", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_accruedPeriod
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1173,7 +1173,7 @@ module CmsSpreadCouponFunction =
     (*
         Event interface
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_date", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_date", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_date
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1209,7 +1209,7 @@ module CmsSpreadCouponFunction =
     (*
         CashFlow interface
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_exCouponDate", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_exCouponDate", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_exCouponDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1245,7 +1245,7 @@ module CmsSpreadCouponFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_nominal", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_nominal", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_nominal
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1281,7 +1281,7 @@ module CmsSpreadCouponFunction =
     (*
         ! end date of the reference period
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_referencePeriodEnd", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_referencePeriodEnd", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_referencePeriodEnd
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1317,7 +1317,7 @@ module CmsSpreadCouponFunction =
     (*
         ! start date of the reference period
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_referencePeriodStart", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_referencePeriodStart", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_referencePeriodStart
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1353,7 +1353,7 @@ module CmsSpreadCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_CompareTo", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_CompareTo", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_CompareTo
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1395,7 +1395,7 @@ module CmsSpreadCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_Equals", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_Equals", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1437,7 +1437,7 @@ module CmsSpreadCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_hasOccurred", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_hasOccurred", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_hasOccurred
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1485,7 +1485,7 @@ module CmsSpreadCouponFunction =
     (*
         ! returns true if the cashflow is trading ex-coupon on the refDate
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_tradingExCoupon", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_tradingExCoupon", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_tradingExCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1527,7 +1527,7 @@ module CmsSpreadCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_accept", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_accept", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_accept
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1569,7 +1569,7 @@ module CmsSpreadCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_registerWith", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_registerWith", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1611,7 +1611,7 @@ module CmsSpreadCouponFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CmsSpreadCoupon_unregisterWith", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_unregisterWith", Description="Create a CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1650,7 +1650,7 @@ module CmsSpreadCouponFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CmsSpreadCoupon_Range", Description="Create a range of CmsSpreadCoupon",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CmsSpreadCoupon_Range", Description="Create a range of CmsSpreadCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadCoupon_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

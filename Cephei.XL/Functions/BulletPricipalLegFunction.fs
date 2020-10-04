@@ -37,7 +37,7 @@ module BulletPricipalLegFunction =
     (*
         constructor
     *)
-    [<ExcelFunction(Name="_BulletPricipalLeg", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BulletPricipalLeg", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module BulletPricipalLegFunction =
     (*
         creator
     *)
-    [<ExcelFunction(Name="_BulletPricipalLeg_value", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BulletPricipalLeg_value", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module BulletPricipalLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BulletPricipalLeg_withNotionals", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BulletPricipalLeg_withNotionals", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_withNotionals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module BulletPricipalLegFunction =
     (*
         initializers
     *)
-    [<ExcelFunction(Name="_BulletPricipalLeg_withNotionals1", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BulletPricipalLeg_withNotionals1", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_withNotionals1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module BulletPricipalLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BulletPricipalLeg_withPaymentAdjustment", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BulletPricipalLeg_withPaymentAdjustment", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_withPaymentAdjustment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -236,7 +236,7 @@ module BulletPricipalLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BulletPricipalLeg_withPaymentDayCounter", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BulletPricipalLeg_withPaymentDayCounter", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_withPaymentDayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -278,7 +278,7 @@ module BulletPricipalLegFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BulletPricipalLeg_withSign", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BulletPricipalLeg_withSign", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_withSign
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -317,7 +317,7 @@ module BulletPricipalLegFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BulletPricipalLeg_Range", Description="Create a range of BulletPricipalLeg",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BulletPricipalLeg_Range", Description="Create a range of BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module BarrierOptionFunction =
     (*
         ! \warning see VanillaOption for notes on implied-volatility calculation.
     *)
-    [<ExcelFunction(Name="_BarrierOption_impliedVolatility", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_impliedVolatility", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_impliedVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_delta", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_delta", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_delta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_deltaForward", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_deltaForward", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_deltaForward
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_dividendRho", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_dividendRho", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_dividendRho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_elasticity", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_elasticity", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_elasticity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_gamma", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_gamma", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_gamma
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_isExpired", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_isExpired", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_itmCashProbability", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_itmCashProbability", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_itmCashProbability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_rho", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_rho", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_rho
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_strikeSensitivity", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_strikeSensitivity", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_strikeSensitivity
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -506,7 +506,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_theta", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_theta", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_theta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -542,7 +542,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_thetaPerDay", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_thetaPerDay", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_thetaPerDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -578,7 +578,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_vega", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_vega", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_vega
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -614,7 +614,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_exercise", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_exercise", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_exercise
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -650,7 +650,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_payoff", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_payoff", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_payoff
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -686,7 +686,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_CASH", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_CASH", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -722,7 +722,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_errorEstimate", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_errorEstimate", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -758,7 +758,7 @@ module BarrierOptionFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BarrierOption_NPV", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_NPV", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -794,7 +794,7 @@ module BarrierOptionFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_BarrierOption_result", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_result", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -836,7 +836,7 @@ module BarrierOptionFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_BarrierOption_setPricingEngine", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_setPricingEngine", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -878,7 +878,7 @@ module BarrierOptionFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_BarrierOption_valuationDate", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_valuationDate", Description="Create a BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -911,7 +911,7 @@ module BarrierOptionFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BarrierOption_Range", Description="Create a range of BarrierOption",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BarrierOption_Range", Description="Create a range of BarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierOption_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

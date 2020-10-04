@@ -37,7 +37,7 @@ module LoanFunction =
     (*
         Instrument interface
     *)
-    [<ExcelFunction(Name="_Loan_isExpired", Description="Create a Loan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Loan_isExpired", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module LoanFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Loan", Description="Create a Loan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Loan", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -122,7 +122,7 @@ module LoanFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Loan_CASH", Description="Create a Loan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Loan_CASH", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -158,7 +158,7 @@ module LoanFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Loan_errorEstimate", Description="Create a Loan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Loan_errorEstimate", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -194,7 +194,7 @@ module LoanFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Loan_NPV", Description="Create a Loan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Loan_NPV", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -230,7 +230,7 @@ module LoanFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_Loan_result", Description="Create a Loan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Loan_result", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -272,7 +272,7 @@ module LoanFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_Loan_setPricingEngine", Description="Create a Loan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Loan_setPricingEngine", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -314,7 +314,7 @@ module LoanFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_Loan_valuationDate", Description="Create a Loan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Loan_valuationDate", Description="Create a Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -347,7 +347,7 @@ module LoanFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Loan_Range", Description="Create a range of Loan",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Loan_Range", Description="Create a range of Loan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Loan_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

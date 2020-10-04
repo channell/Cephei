@@ -57,7 +57,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -88,7 +88,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana_addedHolidays", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_addedHolidays", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_addedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -124,7 +124,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana_addHoliday", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_addHoliday", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_addHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -166,7 +166,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana_adjust", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_adjust", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_adjust
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -214,7 +214,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana_advance1", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_advance1", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -280,7 +280,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana_advance", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_advance", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_advance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -340,7 +340,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana_businessDaysBetween", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_businessDaysBetween", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_businessDaysBetween
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -400,7 +400,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana_calendar", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_calendar", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -436,7 +436,7 @@ module BotswanaFunction =
     (*
         Returns whether or not the calendar is initialized
     *)
-    [<ExcelFunction(Name="_Botswana_empty", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_empty", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -472,7 +472,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana_endOfMonth", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_endOfMonth", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -514,7 +514,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana_Equals", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_Equals", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -556,7 +556,7 @@ module BotswanaFunction =
     (*
         @returns Returns <tt>true</tt> iff the date is a business day for the given market.
     *)
-    [<ExcelFunction(Name="_Botswana_isBusinessDay", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_isBusinessDay", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_isBusinessDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -598,7 +598,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana_isEndOfMonth", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_isEndOfMonth", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_isEndOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -640,7 +640,7 @@ module BotswanaFunction =
     (*
         Returns <tt>true</tt> iff the date is a holiday for the given market.
     *)
-    [<ExcelFunction(Name="_Botswana_isHoliday", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_isHoliday", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_isHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -682,7 +682,7 @@ module BotswanaFunction =
     (*
         Returns <tt>true</tt> iff the weekday is part of the weekend for the given market.
     *)
-    [<ExcelFunction(Name="_Botswana_isWeekend", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_isWeekend", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_isWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -726,7 +726,7 @@ module BotswanaFunction =
 
 @returns The name of the calendar.
     *)
-    [<ExcelFunction(Name="_Botswana_name", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_name", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -762,7 +762,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana_removedHolidays", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_removedHolidays", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_removedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -798,7 +798,7 @@ module BotswanaFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Botswana_removeHoliday", Description="Create a Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_removeHoliday", Description="Create a Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_removeHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -837,7 +837,7 @@ module BotswanaFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Botswana_Range", Description="Create a range of Botswana",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Botswana_Range", Description="Create a range of Botswana",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Botswana_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

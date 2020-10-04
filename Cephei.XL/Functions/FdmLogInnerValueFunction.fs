@@ -37,7 +37,7 @@ module FdmLogInnerValueFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmLogInnerValue_avgInnerValue", Description="Create a FdmLogInnerValue",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLogInnerValue_avgInnerValue", Description="Create a FdmLogInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLogInnerValue_avgInnerValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -85,7 +85,7 @@ module FdmLogInnerValueFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmLogInnerValue", Description="Create a FdmLogInnerValue",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLogInnerValue", Description="Create a FdmLogInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLogInnerValue_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -134,7 +134,7 @@ module FdmLogInnerValueFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmLogInnerValue_innerValue", Description="Create a FdmLogInnerValue",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLogInnerValue_innerValue", Description="Create a FdmLogInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLogInnerValue_innerValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -179,7 +179,7 @@ module FdmLogInnerValueFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmLogInnerValue_Range", Description="Create a range of FdmLogInnerValue",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLogInnerValue_Range", Description="Create a range of FdmLogInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLogInnerValue_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

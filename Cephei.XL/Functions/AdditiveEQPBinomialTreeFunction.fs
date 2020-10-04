@@ -37,7 +37,7 @@ module AdditiveEQPBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AdditiveEQPBinomialTree1", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AdditiveEQPBinomialTree1", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module AdditiveEQPBinomialTreeFunction =
     (*
         parameterless constructor is requried for generics
     *)
-    [<ExcelFunction(Name="_AdditiveEQPBinomialTree", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AdditiveEQPBinomialTree", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -123,7 +123,7 @@ module AdditiveEQPBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_factory", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_factory", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module AdditiveEQPBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_probability", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_probability", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_probability
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -237,7 +237,7 @@ module AdditiveEQPBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_underlying", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_underlying", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_underlying
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -285,7 +285,7 @@ module AdditiveEQPBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_descendant", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_descendant", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_descendant
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -339,7 +339,7 @@ module AdditiveEQPBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_size", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_size", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_size
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -381,7 +381,7 @@ module AdditiveEQPBinomialTreeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_columns", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_columns", Description="Create a AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_columns
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -414,7 +414,7 @@ module AdditiveEQPBinomialTreeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_Range", Description="Create a range of AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AdditiveEQPBinomialTree_Range", Description="Create a range of AdditiveEQPBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AdditiveEQPBinomialTree_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

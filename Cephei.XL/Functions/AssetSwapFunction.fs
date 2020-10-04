@@ -37,7 +37,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap1", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap1", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -231,7 +231,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_bond", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_bond", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_bond
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -267,7 +267,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_bondLeg", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_bondLeg", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_bondLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -303,7 +303,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_cleanPrice", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_cleanPrice", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_cleanPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -339,7 +339,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_fairCleanPrice", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_fairCleanPrice", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_fairCleanPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -375,7 +375,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_fairNonParRepayment", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_fairNonParRepayment", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_fairNonParRepayment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -411,7 +411,7 @@ module AssetSwapFunction =
     (*
         results
     *)
-    [<ExcelFunction(Name="_AssetSwap_fairSpread", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_fairSpread", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_fairSpread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -447,7 +447,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_floatingLeg", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_floatingLeg", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_floatingLeg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -483,7 +483,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_floatingLegBPS", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_floatingLegBPS", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_floatingLegBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -519,7 +519,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_floatingLegNPV", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_floatingLegNPV", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_floatingLegNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -555,7 +555,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_nonParRepayment", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_nonParRepayment", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_nonParRepayment
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -591,7 +591,7 @@ module AssetSwapFunction =
     (*
         inspectors
     *)
-    [<ExcelFunction(Name="_AssetSwap_parSwap", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_parSwap", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_parSwap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -627,7 +627,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_payBondCoupon", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_payBondCoupon", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_payBondCoupon
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -663,7 +663,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_spread", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_spread", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_spread
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -699,7 +699,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_endDiscounts", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_endDiscounts", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_endDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -742,7 +742,7 @@ module AssetSwapFunction =
         
     *)
     (*!!
-    [<ExcelFunction(Name="_AssetSwap_engine", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_engine", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_engine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -779,7 +779,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_isExpired", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_isExpired", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_isExpired
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -815,7 +815,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_leg", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_leg", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_leg
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -857,7 +857,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_legBPS", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_legBPS", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_legBPS
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -899,7 +899,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_legNPV", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_legNPV", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_legNPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -941,7 +941,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_maturityDate", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_maturityDate", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_maturityDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -977,7 +977,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_npvDateDiscount", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_npvDateDiscount", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_npvDateDiscount
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1013,7 +1013,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_payer", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_payer", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_payer
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1055,7 +1055,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_startDate", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_startDate", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_startDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1091,7 +1091,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_startDiscounts", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_startDiscounts", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_startDiscounts
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1133,7 +1133,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_CASH", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_CASH", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_CASH
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1169,7 +1169,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_errorEstimate", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_errorEstimate", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_errorEstimate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1205,7 +1205,7 @@ module AssetSwapFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_AssetSwap_NPV", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_NPV", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_NPV
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1241,7 +1241,7 @@ module AssetSwapFunction =
     (*
         returns any additional result returned by the pricing engine.
     *)
-    [<ExcelFunction(Name="_AssetSwap_result", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_result", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_result
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1283,7 +1283,7 @@ module AssetSwapFunction =
     (*
         ! calling this method will have no effects in case the performCalculation method was overridden in a derived class.
     *)
-    [<ExcelFunction(Name="_AssetSwap_setPricingEngine", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_setPricingEngine", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_setPricingEngine
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1325,7 +1325,7 @@ module AssetSwapFunction =
     (*
         ! returns the date the net present value refers to.
     *)
-    [<ExcelFunction(Name="_AssetSwap_valuationDate", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_valuationDate", Description="Create a AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_valuationDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1358,7 +1358,7 @@ module AssetSwapFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_AssetSwap_Range", Description="Create a range of AssetSwap",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_AssetSwap_Range", Description="Create a range of AssetSwap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AssetSwap_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

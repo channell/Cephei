@@ -37,7 +37,7 @@ module GaussJacobiPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussJacobiPolynomial_alpha", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiPolynomial_alpha", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_alpha
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module GaussJacobiPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussJacobiPolynomial_beta", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiPolynomial_beta", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_beta
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module GaussJacobiPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussJacobiPolynomial", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiPolynomial", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -164,7 +164,7 @@ module GaussJacobiPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussJacobiPolynomial_mu_0", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiPolynomial_mu_0", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_mu_0
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -200,7 +200,7 @@ module GaussJacobiPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussJacobiPolynomial_w", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiPolynomial_w", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_w
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -242,7 +242,7 @@ module GaussJacobiPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussJacobiPolynomial_value", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiPolynomial_value", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_value
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module GaussJacobiPolynomialFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_GaussJacobiPolynomial_weightedValue", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiPolynomial_weightedValue", Description="Create a GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_weightedValue
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -335,7 +335,7 @@ module GaussJacobiPolynomialFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_GaussJacobiPolynomial_Range", Description="Create a range of GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_GaussJacobiPolynomial_Range", Description="Create a range of GaussJacobiPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussJacobiPolynomial_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

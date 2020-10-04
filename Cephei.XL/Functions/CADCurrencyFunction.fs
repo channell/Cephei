@@ -37,7 +37,7 @@ module CADCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADCurrency", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -68,7 +68,7 @@ module CADCurrencyFunction =
     (*
         ! currency name, e.g, "U.S. Dollar"
     *)
-    [<ExcelFunction(Name="_CADCurrency_code", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_code", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_code
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module CADCurrencyFunction =
     (*
         ! Other information ! is this a usable instance?
     *)
-    [<ExcelFunction(Name="_CADCurrency_empty", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_empty", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -140,7 +140,7 @@ module CADCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADCurrency_Equals", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_Equals", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -182,7 +182,7 @@ module CADCurrencyFunction =
     (*
         ! currency used for triangulated exchange when required output format The format will be fed three positional parameters, namely, value, code, and symbol, in this order.
     *)
-    [<ExcelFunction(Name="_CADCurrency_format", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_format", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_format
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -218,7 +218,7 @@ module CADCurrencyFunction =
     (*
         ! fraction symbol, e.g, "Â¢"
     *)
-    [<ExcelFunction(Name="_CADCurrency_fractionsPerUnit", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_fractionsPerUnit", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_fractionsPerUnit
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -254,7 +254,7 @@ module CADCurrencyFunction =
     (*
         ! symbol, e.g, "$"
     *)
-    [<ExcelFunction(Name="_CADCurrency_fractionSymbol", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_fractionSymbol", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_fractionSymbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -290,7 +290,7 @@ module CADCurrencyFunction =
     (*
         Inspectors
     *)
-    [<ExcelFunction(Name="_CADCurrency_name", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_name", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -326,7 +326,7 @@ module CADCurrencyFunction =
     (*
         ! ISO 4217 three-letter code, e.g, "USD"
     *)
-    [<ExcelFunction(Name="_CADCurrency_numericCode", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_numericCode", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_numericCode
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -362,7 +362,7 @@ module CADCurrencyFunction =
     (*
         ! number of fractionary parts in a unit, e.g, 100
     *)
-    [<ExcelFunction(Name="_CADCurrency_rounding", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_rounding", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_rounding
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -398,7 +398,7 @@ module CADCurrencyFunction =
     (*
         ! ISO 4217 numeric code, e.g, "840"
     *)
-    [<ExcelFunction(Name="_CADCurrency_symbol", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_symbol", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_symbol
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module CADCurrencyFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CADCurrency_ToString", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_ToString", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_ToString
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -470,7 +470,7 @@ module CADCurrencyFunction =
     (*
         ! rounding convention
     *)
-    [<ExcelFunction(Name="_CADCurrency_triangulationCurrency", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_triangulationCurrency", Description="Create a CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_triangulationCurrency
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -503,7 +503,7 @@ module CADCurrencyFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CADCurrency_Range", Description="Create a range of CADCurrency",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CADCurrency_Range", Description="Create a range of CADCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CADCurrency_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

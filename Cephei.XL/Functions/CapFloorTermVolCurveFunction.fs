@@ -37,7 +37,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! floating reference date, fixed market data
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve1", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve1", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -104,7 +104,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! fixed reference date, fixed market data
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve3", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve3", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -171,7 +171,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! fixed reference date, floating market data
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve2", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve2", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -238,7 +238,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! floating reference date, floating market data
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -305,7 +305,7 @@ module CapFloorTermVolCurveFunction =
     (*
         TermStructure interface
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_maxDate", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_maxDate", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -341,7 +341,7 @@ module CapFloorTermVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_maxStrike", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_maxStrike", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -377,7 +377,7 @@ module CapFloorTermVolCurveFunction =
     (*
         VolatilityTermStructure interface
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_minStrike", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_minStrike", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -413,7 +413,7 @@ module CapFloorTermVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_optionDates", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_optionDates", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_optionDates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -449,7 +449,7 @@ module CapFloorTermVolCurveFunction =
     (*
         some inspectors
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_optionTenors", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_optionTenors", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_optionTenors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -485,7 +485,7 @@ module CapFloorTermVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_optionTimes", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_optionTimes", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_optionTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -521,7 +521,7 @@ module CapFloorTermVolCurveFunction =
     (*
         LazyObject interface
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_update", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_update", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -557,7 +557,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! returns the volatility for a given cap/floor length and strike rate
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_volatility", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_volatility", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -611,7 +611,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! returns the volatility for a given end time and strike rate
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_volatility1", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_volatility1", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_volatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -665,7 +665,7 @@ module CapFloorTermVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_volatility2", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_volatility2", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_volatility2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -719,7 +719,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! the business day convention used in tenor to date conversion
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_businessDayConvention", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_businessDayConvention", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -755,7 +755,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! period/date conversion
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_optionDateFromTenor", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_optionDateFromTenor", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_optionDateFromTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -797,7 +797,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_calendar", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_calendar", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -833,7 +833,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! the day counter used for date/time conversion
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_dayCounter", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_dayCounter", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -869,7 +869,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_maxTime", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_maxTime", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -905,7 +905,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! the date at which discount = 1.0 and/or variance = 0.0
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_referenceDate", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_referenceDate", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -941,7 +941,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_settlementDays", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_settlementDays", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -977,7 +977,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_timeFromReference", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_timeFromReference", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1019,7 +1019,7 @@ module CapFloorTermVolCurveFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_allowsExtrapolation", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_allowsExtrapolation", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1055,7 +1055,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_disableExtrapolation", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_disableExtrapolation", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1097,7 +1097,7 @@ module CapFloorTermVolCurveFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_enableExtrapolation", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_enableExtrapolation", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1139,7 +1139,7 @@ module CapFloorTermVolCurveFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_extrapolate", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_extrapolate", Description="Create a CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1172,7 +1172,7 @@ module CapFloorTermVolCurveFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CapFloorTermVolCurve_Range", Description="Create a range of CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolCurve_Range", Description="Create a range of CapFloorTermVolCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolCurve_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

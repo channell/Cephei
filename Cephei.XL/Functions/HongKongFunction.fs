@@ -58,7 +58,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -89,7 +89,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong_addedHolidays", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_addedHolidays", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_addedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -125,7 +125,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong_addHoliday", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_addHoliday", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_addHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -167,7 +167,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong_adjust", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_adjust", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_adjust
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -215,7 +215,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong_advance1", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_advance1", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_advance1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -281,7 +281,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong_advance", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_advance", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_advance
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -341,7 +341,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong_businessDaysBetween", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_businessDaysBetween", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_businessDaysBetween
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -401,7 +401,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong_calendar", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_calendar", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -437,7 +437,7 @@ module HongKongFunction =
     (*
         Returns whether or not the calendar is initialized
     *)
-    [<ExcelFunction(Name="_HongKong_empty", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_empty", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -473,7 +473,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong_endOfMonth", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_endOfMonth", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_endOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -515,7 +515,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong_Equals", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_Equals", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -557,7 +557,7 @@ module HongKongFunction =
     (*
         @returns Returns <tt>true</tt> iff the date is a business day for the given market.
     *)
-    [<ExcelFunction(Name="_HongKong_isBusinessDay", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_isBusinessDay", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_isBusinessDay
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -599,7 +599,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong_isEndOfMonth", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_isEndOfMonth", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_isEndOfMonth
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -641,7 +641,7 @@ module HongKongFunction =
     (*
         Returns <tt>true</tt> iff the date is a holiday for the given market.
     *)
-    [<ExcelFunction(Name="_HongKong_isHoliday", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_isHoliday", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_isHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -683,7 +683,7 @@ module HongKongFunction =
     (*
         Returns <tt>true</tt> iff the weekday is part of the weekend for the given market.
     *)
-    [<ExcelFunction(Name="_HongKong_isWeekend", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_isWeekend", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_isWeekend
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -727,7 +727,7 @@ module HongKongFunction =
 
 @returns The name of the calendar.
     *)
-    [<ExcelFunction(Name="_HongKong_name", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_name", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_name
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -763,7 +763,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong_removedHolidays", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_removedHolidays", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_removedHolidays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -799,7 +799,7 @@ module HongKongFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_HongKong_removeHoliday", Description="Create a HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_removeHoliday", Description="Create a HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_removeHoliday
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -838,7 +838,7 @@ module HongKongFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_HongKong_Range", Description="Create a range of HongKong",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_HongKong_Range", Description="Create a range of HongKong",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HongKong_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

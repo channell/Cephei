@@ -37,7 +37,7 @@ module FdmLinearOpIteratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmLinearOpIterator_coordinates", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLinearOpIterator_coordinates", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_coordinates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -73,7 +73,7 @@ module FdmLinearOpIteratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmLinearOpIterator_Equals", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLinearOpIterator_Equals", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_Equals
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -115,7 +115,7 @@ module FdmLinearOpIteratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmLinearOpIterator", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLinearOpIterator", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -152,7 +152,7 @@ module FdmLinearOpIteratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmLinearOpIterator1", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLinearOpIterator1", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -189,7 +189,7 @@ module FdmLinearOpIteratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmLinearOpIterator3", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLinearOpIterator3", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -226,7 +226,7 @@ module FdmLinearOpIteratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmLinearOpIterator2", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLinearOpIterator2", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -275,7 +275,7 @@ module FdmLinearOpIteratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmLinearOpIterator_index", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLinearOpIterator_index", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_index
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -311,7 +311,7 @@ module FdmLinearOpIteratorFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_FdmLinearOpIterator_swap", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLinearOpIterator_swap", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_swap
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -350,7 +350,7 @@ module FdmLinearOpIteratorFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_FdmLinearOpIterator_Range", Description="Create a range of FdmLinearOpIterator",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_FdmLinearOpIterator_Range", Description="Create a range of FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

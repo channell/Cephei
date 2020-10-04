@@ -37,7 +37,7 @@ module ModifiedCraigSneydSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ModifiedCraigSneydScheme_factory", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ModifiedCraigSneydScheme_factory", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ModifiedCraigSneydScheme_factory
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -91,7 +91,7 @@ module ModifiedCraigSneydSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ModifiedCraigSneydScheme1", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ModifiedCraigSneydScheme1", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ModifiedCraigSneydScheme_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -146,7 +146,7 @@ module ModifiedCraigSneydSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ModifiedCraigSneydScheme", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ModifiedCraigSneydScheme", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ModifiedCraigSneydScheme_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -177,7 +177,7 @@ module ModifiedCraigSneydSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ModifiedCraigSneydScheme_setStep", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ModifiedCraigSneydScheme_setStep", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ModifiedCraigSneydScheme_setStep
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -219,7 +219,7 @@ module ModifiedCraigSneydSchemeFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_ModifiedCraigSneydScheme_step", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ModifiedCraigSneydScheme_step", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ModifiedCraigSneydScheme_step
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -270,7 +270,7 @@ module ModifiedCraigSneydSchemeFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_ModifiedCraigSneydScheme_Range", Description="Create a range of ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_ModifiedCraigSneydScheme_Range", Description="Create a range of ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ModifiedCraigSneydScheme_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! floating reference date, fixed market data
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface3", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface3", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -110,7 +110,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! fixed reference date, fixed market data
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! fixed reference date, floating market data
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface1", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface1", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -257,7 +257,7 @@ module CapFloorTermVolSurfaceFunction =
         ! floating reference date, floating market data
     *)
     (*!!vol
-    [<ExcelFunction(Name="_CapFloorTermVolSurface3", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface3", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_create3
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -331,7 +331,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         TermStructure interface
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_maxDate", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_maxDate", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_maxDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -367,7 +367,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_maxStrike", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_maxStrike", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_maxStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -403,7 +403,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         VolatilityTermStructure interface
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_minStrike", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_minStrike", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_minStrike
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -439,7 +439,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_optionDates", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_optionDates", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_optionDates
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -475,7 +475,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         some inspectors
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_optionTenors", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_optionTenors", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_optionTenors
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -511,7 +511,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_optionTimes", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_optionTimes", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_optionTimes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -547,7 +547,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_strikes", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_strikes", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_strikes
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -583,7 +583,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         LazyObject interface
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_update", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_update", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -619,7 +619,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! returns the volatility for a given cap/floor length and strike rate
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_volatility", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_volatility", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -673,7 +673,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! returns the volatility for a given end time and strike rate
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_volatility1", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_volatility1", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_volatility1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -727,7 +727,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_volatility2", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_volatility2", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_volatility2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -781,7 +781,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! the business day convention used in tenor to date conversion
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_businessDayConvention", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_businessDayConvention", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_businessDayConvention
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -817,7 +817,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! period/date conversion
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_optionDateFromTenor", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_optionDateFromTenor", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_optionDateFromTenor
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -859,7 +859,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! the calendar used for reference and/or option date calculation
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_calendar", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_calendar", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_calendar
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -895,7 +895,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! the day counter used for date/time conversion
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_dayCounter", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_dayCounter", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_dayCounter
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -931,7 +931,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! the latest time for which the curve can return values
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_maxTime", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_maxTime", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_maxTime
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -967,7 +967,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! the date at which discount = 1.0 and/or variance = 0.0
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_referenceDate", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_referenceDate", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_referenceDate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1003,7 +1003,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! the settlementDays used for reference date calculation
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_settlementDays", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_settlementDays", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_settlementDays
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1039,7 +1039,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! date/time conversion
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_timeFromReference", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_timeFromReference", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_timeFromReference
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1081,7 +1081,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         some extra functionality
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_allowsExtrapolation", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_allowsExtrapolation", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_allowsExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1117,7 +1117,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! enable extrapolation in subsequent calls
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_disableExtrapolation", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_disableExtrapolation", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_disableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1159,7 +1159,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         ! tells whether extrapolation is enabled
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_enableExtrapolation", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_enableExtrapolation", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_enableExtrapolation
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1201,7 +1201,7 @@ module CapFloorTermVolSurfaceFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_extrapolate", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_extrapolate", Description="Create a CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_extrapolate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -1234,7 +1234,7 @@ module CapFloorTermVolSurfaceFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_CapFloorTermVolSurface_Range", Description="Create a range of CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_CapFloorTermVolSurface_Range", Description="Create a range of CapFloorTermVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CapFloorTermVolSurface_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

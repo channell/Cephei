@@ -37,7 +37,7 @@ module YoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_capletPrice", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_capletPrice", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_capletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -79,7 +79,7 @@ module YoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_capletRate", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_capletRate", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_capletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -121,7 +121,7 @@ module YoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_capletVolatility", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_capletVolatility", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_capletVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -157,7 +157,7 @@ module YoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_floorletPrice", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_floorletPrice", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_floorletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -199,7 +199,7 @@ module YoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_floorletRate", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_floorletRate", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_floorletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -241,7 +241,7 @@ module YoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_initialize", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_initialize", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_initialize
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -283,7 +283,7 @@ module YoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_setCapletVolatility", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_setCapletVolatility", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_setCapletVolatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -325,7 +325,7 @@ module YoYInflationCouponPricerFunction =
     (*
         InflationCouponPricer interface
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_swapletPrice", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_swapletPrice", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_swapletPrice
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -361,7 +361,7 @@ module YoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_swapletRate", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_swapletRate", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_swapletRate
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -397,7 +397,7 @@ module YoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -434,7 +434,7 @@ module YoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_registerWith", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_registerWith", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_registerWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -476,7 +476,7 @@ module YoYInflationCouponPricerFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_unregisterWith", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_unregisterWith", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_unregisterWith
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -518,7 +518,7 @@ module YoYInflationCouponPricerFunction =
     (*
         observer interface
     *)
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_update", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_update", Description="Create a YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -551,7 +551,7 @@ module YoYInflationCouponPricerFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_YoYInflationCouponPricer_Range", Description="Create a range of YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_YoYInflationCouponPricer_Range", Description="Create a range of YoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCouponPricer_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

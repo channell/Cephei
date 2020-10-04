@@ -37,7 +37,7 @@ module SVIWrapperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVIWrapper", Description="Create a SVIWrapper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVIWrapper", Description="Create a SVIWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVIWrapper_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module SVIWrapperFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_SVIWrapper_volatility", Description="Create a SVIWrapper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVIWrapper_volatility", Description="Create a SVIWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVIWrapper_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -131,7 +131,7 @@ module SVIWrapperFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_SVIWrapper_Range", Description="Create a range of SVIWrapper",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_SVIWrapper_Range", Description="Create a range of SVIWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVIWrapper_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module ConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Constraint", Description="Create a Constraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Constraint", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -74,7 +74,7 @@ module ConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Constraint1", Description="Create a Constraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Constraint1", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -105,7 +105,7 @@ module ConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Constraint_empty", Description="Create a Constraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Constraint_empty", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_empty
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -141,7 +141,7 @@ module ConstraintFunction =
     (*
         ! Returns lower bound for given parameters
     *)
-    [<ExcelFunction(Name="_Constraint_lowerBound", Description="Create a Constraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Constraint_lowerBound", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_lowerBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -183,7 +183,7 @@ module ConstraintFunction =
     (*
         ! Tests if params satisfy the constrainT
     *)
-    [<ExcelFunction(Name="_Constraint_test", Description="Create a Constraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Constraint_test", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_test
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -225,7 +225,7 @@ module ConstraintFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_Constraint_update", Description="Create a Constraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Constraint_update", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_update
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -279,7 +279,7 @@ module ConstraintFunction =
     (*
         ! Returns upper bound for given parameters
     *)
-    [<ExcelFunction(Name="_Constraint_upperBound", Description="Create a Constraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Constraint_upperBound", Description="Create a Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_upperBound
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -318,7 +318,7 @@ module ConstraintFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_Constraint_Range", Description="Create a range of Constraint",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_Constraint_Range", Description="Create a range of Constraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Constraint_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)

@@ -37,7 +37,7 @@ module BlackStyleSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackStyleSwaptionEngine", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackStyleSwaptionEngine", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackStyleSwaptionEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -92,7 +92,7 @@ module BlackStyleSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackStyleSwaptionEngine1", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackStyleSwaptionEngine1", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackStyleSwaptionEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -153,7 +153,7 @@ module BlackStyleSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackStyleSwaptionEngine2", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackStyleSwaptionEngine2", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackStyleSwaptionEngine_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -215,7 +215,7 @@ module BlackStyleSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackStyleSwaptionEngine_termStructure", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackStyleSwaptionEngine_termStructure", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackStyleSwaptionEngine_termStructure
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -251,7 +251,7 @@ module BlackStyleSwaptionEngineFunction =
     (*
         
     *)
-    [<ExcelFunction(Name="_BlackStyleSwaptionEngine_volatility", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackStyleSwaptionEngine_volatility", Description="Create a BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackStyleSwaptionEngine_volatility
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
@@ -284,7 +284,7 @@ module BlackStyleSwaptionEngineFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-    [<ExcelFunction(Name="_BlackStyleSwaptionEngine_Range", Description="Create a range of BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = true, IsExceptionSafe=true)>]
+    [<ExcelFunction(Name="_BlackStyleSwaptionEngine_Range", Description="Create a range of BlackStyleSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackStyleSwaptionEngine_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
          mnemonic : string)
