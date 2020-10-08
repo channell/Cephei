@@ -504,11 +504,11 @@ namespace Cephei.Cell.Generic
         { 
             get
             {
-                return _value;
+                return Value;
             }
             set
             {
-                _value = (T)Value;
+                Value = (T)value;
             }
         }
 

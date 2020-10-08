@@ -13,6 +13,50 @@ open System.Threading
 module public  Model =
 
     let kv (k:'k) (v:'v) = new System.Collections.Generic.KeyValuePair<'k,'v>(k,v)
+    // apply a generic format for conversion to Excel types
+    let rec genericFormat (o : obj) : obj =
+        try
+            let enumerate (e : IEnumerable) = 
+                let i = e.GetEnumerator()
+                seq {while i.MoveNext() do i.Current} 
+            let trim o =
+                let min a b = if a < b then a else b
+                let s = o.ToString()
+                if s = null then
+                    null
+                elif s = "" then
+                    s
+                elif s.StartsWith(",") then
+                    s.Substring(1,min (s.Length - 1) 254)
+                else
+                    s.Substring(0,min s.Length 255)
+            match o with
+            | :? string -> trim o :> obj
+            | :? DateTime as d -> d.ToOADate() :> obj
+            | :? QLNet.Date as d -> d.serialNumber() :> obj
+            | :? Enum as e -> e.ToString() :> obj
+            | :? IEnumerable as e -> trim (enumerate e |> Seq.fold (fun a y -> a + "," + (genericFormat y).ToString()) "") :> obj
+            | :? ICell as c -> genericFormat c.Box
+            | _ -> trim (o.ToString()) :> obj
+        with 
+        | e -> "#" + e.Message :> obj
+
+    let formatMnemonic (s : string) =
+        if s = null || s = "" then 
+            "NA"
+        else
+            let filter = 
+                s.ToCharArray() |>
+                Array.filter (fun i -> Char.IsLetterOrDigit (i) && not (i = '.'))
+            if Char.IsDigit( filter.[0]) then
+                "N" + new string (filter);
+            else
+                if s.StartsWith("+") then 
+                    "+" + (new string (filter))
+                elif s.StartsWith("-") then
+                    "+" + (new string (filter))
+                else
+                    new string (filter)
 
     let getState () = 
         let modelName = "ModelState"
@@ -60,15 +104,29 @@ module public  Model =
         lock _state (fun () ->
             if _state.Value.Rtd.ContainsKey(s) then
                 let sub = _state.Value.Rtd.[s]
-                let c = sub.creator()
-                c.Mnemonic <- sub.mnemonic
-                _state.Value.Model.[sub.mnemonic] <- c
+                let cell = 
+                    let c = sub.creator()
+                    if c :? ITrivial then 
+                        let t = c :?> ITrivial
+                        t.ToCell ()
+                    else
+                        c
+                cell.Mnemonic <- sub.mnemonic
+                _state.Value.Model.[sub.mnemonic] <- cell
                 _state.Value.Source.[sub.mnemonic] <- sub.source
                 _state.Value.Subscriber.[sub.mnemonic] <- sub.subscriber)
 
     // Register a functor to create a cell if requried
     let specify (spec : spec) : obj =
         lock _state (fun () ->
+            let spec = 
+                { mnemonic = formatMnemonic spec.mnemonic
+                ; creator = spec.creator
+                ; subscriber = spec.subscriber
+                ; source = spec.source 
+                ; hash = spec.hash
+                } 
+      
             _state.Value.Rtd.[spec.mnemonic] <- spec
             let xlv = xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString())
             if xlv = null then 
@@ -85,6 +143,11 @@ module public  Model =
             if xlv = null then 
                 add mnemonic
                 mnemonic :> obj
+            elif xlv :? string && not ((xlv :?> string) = mnemonic) then
+                try
+                    genericFormat (_state.Value.Model.[mnemonic].Box)
+                with
+                | ex -> "#" + ex.Message :> obj
             else
                 xlv)
 
@@ -121,14 +184,6 @@ module public  Model =
         lock _state (fun () ->
             _state.Value.Model.ContainsKey mnemonic)
 
-    (*
-    // Summary : Add a cansting cell
-    let addCast (c : ICell<'t>) (source : string) =
-        _state.Value.Model.[c.Mnemonic] <- c
-        _state.Value.Source.[c.Mnemonic] <- source
-        c
-    *)
-
     let sourcecode (name : string) = 
         lock _state (fun () ->
             let tieredCells (model : Model) =
@@ -138,30 +193,129 @@ module public  Model =
                     cell.Dependants |> 
                     Seq.filter (fun i -> i :? ICell) |>
                     Seq.map (fun i -> i :?> ICell) |>
-                    Seq.fold (fun a y -> max a (depth y)) 0
+                    Seq.map (fun i -> (i, i.Box)) |>
+                    Seq.fold (fun a (y,x) -> a + 1 + (depth y)) 0
 
                 model |>
                 Seq.map (fun i -> (i.Value, depth i.Value)) |>
                 Seq.toArray |>
-                Array.sortBy (fun (c,d) -> d * -1)
+                Array.sortBy (fun (c,d) -> d ) |>
+                Array.rev
 
             let tiers = 
                 tieredCells _state.Value.Model
 
+            let strip (s : string) = 
+                if s.StartsWith("+") || s.StartsWith("-") then 
+                    s.Substring(1)
+                else    
+                    s
+
             let cells = 
                 tiers |>
                 Array.filter (fun (c,d) -> _state.Value.Source.ContainsKey c.Mnemonic) |>
-                Array.map (fun (c,d) -> (c.Mnemonic, _state.Value.Source.[c.Mnemonic]))
+                Array.map (fun (c,d) -> (c, _state.Value.Source.[c.Mnemonic]))
+
+            let constructors = 
+                fst (
+                    cells |>
+                    Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
+                    Array.map (fun (c,s) -> sprintf "%s : ICell<%s>\n" (strip c.Mnemonic) (c.Box.GetType().ToString())) |>
+                    Array.fold (fun (s,d) y -> (s + "    " + d + y,",")) ("", "(") 
+                    )
 
             let functions =
                 cells |> 
-                Array.map (fun (n,s) -> sprintf "    let _%s = %s\n" n s) |>
+                Array.map (fun (c,s) -> sprintf "    let _%s = %s\n" (strip c.Mnemonic) (if c.Mnemonic.StartsWith("+") then (strip c.Mnemonic) else s)) |>
                 Array.fold (fun a y -> a + y) "\n(* functions *)\n"
 
             let members = 
                 cells |> 
-                Array.map (fun (n,s) -> sprintf "    member this.%s = _%s\n" n n) |>
+                Array.filter (fun (c,s) -> not (c.Mnemonic.StartsWith ("-"))) |>
+                Array.map (fun (c,s) -> sprintf "    member this.%s = _%s\n" (strip c.Mnemonic) (strip c.Mnemonic)) |>
                 Array.fold (fun a y -> a + y) "\n(* Externally visible/bindable properties *)\n"
+
+            let excelParameters = 
+                cells |>
+                Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
+                Array.map (fun (c,s) -> sprintf "        ([<ExcelArgument(Name=\"__%s\",Description = \"reference to %s\")>]\n        %s : obj)\n" (strip c.Mnemonic) (strip c.Mnemonic) (strip c.Mnemonic)) |>
+                Array.fold (fun a y -> a + y) ""
+
+            let excelCasts = 
+                cells |>
+                Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
+                Array.map (fun (c,s) -> sprintf "                let _%s = Helper.toCell<%s> %s \"%s\"\n" (strip c.Mnemonic) (c.Box.GetType().ToString()) (strip c.Mnemonic) (strip c.Mnemonic)) |>
+                Array.fold (fun a y -> a + y) ""
+
+            let excelBuilder = 
+                cells |>
+                Array.filter (fun (c,s) -> (c.Mnemonic.StartsWith("+"))) |>
+                Array.map (fun (c,s) -> sprintf "                                                            _%s.cell\n" (strip c.Mnemonic)) |>
+                Array.fold (fun a y -> a + y) ""
+
+            let excelsource : string = 
+                let buff = 
+                    fst (
+                        cells |>
+                        Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
+                        Array.map (fun (c,s) -> sprintf "_%s.source\n" (strip c.Mnemonic)) |>
+                        Array.fold (fun (s,d) y -> (s + "                                               " + d + y,";  ")) ("", "[| ") 
+                        )
+                if buff = "" then 
+                    "                                               [|"
+                else
+                    buff
+
+            let excelhash = 
+                let buff = 
+                    fst (
+                        cells |>
+                        Array.filter (fun (c,s) -> (c.Mnemonic.StartsWith("+"))) |>
+                        Array.map (fun (c,s) -> sprintf "_%s.cell\n" (strip c.Mnemonic)) |>
+                        Array.fold (fun (s,d) y -> (s + "                                " + d + y,";  ")) ("", "[| ") 
+                        )
+                if buff = "" then 
+                    "                                [|"
+                else
+                    buff
+
+            let formatProperty (n : string) (p : string) (t : string) = 
+                String.Format ("
+    [<ExcelFunction(Name=\"__{0}_{1}\", Description=\"Create a {2}\",Category=\"Cephei Models\", IsThreadSafe = false, IsExceptionSafe=true)>]
+    let Period_ToShortString
+        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifer for the value\")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name=\"{0}\",Description = \"Reference to {0}\")>] 
+         {1} : obj)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+            let _{0} = Helper.toCell<{0}> {0} \"{0}\"  
+            let builder () = withMnemonic mnemonic (_{0}.cell :> {0}).{1}) :> ICell
+            let format (o : {2}) (l:string) = o.Helper.Range.fromModel (i :?> {1}) l
+            let source = (_{0}.source + \".{1}\")
+            let hash = Helper.hashFold [| _{0}.cell |]
+            Model.specify 
+                {{ mnemonic = mnemonic
+                ; creator = builder
+                ; subscriber = Helper.subscriber format
+                ; source = source 
+                ; hash = hash
+                }} :?> string
+            with
+            | _ as e ->  \"#\" + e.Message
+        else
+            \"<WIZ>\"
+                            ", n, p, t)
+
+            let excelProperties = 
+                cells |>
+                Array.filter (fun (c,s) -> not (c.Mnemonic.StartsWith("-"))) |>
+                Array.map (fun (c,s) -> formatProperty name c.Mnemonic (c.Box.GetType().ToString())) |>
+                Array.fold (fun a y -> a + y) ""
+
 
             String.Format ("
 namespace Cephei.Models
@@ -174,10 +328,46 @@ open Cephei.Cell.Generic
 open System
 open System.Collections
 
-type {0} () as this =
+type {0} 
+{1}) as this =
     inherit Model ()
-{1}
-    do this.Bind ()
 {2}
-", name, functions, members))
-        
+    do this.Bind ()
+{3}
+
+#if EXCEL
+module {0}Function =
+
+    [<ExcelFunction(Name=\"__{0}\", Description=\"Create a {0}\",Category=\"Cephei Models\", IsThreadSafe = false, IsExceptionSafe=true)>]
+    let {0}_create
+        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifer for the value\")>] 
+         mnemonic : string)
+{4}
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+{5}
+                let builder () = withMnemonic mnemonic (new {0}
+{6}
+                                                       ) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> {0}) l
+                let source = Helper.sourceFold \"new {0}\"
+{7}                                               |]
+
+                let hash = Helper.hashFold
+{8}                                |]
+                Model.specify 
+                    {{ mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel<{0}> format
+                    ; source = source 
+                    ; hash = hash
+                    }} :?> string
+                        with
+                        | _ as e ->  \"#\" + e.Message
+        else
+            \"<WIZ>\"
+
+#endif
+", name, constructors, functions, members, excelParameters, excelCasts, excelBuilder, excelsource, excelhash ))

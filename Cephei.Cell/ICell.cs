@@ -82,6 +82,15 @@ namespace Cephei.Cell
         object Box { get; set; }
     }
 
+    public interface ITrivial
+    {
+        /// <summary>
+        /// Allow Trivial Cells to be upgraded to tracking Cells
+        /// </summary>
+        /// <returns></returns>
+        ICell ToCell();
+    }
+
     /// <summary>
     /// Cell provides a  module functions of the Cell framework and a thread static
     /// stack of cells being evaluated.

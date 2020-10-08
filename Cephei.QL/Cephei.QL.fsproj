@@ -36,6 +36,7 @@ The source types can be used as-is or as recipes for domain specific implementat
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <NoWarn>49</NoWarn>
+    <OutputPath>..\bin\Release</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

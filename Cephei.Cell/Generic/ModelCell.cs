@@ -18,6 +18,22 @@ namespace Cephei.Cell.Generic
             Bind();
         }
 
+        public override IEnumerable<ICellEvent> Dependants
+        {
+            get
+            {
+                return _cell.Dependants;
+            }
+        }
+
+        public override object Box
+        {
+            get
+            {
+                return _cell.Box;
+            }
+        }
+
         public T Value { get => _cell.Value; set => _cell.Value = value; }
 
         public void OnCompleted()

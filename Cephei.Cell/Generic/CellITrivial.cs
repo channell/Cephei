@@ -11,7 +11,7 @@ namespace Cephei.Cell.Generic
     /// CellInline is a variant of Cell that performs calculation inline like a 
     /// normal function but with Cell samntics
     /// </summary>
-    public class CellTrivial<T> : ICell<T>
+    public class CellTrivial<T> : ICell<T>, ITrivial
     {
         /// <summary>
         /// reference to the function to evaluate
@@ -127,6 +127,11 @@ namespace Cephei.Cell.Generic
 
         public void OnNext(T value)
         {
+        }
+
+        public ICell ToCell()
+        {
+            return new Cell<T>(_func, Mnemonic);
         }
         #endregion
     }

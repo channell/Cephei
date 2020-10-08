@@ -608,8 +608,8 @@ module ScheduleFunction =
                 let _terminationDateConvention = Helper.toCell<BusinessDayConvention> terminationDateConvention "terminationDateConvention"
                 let _rule = Helper.toCell<DateGeneration.Rule> rule "rule"
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth"
-                let _firstDate = Helper.toCell<Date> firstDate "firstDate"
-                let _nextToLastDate = Helper.toCell<Date> nextToLastDate "nextToLastDate" 
+                let _firstDate = Helper.toDefault<Date> firstDate "firstDate" null
+                let _nextToLastDate = Helper.toDefault<Date> nextToLastDate "nextToLastDate" null
                 let builder () = withMnemonic mnemonic (Fun.Schedule 
                                                             _effectiveDate.cell 
                                                             _terminationDate.cell 

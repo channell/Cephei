@@ -12,20 +12,8 @@ module Helper =
 
     // Summary: add mnemonc to cell
     let withMnemonic<'t> m (c : ICell<'t>) =
-        c.Mnemonic <- m
+        c.Mnemonic <- (Model.formatMnemonic m)
         c
-
-    let formatMnemonic (s : string) =
-        if s = null || s = "" then 
-            "NA"
-        else
-            let filter = 
-                s.ToCharArray() |>
-                Array.filter (fun i -> Char.IsLetterOrDigit (i))
-            if Char.IsDigit( filter.[0]) then
-                "N" + new string (filter);
-            else
-                new string (filter)
 
     // Summary: Subscription helper
     let subscriber (format : 't -> string -> obj) (rtd : IValueRTD) (cell : ICell) (layout : string) = 
@@ -104,11 +92,11 @@ module Helper =
                     }
             else
                 { cell = (triv (fun () -> o :?> 'T))
-                ; source = "(triv (fun () -> " + s + " :?> " + typeof<'T>.Name + " 'T))"
+                ; source = "(triv (fun () -> " + s + " :?> " + typeof<'T>.Name + "))"
                 }
         elif o :? 'T then 
             { cell = (value (o :?> 'T))
-            ; source = "(value (" + o.ToString() + " :?> " + typeof<'T>.Name + " 'T))"
+            ; source = "(value (" + o.ToString() + " :?> " + typeof<'T>.Name + "))"
             }
         elif typeof<'T> = typeof<Date> &&  o :? double then
             if o :? double then
@@ -123,7 +111,7 @@ module Helper =
                 }
             else
                 { cell = triv (fun () -> o :?> 'T)
-                ; source = "(triv (fun () -> " + o.ToString() + " :?> 'T))"
+                ; source = "(triv (fun () -> " + o.ToString() + " :?> " + typeof<'T>.Name + "))"
                 }
         else
             try
@@ -154,8 +142,14 @@ module Helper =
     // Summary: convert value or use default
     let toDefault<'T> (o : obj) (attribute : string) (defaultValue : 'T) : CellSource<'T> = 
         if o = null || o :? ExcelDna.Integration.ExcelMissing then 
-            { cell = value defaultValue
-            ; source = "(value " + defaultValue.ToString() + ")"
+            let s = 
+                try
+                    defaultValue.ToString()
+                with 
+                | _ -> "null"
+
+            { cell = withMnemonic attribute (value defaultValue)
+            ; source = "(value " + s + ")"
             }
         else
             toCell<'T> o attribute
@@ -165,17 +159,24 @@ module Helper =
         if o :? string then
             let s = o :?> string
             let c = Model.cell s
-            if c.IsSome then
-                let c = c.Value :?> ICell<'T>
-                { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle (c.Value)))
-                ; source = "(triv (fun () -> toHandle (" + c.Mnemonic + ")))"
-                }
+            if c.IsSome then 
+                let c = c.Value
+                if c:? ICell<'T> then 
+                    let c = c :?> ICell<'T>
+                    { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle (c.Value)))
+                    ; source = "(triv (fun () -> toHandle (" + c.Mnemonic + ")))"
+                    }
+                else
+                    let v = c.Box :?> 'T
+                    { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle<'T> (v)))
+                    ; source = "(triv (fun () -> toHandle<" + typeof<'T>.Name + "> (" + c.Mnemonic + ")))"
+                    }
             else
                 { cell = withMnemonic s (triv (fun () -> Util.toHandle (o :?> 'T)))
                 ; source = "(triv (fun () -> toHandle (" + s + ")))"
                 }
         elif o :? 'T then 
-            { cell =  withMnemonic (formatMnemonic (o.ToString())) (triv (fun () -> Util.toHandle (o :?> 'T)))
+            { cell =  withMnemonic (Model.formatMnemonic (o.ToString())) (triv (fun () -> Util.toHandle (o :?> 'T)))
             ; source = "(triv (fun () -> toHandle (" + o.ToString() + ")))"
             }
         else 
@@ -209,7 +210,7 @@ module Helper =
     let kv (k:'k) (v:'v) = new System.Collections.Generic.KeyValuePair<'k,'v>(k,v)
 
     let sourceFold s (cs : string array) = 
-        cs |> Array.fold (fun a y -> a + " " + y) s
+        cs |> Array.fold (fun a y -> a + " " + if y.StartsWith("(") then y elif y.StartsWith("+") then ("_" + y.Substring(1)) elif y.StartsWith("-") then ("_" + y.Substring(1)) else ("_" + y)) s
 
     let sourceFoldArray (cs : string array) = 
         "[|" + (cs |> Array.fold (fun a y -> a + ";" + y) "").Substring(1) + "|]"
@@ -220,30 +221,6 @@ module Helper =
     let hashFold2 (cs : ICell<'t> array) = 
         cs |> Array.fold (fun a y -> (a <<< 4)  ^^^ if y.Mnemonic = null then y.Box.GetHashCode() else y.Mnemonic.GetHashCode()) 0
 
-    // apply a generic format for conversion to Excel types
-    let rec genericFormat (o : obj) : obj =
-        let enumerate (e : IEnumerable) = 
-            let i = e.GetEnumerator()
-            seq {while i.MoveNext() do i.Current} 
-        let trim o =
-            let min a b = if a < b then a else b
-            let s = o.ToString()
-            if s = null then
-                null
-            elif s = "" then
-                s
-            elif s.StartsWith(",") then
-                s.Substring(1,min (s.Length - 1) 254)
-            else
-                s.Substring(0,min s.Length 255)
-        match o with
-        | :? string -> trim o :> obj
-        | :? DateTime as d -> d.ToOADate() :> obj
-        | :? QLNet.Date as d -> d.serialNumber() :> obj
-        | :? Enum as e -> e.ToString() :> obj
-        | :? IEnumerable as e -> trim (enumerate e |> Seq.fold (fun a y -> a + "," + (genericFormat y).ToString()) "") :> obj
-        | :? ICell as c -> genericFormat c.Box
-        | _ -> trim (o.ToString()) :> obj
 
     module Range =
         let toArray (o : obj[,]) : obj array =
@@ -255,26 +232,26 @@ module Helper =
             let len = o.Length
             match layout with 
             | "CT"  ->  let range = Array2D.create<obj> len 2 null
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 1 (genericFormat o.[x]))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 1 (Model.genericFormat o.[x]))
                         range
             | "RT"  ->  let range = Array2D.create<obj> 2 len null
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 1 x (genericFormat o.[x]))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 1 x (Model.genericFormat o.[x]))
                         range
             | "C"   ->  let range = Array2D.create<obj> len 1 null
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 0 (genericFormat o.[x]))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 0 (Model.genericFormat o.[x]))
                         range
             | _     ->  let range = Array2D.create<obj> 1 len null
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 0 x (genericFormat o.[x]))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 0 x (Model.genericFormat o.[x]))
                         range
         
         let spliceArray (o : 'o array) (layout : string) (range : obj[,])  (n : int): obj[,] =
             let min a b = if a < b then a else b
             match layout with 
             | "C"   ->  let len = min (Array2D.length1 range) o.Length
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x n (genericFormat o.[x]))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x n (Model.genericFormat o.[x]))
                         range
             | _     ->  let len = min (Array2D.length2 range) o.Length
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range n x (genericFormat o.[x]))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range n x (Model.genericFormat o.[x]))
                         range
 
         let fromMatrix (o : Generic.List<Generic.List<'o>>) (layout : string) : obj[,] =
@@ -305,13 +282,13 @@ module Helper =
                         seq { for a in 0..x do
                                 for b in 0..y do
                                     (a,b)}
-                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (genericFormat l.[b].[a]))
+                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (Model.genericFormat l.[b].[a]))
                         range
             | _     ->  let range = Array2D.create<obj> x y null
                         seq { for a in 0..x do
                                 for b in 0..y do
                                     (a,b)}
-                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (genericFormat l.[a].[b]))
+                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (Model.genericFormat l.[a].[b]))
                         range
 
         let fromHandleMatrix (o : ICell<Generic.List<Generic.List<Handle<'o>>>>) (layout : string) : obj[,] =
@@ -324,13 +301,13 @@ module Helper =
                         seq { for a in 0..x do
                                 for b in 0..y do
                                     (a,b)}
-                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (genericFormat l.[b].[a]))
+                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (Model.genericFormat l.[b].[a]))
                         range
             | _     ->  let range = Array2D.create<obj> x y null
                         seq { for a in 0..x do
                                 for b in 0..y do
                                     (a,b)}
-                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (genericFormat l.[a].[b]))
+                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (Model.genericFormat l.[a].[b]))
                         range
 
 
@@ -338,13 +315,13 @@ module Helper =
             match layout with 
             | "CT"  ->  let range = Array2D.create<obj> 1 2 null
                         Array2D.set range 0 0 (cell.Mnemonic :> obj)
-                        Array2D.set range 0 1 (genericFormat cell.Value)
+                        Array2D.set range 0 1 (Model.genericFormat cell.Value)
                         range
             | "RT"  ->  let range = Array2D.create<obj> 2 1 null
                         Array2D.set range 0 0 (cell.Mnemonic :> obj)
-                        Array2D.set range 1 0 (genericFormat cell.Value)
+                        Array2D.set range 1 0 (Model.genericFormat cell.Value)
                         range
-            | _     ->  let range = Array2D.create<obj> 1 1 (genericFormat cell.Value)
+            | _     ->  let range = Array2D.create<obj> 1 1 (Model.genericFormat cell.Value)
                         range
 
 
@@ -353,17 +330,17 @@ module Helper =
             match layout with 
             | "CT"  ->  let range = Array2D.create<obj> len 2 null
                         seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 0 (cells.[x].Mnemonic:> obj))
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 1 (genericFormat cells.[x].Value))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 1 (Model.genericFormat cells.[x].Value))
                         range
             | "RT"  ->  let range = Array2D.create<obj> 2 len null
                         seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 0 x (cells.[x].Mnemonic:> obj))
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 1 x (genericFormat cells.[x].Value))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 1 x (Model.genericFormat cells.[x].Value))
                         range
             | "C"   ->  let range = Array2D.create<obj> len 1 null
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 0 (genericFormat cells.[x].Value))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 0 (Model.genericFormat cells.[x].Value))
                         range
             | _     ->  let range = Array2D.create<obj> 1 len null
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 0 x (genericFormat cells.[x].Value))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 0 x (Model.genericFormat cells.[x].Value))
                         range
 
         let fromModel (m : ICell<'t>) (layout : string) : obj[,] =
@@ -376,17 +353,17 @@ module Helper =
             match layout with 
             | "CT"  ->  let range = Array2D.create<obj> len 2 null
                         seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 0 (cells.[x].Mnemonic:> obj))
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 1 (genericFormat cells.[x].Box))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 1 (Model.genericFormat cells.[x].Box))
                         range
             | "RT"  ->  let range = Array2D.create<obj> 2 len null
                         seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 0 x (cells.[x].Mnemonic:> obj))
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 1 x (genericFormat cells.[x].Box))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 1 x (Model.genericFormat cells.[x].Box))
                         range
             | "C"   ->  let range = Array2D.create<obj> len 1 null
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 0 (genericFormat cells.[x].Box))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 0 (Model.genericFormat cells.[x].Box))
                         range
             | _     ->  let range = Array2D.create<obj> 1 len null
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 0 x (genericFormat cells.[x].Box))
+                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 0 x (Model.genericFormat cells.[x].Box))
                         range
 
         let fromModelList<'t> (m : Generic.List<ICell<'t>>) (layout : string) : obj[,] =
@@ -404,11 +381,11 @@ module Helper =
                 let range = 
                     match layout with
                     | "CT"  ->  let r = Array2D.create<obj> (len + 1) cols.Length null
-                                seq {0 .. (cols.Length - 1)} |> Seq.iter (fun x -> Array2D.set r 0 x (genericFormat cols.[x]))
+                                seq {0 .. (cols.Length - 1)} |> Seq.iter (fun x -> Array2D.set r 0 x (Model.genericFormat cols.[x]))
                                 r
                                 
                     | "RT"  ->  let r =Array2D.create<obj> cols.Length (len + 1) null
-                                seq {0 .. (cols.Length - 1)} |> Seq.iter (fun x -> Array2D.set r x 0 (genericFormat cols.[x]))
+                                seq {0 .. (cols.Length - 1)} |> Seq.iter (fun x -> Array2D.set r x 0 (Model.genericFormat cols.[x]))
                                 r 
 
                     | "C"   ->  Array2D.create<obj> len cols.Length null
@@ -417,7 +394,7 @@ module Helper =
                 let splice (o : Model) (pos : int) =
                     let setter (c : Model) (s : string) : obj =
                         try
-                            genericFormat c.[s].Box
+                            Model.genericFormat c.[s].Box
                         with
                         | _ -> null
                     match layout with

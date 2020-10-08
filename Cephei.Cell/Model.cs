@@ -25,7 +25,7 @@ namespace Cephei.Cell
         #region ICell
         public ICell Parent { get; set; }
 
-        public IEnumerable<ICellEvent> Dependants
+        public virtual IEnumerable<ICellEvent> Dependants
         {
             get
             {
@@ -456,7 +456,7 @@ namespace Cephei.Cell
         public bool HasValue => true;
 
         /// <see cref="ICell.Box"/>
-        public object Box
+        public virtual object Box
         {
             get
             {

@@ -48,6 +48,7 @@ type ValueRTD ()  =
     let _topics                 = new Dictionary<ExcelRtdServer.Topic, KeyValuePair<string, string>>()
     let _topicIndex             = new Dictionary<Generic.KeyValuePair<string, string>, ExcelRtdServer.Topic list>()
     let _subscriptions          = new Dictionary<Generic.KeyValuePair<string, string>, IDisposable> ()
+    let _value                  = new Dictionary<string, obj> ()
 
     override this.ConnectData (topic : ExcelRtdServer.Topic, topicInfo : IList<string>, newValues : bool byref) =
         
@@ -55,28 +56,33 @@ type ValueRTD ()  =
         let layout = topicInfo.[1]
 
         let kv = new KeyValuePair<string,string>(mnemonic, layout);
-
-        if _topicIndex.ContainsKey (kv) then 
-            _topics.[topic] <- kv
-            _topicIndex.[kv] <- [topic] @ _topicIndex.[kv]
-            let cell = (Model.cell mnemonic).Value
-            if cell.Box :? IEnumerable  && not (cell.Box :? IEnumerable) then 
-                cell.Mnemonic :> obj
+        try
+            if _topicIndex.ContainsKey (kv) then 
+               _topics.[topic] <- kv
+               _topicIndex.[kv] <- [topic] @ _topicIndex.[kv]
+               if _value.ContainsKey(mnemonic) then
+                   _value.[mnemonic]
+               else
+                   mnemonic :> obj
             else
-                cell.Box
-        else
-            _topics.[topic] <- kv
-            _topicIndex.[kv] <- [topic]
-            let listener = Model.subscribe this mnemonic layout
-            if not (listener = (null :> IDisposable)) then 
-                _subscriptions.[kv] <- listener
-                let cell = Model.cell mnemonic
-                if Model.hasRange mnemonic layout then
-                    mnemonic :> obj
+                _topics.[topic] <- kv
+                _topicIndex.[kv] <- [topic]
+                let listener = Model.subscribe this mnemonic layout
+                if not (listener = (null :> IDisposable)) then 
+                    _subscriptions.[kv] <- listener
+                    if Model.hasRange mnemonic layout then
+                        mnemonic :> obj
+                    elif _value.ContainsKey(mnemonic) then
+                        _value.[mnemonic]
+                    else
+                        try
+                            (Model.cell mnemonic).Value.Box.ToString() :> obj
+                        with
+                        | e -> "#" + e.Message :> obj
                 else
-                    cell.Value.Box
-            else
-                "#NotValue" :> obj
+                    "#NotValue" :> obj
+        with
+        | e -> "#" + e.Message :> obj
 
     override this.DisconnectData (topic : ExcelRtdServer.Topic) =
         let kv = _topics.[topic]
@@ -96,6 +102,7 @@ type ValueRTD ()  =
             let kv = new KeyValuePair<string,string> (mnemonic, layout)
             if _topicIndex.ContainsKey (kv) then
                 let topics = _topicIndex.[kv]
+                _value.[mnemonic] <- value
                 let apply (t : ExcelRtdServer.Topic) = t.UpdateValue (value)
                 List.iter apply topics
 

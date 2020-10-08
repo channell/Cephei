@@ -394,6 +394,12 @@
             Support assignement from boxed values
             </summary>
         </member>
+        <member name="M:Cephei.Cell.ITrivial.ToCell">
+            <summary>
+            Allow Trivial Cells to be upgraded to tracking Cells
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Cephei.Cell.Cell">
             <summary>
             Cell provides a  module functions of the Cell framework and a thread static

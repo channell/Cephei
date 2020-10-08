@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="tst.fsx" />
     <None Include="CastConversion.fsx" />
     <None Include="addcast.fsx" />
     <None Include="defalV.fsx" />
